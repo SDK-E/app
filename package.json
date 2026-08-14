@@ -21,6 +21,9 @@
   "overrides": {
     "undici": "7.9.0"
   },
+  "overrides": {
+    "undici": "7.9.0"
+  },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
