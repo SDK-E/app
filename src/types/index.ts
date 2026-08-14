@@ -16,3 +16,7 @@ export interface PaginatedResult<T> {
   pageSize: number;
   totalPages: number;
 }
+
+export type Result<T, E = Error> =
+  | { ok: true; value: T }
+  | { ok: false; error: E };
