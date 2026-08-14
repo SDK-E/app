@@ -2,6 +2,12 @@
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Conventions
+
+Before working on this project, read [docs/conventions/structure.md](docs/conventions/structure.md).
+It defines the directory layout and file, component, route, env var, and commit
+message conventions that all contributors MUST follow.
+
 ## Getting Started
 
 First, run the development server:
