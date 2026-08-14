@@ -2,6 +2,7 @@
   "name": "client-platform",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
@@ -29,7 +30,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.5.23",
-    "jsdom": "^30.0.1",
+    "jsdom": "24.0.0",
     "tailwindcss": "^4",
     "typescript": "^5",
     "undici": "7.9.0",
