@@ -39,14 +39,14 @@ function matchesRoute(pathname: string, patterns: string[]): boolean {
 }
 
 export async function proxy(request: NextRequest) {
-  const i18nResponse = i18nMiddleware(request);
-  if (i18nResponse) return i18nResponse;
-
   const { pathname } = request.nextUrl;
 
   if (pathname.startsWith("/auth")) {
     return getAuth0Client().middleware(request);
   }
+
+  const i18nResponse = i18nMiddleware(request);
+  if (i18nResponse) return i18nResponse;
 
   if (matchesRoute(pathname, PUBLIC_ROUTES)) {
     return NextResponse.next();
