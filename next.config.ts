@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   compress: true,
-  output: "standalone",
+  output: process.env.VERCEL ? undefined : "standalone",
 };
 
 export default nextConfig;
