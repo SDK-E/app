@@ -1,28 +1,38 @@
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/layout/Container";
 
 const LEGAL_LINKS = [
-  { label: "Mentions légales", href: "/legal/mentions-legales" },
-  { label: "Privacy", href: "/privacy" },
-  { label: "Terms", href: "/terms" },
-  { label: "Cookies", href: "/cookies" },
+  { href: "/legal/mentions-legales", key: "mentionsLegales" },
+  { href: "/privacy", key: "privacy" },
+  { href: "/terms", key: "terms" },
+  { href: "/cookies", key: "cookies" },
 ];
 
-export default function SiteFooter() {
+export default async function SiteFooter({
+  locale,
+  ariaLegal,
+}: {
+  locale: string;
+  ariaLegal?: string;
+}) {
+  const tFooter = await getTranslations({ locale, namespace: "footer" });
+  const tNav = await getTranslations({ locale, namespace: "nav" });
+
   return (
     <footer className="bg-dark py-6 text-micro text-fog">
       <Container>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <span>© SDK Enterprises</span>
-          <span>AI · Software · Cloud · Systems Engineering</span>
-          <nav aria-label="Legal" className="flex flex-wrap items-center gap-x-4 gap-y-1">
+          <span>{tFooter("copyright")}</span>
+          <span>{tFooter("tagline")}</span>
+          <nav aria-label={ariaLegal ?? tNav("legal")} className="flex flex-wrap items-center gap-x-4 gap-y-1">
             {LEGAL_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className="transition-opacity motion-reduce:transition-none hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fog"
               >
-                {link.label}
+                {tNav(link.key)}
               </Link>
             ))}
           </nav>

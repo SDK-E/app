@@ -1,54 +1,20 @@
 import { Section } from "@/components/layout/Section";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { Card } from "@/components/ui/Card";
+import { getTranslations } from "next-intl/server";
 
-const services = [
-  {
-    number: "01",
-    category: "AI Engineering",
-    title: "AI agents & automation",
-    copy: "LLM integrations, agents, RAG, workflow automation, developer tooling and AI-assisted operations.",
-  },
-  {
-    number: "02",
-    category: "Backend",
-    title: "Platforms, APIs & SaaS",
-    copy: "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs and realtime backend architecture.",
-  },
-  {
-    number: "03",
-    category: "Frontend",
-    title: "Web & application interfaces",
-    copy: "React, Vue, Nuxt, TypeScript, Tailwind and Shadcn.",
-  },
-  {
-    number: "04",
-    category: "Cloud",
-    title: "Cloud & infrastructure",
-    copy: "AWS, GCP, Azure, Kubernetes, Helm, CI/CD and deployment architecture.",
-  },
-  {
-    number: "05",
-    category: "Data",
-    title: "Databases, cache & search",
-    copy: "PostgreSQL, MySQL, MongoDB, Redis, Valkey and Elasticsearch.",
-  },
-  {
-    number: "06",
-    category: "Modernization",
-    title: "Legacy modernization",
-    copy: "Framework upgrades, migration, technical debt reduction and performance optimization.",
-  },
-];
+export default async function ServicesSection({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: "services" });
+  const services = t.raw("items") as Array<{
+    number: string;
+    category: string;
+    title: string;
+    copy: string;
+  }>;
 
-export default function ServicesSection() {
   return (
     <Section id="services">
-      <SectionHeader
-        eyebrow="Services"
-        title="Use all of the stack — or only the part you need."
-        intro="SDK can engage on one specialized problem or own a broader technical workstream."
-      />
+      <SectionHeader eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
           <Card

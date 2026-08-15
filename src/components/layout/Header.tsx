@@ -1,10 +1,12 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Container } from "./Container";
 import { Button } from "@/components/ui/Button";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export type HeaderLink = { label: string; href: string };
 
@@ -13,12 +15,23 @@ export function Header({
   cta,
   secondaryCta,
   activeLabel,
+  translationsNamespace = "nav",
+  ariaHome,
+  ariaMain,
+  ariaToggleMenu,
+  locale,
 }: {
   links: HeaderLink[];
   cta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
   activeLabel?: string;
+  translationsNamespace?: string;
+  ariaHome?: string;
+  ariaMain?: string;
+  ariaToggleMenu?: string;
+  locale?: string;
 }) {
+  const t = useTranslations(translationsNamespace);
   const [open, setOpen] = useState(false);
 
   const navLinkClass = (label: string) =>
@@ -32,7 +45,7 @@ export function Header({
         <div className="flex h-[78px] items-center justify-between">
           <Link
             href="/"
-            aria-label="SDK Enterprises home"
+            aria-label={ariaHome ?? t("home")}
             className="block leading-none"
           >
             <Image
@@ -46,7 +59,7 @@ export function Header({
             />
           </Link>
 
-          <nav aria-label="Main" className="hidden items-center gap-[26px] md:flex">
+          <nav aria-label={ariaMain ?? t("main")} className="hidden items-center gap-[26px] md:flex">
             {links.map((link) => (
               <Link key={link.href} href={link.href} className={navLinkClass(link.label)}>
                 {link.label}
@@ -54,24 +67,27 @@ export function Header({
             ))}
           </nav>
 
-          {secondaryCta || cta ? (
-            <div className="hidden items-center gap-3 md:flex">
-              {secondaryCta ? (
-                <Button href={secondaryCta.href} variant="outline">
-                  {secondaryCta.label}
-                </Button>
-              ) : null}
-              {cta ? (
-                <Button href={cta.href} variant="dark">
-                  {cta.label} →
-                </Button>
-              ) : null}
-            </div>
-          ) : null}
+          <div className="hidden items-center gap-3 md:flex">
+            {secondaryCta || cta ? (
+              <>
+                {secondaryCta ? (
+                  <Button href={secondaryCta.href} variant="outline">
+                    {secondaryCta.label}
+                  </Button>
+                ) : null}
+                {cta ? (
+                  <Button href={cta.href} variant="dark">
+                    {cta.label} →
+                  </Button>
+                ) : null}
+              </>
+            ) : null}
+            {locale && <LanguageSwitcher />}
+          </div>
 
           <button
             type="button"
-            aria-label="Toggle menu"
+            aria-label={ariaToggleMenu ?? t("toggleMenu")}
             aria-expanded={open}
             onClick={() => setOpen((value) => !value)}
             className="rounded-nav p-2 text-dark transition-colors motion-reduce:transition-none hover:bg-line/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark md:hidden"
@@ -106,7 +122,7 @@ export function Header({
       {open ? (
         <div className="border-t border-line bg-light md:hidden">
           <Container>
-            <nav aria-label="Main" className="flex flex-col gap-4 py-6">
+            <nav aria-label={ariaMain ?? t("main")} className="flex flex-col gap-4 py-6">
               {links.map((link) => (
                 <Link
                   key={link.href}
@@ -117,6 +133,11 @@ export function Header({
                   {link.label}
                 </Link>
               ))}
+              {locale && (
+                <div className="pt-2">
+                  <LanguageSwitcher />
+                </div>
+              )}
               {secondaryCta ? (
                 <Button
                   href={secondaryCta.href}

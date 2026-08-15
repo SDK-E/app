@@ -44,34 +44,3 @@ export function LegalList({ items }: { items: ReactNode[] }) {
 export function LegalDivider() {
   return <hr className="my-14 border-line" />;
 }
-
-export function LanguageLinks() {
-  return (
-    <nav aria-label="Language" className="mt-8 flex items-center gap-3">
-      <a
-        href="#fr"
-        className="text-label font-bold uppercase tracking-eyebrow text-dark transition-opacity motion-reduce:transition-none hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark"
-      >
-        Lire en français
-      </a>
-      <span aria-hidden className="text-micro text-muted-foreground">
-        /
-      </span>
-      <a
-        href="#en"
-        className="text-label font-bold uppercase tracking-eyebrow text-dark transition-opacity motion-reduce:transition-none hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark"
-      >
-        Read in English
-      </a>
-    </nav>
-  );
-}
-
-export function PendingReviewNote() {
-  return (
-    <p className="mt-8 max-w-[70ch] rounded-nav border border-line bg-light px-4 py-3 text-micro uppercase tracking-eyebrow text-dark">
-      Draft — legal text pending owner review / Brouillon — texte juridique en attente de
-      validation par le propriétaire.
-    </p>
-  );
-}

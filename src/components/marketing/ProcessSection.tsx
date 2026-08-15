@@ -1,33 +1,14 @@
 import { Section } from "@/components/layout/Section";
 import { SectionHeader } from "@/components/layout/SectionHeader";
+import { getTranslations } from "next-intl/server";
 
-const steps = [
-  {
-    title: "Understand",
-    copy: "Business goal, stack, constraints and success criteria.",
-  },
-  {
-    title: "Design",
-    copy: "Architecture, scope, risks and milestones.",
-  },
-  {
-    title: "Build",
-    copy: "Implementation with visible progress.",
-  },
-  {
-    title: "Handover",
-    copy: "Deploy, document and transfer ownership.",
-  },
-];
+export default async function ProcessSection({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: "process" });
+  const steps = t.raw("items") as Array<{ title: string; copy: string }>;
 
-export default function ProcessSection() {
   return (
     <Section id="process">
-      <SectionHeader
-        eyebrow="How we work"
-        title="A clear path from problem to production."
-        intro="Four steps, visible progress at every stage."
-      />
+      <SectionHeader eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-[14px]">
         {steps.map((step, index) => (
           <div key={step.title} className="border-t-2 border-dark pt-4">

@@ -1,34 +1,15 @@
 import { Section } from "@/components/layout/Section";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { Card } from "@/components/ui/Card";
+import { getTranslations } from "next-intl/server";
 
-const scenarios = [
-  {
-    title: "A system too old to keep patching.",
-    copy: "You need a migration plan, not a wish — an audit of what runs, what breaks, and the order to move in.",
-  },
-  {
-    title: "Volume your current stack wasn't built for.",
-    copy: "Realtime ingestion, high-throughput backends and the infrastructure to keep them stable.",
-  },
-  {
-    title: "AI you can put to work.",
-    copy: "LLM integrations, agents and automation that change an internal workflow — not a demo that stops at the pitch.",
-  },
-  {
-    title: "A team that needs senior hands.",
-    copy: "Direct engineering delivery on your codebase, without a middle layer slowing decisions.",
-  },
-];
+export default async function EngagementsSection({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: "engagements" });
+  const scenarios = t.raw("items") as Array<{ title: string; copy: string }>;
 
-export default function EngagementsSection() {
   return (
     <Section id="work">
-      <SectionHeader
-        eyebrow="Work with SDK"
-        title="Bring a specific problem. Get a specific answer."
-        intro="You know when something in your stack is costing you. Here are the situations SDK is set up for."
-      />
+      <SectionHeader eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
       <div className="grid gap-3 lg:grid-cols-2">
         {scenarios.map((scenario, index) => (
           <Card

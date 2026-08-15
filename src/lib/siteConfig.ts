@@ -1,7 +1,5 @@
 export const siteConfig = {
   name: "SDK Enterprises",
-  description:
-    "French B2B engineering company. We build, modernize and operate software across the stack — backend platforms, cloud infrastructure, AI automation, realtime systems and internal tooling.",
   version: "0.1.0",
   contact: {
     company: "SADDEK Entreprises",
