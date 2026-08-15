@@ -15,6 +15,9 @@
     "prisma": {
       "command": "npx",
       "args": ["prisma", "mcp"]
+    },
+    "gh_grep": {
+      "url": "https://mcp.grep.app"
     }
   }
 }

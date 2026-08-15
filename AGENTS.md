@@ -14,6 +14,23 @@ Any agent can start using them right after `npm install` — no API keys require
   login flow).
 - **prisma** — Prisma CLI operations (migrate, generate, studio) directly from
   the agent. Reads this project's `prisma.config.ts`.
+- **gh_grep** — real-world code examples from GitHub (grep.app). Use when
+  unsure how something is done in practice.
+
+## Docs
+
+`docs/` is the source of truth for how this codebase is built. Read the
+relevant file before touching code:
+
+- `docs/conventions/structure.md` — directory layout, component/route/env
+  conventions, commit-message style (mandatory).
+- `docs/conventions/env.md` — every env var, its requirement level, and local
+  setup.
+- `docs/architecture/*` — auth, RBAC, identity, resource isolation.
+- `docs/adr/*` — decisions behind the stack (Auth0, role model, isolation,
+  database choice).
+
+In opencode, these are also exposed as an `@docs` reference.
 
 ## Skills
 
@@ -40,6 +57,6 @@ npx prisma db seed  # DEVELOPMENT ONLY
 
 ## Conventions
 
-Before touching code, read `docs/conventions/structure.md` — directory layout,
-component/route/env conventions and commit-message style are mandatory.
-All env vars are documented in `docs/conventions/env.md`.
+Follow the docs above: read `docs/conventions/structure.md` before writing any
+code — its directory layout, component/route/env conventions, and
+commit-message style are mandatory.

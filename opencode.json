@@ -16,9 +16,37 @@
     "prisma": {
       "type": "local",
       "command": ["npx", "prisma", "mcp"]
+    },
+    "gh_grep": {
+      "type": "remote",
+      "url": "https://mcp.grep.app"
     }
   },
   "skills": {
     "paths": [".agents/skills"]
+  },
+  "references": {
+    "docs": {
+      "path": "docs",
+      "description": "Project docs: conventions (structure, env), architecture, ADRs. Consult before writing code."
+    }
+  },
+  "command": {
+    "typecheck": {
+      "description": "Run the TypeScript compiler and fix any errors",
+      "template": "Run `npm run typecheck` and fix every type error it reports, following `docs/conventions/structure.md`."
+    },
+    "migrate": {
+      "description": "Create and apply a Prisma migration",
+      "template": "Create a Prisma migration named \"$ARGUMENTS\" using the prisma-next-migrations skill, then run `npx prisma migrate dev --name $ARGUMENTS` and `npx prisma generate`."
+    },
+    "test": {
+      "description": "Run the Vitest suite and fix failures",
+      "template": "Run `npm run test` and fix any failing tests."
+    },
+    "deploy": {
+      "description": "Deploy to Vercel",
+      "template": "Deploy the app to Vercel using the deploy-to-vercel skill and report the deployment URL."
+    }
   }
 }
