@@ -1,0 +1,10 @@
+#!/bin/sh
+# Pre-push hook: run the verification suite before pushing.
+# Installed via core.hooksPath (see package.json "prepare" script).
+set -e
+
+echo "[pre-push] Running typecheck, lint, and tests..."
+npm run typecheck
+npm run lint
+npm run test:run
+echo "[pre-push] All checks passed."
