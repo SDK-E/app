@@ -664,19 +664,19 @@ async function main() {
   await createMemberships(companies, users);
 
   console.log("[DEV SEED] Creating requests...");
-  const requestsResult = await createRequests(companies, users);
+  await createRequests(companies, users);
   const requests = await prisma.request.findMany({
     where: { companyId: { in: companies.map((c) => c.id) } },
   });
 
   console.log("[DEV SEED] Creating projects...");
-  const projectsResult = await createProjects(companies, requests, users);
+  await createProjects(companies, requests, users);
   const projects = await prisma.project.findMany({
     where: { companyId: { in: companies.map((c) => c.id) } },
   });
 
   console.log("[DEV SEED] Creating milestones...");
-  const milestonesResult = await createMilestones(companies, projects);
+  await createMilestones(companies, projects);
   const milestones = await prisma.milestone.findMany({
     where: { companyId: { in: companies.map((c) => c.id) } },
   });

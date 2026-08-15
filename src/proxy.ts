@@ -2,7 +2,7 @@ import { getAuth0Client } from "@/lib/auth";
 import { NextRequest, NextResponse } from "next/server";
 import type { UserRole } from "@/types";
 
-const PUBLIC_ROUTES = ["/login", "/api/auth/*", "/favicon.ico"];
+const PUBLIC_ROUTES = ["/login", "/auth/*", "/favicon.ico"];
 const ADMIN_ROUTES = ["/app/admin/*"];
 
 function matchesRoute(pathname: string, patterns: string[]): boolean {
@@ -17,6 +17,10 @@ function matchesRoute(pathname: string, patterns: string[]): boolean {
 
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  if (pathname.startsWith("/auth")) {
+    return getAuth0Client().middleware(request);
+  }
 
   if (matchesRoute(pathname, PUBLIC_ROUTES)) {
     return NextResponse.next();
