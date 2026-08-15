@@ -101,7 +101,7 @@ export default function PrivacyPage() {
           Certains sous-traitants peuvent traiter des données en dehors de l&apos;Espace
           économique européen (notamment aux États-Unis). Dans ce cas, des garanties
           appropriées sont mises en œuvre, telles que les clauses contractuelles types de
-          la Commission européenne. <em>[Détails à confirmer par le propriétaire.]</em>
+          la Commission européenne.
         </LegalParagraph>
 
         <LegalH2>Durée de conservation</LegalH2>
@@ -211,8 +211,7 @@ export default function PrivacyPage() {
         <LegalParagraph>
           Some processors may process data outside the European Economic Area (notably in
           the United States). Where this occurs, appropriate safeguards are used, such as
-          the European Commission&apos;s standard contractual clauses.{" "}
-          <em>[Details to be confirmed by the owner.]</em>
+          the European Commission&apos;s standard contractual clauses.
         </LegalParagraph>
 
         <LegalH2>Retention</LegalH2>

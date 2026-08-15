@@ -78,7 +78,6 @@ export default function TermsPage() {
         <LegalParagraph>
           Les présentes conditions sont régies par le droit français. En cas de litige,
           les tribunaux français sont compétents.
-          <em> [Clause à valider par le propriétaire ou un professionnel.]</em>
         </LegalParagraph>
 
         <LegalH2>Contact</LegalH2>
@@ -138,8 +137,7 @@ export default function TermsPage() {
         <LegalH2>Governing law</LegalH2>
         <LegalParagraph>
           These terms are governed by French law. In the event of a dispute, the French
-          courts have jurisdiction.{" "}
-          <em> [Clause to be validated by the owner or a professional.]</em>
+          courts have jurisdiction.
         </LegalParagraph>
 
         <LegalH2>Contact</LegalH2>

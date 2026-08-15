@@ -43,7 +43,6 @@ export default function MentionsLegalesPage() {
             </>,
             <>
               Immatriculation : RCS Paris 850 513 912
-              <em> [à confirmer par le propriétaire]</em>
             </>,
           ]}
         />
@@ -54,8 +53,7 @@ export default function MentionsLegalesPage() {
         <LegalH2>Hébergement</LegalH2>
         <LegalParagraph>
           Le site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA
-          91723, États-Unis
-          <em> [adresse indiquée sur vercel.com/legal/terms]</em>.
+          91723, États-Unis.
         </LegalParagraph>
         <LegalH2>Contact</LegalH2>
         <LegalParagraph>
@@ -95,8 +93,7 @@ export default function MentionsLegalesPage() {
               Legal form and share capital: Auto-entrepreneur (sole trader, micro-entreprise), no share capital
             </>,
             <>
-              Company registration: RCS Paris 850 513 912{" "}
-              <em>[to be confirmed by the owner]</em>
+              Company registration: RCS Paris 850 513 912
             </>,
           ]}
         />
@@ -107,8 +104,7 @@ export default function MentionsLegalesPage() {
         <LegalH2>Hosting</LegalH2>
         <LegalParagraph>
           The site is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA
-          91723, United States
-          <em> [address as stated on vercel.com/legal/terms]</em>.
+          91723, United States.
         </LegalParagraph>
         <LegalH2>Contact</LegalH2>
         <LegalParagraph>
