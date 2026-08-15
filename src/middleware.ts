@@ -1,4 +1,4 @@
-import { auth0 } from "@/lib/auth";
+import { getAuth0Client } from "@/lib/auth";
 import { NextRequest, NextResponse } from "next/server";
 import type { UserRole } from "@/types";
 
@@ -22,7 +22,7 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const session = await auth0.getSession(request);
+  const session = await getAuth0Client().getSession(request);
 
   if (!session) {
     const loginUrl = new URL("/login", request.url);
