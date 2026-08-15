@@ -26,7 +26,7 @@ export default async function LandingPage({
           { label: t("about"), href: "#about" },
         ]}
         cta={{ label: t("discussProject"), href: "#about" }}
-        secondaryCta={{ label: t("signIn"), href: "/login" }}
+        secondaryCta={{ label: t("signIn"), href: `/${locale}/login` }}
         translationsNamespace="nav"
         locale={locale}
       />
