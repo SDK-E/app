@@ -8,6 +8,7 @@ import { locales, Locale } from "@/i18n";
 import { getSiteUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/siteConfig";
 import "../globals.css";
+import {SpeedInsights} from "@vercel/speed-insights/next";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains",
@@ -80,6 +81,7 @@ export default async function RootLayout({
           {children}
         </NextIntlClientProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
