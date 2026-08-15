@@ -7,11 +7,54 @@ import {
   LegalTitle,
 } from "@/components/marketing/LegalText";
 import { getTranslations } from "next-intl/server";
+import { siteConfig } from "@/lib/siteConfig";
+import { breadcrumbListJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Cookie policy — SDK Enterprises",
-  description: "Cookie policy for the SDK Enterprises website.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "legal.cookies" });
+  const title = t("title");
+  const description = t("intro");
+
+  return {
+    title: `${title} — ${siteConfig.name}`,
+    description,
+    alternates: {
+      canonical: `/${locale}/cookies`,
+      languages: {
+        en: "/en/cookies",
+        fr: "/fr/cookies",
+      },
+    },
+    openGraph: {
+      title: `${title} — ${siteConfig.name}`,
+      description,
+      siteName: siteConfig.name,
+      url: `/${locale}/cookies`,
+      images: [{ url: "/brand/sdk-thumbnail-light.png", width: 1200, height: 628 }],
+      locale: locale === "fr" ? "fr_FR" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} — ${siteConfig.name}`,
+      description,
+      images: ["/brand/sdk-thumbnail-light.png"],
+    },
+    other: {
+      "script:ld+json": JSON.stringify(
+        breadcrumbListJsonLd([
+          { name: "Home", url: "/" },
+          { name: title, url: "/cookies" },
+        ])
+      ),
+    },
+  };
+}
 
 export default async function CookiesPage({
   params,

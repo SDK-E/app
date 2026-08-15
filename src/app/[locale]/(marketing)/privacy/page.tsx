@@ -9,11 +9,53 @@ import {
 } from "@/components/marketing/LegalText";
 import { siteConfig } from "@/lib/siteConfig";
 import { getTranslations } from "next-intl/server";
+import { breadcrumbListJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy policy — SDK Enterprises",
-  description: "Privacy policy (RGPD / GDPR) for the SDK Enterprises website.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "legal.privacy" });
+  const title = t("title");
+  const description = t("intro");
+
+  return {
+    title: `${title} — ${siteConfig.name}`,
+    description,
+    alternates: {
+      canonical: `/${locale}/privacy`,
+      languages: {
+        en: "/en/privacy",
+        fr: "/fr/privacy",
+      },
+    },
+    openGraph: {
+      title: `${title} — ${siteConfig.name}`,
+      description,
+      siteName: siteConfig.name,
+      url: `/${locale}/privacy`,
+      images: [{ url: "/brand/sdk-thumbnail-light.png", width: 1200, height: 628 }],
+      locale: locale === "fr" ? "fr_FR" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} — ${siteConfig.name}`,
+      description,
+      images: ["/brand/sdk-thumbnail-light.png"],
+    },
+    other: {
+      "script:ld+json": JSON.stringify(
+        breadcrumbListJsonLd([
+          { name: "Home", url: "/" },
+          { name: title, url: "/privacy" },
+        ])
+      ),
+    },
+  };
+}
 
 export default async function PrivacyPage({
   params,

@@ -5,6 +5,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { locales, Locale } from "@/i18n";
+import { getSiteUrl } from "@/lib/seo";
+import { siteConfig } from "@/lib/siteConfig";
 import "../globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -24,9 +26,35 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
+  const title = t("title");
+  const description = t("siteDescription");
+
   return {
-    title: t("title"),
-    description: t("siteDescription"),
+    title,
+    description,
+    metadataBase: new URL(getSiteUrl()),
+    alternates: {
+      canonical: `/${locale}/`,
+      languages: {
+        en: "/en/",
+        fr: "/fr/",
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      siteName: siteConfig.name,
+      url: `/${locale}/`,
+      images: [{ url: "/brand/sdk-thumbnail-light.png", width: 1200, height: 628 }],
+      locale: locale === "fr" ? "fr_FR" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/brand/sdk-thumbnail-light.png"],
+    },
   };
 }
 

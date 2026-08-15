@@ -14,7 +14,11 @@ const PUBLIC_ROUTES = [
   "/privacy",
   "/terms",
   "/cookies",
+  "/robots.txt",
+  "/sitemap.xml",
+  "/llms.txt",
 ];
+const STATIC_PUBLIC_ROUTES = ["/robots.txt", "/sitemap.xml", "/llms.txt"];
 const ADMIN_ROUTES = ["/app/admin/*"];
 
 const i18nMiddleware = createMiddleware(routing);
@@ -43,6 +47,10 @@ export async function proxy(request: NextRequest) {
 
   if (pathname.startsWith("/auth")) {
     return getAuth0Client().middleware(request);
+  }
+
+  if (STATIC_PUBLIC_ROUTES.some((route) => pathname === route)) {
+    return NextResponse.next();
   }
 
   const i18nResponse = i18nMiddleware(request);

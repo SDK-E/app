@@ -10,10 +10,21 @@ import { EmptyState } from "@/components/ui/EmptyState";
 import { ErrorState } from "@/components/ui/ErrorState";
 import { Skeleton } from "@/components/ui/Skeleton";
 
-export const metadata: Metadata = {
-  title: "Design System — SDK Enterprises",
-  robots: { index: false, follow: false },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: "Design System — SDK Enterprises",
+    description: "The shared visual foundation for the website and client portal.",
+    alternates: {
+      canonical: `/${locale}/design-system`,
+    },
+    robots: { index: false, follow: false },
+  };
+}
 
 const palette: { token: string; value: string; className: string }[] = [
   { token: "dark", value: "#082003", className: "bg-dark" },
