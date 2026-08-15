@@ -29,8 +29,8 @@ export async function proxy(request: NextRequest) {
   const session = await getAuth0Client().getSession(request);
 
   if (!session) {
-    const loginUrl = new URL("/login", request.url);
-    loginUrl.searchParams.set("callbackUrl", request.url);
+    const loginUrl = new URL("/auth/login", request.url);
+    loginUrl.searchParams.set("returnTo", request.url);
     return NextResponse.redirect(loginUrl);
   }
 
