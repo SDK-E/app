@@ -11,7 +11,7 @@
     },
     "playwright": {
       "type": "local",
-      "command": ["npx", "-y", "@playwright/mcp@latest"]
+      "command": ["npx", "-y", "@playwright/mcp@latest", "--browser", "chromium"]
     },
     "prisma": {
       "type": "local",
