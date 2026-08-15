@@ -20,3 +20,18 @@ export interface PaginatedResult<T> {
 export type Result<T, E = Error> =
   | { ok: true; value: T }
   | { ok: false; error: E };
+
+export type UserRole = "owner" | "admin" | "member" | "viewer";
+
+export interface AppUser {
+  id: string;
+  email: string;
+  name: string;
+  role: UserRole;
+  companyId: string;
+}
+
+export interface AppSession {
+  user: AppUser;
+  accessToken?: string;
+}
