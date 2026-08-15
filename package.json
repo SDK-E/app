@@ -17,13 +17,10 @@
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "dotenv": "^16.6.1",
-    "next": "15.5.23",
+    "next": "16.3.1",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "zod": "^4.4.3"
-  },
-  "overrides": {
-    "undici": "7.9.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -36,16 +33,24 @@
     "@types/react-dom": "^19",
     "dotenv": "^16.4.7",
     "eslint": "^9",
-    "eslint-config-next": "15.5.23",
-    "jsdom": "24.0.0",
+    "eslint-config-next": "16.3.1",
+    "jsdom": "^28.1.0",
     "prisma": "^7.9.1",
     "tailwindcss": "^4",
     "tsx": "^4.7.0",
     "typescript": "^5",
-    "undici": "7.9.0",
+    "undici": "7.29.0",
     "vitest": "^4.1.10"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
+  },
+  "allowScripts": {
+    "@prisma/engines@7.9.1": true,
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.3": true,
+    "prisma@7.9.1": true,
+    "sharp@0.34.5": true,
+    "unrs-resolver@1.12.2": true
   }
 }

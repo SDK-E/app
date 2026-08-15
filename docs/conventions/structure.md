@@ -6,7 +6,7 @@ refer back here — do not guess.
 
 ## 1. Directory Layout
 
-The project is a Next.js 15 application (App Router) with TypeScript, Tailwind
+The project is a Next.js 16 application (App Router) with TypeScript, Tailwind
 CSS, and ESLint. Application code lives under `src/`; the path alias `@/*`
 maps to `./src/*`.
 
@@ -35,7 +35,7 @@ maps to `./src/*`.
 │   │   └── env.ts              # Centralized env var access + validation
 │   ├── hooks/                  # Shared React hooks (useX.ts)
 │   ├── types/                  # Shared TypeScript types & schemas
-│   └── middleware.ts           # Next.js middleware (if needed)
+│   └── proxy.ts                 # Next.js proxy (formerly middleware) (if needed)
 ├── prisma/                     # Prisma ORM (schema + migrations)
 │   ├── schema.prisma
 │   └── migrations/

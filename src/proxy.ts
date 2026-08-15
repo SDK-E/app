@@ -15,7 +15,7 @@ function matchesRoute(pathname: string, patterns: string[]): boolean {
   });
 }
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   if (matchesRoute(pathname, PUBLIC_ROUTES)) {

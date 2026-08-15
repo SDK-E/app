@@ -1,6 +1,6 @@
 # SDK Enterprises - Client Platform
 
-Production-grade SDK foundation for enterprise applications, built with Next.js 15, TypeScript, and Auth0.
+Production-grade SDK foundation for enterprise applications, built with Next.js 16, TypeScript, and Auth0.
 
 ## Conventions
 
@@ -56,7 +56,7 @@ npx prisma db seed # Populate development database with seed data
 
 ## Tech Stack
 
-- **Framework:** Next.js 15 (App Router)
+- **Framework:** Next.js 16 (App Router)
 - **Language:** TypeScript
 - **Authentication:** Auth0
 - **Testing:** Vitest + Testing Library

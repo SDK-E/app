@@ -19,7 +19,7 @@ The platform is a B2B application with two disjoint user categories:
 All client data is scoped to a company. SDK staff have cross-company access
 governed by their staff role.
 
-**Tech stack:** Next.js 15, TypeScript, Tailwind CSS, Prisma (PostgreSQL), Auth0.
+**Tech stack:** Next.js 16, TypeScript, Tailwind CSS, Prisma (PostgreSQL), Auth0.
 
 ---
 
@@ -278,7 +278,7 @@ permissions; all checks happen server-side.
 
 ### Enforcement Layers
 
-1. **Next.js Middleware** — Coarse access control (public, authenticated, admin, client routes).
+1. **Next.js Proxy (Middleware)** — Coarse access control (public, authenticated, admin, client routes).
 2. **Server Actions** — Guard functions enforce role and permission checks.
 3. **API Route Handlers** — Same guard pattern as server actions.
 
@@ -315,13 +315,13 @@ immutable after creation.
 
 ## 11. Project Structure
 
-The project follows Next.js 15 App Router conventions:
+The project follows Next.js 16 App Router conventions:
 
 - `src/app/` — routes and layouts
 - `src/components/` — shared React components
 - `src/lib/` — server-only utilities (auth, env, data access)
 - `src/types/` — shared TypeScript types
-- Middleware layer — Next.js middleware for route-level access control
+- Proxy layer — Next.js proxy (formerly middleware) for route-level access control
 - `prisma/` — Prisma schema and migrations
 - `docs/` — project documentation
 

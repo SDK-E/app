@@ -8,7 +8,7 @@ There are two disjoint user categories, each with its own role hierarchy:
 - **SDK staff** — platform-level operators with no company association.
 - **Client users** — belong to exactly one `Company` via a `Membership`.
 
-Permissions are checked at three boundaries: Next.js middleware, server
+Permissions are checked at three boundaries: Next.js proxy, server
 actions, and API route handlers. No client-side code enforces permissions;
 all checks happen server-side.
 
@@ -207,24 +207,24 @@ VIEWER
 ## 6. Permission Enforcement Strategy
 
 All permission checks are server-side. The application enforces access at
-three layers: middleware, server actions, and API route handlers.
+three layers: proxy, server actions, and API route handlers.
 
-### 6.1 Next.js Middleware
+### 6.1 Next.js Proxy (Middleware)
 
-`src/middleware.ts` protects route segments based on authentication state
-and rough role categories. Middleware handles coarse access control:
+`src/proxy.ts` protects route segments based on authentication state
+and rough role categories. The proxy handles coarse access control:
 
 - **Public routes**: Landing page, login, signup. No session required.
 - **Authenticated routes**: Dashboard, client app. Require a valid session.
 - **Admin routes**: `/admin/**`. Require `isSdkStaff === true`.
 - **Client routes**: `/app/**`. Require an active `Membership` (non-staff).
 
-Middleware does **not** check fine-grained permissions (e.g., can the user
+The proxy does **not** check fine-grained permissions (e.g., can the user
 delete a project?). It only ensures the user is authenticated and in the
 right broad category.
 
 ```typescript
-// Conceptual middleware flow
+// Conceptual proxy flow
 const session = await getSession(request)
 
 if (isPublicRoute(pathname)) {
