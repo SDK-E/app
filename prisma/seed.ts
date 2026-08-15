@@ -407,11 +407,10 @@ async function createDocuments(
 
     for (let i = 0; i < numDocs; i++) {
       const project = companyProjects[Math.floor(Math.random() * companyProjects.length)];
+      const projectMilestones = companyMilestones.filter((m) => m.projectId === project.id);
       const milestone =
-        project && companyMilestones.filter((m) => m.projectId === project.id).length > 0
-          ? companyMilestones.filter((m) => m.projectId === project.id)[
-              Math.floor(Math.random() * companyMilestones.filter((m) => m.projectId === project.id).length)
-            ]
+        project && projectMilestones.length > 0
+          ? projectMilestones[Math.floor(Math.random() * projectMilestones.length)]
           : undefined;
       const request =
         companyRequests.length > 0 && Math.random() > 0.5
@@ -479,11 +478,10 @@ async function createMessages(
 
     for (let i = 0; i < numMessages; i++) {
       const project = companyProjects[Math.floor(Math.random() * companyProjects.length)];
+      const projectMilestones = companyMilestones.filter((m) => m.projectId === project.id);
       const milestone =
-        project && companyMilestones.filter((m) => m.projectId === project.id).length > 0
-          ? companyMilestones.filter((m) => m.projectId === project.id)[
-              Math.floor(Math.random() * companyMilestones.filter((m) => m.projectId === project.id).length)
-            ]
+        project && projectMilestones.length > 0
+          ? projectMilestones[Math.floor(Math.random() * projectMilestones.length)]
           : undefined;
       const request =
         companyRequests.length > 0 && Math.random() > 0.5
@@ -502,25 +500,6 @@ async function createMessages(
     }
   }
 
-  // Add a few replies
-  const allCreatedMessages = await prisma.message.findMany({
-    where: { content: { startsWith: "[DEV SEED]" } },
-    take: 10,
-  });
-
-  for (const msg of allCreatedMessages.slice(0, 5)) {
-    messages.push({
-      companyId: msg.companyId,
-      projectId: msg.projectId ?? undefined,
-      milestoneId: msg.milestoneId ?? undefined,
-      requestId: msg.requestId ?? undefined,
-      content: `[DEV SEED REPLY] Thanks for the update!`,
-      authorId: users[Math.floor(Math.random() * users.length)].id,
-      parentMessageId: msg.id,
-      status: randomEnum(messageStatuses),
-    });
-  }
-
   const uniqueMessages = messages.filter(
     (m, index, self) =>
       index ===
@@ -536,8 +515,32 @@ async function createMessages(
       )
   );
 
-  return prisma.message.createMany({
+  await prisma.message.createMany({
     data: uniqueMessages,
+    skipDuplicates: true,
+  });
+
+  const allCreatedMessages = await prisma.message.findMany({
+    where: { content: { startsWith: "[DEV SEED]" } },
+    take: 10,
+  });
+
+  const replies = [];
+  for (const msg of allCreatedMessages.slice(0, 5)) {
+    replies.push({
+      companyId: msg.companyId,
+      projectId: msg.projectId ?? undefined,
+      milestoneId: msg.milestoneId ?? undefined,
+      requestId: msg.requestId ?? undefined,
+      content: `[DEV SEED REPLY] Thanks for the update!`,
+      authorId: users[Math.floor(Math.random() * users.length)].id,
+      parentMessageId: msg.id,
+      status: randomEnum(messageStatuses),
+    });
+  }
+
+  await prisma.message.createMany({
+    data: replies,
     skipDuplicates: true,
   });
 }
@@ -554,7 +557,7 @@ async function createInvoices(
     projectId?: string;
     milestoneId?: string;
     requestId?: string;
-    amount: import("@prisma/client/runtime/library").Prisma.Decimal;
+    amount: Decimal;
     currency: string;
     status: InvoiceStatus;
     dueDate?: Date;
@@ -580,11 +583,10 @@ async function createInvoices(
 
     for (let i = 0; i < numInvoices; i++) {
       const project = companyProjects[Math.floor(Math.random() * companyProjects.length)];
+      const projectMilestones = companyMilestones.filter((m) => m.projectId === project.id);
       const milestone =
-        project && companyMilestones.filter((m) => m.projectId === project.id).length > 0
-          ? companyMilestones.filter((m) => m.projectId === project.id)[
-              Math.floor(Math.random() * companyMilestones.filter((m) => m.projectId === project.id).length)
-            ]
+        project && projectMilestones.length > 0
+          ? projectMilestones[Math.floor(Math.random() * projectMilestones.length)]
           : undefined;
       const request =
         companyRequests.length > 0 && Math.random() > 0.5
@@ -628,13 +630,20 @@ async function main() {
 
   // Clear existing seed data
   console.log("[DEV SEED] Cleaning existing development data...");
+
+  const seedUsers = await prisma.user.findMany({
+    where: { email: { in: DEV_EMAILS } },
+    select: { id: true },
+  });
+  const seedUserIds = seedUsers.map((u) => u.id);
+
   await prisma.invoice.deleteMany({ where: { createdBy: { startsWith: "auth0|dev-seed" } } });
   await prisma.message.deleteMany({ where: { content: { startsWith: "[DEV SEED]" } } });
   await prisma.document.deleteMany({ where: { storageKey: { startsWith: "dev-seed/" } } });
   await prisma.milestone.deleteMany({ where: { name: { startsWith: "Requirements finalization" } } });
   await prisma.project.deleteMany({ where: { name: { startsWith: "Platform migration" } } });
   await prisma.request.deleteMany({ where: { title: { startsWith: "Upgrade cloud infrastructure" } } });
-  await prisma.membership.deleteMany({ where: { invitedBy: { not: null } } });
+  await prisma.membership.deleteMany({ where: { userId: { in: seedUserIds } } });
   await prisma.user.deleteMany({ where: { email: { in: DEV_EMAILS } } });
   await prisma.company.deleteMany({ where: { slug: { in: ["acme-corp", "globex", "initech", "hooli"] } } });
 
