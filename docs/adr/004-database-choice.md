@@ -90,4 +90,3 @@ database is managed PostgreSQL. The Prisma schema is written for PostgreSQL.
 ## References
 
 - [docs/data-strategy.md](../data-strategy.md)
-- [prisma/schema.prisma](../prisma/schema.prisma)

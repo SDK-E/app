@@ -58,9 +58,7 @@ Our database is the source of truth for identity and company associations.
 | `DATABASE_URL` | PostgreSQL connection string | Yes |
 | `NODE_ENV` | Environment mode | No |
 
-All environment variables are read through a single validated access point
-(`src/lib/env.ts`). Code must never call `process.env` directly. Missing
-production variables cause the application to fail at startup.
+All environment variables must be validated at startup. Code must never call `process.env` directly. Missing production variables cause the application to fail at startup.
 
 **Reference:** [docs/data-strategy.md](../data-strategy.md)
 
@@ -245,30 +243,31 @@ the Prisma schema and the documented identity model.
 ### Current Types
 
 ```typescript
-export type UserRole = "owner" | "admin" | "member" | "viewer";
-
-export interface AppUser {
+export interface BaseEntity {
   id: string;
-  email: string;
-  name: string;
-  role: UserRole;
-  companyId: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
-export interface AppSession {
-  user: AppUser;
-  accessToken?: string;
+export interface ApiResponse<T> {
+  data: T;
+  message?: string;
+}
+
+export interface PaginatedResult<T> {
+  data: T[];
+  total: number;
+  page: number;
+  pageSize: number;
+  totalPages: number;
 }
 ```
 
 ### Known Gaps
 
-- `UserRole` does not match documented `ClientRole` or `SdkStaffRole` enums.
-- `AppUser.companyId` is required, but SDK staff should have no companyId.
-- `AppSession` lacks `isSdkStaff`, `sdkStaffRole`, and `membershipRole`.
-- Auth guards (`requireStaffRole`) are documented but not implemented.
-
-**See Open Questions below.**
+- No role enums exist in the type system. `ClientRole` and `SdkStaffRole` must be added to match the domain model.
+- No `User` or `Session` interfaces exist. These must be added to represent the identity and session models.
+- Auth guard functions are not yet implemented.
 
 ---
 
@@ -280,7 +279,7 @@ permissions; all checks happen server-side.
 ### Enforcement Layers
 
 1. **Next.js Middleware** — Coarse access control (public, authenticated, admin, client routes).
-2. **Server Actions** — Guard functions from `src/lib/auth-guards.ts`.
+2. **Server Actions** — Guard functions enforce role and permission checks.
 3. **API Route Handlers** — Same guard pattern as server actions.
 
 ### Guard Functions
@@ -322,7 +321,7 @@ The project follows Next.js 15 App Router conventions:
 - `src/components/` — shared React components
 - `src/lib/` — server-only utilities (auth, env, data access)
 - `src/types/` — shared TypeScript types
-- `src/middleware.ts` — Next.js middleware
+- Middleware layer — Next.js middleware for route-level access control
 - `prisma/` — Prisma schema and migrations
 - `docs/` — project documentation
 
@@ -338,22 +337,18 @@ The project follows Next.js 15 App Router conventions:
    stored? The current Prisma schema has no field for SDK staff roles. Should there be
    a separate `StaffRole` table, or a `sdkStaffRole` enum on `User`?
 
-2. **Type system alignment** — `src/types/index.ts` defines `UserRole` as
-   `"owner" | "admin" | "member" | "viewer"`. This does not match the documented
-   `ClientRole` (`COMPANY_ADMIN`, `MEMBER`, `VIEWER`) or `SdkStaffRole`
-   (`SUPER_ADMIN`, `ADMIN`, `STAFF`). Should `UserRole` be split into two enums,
-   or renamed to match the domain model?
+2. **Type system alignment** — `src/types/index.ts` currently defines only `BaseEntity`, `ApiResponse`, and `PaginatedResult`. No role or user types exist yet. Should `ClientRole`, `SdkStaffRole`, `User`, and `Session` interfaces be added to match the domain model?
 
-3. **Session type alignment** — `AppSession` lacks `isSdkStaff`, `sdkStaffRole`,
-   and `membershipRole`. Should these be added to match the documented `SessionClaims`?
+3. **Session type alignment** — `src/types/index.ts` lacks a session type entirely. Should a session interface be added to represent `SessionClaims` with `isSdkStaff`, `sdkStaffRole`, and `membershipRole`?
 
-4. **`companyId` for SDK staff** — `AppUser.companyId` is currently a required
-   `string`, but SDK staff should not have a company. Should it be optional, or
-   should SDK staff be represented by a different interface?
+4. **`companyId` for SDK staff** — The identity model says SDK staff are
+   identified by having no Membership. No `User` interface exists in
+   `src/types/index.ts` yet. Should one be added with an optional `companyId`,
+   or should SDK staff be represented differently?
 
 5. **`requireStaffRole` implementation** — This guard is documented in the RBAC
-   design but not implemented in `src/lib/auth-guards.ts`. What is the priority
-   for implementation?
+   design but not implemented. No `src/lib/auth-guards.ts` file exists yet.
+   What is the priority for implementation?
 
 6. **`isSdkStaff` in the database** — The identity model says SDK staff are
    identified by having no Membership. Should an explicit `isSdkStaff` boolean
@@ -378,17 +373,6 @@ The project follows Next.js 15 App Router conventions:
 12. **Audit logging** — Where and how should authentication events and
     cross-company access by SDK staff be logged for compliance?
 
-### 12.2 Known Contradictions
-
-| Location A | Location B | Issue |
-|------------|------------|-------|
-| `src/types/index.ts:24` (`UserRole = "owner" \| "admin" \| "member" \| "viewer"`) | `docs/architecture/domain-model.md` (`ClientRole = COMPANY_ADMIN \| MEMBER \| VIEWER`) | Role names do not match |
-| `src/types/index.ts:24` (missing `SUPER_ADMIN`, `ADMIN`, `STAFF`) | `docs/architecture/rbac.md` (`SdkStaffRole`) | SDK staff roles not in type system |
-| `src/middleware.ts:34-35` (checks `owner`/`admin`) | `docs/architecture/rbac.md` (checks `COMPANY_ADMIN`, `SUPER_ADMIN`, `ADMIN`) | Middleware role names don't match documented roles |
-| `src/lib/auth-guards.ts` (no `requireStaffRole`) | `docs/architecture/rbac.md` (documents `requireStaffRole`) | Missing guard implementation |
-| `src/types/index.ts:31` (`companyId: string` required) | `docs/architecture/identity-model.md` (SDK staff have no companyId) | SDK staff cannot be represented by `AppUser` |
-| `prisma/schema.prisma` (no `sdkStaffRole` field) | `docs/architecture/identity-model.md` (SDK staff roles are `SUPER_ADMIN`, `ADMIN`, `STAFF`) | SDK staff roles not persisted in database |
-| `src/types/index.ts:34-36` (`AppSession` without `isSdkStaff`, `sdkStaffRole`) | `docs/architecture/auth-architecture.md` (`SessionClaims` includes these fields) | Session shape mismatch |
 
 ---
 

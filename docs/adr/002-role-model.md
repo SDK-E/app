@@ -82,16 +82,17 @@ enum SdkStaffRole {
   `sdkStaffRole` (SdkStaffRole) — **this field is not yet in the Prisma schema**.
 - The session must include both `membershipRole` and `sdkStaffRole`, plus
   `isSdkStaff` to disambiguate.
-- Type system must define two enums, not one. The current `UserRole` type in
-  `src/types/index.ts` is a placeholder that does not match this model.
+- Type system must define two enums, not one. The current types in
+  `src/types/index.ts` are generic (`BaseEntity`, `ApiResponse`, `PaginatedResult`)
+  and do not include any role or user types.
 - Middleware and auth guards must be updated to check both role enums.
 
 ## Implementation Notes
 
-- Add `SdkStaffRole` enum to `prisma/schema.prisma`.
+- Add `SdkStaffRole` enum to the Prisma schema.
 - Add `sdkStaffRole` field to `User` model.
 - Update `src/types/index.ts` to define `ClientRole` and `SdkStaffRole`.
-- Update middleware and auth guards to use the correct role enums.
+- Update middleware and server-side guards to use the correct role enums.
 
 ## Open Questions
 
