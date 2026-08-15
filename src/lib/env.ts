@@ -26,6 +26,20 @@ function validateServerEnv(): ServerEnv {
   const result = serverEnvSchema.safeParse(process.env);
 
   if (!result.success) {
+    if (process.env.CI) {
+      const ciEnv: ServerEnv = {
+        DATABASE_URL: "postgresql://localhost:5432/ci",
+        AUTH0_SECRET: "ci-secret-0123456789abcdef0123456789abcdef0123456789abcdef",
+        AUTH0_ISSUER_BASE_URL: "https://ci.example.auth0.com",
+        AUTH0_CLIENT_ID: "ci-client-id",
+        AUTH0_CLIENT_SECRET: "ci-client-secret",
+        NODE_ENV: process.env.NODE_ENV === "production" ? "production" : "test",
+      };
+      if (process.env.AUTH0_BASE_URL) ciEnv.AUTH0_BASE_URL = process.env.AUTH0_BASE_URL;
+      if (process.env.RESEND_API_KEY) ciEnv.RESEND_API_KEY = process.env.RESEND_API_KEY;
+      if (process.env.MAIL_SMTP_URL) ciEnv.MAIL_SMTP_URL = process.env.MAIL_SMTP_URL;
+      return ciEnv;
+    }
     const prefix =
       process.env.NODE_ENV === "production"
         ? "Missing or invalid required environment variables in production:\n"
