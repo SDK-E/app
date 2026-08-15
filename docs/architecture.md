@@ -347,8 +347,9 @@ The project follows Next.js 16 App Router conventions:
    or should SDK staff be represented differently?
 
 5. **`requireStaffRole` implementation** — This guard is documented in the RBAC
-   design but not implemented. No `src/lib/auth-guards.ts` file exists yet.
-   What is the priority for implementation?
+   design but not implemented. `src/lib/auth-guards.ts` exists and provides
+   `requireAuth`, `requireRole` and `requireCompanyAccess`; `requireStaffRole`
+   is the remaining one. What is the priority for implementation?
 
 6. **`isSdkStaff` in the database** — The identity model says SDK staff are
    identified by having no Membership. Should an explicit `isSdkStaff` boolean

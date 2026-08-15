@@ -2,7 +2,17 @@ import { NextRequest, NextResponse } from "next/server";
 import { getAuth0Client } from "@/lib/auth";
 import type { UserRole } from "@/types";
 
-const PUBLIC_ROUTES = ["/", "/login", "/auth/*", "/favicon.ico", "/design-system"];
+const PUBLIC_ROUTES = [
+  "/",
+  "/login",
+  "/auth/*",
+  "/favicon.ico",
+  "/design-system",
+  "/legal/*",
+  "/privacy",
+  "/terms",
+  "/cookies",
+];
 const ADMIN_ROUTES = ["/app/admin/*"];
 
 function matchesRoute(pathname: string, patterns: string[]): boolean {

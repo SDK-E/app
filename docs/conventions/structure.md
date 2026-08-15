@@ -39,6 +39,10 @@ maps to `./src/*`.
 ├── prisma/                     # Prisma ORM (schema + migrations)
 │   ├── schema.prisma
 │   └── migrations/
+├── scripts/                    # Dev tooling (run directly, not app code)
+│   ├── mail-sink.ts            # Local mail sink (SMTP + HTTP API, no UI)
+│   ├── mail-cli.ts             # npm run mail:list / mail:read / mail:wait / ...
+│   └── mail-mcp.ts             # maildev MCP server for agents
 ├── tests/                      # End-to-end tests (Playwright)
 │   ├── e2e/
 │   └── fixtures/
@@ -71,6 +75,7 @@ maps to `./src/*`.
 | React hooks | `src/hooks/**` | `@/hooks/**` |
 | Shared types/schemas | `src/types/**` | `@/types/**` |
 | Prisma schema & migrations | `prisma/**` | — |
+| Dev tooling (mail sink, CLI, MCP) | `scripts/**` | — |
 | E2E tests | `tests/**` | — |
 | Static assets (images, fonts) | `public/**` | `/...` |
 

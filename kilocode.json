@@ -1,5 +1,5 @@
 {
-  "$schema": "https://opencode.ai/config.json",
+  "$schema": "https://kilocode.ai/config.json",
   "mcp": {
     "context7": {
       "type": "local",

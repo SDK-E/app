@@ -16,6 +16,10 @@
       "command": "npx",
       "args": ["prisma", "mcp"]
     },
+    "maildev": {
+      "command": "node",
+      "args": ["scripts/mail-mcp.ts"]
+    },
     "gh_grep": {
       "url": "https://mcp.grep.app"
     }

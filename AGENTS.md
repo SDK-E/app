@@ -9,7 +9,8 @@ Do not assume versions — the exact stack is:
 - **Tailwind CSS v4** — styling only (no CSS modules, no styled-components)
 - **Prisma 7.9.1** (Postgres) — all data access; **zod 4.4.3** — all validation
 - **@auth0/nextjs-auth0 4.26.0** — authentication
-- **Vitest 4** + Testing Library — unit tests; Playwright — E2E (`tests/`)
+- **Vitest 4** + Testing Library — unit tests; Playwright — E2E via the MCP
+  server (no `playwright.config.ts` project config yet)
 - Path alias `@/*` → `./src/*`
 
 ## Coding standards (write standard, project-idiomatic code)
@@ -65,6 +66,9 @@ Prefer them over guessing: they are the cheapest way to avoid hallucinations.
   login flow).
 - **prisma** — Prisma CLI operations (migrate, generate, studio) directly from
   the agent. Reads this project's `prisma.config.ts`.
+- **maildev** — local dev mail sink: `list_emails`, `read_email`,
+  `clear_emails`, `wait_for_email`. Requires `npm run dev` (sink auto-starts).
+  Use it to verify the enquiry form's notification email — no UI.
 - **gh_grep** — real-world code examples from GitHub (grep.app). Use when
   unsure how something is done in practice.
 
@@ -86,8 +90,42 @@ relevant file before touching code:
   `docs/brand/` (canonical) / `public/brand/` (app copies). Approved combos:
   light wordmark on `#082003`, or dark wordmark on `#d7e8d3`; period always
   `#2cdb16`. Favicon is the compact `S.` mark (one S, one period).
+- `docs/design/design-system.md` — tokens, palette, type ramp, surfaces,
+  components, motion (mandatory before writing UI).
+- `docs/design/patterns.md` — focus/hover/disabled/loading/empty/error states,
+  form styling.
+- `docs/design/responsive.md` — breakpoints, grids, navigation, touch targets.
+- `docs/content/voice-and-standards.md` — voice, banned phrases, copy review
+  gate (mandatory before writing any copy).
+- `docs/content/marketing-architecture.md` — approved section map + DRAFT copy
+  for the public site.
+- `docs/content/site-map.md` — current state, target public pages, component
+  inventory, known foundation issues.
+- `docs/content/claims-and-evidence.md` — what SDK may and may not claim
+  publicly (mandatory before writing marketing copy; governs case studies).
+- `docs/content/start-a-project.md` — approved public enquiry form + delivery
+  spec (Enquiry table + Resend).
+- `docs/content/legal-pages.md` — legal page requirements + review flags.
 
 In opencode, these are also exposed as an `@docs` reference.
+
+## Public website guardrails
+
+- **Do not rebuild the foundation.** Tokens, shared components, brand assets,
+  the existing homepage and the marketing sections in `src/components/marketing/`
+  are deliberate. Compose new pages from them (`docs/content/site-map.md`).
+- **Never reuse fabricated proof points** from `docs/templates/*.html` (the
+  "600+ applications", banking/5G case studies and dashboard personas are
+  visual reference only — see `docs/content/claims-and-evidence.md`).
+- **Never invent** clients, testimonials, statistics, outcomes, partnerships,
+  awards, or company history.
+- **The enquiry form must really work** (Postgres `Enquiry` table + Resend
+  email per `docs/content/start-a-project.md`) — no fake submissions.
+- **Legal pages** must not invent compliance claims and are not "done" until
+  owner/professional review (`docs/content/legal-pages.md`).
+- Any new public route must be added to `PUBLIC_ROUTES` in `src/proxy.ts`.
+- Copy passes the review gate in `docs/content/voice-and-standards.md` §6
+  before it is treated as final.
 
 ## Skills
 
@@ -97,17 +135,24 @@ Skills live in `.agents/skills/` and are committed:
   `prisma-next-debug` — Prisma + Next.js workflows.
 - `deploy-to-vercel`, `vercel-cli-with-tokens` — Vercel deploys.
 - `author-auth0-skill` — Auth0.
+- `resend-email` — transactional email via Resend (the enquiry-form
+  notification pipeline).
 - opencode loads these via `skills.paths` in `opencode.json`; other agents
   scan `.agents/skills/` themselves.
 
 ## Project commands
 
 ```bash
-npm run dev         # Start dev server (Turbopack)
+npm run dev         # Start dev server (Turbopack) + local mail sink
 npm run build       # prisma generate + production build
 npm run lint        # ESLint
 npm run typecheck   # tsc --noEmit
 npm run test        # Vitest
+npm run mail        # Run the local mail sink standalone (SMTP :1025, HTTP API :1080)
+npm run mail:list   # List emails in the sink
+npm run mail:read -- <id>   # Read a sink email's full body
+npm run mail:wait "match"   # Block until a matching email arrives (verify the form)
+npm run mail:clear  # Empty the sink
 npx prisma migrate dev
 npx prisma db seed  # DEVELOPMENT ONLY
 ```

@@ -71,6 +71,17 @@ Applied `docs/content/voice-and-standards.md` §6 to
 - "About" nav item has no dedicated section yet (maps to contact band).
 - Proof points in `marketing-architecture.md` §4 need confirmation of truth
   before launch.
+- **Header active-nav token bug:** `Header.tsx` uses `text-accent` for the
+  active nav link; `--accent` in `:root` (`globals.css`) is `#d7e8d3` (light),
+  so the active state is invisible on the light header. `design-system.md`
+  says active nav should be `brand`, but its §2.1 forbids green text on light
+  surfaces (contrast ≈ 1.5:1). Needs a corrective bead that picks a
+  contrast-safe active state and updates the design-system doc.
+- **`Tag` primitive missing:** `design-system.md` §7 lists a `Tag` pill
+  component that is not implemented in `src/components/ui/`. Implement per
+  spec if needed, or reuse `Badge`/`micro` styling.
+- **Stale doc:** `docs/architecture.md` §12 says `src/lib/auth-guards.ts`
+  does not exist; it does. See `docs/content/site-map.md` §5.
 
 ## 6. Landing page (post-foundation)
 

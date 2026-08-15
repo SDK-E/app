@@ -8,7 +8,11 @@ document replaces them with honest positioning claims.
 
 > **Status: DRAFT.** This is a first pass. It must pass the copy review gate
 > (voice-and-standards.md §6) before any page implementation treats it as
-> final.
+> final. Claim rules: `docs/content/claims-and-evidence.md`. Page inventory and
+> current state: `docs/content/site-map.md`. The homepage sections below are
+> implemented at `src/app/(marketing)/page.tsx` using the shared sections in
+> `src/components/marketing/`; dedicated `/services`, `/work`, `/about`,
+> `/how-we-work` and `/start-a-project` pages build on them.
 
 ## Section map
 
