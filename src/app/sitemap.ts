@@ -19,15 +19,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const locale of translatedLocales) {
     for (const path of PUBLIC_PATHS) {
+      const localePath = `/${locale}${path === "/" ? "/" : path}`;
       entries.push({
-        url: `${base}/${locale}${path === "/" ? "" : path}`,
+        url: `${base}${localePath}`,
         lastModified: new Date(),
         changeFrequency: "monthly",
         priority: path === "/" ? 1 : 0.7,
         alternates: {
           languages: {
-            en: `${base}/en${path === "/" ? "" : path}`,
-            fr: `${base}/fr${path === "/" ? "" : path}`,
+            en: `${base}/en${path === "/" ? "/" : path}`,
+            fr: `${base}/fr${path === "/" ? "/" : path}`,
           },
         },
       });

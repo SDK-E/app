@@ -109,15 +109,17 @@ export function buildMetadata(params: {
 }): Metadata {
   const { title, description, path = "/", locale = "en", noIndex, robots, alternates } = params;
 
+  const canonicalPath = `/${locale}${path === "/" ? "/" : path}`;
+
   const metadata: Metadata = {
     metadataBase: new URL(getSiteUrl()),
     title,
     description,
     alternates: {
-      canonical: absoluteUrl(`/${locale}${path === "/" ? "" : path}`),
+      canonical: absoluteUrl(canonicalPath),
       languages: {
-        en: absoluteUrl("/en" + (path === "/" ? "" : path)),
-        fr: absoluteUrl("/fr" + (path === "/" ? "" : path)),
+        en: absoluteUrl(`/en${path === "/" ? "/" : path}`),
+        fr: absoluteUrl(`/fr${path === "/" ? "/" : path}`),
         ...alternates?.languages,
       },
       ...alternates,
@@ -126,8 +128,8 @@ export function buildMetadata(params: {
       ...defaultOg,
       title,
       description,
-      url: absoluteUrl(`/${locale}${path === "/" ? "" : path}`),
-      ...alternates?.canonical && { url: absoluteUrl(`/${locale}${path === "/" ? "" : path}`) },
+      url: absoluteUrl(canonicalPath),
+      ...alternates?.canonical && { url: absoluteUrl(canonicalPath) },
     },
     twitter: {
       ...defaultTwitter,
