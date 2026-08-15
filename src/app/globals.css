@@ -1,26 +1,47 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-background: #d7e8d3;
+  --color-foreground: #082003;
+  --color-dark: #082003;
+  --color-accent: #2cdb16;
+  --color-light: #d7e8d3;
+  --color-paper: #f8fbf7;
+  --color-muted: #536b4f;
+  --color-fog: #abc4a6;
+  --color-line: #9db497;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: var(--font-jetbrains);
+  --font-mono: var(--font-jetbrains);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --text-display: 4.75rem;
+  --text-display--line-height: 0.95;
+  --text-title: 3.25rem;
+  --text-title--line-height: 1;
+  --text-h1: 2.625rem;
+  --text-h1--line-height: 1.04;
+  --text-h3: 1.4375rem;
+  --text-h3--line-height: 1.12;
+  --text-lead: 1.125rem;
+  --text-lead--line-height: 1.7;
+  --text-body: 0.875rem;
+  --text-body--line-height: 1.7;
+  --text-label: 0.6875rem;
+  --text-micro: 0.625rem;
+
+  --tracking-display: -0.065em;
+  --tracking-title: -0.05em;
+  --tracking-h1: -0.045em;
+  --tracking-eyebrow: 0.14em;
+  --tracking-label: 0.11em;
+
+  --radius-card: 0.625rem;
+  --radius-control: 0.5rem;
+  --radius-nav: 0.4375rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-background);
+  color: var(--color-foreground);
   font-family: var(--font-sans);
 }

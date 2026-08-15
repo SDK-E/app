@@ -28,7 +28,7 @@
   "references": {
     "docs": {
       "path": "docs",
-      "description": "Project docs: conventions (structure, env), architecture, ADRs. Consult before writing code."
+      "description": "Project docs: conventions (structure, env), architecture, ADRs, design system (design/), content standards (content/). Consult before writing code or copy."
     }
   },
   "command": {

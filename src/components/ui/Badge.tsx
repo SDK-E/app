@@ -1,0 +1,25 @@
+export type BadgeTone = "live" | "review" | "neutral";
+
+const tones: Record<BadgeTone, string> = {
+  live: "bg-accent text-dark",
+  review: "border border-dark text-dark",
+  neutral: "border border-line text-muted",
+};
+
+export function Badge({
+  tone = "neutral",
+  className = "",
+  children,
+}: {
+  tone?: BadgeTone;
+  className?: string;
+  children: string;
+}) {
+  return (
+    <span
+      className={`inline-flex items-center rounded-control px-2 py-1 text-micro font-extrabold uppercase tracking-widest ${tones[tone]} ${className}`}
+    >
+      {children}
+    </span>
+  );
+}
