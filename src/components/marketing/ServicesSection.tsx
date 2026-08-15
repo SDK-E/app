@@ -55,12 +55,12 @@ export default function ServicesSection() {
             key={service.title}
             className="flex min-h-[250px] flex-col justify-between"
           >
-            <p className="text-micro font-bold uppercase tracking-label text-muted">
+            <p className="text-micro font-bold uppercase tracking-label text-muted-foreground">
               {service.number} / {service.category.toUpperCase()}
             </p>
             <div>
               <h3 className="mt-8 text-h3">{service.title}</h3>
-              <p className="mt-4 text-body text-muted">{service.copy}</p>
+              <p className="mt-4 text-body text-muted-foreground">{service.copy}</p>
             </div>
           </Card>
         ))}

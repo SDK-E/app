@@ -34,7 +34,7 @@ export default function ProcessSection() {
             <h3 className="text-lg font-extrabold">
               0{index + 1} · {step.title}
             </h3>
-            <p className="mt-3 text-body text-muted">{step.copy}</p>
+            <p className="mt-3 text-body text-muted-foreground">{step.copy}</p>
           </div>
         ))}
       </div>

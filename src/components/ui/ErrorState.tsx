@@ -16,7 +16,7 @@ export function ErrorState({
       </p>
       <h3 className="text-h3 text-dark">{title}</h3>
       {description ? (
-        <p className="max-w-md text-body text-muted">{description}</p>
+        <p className="max-w-md text-body text-muted-foreground">{description}</p>
       ) : null}
       {action}
     </div>

@@ -19,7 +19,7 @@ export default function Hero() {
           One engineering partner for the stack your company needs.
         </h1>
         <div>
-          <p className="text-body text-muted md:text-lead">
+          <p className="text-body text-muted-foreground md:text-lead">
             SDK Enterprises builds, modernizes and operates software across the
             stack — backend platforms, cloud infrastructure, AI automation,
             realtime systems and internal tooling. You engage on one
@@ -38,7 +38,7 @@ export default function Hero() {
         {trustItems.map((item) => (
           <p
             key={item}
-            className="border-t border-dark pt-3 text-micro text-muted"
+            className="border-t border-dark pt-3 text-micro text-muted-foreground"
           >
             {item}
           </p>

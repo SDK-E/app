@@ -35,7 +35,7 @@ export default function WhySdkSection() {
             key={proof.kicker}
             className="flex min-h-[175px] flex-col justify-between rounded-card border border-[#2f4d2b] p-5"
           >
-            <strong className="text-[32px] font-extrabold text-accent">
+            <strong className="text-[32px] font-extrabold text-brand">
               {proof.kicker}
             </strong>
             <span className="text-micro text-fog">{proof.copy}</span>

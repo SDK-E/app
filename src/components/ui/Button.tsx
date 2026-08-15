@@ -1,42 +1,67 @@
+import * as React from "react";
 import Link from "next/link";
-import type { ComponentProps, ReactNode } from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import { Slot } from "radix-ui";
 
-type Variant = "primary" | "outline" | "dark";
+import { cn } from "@/lib/utils";
 
-const variants: Record<Variant, string> = {
-  primary: "bg-accent text-dark hover:bg-accent/90",
-  outline: "border border-dark text-dark hover:bg-dark hover:text-light",
-  dark: "bg-dark text-light hover:bg-dark/90",
-};
-
-const base =
-  "inline-flex items-center justify-center gap-2 rounded-control px-[18px] py-[14px] text-label font-extrabold uppercase tracking-eyebrow transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark disabled:pointer-events-none disabled:opacity-50";
-
-export function Button({
-  variant = "primary",
-  href,
-  className = "",
-  children,
-  ...props
-}: {
-  variant?: Variant;
-  href?: string;
-  className?: string;
-  children: ReactNode;
-} & Omit<ComponentProps<"button">, "className" | "children" | "href">) {
-  const classes = `${base} ${variants[variant]} ${className}`;
-
-  if (href) {
-    return (
-      <Link href={href} className={classes}>
-        {children}
-      </Link>
-    );
+const buttonVariants = cva(
+  "group/button inline-flex shrink-0 items-center justify-center gap-2 rounded-control text-label font-extrabold uppercase tracking-eyebrow whitespace-nowrap transition-colors motion-reduce:transition-none outline-none select-none disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  {
+    variants: {
+      variant: {
+        default: "bg-brand text-dark hover:bg-brand/90",
+        outline: "border border-dark text-dark hover:bg-dark hover:text-light",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        dark: "bg-dark text-light hover:bg-dark/90",
+        ghost: "hover:bg-muted hover:text-foreground",
+        destructive: "bg-destructive/10 text-destructive hover:bg-destructive/20",
+        link: "text-brand underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "h-auto px-[18px] py-[14px]",
+        xs: "h-auto px-2.5 py-1",
+        sm: "h-auto px-3 py-1.5",
+        lg: "h-auto px-5 py-4",
+        icon: "size-8",
+        "icon-xs": "size-6",
+        "icon-sm": "size-7",
+        "icon-lg": "size-9",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
   }
+);
+
+function Button({
+  className,
+  variant = "default",
+  size = "default",
+  asChild = false,
+  href,
+  ...props
+}: React.ComponentProps<"button"> &
+  VariantProps<typeof buttonVariants> & {
+    asChild?: boolean;
+    href?: string;
+  }) {
+  let Comp: React.ElementType = "button";
+  if (href) Comp = Link;
+  else if (asChild) Comp = Slot.Root;
 
   return (
-    <button className={classes} {...props}>
-      {children}
-    </button>
+    <Comp
+      data-slot="button"
+      data-variant={variant}
+      data-size={size}
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...(href ? { href } : {})}
+      {...props}
+    />
   );
 }
+
+export { Button, buttonVariants };

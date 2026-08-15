@@ -1,12 +1,12 @@
 import type { ReactNode } from "react";
 import { Container } from "./Container";
 
-export type SectionTone = "light" | "dark" | "accent";
+export type SectionTone = "light" | "dark" | "brand";
 
 const toneClasses: Record<SectionTone, string> = {
   light: "bg-light text-dark",
   dark: "bg-dark text-light",
-  accent: "bg-accent text-dark",
+  brand: "bg-brand text-dark",
 };
 
 export function Section({

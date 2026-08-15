@@ -10,7 +10,7 @@ const contactLines = [
 
 export default function ContactSection() {
   return (
-    <Section id="about" tone="accent">
+    <Section id="about" tone="brand">
       <div className="grid items-end gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-[70px]">
         <div>
           <p className="text-label font-bold uppercase tracking-eyebrow text-dark">

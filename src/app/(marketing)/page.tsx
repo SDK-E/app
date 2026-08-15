@@ -18,6 +18,7 @@ export default function LandingPage() {
           { label: "About", href: "#about" },
         ]}
         cta={{ label: "Discuss a project", href: "#about" }}
+        secondaryCta={{ label: "Sign in", href: "/login" }}
       />
       <main>
         <Hero />

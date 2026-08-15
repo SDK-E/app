@@ -10,10 +10,12 @@ export type HeaderLink = { label: string; href: string };
 export function Header({
   links,
   cta,
+  secondaryCta,
   activeLabel,
 }: {
   links: HeaderLink[];
   cta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
   activeLabel?: string;
 }) {
   const [open, setOpen] = useState(false);
@@ -43,11 +45,18 @@ export function Header({
             ))}
           </nav>
 
-          {cta ? (
-            <div className="hidden md:block">
-              <Button href={cta.href} variant="dark">
-                {cta.label} →
-              </Button>
+          {secondaryCta || cta ? (
+            <div className="hidden items-center gap-3 md:flex">
+              {secondaryCta ? (
+                <Button href={secondaryCta.href} variant="outline">
+                  {secondaryCta.label}
+                </Button>
+              ) : null}
+              {cta ? (
+                <Button href={cta.href} variant="dark">
+                  {cta.label} →
+                </Button>
+              ) : null}
             </div>
           ) : null}
 
@@ -99,6 +108,15 @@ export function Header({
                   {link.label}
                 </Link>
               ))}
+              {secondaryCta ? (
+                <Button
+                  href={secondaryCta.href}
+                  variant="outline"
+                  className="mt-2"
+                >
+                  {secondaryCta.label}
+                </Button>
+              ) : null}
               {cta ? (
                 <Button href={cta.href} variant="dark" className="mt-2">
                   {cta.label} →

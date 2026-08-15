@@ -20,7 +20,7 @@ document replaces them with honest positioning claims.
 | 4 | Why SDK | Why should they trust SDK? | dark |
 | 5 | Engagements | When would someone hire SDK? | light |
 | 6 | Process | What happens next? How does it work? | light |
-| 7 | Contact | What happens next? | accent |
+| 7 | Contact | What happens next? | brand |
 | 8 | Footer | Legals + one-line identity | dark |
 
 ## 1. Header / nav

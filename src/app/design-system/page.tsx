@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 
 const palette: { token: string; value: string; className: string }[] = [
   { token: "dark", value: "#082003", className: "bg-dark" },
-  { token: "accent", value: "#2cdb16", className: "bg-accent" },
+  { token: "brand", value: "#2cdb16", className: "bg-brand" },
   { token: "light", value: "#d7e8d3", className: "bg-light border border-line" },
   { token: "paper", value: "#f8fbf7", className: "bg-paper border border-line" },
-  { token: "muted", value: "#536b4f", className: "bg-muted" },
+  { token: "muted", value: "#536b4f", className: "bg-muted-foreground" },
   { token: "fog", value: "#abc4a6", className: "bg-fog" },
   { token: "line", value: "#9db497", className: "bg-line" },
 ];
@@ -68,7 +68,7 @@ export default function DesignSystemPage() {
         <SectionHeader
           eyebrow="01 · Palette"
           title="A small palette, used with intent."
-          intro="Accent green is for actions and meaningful highlights only — never decoration. Green backgrounds always carry dark text; green text only appears on dark surfaces."
+          intro="Brand green is for actions and meaningful highlights only — never decoration. Green backgrounds always carry dark text; green text only appears on dark surfaces."
         />
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {palette.map((color) => (
@@ -76,7 +76,7 @@ export default function DesignSystemPage() {
               <div className={`h-16 w-full rounded-control ${color.className}`} />
               <div>
                 <p className="text-label font-bold uppercase tracking-eyebrow">{color.token}</p>
-                <p className="mt-1 text-micro text-muted">{color.value}</p>
+                <p className="mt-1 text-micro text-muted-foreground">{color.value}</p>
               </div>
             </Card>
           ))}
@@ -131,19 +131,19 @@ export default function DesignSystemPage() {
             <div className="grid gap-3 lg:grid-cols-3">
               <Card className="flex min-h-40 flex-col justify-between">
                 <div>
-                  <p className="text-micro font-bold uppercase tracking-label text-muted">01 / Card</p>
+                  <p className="text-micro font-bold uppercase tracking-label text-muted-foreground">01 / Card</p>
                   <h3 className="mt-8 text-h3">Platforms, APIs & SaaS</h3>
                 </div>
-                <p className="mt-4 text-body text-muted">
+                <p className="mt-4 text-body text-muted-foreground">
                   PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs and realtime backend architecture.
                 </p>
               </Card>
               <Card className="flex min-h-40 flex-col justify-between">
                 <div>
-                  <p className="text-micro font-bold uppercase tracking-label text-muted">02 / Card</p>
+                  <p className="text-micro font-bold uppercase tracking-label text-muted-foreground">02 / Card</p>
                   <h3 className="mt-8 text-h3">Cloud & infrastructure</h3>
                 </div>
-                <p className="mt-4 text-body text-muted">
+                <p className="mt-4 text-body text-muted-foreground">
                   AWS, GCP, Azure, Kubernetes, Helm, CI/CD and deployment architecture.
                 </p>
               </Card>
@@ -170,7 +170,7 @@ export default function DesignSystemPage() {
                 ["Pending actions", "02"],
               ].map(([label, value]) => (
                 <Card key={label} className="p-4">
-                  <p className="text-micro font-bold uppercase tracking-label text-muted">{label}</p>
+                  <p className="text-micro font-bold uppercase tracking-label text-muted-foreground">{label}</p>
                   <p className="mt-4 text-h1 tracking-h1">{value}</p>
                 </Card>
               ))}
@@ -217,11 +217,11 @@ export default function DesignSystemPage() {
         </div>
       </Section>
 
-      <Section tone="accent" borderTop>
+      <Section tone="brand" borderTop>
         <SectionHeader
-          tone="accent"
-          eyebrow="06 · Accent surface"
-          title="One accent section per page, at most."
+          tone="brand"
+          eyebrow="06 · Brand surface"
+          title="One brand section per page, at most."
           intro="Green backgrounds carry dark text. Use this sparingly — it is the loudest surface in the system."
         />
         <Button variant="dark">Bring us the problem →</Button>

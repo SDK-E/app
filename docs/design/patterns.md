@@ -9,14 +9,14 @@ surfaces, components). Rendered on `/design-system`.
 - Every interactive element shows a visible focus ring: `focus-visible`
   outline, `2px`, offset `2px`.
 - On light surfaces the ring is `dark` (`#082003`); on dark surfaces it is
-  `accent` (`#2cdb16`) — always the highest-contrast option for the surface.
+  `brand` (`#2cdb16`) — always the highest-contrast option for the surface.
 - Never remove the outline. Keyboard users rely on it.
 
 ## 2. Hover
 
 - Links and text buttons: `transition-opacity` → `hover:opacity-70` (restrained).
 - Filled buttons (`primary`, `dark`): background shifts `90%` opacity —
-  `hover:bg-accent/90`, `hover:bg-dark/90`.
+  `hover:bg-brand/90`, `hover:bg-dark/90`.
 - Outline button: fills with dark, text flips to light.
 - No scale, lift, or shadow effects.
 
@@ -30,9 +30,9 @@ surfaces, components). Rendered on `/design-system`.
 
 | Status | Badge tone | Meaning |
 |---|---|---|
-| `live` / in progress / on track | `bg-accent text-dark` | Active, healthy |
+| `live` / in progress / on track | `bg-brand text-dark` | Active, healthy |
 | `review` / needs attention | dark outline | Human review required |
-| `neutral` / pending | `line` border, `muted` text | Waiting, not actionable yet |
+| `neutral` / pending | `line` border, `muted-foreground` text | Waiting, not actionable yet |
 
 - On dark surfaces use the `live` tone as-is and switch `review`/`neutral`
   borders to `#2d4b28` with `light` text.
@@ -69,20 +69,20 @@ surfaces, components). Rendered on `/design-system`.
 - Inputs: `bg-paper`, `1px` border, radius `rounded-control`, body-size text.
   The border must meet a **3:1 contrast** against the surrounding surface — the
   default `line` border is too faint on its own, so use a darker border
-  (`border-muted` or `border-dark/40`) on interactive fields.
+  (`border-muted-foreground` or `border-dark/40`) on interactive fields.
 - Focus ring per §1 (dark outline on light surfaces).
-- Helper text: `muted`, body size. Validation errors: dark text with a clear
+- Helper text: `muted-foreground`, body size. Validation errors: dark text with a clear
   inline message next to the field; never block the form with a banner alone.
 
 ## 9. Navigation
 
 - **Website header:** wordmark "SDK." (green dot), 11px uppercase links,
-  active section in `accent`, CTA as `dark` button. Mobile: menu button
+  active section in `brand`, CTA as `dark` button. Mobile: menu button
   toggles a full-width panel (see `src/components/layout/Header.tsx` and
   `docs/design/responsive.md`).
 - **Portal sidebar** (not yet built — pattern only): dark surface, wordmark,
   "Client Portal" workspace label, stacked 11px links, active item as
-  `bg-accent text-dark`, user block at the bottom separated by a dark border.
+  `bg-brand text-dark`, user block at the bottom separated by a dark border.
   On mobile the sidebar collapses into the header menu pattern.
 
 ## 10. Motion

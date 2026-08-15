@@ -12,7 +12,7 @@ export function SectionHeader({
   tone?: SectionTone;
 }) {
   const secondary =
-    tone === "dark" ? "text-fog" : tone === "accent" ? "text-dark" : "text-muted";
+    tone === "dark" ? "text-fog" : tone === "brand" ? "text-dark" : "text-muted-foreground";
   return (
     <div className="mb-9 grid gap-10 md:grid-cols-[0.65fr_1.35fr] md:gap-[50px]">
       <div>

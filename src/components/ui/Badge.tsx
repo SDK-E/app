@@ -1,9 +1,9 @@
 export type BadgeTone = "live" | "review" | "neutral";
 
 const tones: Record<BadgeTone, string> = {
-  live: "bg-accent text-dark",
+  live: "bg-brand text-dark",
   review: "border border-dark text-dark",
-  neutral: "border border-line text-muted",
+  neutral: "border border-line text-muted-foreground",
 };
 
 export function Badge({

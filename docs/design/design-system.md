@@ -35,23 +35,29 @@ address, phone, email. See `docs/content/voice-and-standards.md`.
 | Token | Hex | Usage |
 |---|---|---|
 | `dark` | `#082003` | Primary text on light; dark section backgrounds; strong buttons |
-| `accent` | `#2cdb16` | Primary actions (background); highlights on dark (text); active nav |
+| `brand` | `#2cdb16` | Primary actions (background); highlights on dark (text); active nav |
 | `light` | `#d7e8d3` | Page background; primary text on dark surfaces |
 | `paper` | `#f8fbf7` | Card/surface background on light pages |
-| `muted` | `#536b4f` | Secondary/tertiary text on light surfaces (AA ≥ 4.5:1) |
+| `muted` | `#536b4f` | Secondary/tertiary text on light surfaces (AA ≥ 4.5:1); rendered as `text-muted-foreground` |
 | `fog` | `#abc4a6` | Secondary text on dark surfaces |
 | `line` | `#9db497` | Thin borders and separators on light surfaces |
 | `background` | `#d7e8d3` | Alias for page background (`bg-background`) |
 | `foreground` | `#082003` | Alias for primary text (`text-foreground`) |
 
+The shadcn semantic variables (`--muted`, `--accent`, `--border`, `--input`,
+`--ring`, …) in `src/app/globals.css` derive from this palette. Note that
+shadcn's `muted` and `accent` utilities are *surface* tones (subtle hover
+backgrounds); the `#536b4f` text color is `text-muted-foreground`. The brand
+green is a plain theme token (`bg-brand`), not shadcn's `accent`.
+
 ### 2.1 Color rules
 
-- Accent green is used for **actions and meaningful highlights only**. It is
+- Brand green is used for **actions and meaningful highlights only**. It is
   never decorative.
-- Accent green as a **background** always carries `dark` text
-  (`bg-accent text-dark`).
-- Accent green as **text** is only legible on dark surfaces
-  (`text-accent` on `bg-dark`). Never use green text on light surfaces.
+- Brand green as a **background** always carries `dark` text
+  (`bg-brand text-dark`).
+- Brand green as **text** is only legible on dark surfaces
+  (`text-brand` on `bg-dark`). Never use green text on light surfaces.
 - On dark surfaces use `light` for primary text and `fog` for secondary text.
 - Borders are always `1px` and thin/restrained. Dark surfaces use a darker
   border (`#2d4b28`) to stay subtle.
@@ -128,11 +134,11 @@ variation:
 
 | Tone | Background | Text | Secondary text |
 |---|---|---|---|
-| `light` (default) | `light` | `dark` | `muted` |
+| `light` (default) | `light` | `dark` | `muted-foreground` |
 | `dark` | `dark` | `light` | `fog` |
-| `accent` | `accent` | `dark` | `dark` |
+| `brand` | `brand` | `dark` | `dark` |
 
-- **One accent section per page at most** (e.g. the contact band).
+- **One brand section per page at most** (e.g. the contact band).
 - Cards sit on `paper` with a `line` border — on the `light` page background
   the card surface is the contrast, not a shadow. No heavy shadows, no
   glassmorphism, no gradients.
@@ -147,7 +153,7 @@ Defined and implemented in `src/components/ui` (interactive/feedback) and
 
 | Component | Definition |
 |---|---|
-| `Button` | 11px, 800 weight, uppercase; primary = `bg-accent text-dark`, outline = `border border-dark`, dark = `bg-dark text-light`; radius `rounded-control`; padding `14px 18px`; focus ring visible |
+| `Button` | 11px, 800 weight, uppercase; primary = `bg-brand text-dark`, outline = `border border-dark`, dark = `bg-dark text-light`; radius `rounded-control`; padding `14px 18px`; focus ring visible |
 | `Badge` | Status chip: `live` (green bg / dark text), `review` (dark border), `neutral` (line border); radius `rounded-control`; 9px, 800 weight, uppercase |
 | `Card` | `bg-paper border border-line rounded-card`; padding `24px` (page cards), `17px` (portal panels) |
 | `Tag` | Pill (`rounded-full`), 9px, thin `line` border |
