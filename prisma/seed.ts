@@ -19,7 +19,7 @@
  * ============================================================================
  */
 
-import { PrismaClient, Decimal } from "../src/generated/prisma";
+import { PrismaClient, Prisma } from "@/generated/prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -557,7 +557,7 @@ async function createInvoices(
     projectId?: string;
     milestoneId?: string;
     requestId?: string;
-    amount: Decimal;
+    amount: Prisma.Decimal;
     currency: string;
     status: InvoiceStatus;
     dueDate?: Date;
@@ -594,7 +594,7 @@ async function createInvoices(
           : undefined;
 
       const status = randomEnum(invoiceStatuses);
-      const amount = new Decimal((100 + Math.floor(Math.random() * 9900)).toFixed(2));
+      const amount = new Prisma.Decimal((100 + Math.floor(Math.random() * 9900)).toFixed(2));
 
       const dueDate = status !== "CANCELLED" && status !== "PAID" ? futureDate(7 + Math.floor(Math.random() * 21)) : undefined;
       const paidAt = status === "PAID" ? pastDate(Math.floor(Math.random() * 10)) : undefined;
