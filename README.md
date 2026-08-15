@@ -16,7 +16,9 @@ First, install dependencies:
 npm install
 ```
 
-Then, set up your environment variables by copying `.env.example` to `.env` and filling in the required values.
+Then, set up your environment variables. All variables are documented with
+descriptions in [docs/conventions/env.md](docs/conventions/env.md) — create a
+`.env.local` in the project root with the required values.
 
 Finally, run the development server:
 

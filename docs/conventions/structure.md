@@ -43,14 +43,13 @@ maps to `./src/*`.
 │   ├── e2e/
 │   └── fixtures/
 ├── docs/                       # Project documentation
-│   └── conventions/            # Convention docs (this file)
+│   └── conventions/            # Convention docs (this file, env.md)
 ├── public/                     # Static assets served at "/"
 │   ├── file.svg
 │   ├── globe.svg
 │   ├── next.svg
 │   ├── vercel.svg
 │   └── window.svg
-├── .env.example                # Documented env var template (committed)
 ├── .env                        # Local env (gitignored, never commit)
 ├── .env.local                  # Local overrides (gitignored, never commit)
 ├── eslint.config.mjs           # ESLint flat config
@@ -82,7 +81,8 @@ maps to `./src/*`.
 - Do NOT create files at the repository root except documented config files.
 - Never edit `src/app/globals.css` for component styles — colocate styles with
   components or use utility classes.
-- Never commit `.env*` files. Only `.env.example` is committed.
+- Never commit `.env*` files. Env variables are documented in
+  [env.md](env.md) — no `.env.example` is committed.
 - `prisma/` and `tests/` are created when needed; do not pre-create empty dirs.
 
 ## 2. Naming Conventions
@@ -99,7 +99,7 @@ maps to `./src/*`.
 | Types | `PascalCase` | `User.ts`, `Session.ts` |
 | Styles | camelCase `.css` | `globals.css` |
 | Test files | `*.test.ts(x)` / `*.spec.ts` | `utils.test.ts`, `checkout.spec.ts` |
-| Env template | `.env.example` | — |
+| Env docs | `docs/conventions/env.md` | — |
 
 ### Components
 
@@ -136,7 +136,7 @@ maps to `./src/*`.
 - Server-only variables are read via `src/lib/env.ts` (single access point,
   validated with schema parsing). Do NOT read `process.env` directly in
   components or `lib/` modules.
-- Every variable must be documented in `.env.example` with a comment.
+- Every variable must be documented in [env.md](env.md) with a description.
 - Never commit real values; `.env*` are gitignored.
 
 ## 3. Commit Message Conventions
