@@ -1,10 +1,58 @@
 # AGENTS.md
 
+## Tech stack (exact versions)
+
+Do not assume versions — the exact stack is:
+
+- **Next.js 16.3.1** — App Router only (no Pages Router, no `pages/`, no `getServerSideProps`)
+- **React 19.2.8** + **TypeScript 5** (`strict: true`)
+- **Tailwind CSS v4** — styling only (no CSS modules, no styled-components)
+- **Prisma 7.9.1** (Postgres) — all data access; **zod 4.4.3** — all validation
+- **@auth0/nextjs-auth0 4.26.0** — authentication
+- **Vitest 4** + Testing Library — unit tests; Playwright — E2E (`tests/`)
+- Path alias `@/*` → `./src/*`
+
+## Coding standards (write standard, project-idiomatic code)
+
+**Use:**
+
+- Tailwind utility classes for all styling.
+- `getServerEnv()` / `publicEnv` from `@/lib/env` — never `process.env` directly.
+- Auth helpers: `getAuth0Client()` from `@/lib/auth`; `requireAuth`, `requireRole`,
+  `requireCompanyAccess` from `@/lib/auth-guards`.
+- zod for env/input validation (see `src/lib/env.ts`).
+- Prisma for every DB operation (see the `prisma-next-*` skills) — never raw SQL.
+- Server components by default; `"use client"` only when interactivity requires it;
+  `route.ts` handlers are server-only.
+- One component per file; named exports for shared components, default exports for routes.
+- Route dirs `kebab-case`; reserved route files only (`page.tsx`, `layout.tsx`, ...).
+- Import order: builtin → external → internal `@/` → relative.
+
+**Do NOT:**
+
+- Invent file paths or helper functions — verify they exist with grep/glob first.
+- Add a new dependency when Next, Prisma, zod, or Auth0 already cover the need.
+- Invent library APIs or config keys — check `context7` or the installed types first.
+- Use Pages Router patterns, `next/router`, or `getServerSideProps`.
+- Write `any` without a justification comment.
+- Edit `src/app/globals.css` for component styles.
+- Create files at the repo root, or pre-create empty `prisma/` / `tests/` dirs.
+- Commit `.env*` files, generated artifacts, `node_modules`, or `.next/`.
+- Guess Auth0 session / Prisma result shapes — use the typed helpers above.
+
+## Verify before claiming
+
+- After any code change run: `npm run typecheck && npm run lint && npm run test`.
+- Migrations: review every line, then `npx prisma migrate dev`.
+- Never claim a change "works" without running the checks.
+- Prefer small, focused edits verified incrementally over one big rewrite.
+
 ## MCP servers
 
 Keyless MCP servers are configured in `.mcp.json` (read by Claude Code, Cursor,
 Windsurf, VS Code, Zed, etc.) and mirrored for opencode in `opencode.json`.
 Any agent can start using them right after `npm install` — no API keys required.
+Prefer them over guessing: they are the cheapest way to avoid hallucinations.
 
 - **context7** — version-accurate docs for the libraries in this repo
   (Next.js, React, Prisma). Use when you need library/docs help.
