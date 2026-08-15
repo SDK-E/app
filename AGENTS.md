@@ -31,6 +31,9 @@ Do not assume versions — the exact stack is:
 **Do NOT:**
 
 - Invent file paths or helper functions — verify they exist with grep/glob first.
+- Assume unstated requirements or context (team size, sharing needs, deployment
+  targets, who will use the code). Ask the user instead of building for a
+  hypothetical audience.
 - Add a new dependency when Next, Prisma, zod, or Auth0 already cover the need.
 - Invent library APIs or config keys — check `context7` or the installed types first.
 - Use Pages Router patterns, `next/router`, or `getServerSideProps`.
