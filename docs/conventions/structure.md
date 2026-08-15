@@ -130,9 +130,9 @@ maps to `./src/*`.
 
 - Format: `SCREAMING_SNAKE_CASE`.
 - Variables exposed to the browser must be prefixed `NEXT_PUBLIC_`:
-  - `NEXT_PUBLIC_API_URL` — public URL
+  - `AUTH0_CLIENT_ID` — public, exposed via `publicEnv` in `src/lib/env.ts`
   - `DATABASE_URL` — server-only (never `NEXT_PUBLIC_`)
-  - `AUTH_SECRET` — server-only secret
+  - `AUTH0_SECRET` — server-only secret
 - Server-only variables are read via `src/lib/env.ts` (single access point,
   validated with schema parsing). Do NOT read `process.env` directly in
   components or `lib/` modules.
