@@ -29,8 +29,7 @@ export default function MentionsLegalesPage() {
       <section id="fr" aria-label="Mentions légales en français">
         <LegalH2>Éditeur du site</LegalH2>
         <LegalParagraph>
-          Le site internet accessible à l&apos;adresse {siteConfig.name.toLowerCase().replace(/\s+/g, ".")}
-          est édité par la société <strong>{identity.company}</strong>, enseigne commerciale{" "}
+          Le site internet accessible à l&apos;adresse {siteConfig.name.toLowerCase().replace(/\s+/g, ".")} est édité par la société <strong>{identity.company}</strong>, enseigne commerciale{" "}
           <strong>{siteConfig.name}</strong>.
         </LegalParagraph>
         <LegalList
@@ -80,8 +79,7 @@ export default function MentionsLegalesPage() {
       <section id="en" aria-label="Mentions légales in English">
         <LegalH2>Publisher</LegalH2>
         <LegalParagraph>
-          The website accessible at {siteConfig.name.toLowerCase().replace(/\s+/g, ".")} is
-          published by <strong>{identity.company}</strong>, trading as{" "}
+          The website accessible at {siteConfig.name.toLowerCase().replace(/\s+/g, ".")} is published by <strong>{identity.company}</strong>, trading as{" "}
           <strong>{siteConfig.name}</strong>.
         </LegalParagraph>
         <LegalList
