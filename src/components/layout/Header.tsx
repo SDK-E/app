@@ -50,7 +50,8 @@ export function Header({
           >
             <Image
               src="/brand/sdk-logo-light.png"
-              alt=""
+              alt="SDK Enterprises logo"
+              title="SDK Enterprises"
               width={1429}
               height={495}
               className="h-[26px] w-auto md:h-[30px]"
