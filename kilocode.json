@@ -1,5 +1,11 @@
 {
   "$schema": "https://kilocode.ai/config.json",
+  "compaction": {
+    "auto": true,
+    "threshold_percent": 45,
+    "prune": true,
+    "tail_turns": 2
+  },
   "mcp": {
     "context7": {
       "type": "local",

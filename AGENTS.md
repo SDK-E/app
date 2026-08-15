@@ -51,6 +51,15 @@ Do not assume versions — the exact stack is:
 - Never claim a change "works" without running the checks.
 - Prefer small, focused edits verified incrementally over one big rewrite.
 
+## Agent context management
+
+Gastown workers run through KiloCode. Project-level auto-compaction is enabled
+in `kilocode.json`: compact at 45% of the model's advertised context window,
+prune stale tool output, and preserve the two most recent turns verbatim.
+Do not disable it with `KILO_DISABLE_AUTOCOMPACT` or
+`KILO_DISABLE_PRUNE`. Custom model definitions must declare accurate context
+and output limits; KiloCode cannot track or compact an unknown context window.
+
 ## MCP servers
 
 Keyless MCP servers are configured in `.mcp.json` (read by Claude Code, Cursor,
