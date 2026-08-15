@@ -54,3 +54,6 @@ CLAUDE.md
 .opencode/plans/
 .claude/plans/
 .codex/plans/
+
+.playwright-mcp/*
+.vscode/

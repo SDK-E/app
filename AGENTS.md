@@ -137,6 +137,8 @@ Skills live in `.agents/skills/` and are committed:
 - `author-auth0-skill` — Auth0.
 - `resend-email` — transactional email via Resend (the enquiry-form
   notification pipeline).
+- `i18n` — next-intl v4, 17 European locales, legal pages, locale-prefixed
+  routing and translation conventions.
 - opencode loads these via `skills.paths` in `opencode.json`; other agents
   scan `.agents/skills/` themselves.
 
