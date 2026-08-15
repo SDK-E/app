@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
+import createMiddleware from "next-intl/middleware";
 import { getAuth0Client } from "@/lib/auth";
 import type { UserRole } from "@/types";
+import { routing } from "@/i18n/routing";
 
 const PUBLIC_ROUTES = [
   "/",
@@ -15,17 +17,31 @@ const PUBLIC_ROUTES = [
 ];
 const ADMIN_ROUTES = ["/app/admin/*"];
 
+const i18nMiddleware = createMiddleware(routing);
+
+function stripLocale(pathname: string): string {
+  const segments = pathname.split("/");
+  if (segments.length > 1 && routing.locales.includes(segments[1] as (typeof routing.locales)[number])) {
+    return "/" + segments.slice(2).join("/");
+  }
+  return pathname;
+}
+
 function matchesRoute(pathname: string, patterns: string[]): boolean {
+  const normalized = stripLocale(pathname);
   return patterns.some((pattern) => {
     if (pattern.endsWith("/*")) {
       const prefix = pattern.slice(0, -1);
-      return pathname.startsWith(prefix);
+      return normalized.startsWith(prefix);
     }
-    return pathname === pattern;
+    return normalized === pattern;
   });
 }
 
 export async function proxy(request: NextRequest) {
+  const i18nResponse = i18nMiddleware(request);
+  if (i18nResponse) return i18nResponse;
+
   const { pathname } = request.nextUrl;
 
   if (pathname.startsWith("/auth")) {
