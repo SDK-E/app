@@ -6,6 +6,42 @@
       "sourceType": "github",
       "skillPath": ".claude/skills/author-auth0-skill/SKILL.md",
       "computedHash": "f50d3f7db95b0479fcd74aac059ce32ac69120846a456aebc13c03ca5058447d"
+    },
+    "deploy-to-vercel": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/deploy-to-vercel/SKILL.md",
+      "computedHash": "03e0eaaa9bf13ba1e7ffa387f5893de6f324c0868c627001f179395a8feaa7c9"
+    },
+    "prisma-next-debug": {
+      "source": "prisma/prisma-next",
+      "sourceType": "github",
+      "skillPath": "skills/prisma-next-debug/SKILL.md",
+      "computedHash": "9a184efa9c69aa0066341ecf9440e61b61f9ce1289113c9b88302c1ef6769439"
+    },
+    "prisma-next-migrations": {
+      "source": "prisma/prisma-next",
+      "sourceType": "github",
+      "skillPath": "skills/prisma-next-migrations/SKILL.md",
+      "computedHash": "8569cff34ec761f4f486fd5deebadc02bdb975124c57b6e8983852fe727c7b52"
+    },
+    "prisma-next-queries": {
+      "source": "prisma/prisma-next",
+      "sourceType": "github",
+      "skillPath": "skills/prisma-next-queries/SKILL.md",
+      "computedHash": "436503dd9f1adec9c3081d2831da5d2a590c4a17e83f0de352a0990e28507622"
+    },
+    "prisma-next-quickstart": {
+      "source": "prisma/prisma-next",
+      "sourceType": "github",
+      "skillPath": "skills/prisma-next-quickstart/SKILL.md",
+      "computedHash": "504a872abea76ad93886fc47eaa9a6f96e258debb3a450aba865efd51165483f"
+    },
+    "vercel-cli-with-tokens": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/vercel-cli-with-tokens/SKILL.md",
+      "computedHash": "eb16b20dcbe6ce51e0372083d624e0847af1b09487ec99249227d5a8eddebfc0"
     }
   }
 }
