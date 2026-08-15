@@ -50,3 +50,7 @@ CLAUDE.md
 
 /src/generated/prisma
 .env*
+.kilo/plans/
+.opencode/plans/
+.claude/plans/
+.codex/plans/
