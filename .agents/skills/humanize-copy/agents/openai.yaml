@@ -1,0 +1,9 @@
+interface:
+  display_name: "Humanize Copy"
+  short_description: "Improve prose while preserving facts and meaning"
+  default_prompt: "Use $humanize-copy to improve this prose, then verify every protected fact and identifier."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "humanizer"
+      description: "Local keyless prose editor with deterministic preservation checks"

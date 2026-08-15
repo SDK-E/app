@@ -20,6 +20,10 @@
       "command": "node",
       "args": ["scripts/mail-mcp.ts"]
     },
+    "humanizer": {
+      "command": "node",
+      "args": ["--import", "tsx", "scripts/humanizer-mcp.ts"]
+    },
     "gh_grep": {
       "url": "https://mcp.grep.app"
     }

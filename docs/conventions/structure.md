@@ -42,7 +42,8 @@ maps to `./src/*`.
 ├── scripts/                    # Dev tooling (run directly, not app code)
 │   ├── mail-sink.ts            # Local mail sink (SMTP + HTTP API, no UI)
 │   ├── mail-cli.ts             # npm run mail:list / mail:read / mail:wait / ...
-│   └── mail-mcp.ts             # maildev MCP server for agents
+│   ├── mail-mcp.ts             # maildev MCP server for agents
+│   └── humanizer-mcp.ts        # Keyless copy-humanization MCP server
 ├── tests/                      # End-to-end tests (Playwright)
 │   ├── e2e/
 │   └── fixtures/

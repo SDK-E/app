@@ -21,6 +21,10 @@
       "type": "local",
       "command": ["node", "scripts/mail-mcp.ts"]
     },
+    "humanizer": {
+      "type": "local",
+      "command": ["node", "--import", "tsx", "scripts/humanizer-mcp.ts"]
+    },
     "gh_grep": {
       "type": "remote",
       "url": "https://mcp.grep.app"

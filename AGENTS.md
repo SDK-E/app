@@ -69,6 +69,10 @@ Prefer them over guessing: they are the cheapest way to avoid hallucinations.
 - **maildev** — local dev mail sink: `list_emails`, `read_email`,
   `clear_emails`, `wait_for_email`. Requires `npm run dev` (sink auto-starts).
   Use it to verify the enquiry form's notification email — no UI.
+- **humanizer** — keyless local prose editor: `humanize_text`, `humanize_texts`,
+  and `humanize_file` improve selected human-facing copy with conservative local
+  edits, then check protected values. File reads are workspace-restricted and read-only. It is
+  an editing tool, not a source of truth; verify facts before and after use.
 - **gh_grep** — real-world code examples from GitHub (grep.app). Use when
   unsure how something is done in practice.
 
@@ -139,6 +143,8 @@ Skills live in `.agents/skills/` and are committed:
   notification pipeline).
 - `i18n` — next-intl v4, 17 European locales, legal pages, locale-prefixed
   routing and translation conventions.
+- `humanize-copy` — selective copy humanization, review, fact preservation,
+  website and technical writing, and the final content-pass workflow.
 - opencode loads these via `skills.paths` in `opencode.json`; other agents
   scan `.agents/skills/` themselves.
 
