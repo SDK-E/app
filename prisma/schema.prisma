@@ -1,0 +1,311 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum ClientRole {
+  COMPANY_ADMIN
+  MEMBER
+  VIEWER
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum RequestStatus {
+  DRAFT
+  SUBMITTED
+  IN_REVIEW
+  APPROVED
+  REJECTED
+  CLOSED
+}
+
+enum ProjectStatus {
+  PLANNING
+  ACTIVE
+  ON_HOLD
+  COMPLETED
+  CANCELLED
+}
+
+enum MilestoneStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  OVERDUE
+  CANCELLED
+}
+
+enum DocumentStatus {
+  DRAFT
+  UPLOADED
+  ARCHIVED
+  DELETED
+}
+
+enum MessageStatus {
+  SENT
+  READ
+  ARCHIVED
+  DELETED
+}
+
+enum InvoiceStatus {
+  DRAFT
+  SENT
+  PAID
+  OVERDUE
+  CANCELLED
+  REFUNDED
+}
+
+model User {
+  id           String   @id @default(uuid())
+  auth0Sub     String   @unique
+  email        String   @unique @db.VarChar(255)
+  name         String   @db.VarChar(255)
+  avatarUrl    String?  @db.VarChar(1024)
+  isActive     Boolean  @default(true)
+  lastLoginAt  DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  memberships     Membership[]          @relation("UserMemberships")
+  invitedMembers  Membership[]          @relation("MembershipInvitations")
+  requests        Request[]             @relation("RequestSubmittedBy")
+  reviewedRequests Request[]            @relation("RequestReviewedBy")
+  projects        Project[]             @relation("ProjectCreatedBy")
+  messages        Message[]
+  invoices        Invoice[]
+  documents       Document[]
+
+  @@index([email])
+  @@index([auth0Sub])
+  @@index([createdAt])
+}
+
+model Company {
+  id        String   @id @default(uuid())
+  name      String   @db.VarChar(255)
+  slug      String   @unique @db.VarChar(100)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  memberships Membership[] @relation("CompanyMemberships")
+  requests    Request[]
+  projects    Project[]
+  milestones  Milestone[]
+  documents   Document[]
+  messages    Message[]
+  invoices    Invoice[]
+
+  @@index([slug])
+  @@index([createdAt])
+}
+
+model Membership {
+  id         String     @id @default(uuid())
+  userId     String
+  companyId  String
+  role       ClientRole @default(MEMBER)
+  invitedBy  String?
+  invitedAt  DateTime?
+  joinedAt   DateTime?
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+
+  user      User     @relation("UserMemberships", fields: [userId], references: [id], onDelete: Cascade)
+  company   Company  @relation("CompanyMemberships", fields: [companyId], references: [id], onDelete: Cascade)
+  inviter   User?    @relation("MembershipInvitations", fields: [invitedBy], references: [id])
+
+  @@unique([userId, companyId])
+  @@index([companyId])
+  @@index([userId])
+  @@index([createdAt])
+}
+
+model Request {
+  id          String        @id @default(uuid())
+  companyId   String
+  title       String        @db.VarChar(255)
+  description String        @db.Text
+  status      RequestStatus @default(DRAFT)
+  priority    Priority      @default(MEDIUM)
+  submittedBy String
+  reviewedBy  String?
+  reviewedAt  DateTime?
+  closedAt    DateTime?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  company     Company       @relation(fields: [companyId], references: [id])
+  submittedByUser User      @relation("RequestSubmittedBy", fields: [submittedBy], references: [id])
+  reviewedByUser  User?     @relation("RequestReviewedBy", fields: [reviewedBy], references: [id])
+
+  projects    Project[]
+  documents   Document[]
+  messages    Message[]
+  invoices    Invoice[]
+
+  @@index([companyId])
+  @@index([status])
+  @@index([priority])
+  @@index([submittedBy])
+  @@index([createdAt])
+}
+
+model Project {
+  id          String       @id @default(uuid())
+  companyId   String
+  requestId   String?
+  name        String       @db.VarChar(255)
+  description String       @db.Text
+  status      ProjectStatus @default(PLANNING)
+  startDate   DateTime?
+  dueDate     DateTime?
+  completedAt DateTime?
+  createdBy   String
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  company    Company     @relation(fields: [companyId], references: [id])
+  request    Request?    @relation(fields: [requestId], references: [id])
+  createdByUser User     @relation("ProjectCreatedBy", fields: [createdBy], references: [id])
+
+  milestones Milestone[]
+  documents  Document[]
+  messages   Message[]
+  invoices   Invoice[]
+
+  @@index([companyId])
+  @@index([requestId])
+  @@index([status])
+  @@index([createdBy])
+  @@index([createdAt])
+}
+
+model Milestone {
+  id          String           @id @default(uuid())
+  projectId   String
+  companyId   String
+  name        String           @db.VarChar(255)
+  description String           @db.Text
+  status      MilestoneStatus  @default(PENDING)
+  dueDate     DateTime?
+  completedAt DateTime?
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  project    Project    @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  company    Company    @relation(fields: [companyId], references: [id])
+
+  documents  Document[]
+  messages   Message[]
+  invoices   Invoice[]
+
+  @@index([projectId])
+  @@index([companyId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model Document {
+  id         String          @id @default(uuid())
+  companyId  String
+  projectId  String?
+  milestoneId String?
+  requestId  String?
+  name       String          @db.VarChar(255)
+  storageKey String          @db.VarChar(1024)
+  mimeType   String          @db.VarChar(255)
+  sizeBytes  Int
+  status     DocumentStatus  @default(DRAFT)
+  uploadedBy String
+  createdAt  DateTime        @default(now())
+  updatedAt  DateTime        @updatedAt
+
+  company    Company   @relation(fields: [companyId], references: [id])
+  project    Project?  @relation(fields: [projectId], references: [id])
+  milestone  Milestone? @relation(fields: [milestoneId], references: [id])
+  request    Request?  @relation(fields: [requestId], references: [id])
+  uploadedByUser User  @relation(fields: [uploadedBy], references: [id])
+
+  @@index([companyId])
+  @@index([projectId])
+  @@index([milestoneId])
+  @@index([requestId])
+  @@index([uploadedBy])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model Message {
+  id            String         @id @default(uuid())
+  companyId     String
+  projectId     String?
+  milestoneId   String?
+  requestId     String?
+  content       String         @db.Text
+  authorId      String
+  parentMessageId String?
+  status        MessageStatus  @default(SENT)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  company        Company        @relation(fields: [companyId], references: [id])
+  project        Project?       @relation(fields: [projectId], references: [id])
+  milestone      Milestone?     @relation(fields: [milestoneId], references: [id])
+  request        Request?       @relation(fields: [requestId], references: [id])
+  author         User           @relation(fields: [authorId], references: [id])
+  parentMessage  Message?       @relation("MessageReplies", fields: [parentMessageId], references: [id])
+  replies        Message[]      @relation("MessageReplies")
+
+  @@index([companyId])
+  @@index([projectId])
+  @@index([milestoneId])
+  @@index([requestId])
+  @@index([authorId])
+  @@index([parentMessageId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model Invoice {
+  id          String          @id @default(uuid())
+  companyId   String
+  projectId   String?
+  milestoneId String?
+  requestId   String?
+  amount      Decimal         @db.Decimal(12, 2)
+  currency    String          @default("USD") @db.VarChar(3)
+  status      InvoiceStatus   @default(DRAFT)
+  dueDate     DateTime?
+  paidAt      DateTime?
+  createdBy   String
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  company     Company    @relation(fields: [companyId], references: [id])
+  project     Project?   @relation(fields: [projectId], references: [id])
+  milestone   Milestone? @relation(fields: [milestoneId], references: [id])
+  request     Request?   @relation(fields: [requestId], references: [id])
+  createdByUser User     @relation(fields: [createdBy], references: [id])
+
+  @@index([companyId])
+  @@index([projectId])
+  @@index([milestoneId])
+  @@index([requestId])
+  @@index([createdBy])
+  @@index([status])
+  @@index([createdAt])
+}

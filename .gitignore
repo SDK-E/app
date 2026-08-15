@@ -47,3 +47,5 @@ next-env.d.ts
 .opencode/
 .runtime/
 CLAUDE.md
+
+/src/generated/prisma
