@@ -26,6 +26,22 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
+## Database Seeding (Development Only)
+
+To populate your local database with development seed data:
+
+1. Ensure your database is migrated:
+   ```bash
+   npx prisma migrate dev
+   ```
+
+2. Run the seed script:
+   ```bash
+   npx prisma db seed
+   ```
+
+**Important:** This script is DEVELOPMENT-ONLY. It creates synthetic data with fictional companies, users, and records. Do NOT run it in production.
+
 ## Commands
 
 ```bash
@@ -35,6 +51,7 @@ npm run start     # Serve production build
 npm run lint      # Run ESLint
 npm run typecheck # Run TypeScript compiler
 npm run test      # Run Vitest
+npx prisma db seed # Populate development database with seed data
 ```
 
 ## Tech Stack

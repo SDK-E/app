@@ -37,8 +37,12 @@
     "jsdom": "24.0.0",
     "prisma": "^7.9.1",
     "tailwindcss": "^4",
+    "tsx": "^4.7.0",
     "typescript": "^5",
     "undici": "7.9.0",
     "vitest": "^4.1.10"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   }
 }
