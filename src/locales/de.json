@@ -1,0 +1,436 @@
+{
+  "meta": {
+    "siteDescription": "Französisches Ingenieurbüro B2B. Wir entwickeln, modernisieren und betreiben Software im gesamten Stack – Backend-Plattformen, Cloud-Infrastruktur, KI-Automatisierung, Echtzeitsysteme und interne Tools.",
+    "title": "SDK Enterprises"
+  },
+  "nav": {
+    "toggleMenu": "Menü umschalten",
+    "home": "SDK Enterprises Startseite",
+    "main": "Hauptsächlich",
+    "services": "Dienstleistungen",
+    "work": "Arbeit",
+    "process": "Prozess",
+    "about": "Über",
+    "discussProject": "Besprechen Sie ein Projekt",
+    "signIn": "Melden Sie sich an",
+    "legal": "Legal",
+    "mentionsLegales": "Erwähnt Rechtsanwälte",
+    "privacy": "Privatsphäre",
+    "terms": "Bedingungen",
+    "cookies": "Kekse"
+  },
+  "hero": {
+    "eyebrow": "B2B KI · Software · Cloud · Systemtechnik",
+    "heading": "Ein Engineering-Partner für den Stack, den Ihr Unternehmen benötigt.",
+    "leadParagraph": "SDK Enterprises erstellt, modernisiert und betreibt Software im gesamten Stack – Backend-Plattformen, Cloud-Infrastruktur, KI-Automatisierung, Echtzeitsysteme und interne Tools. Sie beschäftigen sich mit einem speziellen Problem oder verfügen über einen breiteren Arbeitsbereich; Wie auch immer, die Leute, die die Arbeit machen, sind die Leute, mit denen Sie sprechen.",
+    "ctaStartProject": "Starten Sie ein Projekt",
+    "ctaExploreServices": "Entdecken Sie Dienstleistungen",
+    "trustFrance": "Das in Frankreich ansässige Unternehmen B2B",
+    "trustSenior": "Leitende technische Lieferung",
+    "trustAI": "KI + Backend + Cloud",
+    "trustClients": "Europäische und Remote-Kunden"
+  },
+  "services": {
+    "eyebrow": "Dienstleistungen",
+    "title": "Nutzen Sie den gesamten Stapel – oder nur den Teil, den Sie benötigen.",
+    "intro": "SDK kann sich an einem speziellen Problem beteiligen oder einen breiteren technischen Workstream übernehmen.",
+    "items": [
+      {
+        "number": "01",
+        "category": "KI-Engineering",
+        "title": "KI-Agenten und Automatisierung",
+        "copy": "LLM-Integrationen, Agenten, RAG, Workflow-Automatisierung, Entwicklertools und KI-gestützte Abläufe."
+      },
+      {
+        "number": "02",
+        "category": "Backend",
+        "title": "Plattformen, APIs und SaaS",
+        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs und Echtzeit-Backend-Architektur."
+      },
+      {
+        "number": "03",
+        "category": "Frontend",
+        "title": "Web- und Anwendungsschnittstellen",
+        "copy": "React, Vue, Nuxt, TypeScript, Tailwind und Shadcn."
+      },
+      {
+        "number": "04",
+        "category": "Wolke",
+        "title": "Cloud & Infrastruktur",
+        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD und Bereitstellungsarchitektur."
+      },
+      {
+        "number": "05",
+        "category": "Daten",
+        "title": "Datenbanken, Cache und Suche",
+        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey und Elasticsearch."
+      },
+      {
+        "number": "06",
+        "category": "Modernisierung",
+        "title": "Legacy-Modernisierung",
+        "copy": "Framework-Upgrades, Migration, technische Schuldenreduzierung und Leistungsoptimierung."
+      }
+    ]
+  },
+  "whySdk": {
+    "eyebrow": "Warum SDK",
+    "title": "Senior Engineering ohne unnötige Schichten.",
+    "intro": "Direkte Kommunikation, schnelle Diagnose und pragmatische Umsetzung.",
+    "items": [
+      {
+        "kicker": "FR",
+        "copy": "Ein in Frankreich ansässiges B2B-Unternehmen für europäische und entfernte Kunden."
+      },
+      {
+        "kicker": "KI",
+        "copy": "LLM Integrationen, Agenten, Automatisierung und interne Tools."
+      },
+      {
+        "kicker": "RT",
+        "copy": "Echtzeit- und hochvolumige Plattformarbeit."
+      },
+      {
+        "kicker": "DIREKT",
+        "copy": "Sie sprechen mit den Ingenieuren, die die Arbeit erledigen, nicht mit einer Account-Ebene."
+      }
+    ]
+  },
+  "engagements": {
+    "eyebrow": "Arbeiten Sie mit SDK",
+    "title": "Bringen Sie ein konkretes Problem mit. Erhalten Sie eine konkrete Antwort.",
+    "intro": "Sie wissen, wann etwas in Ihrem Stapel Sie kostet. Hier sind die Situationen, für die der SDK eingerichtet ist.",
+    "items": [
+      {
+        "title": "Ein System, das zu alt ist, um weiter zu patchen.",
+        "copy": "Sie benötigen einen Migrationsplan, keinen Wunsch – eine Prüfung dessen, was ausgeführt wird, was unterbrochen wird und in welcher Reihenfolge eingezogen wird."
+      },
+      {
+        "title": "Volumen, für das Ihr aktueller Stack nicht ausgelegt ist.",
+        "copy": "Echtzeitaufnahme, Backends mit hohem Durchsatz und die Infrastruktur, um sie stabil zu halten."
+      },
+      {
+        "title": "KI, die Sie einsetzen können.",
+        "copy": "LLM-Integrationen, Agenten und Automatisierung, die einen internen Arbeitsablauf verändern – keine Demo, die beim Pitch aufhört."
+      },
+      {
+        "title": "Ein Team, das erfahrene Hände braucht.",
+        "copy": "Direkte technische Bereitstellung auf Ihrer Codebasis, ohne dass eine mittlere Ebene Entscheidungen verlangsamt."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Wie wir arbeiten",
+    "title": "Ein klarer Weg vom Problem zur Produktion.",
+    "intro": "Vier Schritte, sichtbarer Fortschritt in jeder Phase.",
+    "items": [
+      {
+        "title": "Verstehe",
+        "copy": "Geschäftsziel, Stack, Einschränkungen und Erfolgskriterien."
+      },
+      {
+        "title": "Design",
+        "copy": "Architektur, Umfang, Risiken und Meilensteine."
+      },
+      {
+        "title": "Bauen",
+        "copy": "Umsetzung mit sichtbaren Fortschritten."
+      },
+      {
+        "title": "Übergabe",
+        "copy": "Bereitstellung, Dokumentation und Eigentumsübertragung."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Arbeiten Sie mit SDK",
+    "heading": "Bringen Sie uns das Problem, das Sie lösen möchten.",
+    "body": "Sagen Sie uns, was Sie bauen, modernisieren, automatisieren oder reparieren möchten – wir sagen Ihnen ehrlich, ob es passt und was dafür erforderlich ist.",
+    "registeredUnder": "Registriert unter {company}",
+    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "KI · Software · Cloud · Systemtechnik"
+  },
+  "legal": {
+    "mentionsLegales": {
+      "title": "Erwähnt Rechtsanwälte",
+      "intro": "Rechtliche Hinweise zur SDK Enterprises-Website.",
+      "fr": {
+        "editorTitle": "Éditeur du site",
+        "editorWebsite": "The website accessible at {domain} is published by {company}, trading as {name}.",
+        "siren": "SIREN: {siren}",
+        "siret": "SIRET: {siret}",
+        "registeredOffice": "Registered office: {address}",
+        "legalForm": "Legal form and share capital: Auto-entrepreneur (sole trader, micro-entreprise), no share capital",
+        "registration": "Company registration: RCS Paris {siren}",
+        "directorTitle": "Publication director",
+        "director": "Publication director: Hicham SADDEK.",
+        "hostingTitle": "Hosting",
+        "hosting": "The site is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, United States.",
+        "contactTitle": "Contact",
+        "contact": "Questions about the site may be sent to {email} or by phone at {phone}.",
+        "intellectualPropertyTitle": "Intellectual property",
+        "intellectualProperty": "The structure, texts, logo and content of the site are the property of SDK Enterprises. Any reproduction or representation, in whole or in part, without prior authorisation is prohibited, except as permitted by applicable law.",
+        "legalFrameworkTitle": "Legal framework",
+        "legalFramework": "These notices are governed by French law and are established in accordance with Article 6-III of the French law n° 2004-575 of 21 June 2004 on confidence in the digital economy (LCEN)."
+      },
+      "en": {
+        "publisherTitle": "Herausgeber",
+        "publisherWebsite": "Die unter {domain} zugängliche Website wird von {company} unter dem Handelsnamen {name} veröffentlicht.",
+        "siren": "SIREN: {siren}",
+        "siret": "SIRET: {siret}",
+        "registeredOffice": "Eingetragener Firmensitz: {address}",
+        "legalForm": "Rechtsform und Stammkapital: Selbstunternehmer (Einzelunternehmer, Kleinstunternehmen), kein Stammkapital",
+        "registration": "Firmenregistrierung: RCS Paris {siren}",
+        "directorTitle": "Publikationsleiter",
+        "director": "Publikationsleiter: Hicham SADDEK.",
+        "hostingTitle": "Hosting",
+        "hosting": "Die Website wird von Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA, gehostet.",
+        "contactTitle": "Kontakt",
+        "contact": "Fragen zur Website können an {email} oder telefonisch an {phone} gesendet werden.",
+        "intellectualPropertyTitle": "Geistiges Eigentum",
+        "intellectualProperty": "Struktur, Texte, Logo und Inhalt der Website sind Eigentum von SDK Enterprises. Jegliche Vervielfältigung oder Darstellung, ganz oder teilweise, ohne vorherige Genehmigung ist verboten, sofern dies nicht durch geltendes Recht zulässig ist.",
+        "legalFrameworkTitle": "Rechtlicher Rahmen",
+        "legalFramework": "Diese Hinweise unterliegen französischem Recht und werden gemäß Artikel 6-III des französischen Gesetzes Nr. 2004-575 vom 21. Juni 2004 über das Vertrauen in die digitale Wirtschaft (LCEN) erstellt."
+      }
+    },
+    "privacy": {
+      "title": "Datenschutzrichtlinie",
+      "intro": "Wie SDK Enterprises personenbezogene Daten gemäß GDPR (RGPD) verarbeitet.",
+      "processors": [
+        {
+          "name": "Vercel",
+          "role": "Website-Hosting und Analyse ohne Cookies"
+        },
+        {
+          "name": "Auth0 (Okta)",
+          "role": "Authentifizierung für das Kundenportal"
+        },
+        {
+          "name": "Resend",
+          "role": "Transaktions-E-Mail für Projektanfragen"
+        },
+        {
+          "name": "Prisma Postgres",
+          "role": "Verwaltete PostgreSQL-Datenbank"
+        }
+      ],
+      "fr": {
+        "controllerTitle": "Responsable de traitement",
+        "controller": "The data controller is {company}, trading as {name}, registered office at {address}. For any question about your personal data, contact us at {email}.",
+        "collectedDataTitle": "Data collected",
+        "collectedData": "The only data-collection form on this site is the public \"Start a project\" form. The data requested is strictly limited to:",
+        "collectedDataItems": [
+          "Company name (required)",
+          "Professional email address (required)",
+          "Company website (optional)",
+          "Capability needed (required)",
+          "Project or problem description (required)",
+          "Existing environment (optional)",
+          "Timeline (optional)",
+          "Budget range (optional)",
+          "Supporting context (optional)"
+        ],
+        "purposesTitle": "Purposes and legal bases",
+        "purposesNote": "Your data is processed to:",
+        "purposeItems": [
+          "respond to your project enquiry — pre-contractual measures (Art. 6(1)(b) GDPR) and legitimate interest (Art. 6(1)(f));",
+          "operate, secure and improve the site — legitimate interest (Art. 6(1)(f));",
+          "comply with any applicable legal obligations (Art. 6(1)(c))."
+        ],
+        "recipientsTitle": "Recipients",
+        "recipientsNote": "Your data is accessible only to authorised people within SDK Enterprises. It may be processed by the following processors, strictly for the needs of their services:",
+        "transfersTitle": "Transfers outside the EU",
+        "transfers": "Some processors may process data outside the European Economic Area (notably in the United States). Where this occurs, appropriate safeguards are used, such as the European Commission's standard contractual clauses.",
+        "retentionTitle": "Retention",
+        "retention": "Data collected through the form is kept for 12 months from the last contact, unless a longer retention is required by law. After this period, it is deleted or anonymised.",
+        "rightsTitle": "Your rights",
+        "rightsNote": "In accordance with Articles 15 to 22 GDPR, you have the right to access, rectification, erasure, restriction, portability and objection. You may also withdraw your consent at any time.",
+        "rightsContact": "To exercise these rights, write to us at {email}. We respond within one month. You may also lodge a complaint with the CNIL (www.cnil.fr).",
+        "childrenTitle": "Children",
+        "children": "The site is aimed at professionals and is not intended for minors. The enquiry form is not intended for individuals under 16.",
+        "automatedTitle": "Automated decision-making",
+        "automated": "No automated decision-making or profiling is carried out on your data.",
+        "securityTitle": "Security",
+        "security": "Reasonable technical and organisational measures are in place to protect your data (encrypted connections, access controls). No absolute guarantee can be offered.",
+        "registerTitle": "Register and declaration",
+        "register": "SDK Enterprises maintains an internal register of processing activities (Art. 30 GDPR). No CNIL declaration number is claimed or invented."
+      },
+      "en": {
+        "controllerTitle": "Datenverantwortlicher",
+        "controller": "Der Datenverantwortliche ist {company}, firmierend als {name}, eingetragener Firmensitz in {address}. Wenn Sie Fragen zu Ihren personenbezogenen Daten haben, kontaktieren Sie uns unter {email}.",
+        "collectedDataTitle": "Gesammelte Daten",
+        "collectedData": "Das einzige Datenerfassungsformular auf dieser Website ist das öffentliche Formular „Projekt starten“. Die angeforderten Daten beschränken sich strikt auf:",
+        "collectedDataItems": [
+          "Firmenname (erforderlich)",
+          "Professionelle E-Mail-Adresse (erforderlich)",
+          "Unternehmenswebsite (optional)",
+          "Benötigte Fähigkeit (erforderlich)",
+          "Projekt- oder Problembeschreibung (erforderlich)",
+          "Vorhandene Umgebung (optional)",
+          "Zeitleiste (optional)",
+          "Budgetbereich (optional)",
+          "Unterstützender Kontext (optional)"
+        ],
+        "purposesTitle": "Zwecke und Rechtsgrundlagen",
+        "purposesNote": "Ihre Daten werden verarbeitet, um:",
+        "purposeItems": [
+          "Beantwortung Ihrer Projektanfrage – vorvertragliche Maßnahmen (Art. 6(1)(b) GDPR) und berechtigtes Interesse (Art. 6(1)(f));",
+          "Betreiben, Sichern und Verbessern der Website – berechtigtes Interesse (Art. 6(1)(f));",
+          "alle geltenden gesetzlichen Verpflichtungen einhalten (Art. 6(1)(c))."
+        ],
+        "recipientsTitle": "Empfänger",
+        "recipientsNote": "Ihre Daten sind nur autorisierten Personen innerhalb von SDK Enterprises zugänglich. Sie können von den folgenden Auftragsverarbeitern ausschließlich für den Bedarf ihrer Dienste verarbeitet werden:",
+        "transfersTitle": "Überweisungen außerhalb der EU",
+        "transfers": "Einige Auftragsverarbeiter verarbeiten möglicherweise Daten außerhalb des Europäischen Wirtschaftsraums (insbesondere in den Vereinigten Staaten). In diesem Fall kommen geeignete Schutzmaßnahmen zum Einsatz, beispielsweise die Standardvertragsklauseln der Europäischen Kommission.",
+        "retentionTitle": "Aufbewahrung",
+        "retention": "Die über das Formular erfassten Daten werden ab dem letzten Kontakt 12 Monate lang aufbewahrt, es sei denn, eine längere Aufbewahrung ist gesetzlich vorgeschrieben. Nach Ablauf dieser Frist werden sie gelöscht oder anonymisiert.",
+        "rightsTitle": "Ihre Rechte",
+        "rightsNote": "Gemäß Articles 15 to 22 GDPR haben Sie das Recht auf Zugang, Berichtigung, Löschung, Einschränkung, Übertragbarkeit und Widerspruch. Sie können Ihre Einwilligung auch jederzeit widerrufen.",
+        "rightsContact": "Um diese Rechte auszuüben, schreiben Sie uns an {email}. Wir antworten innerhalb eines Monats. Sie können eine Beschwerde auch beim CNIL (www.cnil.fr) einreichen.",
+        "childrenTitle": "Kinder",
+        "children": "Die Seite richtet sich an Berufstätige und ist nicht für Minderjährige gedacht. Das Anfrageformular ist nicht für Personen unter 16 Jahren bestimmt.",
+        "automatedTitle": "Automatisierte Entscheidungsfindung",
+        "automated": "Es findet keine automatisierte Entscheidungsfindung oder Profilierung Ihrer Daten statt.",
+        "securityTitle": "Sicherheit",
+        "security": "Zum Schutz Ihrer Daten sind angemessene technische und organisatorische Maßnahmen vorhanden (verschlüsselte Verbindungen, Zugriffskontrollen). Eine absolute Garantie kann nicht übernommen werden.",
+        "registerTitle": "Registrieren und Deklarieren",
+        "register": "SDK Enterprises führt ein internes Verzeichnis der Verarbeitungstätigkeiten (Art. 30 GDPR). Es wird keine CNIL-Deklarationsnummer beansprucht oder erfunden."
+      }
+    },
+    "terms": {
+      "title": "Nutzungsbedingungen",
+      "intro": "Die Regeln für die Nutzung dieser Website.",
+      "fr": {
+        "purposeTitle": "Objet",
+        "purpose": "These terms govern your use of the {name} website. By accessing the site, you agree to these terms.",
+        "servicesTitle": "Presentation of services",
+        "services": "The site presents the services of {name} and allows you to submit a project enquiry. This content is provided for information only and is neither a contractual offer nor a commitment to provide services.",
+        "enquiriesTitle": "Project enquiries",
+        "enquiries": "Information submitted through the \"Start a project\" form is handled in accordance with the privacy policy. Receiving an enquiry does not imply any obligation to accept it.",
+        "intellectualPropertyTitle": "Intellectual property",
+        "intellectualProperty": "The texts, logo, visuals and content of the site are the property of SDK Enterprises and may not be reused without prior authorisation.",
+        "availabilityTitle": "Site availability",
+        "availability": "The site is provided \"as is\". SDK Enterprises makes reasonable efforts to keep it accessible but does not guarantee uninterrupted or error-free availability.",
+        "liabilityTitle": "Liability",
+        "liability": "To the extent permitted by law, SDK Enterprises' liability is limited to direct damages and does not extend to indirect damages. Links to third-party sites are the sole responsibility of their publishers.",
+        "changesTitle": "Changes",
+        "changes": "SDK Enterprises may amend these terms at any time. The applicable version is the one published on this page.",
+        "lawTitle": "Governing law",
+        "law": "These terms are governed by French law. In the event of a dispute, the French courts have jurisdiction.",
+        "contactTitle": "Contact",
+        "contact": "For any question, contact {company} at {email}."
+      },
+      "en": {
+        "purposeTitle": "Zweck",
+        "purpose": "Diese Bedingungen regeln Ihre Nutzung der {name}-Website. Durch den Zugriff auf die Website stimmen Sie diesen Bedingungen zu.",
+        "servicesTitle": "Präsentation von Dienstleistungen",
+        "services": "Die Seite stellt die Leistungen von {name} vor und bietet Ihnen die Möglichkeit, eine Projektanfrage zu stellen. Diese Inhalte dienen lediglich der Information und stellen weder ein Vertragsangebot noch eine Verpflichtung zur Erbringung von Leistungen dar.",
+        "enquiriesTitle": "Projektanfragen",
+        "enquiries": "Die über das Formular „Projekt starten“ übermittelten Informationen werden gemäß der Datenschutzrichtlinie behandelt. Der Eingang einer Anfrage bedeutet keine Verpflichtung, diese anzunehmen.",
+        "intellectualPropertyTitle": "Geistiges Eigentum",
+        "intellectualProperty": "Die Texte, das Logo, das Bildmaterial und der Inhalt der Website sind Eigentum von SDK Enterprises und dürfen nicht ohne vorherige Genehmigung wiederverwendet werden.",
+        "availabilityTitle": "Verfügbarkeit der Website",
+        "availability": "Die Website wird „wie besehen“ bereitgestellt. SDK Enterprises unternimmt angemessene Anstrengungen, um die Verfügbarkeit aufrechtzuerhalten, garantiert jedoch keine ununterbrochene oder fehlerfreie Verfügbarkeit.",
+        "liabilityTitle": "Haftung",
+        "liability": "Soweit gesetzlich zulässig, ist die Haftung von SDK Enterprises auf direkte Schäden beschränkt und erstreckt sich nicht auf indirekte Schäden. Für Links zu Websites Dritter sind ausschließlich deren Herausgeber verantwortlich.",
+        "changesTitle": "Änderungen",
+        "changes": "SDK Enterprises kann diese Bedingungen jederzeit ändern. Es gilt die auf dieser Seite veröffentlichte Version.",
+        "lawTitle": "Geltendes Recht",
+        "law": "Diese Bedingungen unterliegen französischem Recht. Im Streitfall sind die französischen Gerichte zuständig.",
+        "contactTitle": "Kontakt",
+        "contact": "Bei Fragen wenden Sie sich bitte an {company} unter {email}."
+      }
+    },
+    "cookies": {
+      "title": "Cookie-Richtlinie",
+      "intro": "Was Cookies sind und ob diese Website sie verwendet.",
+      "fr": {
+        "whatIsTitle": "What is a cookie?",
+        "whatIs": "A cookie is a small text file placed on your device when you visit a website. It allows the site to recognise your browser and remember information.",
+        "thisSiteTitle": "Cookies set by this site",
+        "thisSite": "No analytics, advertising or tracking cookies are set by this site. The analytics solution in use (Vercel Analytics) is cookieless. Your browsing is therefore not tracked.",
+        "consentBannerTitle": "Consent banner",
+        "consentBanner": "No consent banner is shown because no cookies are set. If a cookie-setting script were added, a consent banner would become required and this page would be updated.",
+        "browserSettingsTitle": "Managing cookies in your browser",
+        "browserSettings": "You can configure your browser to refuse or delete cookies at any time. Instructions depend on your browser (Chrome, Firefox, Safari, Edge). Guides are available at www.cnil.fr."
+      },
+      "en": {
+        "whatIsTitle": "Was ist ein Cookie?",
+        "whatIs": "Ein Cookie ist eine kleine Textdatei, die auf Ihrem Gerät abgelegt wird, wenn Sie eine Website besuchen. Dadurch kann die Website Ihren Browser erkennen und sich Informationen merken.",
+        "thisSiteTitle": "Von dieser Website gesetzte Cookies",
+        "thisSite": "Auf dieser Website werden keine Analyse-, Werbe- oder Tracking-Cookies gesetzt. Die verwendete Analyselösung (Vercel Analytics) ist cookielos. Ihr Surfverhalten wird daher nicht nachverfolgt.",
+        "consentBannerTitle": "Einwilligungsbanner",
+        "consentBanner": "Es wird kein Einwilligungsbanner angezeigt, da keine Cookies gesetzt sind. Wenn ein Cookie-Setzskript hinzugefügt würde, wäre ein Einwilligungsbanner erforderlich und diese Seite würde aktualisiert.",
+        "browserSettingsTitle": "Verwalten von Cookies in Ihrem Browser",
+        "browserSettings": "Sie können Ihren Browser jederzeit so konfigurieren, dass Cookies abgelehnt oder gelöscht werden. Die Anweisungen hängen von Ihrem Browser ab (Chrome, Firefox, Safari, Edge). Anleitungen sind unter www.cnil.fr erhältlich."
+      }
+    }
+  },
+  "designSystem": {
+    "eyebrow": "SDK Enterprises · Designsystem",
+    "title": "Die gemeinsame visuelle Grundlage für die Website und das Kundenportal.",
+    "intro": "Diese Seite rendert alle Token, Grundelemente und Zustände, die in docs/design/design-system.md und docs/design/patterns.md definiert sind. Es ist die Referenz während der Entwicklung. Es wird bewusst nicht von der Produktionsnavigation aus verlinkt.",
+    "primaryAction": "Primäre Aktion",
+    "colors": {
+      "eyebrow": "01 · Palette",
+      "title": "Eine kleine Palette, gezielt eingesetzt.",
+      "intro": "Markengrün dient nur Aktionen und bedeutungsvollen Highlights – niemals Dekoration. Grüne Hintergründe tragen immer dunklen Text; Grüner Text erscheint nur auf dunklen Oberflächen."
+    },
+    "type": {
+      "eyebrow": "02 · Typografie",
+      "title": "JetBrains Mono, abgestimmt wie ein Redaktionssystem.",
+      "intro": "Schlagzeilen sind knapp und groß geschrieben; Etiketten sind klein, in Großbuchstaben und mit Laufschrift. Der Fließtext geht nie unter 14 Pixel."
+    },
+    "components": {
+      "eyebrow": "03 · Komponenten",
+      "title": "Zurückhaltende Grundelemente, ausgerichtet auf die Referenz.",
+      "intro": "Knöpfe, Abzeichen, Karten und Links. Eine Radiusfamilie, 1 Pixel-Ränder und keine Dekoration, die über die genehmigten Designs hinausgeht.",
+      "buttons": "Knöpfe",
+      "badges": "Abzeichen",
+      "cardsLinks": "Karten und Links",
+      "inProgress": "In Bearbeitung",
+      "review": "Rezension",
+      "pending": "Ausstehend",
+      "currentProjects": "Aktuelle Projekte",
+      "viewAll": "Alle anzeigen",
+      "metricsGrid": "Metrikraster (responsiv: 4 → 2 → 1)",
+      "activeProjects": "Aktive Projekte",
+      "openRequests": "Offene Anfragen",
+      "outstanding": "Hervorragend",
+      "pendingActions": "Ausstehende Aktionen"
+    },
+    "states": {
+      "eyebrow": "04 · Staaten",
+      "title": "Laden, Leer und Fehler – konsistente Oberflächen.",
+      "intro": "Keine Farberfindungen. Skeleton verwendet den Linienton, leere Zustände einen gestrichelten Rand, Fehler bleiben mit starker dunkler Betonung auf der Papieroberfläche.",
+      "loading": "Laden, Leer und Fehler – konsistente Oberflächen.",
+      "noRequestsYet": "Noch keine Anfragen",
+      "whenProjectExists": "Wenn ein Projekt oder eine Anfrage vorhanden ist, wird es hier angezeigt.",
+      "somethingFailed": "Etwas konnte nicht geladen werden",
+      "tryAgain": "Versuchen Sie es erneut oder wenden Sie sich an den Support, wenn das Problem weiterhin besteht.",
+      "requestService": "Fordern Sie einen Service an",
+      "retry": "Versuchen Sie es noch einmal"
+    },
+    "darkSurface": {
+      "eyebrow": "05 · Dunkle Oberfläche",
+      "title": "Dunkle Abschnitte tragen das gleiche System.",
+      "intro": "Primärer Text wird hell, sekundärer Text wird neblig und Grün wird für Hervorhebungen verwendet. Die Grenzlinie wird dunkler, um die Komposition ruhig zu halten."
+    },
+    "brandSurface": {
+      "eyebrow": "06 · Markenoberfläche",
+      "title": "Maximal ein Markenabschnitt pro Seite.",
+      "intro": "Grüne Hintergründe enthalten dunklen Text. Gehen Sie sparsam damit um – es ist die lauteste Oberfläche im System.",
+      "bringUsProblem": "Bringen Sie uns das Problem"
+    }
+  },
+  "auth": {
+    "loginRedirecting": "Weiterleitung zum Login...",
+    "logoutRedirecting": "Weiterleitung zum Abmelden..."
+  },
+  "errors": {
+    "label": "Fehler"
+  }
+}

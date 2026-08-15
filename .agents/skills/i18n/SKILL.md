@@ -1,0 +1,82 @@
+---
+name: i18n
+description: >
+  Internationalization for SDK Enterprises. Use when adding or editing
+  translations, routing, or locale-aware UI in this repo — new strings,
+  locale files, legal pages, marketing components, middleware behavior,
+  or next-intl patterns.
+metadata:
+  author: sdk-enterprises
+  version: "1.0.0"
+---
+
+# i18n (SDK Enterprises)
+
+next-intl v4 with Next.js 16 App Router. 17 European locales: `en, fr, de, es,
+pt, it, nl, sv, no, da, fi, pl, cs, hu, ro, bg, el`.
+
+## Source of truth
+
+- `src/i18n.ts` — locale list, default locale (`en`), prefixes (`as-needed`).
+- `src/middleware.ts` — `createMiddleware` with auth exclusion.
+- `src/locales/*.json` — translation catalogs.
+- `docs/conventions/structure.md` — directory layout and route conventions.
+
+## Adding a new translation key
+
+1. Add the key to `src/locales/en.json` (English is the source of truth).
+2. Run `npm run i18n:translate`. The incremental translator updates only
+   strings whose English source was added or changed, across all 16 targets.
+3. Review the generated copy in context. Machine translation is a first pass,
+   especially for legal, marketing, and idiomatic copy; never treat successful
+   execution alone as linguistic approval.
+4. Run `npm run i18n:check` to verify JSON shape, keys, arrays, interpolation
+   variables, and the absence of placeholders or leaked preservation markers.
+5. Use `getTranslations({ locale, namespace })` in server components.
+6. Use `useTranslations(namespace)` in client components.
+
+### Translation commands
+
+```bash
+npm run i18n:translate                 # all locales, changed English only
+npm run i18n:translate -- fr de        # selected locales, changed English only
+npm run i18n:translate -- --all fr     # deliberately regenerate all French
+npm run i18n:check                     # offline validation, no writes
+```
+
+The script is `scripts/translate-locales.py`; its per-locale English baseline is
+`src/locales/.translation-state.json`. Commit both the updated catalogs and
+baseline after review. Never hand-write `[TRANSLATE:...]` placeholders.
+
+The translator protects next-intl `{variables}`, SDK Enterprises, processor
+names, legal identifiers, URLs, and technology/product names. If new copy adds
+a proper noun or identifier that must stay verbatim, add it to the script's
+protected terms before translating.
+
+## Component conventions
+
+- Server components by default; `"use client"` only when interactivity requires it.
+- Pass `locale` as a prop from pages to marketing/legal components.
+- Legal pages are single-language per locale: FR locale renders `fr` section,
+  all other locales render `en` section.
+- Marketing components use `getTranslations` with `locale` prop.
+- Header accepts `locale` prop to render the `LanguageSwitcher`.
+
+## Legal content rules
+
+- French text in `fr.json` is authoritative for legal pages.
+- English text in `en.json` is the source for other locales.
+- No bilingual sections on legal pages.
+- Processors must be listed verbatim: Vercel, Auth0 (Okta), Resend, Prisma Postgres.
+
+## Proxy routing
+
+- `src/proxy.ts` strips the locale prefix before matching routes.
+- `/auth/*` is excluded from locale prefixing (Auth0 boundary).
+- All other public routes are locale-prefixed (e.g., `/en/login`, `/fr/mentions-legales`).
+
+## Build verification
+
+```bash
+npm run typecheck && npm run lint && npm run test
+```

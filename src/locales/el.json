@@ -1,0 +1,436 @@
+{
+  "meta": {
+    "siteDescription": "Γαλλική εταιρεία μηχανικών B2B. Κατασκευάζουμε, εκσυγχρονίζουμε και λειτουργούμε λογισμικό σε όλη τη στοίβα — πλατφόρμες υποστήριξης, υποδομή cloud, αυτοματοποίηση AI, συστήματα σε πραγματικό χρόνο και εσωτερικά εργαλεία.",
+    "title": "SDK Enterprises"
+  },
+  "nav": {
+    "toggleMenu": "Εναλλαγή μενού",
+    "home": "SDK Enterprises σπίτι",
+    "main": "Κύρια",
+    "services": "Υπηρεσίες",
+    "work": "Εργασία",
+    "process": "Διαδικασία",
+    "about": "Περίπου",
+    "discussProject": "Συζητήστε ένα έργο",
+    "signIn": "Συνδεθείτε",
+    "legal": "Νομική",
+    "mentionsLegales": "Αναφέρει τους νομικούς",
+    "privacy": "Απόρρητο",
+    "terms": "Όροι",
+    "cookies": "Μπισκότα"
+  },
+  "hero": {
+    "eyebrow": "B2B AI · Λογισμικό · Cloud · Μηχανική Συστημάτων",
+    "heading": "Ένας συνεργάτης μηχανικός για το stack που χρειάζεται η εταιρεία σας.",
+    "leadParagraph": "Το SDK Enterprises δημιουργεί, εκσυγχρονίζει και λειτουργεί λογισμικό σε όλη τη στοίβα — πλατφόρμες υποστήριξης, υποδομή cloud, αυτοματοποίηση AI, συστήματα σε πραγματικό χρόνο και εσωτερικά εργαλεία. Ασχολείστε με ένα εξειδικευμένο πρόβλημα ή έχετε μια ευρύτερη ροή εργασίας. Σε κάθε περίπτωση, τα άτομα που κάνουν τη δουλειά είναι τα άτομα με τα οποία μιλάς.",
+    "ctaStartProject": "Ξεκινήστε ένα έργο",
+    "ctaExploreServices": "Εξερευνήστε τις υπηρεσίες",
+    "trustFrance": "Η εταιρεία B2B με έδρα τη Γαλλία",
+    "trustSenior": "Παράδοση ανώτερης μηχανικής",
+    "trustAI": "AI + backend + cloud",
+    "trustClients": "Ευρωπαίοι & απομακρυσμένοι πελάτες"
+  },
+  "services": {
+    "eyebrow": "Υπηρεσίες",
+    "title": "Χρησιμοποιήστε όλη τη στοίβα — ή μόνο το μέρος που χρειάζεστε.",
+    "intro": "Το SDK μπορεί να ασχοληθεί με ένα εξειδικευμένο πρόβλημα ή να κατέχει μια ευρύτερη τεχνική ροή εργασίας.",
+    "items": [
+      {
+        "number": "01",
+        "category": "AI Engineering",
+        "title": "Πράκτορες AI & αυτοματισμός",
+        "copy": "Ενσωματώσεις LLM, πράκτορες, RAG, αυτοματοποίηση ροής εργασιών, εργαλεία προγραμματιστών και λειτουργίες με τη βοήθεια τεχνητής νοημοσύνης."
+      },
+      {
+        "number": "02",
+        "category": "Backend",
+        "title": "Πλατφόρμες, APIs & SaaS",
+        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs και αρχιτεκτονική backend σε πραγματικό χρόνο."
+      },
+      {
+        "number": "03",
+        "category": "Frontend",
+        "title": "Διεπαφές Ιστού και εφαρμογών",
+        "copy": "React, Vue, Nuxt, TypeScript, Tailwind και Shadcn."
+      },
+      {
+        "number": "04",
+        "category": "σύννεφο",
+        "title": "Cloud & υποδομές",
+        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD και αρχιτεκτονική ανάπτυξης."
+      },
+      {
+        "number": "05",
+        "category": "Δεδομένα",
+        "title": "Βάσεις δεδομένων, κρυφή μνήμη και αναζήτηση",
+        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey και Elasticsearch."
+      },
+      {
+        "number": "06",
+        "category": "Εκσυγχρονισμός",
+        "title": "Εκσυγχρονισμός κληρονομιάς",
+        "copy": "Αναβαθμίσεις πλαισίων, μετάβαση, τεχνική μείωση του χρέους και βελτιστοποίηση απόδοσης."
+      }
+    ]
+  },
+  "whySdk": {
+    "eyebrow": "Γιατί SDK",
+    "title": "Ανώτερη μηχανική χωρίς περιττά στρώματα.",
+    "intro": "Άμεση επικοινωνία, γρήγορη διάγνωση και ρεαλιστική εκτέλεση.",
+    "items": [
+      {
+        "kicker": "FR",
+        "copy": "Μια εταιρεία B2B με έδρα τη Γαλλία για ευρωπαίους και απομακρυσμένους πελάτες."
+      },
+      {
+        "kicker": "AI",
+        "copy": "LLM ενσωματώσεις, πράκτορες, αυτοματισμοί και εσωτερικά εργαλεία."
+      },
+      {
+        "kicker": "RT",
+        "copy": "Λειτουργία πλατφόρμας σε πραγματικό χρόνο και μεγάλου όγκου."
+      },
+      {
+        "kicker": "ΑΜΕΣΗ",
+        "copy": "Μιλάτε με τους μηχανικούς που κάνουν τη δουλειά, όχι με ένα επίπεδο λογαριασμού."
+      }
+    ]
+  },
+  "engagements": {
+    "eyebrow": "Εργαστείτε με το SDK",
+    "title": "Φέρτε ένα συγκεκριμένο πρόβλημα. Λάβετε μια συγκεκριμένη απάντηση.",
+    "intro": "Ξέρεις πότε κάτι στη στοίβα σου κοστίζει. Εδώ είναι οι καταστάσεις για τις οποίες έχει ρυθμιστεί το SDK.",
+    "items": [
+      {
+        "title": "Ένα σύστημα πολύ παλιό για να συνεχίσει να επιδιορθώνεται.",
+        "copy": "Χρειάζεστε ένα σχέδιο μετανάστευσης, όχι μια ευχή — έλεγχο του τι τρέχει, τι χαλάει και τη σειρά για να μετακομίσετε."
+      },
+      {
+        "title": "Τόμος για τον οποίο δεν δημιουργήθηκε η τρέχουσα στοίβα σας.",
+        "copy": "Απορρόφηση σε πραγματικό χρόνο, backend υψηλής απόδοσης και υποδομή για να διατηρούνται σταθερά."
+      },
+      {
+        "title": "AI που μπορείτε να βάλετε σε λειτουργία.",
+        "copy": "Ενσωματώσεις LLM, πράκτορες και αυτοματισμοί που αλλάζουν μια εσωτερική ροή εργασίας — όχι μια επίδειξη που σταματά στο γήπεδο."
+      },
+      {
+        "title": "Μια ομάδα που χρειάζεται μεγάλα χέρια.",
+        "copy": "Άμεση παράδοση μηχανικής στη βάση κωδίκων σας, χωρίς ένα μεσαίο επίπεδο να επιβραδύνει τις αποφάσεις."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Πώς δουλεύουμε",
+    "title": "Μια ξεκάθαρη διαδρομή από το πρόβλημα στην παραγωγή.",
+    "intro": "Τέσσερα βήματα, ορατή πρόοδος σε κάθε στάδιο.",
+    "items": [
+      {
+        "title": "Κατανοήστε",
+        "copy": "Επιχειρηματικός στόχος, στοίβα, περιορισμοί και κριτήρια επιτυχίας."
+      },
+      {
+        "title": "Σχεδιασμός",
+        "copy": "Αρχιτεκτονική, πεδίο εφαρμογής, κίνδυνοι και ορόσημα."
+      },
+      {
+        "title": "Κατασκευή",
+        "copy": "Υλοποίηση με ορατή πρόοδο."
+      },
+      {
+        "title": "Παράδοση",
+        "copy": "Ανάπτυξη, τεκμηρίωση και μεταβίβαση ιδιοκτησίας."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Εργαστείτε με το SDK",
+    "heading": "Φέρτε μας το πρόβλημα που πρέπει να λυθεί.",
+    "body": "Πείτε μας τι προσπαθείτε να κατασκευάσετε, να εκσυγχρονίσετε, να αυτοματοποιήσετε ή να διορθώσετε — θα σας πούμε ειλικρινά αν είναι κατάλληλο και τι θα χρειαζόταν.",
+    "registeredUnder": "Εγγεγραμμένος στο {company}",
+    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "AI · Λογισμικό · Cloud · Μηχανική Συστημάτων"
+  },
+  "legal": {
+    "mentionsLegales": {
+      "title": "Αναφέρει τους νομικούς",
+      "intro": "Νομικές ειδοποιήσεις για τον ιστότοπο SDK Enterprises.",
+      "fr": {
+        "editorTitle": "Éditeur du site",
+        "editorWebsite": "The website accessible at {domain} is published by {company}, trading as {name}.",
+        "siren": "SIREN: {siren}",
+        "siret": "SIRET: {siret}",
+        "registeredOffice": "Registered office: {address}",
+        "legalForm": "Legal form and share capital: Auto-entrepreneur (sole trader, micro-entreprise), no share capital",
+        "registration": "Company registration: RCS Paris {siren}",
+        "directorTitle": "Publication director",
+        "director": "Publication director: Hicham SADDEK.",
+        "hostingTitle": "Hosting",
+        "hosting": "The site is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, United States.",
+        "contactTitle": "Contact",
+        "contact": "Questions about the site may be sent to {email} or by phone at {phone}.",
+        "intellectualPropertyTitle": "Intellectual property",
+        "intellectualProperty": "The structure, texts, logo and content of the site are the property of SDK Enterprises. Any reproduction or representation, in whole or in part, without prior authorisation is prohibited, except as permitted by applicable law.",
+        "legalFrameworkTitle": "Legal framework",
+        "legalFramework": "These notices are governed by French law and are established in accordance with Article 6-III of the French law n° 2004-575 of 21 June 2004 on confidence in the digital economy (LCEN)."
+      },
+      "en": {
+        "publisherTitle": "Εκδότης",
+        "publisherWebsite": "Ο ιστότοπος που είναι προσβάσιμος στο {domain} δημοσιεύεται από την {company}, που διαπραγματεύεται ως {name}.",
+        "siren": "SIREN: {siren}",
+        "siret": "SIRET: {siret}",
+        "registeredOffice": "Έδρα: {address}",
+        "legalForm": "Νομική μορφή και μετοχικό κεφάλαιο: Αυτο-επιχειρηματίας (ατομικός έμπορος, πολύ μικρή επιχείρηση), χωρίς μετοχικό κεφάλαιο",
+        "registration": "Εγγραφή εταιρείας: RCS Paris {siren}",
+        "directorTitle": "Διευθυντής έκδοσης",
+        "director": "Διευθυντής έκδοσης: Hicham SADDEK.",
+        "hostingTitle": "Φιλοξενία",
+        "hosting": "Ο ιστότοπος φιλοξενείται από την Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, Ηνωμένες Πολιτείες.",
+        "contactTitle": "Επικοινωνία",
+        "contact": "Ερωτήσεις σχετικά με τον ιστότοπο μπορούν να αποσταλούν στο {email} ή μέσω τηλεφώνου στο {phone}.",
+        "intellectualPropertyTitle": "Διανοητική ιδιοκτησία",
+        "intellectualProperty": "Η δομή, τα κείμενα, το λογότυπο και το περιεχόμενο του ιστότοπου είναι ιδιοκτησία της SDK Enterprises. Απαγορεύεται οποιαδήποτε αναπαραγωγή ή αναπαράσταση, εν όλω ή εν μέρει, χωρίς προηγούμενη εξουσιοδότηση, εκτός εάν επιτρέπεται από την ισχύουσα νομοθεσία.",
+        "legalFrameworkTitle": "Νομικό πλαίσιο",
+        "legalFramework": "Αυτές οι ανακοινώσεις διέπονται από το γαλλικό δίκαιο και έχουν θεσπιστεί σύμφωνα με το άρθρο 6-III του γαλλικού νόμου αριθ. 2004-575 της 21ης Ιουνίου 2004 για την εμπιστοσύνη στην ψηφιακή οικονομία (LCEN)."
+      }
+    },
+    "privacy": {
+      "title": "Πολιτική απορρήτου",
+      "intro": "Πώς το SDK Enterprises χειρίζεται προσωπικά δεδομένα, σύμφωνα με το GDPR (RGPD).",
+      "processors": [
+        {
+          "name": "Vercel",
+          "role": "Φιλοξενία ιστότοπου και αναλυτικά στοιχεία χωρίς cookie"
+        },
+        {
+          "name": "Auth0 (Okta)",
+          "role": "Έλεγχος ταυτότητας για την πύλη πελάτη"
+        },
+        {
+          "name": "Resend",
+          "role": "Email συναλλαγών για ερωτήματα έργου"
+        },
+        {
+          "name": "Prisma Postgres",
+          "role": "Διαχειριζόμενη βάση δεδομένων PostgreSQL"
+        }
+      ],
+      "fr": {
+        "controllerTitle": "Responsable de traitement",
+        "controller": "The data controller is {company}, trading as {name}, registered office at {address}. For any question about your personal data, contact us at {email}.",
+        "collectedDataTitle": "Data collected",
+        "collectedData": "The only data-collection form on this site is the public \"Start a project\" form. The data requested is strictly limited to:",
+        "collectedDataItems": [
+          "Company name (required)",
+          "Professional email address (required)",
+          "Company website (optional)",
+          "Capability needed (required)",
+          "Project or problem description (required)",
+          "Existing environment (optional)",
+          "Timeline (optional)",
+          "Budget range (optional)",
+          "Supporting context (optional)"
+        ],
+        "purposesTitle": "Purposes and legal bases",
+        "purposesNote": "Your data is processed to:",
+        "purposeItems": [
+          "respond to your project enquiry — pre-contractual measures (Art. 6(1)(b) GDPR) and legitimate interest (Art. 6(1)(f));",
+          "operate, secure and improve the site — legitimate interest (Art. 6(1)(f));",
+          "comply with any applicable legal obligations (Art. 6(1)(c))."
+        ],
+        "recipientsTitle": "Recipients",
+        "recipientsNote": "Your data is accessible only to authorised people within SDK Enterprises. It may be processed by the following processors, strictly for the needs of their services:",
+        "transfersTitle": "Transfers outside the EU",
+        "transfers": "Some processors may process data outside the European Economic Area (notably in the United States). Where this occurs, appropriate safeguards are used, such as the European Commission's standard contractual clauses.",
+        "retentionTitle": "Retention",
+        "retention": "Data collected through the form is kept for 12 months from the last contact, unless a longer retention is required by law. After this period, it is deleted or anonymised.",
+        "rightsTitle": "Your rights",
+        "rightsNote": "In accordance with Articles 15 to 22 GDPR, you have the right to access, rectification, erasure, restriction, portability and objection. You may also withdraw your consent at any time.",
+        "rightsContact": "To exercise these rights, write to us at {email}. We respond within one month. You may also lodge a complaint with the CNIL (www.cnil.fr).",
+        "childrenTitle": "Children",
+        "children": "The site is aimed at professionals and is not intended for minors. The enquiry form is not intended for individuals under 16.",
+        "automatedTitle": "Automated decision-making",
+        "automated": "No automated decision-making or profiling is carried out on your data.",
+        "securityTitle": "Security",
+        "security": "Reasonable technical and organisational measures are in place to protect your data (encrypted connections, access controls). No absolute guarantee can be offered.",
+        "registerTitle": "Register and declaration",
+        "register": "SDK Enterprises maintains an internal register of processing activities (Art. 30 GDPR). No CNIL declaration number is claimed or invented."
+      },
+      "en": {
+        "controllerTitle": "Υπεύθυνος επεξεργασίας δεδομένων",
+        "controller": "Ο υπεύθυνος επεξεργασίας δεδομένων είναι ο {company}, ο οποίος διαπραγματεύεται ως {name}, με έδρα το {address}. Για οποιαδήποτε ερώτηση σχετικά με τα προσωπικά σας δεδομένα, επικοινωνήστε μαζί μας στο {email}.",
+        "collectedDataTitle": "Συλλέγονται δεδομένα",
+        "collectedData": "Η μόνη φόρμα συλλογής δεδομένων σε αυτόν τον ιστότοπο είναι η δημόσια φόρμα \"Έναρξη έργου\". Τα δεδομένα που ζητούνται περιορίζονται αυστηρά σε:",
+        "collectedDataItems": [
+          "Επωνυμία εταιρείας (απαιτείται)",
+          "Επαγγελματική διεύθυνση email (απαιτείται)",
+          "Ιστότοπος εταιρείας (προαιρετικό)",
+          "Απαιτείται ικανότητα (απαιτείται)",
+          "Περιγραφή έργου ή προβλήματος (απαιτείται)",
+          "Υπάρχον περιβάλλον (προαιρετικό)",
+          "Χρονολόγιο (προαιρετικό)",
+          "Εύρος προϋπολογισμού (προαιρετικό)",
+          "Υποστηρικτικό πλαίσιο (προαιρετικό)"
+        ],
+        "purposesTitle": "Σκοποί και νομικές βάσεις",
+        "purposesNote": "Τα δεδομένα σας υποβάλλονται σε επεξεργασία για:",
+        "purposeItems": [
+          "απαντήστε στο ερώτημά σας για το έργο — προσυμβατικά μέτρα (Art. 6(1)(b) GDPR) και έννομο συμφέρον (Art. 6(1)(f)).",
+          "λειτουργία, ασφάλεια και βελτίωση του ιστότοπου — έννομο συμφέρον (Art. 6(1)(f))·",
+          "συμμορφώνονται με τυχόν ισχύουσες νομικές υποχρεώσεις (Art. 6(1)(c))."
+        ],
+        "recipientsTitle": "Παραλήπτες",
+        "recipientsNote": "Τα δεδομένα σας είναι προσβάσιμα μόνο σε εξουσιοδοτημένα άτομα εντός του SDK Enterprises. Μπορεί να υποβληθεί σε επεξεργασία από τους ακόλουθους επεξεργαστές, αυστηρά για τις ανάγκες των υπηρεσιών τους:",
+        "transfersTitle": "Μεταγραφές εκτός Ε.Ε",
+        "transfers": "Ορισμένοι επεξεργαστές ενδέχεται να επεξεργάζονται δεδομένα εκτός του Ευρωπαϊκού Οικονομικού Χώρου (ιδίως στις Ηνωμένες Πολιτείες). Όπου συμβαίνει αυτό, χρησιμοποιούνται κατάλληλες διασφαλίσεις, όπως οι τυπικές συμβατικές ρήτρες της Ευρωπαϊκής Επιτροπής.",
+        "retentionTitle": "Διατήρηση",
+        "retention": "Τα δεδομένα που συλλέγονται μέσω της φόρμας διατηρούνται για 12 μήνες από την τελευταία επαφή, εκτός εάν απαιτείται από το νόμο μεγαλύτερη διατήρηση. Μετά από αυτό το διάστημα, διαγράφεται ή ανωνυμοποιείται.",
+        "rightsTitle": "Τα δικαιώματά σας",
+        "rightsNote": "Σύμφωνα με το Articles 15 to 22 GDPR, έχετε το δικαίωμα πρόσβασης, διόρθωσης, διαγραφής, περιορισμού, φορητότητας και αντίρρησης. Μπορείτε επίσης να αποσύρετε τη συγκατάθεσή σας ανά πάσα στιγμή.",
+        "rightsContact": "Για να ασκήσετε αυτά τα δικαιώματα, γράψτε μας στο {email}. Απαντάμε μέσα σε ένα μήνα. Μπορείτε επίσης να υποβάλετε ένα παράπονο στο CNIL (www.cnil.fr).",
+        "childrenTitle": "Παιδιά",
+        "children": "Ο ιστότοπος απευθύνεται σε επαγγελματίες και δεν προορίζεται για ανηλίκους. Το έντυπο ερωτήματος δεν προορίζεται για άτομα κάτω των 16 ετών.",
+        "automatedTitle": "Αυτοματοποιημένη λήψη αποφάσεων",
+        "automated": "Δεν πραγματοποιείται αυτοματοποιημένη λήψη αποφάσεων ή δημιουργία προφίλ στα δεδομένα σας.",
+        "securityTitle": "Ασφάλεια",
+        "security": "Υπάρχουν εύλογα τεχνικά και οργανωτικά μέτρα για την προστασία των δεδομένων σας (κρυπτογραφημένες συνδέσεις, έλεγχοι πρόσβασης). Δεν μπορεί να προσφερθεί απόλυτη εγγύηση.",
+        "registerTitle": "Εγγραφή και δήλωση",
+        "register": "Το SDK Enterprises διατηρεί ένα εσωτερικό μητρώο δραστηριοτήτων επεξεργασίας (Art. 30 GDPR). Δεν αξιώνεται ή επινοείται αριθμός δήλωσης CNIL."
+      }
+    },
+    "terms": {
+      "title": "Όροι χρήσης",
+      "intro": "Οι κανόνες χρήσης αυτού του ιστότοπου.",
+      "fr": {
+        "purposeTitle": "Objet",
+        "purpose": "These terms govern your use of the {name} website. By accessing the site, you agree to these terms.",
+        "servicesTitle": "Presentation of services",
+        "services": "The site presents the services of {name} and allows you to submit a project enquiry. This content is provided for information only and is neither a contractual offer nor a commitment to provide services.",
+        "enquiriesTitle": "Project enquiries",
+        "enquiries": "Information submitted through the \"Start a project\" form is handled in accordance with the privacy policy. Receiving an enquiry does not imply any obligation to accept it.",
+        "intellectualPropertyTitle": "Intellectual property",
+        "intellectualProperty": "The texts, logo, visuals and content of the site are the property of SDK Enterprises and may not be reused without prior authorisation.",
+        "availabilityTitle": "Site availability",
+        "availability": "The site is provided \"as is\". SDK Enterprises makes reasonable efforts to keep it accessible but does not guarantee uninterrupted or error-free availability.",
+        "liabilityTitle": "Liability",
+        "liability": "To the extent permitted by law, SDK Enterprises' liability is limited to direct damages and does not extend to indirect damages. Links to third-party sites are the sole responsibility of their publishers.",
+        "changesTitle": "Changes",
+        "changes": "SDK Enterprises may amend these terms at any time. The applicable version is the one published on this page.",
+        "lawTitle": "Governing law",
+        "law": "These terms are governed by French law. In the event of a dispute, the French courts have jurisdiction.",
+        "contactTitle": "Contact",
+        "contact": "For any question, contact {company} at {email}."
+      },
+      "en": {
+        "purposeTitle": "Σκοπός",
+        "purpose": "Αυτοί οι όροι διέπουν τη χρήση του ιστότοπου {name} από εσάς. Με την πρόσβαση στον ιστότοπο, συμφωνείτε με αυτούς τους όρους.",
+        "servicesTitle": "Παρουσίαση υπηρεσιών",
+        "services": "Ο ιστότοπος παρουσιάζει τις υπηρεσίες του {name} και σας επιτρέπει να υποβάλετε ένα αίτημα για το έργο. Αυτό το περιεχόμενο παρέχεται μόνο για ενημέρωση και δεν αποτελεί συμβατική προσφορά ούτε δέσμευση παροχής υπηρεσιών.",
+        "enquiriesTitle": "Ερωτήσεις έργου",
+        "enquiries": "Ο χειρισμός των πληροφοριών που υποβάλλονται μέσω της φόρμας \"Έναρξη έργου\" γίνεται σύμφωνα με την πολιτική απορρήτου. Η λήψη ερωτήματος δεν συνεπάγεται καμία υποχρέωση αποδοχής του.",
+        "intellectualPropertyTitle": "Διανοητική ιδιοκτησία",
+        "intellectualProperty": "Τα κείμενα, το λογότυπο, τα γραφικά και το περιεχόμενο του ιστότοπου αποτελούν ιδιοκτησία της SDK Enterprises και δεν επιτρέπεται να επαναχρησιμοποιηθούν χωρίς προηγούμενη εξουσιοδότηση.",
+        "availabilityTitle": "Διαθεσιμότητα τοποθεσίας",
+        "availability": "Ο ιστότοπος παρέχεται \"ως έχει\". Το SDK Enterprises καταβάλλει εύλογες προσπάθειες για να το διατηρήσει προσβάσιμο, αλλά δεν εγγυάται αδιάκοπη ή χωρίς σφάλματα διαθεσιμότητα.",
+        "liabilityTitle": "Ευθύνη",
+        "liability": "Στο βαθμό που επιτρέπεται από τη νομοθεσία, η ευθύνη της SDK Enterprises περιορίζεται σε άμεσες ζημίες και δεν εκτείνεται σε έμμεσες ζημίες. Οι σύνδεσμοι προς ιστότοπους τρίτων αποτελούν αποκλειστική ευθύνη των εκδοτών τους.",
+        "changesTitle": "Αλλαγές",
+        "changes": "Η SDK Enterprises μπορεί να τροποποιήσει αυτούς τους όρους ανά πάσα στιγμή. Η ισχύουσα έκδοση είναι αυτή που δημοσιεύεται σε αυτή τη σελίδα.",
+        "lawTitle": "Εφαρμοστέο δίκαιο",
+        "law": "Αυτοί οι όροι διέπονται από το γαλλικό δίκαιο. Σε περίπτωση διαφοράς, αρμόδια είναι τα γαλλικά δικαστήρια.",
+        "contactTitle": "Επικοινωνία",
+        "contact": "Για οποιαδήποτε απορία, επικοινωνήστε με το {company} στο {email}."
+      }
+    },
+    "cookies": {
+      "title": "Πολιτική cookie",
+      "intro": "Τι είναι τα cookies και αν τα χρησιμοποιεί αυτός ο ιστότοπος.",
+      "fr": {
+        "whatIsTitle": "What is a cookie?",
+        "whatIs": "A cookie is a small text file placed on your device when you visit a website. It allows the site to recognise your browser and remember information.",
+        "thisSiteTitle": "Cookies set by this site",
+        "thisSite": "No analytics, advertising or tracking cookies are set by this site. The analytics solution in use (Vercel Analytics) is cookieless. Your browsing is therefore not tracked.",
+        "consentBannerTitle": "Consent banner",
+        "consentBanner": "No consent banner is shown because no cookies are set. If a cookie-setting script were added, a consent banner would become required and this page would be updated.",
+        "browserSettingsTitle": "Managing cookies in your browser",
+        "browserSettings": "You can configure your browser to refuse or delete cookies at any time. Instructions depend on your browser (Chrome, Firefox, Safari, Edge). Guides are available at www.cnil.fr."
+      },
+      "en": {
+        "whatIsTitle": "Τι είναι ένα cookie;",
+        "whatIs": "Ένα cookie είναι ένα μικρό αρχείο κειμένου που τοποθετείται στη συσκευή σας όταν επισκέπτεστε έναν ιστότοπο. Επιτρέπει στον ιστότοπο να αναγνωρίζει το πρόγραμμα περιήγησής σας και να θυμάται πληροφορίες.",
+        "thisSiteTitle": "Cookies που ορίζονται από αυτόν τον ιστότοπο",
+        "thisSite": "Δεν ορίζονται αναλυτικά στοιχεία, διαφημίσεις ή cookie παρακολούθησης από αυτόν τον ιστότοπο. Η λύση αναλυτικών στοιχείων που χρησιμοποιείται (Vercel Analytics) είναι χωρίς cookie. Επομένως, η περιήγησή σας δεν παρακολουθείται.",
+        "consentBannerTitle": "Banner συναίνεσης",
+        "consentBanner": "Δεν εμφανίζεται banner συναίνεσης επειδή δεν έχουν οριστεί cookie. Εάν προστεθεί ένα σενάριο ρύθμισης cookie, θα απαιτούνταν ένα banner συναίνεσης και αυτή η σελίδα θα ενημερωνόταν.",
+        "browserSettingsTitle": "Διαχείριση cookies στο πρόγραμμα περιήγησής σας",
+        "browserSettings": "Μπορείτε να διαμορφώσετε το πρόγραμμα περιήγησής σας ώστε να αρνείται ή να διαγράφει τα cookies ανά πάσα στιγμή. Οι οδηγίες εξαρτώνται από το πρόγραμμα περιήγησής σας (Chrome, Firefox, Safari, Edge). Οι οδηγοί είναι διαθέσιμοι στο www.cnil.fr."
+      }
+    }
+  },
+  "designSystem": {
+    "eyebrow": "SDK Enterprises · Σύστημα σχεδίασης",
+    "title": "Η κοινή οπτική βάση για τον ιστότοπο και την πύλη πελατών.",
+    "intro": "Αυτή η σελίδα αποδίδει κάθε διακριτικό, πρωτόγονο και κατάσταση που ορίζεται στα docs/design/design-system.md και docs/design/patterns.md. Είναι η αναφορά κατά την ανάπτυξη. Δεν συνδέεται σκόπιμα από την πλοήγηση παραγωγής.",
+    "primaryAction": "Πρωταρχική δράση",
+    "colors": {
+      "eyebrow": "01 · Παλέτα",
+      "title": "Μια μικρή παλέτα, που χρησιμοποιείται με πρόθεση.",
+      "intro": "Το ολοκαίνουργιο πράσινο προορίζεται μόνο για δράσεις και ουσιαστικές στιγμές — ποτέ διακόσμηση. Τα πράσινα φόντο φέρουν πάντα σκούρο κείμενο. Το πράσινο κείμενο εμφανίζεται μόνο σε σκούρες επιφάνειες."
+    },
+    "type": {
+      "eyebrow": "02 · Τυπογραφία",
+      "title": "JetBrains Mono, συντονισμένο σαν σύστημα εκδοτικού τύπου.",
+      "intro": "Οι τίτλοι είναι κλειστοί και μεγάλοι. οι ετικέτες ορίζονται μικρές, κεφαλαία και παρακολουθούνται. Το αντίγραφο σώματος δεν πέφτει ποτέ κάτω από 14 px."
+    },
+    "components": {
+      "eyebrow": "03 · Εξαρτήματα",
+      "title": "Συγκρατημένα πρωτόγονα, ευθυγραμμισμένα με την αναφορά.",
+      "intro": "Κουμπιά, κονκάρδες, κάρτες και σύνδεσμοι. Μία οικογένεια ακτίνας, περιγράμματα 1 εικονοστοιχείου και καμία διακόσμηση πέρα ​​από αυτό που χρησιμοποιούν τα εγκεκριμένα σχέδια.",
+      "buttons": "Κουμπιά",
+      "badges": "Σήματα",
+      "cardsLinks": "Κάρτες & σύνδεσμοι",
+      "inProgress": "Σε εξέλιξη",
+      "review": "Επανεξέταση",
+      "pending": "Σε εκκρεμότητα",
+      "currentProjects": "Τρέχοντα έργα",
+      "viewAll": "Προβολή όλων",
+      "metricsGrid": "Πλέγμα μετρήσεων (ανταποκρίνεται: 4 → 2 → 1)",
+      "activeProjects": "Ενεργά έργα",
+      "openRequests": "Ανοιχτά αιτήματα",
+      "outstanding": "Εξαιρετικό",
+      "pendingActions": "Εκκρεμείς ενέργειες"
+    },
+    "states": {
+      "eyebrow": "04 · Πολιτεία",
+      "title": "Φόρτωση, άδεια και σφάλμα — σταθερές επιφάνειες.",
+      "intro": "Χωρίς χρωματικές εφευρέσεις. Το Skeleton χρησιμοποιεί τον τόνο της γραμμής, οι κενές καταστάσεις δηλώνουν ένα διακεκομμένο περίγραμμα, τα σφάλματα παραμένουν στην επιφάνεια του χαρτιού με έντονη σκοτεινή έμφαση.",
+      "loading": "Φόρτωση, άδεια και σφάλμα — σταθερές επιφάνειες.",
+      "noRequestsYet": "Δεν υπάρχουν ακόμη αιτήματα",
+      "whenProjectExists": "Όταν υπάρχει ένα έργο ή αίτημα, θα εμφανίζεται εδώ.",
+      "somethingFailed": "Κάτι απέτυχε να φορτώσει",
+      "tryAgain": "Δοκιμάστε ξανά ή επικοινωνήστε με την υποστήριξη εάν το πρόβλημα παραμένει.",
+      "requestService": "Ζητήστε μια υπηρεσία",
+      "retry": "Επανάληψη"
+    },
+    "darkSurface": {
+      "eyebrow": "05 · Σκοτεινή επιφάνεια",
+      "title": "Τα σκοτεινά τμήματα φέρουν το ίδιο σύστημα.",
+      "intro": "Το κύριο κείμενο γίνεται ανοιχτό, το δευτερεύον μετατρέπεται σε ομίχλη και το πράσινο χρησιμοποιείται για τονισμένα σημεία. Η γραμμή συνόρων σκουραίνει για να διατηρεί τη σύνθεση ήσυχη."
+    },
+    "brandSurface": {
+      "eyebrow": "06 · Επιφάνεια μάρκας",
+      "title": "Ένα τμήμα επωνυμίας ανά σελίδα, το πολύ.",
+      "intro": "Τα πράσινα φόντο φέρουν σκούρο κείμενο. Χρησιμοποιήστε το με φειδώ — είναι η πιο δυνατή επιφάνεια στο σύστημα.",
+      "bringUsProblem": "Φέρτε μας το πρόβλημα"
+    }
+  },
+  "auth": {
+    "loginRedirecting": "Ανακατεύθυνση για σύνδεση...",
+    "logoutRedirecting": "Ανακατεύθυνση προς αποσύνδεση..."
+  },
+  "errors": {
+    "label": "Σφάλμα"
+  }
+}

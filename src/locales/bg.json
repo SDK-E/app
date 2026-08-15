@@ -1,0 +1,436 @@
+{
+  "meta": {
+    "siteDescription": "Френска инженерна компания B2B. Ние изграждаме, модернизираме и управляваме софтуер в целия стек — бекенд платформи, облачна инфраструктура, AI автоматизация, системи в реално време и вътрешни инструменти.",
+    "title": "SDK Enterprises"
+  },
+  "nav": {
+    "toggleMenu": "Превключване на менюто",
+    "home": "SDK Enterprises дом",
+    "main": "Основен",
+    "services": "Услуги",
+    "work": "работа",
+    "process": "Процес",
+    "about": "За",
+    "discussProject": "Обсъдете проект",
+    "signIn": "влезте",
+    "legal": "Законни",
+    "mentionsLegales": "Споменава légales",
+    "privacy": "Поверителност",
+    "terms": "Условия",
+    "cookies": "Бисквитки"
+  },
+  "hero": {
+    "eyebrow": "B2B AI · Софтуер · Облак · Системно инженерство",
+    "heading": "Един инженерен партньор за стека, от който се нуждае вашата компания.",
+    "leadParagraph": "SDK Enterprises изгражда, модернизира и управлява софтуер в целия стек — бекенд платформи, облачна инфраструктура, AI автоматизация, системи в реално време и вътрешни инструменти. Вие се занимавате с един специализиран проблем или притежавате по-широк работен поток; така или иначе, хората, които вършат работата, са хората, с които говорите.",
+    "ctaStartProject": "Стартирайте проект",
+    "ctaExploreServices": "Разгледайте услугите",
+    "trustFrance": "Базирана във Франция компания B2B",
+    "trustSenior": "Старши инженеринг доставка",
+    "trustAI": "AI + бекенд + облак",
+    "trustClients": "Европейски и отдалечени клиенти"
+  },
+  "services": {
+    "eyebrow": "Услуги",
+    "title": "Използвайте целия стек — или само частта, от която се нуждаете.",
+    "intro": "SDK може да се ангажира с един специализиран проблем или да притежава по-широк технически работен поток.",
+    "items": [
+      {
+        "number": "01",
+        "category": "ИИ инженерство",
+        "title": "AI агенти и автоматизация",
+        "copy": "LLM интеграции, агенти, RAG, автоматизация на работния процес, инструменти за разработчици и операции, подпомагани от AI."
+      },
+      {
+        "number": "02",
+        "category": "Бекенд",
+        "title": "Платформи, APIs & SaaS",
+        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs и бекенд архитектура в реално време."
+      },
+      {
+        "number": "03",
+        "category": "Frontend",
+        "title": "Интерфейси за уеб и приложения",
+        "copy": "React, Vue, Nuxt, TypeScript, Tailwind и Shadcn."
+      },
+      {
+        "number": "04",
+        "category": "Облак",
+        "title": "Облак и инфраструктура",
+        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD и архитектура за внедряване."
+      },
+      {
+        "number": "05",
+        "category": "данни",
+        "title": "Бази данни, кеш и търсене",
+        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey и Elasticsearch."
+      },
+      {
+        "number": "06",
+        "category": "Модернизация",
+        "title": "Наследена модернизация",
+        "copy": "Надстройки на рамката, миграция, намаляване на техническия дълг и оптимизиране на производителността."
+      }
+    ]
+  },
+  "whySdk": {
+    "eyebrow": "Защо SDK",
+    "title": "Старши инженеринг без излишни слоеве.",
+    "intro": "Директна комуникация, бърза диагностика и прагматично изпълнение.",
+    "items": [
+      {
+        "kicker": "FR",
+        "copy": "Базирана във Франция B2B компания за европейски и отдалечени клиенти."
+      },
+      {
+        "kicker": "AI",
+        "copy": "LLM интеграции, агенти, автоматизация и вътрешни инструменти."
+      },
+      {
+        "kicker": "RT",
+        "copy": "Работа с платформа в реално време и голям обем."
+      },
+      {
+        "kicker": "ДИРЕКТНО",
+        "copy": "Говорите с инженерите, които вършат работата, а не със слой акаунт."
+      }
+    ]
+  },
+  "engagements": {
+    "eyebrow": "Работете с SDK",
+    "title": "Донесете конкретен проблем. Получете конкретен отговор.",
+    "intro": "Знаете кога нещо във вашия стак ви струва. Ето ситуациите, за които е настроен SDK.",
+    "items": [
+      {
+        "title": "Система, която е твърде стара, за да продължим да я кръпваме.",
+        "copy": "Имате нужда от план за миграция, а не от желание — проверка на това какво работи, какво се поврежда и реда за преместване."
+      },
+      {
+        "title": "Обем, за който текущият ви стек не е създаден.",
+        "copy": "Поглъщане в реално време, бекенд с висока производителност и инфраструктура, която ги поддържа стабилни."
+      },
+      {
+        "title": "AI, който можете да задействате.",
+        "copy": "LLM интеграции, агенти и автоматизация, които променят вътрешния работен процес — не демонстрация, която спира на терена."
+      },
+      {
+        "title": "Отбор, който се нуждае от старши ръце.",
+        "copy": "Директна инженерна доставка на вашата кодова база, без средно ниво, забавящо решенията."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Как работим",
+    "title": "Ясен път от проблема до производството.",
+    "intro": "Четири стъпки, видим напредък на всеки етап.",
+    "items": [
+      {
+        "title": "Разберете",
+        "copy": "Бизнес цел, стек, ограничения и критерии за успех."
+      },
+      {
+        "title": "Дизайн",
+        "copy": "Архитектура, обхват, рискове и етапи."
+      },
+      {
+        "title": "Изграждане",
+        "copy": "Изпълнение с видим напредък."
+      },
+      {
+        "title": "Предаване",
+        "copy": "Разположете, документирайте и прехвърлете собствеността."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Работете с SDK",
+    "heading": "Донесете ни проблема, който трябва да решите.",
+    "body": "Кажете ни какво се опитвате да изградите, модернизирате, автоматизирате или поправите — ние ще ви кажем честно дали е подходящо и какво ще отнеме.",
+    "registeredUnder": "Регистрирана под {company}",
+    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "AI · Софтуер · Облак · Системно инженерство"
+  },
+  "legal": {
+    "mentionsLegales": {
+      "title": "Споменава légales",
+      "intro": "Правни бележки за уебсайта SDK Enterprises.",
+      "fr": {
+        "editorTitle": "Éditeur du site",
+        "editorWebsite": "The website accessible at {domain} is published by {company}, trading as {name}.",
+        "siren": "SIREN: {siren}",
+        "siret": "SIRET: {siret}",
+        "registeredOffice": "Registered office: {address}",
+        "legalForm": "Legal form and share capital: Auto-entrepreneur (sole trader, micro-entreprise), no share capital",
+        "registration": "Company registration: RCS Paris {siren}",
+        "directorTitle": "Publication director",
+        "director": "Publication director: Hicham SADDEK.",
+        "hostingTitle": "Hosting",
+        "hosting": "The site is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, United States.",
+        "contactTitle": "Contact",
+        "contact": "Questions about the site may be sent to {email} or by phone at {phone}.",
+        "intellectualPropertyTitle": "Intellectual property",
+        "intellectualProperty": "The structure, texts, logo and content of the site are the property of SDK Enterprises. Any reproduction or representation, in whole or in part, without prior authorisation is prohibited, except as permitted by applicable law.",
+        "legalFrameworkTitle": "Legal framework",
+        "legalFramework": "These notices are governed by French law and are established in accordance with Article 6-III of the French law n° 2004-575 of 21 June 2004 on confidence in the digital economy (LCEN)."
+      },
+      "en": {
+        "publisherTitle": "Издател",
+        "publisherWebsite": "Уебсайтът, достъпен на {domain}, е публикуван от {company}, търгуващ като {name}.",
+        "siren": "SIREN: {siren}",
+        "siret": "SIRET: {siret}",
+        "registeredOffice": "Седалище: {address}",
+        "legalForm": "Правна форма и акционерен капитал: Автомобилен предприемач (едноличен търговец, микропредприятие), без акционерен капитал",
+        "registration": "Регистрация на фирма: RCS Paris {siren}",
+        "directorTitle": "Директор на публикацията",
+        "director": "Директор на публикацията: Hicham SADDEK.",
+        "hostingTitle": "Хостинг",
+        "hosting": "Сайтът се хоства от Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, Съединени щати.",
+        "contactTitle": "Контакт",
+        "contact": "Въпроси относно сайта могат да се изпращат на {email} или по телефона на {phone}.",
+        "intellectualPropertyTitle": "Интелектуална собственост",
+        "intellectualProperty": "Структурата, текстовете, логото и съдържанието на сайта са собственост на SDK Enterprises. Всяко възпроизвеждане или представяне, изцяло или частично, без предварително разрешение е забранено, освен когато е разрешено от приложимото законодателство.",
+        "legalFrameworkTitle": "Правна рамка",
+        "legalFramework": "Тези известия се уреждат от френското законодателство и са създадени в съответствие с член 6-III от френския закон № 2004-575 от 21 юни 2004 г. относно доверието в цифровата икономика (LCEN)."
+      }
+    },
+    "privacy": {
+      "title": "Политика за поверителност",
+      "intro": "Как SDK Enterprises обработва лични данни, в съответствие с GDPR (RGPD).",
+      "processors": [
+        {
+          "name": "Vercel",
+          "role": "Хостинг на уебсайтове и анализи без бисквитки"
+        },
+        {
+          "name": "Auth0 (Okta)",
+          "role": "Удостоверяване за клиентския портал"
+        },
+        {
+          "name": "Resend",
+          "role": "Транзакционен имейл за запитвания по проекти"
+        },
+        {
+          "name": "Prisma Postgres",
+          "role": "Управлявана PostgreSQL база данни"
+        }
+      ],
+      "fr": {
+        "controllerTitle": "Responsable de traitement",
+        "controller": "The data controller is {company}, trading as {name}, registered office at {address}. For any question about your personal data, contact us at {email}.",
+        "collectedDataTitle": "Data collected",
+        "collectedData": "The only data-collection form on this site is the public \"Start a project\" form. The data requested is strictly limited to:",
+        "collectedDataItems": [
+          "Company name (required)",
+          "Professional email address (required)",
+          "Company website (optional)",
+          "Capability needed (required)",
+          "Project or problem description (required)",
+          "Existing environment (optional)",
+          "Timeline (optional)",
+          "Budget range (optional)",
+          "Supporting context (optional)"
+        ],
+        "purposesTitle": "Purposes and legal bases",
+        "purposesNote": "Your data is processed to:",
+        "purposeItems": [
+          "respond to your project enquiry — pre-contractual measures (Art. 6(1)(b) GDPR) and legitimate interest (Art. 6(1)(f));",
+          "operate, secure and improve the site — legitimate interest (Art. 6(1)(f));",
+          "comply with any applicable legal obligations (Art. 6(1)(c))."
+        ],
+        "recipientsTitle": "Recipients",
+        "recipientsNote": "Your data is accessible only to authorised people within SDK Enterprises. It may be processed by the following processors, strictly for the needs of their services:",
+        "transfersTitle": "Transfers outside the EU",
+        "transfers": "Some processors may process data outside the European Economic Area (notably in the United States). Where this occurs, appropriate safeguards are used, such as the European Commission's standard contractual clauses.",
+        "retentionTitle": "Retention",
+        "retention": "Data collected through the form is kept for 12 months from the last contact, unless a longer retention is required by law. After this period, it is deleted or anonymised.",
+        "rightsTitle": "Your rights",
+        "rightsNote": "In accordance with Articles 15 to 22 GDPR, you have the right to access, rectification, erasure, restriction, portability and objection. You may also withdraw your consent at any time.",
+        "rightsContact": "To exercise these rights, write to us at {email}. We respond within one month. You may also lodge a complaint with the CNIL (www.cnil.fr).",
+        "childrenTitle": "Children",
+        "children": "The site is aimed at professionals and is not intended for minors. The enquiry form is not intended for individuals under 16.",
+        "automatedTitle": "Automated decision-making",
+        "automated": "No automated decision-making or profiling is carried out on your data.",
+        "securityTitle": "Security",
+        "security": "Reasonable technical and organisational measures are in place to protect your data (encrypted connections, access controls). No absolute guarantee can be offered.",
+        "registerTitle": "Register and declaration",
+        "register": "SDK Enterprises maintains an internal register of processing activities (Art. 30 GDPR). No CNIL declaration number is claimed or invented."
+      },
+      "en": {
+        "controllerTitle": "Администратор на данни",
+        "controller": "Администраторът на данни е {company}, търгуваща като {name}, регистриран адрес на управление {address}. За всякакви въпроси относно вашите лични данни, свържете се с нас на {email}.",
+        "collectedDataTitle": "Събрани данни",
+        "collectedData": "Единственият формуляр за събиране на данни на този сайт е публичният формуляр „Стартиране на проект“. Исканите данни са строго ограничени до:",
+        "collectedDataItems": [
+          "Име на фирмата (задължително)",
+          "Професионален имейл адрес (задължително)",
+          "Фирмен уебсайт (по избор)",
+          "Необходима способност (задължително)",
+          "Описание на проект или проблем (задължително)",
+          "Съществуваща среда (по избор)",
+          "Хронология (по избор)",
+          "Бюджетен диапазон (по избор)",
+          "Поддържащ контекст (по избор)"
+        ],
+        "purposesTitle": "Цели и правни основания",
+        "purposesNote": "Вашите данни се обработват за:",
+        "purposeItems": [
+          "отговор на вашето запитване за проект — преддоговорни мерки (Art. 6(1)(b) GDPR) и законен интерес (Art. 6(1)(f));",
+          "управлявате, защитавате и подобрявате сайта — законен интерес (Art. 6(1)(f));",
+          "спазва всички приложими законови задължения (Art. 6(1)(c))."
+        ],
+        "recipientsTitle": "Получатели",
+        "recipientsNote": "Вашите данни са достъпни само за оторизирани лица в SDK Enterprises. Може да се обработва от следните процесори, строго за нуждите на техните услуги:",
+        "transfersTitle": "Трансфери извън ЕС",
+        "transfers": "Някои процесори може да обработват данни извън Европейското икономическо пространство (особено в Съединените щати). Когато това се случи, се използват подходящи предпазни мерки, като например стандартните договорни клаузи на Европейската комисия.",
+        "retentionTitle": "Задържане",
+        "retention": "Данните, събрани чрез формата, се съхраняват 12 месеца от последния контакт, освен ако законът не изисква по-дълго съхранение. След този период той се изтрива или анонимизира.",
+        "rightsTitle": "Вашите права",
+        "rightsNote": "В съответствие с Articles 15 to 22 GDPR имате право на достъп, коригиране, изтриване, ограничаване, преносимост и възражение. Можете също така да оттеглите съгласието си по всяко време.",
+        "rightsContact": "За да упражните тези права, пишете ни на {email}. Отговаряме в рамките на един месец. Можете също да подадете жалба с CNIL (www.cnil.fr).",
+        "childrenTitle": "деца",
+        "children": "Сайтът е насочен към професионалисти и не е предназначен за непълнолетни. Формулярът за запитване не е предназначен за лица под 16 години.",
+        "automatedTitle": "Автоматизирано вземане на решения",
+        "automated": "За вашите данни не се извършва автоматизирано вземане на решения или профилиране.",
+        "securityTitle": "сигурност",
+        "security": "Налице са разумни технически и организационни мерки за защита на вашите данни (криптирани връзки, контрол на достъпа). Не може да се предложи абсолютна гаранция.",
+        "registerTitle": "Регистър и декларация",
+        "register": "SDK Enterprises поддържа вътрешен регистър на дейностите по обработка (Art. 30 GDPR). Не се претендира или измисля номер на декларация CNIL."
+      }
+    },
+    "terms": {
+      "title": "Условия за ползване",
+      "intro": "Правилата за използване на този уебсайт.",
+      "fr": {
+        "purposeTitle": "Objet",
+        "purpose": "These terms govern your use of the {name} website. By accessing the site, you agree to these terms.",
+        "servicesTitle": "Presentation of services",
+        "services": "The site presents the services of {name} and allows you to submit a project enquiry. This content is provided for information only and is neither a contractual offer nor a commitment to provide services.",
+        "enquiriesTitle": "Project enquiries",
+        "enquiries": "Information submitted through the \"Start a project\" form is handled in accordance with the privacy policy. Receiving an enquiry does not imply any obligation to accept it.",
+        "intellectualPropertyTitle": "Intellectual property",
+        "intellectualProperty": "The texts, logo, visuals and content of the site are the property of SDK Enterprises and may not be reused without prior authorisation.",
+        "availabilityTitle": "Site availability",
+        "availability": "The site is provided \"as is\". SDK Enterprises makes reasonable efforts to keep it accessible but does not guarantee uninterrupted or error-free availability.",
+        "liabilityTitle": "Liability",
+        "liability": "To the extent permitted by law, SDK Enterprises' liability is limited to direct damages and does not extend to indirect damages. Links to third-party sites are the sole responsibility of their publishers.",
+        "changesTitle": "Changes",
+        "changes": "SDK Enterprises may amend these terms at any time. The applicable version is the one published on this page.",
+        "lawTitle": "Governing law",
+        "law": "These terms are governed by French law. In the event of a dispute, the French courts have jurisdiction.",
+        "contactTitle": "Contact",
+        "contact": "For any question, contact {company} at {email}."
+      },
+      "en": {
+        "purposeTitle": "Цел",
+        "purpose": "Тези условия уреждат вашето използване на уебсайта {name}. С достъпа до сайта вие се съгласявате с тези условия.",
+        "servicesTitle": "Представяне на услуги",
+        "services": "Сайтът представя услугите на {name} и ви позволява да изпратите запитване за проект. Това съдържание се предоставя само за информация и не е нито договорна оферта, нито ангажимент за предоставяне на услуги.",
+        "enquiriesTitle": "Запитвания по проекти",
+        "enquiries": "Информацията, подадена чрез формата \"Стартиране на проект\", се обработва в съответствие с политиката за поверителност. Получаването на запитване не предполага никакво задължение за приемането му.",
+        "intellectualPropertyTitle": "Интелектуална собственост",
+        "intellectualProperty": "Текстовете, логото, визуалните елементи и съдържанието на сайта са собственост на SDK Enterprises и не могат да бъдат използвани повторно без предварително разрешение.",
+        "availabilityTitle": "Наличност на сайта",
+        "availability": "Сайтът се предоставя \"както е\". SDK Enterprises полага разумни усилия, за да го поддържа достъпен, но не гарантира наличност без прекъсване или без грешки.",
+        "liabilityTitle": "Отговорност",
+        "liability": "До степента, позволена от закона, отговорността на SDK Enterprises е ограничена до преки щети и не обхваща непреки щети. Връзките към сайтове на трети страни са отговорност единствено на техните издатели.",
+        "changesTitle": "Промени",
+        "changes": "SDK Enterprises може да промени тези условия по всяко време. Приложимата версия е публикуваната на тази страница.",
+        "lawTitle": "Приложимо право",
+        "law": "Тези условия се уреждат от френското законодателство. В случай на спор компетентни са френските съдилища.",
+        "contactTitle": "Контакт",
+        "contact": "За всякакви въпроси се свържете с {company} на {email}."
+      }
+    },
+    "cookies": {
+      "title": "Политика за бисквитки",
+      "intro": "Какво представляват бисквитките и дали този сайт ги използва.",
+      "fr": {
+        "whatIsTitle": "What is a cookie?",
+        "whatIs": "A cookie is a small text file placed on your device when you visit a website. It allows the site to recognise your browser and remember information.",
+        "thisSiteTitle": "Cookies set by this site",
+        "thisSite": "No analytics, advertising or tracking cookies are set by this site. The analytics solution in use (Vercel Analytics) is cookieless. Your browsing is therefore not tracked.",
+        "consentBannerTitle": "Consent banner",
+        "consentBanner": "No consent banner is shown because no cookies are set. If a cookie-setting script were added, a consent banner would become required and this page would be updated.",
+        "browserSettingsTitle": "Managing cookies in your browser",
+        "browserSettings": "You can configure your browser to refuse or delete cookies at any time. Instructions depend on your browser (Chrome, Firefox, Safari, Edge). Guides are available at www.cnil.fr."
+      },
+      "en": {
+        "whatIsTitle": "Какво е бисквитка?",
+        "whatIs": "Бисквитката е малък текстов файл, поставен на вашето устройство, когато посещавате уебсайт. Това позволява на сайта да разпознае вашия браузър и да запомни информация.",
+        "thisSiteTitle": "Бисквитки, зададени от този сайт",
+        "thisSite": "Този сайт не задава бисквитки за анализ, реклама или проследяване. Използваното решение за анализ (Vercel Analytics) е без бисквитки. Следователно вашето сърфиране не се проследява.",
+        "consentBannerTitle": "Банер за съгласие",
+        "consentBanner": "Не се показва банер за съгласие, защото не са зададени бисквитки. Ако беше добавен скрипт за настройка на бисквитки, ще стане необходим банер за съгласие и тази страница ще бъде актуализирана.",
+        "browserSettingsTitle": "Управление на бисквитки във вашия браузър",
+        "browserSettings": "Можете да конфигурирате браузъра си да отказва или изтрива бисквитките по всяко време. Инструкциите зависят от вашия браузър (Chrome, Firefox, Safari, Edge). Ръководствата са достъпни на www.cnil.fr."
+      }
+    }
+  },
+  "designSystem": {
+    "eyebrow": "SDK Enterprises · Система за проектиране",
+    "title": "Споделената визуална основа за уебсайта и клиентския портал.",
+    "intro": "Тази страница изобразява всеки токен, примитив и състояние, дефинирани в docs/design/design-system.md и docs/design/patterns.md. Това е референцията по време на разработката. Умишлено не е свързан от производствената навигация.",
+    "primaryAction": "Първично действие",
+    "colors": {
+      "eyebrow": "01 · Палитра",
+      "title": "Малка палитра, използвана с умисъл.",
+      "intro": "Марково зеленото е само за действия и значими акценти - никога за декорация. Зелените фонове винаги носят тъмен текст; зелен текст се появява само на тъмни повърхности."
+    },
+    "type": {
+      "eyebrow": "02 · Типография",
+      "title": "JetBrains Mono, настроен като система от редакционен тип.",
+      "intro": "Заглавията са стегнати и големи; етикетите са малки, главни и проследени. Основното копие никога не пада под 14px."
+    },
+    "components": {
+      "eyebrow": "03 · Компоненти",
+      "title": "Сдържани примитиви, подравнени спрямо препратката.",
+      "intro": "Бутони, значки, карти и връзки. Семейство с един радиус, граници от 1 пиксел и никаква декорация извън това, което използва одобреният дизайн.",
+      "buttons": "Бутони",
+      "badges": "Значки",
+      "cardsLinks": "Карти и връзки",
+      "inProgress": "В ход",
+      "review": "Преглед",
+      "pending": "В очакване",
+      "currentProjects": "Актуални проекти",
+      "viewAll": "Вижте всички",
+      "metricsGrid": "Мрежа с показатели (отзивчив: 4 → 2 → 1)",
+      "activeProjects": "Активни проекти",
+      "openRequests": "Отворени заявки",
+      "outstanding": "Изключителен",
+      "pendingActions": "Предстоящи действия"
+    },
+    "states": {
+      "eyebrow": "04 · Щати",
+      "title": "Зареждане, празни и грешки — последователни повърхности.",
+      "intro": "Без цветни изобретения. Скелетът използва тона на линията, празното показва пунктирана граница, грешките остават върху повърхността на хартията със силен тъмен акцент.",
+      "loading": "Зареждане, празни и грешки — последователни повърхности.",
+      "noRequestsYet": "Все още няма заявки",
+      "whenProjectExists": "Когато съществува проект или заявка, те ще се появят тук.",
+      "somethingFailed": "Нещо не успя да се зареди",
+      "tryAgain": "Опитайте отново или се свържете с поддръжката, ако проблемът продължава.",
+      "requestService": "Поискайте услуга",
+      "retry": "Опитайте отново"
+    },
+    "darkSurface": {
+      "eyebrow": "05 · Тъмна повърхност",
+      "title": "Тъмните секции носят същата система.",
+      "intro": "Основният текст става светъл, вторичният се превръща в мъгла, а зеленото се използва за акценти. Граничната линия потъмнява, за да запази композицията тиха."
+    },
+    "brandSurface": {
+      "eyebrow": "06 · Маркова повърхност",
+      "title": "Най-много една секция за марка на страница.",
+      "intro": "Зелените фонове носят тъмен текст. Използвайте това пестеливо - това е най-шумната повърхност в системата.",
+      "bringUsProblem": "Донесете ни проблема"
+    }
+  },
+  "auth": {
+    "loginRedirecting": "Пренасочване към вход...",
+    "logoutRedirecting": "Пренасочва се към излизане..."
+  },
+  "errors": {
+    "label": "Грешка"
+  }
+}

@@ -1,0 +1,436 @@
+{
+  "meta": {
+    "siteDescription": "Ranskalainen B2B suunnitteluyritys. Rakennamme, modernisoimme ja käytämme ohjelmistoja kaikkialla – taustaalustoja, pilviinfrastruktuuria, tekoälyautomaatiota, reaaliaikaisia ​​järjestelmiä ja sisäisiä työkaluja.",
+    "title": "SDK Enterprises"
+  },
+  "nav": {
+    "toggleMenu": "Vaihda valikkoa",
+    "home": "SDK Enterprises kotiin",
+    "main": "Main",
+    "services": "Palvelut",
+    "work": "Työ",
+    "process": "Prosessi",
+    "about": "Tietoja",
+    "discussProject": "Keskustele projektista",
+    "signIn": "Kirjaudu sisään",
+    "legal": "Laillinen",
+    "mentionsLegales": "Mainitsee légales",
+    "privacy": "Yksityisyys",
+    "terms": "Ehdot",
+    "cookies": "Evästeet"
+  },
+  "hero": {
+    "eyebrow": "B2B AI · Ohjelmistot · Pilvi · Järjestelmäsuunnittelu",
+    "heading": "Yksi suunnittelukumppani yrityksesi tarvitsemaan pinoon.",
+    "leadParagraph": "SDK Enterprises rakentaa, modernisoi ja käyttää ohjelmistoja kaikkialla – taustaalustoja, pilviinfrastruktuuria, tekoälyautomaatiota, reaaliaikaisia järjestelmiä ja sisäisiä työkaluja. Otat osaa yhteen erityisongelmaan tai omistat laajemman työvirran; Joka tapauksessa työn tekevät ihmiset, joiden kanssa puhut.",
+    "ctaStartProject": "Aloita projekti",
+    "ctaExploreServices": "Tutustu palveluihin",
+    "trustFrance": "Ranskassa toimiva B2B-yritys",
+    "trustSenior": "Vanhempi insinööritoimitus",
+    "trustAI": "AI + taustajärjestelmä + pilvi",
+    "trustClients": "Eurooppalaiset ja etäasiakkaat"
+  },
+  "services": {
+    "eyebrow": "Palvelut",
+    "title": "Käytä koko pinoa – tai vain tarvitsemaasi osaa.",
+    "intro": "SDK voi puuttua yhteen erityisongelmaan tai omistaa laajemman teknisen työvirran.",
+    "items": [
+      {
+        "number": "01",
+        "category": "AI Engineering",
+        "title": "Tekoälyagentit ja automaatio",
+        "copy": "LLM-integraatiot, agentit, RAG, työnkulun automaatio, kehittäjätyökalut ja tekoälyn avustustoiminnot."
+      },
+      {
+        "number": "02",
+        "category": "Backend",
+        "title": "Alustat, APIs & SaaS",
+        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs ja reaaliaikainen taustaarkkitehtuuri."
+      },
+      {
+        "number": "03",
+        "category": "Käyttöliittymä",
+        "title": "Verkko- ja sovellusliittymät",
+        "copy": "React, Vue, Nuxt, TypeScript, Tailwind ja Shadcn."
+      },
+      {
+        "number": "04",
+        "category": "Pilvi",
+        "title": "Pilvi ja infrastruktuuri",
+        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD ja käyttöönottoarkkitehtuuri."
+      },
+      {
+        "number": "05",
+        "category": "Data",
+        "title": "Tietokannat, välimuisti ja haku",
+        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey ja Elasticsearch."
+      },
+      {
+        "number": "06",
+        "category": "Modernisointi",
+        "title": "Perinnöllinen modernisointi",
+        "copy": "Kehyspäivitykset, siirto, tekninen velan vähentäminen ja suorituskyvyn optimointi."
+      }
+    ]
+  },
+  "whySdk": {
+    "eyebrow": "Miksi SDK",
+    "title": "Vanhempaa suunnittelua ilman tarpeettomia kerroksia.",
+    "intro": "Suora viestintä, nopea diagnoosi ja pragmaattinen toteutus.",
+    "items": [
+      {
+        "kicker": "FR",
+        "copy": "Ranskassa toimiva B2B-yritys eurooppalaisille ja etäasiakkaille."
+      },
+      {
+        "kicker": "AI",
+        "copy": "LLM-integraatiot, agentit, automaatio ja sisäiset työkalut."
+      },
+      {
+        "kicker": "RT",
+        "copy": "Reaaliaikainen ja suuren volyymin alustatyö."
+      },
+      {
+        "kicker": "SUORAT",
+        "copy": "Puhut työn tekevien insinöörien kanssa, et tilikerroksen kanssa."
+      }
+    ]
+  },
+  "engagements": {
+    "eyebrow": "Työskentele SDK:n kanssa",
+    "title": "Tuo tietty ongelma. Hanki tarkka vastaus.",
+    "intro": "Tiedät, kun jokin pinossasi maksaa sinulle. Tässä ovat tilanteet, joihin SDK on määritetty.",
+    "items": [
+      {
+        "title": "Järjestelmä on liian vanha korjattavaksi.",
+        "copy": "Tarvitset siirtosuunnitelman, et toiveen – tarkastuksen siitä, mikä toimii, mikä katkeaa, ja muuttomääräyksen."
+      },
+      {
+        "title": "Volyymi, jolle nykyistä pinoasi ei ole suunniteltu.",
+        "copy": "Reaaliaikainen käsittely, korkean suorituskyvyn taustajärjestelmät ja infrastruktuuri, joka pitää ne vakaana."
+      },
+      {
+        "title": "AI voit laittaa töihin.",
+        "copy": "LLM-integraatiot, agentit ja automaatio, jotka muuttavat sisäistä työnkulkua – ei esittelyä, joka pysähtyy pitchille."
+      },
+      {
+        "title": "Joukkue, joka tarvitsee vanhempia käsiä.",
+        "copy": "Suora suunnittelutoimitus koodikantaasi ilman keskikerrosta, joka hidastaa päätöksiä."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Miten toimimme",
+    "title": "Selkeä tie ongelmasta tuotantoon.",
+    "intro": "Neljä askelta, näkyvä edistys joka vaiheessa.",
+    "items": [
+      {
+        "title": "Ymmärrä",
+        "copy": "Liiketoiminnan tavoite, pino, rajoitteet ja menestyskriteerit."
+      },
+      {
+        "title": "Suunnittelu",
+        "copy": "Arkkitehtuuri, laajuus, riskit ja virstanpylväät."
+      },
+      {
+        "title": "Rakenna",
+        "copy": "Toteutus näkyvällä edistyksellä."
+      },
+      {
+        "title": "Luovutus",
+        "copy": "Ota käyttöön, dokumentoi ja siirrä omistajuus."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Työskentele SDK:n kanssa",
+    "heading": "Tuo meille ongelma, jonka tarvitset ratkaistavaksi.",
+    "body": "Kerro meille, mitä yrität rakentaa, modernisoida, automatisoida tai korjata – me kerromme sinulle rehellisesti, sopiiko se ja mitä se vaatisi.",
+    "registeredUnder": "Rekisteröity {company}-tunnuksella",
+    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "AI · Ohjelmistot · Pilvi · Järjestelmäsuunnittelu"
+  },
+  "legal": {
+    "mentionsLegales": {
+      "title": "Mainitsee légales",
+      "intro": "Oikeudelliset huomautukset SDK Enterprises-verkkosivustolle.",
+      "fr": {
+        "editorTitle": "Éditeur du site",
+        "editorWebsite": "The website accessible at {domain} is published by {company}, trading as {name}.",
+        "siren": "SIREN: {siren}",
+        "siret": "SIRET: {siret}",
+        "registeredOffice": "Registered office: {address}",
+        "legalForm": "Legal form and share capital: Auto-entrepreneur (sole trader, micro-entreprise), no share capital",
+        "registration": "Company registration: RCS Paris {siren}",
+        "directorTitle": "Publication director",
+        "director": "Publication director: Hicham SADDEK.",
+        "hostingTitle": "Hosting",
+        "hosting": "The site is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, United States.",
+        "contactTitle": "Contact",
+        "contact": "Questions about the site may be sent to {email} or by phone at {phone}.",
+        "intellectualPropertyTitle": "Intellectual property",
+        "intellectualProperty": "The structure, texts, logo and content of the site are the property of SDK Enterprises. Any reproduction or representation, in whole or in part, without prior authorisation is prohibited, except as permitted by applicable law.",
+        "legalFrameworkTitle": "Legal framework",
+        "legalFramework": "These notices are governed by French law and are established in accordance with Article 6-III of the French law n° 2004-575 of 21 June 2004 on confidence in the digital economy (LCEN)."
+      },
+      "en": {
+        "publisherTitle": "Kustantaja",
+        "publisherWebsite": "{domain}-sivuston on julkaissut {company}, joka toimii nimellä {name}.",
+        "siren": "SIREN: {siren}",
+        "siret": "SIRET: {siret}",
+        "registeredOffice": "Kotipaikka: {address}",
+        "legalForm": "Oikeudellinen muoto ja osakepääoma: Itsenäinen yrittäjä (yksityinen elinkeinonharjoittaja, mikroyritys), ei osakepääomaa",
+        "registration": "Yrityksen rekisteröinti: RCS Paris {siren}",
+        "directorTitle": "Julkaisujohtaja",
+        "director": "Julkaisujohtaja: Hicham SADDEK.",
+        "hostingTitle": "Isännöinti",
+        "hosting": "Sivustoa isännöi Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, Yhdysvallat.",
+        "contactTitle": "Ota yhteyttä",
+        "contact": "Sivustoa koskevia kysymyksiä voi lähettää osoitteeseen {email} tai puhelimitse numeroon {phone}.",
+        "intellectualPropertyTitle": "Henkinen omaisuus",
+        "intellectualProperty": "Sivuston rakenne, tekstit, logo ja sisältö ovat SDK Enterprises:n omaisuutta. Kaikenlainen jäljentäminen tai esittäminen kokonaan tai osittain ilman ennakkolupaa on kielletty, paitsi sovellettavan lain sallimissa rajoissa.",
+        "legalFrameworkTitle": "Oikeudellinen kehys",
+        "legalFramework": "Nämä ilmoitukset ovat Ranskan lain alaisia, ja ne on laadittu luottamuksesta digitaalitalouteen 21. kesäkuuta 2004 annetun Ranskan lain nro 2004-575 (LCEN) 6-III artiklan mukaisesti."
+      }
+    },
+    "privacy": {
+      "title": "Tietosuojakäytäntö",
+      "intro": "Kuinka SDK Enterprises käsittelee henkilötietoja GDPR:n (RGPD) mukaisesti.",
+      "processors": [
+        {
+          "name": "Vercel",
+          "role": "Verkkosivustojen ylläpito ja evästeetön analytiikka"
+        },
+        {
+          "name": "Auth0 (Okta)",
+          "role": "Asiakasportaalin todennus"
+        },
+        {
+          "name": "Resend",
+          "role": "Tapahtumasähköposti projektikyselyihin"
+        },
+        {
+          "name": "Prisma Postgres",
+          "role": "Hallittu PostgreSQL-tietokanta"
+        }
+      ],
+      "fr": {
+        "controllerTitle": "Responsable de traitement",
+        "controller": "The data controller is {company}, trading as {name}, registered office at {address}. For any question about your personal data, contact us at {email}.",
+        "collectedDataTitle": "Data collected",
+        "collectedData": "The only data-collection form on this site is the public \"Start a project\" form. The data requested is strictly limited to:",
+        "collectedDataItems": [
+          "Company name (required)",
+          "Professional email address (required)",
+          "Company website (optional)",
+          "Capability needed (required)",
+          "Project or problem description (required)",
+          "Existing environment (optional)",
+          "Timeline (optional)",
+          "Budget range (optional)",
+          "Supporting context (optional)"
+        ],
+        "purposesTitle": "Purposes and legal bases",
+        "purposesNote": "Your data is processed to:",
+        "purposeItems": [
+          "respond to your project enquiry — pre-contractual measures (Art. 6(1)(b) GDPR) and legitimate interest (Art. 6(1)(f));",
+          "operate, secure and improve the site — legitimate interest (Art. 6(1)(f));",
+          "comply with any applicable legal obligations (Art. 6(1)(c))."
+        ],
+        "recipientsTitle": "Recipients",
+        "recipientsNote": "Your data is accessible only to authorised people within SDK Enterprises. It may be processed by the following processors, strictly for the needs of their services:",
+        "transfersTitle": "Transfers outside the EU",
+        "transfers": "Some processors may process data outside the European Economic Area (notably in the United States). Where this occurs, appropriate safeguards are used, such as the European Commission's standard contractual clauses.",
+        "retentionTitle": "Retention",
+        "retention": "Data collected through the form is kept for 12 months from the last contact, unless a longer retention is required by law. After this period, it is deleted or anonymised.",
+        "rightsTitle": "Your rights",
+        "rightsNote": "In accordance with Articles 15 to 22 GDPR, you have the right to access, rectification, erasure, restriction, portability and objection. You may also withdraw your consent at any time.",
+        "rightsContact": "To exercise these rights, write to us at {email}. We respond within one month. You may also lodge a complaint with the CNIL (www.cnil.fr).",
+        "childrenTitle": "Children",
+        "children": "The site is aimed at professionals and is not intended for minors. The enquiry form is not intended for individuals under 16.",
+        "automatedTitle": "Automated decision-making",
+        "automated": "No automated decision-making or profiling is carried out on your data.",
+        "securityTitle": "Security",
+        "security": "Reasonable technical and organisational measures are in place to protect your data (encrypted connections, access controls). No absolute guarantee can be offered.",
+        "registerTitle": "Register and declaration",
+        "register": "SDK Enterprises maintains an internal register of processing activities (Art. 30 GDPR). No CNIL declaration number is claimed or invented."
+      },
+      "en": {
+        "controllerTitle": "Rekisterinpitäjä",
+        "controller": "Rekisterinpitäjä on {company}, kauppanimi {name}, rekisteröity kotipaikka {address}. Jos sinulla on kysyttävää henkilökohtaisista tiedoistasi, ota meihin yhteyttä osoitteeseen {email}.",
+        "collectedDataTitle": "Kerätyt tiedot",
+        "collectedData": "Ainoa tiedonkeruulomake tällä sivustolla on julkinen \"Aloita projekti\" -lomake. Pyydetyt tiedot on tiukasti rajoitettu:",
+        "collectedDataItems": [
+          "Yrityksen nimi (pakollinen)",
+          "Ammattimainen sähköpostiosoite (pakollinen)",
+          "Yrityksen verkkosivusto (valinnainen)",
+          "Tarvitaan valmiuksia (pakollinen)",
+          "Projektin tai ongelman kuvaus (pakollinen)",
+          "Nykyinen ympäristö (valinnainen)",
+          "Aikajana (valinnainen)",
+          "Budjettiväli (valinnainen)",
+          "Tukikonteksti (valinnainen)"
+        ],
+        "purposesTitle": "Tarkoitukset ja oikeusperustat",
+        "purposesNote": "Tietojasi käsitellään:",
+        "purposeItems": [
+          "vastata projektikyselyyn – sopimusta edeltävät toimenpiteet (Art. 6(1)(b) GDPR) ja oikeutettu etu (Art. 6(1)(f));",
+          "käyttää, suojata ja parantaa sivustoa — oikeutettu etu (Art. 6(1)(f));",
+          "noudattaa kaikkia sovellettavia lakisääteisiä velvoitteita (Art. 6(1)(c))."
+        ],
+        "recipientsTitle": "Vastaanottajat",
+        "recipientsNote": "Tietosi ovat vain SDK Enterprises:n valtuutettujen henkilöiden käytettävissä. Seuraavat prosessorit voivat käsitellä sitä tiukasti palveluidensa tarpeisiin:",
+        "transfersTitle": "Siirrot EU:n ulkopuolelle",
+        "transfers": "Jotkut käsittelijät voivat käsitellä tietoja Euroopan talousalueen ulkopuolella (erityisesti Yhdysvalloissa). Jos näin tapahtuu, käytetään asianmukaisia ​​suojatoimia, kuten Euroopan komission vakiosopimuslausekkeita.",
+        "retentionTitle": "Säilytys",
+        "retention": "Lomakkeella kerättyjä tietoja säilytetään 12 kuukautta viimeisestä yhteydenotosta, ellei laki edellytä pidempää säilytystä. Tämän ajanjakson jälkeen se poistetaan tai anonymisoidaan.",
+        "rightsTitle": "Sinun oikeutesi",
+        "rightsNote": "Articles 15 to 22 GDPR:n mukaisesti sinulla on oikeus käyttää, korjata, poistaa, rajoittaa, siirtää ja vastustaa. Voit myös peruuttaa suostumuksesi milloin tahansa.",
+        "rightsContact": "Voit käyttää näitä oikeuksia kirjoittamalla meille osoitteeseen {email}. Vastaamme kuukauden kuluessa. Voit myös tehdä valituksen CNIL:lle (www.cnil.fr).",
+        "childrenTitle": "Lapset",
+        "children": "Sivusto on suunnattu ammattilaisille, eikä sitä ole tarkoitettu alaikäisille. Kyselylomaketta ei ole tarkoitettu alle 16-vuotiaille.",
+        "automatedTitle": "Automaattinen päätöksenteko",
+        "automated": "Tietoihisi ei tehdä automaattista päätöksentekoa tai profilointia.",
+        "securityTitle": "Turvallisuus",
+        "security": "Tietojesi suojaamiseksi on käytössä kohtuulliset tekniset ja organisatoriset toimenpiteet (salatut yhteydet, pääsynvalvonta). Ehdotonta takuuta ei voida antaa.",
+        "registerTitle": "Rekisteröinti ja ilmoitus",
+        "register": "SDK Enterprises ylläpitää sisäistä rekisteriä käsittelytoimista (Art. 30 GDPR). CNIL-ilmoitusnumeroa ei ole vaadittu tai keksitty."
+      }
+    },
+    "terms": {
+      "title": "Käyttöehdot",
+      "intro": "Tämän sivuston käyttöä koskevat säännöt.",
+      "fr": {
+        "purposeTitle": "Objet",
+        "purpose": "These terms govern your use of the {name} website. By accessing the site, you agree to these terms.",
+        "servicesTitle": "Presentation of services",
+        "services": "The site presents the services of {name} and allows you to submit a project enquiry. This content is provided for information only and is neither a contractual offer nor a commitment to provide services.",
+        "enquiriesTitle": "Project enquiries",
+        "enquiries": "Information submitted through the \"Start a project\" form is handled in accordance with the privacy policy. Receiving an enquiry does not imply any obligation to accept it.",
+        "intellectualPropertyTitle": "Intellectual property",
+        "intellectualProperty": "The texts, logo, visuals and content of the site are the property of SDK Enterprises and may not be reused without prior authorisation.",
+        "availabilityTitle": "Site availability",
+        "availability": "The site is provided \"as is\". SDK Enterprises makes reasonable efforts to keep it accessible but does not guarantee uninterrupted or error-free availability.",
+        "liabilityTitle": "Liability",
+        "liability": "To the extent permitted by law, SDK Enterprises' liability is limited to direct damages and does not extend to indirect damages. Links to third-party sites are the sole responsibility of their publishers.",
+        "changesTitle": "Changes",
+        "changes": "SDK Enterprises may amend these terms at any time. The applicable version is the one published on this page.",
+        "lawTitle": "Governing law",
+        "law": "These terms are governed by French law. In the event of a dispute, the French courts have jurisdiction.",
+        "contactTitle": "Contact",
+        "contact": "For any question, contact {company} at {email}."
+      },
+      "en": {
+        "purposeTitle": "Tarkoitus",
+        "purpose": "Nämä ehdot koskevat {name}-verkkosivuston käyttöä. Avaamalla sivuston hyväksyt nämä ehdot.",
+        "servicesTitle": "Palveluiden esittely",
+        "services": "Sivusto esittelee {name}:n palvelut ja antaa sinun lähettää projektikyselyn. Tämä sisältö on tarkoitettu vain tiedoksi, eikä se ole sopimustarjous tai sitoumus tarjota palveluja.",
+        "enquiriesTitle": "Projektikyselyt",
+        "enquiries": "\"Aloita projekti\" -lomakkeella lähetettyjä tietoja käsitellään tietosuojaselosteen mukaisesti. Tiedustelun vastaanottaminen ei tarkoita velvollisuutta hyväksyä se.",
+        "intellectualPropertyTitle": "Henkinen omaisuus",
+        "intellectualProperty": "Sivuston tekstit, logo, visuaalit ja sisältö ovat SDK Enterprises:n omaisuutta, eikä niitä saa käyttää uudelleen ilman ennakkolupaa.",
+        "availabilityTitle": "Sivuston saatavuus",
+        "availability": "Sivusto tarjotaan \"sellaisenaan\". SDK Enterprises pyrkii kohtuullisesti pitämään sen saatavilla, mutta ei takaa keskeytymätöntä tai virheetöntä saatavuutta.",
+        "liabilityTitle": "Vastuu",
+        "liability": "Lain sallimissa rajoissa SDK Enterprises:n vastuu rajoittuu välittömiin vahingoihin, eikä se ulotu välillisiin vahinkoihin. Linkit kolmansien osapuolien sivustoille ovat yksinomaan niiden julkaisijoiden vastuulla.",
+        "changesTitle": "Muutokset",
+        "changes": "SDK Enterprises voi muuttaa näitä ehtoja milloin tahansa. Sovellettava versio on tällä sivulla julkaistu versio.",
+        "lawTitle": "Hallitseva laki",
+        "law": "Näitä ehtoja säätelee Ranskan laki. Riitatapauksissa toimivalta on ranskalaisilla tuomioistuimilla.",
+        "contactTitle": "Ota yhteyttä",
+        "contact": "Jos sinulla on kysyttävää, ota yhteyttä {company}:ään osoitteessa {email}."
+      }
+    },
+    "cookies": {
+      "title": "Evästekäytäntö",
+      "intro": "Mitä evästeet ovat ja käyttääkö tämä sivusto niitä.",
+      "fr": {
+        "whatIsTitle": "What is a cookie?",
+        "whatIs": "A cookie is a small text file placed on your device when you visit a website. It allows the site to recognise your browser and remember information.",
+        "thisSiteTitle": "Cookies set by this site",
+        "thisSite": "No analytics, advertising or tracking cookies are set by this site. The analytics solution in use (Vercel Analytics) is cookieless. Your browsing is therefore not tracked.",
+        "consentBannerTitle": "Consent banner",
+        "consentBanner": "No consent banner is shown because no cookies are set. If a cookie-setting script were added, a consent banner would become required and this page would be updated.",
+        "browserSettingsTitle": "Managing cookies in your browser",
+        "browserSettings": "You can configure your browser to refuse or delete cookies at any time. Instructions depend on your browser (Chrome, Firefox, Safari, Edge). Guides are available at www.cnil.fr."
+      },
+      "en": {
+        "whatIsTitle": "Mikä on eväste?",
+        "whatIs": "Eväste on pieni tekstitiedosto, joka asetetaan laitteellesi, kun vierailet verkkosivustolla. Sen avulla sivusto tunnistaa selaimesi ja muistaa tiedot.",
+        "thisSiteTitle": "Tämän sivuston asettamat evästeet",
+        "thisSite": "Tämä sivusto ei aseta analytiikka-, mainonta- tai seurantaevästeitä. Käytössä oleva analytiikkaratkaisu (Vercel Analytics) on evästeetön. Selaustasi ei siksi seurata.",
+        "consentBannerTitle": "Suostumusbanneri",
+        "consentBanner": "Suostumusbanneria ei näytetä, koska evästeitä ei ole asetettu. Jos evästeiden asetusskripti lisättäisiin, vaadittaisiin suostumusbanneri ja tämä sivu päivitettäisiin.",
+        "browserSettingsTitle": "Evästeiden hallinta selaimessasi",
+        "browserSettings": "Voit määrittää selaimesi kieltäytymään tai poistamaan evästeet milloin tahansa. Ohjeet riippuvat selaimesta (Chrome, Firefox, Safari, Edge). Oppaat ovat saatavilla osoitteessa www.cnil.fr."
+      }
+    }
+  },
+  "designSystem": {
+    "eyebrow": "SDK Enterprises · Suunnittelujärjestelmä",
+    "title": "Verkkosivuston ja asiakasportaalin yhteinen visuaalinen perusta.",
+    "intro": "Tämä sivu hahmontaa kaikki tunnukset, primitiiviset ja tilat, jotka on määritelty tiedostoissa docs/design/design-system.md ja docs/design/patterns.md. Se on referenssi kehityksen aikana. Sitä ei ole tarkoituksella linkitetty tuotannon navigoinnista.",
+    "primaryAction": "Ensisijainen toiminta",
+    "colors": {
+      "eyebrow": "01 · Paletti",
+      "title": "Pieni paletti, käytetty tarkoituksella.",
+      "intro": "Tuotemerkkivihreä on tarkoitettu vain toimiin ja merkityksellisiin kohokohtiin – ei koskaan koristeluun. Vihreät taustat sisältävät aina tummaa tekstiä; vihreä teksti näkyy vain tummilla pinnoilla."
+    },
+    "type": {
+      "eyebrow": "02 · Typografia",
+      "title": "JetBrains Mono, viritetty kuin toimituksellinen järjestelmä.",
+      "intro": "Otsikot ovat tiukkoja ja suuria; tarrat pienet, isot ja raidat. Runkokopio ei koskaan laske alle 14 kuvapistettä."
+    },
+    "components": {
+      "eyebrow": "03 · Komponentit",
+      "title": "Rajoittuneet primitiivit, kohdistettu viitteeseen.",
+      "intro": "Painikkeita, merkkejä, kortteja ja linkkejä. Yksi sädeperhe, 1px reunukset, eikä koristeluja muuta kuin mitä hyväksytyt mallit käyttävät.",
+      "buttons": "Painikkeet",
+      "badges": "Tunnusmerkit",
+      "cardsLinks": "Kortit ja linkit",
+      "inProgress": "Käynnissä",
+      "review": "Tarkista",
+      "pending": "Odottaa",
+      "currentProjects": "Nykyiset projektit",
+      "viewAll": "Näytä kaikki",
+      "metricsGrid": "Mittataulukko (responsiivinen: 4 → 2 → 1)",
+      "activeProjects": "Aktiiviset projektit",
+      "openRequests": "Avoimet pyynnöt",
+      "outstanding": "Erinomaista",
+      "pendingActions": "Odottavat toimet"
+    },
+    "states": {
+      "eyebrow": "04 · Osavaltiot",
+      "title": "Lataus, tyhjä ja virhe – tasaiset pinnat.",
+      "intro": "Ei värikeksintöjä. Skeleton käyttää viivasävyä, tyhjät tilat katkoviivaa, virheet jäävät paperin pinnalle vahvasti tummina korostettuina.",
+      "loading": "Lataus, tyhjä ja virhe – tasaiset pinnat.",
+      "noRequestsYet": "Ei pyyntöjä vielä",
+      "whenProjectExists": "Kun projekti tai pyyntö on olemassa, se näkyy tässä.",
+      "somethingFailed": "Jokin lataus epäonnistui",
+      "tryAgain": "Yritä uudelleen tai ota yhteyttä tukeen, jos ongelma jatkuu.",
+      "requestService": "Pyydä palvelua",
+      "retry": "Yritä uudelleen"
+    },
+    "darkSurface": {
+      "eyebrow": "05 · Tumma pinta",
+      "title": "Tummissa osissa on sama järjestelmä.",
+      "intro": "Ensisijainen teksti muuttuu vaaleaksi, toissijainen muuttuu sumuiseksi ja vihreää käytetään kohokohtiin. Reunaviiva tummuu pitääkseen sävellystä hiljaisena."
+    },
+    "brandSurface": {
+      "eyebrow": "06 · Brändin pinta",
+      "title": "Enintään yksi tuotemerkkiosio per sivu.",
+      "intro": "Vihreillä taustoilla on tummaa tekstiä. Käytä tätä säästeliäästi – se on järjestelmän äänekkäin pinta.",
+      "bringUsProblem": "Tuo ongelma meille"
+    }
+  },
+  "auth": {
+    "loginRedirecting": "Uudelleenohjataan kirjautumiseen...",
+    "logoutRedirecting": "Uudelleenohjataan uloskirjautumiseen..."
+  },
+  "errors": {
+    "label": "Virhe"
+  }
+}

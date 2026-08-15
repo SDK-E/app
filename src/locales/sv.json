@@ -1,0 +1,436 @@
+{
+  "meta": {
+    "siteDescription": "Franskt B2B ingenjörsföretag. Vi bygger, moderniserar och driver programvara över hela stacken - backend-plattformar, molninfrastruktur, AI-automation, realtidssystem och interna verktyg.",
+    "title": "SDK Enterprises"
+  },
+  "nav": {
+    "toggleMenu": "Växla meny",
+    "home": "SDK Enterprises hem",
+    "main": "Main",
+    "services": "Tjänster",
+    "work": "Arbete",
+    "process": "Process",
+    "about": "Om",
+    "discussProject": "Diskutera ett projekt",
+    "signIn": "Logga in",
+    "legal": "Lagligt",
+    "mentionsLegales": "Nämner legales",
+    "privacy": "Sekretess",
+    "terms": "Villkor",
+    "cookies": "Cookies"
+  },
+  "hero": {
+    "eyebrow": "B2B AI · Programvara · Moln · Systemteknik",
+    "heading": "En ingenjörspartner för den stack ditt företag behöver.",
+    "leadParagraph": "SDK Enterprises bygger, moderniserar och driver programvara över hela stacken - backend-plattformar, molninfrastruktur, AI-automation, realtidssystem och interna verktyg. Du engagerar dig i ett specialiserat problem eller äger en bredare arbetsström; hur som helst, de som gör jobbet är de du pratar med.",
+    "ctaStartProject": "Starta ett projekt",
+    "ctaExploreServices": "Utforska tjänster",
+    "trustFrance": "Frankrike-baserat B2B företag",
+    "trustSenior": "Senior ingenjörsleverans",
+    "trustAI": "AI + backend + moln",
+    "trustClients": "Europeiska och fjärrkunder"
+  },
+  "services": {
+    "eyebrow": "Tjänster",
+    "title": "Använd hela högen - eller bara den del du behöver.",
+    "intro": "SDK kan engagera sig i ett specialiserat problem eller äga en bredare teknisk arbetsström.",
+    "items": [
+      {
+        "number": "01",
+        "category": "AI Engineering",
+        "title": "AI-agenter & automation",
+        "copy": "LLM-integrationer, agenter, RAG, automatisering av arbetsflöden, utvecklarverktyg och AI-assisterade operationer."
+      },
+      {
+        "number": "02",
+        "category": "Backend",
+        "title": "Plattformar, APIs & SaaS",
+        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs och backend-arkitektur i realtid."
+      },
+      {
+        "number": "03",
+        "category": "Frontend",
+        "title": "Webb- och applikationsgränssnitt",
+        "copy": "React, Vue, Nuxt, TypeScript, Tailwind och Shadcn."
+      },
+      {
+        "number": "04",
+        "category": "Moln",
+        "title": "Moln och infrastruktur",
+        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD och implementeringsarkitektur."
+      },
+      {
+        "number": "05",
+        "category": "Data",
+        "title": "Databaser, cache & sökning",
+        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey och Elasticsearch."
+      },
+      {
+        "number": "06",
+        "category": "Modernisering",
+        "title": "Äldre modernisering",
+        "copy": "Ramuppgraderingar, migrering, teknisk skuldminskning och prestandaoptimering."
+      }
+    ]
+  },
+  "whySdk": {
+    "eyebrow": "Varför SDK",
+    "title": "Senior ingenjör utan onödiga lager.",
+    "intro": "Direkt kommunikation, snabb diagnos och pragmatiskt utförande.",
+    "items": [
+      {
+        "kicker": "FR",
+        "copy": "Ett Frankrike-baserat B2B-företag för europeiska och fjärrkunder."
+      },
+      {
+        "kicker": "AI",
+        "copy": "LLM integrationer, agenter, automation och interna verktyg."
+      },
+      {
+        "kicker": "RT",
+        "copy": "Realtid och högvolym plattformsarbete."
+      },
+      {
+        "kicker": "DIREKT",
+        "copy": "Du pratar med ingenjörerna som gör jobbet, inte ett kontolager."
+      }
+    ]
+  },
+  "engagements": {
+    "eyebrow": "Arbeta med SDK",
+    "title": "Ta med ett specifikt problem. Få ett specifikt svar.",
+    "intro": "Du vet när något i din stack kostar dig. Här är situationerna SDK är inställd för.",
+    "items": [
+      {
+        "title": "Ett system för gammalt för att fortsätta lappa.",
+        "copy": "Du behöver en migreringsplan, inte en önskan – en granskning av vad som körs, vad som går sönder och ordningen att flytta in."
+      },
+      {
+        "title": "Volym som din nuvarande stack inte var byggd för.",
+        "copy": "Realtidsintag, backends med hög genomströmning och infrastrukturen för att hålla dem stabila."
+      },
+      {
+        "title": "AI du kan sätta i arbete.",
+        "copy": "LLM-integrationer, agenter och automation som förändrar ett internt arbetsflöde — inte en demo som stannar vid pitchen."
+      },
+      {
+        "title": "Ett lag som behöver seniorhänder.",
+        "copy": "Direkt konstruktionsleverans på din kodbas, utan att ett mellanlager saktar ner besluten."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Hur vi arbetar",
+    "title": "En tydlig väg från problem till produktion.",
+    "intro": "Fyra steg, synliga framsteg i varje steg.",
+    "items": [
+      {
+        "title": "Förstår",
+        "copy": "Affärsmål, stack, begränsningar och framgångskriterier."
+      },
+      {
+        "title": "Design",
+        "copy": "Arkitektur, omfattning, risker och milstolpar."
+      },
+      {
+        "title": "Bygg",
+        "copy": "Implementering med synliga framsteg."
+      },
+      {
+        "title": "Överlämning",
+        "copy": "Distribuera, dokumentera och överföra ägande."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Arbeta med SDK",
+    "heading": "Ge oss det problem du behöver lösa.",
+    "body": "Berätta för oss vad du försöker bygga, modernisera, automatisera eller fixa – vi berättar ärligt för dig om det passar och vad som krävs.",
+    "registeredUnder": "Registrerad under {company}",
+    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "AI · Programvara · Moln · Systemteknik"
+  },
+  "legal": {
+    "mentionsLegales": {
+      "title": "Nämner legales",
+      "intro": "Juridiska meddelanden för webbplatsen SDK Enterprises.",
+      "fr": {
+        "editorTitle": "Éditeur du site",
+        "editorWebsite": "The website accessible at {domain} is published by {company}, trading as {name}.",
+        "siren": "SIREN: {siren}",
+        "siret": "SIRET: {siret}",
+        "registeredOffice": "Registered office: {address}",
+        "legalForm": "Legal form and share capital: Auto-entrepreneur (sole trader, micro-entreprise), no share capital",
+        "registration": "Company registration: RCS Paris {siren}",
+        "directorTitle": "Publication director",
+        "director": "Publication director: Hicham SADDEK.",
+        "hostingTitle": "Hosting",
+        "hosting": "The site is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, United States.",
+        "contactTitle": "Contact",
+        "contact": "Questions about the site may be sent to {email} or by phone at {phone}.",
+        "intellectualPropertyTitle": "Intellectual property",
+        "intellectualProperty": "The structure, texts, logo and content of the site are the property of SDK Enterprises. Any reproduction or representation, in whole or in part, without prior authorisation is prohibited, except as permitted by applicable law.",
+        "legalFrameworkTitle": "Legal framework",
+        "legalFramework": "These notices are governed by French law and are established in accordance with Article 6-III of the French law n° 2004-575 of 21 June 2004 on confidence in the digital economy (LCEN)."
+      },
+      "en": {
+        "publisherTitle": "Förläggare",
+        "publisherWebsite": "Webbplatsen som är tillgänglig på {domain} publiceras av {company}, som handlas som {name}.",
+        "siren": "SIREN: {siren}",
+        "siret": "SIRET: {siret}",
+        "registeredOffice": "Registrerat säte: {address}",
+        "legalForm": "Rättslig form och aktiekapital: Auto-entrepreneur (enskild näringsidkare, mikroföretag), inget aktiekapital",
+        "registration": "Företagsregistrering: RCS Paris {siren}",
+        "directorTitle": "Publikationsdirektör",
+        "director": "Publikationschef: Hicham SADDEK.",
+        "hostingTitle": "Värdskap",
+        "hosting": "Webbplatsen drivs av Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA.",
+        "contactTitle": "Kontakta",
+        "contact": "Frågor om webbplatsen kan skickas till {email} eller per telefon på {phone}.",
+        "intellectualPropertyTitle": "Immateriella rättigheter",
+        "intellectualProperty": "Strukturen, texterna, logotypen och innehållet på webbplatsen tillhör SDK Enterprises. All reproduktion eller representation, helt eller delvis, utan föregående tillstånd är förbjuden, förutom vad som är tillåtet enligt tillämplig lag.",
+        "legalFrameworkTitle": "Rättslig ram",
+        "legalFramework": "Dessa meddelanden regleras av fransk lag och är upprättade i enlighet med artikel 6-III i den franska lagen nr 2004-575 av den 21 juni 2004 om förtroende för den digitala ekonomin (LCEN)."
+      }
+    },
+    "privacy": {
+      "title": "Integritetspolicy",
+      "intro": "Hur SDK Enterprises hanterar personuppgifter, i enlighet med GDPR (RGPD).",
+      "processors": [
+        {
+          "name": "Vercel",
+          "role": "Webbplatshotell och cookiefri analys"
+        },
+        {
+          "name": "Auth0 (Okta)",
+          "role": "Autentisering för klientportalen"
+        },
+        {
+          "name": "Resend",
+          "role": "Transaktionsmail för projektförfrågningar"
+        },
+        {
+          "name": "Prisma Postgres",
+          "role": "Hanterade PostgreSQL databas"
+        }
+      ],
+      "fr": {
+        "controllerTitle": "Responsable de traitement",
+        "controller": "The data controller is {company}, trading as {name}, registered office at {address}. For any question about your personal data, contact us at {email}.",
+        "collectedDataTitle": "Data collected",
+        "collectedData": "The only data-collection form on this site is the public \"Start a project\" form. The data requested is strictly limited to:",
+        "collectedDataItems": [
+          "Company name (required)",
+          "Professional email address (required)",
+          "Company website (optional)",
+          "Capability needed (required)",
+          "Project or problem description (required)",
+          "Existing environment (optional)",
+          "Timeline (optional)",
+          "Budget range (optional)",
+          "Supporting context (optional)"
+        ],
+        "purposesTitle": "Purposes and legal bases",
+        "purposesNote": "Your data is processed to:",
+        "purposeItems": [
+          "respond to your project enquiry — pre-contractual measures (Art. 6(1)(b) GDPR) and legitimate interest (Art. 6(1)(f));",
+          "operate, secure and improve the site — legitimate interest (Art. 6(1)(f));",
+          "comply with any applicable legal obligations (Art. 6(1)(c))."
+        ],
+        "recipientsTitle": "Recipients",
+        "recipientsNote": "Your data is accessible only to authorised people within SDK Enterprises. It may be processed by the following processors, strictly for the needs of their services:",
+        "transfersTitle": "Transfers outside the EU",
+        "transfers": "Some processors may process data outside the European Economic Area (notably in the United States). Where this occurs, appropriate safeguards are used, such as the European Commission's standard contractual clauses.",
+        "retentionTitle": "Retention",
+        "retention": "Data collected through the form is kept for 12 months from the last contact, unless a longer retention is required by law. After this period, it is deleted or anonymised.",
+        "rightsTitle": "Your rights",
+        "rightsNote": "In accordance with Articles 15 to 22 GDPR, you have the right to access, rectification, erasure, restriction, portability and objection. You may also withdraw your consent at any time.",
+        "rightsContact": "To exercise these rights, write to us at {email}. We respond within one month. You may also lodge a complaint with the CNIL (www.cnil.fr).",
+        "childrenTitle": "Children",
+        "children": "The site is aimed at professionals and is not intended for minors. The enquiry form is not intended for individuals under 16.",
+        "automatedTitle": "Automated decision-making",
+        "automated": "No automated decision-making or profiling is carried out on your data.",
+        "securityTitle": "Security",
+        "security": "Reasonable technical and organisational measures are in place to protect your data (encrypted connections, access controls). No absolute guarantee can be offered.",
+        "registerTitle": "Register and declaration",
+        "register": "SDK Enterprises maintains an internal register of processing activities (Art. 30 GDPR). No CNIL declaration number is claimed or invented."
+      },
+      "en": {
+        "controllerTitle": "personuppgiftsansvarig",
+        "controller": "Den personuppgiftsansvarige är {company}, som handlar som {name}, med säte på {address}. För alla frågor om dina personuppgifter, kontakta oss på {email}.",
+        "collectedDataTitle": "Data som samlats in",
+        "collectedData": "Det enda formuläret för datainsamling på denna webbplats är det offentliga formuläret \"Starta ett projekt\". De begärda uppgifterna är strikt begränsade till:",
+        "collectedDataItems": [
+          "Företagsnamn (obligatoriskt)",
+          "Professionell e-postadress (obligatoriskt)",
+          "Företagets webbplats (valfritt)",
+          "Förmåga krävs (krävs)",
+          "Projekt- eller problembeskrivning (obligatoriskt)",
+          "Befintlig miljö (valfritt)",
+          "Tidslinje (valfritt)",
+          "Budgetintervall (valfritt)",
+          "Stödjande sammanhang (valfritt)"
+        ],
+        "purposesTitle": "Ändamål och rättsliga grunder",
+        "purposesNote": "Dina uppgifter behandlas till:",
+        "purposeItems": [
+          "svara på din projektförfrågan — åtgärder före avtal (Art. 6(1)(b) GDPR) och berättigat intresse (Art. 6(1)(f));",
+          "driva, säkra och förbättra webbplatsen — berättigat intresse (Art. 6(1)(f));",
+          "följa alla tillämpliga juridiska skyldigheter (Art. 6(1)(c))."
+        ],
+        "recipientsTitle": "Mottagare",
+        "recipientsNote": "Dina uppgifter är endast tillgängliga för behöriga personer inom SDK Enterprises. Det kan behandlas av följande processorer, strikt för behoven hos deras tjänster:",
+        "transfersTitle": "Överföringar utanför EU",
+        "transfers": "Vissa processorer kan behandla data utanför Europeiska ekonomiska samarbetsområdet (särskilt i USA). Där detta inträffar används lämpliga skyddsåtgärder, såsom Europeiska kommissionens standardavtalsklausuler.",
+        "retentionTitle": "Retention",
+        "retention": "Uppgifter som samlas in via formuläret sparas i 12 månader från den senaste kontakten, om inte en längre lagring krävs enligt lag. Efter denna period raderas eller anonymiseras den.",
+        "rightsTitle": "Dina rättigheter",
+        "rightsNote": "I enlighet med Articles 15 to 22 GDPR har du rätt till åtkomst, rättelse, radering, begränsning, portabilitet och invändning. Du kan också när som helst återkalla ditt samtycke.",
+        "rightsContact": "För att utöva dessa rättigheter, skriv till oss på {email}. Vi svarar inom en månad. Du kan också lämna in ett klagomål till CNIL (www.cnil.fr).",
+        "childrenTitle": "Barn",
+        "children": "Webbplatsen riktar sig till proffs och är inte avsedd för minderåriga. Förfrågningsformuläret är inte avsett för personer under 16 år.",
+        "automatedTitle": "Automatiserat beslutsfattande",
+        "automated": "Inget automatiserat beslutsfattande eller profilering utförs på dina uppgifter.",
+        "securityTitle": "Säkerhet",
+        "security": "Rimliga tekniska och organisatoriska åtgärder finns på plats för att skydda dina data (krypterade anslutningar, åtkomstkontroller). Ingen absolut garanti kan erbjudas.",
+        "registerTitle": "Registrering och deklaration",
+        "register": "SDK Enterprises för ett internt register över bearbetningsaktiviteter (Art. 30 GDPR). Inget CNIL-deklarationsnummer görs anspråk på eller uppfunnits."
+      }
+    },
+    "terms": {
+      "title": "Användarvillkor",
+      "intro": "Reglerna för användning av denna webbplats.",
+      "fr": {
+        "purposeTitle": "Objet",
+        "purpose": "These terms govern your use of the {name} website. By accessing the site, you agree to these terms.",
+        "servicesTitle": "Presentation of services",
+        "services": "The site presents the services of {name} and allows you to submit a project enquiry. This content is provided for information only and is neither a contractual offer nor a commitment to provide services.",
+        "enquiriesTitle": "Project enquiries",
+        "enquiries": "Information submitted through the \"Start a project\" form is handled in accordance with the privacy policy. Receiving an enquiry does not imply any obligation to accept it.",
+        "intellectualPropertyTitle": "Intellectual property",
+        "intellectualProperty": "The texts, logo, visuals and content of the site are the property of SDK Enterprises and may not be reused without prior authorisation.",
+        "availabilityTitle": "Site availability",
+        "availability": "The site is provided \"as is\". SDK Enterprises makes reasonable efforts to keep it accessible but does not guarantee uninterrupted or error-free availability.",
+        "liabilityTitle": "Liability",
+        "liability": "To the extent permitted by law, SDK Enterprises' liability is limited to direct damages and does not extend to indirect damages. Links to third-party sites are the sole responsibility of their publishers.",
+        "changesTitle": "Changes",
+        "changes": "SDK Enterprises may amend these terms at any time. The applicable version is the one published on this page.",
+        "lawTitle": "Governing law",
+        "law": "These terms are governed by French law. In the event of a dispute, the French courts have jurisdiction.",
+        "contactTitle": "Contact",
+        "contact": "For any question, contact {company} at {email}."
+      },
+      "en": {
+        "purposeTitle": "Syfte",
+        "purpose": "Dessa villkor reglerar din användning av webbplatsen {name}. Genom att gå in på webbplatsen godkänner du dessa villkor.",
+        "servicesTitle": "Presentation av tjänster",
+        "services": "Webbplatsen presenterar tjänsterna från {name} och låter dig skicka in en projektförfrågan. Detta innehåll tillhandahålls endast för information och är varken ett avtalserbjudande eller ett åtagande att tillhandahålla tjänster.",
+        "enquiriesTitle": "Projektförfrågningar",
+        "enquiries": "Information som lämnas via formuläret \"Starta ett projekt\" hanteras i enlighet med integritetspolicyn. Att ta emot en förfrågan innebär inte någon skyldighet att acceptera den.",
+        "intellectualPropertyTitle": "Immateriella rättigheter",
+        "intellectualProperty": "Webbplatsens texter, logotyp, bilder och innehåll tillhör SDK Enterprises och får inte återanvändas utan föregående tillstånd.",
+        "availabilityTitle": "Webbplatsens tillgänglighet",
+        "availability": "Webbplatsen tillhandahålls \"i befintligt skick\". SDK Enterprises gör rimliga ansträngningar för att hålla den tillgänglig men garanterar inte oavbruten eller felfri tillgänglighet.",
+        "liabilityTitle": "Ansvar",
+        "liability": "I den utsträckning lagen tillåter är SDK Enterprises ansvar begränsat till direkta skador och sträcker sig inte till indirekta skador. Länkar till tredje parts webbplatser är deras utgivares ensamma ansvar.",
+        "changesTitle": "Ändringar",
+        "changes": "SDK Enterprises kan ändra dessa villkor när som helst. Den tillämpliga versionen är den som publiceras på denna sida.",
+        "lawTitle": "Gällande lag",
+        "law": "Dessa villkor regleras av fransk lag. I händelse av en tvist har de franska domstolarna jurisdiktion.",
+        "contactTitle": "Kontakta",
+        "contact": "För alla frågor, kontakta {company} på {email}."
+      }
+    },
+    "cookies": {
+      "title": "Cookiepolicy",
+      "intro": "Vad cookies är och om den här webbplatsen använder dem.",
+      "fr": {
+        "whatIsTitle": "What is a cookie?",
+        "whatIs": "A cookie is a small text file placed on your device when you visit a website. It allows the site to recognise your browser and remember information.",
+        "thisSiteTitle": "Cookies set by this site",
+        "thisSite": "No analytics, advertising or tracking cookies are set by this site. The analytics solution in use (Vercel Analytics) is cookieless. Your browsing is therefore not tracked.",
+        "consentBannerTitle": "Consent banner",
+        "consentBanner": "No consent banner is shown because no cookies are set. If a cookie-setting script were added, a consent banner would become required and this page would be updated.",
+        "browserSettingsTitle": "Managing cookies in your browser",
+        "browserSettings": "You can configure your browser to refuse or delete cookies at any time. Instructions depend on your browser (Chrome, Firefox, Safari, Edge). Guides are available at www.cnil.fr."
+      },
+      "en": {
+        "whatIsTitle": "Vad är en kaka?",
+        "whatIs": "En cookie är en liten textfil som placeras på din enhet när du besöker en webbplats. Det gör att webbplatsen kan känna igen din webbläsare och komma ihåg information.",
+        "thisSiteTitle": "Cookies som sätts av denna webbplats",
+        "thisSite": "Inga analyser, reklam eller spårningscookies ställs in av denna webbplats. Analyslösningen som används (Vercel Analytics) är cookiefri. Din surfning spåras därför inte.",
+        "consentBannerTitle": "Samtyckesbanner",
+        "consentBanner": "Ingen samtyckesbanner visas eftersom inga cookies är inställda. Om ett cookie-inställningsskript lades till skulle en samtyckesbanner krävas och den här sidan skulle uppdateras.",
+        "browserSettingsTitle": "Hantera cookies i din webbläsare",
+        "browserSettings": "Du kan när som helst konfigurera din webbläsare att vägra eller ta bort cookies. Instruktionerna beror på din webbläsare (Chrome, Firefox, Safari, Edge). Guider finns tillgängliga på www.cnil.fr."
+      }
+    }
+  },
+  "designSystem": {
+    "eyebrow": "SDK Enterprises · Designsystem",
+    "title": "Den delade visuella grunden för webbplatsen och kundportalen.",
+    "intro": "Den här sidan återger varje token, primitiv och tillstånd som definieras i docs/design/design-system.md och docs/design/patterns.md. Det är referensen under utvecklingen. Det är avsiktligt inte kopplat från produktionsnavigering.",
+    "primaryAction": "Primär åtgärd",
+    "colors": {
+      "eyebrow": "01 · Palett",
+      "title": "En liten palett, använd med avsikt.",
+      "intro": "Varumärkesgrönt är endast till för action och meningsfulla höjdpunkter – aldrig dekoration. Gröna bakgrunder bär alltid mörk text; grön text visas endast på mörka ytor."
+    },
+    "type": {
+      "eyebrow": "02 · Typografi",
+      "title": "JetBrains Mono, inställd som ett redaktionellt system.",
+      "intro": "Rubriker satt snäva och stora; etiketter som små, versaler och spårade. Brödtext går aldrig under 14px."
+    },
+    "components": {
+      "eyebrow": "03 · Komponenter",
+      "title": "Återhållna primitiver, anpassade till referensen.",
+      "intro": "Knappar, märken, kort och länkar. En radiefamilj, 1px kanter och ingen dekoration utöver vad de godkända designerna använder.",
+      "buttons": "Knappar",
+      "badges": "Märken",
+      "cardsLinks": "Kort & länkar",
+      "inProgress": "Pågår",
+      "review": "Granska",
+      "pending": "Väntar",
+      "currentProjects": "Pågående projekt",
+      "viewAll": "Visa alla",
+      "metricsGrid": "Statistikrutnät (responsivt: 4 → 2 → 1)",
+      "activeProjects": "Aktiva projekt",
+      "openRequests": "Öppna förfrågningar",
+      "outstanding": "Enastående",
+      "pendingActions": "Väntande åtgärder"
+    },
+    "states": {
+      "eyebrow": "04 · Stater",
+      "title": "Laddar, tomt och fel — konsekventa ytor.",
+      "intro": "Inga färguppfinningar. Skelett använder linjetonen, tom anger en streckad kant, fel stannar på pappersytan med stark mörk betoning.",
+      "loading": "Laddar, tomt och fel — konsekventa ytor.",
+      "noRequestsYet": "Inga förfrågningar ännu",
+      "whenProjectExists": "När ett projekt eller förfrågan finns kommer det att visas här.",
+      "somethingFailed": "Något kunde inte laddas",
+      "tryAgain": "Försök igen eller kontakta supporten om problemet kvarstår.",
+      "requestService": "Begär en tjänst",
+      "retry": "Försök igen"
+    },
+    "darkSurface": {
+      "eyebrow": "05 · Mörk yta",
+      "title": "Mörka partier bär samma system.",
+      "intro": "Primär text blir ljus, sekundär blir dimma och grön används för höjdpunkter. Kantlinjen mörknar för att hålla kompositionen tyst."
+    },
+    "brandSurface": {
+      "eyebrow": "06 · Märkesyta",
+      "title": "Högst ett varumärkesavsnitt per sida.",
+      "intro": "Gröna bakgrunder bär mörk text. Använd detta sparsamt - det är den mest högljudda ytan i systemet.",
+      "bringUsProblem": "Ge oss problemet"
+    }
+  },
+  "auth": {
+    "loginRedirecting": "Omdirigerar till inloggning...",
+    "logoutRedirecting": "Omdirigerar till utloggning..."
+  },
+  "errors": {
+    "label": "Fel"
+  }
+}

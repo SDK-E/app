@@ -1,0 +1,436 @@
+{
+  "meta": {
+    "siteDescription": "Francia B2B mérnöki cég. Szoftvereket építünk, korszerűsítünk és üzemeltetünk a teljes veremben – háttérplatformok, felhő infrastruktúra, mesterséges intelligencia automatizálás, valós idejű rendszerek és belső eszközök.",
+    "title": "SDK Enterprises"
+  },
+  "nav": {
+    "toggleMenu": "Váltó menü",
+    "home": "SDK Enterprises otthon",
+    "main": "Fő",
+    "services": "Szolgáltatások",
+    "work": "Munka",
+    "process": "Folyamat",
+    "about": "Körülbelül",
+    "discussProject": "Egy projekt megbeszélése",
+    "signIn": "Jelentkezzen be",
+    "legal": "Jogi",
+    "mentionsLegales": "Legales-t említi",
+    "privacy": "Adatvédelem",
+    "terms": "Feltételek",
+    "cookies": "Cookie-k"
+  },
+  "hero": {
+    "eyebrow": "B2B AI · Szoftver · Felhő · Rendszermérnökség",
+    "heading": "Egyetlen mérnöki partner a vállalatának szükséges köteghez.",
+    "leadParagraph": "A SDK Enterprises szoftvereket épít, modernizál és üzemeltet a teljes veremben – háttérplatformok, felhő infrastruktúra, mesterséges intelligencia automatizálás, valós idejű rendszerek és belső eszközök. Ön egy speciális problémával foglalkozik, vagy szélesebb munkafolyamattal rendelkezik; Akárhogy is, azok az emberek végzik a munkát, akikkel beszélsz.",
+    "ctaStartProject": "Indítson el egy projektet",
+    "ctaExploreServices": "Fedezze fel a szolgáltatásokat",
+    "trustFrance": "Franciaországban székelő B2B cég",
+    "trustSenior": "Vezetőmérnöki szállítás",
+    "trustAI": "AI + háttérprogram + felhő",
+    "trustClients": "Európai és távoli ügyfelek"
+  },
+  "services": {
+    "eyebrow": "Szolgáltatások",
+    "title": "Használja az összes köteget – vagy csak a szükséges részt.",
+    "intro": "A SDK egyetlen speciális problémával foglalkozhat, vagy szélesebb műszaki munkafolyamattal rendelkezik.",
+    "items": [
+      {
+        "number": "01",
+        "category": "AI Engineering",
+        "title": "AI ügynökök és automatizálás",
+        "copy": "LLM integrációk, ügynökök, RAG, munkafolyamat automatizálás, fejlesztői szerszámok és mesterséges intelligencia által támogatott műveletek."
+      },
+      {
+        "number": "02",
+        "category": "Háttérrendszer",
+        "title": "Platformok, APIs és SaaS",
+        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs és valós idejű háttérarchitektúra."
+      },
+      {
+        "number": "03",
+        "category": "Frontend",
+        "title": "Webes és alkalmazási felületek",
+        "copy": "React, Vue, Nuxt, TypeScript, Tailwind és Shadcn."
+      },
+      {
+        "number": "04",
+        "category": "Felhő",
+        "title": "Felhő és infrastruktúra",
+        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD és telepítési architektúra."
+      },
+      {
+        "number": "05",
+        "category": "Adatok",
+        "title": "Adatbázisok, gyorsítótár és keresés",
+        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey és Elasticsearch."
+      },
+      {
+        "number": "06",
+        "category": "Modernizáció",
+        "title": "Örökség modernizálása",
+        "copy": "Framework frissítések, migráció, technikai adósságcsökkentés és teljesítményoptimalizálás."
+      }
+    ]
+  },
+  "whySdk": {
+    "eyebrow": "Miért a SDK?",
+    "title": "Magas szintű mérnöki munka felesleges rétegek nélkül.",
+    "intro": "Közvetlen kommunikáció, gyors diagnózis és pragmatikus végrehajtás.",
+    "items": [
+      {
+        "kicker": "FR",
+        "copy": "Egy francia székhelyű B2B cég európai és távoli ügyfelek számára."
+      },
+      {
+        "kicker": "AI",
+        "copy": "LLM integrációk, ügynökök, automatizálás és belső szerszámok."
+      },
+      {
+        "kicker": "RT",
+        "copy": "Valós idejű és nagy volumenű platformmunka."
+      },
+      {
+        "kicker": "KÖZVETLEN",
+        "copy": "A munkát végző mérnökökkel beszél, nem egy fiókréteggel."
+      }
+    ]
+  },
+  "engagements": {
+    "eyebrow": "Dolgozzon a SDK-vel",
+    "title": "Hozz egy konkrét problémát. Kapjon konkrét választ.",
+    "intro": "Tudod, ha valami a stackedben kerül neked. Itt vannak azok a helyzetek, amelyekre a SDK be van állítva.",
+    "items": [
+      {
+        "title": "Egy rendszer túl régi a javításhoz.",
+        "copy": "Átállási tervre van szüksége, nem kívánságra – annak ellenőrzésére, hogy mi fut, mi törik, és a beköltözés sorrendje."
+      },
+      {
+        "title": "Az a kötet, amelyre a jelenlegi verem nem készült.",
+        "copy": "Valós idejű feldolgozás, nagy áteresztőképességű háttérrendszerek és az infrastruktúra a stabilitás érdekében."
+      },
+      {
+        "title": "Az AI munkába állhat.",
+        "copy": "LLM integrációk, ügynökök és automatizálás, amelyek megváltoztatják a belső munkafolyamatot – nem egy bemutató, amely a pályán áll meg."
+      },
+      {
+        "title": "Egy csapat, amelynek magas rangú kezekre van szüksége.",
+        "copy": "Közvetlen mérnöki kézbesítés a kódbázison, a döntéseket lassító középső réteg nélkül."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Hogyan dolgozunk",
+    "title": "Világos út a problémától a termelésig.",
+    "intro": "Négy lépés, látható haladás minden szakaszban.",
+    "items": [
+      {
+        "title": "Értsd",
+        "copy": "Üzleti cél, verem, korlátok és sikerkritériumok."
+      },
+      {
+        "title": "Tervezés",
+        "copy": "Építészet, terjedelem, kockázatok és mérföldkövek."
+      },
+      {
+        "title": "Építsd meg",
+        "copy": "Megvalósítás látható előrehaladással."
+      },
+      {
+        "title": "Átadás",
+        "copy": "Telepítse, dokumentálja és adja át a tulajdonjogot."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Dolgozzon a SDK-vel",
+    "heading": "Adja meg nekünk a megoldandó problémát.",
+    "body": "Mondja el, mit próbál építeni, modernizálni, automatizálni vagy javítani – mi őszintén megmondjuk, hogy megfelelő-e, és mire lenne szükség.",
+    "registeredUnder": "{company} alatt regisztrálva",
+    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "AI · Szoftver · Felhő · Rendszermérnökség"
+  },
+  "legal": {
+    "mentionsLegales": {
+      "title": "Legales-t említi",
+      "intro": "Jogi megjegyzések a SDK Enterprises webhelyhez.",
+      "fr": {
+        "editorTitle": "Éditeur du site",
+        "editorWebsite": "The website accessible at {domain} is published by {company}, trading as {name}.",
+        "siren": "SIREN: {siren}",
+        "siret": "SIRET: {siret}",
+        "registeredOffice": "Registered office: {address}",
+        "legalForm": "Legal form and share capital: Auto-entrepreneur (sole trader, micro-entreprise), no share capital",
+        "registration": "Company registration: RCS Paris {siren}",
+        "directorTitle": "Publication director",
+        "director": "Publication director: Hicham SADDEK.",
+        "hostingTitle": "Hosting",
+        "hosting": "The site is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, United States.",
+        "contactTitle": "Contact",
+        "contact": "Questions about the site may be sent to {email} or by phone at {phone}.",
+        "intellectualPropertyTitle": "Intellectual property",
+        "intellectualProperty": "The structure, texts, logo and content of the site are the property of SDK Enterprises. Any reproduction or representation, in whole or in part, without prior authorisation is prohibited, except as permitted by applicable law.",
+        "legalFrameworkTitle": "Legal framework",
+        "legalFramework": "These notices are governed by French law and are established in accordance with Article 6-III of the French law n° 2004-575 of 21 June 2004 on confidence in the digital economy (LCEN)."
+      },
+      "en": {
+        "publisherTitle": "Kiadó",
+        "publisherWebsite": "A {domain} címen elérhető webhelyet a {company} teszi közzé, amely {name} néven kereskedik.",
+        "siren": "SIREN: {siren}",
+        "siret": "SIRET: {siret}",
+        "registeredOffice": "Székhely: {address}",
+        "legalForm": "Jogi forma és törzstőke: önálló vállalkozó (egyéni vállalkozó, mikrovállalkozás), alaptőke nélkül",
+        "registration": "Cégjegyzékszám: RCS Paris {siren}",
+        "directorTitle": "Kiadási igazgató",
+        "director": "Kiadványvezető: Hicham SADDEK.",
+        "hostingTitle": "Tárhely",
+        "hosting": "A webhely házigazdája a Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, Egyesült Államok.",
+        "contactTitle": "Kapcsolatfelvétel",
+        "contact": "Az oldallal kapcsolatos kérdéseket a {email} címre vagy a {phone} telefonszámon lehet küldeni.",
+        "intellectualPropertyTitle": "Szellemi tulajdon",
+        "intellectualProperty": "Az oldal szerkezete, szövegei, logója és tartalma a SDK Enterprises tulajdonát képezi. Bármilyen reprodukálás vagy ábrázolás, részben vagy egészben, előzetes engedély nélkül tilos, kivéve a vonatkozó törvények által megengedett eseteket.",
+        "legalFrameworkTitle": "Jogi keretek",
+        "legalFramework": "Ezekre a közleményekre a francia jog az irányadó, és a digitális gazdaságba vetett bizalomról szóló, 2004. június 21-i 2004-575. sz. francia törvény (LCEN) 6-III."
+      }
+    },
+    "privacy": {
+      "title": "Adatvédelmi szabályzat",
+      "intro": "Hogyan kezeli a SDK Enterprises a személyes adatokat a GDPR (RGPD) szerint.",
+      "processors": [
+        {
+          "name": "Vercel",
+          "role": "Weboldal hosting és cookie-mentes elemzés"
+        },
+        {
+          "name": "Auth0 (Okta)",
+          "role": "Az ügyfélkapu hitelesítése"
+        },
+        {
+          "name": "Resend",
+          "role": "Tranzakciós e-mail projekttel kapcsolatos kérdésekhez"
+        },
+        {
+          "name": "Prisma Postgres",
+          "role": "Felügyelt PostgreSQL adatbázis"
+        }
+      ],
+      "fr": {
+        "controllerTitle": "Responsable de traitement",
+        "controller": "The data controller is {company}, trading as {name}, registered office at {address}. For any question about your personal data, contact us at {email}.",
+        "collectedDataTitle": "Data collected",
+        "collectedData": "The only data-collection form on this site is the public \"Start a project\" form. The data requested is strictly limited to:",
+        "collectedDataItems": [
+          "Company name (required)",
+          "Professional email address (required)",
+          "Company website (optional)",
+          "Capability needed (required)",
+          "Project or problem description (required)",
+          "Existing environment (optional)",
+          "Timeline (optional)",
+          "Budget range (optional)",
+          "Supporting context (optional)"
+        ],
+        "purposesTitle": "Purposes and legal bases",
+        "purposesNote": "Your data is processed to:",
+        "purposeItems": [
+          "respond to your project enquiry — pre-contractual measures (Art. 6(1)(b) GDPR) and legitimate interest (Art. 6(1)(f));",
+          "operate, secure and improve the site — legitimate interest (Art. 6(1)(f));",
+          "comply with any applicable legal obligations (Art. 6(1)(c))."
+        ],
+        "recipientsTitle": "Recipients",
+        "recipientsNote": "Your data is accessible only to authorised people within SDK Enterprises. It may be processed by the following processors, strictly for the needs of their services:",
+        "transfersTitle": "Transfers outside the EU",
+        "transfers": "Some processors may process data outside the European Economic Area (notably in the United States). Where this occurs, appropriate safeguards are used, such as the European Commission's standard contractual clauses.",
+        "retentionTitle": "Retention",
+        "retention": "Data collected through the form is kept for 12 months from the last contact, unless a longer retention is required by law. After this period, it is deleted or anonymised.",
+        "rightsTitle": "Your rights",
+        "rightsNote": "In accordance with Articles 15 to 22 GDPR, you have the right to access, rectification, erasure, restriction, portability and objection. You may also withdraw your consent at any time.",
+        "rightsContact": "To exercise these rights, write to us at {email}. We respond within one month. You may also lodge a complaint with the CNIL (www.cnil.fr).",
+        "childrenTitle": "Children",
+        "children": "The site is aimed at professionals and is not intended for minors. The enquiry form is not intended for individuals under 16.",
+        "automatedTitle": "Automated decision-making",
+        "automated": "No automated decision-making or profiling is carried out on your data.",
+        "securityTitle": "Security",
+        "security": "Reasonable technical and organisational measures are in place to protect your data (encrypted connections, access controls). No absolute guarantee can be offered.",
+        "registerTitle": "Register and declaration",
+        "register": "SDK Enterprises maintains an internal register of processing activities (Art. 30 GDPR). No CNIL declaration number is claimed or invented."
+      },
+      "en": {
+        "controllerTitle": "Adatkezelő",
+        "controller": "Az adatkezelő a {company}, kereskedelmi néven {name}, székhelye: {address}. Ha bármilyen kérdése van a személyes adataival kapcsolatban, lépjen kapcsolatba velünk a {email} címen.",
+        "collectedDataTitle": "Gyűjtött adatok",
+        "collectedData": "Az egyetlen adatgyűjtési űrlap ezen az oldalon a nyilvános \"Projekt indítása\" űrlap. A kért adatok szigorúan a következőkre korlátozódnak:",
+        "collectedDataItems": [
+          "Cégnév (kötelező)",
+          "Professzionális e-mail cím (kötelező)",
+          "Vállalat webhelye (nem kötelező)",
+          "Szükséges képesség (szükséges)",
+          "Projekt vagy probléma leírása (kötelező)",
+          "Meglévő környezet (opcionális)",
+          "Idővonal (opcionális)",
+          "Költségkeret-tartomány (opcionális)",
+          "Támogató kontextus (opcionális)"
+        ],
+        "purposesTitle": "Célok és jogalapok",
+        "purposesNote": "Az Ön adatait a következő célokra dolgozzuk fel:",
+        "purposeItems": [
+          "válaszoljon projektkérdésére – szerződéskötést megelőző intézkedések (Art. 6(1)(b) GDPR) és jogos érdek (Art. 6(1)(f));",
+          "az oldal működtetése, biztosítása és fejlesztése – jogos érdek (Art. 6(1)(f));",
+          "be kell tartania a vonatkozó jogi kötelezettségeket (Art. 6(1)(c))."
+        ],
+        "recipientsTitle": "Címzettek",
+        "recipientsNote": "Az Ön adataihoz csak a SDK Enterprises-en belül jogosult személyek férhetnek hozzá. A következő feldolgozók dolgozhatják fel, szigorúan szolgáltatásaik igényei szerint:",
+        "transfersTitle": "Átutalás az EU-n kívülre",
+        "transfers": "Egyes adatfeldolgozók az Európai Gazdasági Térségen kívül (nevezetesen az Egyesült Államokban) dolgozhatnak fel adatokat. Ahol ez megtörténik, megfelelő biztosítékokat alkalmaznak, például az Európai Bizottság általános szerződési záradékait.",
+        "retentionTitle": "Megtartás",
+        "retention": "Az űrlapon gyűjtött adatokat az utolsó kapcsolatfelvételtől számított 12 hónapig megőrizzük, kivéve, ha hosszabb megőrzést jogszabály ír elő. Ezen időszak letelte után a rendszer törli vagy anonimizálja.",
+        "rightsTitle": "Az Ön jogai",
+        "rightsNote": "A Articles 15 to 22 GDPR értelmében Önnek joga van a hozzáféréshez, a helyesbítéshez, a törléshez, a korlátozáshoz, a hordozhatósághoz és a tiltakozáshoz. Hozzájárulását bármikor visszavonhatja.",
+        "rightsContact": "E jogok gyakorlásához írjon nekünk a {email} címre. Egy hónapon belül válaszolunk. Panaszt is nyújthat be a CNIL (www.cnil.fr) készülékkel.",
+        "childrenTitle": "Gyerekek",
+        "children": "Az oldal szakembereknek szól, és nem kiskorúaknak szól. A kérdőív nem 16 éven aluli személyek számára készült.",
+        "automatedTitle": "Automatizált döntéshozatal",
+        "automated": "Az Ön adataival kapcsolatban nem történik automatizált döntéshozatal vagy profilalkotás.",
+        "securityTitle": "Biztonság",
+        "security": "Ésszerű technikai és szervezési intézkedések vannak érvényben az adatok védelmére (titkosított kapcsolatok, hozzáférés-szabályozás). Abszolút garancia nem vállalható.",
+        "registerTitle": "Nyilvántartás és nyilatkozat",
+        "register": "A SDK Enterprises belső nyilvántartást vezet a feldolgozási tevékenységekről (Art. 30 GDPR). A CNIL nyilatkozatszámot nem igényelték vagy találták ki."
+      }
+    },
+    "terms": {
+      "title": "Felhasználási feltételek",
+      "intro": "A weboldal használatának szabályai.",
+      "fr": {
+        "purposeTitle": "Objet",
+        "purpose": "These terms govern your use of the {name} website. By accessing the site, you agree to these terms.",
+        "servicesTitle": "Presentation of services",
+        "services": "The site presents the services of {name} and allows you to submit a project enquiry. This content is provided for information only and is neither a contractual offer nor a commitment to provide services.",
+        "enquiriesTitle": "Project enquiries",
+        "enquiries": "Information submitted through the \"Start a project\" form is handled in accordance with the privacy policy. Receiving an enquiry does not imply any obligation to accept it.",
+        "intellectualPropertyTitle": "Intellectual property",
+        "intellectualProperty": "The texts, logo, visuals and content of the site are the property of SDK Enterprises and may not be reused without prior authorisation.",
+        "availabilityTitle": "Site availability",
+        "availability": "The site is provided \"as is\". SDK Enterprises makes reasonable efforts to keep it accessible but does not guarantee uninterrupted or error-free availability.",
+        "liabilityTitle": "Liability",
+        "liability": "To the extent permitted by law, SDK Enterprises' liability is limited to direct damages and does not extend to indirect damages. Links to third-party sites are the sole responsibility of their publishers.",
+        "changesTitle": "Changes",
+        "changes": "SDK Enterprises may amend these terms at any time. The applicable version is the one published on this page.",
+        "lawTitle": "Governing law",
+        "law": "These terms are governed by French law. In the event of a dispute, the French courts have jurisdiction.",
+        "contactTitle": "Contact",
+        "contact": "For any question, contact {company} at {email}."
+      },
+      "en": {
+        "purposeTitle": "Cél",
+        "purpose": "Ezek a feltételek szabályozzák a {name} webhely Ön általi használatát. Az oldal megnyitásával Ön elfogadja ezeket a feltételeket.",
+        "servicesTitle": "Szolgáltatások bemutatása",
+        "services": "Az oldal bemutatja a {name} szolgáltatásait, és lehetővé teszi projektkérdés benyújtását. Ez a tartalom csak tájékoztató jellegű, és nem minősül szerződéses ajánlatnak vagy szolgáltatásnyújtásra vonatkozó kötelezettségvállalásnak.",
+        "enquiriesTitle": "Projekt megkeresések",
+        "enquiries": "A „Projekt indítása” űrlapon keresztül benyújtott információkat az adatvédelmi szabályzatnak megfelelően kezeljük. A megkeresés fogadása nem jelent kötelezettséget annak elfogadására.",
+        "intellectualPropertyTitle": "Szellemi tulajdon",
+        "intellectualProperty": "Az oldal szövegei, logója, látványvilága és tartalma a SDK Enterprises tulajdonát képezik, és előzetes engedély nélkül nem használhatók fel újra.",
+        "availabilityTitle": "A webhely elérhetősége",
+        "availability": "Az oldal „ahogy van”. A SDK Enterprises ésszerű erőfeszítéseket tesz annak érdekében, hogy elérhető legyen, de nem garantálja a megszakítás nélküli vagy hibamentes elérhetőséget.",
+        "liabilityTitle": "Felelősség",
+        "liability": "A törvény által megengedett mértékig a SDK Enterprises felelőssége a közvetlen károkra korlátozódik, és nem terjed ki a közvetett károkra. A harmadik felek webhelyeire mutató linkekért kizárólag a kiadók felelősek.",
+        "changesTitle": "Változások",
+        "changes": "A SDK Enterprises ezeket a feltételeket bármikor módosíthatja. Az érvényes verzió az ezen az oldalon közzétett verzió.",
+        "lawTitle": "Irányadó jog",
+        "law": "Ezekre a feltételekre a francia jog az irányadó. Vita esetén a francia bíróságok rendelkeznek joghatósággal.",
+        "contactTitle": "Kapcsolatfelvétel",
+        "contact": "Kérdéseivel forduljon a {company}-hez a {email} címen."
+      }
+    },
+    "cookies": {
+      "title": "Cookie-szabályzat",
+      "intro": "Mik azok a cookie-k, és használja-e ezeket a webhely.",
+      "fr": {
+        "whatIsTitle": "What is a cookie?",
+        "whatIs": "A cookie is a small text file placed on your device when you visit a website. It allows the site to recognise your browser and remember information.",
+        "thisSiteTitle": "Cookies set by this site",
+        "thisSite": "No analytics, advertising or tracking cookies are set by this site. The analytics solution in use (Vercel Analytics) is cookieless. Your browsing is therefore not tracked.",
+        "consentBannerTitle": "Consent banner",
+        "consentBanner": "No consent banner is shown because no cookies are set. If a cookie-setting script were added, a consent banner would become required and this page would be updated.",
+        "browserSettingsTitle": "Managing cookies in your browser",
+        "browserSettings": "You can configure your browser to refuse or delete cookies at any time. Instructions depend on your browser (Chrome, Firefox, Safari, Edge). Guides are available at www.cnil.fr."
+      },
+      "en": {
+        "whatIsTitle": "Mi az a süti?",
+        "whatIs": "A süti egy kis szöveges fájl, amely akkor kerül az Ön készülékére, amikor meglátogat egy webhelyet. Lehetővé teszi a webhely számára, hogy felismerje böngészőjét, és megjegyezze az információkat.",
+        "thisSiteTitle": "Az oldal által beállított cookie-k",
+        "thisSite": "Ez az oldal nem állít be analitikai, hirdetési vagy nyomkövető cookie-kat. A használt analitikai megoldás (Vercel Analytics) cookie-mentes. Ezért a böngészést nem követi nyomon.",
+        "consentBannerTitle": "Hozzájárulás banner",
+        "consentBanner": "Nem jelenik meg beleegyező szalaghirdetés, mert nincsenek beállítva cookie-k. Ha egy cookie-beállító szkriptet adnának hozzá, akkor szükség lesz egy hozzájárulási szalaghirdetésre, és ez az oldal frissülne.",
+        "browserSettingsTitle": "Cookie-k kezelése a böngészőben",
+        "browserSettings": "Böngészőjét bármikor beállíthatja úgy, hogy megtagadja vagy törölje a cookie-kat. Az utasítások a böngészőtől függenek (Chrome, Firefox, Safari, Edge). Az útmutatók a www.cnil.fr címen érhetők el."
+      }
+    }
+  },
+  "designSystem": {
+    "eyebrow": "SDK Enterprises · Tervező rendszer",
+    "title": "A weboldal és az ügyfélportál közös vizuális alapja.",
+    "intro": "Ez az oldal a docs/design/design-system.md és a docs/design/patterns.md fájlokban meghatározott minden tokent, primitívet és állapotot megjelenít. Ez a referencia a fejlesztés során. Szándékosan nincs linkelve az éles navigációból.",
+    "primaryAction": "Elsődleges intézkedés",
+    "colors": {
+      "eyebrow": "01 · Paletta",
+      "title": "Szándékosan használt kis paletta.",
+      "intro": "A márka zöldje csak a cselekvésekre és a jelentőségteljes kiemelésekre szolgál – soha nem díszítésre. A zöld háttér mindig sötét szöveget hordoz; zöld szöveg csak sötét felületeken jelenik meg."
+    },
+    "type": {
+      "eyebrow": "02 · Tipográfia",
+      "title": "JetBrains Mono, úgy hangolva, mint egy szerkesztői típusú rendszer.",
+      "intro": "Feszes és nagy címlapok; címkekészlet kicsi, nagybetűs és nyomon követhető. A törzs másolata soha nem megy 14 képpont alá."
+    },
+    "components": {
+      "eyebrow": "03 · Alkatrészek",
+      "title": "Visszafogott primitívek, a hivatkozáshoz igazítva.",
+      "intro": "Gombok, jelvények, kártyák és linkek. Egy sugárcsalád, 1 képpontos szegélyek, és a jóváhagyott terveken túlmenő dekoráció.",
+      "buttons": "Gombok",
+      "badges": "Jelvények",
+      "cardsLinks": "Kártyák és linkek",
+      "inProgress": "Folyamatban",
+      "review": "Tekintse át",
+      "pending": "Függőben",
+      "currentProjects": "Jelenlegi projektek",
+      "viewAll": "Az összes megtekintése",
+      "metricsGrid": "Metrikák rács (reszponzív: 4 → 2 → 1)",
+      "activeProjects": "Aktív projektek",
+      "openRequests": "Nyitott kérések",
+      "outstanding": "Kiemelkedő",
+      "pendingActions": "Függőben lévő műveletek"
+    },
+    "states": {
+      "eyebrow": "04 · Államok",
+      "title": "Betöltés, üres és hiba – egyenletes felületek.",
+      "intro": "Nincsenek színes találmányok. A Skeleton a vonal tónusát használja, az üres állapotok szaggatott szegélyt, a hibák a papír felületén maradnak, erős sötét hangsúllyal.",
+      "loading": "Betöltés, üres és hiba – egyenletes felületek.",
+      "noRequestsYet": "Még nincsenek kérések",
+      "whenProjectExists": "Ha létezik projekt vagy kérés, az itt jelenik meg.",
+      "somethingFailed": "Valamit nem sikerült betölteni",
+      "tryAgain": "Próbálja újra, vagy forduljon az ügyfélszolgálathoz, ha a probléma továbbra is fennáll.",
+      "requestService": "Kérjen szolgáltatást",
+      "retry": "Próbálja újra"
+    },
+    "darkSurface": {
+      "eyebrow": "05 · Sötét felület",
+      "title": "A sötét részek ugyanazt a rendszert hordozzák.",
+      "intro": "Az elsődleges szöveg világos, a másodlagos köd színűvé válik, a zöld pedig a kiemelésekhez használatos. A szegélyvonal elsötétül, hogy a kompozíció csendes maradjon."
+    },
+    "brandSurface": {
+      "eyebrow": "06 · Márkafelület",
+      "title": "Oldalanként legfeljebb egy márkarész.",
+      "intro": "A zöld hátterek sötét szöveget hordoznak. Használja ezt takarékosan – ez a leghangosabb felület a rendszerben.",
+      "bringUsProblem": "Hozd el nekünk a problémát"
+    }
+  },
+  "auth": {
+    "loginRedirecting": "Átirányítás a bejelentkezéshez...",
+    "logoutRedirecting": "Átirányítás a kijelentkezéshez..."
+  },
+  "errors": {
+    "label": "Hiba"
+  }
+}
