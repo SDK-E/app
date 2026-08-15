@@ -11,6 +11,8 @@ enum ClientRole {
   COMPANY_ADMIN
   MEMBER
   VIEWER
+
+  @@map("client_role")
 }
 
 enum Priority {
@@ -18,6 +20,8 @@ enum Priority {
   MEDIUM
   HIGH
   URGENT
+
+  @@map("priority")
 }
 
 enum RequestStatus {
@@ -27,6 +31,8 @@ enum RequestStatus {
   APPROVED
   REJECTED
   CLOSED
+
+  @@map("request_status")
 }
 
 enum ProjectStatus {
@@ -35,6 +41,8 @@ enum ProjectStatus {
   ON_HOLD
   COMPLETED
   CANCELLED
+
+  @@map("project_status")
 }
 
 enum MilestoneStatus {
@@ -43,6 +51,8 @@ enum MilestoneStatus {
   COMPLETED
   OVERDUE
   CANCELLED
+
+  @@map("milestone_status")
 }
 
 enum DocumentStatus {
@@ -50,6 +60,8 @@ enum DocumentStatus {
   UPLOADED
   ARCHIVED
   DELETED
+
+  @@map("document_status")
 }
 
 enum MessageStatus {
@@ -57,6 +69,8 @@ enum MessageStatus {
   READ
   ARCHIVED
   DELETED
+
+  @@map("message_status")
 }
 
 enum InvoiceStatus {
@@ -66,6 +80,8 @@ enum InvoiceStatus {
   OVERDUE
   CANCELLED
   REFUNDED
+
+  @@map("invoice_status")
 }
 
 model User {
@@ -91,6 +107,7 @@ model User {
   @@index([email])
   @@index([auth0Sub])
   @@index([createdAt])
+  @@map("user")
 }
 
 model Company {
@@ -111,6 +128,7 @@ model Company {
 
   @@index([slug])
   @@index([createdAt])
+  @@map("company")
 }
 
 model Membership {
@@ -126,12 +144,13 @@ model Membership {
 
   user      User     @relation("UserMemberships", fields: [userId], references: [id], onDelete: Cascade)
   company   Company  @relation("CompanyMemberships", fields: [companyId], references: [id], onDelete: Cascade)
-  inviter   User?    @relation("MembershipInvitations", fields: [invitedBy], references: [id])
+  inviter   User?    @relation("MembershipInvitations", fields: [invitedBy], references: [id], onDelete: SetNull)
 
   @@unique([userId, companyId])
   @@index([companyId])
   @@index([userId])
   @@index([createdAt])
+  @@map("membership")
 }
 
 model Request {
@@ -149,8 +168,8 @@ model Request {
   updatedAt   DateTime      @updatedAt
 
   company     Company       @relation(fields: [companyId], references: [id])
-  submittedByUser User      @relation("RequestSubmittedBy", fields: [submittedBy], references: [id])
-  reviewedByUser  User?     @relation("RequestReviewedBy", fields: [reviewedBy], references: [id])
+  submittedByUser User      @relation("RequestSubmittedBy", fields: [submittedBy], references: [id], onDelete: Restrict)
+  reviewedByUser  User?     @relation("RequestReviewedBy", fields: [reviewedBy], references: [id], onDelete: SetNull)
 
   projects    Project[]
   documents   Document[]
@@ -162,6 +181,7 @@ model Request {
   @@index([priority])
   @@index([submittedBy])
   @@index([createdAt])
+  @@map("request")
 }
 
 model Project {
@@ -180,7 +200,7 @@ model Project {
 
   company    Company     @relation(fields: [companyId], references: [id])
   request    Request?    @relation(fields: [requestId], references: [id])
-  createdByUser User     @relation("ProjectCreatedBy", fields: [createdBy], references: [id])
+  createdByUser User     @relation("ProjectCreatedBy", fields: [createdBy], references: [id], onDelete: Restrict)
 
   milestones Milestone[]
   documents  Document[]
@@ -192,6 +212,7 @@ model Project {
   @@index([status])
   @@index([createdBy])
   @@index([createdAt])
+  @@map("project")
 }
 
 model Milestone {
@@ -217,6 +238,7 @@ model Milestone {
   @@index([companyId])
   @@index([status])
   @@index([createdAt])
+  @@map("milestone")
 }
 
 model Document {
@@ -238,7 +260,7 @@ model Document {
   project    Project?  @relation(fields: [projectId], references: [id])
   milestone  Milestone? @relation(fields: [milestoneId], references: [id])
   request    Request?  @relation(fields: [requestId], references: [id])
-  uploadedByUser User  @relation(fields: [uploadedBy], references: [id])
+  uploadedByUser User  @relation(fields: [uploadedBy], references: [id], onDelete: Restrict)
 
   @@index([companyId])
   @@index([projectId])
@@ -247,6 +269,7 @@ model Document {
   @@index([uploadedBy])
   @@index([status])
   @@index([createdAt])
+  @@map("document")
 }
 
 model Message {
@@ -266,8 +289,8 @@ model Message {
   project        Project?       @relation(fields: [projectId], references: [id])
   milestone      Milestone?     @relation(fields: [milestoneId], references: [id])
   request        Request?       @relation(fields: [requestId], references: [id])
-  author         User           @relation(fields: [authorId], references: [id])
-  parentMessage  Message?       @relation("MessageReplies", fields: [parentMessageId], references: [id])
+  author         User           @relation(fields: [authorId], references: [id], onDelete: Restrict)
+  parentMessage  Message?       @relation("MessageReplies", fields: [parentMessageId], references: [id], onDelete: SetNull)
   replies        Message[]      @relation("MessageReplies")
 
   @@index([companyId])
@@ -278,6 +301,7 @@ model Message {
   @@index([parentMessageId])
   @@index([status])
   @@index([createdAt])
+  @@map("message")
 }
 
 model Invoice {
@@ -299,7 +323,7 @@ model Invoice {
   project     Project?   @relation(fields: [projectId], references: [id])
   milestone   Milestone? @relation(fields: [milestoneId], references: [id])
   request     Request?   @relation(fields: [requestId], references: [id])
-  createdByUser User     @relation(fields: [createdBy], references: [id])
+  createdByUser User     @relation(fields: [createdBy], references: [id], onDelete: Restrict)
 
   @@index([companyId])
   @@index([projectId])
@@ -308,4 +332,5 @@ model Invoice {
   @@index([createdBy])
   @@index([status])
   @@index([createdAt])
+  @@map("invoice")
 }
