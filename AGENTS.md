@@ -80,6 +80,12 @@ relevant file before touching code:
 - `docs/architecture/*` — auth, RBAC, identity, resource isolation.
 - `docs/adr/*` — decisions behind the stack (Auth0, role model, isolation,
   database choice).
+- `docs/design/brand.md` — logo & brand-mark specification (mandatory). The
+  SDK Enterprises logo is a fixed graphic asset: never re-type "SDK." or "S."
+  with JetBrains Mono or another font. Use the approved assets in
+  `docs/brand/` (canonical) / `public/brand/` (app copies). Approved combos:
+  light wordmark on `#082003`, or dark wordmark on `#d7e8d3`; period always
+  `#2cdb16`. Favicon is the compact `S.` mark (one S, one period).
 
 In opencode, these are also exposed as an `@docs` reference.
 

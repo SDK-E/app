@@ -76,7 +76,8 @@ surfaces, components). Rendered on `/design-system`.
 
 ## 9. Navigation
 
-- **Website header:** wordmark "SDK." (green dot), 11px uppercase links,
+- **Website header:** approved logo asset (`public/brand/sdk-logo-light.png`,
+  light-surface variant per `docs/design/brand.md`), 11px uppercase links,
   active section in `brand`, CTA as `dark` button. Mobile: menu button
   toggles a full-width panel (see `src/components/layout/Header.tsx` and
   `docs/design/responsive.md`).

@@ -45,6 +45,7 @@ maps to `./src/*`.
 ├── docs/                       # Project documentation
 │   └── conventions/            # Convention docs (this file, env.md)
 ├── public/                     # Static assets served at "/"
+│   ├── brand/                  # Approved brand assets (logo + compact mark, see docs/design/brand.md)
 │   ├── file.svg
 │   ├── globe.svg
 │   ├── next.svg

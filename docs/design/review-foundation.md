@@ -16,7 +16,7 @@ and `docs/templates/client-dashboard-example.html`.
 | Container 1220px, section padding 84→48px, `1px` border-top rhythm | Pass — `Container`, `Section` implement this |
 | Radii limited to 7/8/10px + pills for tags | Pass — `rounded-nav/control/card` |
 | Light / dark / brand section composition | Pass — `Section` tones; dark surfaces use `fog` secondary, `line` borders darken to `#2d4b28` |
-| Wordmark "SDK." with green dot | Pass — `rgb(44,219,22)` = `#2cdb16` |
+| Wordmark rendered from approved asset (not re-typed) | Pass — header uses `public/brand/sdk-logo-light.png`; period `#2cdb16` = `rgb(44,219,22)`; spec in `docs/design/brand.md` |
 | No invented styles / glassmorphism / gradients / heavy shadows | Pass |
 | Non-reusable fabricated claims ("600+", banking/telecom cases) excluded from copy | Pass — replaced in `docs/content/marketing-architecture.md` |
 

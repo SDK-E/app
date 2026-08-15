@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Container } from "./Container";
@@ -32,9 +33,17 @@ export function Header({
           <Link
             href="/"
             aria-label="SDK Enterprises home"
-            className="text-[26px] font-extrabold text-dark"
+            className="block leading-none"
           >
-            SDK<span className="text-accent">.</span>
+            <Image
+              src="/brand/sdk-logo-light.png"
+              alt=""
+              width={1429}
+              height={495}
+              className="h-[26px] w-auto md:h-[30px]"
+              priority
+              unoptimized
+            />
           </Link>
 
           <nav aria-label="Main" className="hidden items-center gap-[26px] md:flex">

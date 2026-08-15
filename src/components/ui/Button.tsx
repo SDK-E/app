@@ -1,5 +1,4 @@
 import * as React from "react";
-import Link from "next/link";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Slot } from "radix-ui";
 
@@ -49,7 +48,7 @@ function Button({
     href?: string;
   }) {
   let Comp: React.ElementType = "button";
-  if (href) Comp = Link;
+  if (href) Comp = "a";
   else if (asChild) Comp = Slot.Root;
 
   return (

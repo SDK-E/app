@@ -158,7 +158,7 @@ Defined and implemented in `src/components/ui` (interactive/feedback) and
 | `Card` | `bg-paper border border-line rounded-card`; padding `24px` (page cards), `17px` (portal panels) |
 | `Tag` | Pill (`rounded-full`), 9px, thin `line` border |
 | `ArrowLink` | 9–11px inline link with `→` suffix, used for "View all →" affordances |
-| `Header` | Wordmark "SDK." with green dot; 11px uppercase nav links; CTA button; mobile collapse |
+| `Header` | Approved logo asset (`public/brand/sdk-logo-light.png` — dark wordmark + `#2cdb16` period on `--color-light`; never re-typed); 11px uppercase nav links; CTA button; mobile collapse |
 | `Container` / `Section` / `SectionHeader` | Structural primitives per §4 and §6 |
 
 ## 8. Motion
