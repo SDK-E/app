@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -8,7 +7,6 @@ import { locales, Locale } from "@/i18n";
 import { getSiteUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/siteConfig";
 import "../globals.css";
-import {SpeedInsights} from "@vercel/speed-insights/next";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains",
@@ -76,12 +74,22 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className={jetbrainsMono.variable}>
+      <head>
+        <Script
+          src="https://cdn.vercel.com/speed-insights/v1/spa.js"
+          strategy="afterInteractive"
+          id="speed-insights"
+        />
+        <Script
+          src="https://cdn.vercel-insights.com/insights.js"
+          strategy="afterInteractive"
+          id="vercel-insights"
+        />
+      </head>
       <body className="antialiased">
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );
