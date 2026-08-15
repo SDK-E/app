@@ -30,8 +30,10 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# env files (never commit real secrets)
+.env
+.env.local
+.env.*.local
 
 # vercel
 .vercel
@@ -45,3 +47,5 @@ next-env.d.ts
 .opencode/
 .runtime/
 CLAUDE.md
+
+/src/generated/prisma
