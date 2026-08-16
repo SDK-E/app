@@ -18,9 +18,12 @@ Do not assume versions — the exact stack is:
 **Use:**
 
 - Tailwind utility classes for all styling.
-- `getServerEnv()` / `publicEnv` from `@/lib/env` — never `process.env` directly.
-- Auth helpers: `getAuth0Client()` from `@/lib/auth`; `requireAuth`, `requireRole`,
-  `requireCompanyAccess` from `@/lib/auth-guards`.
+- `getServerEnv()` from `@/lib/env` — never `process.env` directly.
+- Auth0 client: `getAuth0Client()` from `@/lib/auth`; identity resolution:
+  `getCurrentPrincipal()` from `@/lib/identity`; authorization helpers from
+  `@/lib/authorization` (`requireAuthenticatedUser`, `requireAssignedPrincipal`,
+  `requireClientPrincipal`, `requireSdkStaff`, `requirePermission`,
+  `requireCompanyAccess`, and `tenantWhere`).
 - zod for env/input validation (see `src/lib/env.ts`).
 - Prisma for every DB operation (see the `prisma-next-*` skills) — never raw SQL.
 - Server components by default; `"use client"` only when interactivity requires it;
@@ -46,10 +49,33 @@ Do not assume versions — the exact stack is:
 
 ## Verify before claiming
 
-- After any code change run: `npm run typecheck && npm run lint && npm run test`.
+- After any code change run: `npm run verify`.
 - Migrations: review every line, then `npx prisma migrate dev`.
 - Never claim a change "works" without running the checks.
 - Prefer small, focused edits verified incrementally over one big rewrite.
+
+## Identity and tenant authorization invariants
+
+- Auth0 owns authentication and sessions; PostgreSQL owns application identity,
+  assignment, roles, permissions, and tenant authorization.
+- Resolve application users only by the Auth0 `sub`. Never link identities by email.
+- Never authorize from browser state, UI visibility, or raw Auth0 session claims.
+- Client company scope comes from the resolved principal, never request input.
+- Resource reads and writes must include the authorized `companyId`; use
+  `requireCompanyAccess` / `tenantWhere` instead of interpreting tenant IDs locally.
+- SDK staff are not client memberships. Staff access to company resources requires
+  an explicit target company and the relevant permission.
+- Never store passwords, create fallback credentials, or add authentication bypasses.
+
+## Working tree, publishing, and database safety
+
+- Preserve unrelated user changes and untracked files. Stage explicit paths only.
+- Do not push directly to `main` or publish a deployment unless the user explicitly
+  requests it.
+- Before any Prisma migration, inspect the resolved database target. Do not apply a
+  migration to a remote, shared, staging, or production-like database without the
+  user's explicit authorization for that exact target.
+- Never use destructive Git or database commands to recover from an unexpected state.
 
 ## Agent context management
 
@@ -63,7 +89,7 @@ and output limits; KiloCode cannot track or compact an unknown context window.
 ## MCP servers
 
 Keyless MCP servers are configured in `.mcp.json` (read by Claude Code, Cursor,
-Windsurf, VS Code, Zed, etc.) and mirrored for opencode in `opencode.json`.
+Windsurf, VS Code, Zed, etc.) and mirrored in `kilocode.json` and `opencode.json`.
 Any agent can start using them right after `npm install` — no API keys required.
 Prefer them over guessing: they are the cheapest way to avoid hallucinations.
 
@@ -76,10 +102,10 @@ workers. A server belongs in the project configuration only when it:
 - is useful to most workers rather than a single developer's external account.
 
 Do not add account-authenticated services such as GitHub, Vercel, Auth0, or
-Sentry to `.mcp.json` or `opencode.json`. A developer may configure those
+Sentry to the committed MCP configurations. A developer may configure those
 privately when needed, but workers must never depend on them. Do not commit
 credentials, tenant identifiers, personal endpoints, or machine-specific MCP
-configuration. Keep `.mcp.json` and `opencode.json` in sync, and pin executable
+configuration. Keep all three MCP configurations in sync, and pin executable
 MCP package versions when adding or deliberately upgrading a server.
 
 - **context7** — version-accurate docs for the libraries in this repo

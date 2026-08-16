@@ -3,15 +3,15 @@
   "mcp": {
     "context7": {
       "type": "local",
-      "command": ["npx", "-y", "@upstash/context7-mcp"]
+      "command": ["npx", "-y", "@upstash/context7-mcp@4.0.2"]
     },
     "next-devtools": {
       "type": "local",
-      "command": ["npx", "-y", "next-devtools-mcp@latest"]
+      "command": ["npx", "-y", "next-devtools-mcp@0.4.0"]
     },
     "playwright": {
       "type": "local",
-      "command": ["npx", "-y", "@playwright/mcp@latest", "--browser", "chromium"]
+      "command": ["npx", "-y", "@playwright/mcp@0.0.79", "--browser", "chromium"]
     },
     "prisma": {
       "type": "local",
@@ -46,11 +46,15 @@
     },
     "migrate": {
       "description": "Create and apply a Prisma migration",
-      "template": "Create a Prisma migration named \"$ARGUMENTS\" using the prisma-next-migrations skill, then run `npx prisma migrate dev --name $ARGUMENTS` and `npx prisma generate`."
+      "template": "Create a Prisma migration named \"$ARGUMENTS\" using the prisma-next-migrations skill. Inspect the resolved database target first; do not apply to a remote or shared database without explicit user authorization. Review every migration line, then run `npx prisma migrate dev --name $ARGUMENTS` and `npx prisma generate`."
     },
     "test": {
       "description": "Run the Vitest suite and fix failures",
-      "template": "Run `npm run test` and fix any failing tests."
+      "template": "Run `npm run test:run` and fix every failing test."
+    },
+    "verify": {
+      "description": "Run the complete deterministic project verification",
+      "template": "Run `npm run verify`, fix repository-controlled failures, and report the exact commands and results."
     },
     "deploy": {
       "description": "Deploy to Vercel",

@@ -17,6 +17,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "test:run": "vitest run",
+    "agents:check": "node --import tsx scripts/check-agent-contract.ts",
+    "verify": "npm run agents:check && npm run typecheck && npm run lint && npm run test:run && npm run i18n:check && npm run build",
     "i18n:translate": "python3 scripts/translate-locales.py",
     "i18n:check": "python3 scripts/translate-locales-test.py && python3 scripts/translate-locales.py --check"
   },
