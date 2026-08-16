@@ -204,6 +204,7 @@ model Invitation {
 
   @@index([email])
   @@index([companyId])
+  @@index([companyId, acceptedAt])
   @@index([invitedBy])
   @@index([expiresAt])
   @@index([createdAt])
@@ -262,6 +263,7 @@ model Request {
   activities RequestActivity[]
 
   @@index([companyId])
+  @@index([companyId, updatedAt])
   @@index([status])
   @@index([priority])
   @@index([submittedBy])
@@ -436,6 +438,7 @@ model Invoice {
   @@index([requestId])
   @@index([createdBy])
   @@index([status])
+  @@index([companyId, status])
   @@index([createdAt])
   @@map("invoice")
 }
