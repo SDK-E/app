@@ -1,6 +1,7 @@
 import type { SessionData } from "@auth0/nextjs-auth0/types";
 import { z } from "zod";
 
+import { Prisma } from "@/generated/prisma/client";
 import { getPrisma } from "@/lib/db";
 import type { AppPrincipal, ClientRole, SdkStaffRole } from "@/types";
 
@@ -38,6 +39,17 @@ const principalSelect = {
   },
 } as const;
 
+function isUniqueConstraintViolation(error: unknown): error is Prisma.PrismaClientKnownRequestError {
+  return error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2002";
+}
+
+function identityConflict(): IdentityError {
+  return new IdentityError(
+    "IDENTITY_CONFLICT",
+    "This email is already registered to another SDK account. Sign in with the account that originally registered it."
+  );
+}
+
 export async function resolveAppPrincipal(session: SessionData): Promise<AppPrincipal> {
   const parsed = auth0IdentitySchema.safeParse(session.user);
   if (!parsed.success) {
@@ -45,23 +57,49 @@ export async function resolveAppPrincipal(session: SessionData): Promise<AppPrin
   }
 
   const identity = parsed.data;
-  const user = await getPrisma().user.upsert({
-    where: { auth0Sub: identity.sub },
-    create: {
-      auth0Sub: identity.sub,
-      email: identity.email,
-      name: identity.name ?? identity.email,
-      avatarUrl: identity.picture ?? null,
-      lastLoginAt: new Date(),
-    },
-    update: {
-      email: identity.email,
-      name: identity.name ?? identity.email,
-      avatarUrl: identity.picture ?? null,
-      lastLoginAt: new Date(),
-    },
-    select: principalSelect,
-  });
+  const db = getPrisma();
+  const profile = {
+    email: identity.email,
+    name: identity.name ?? identity.email,
+    avatarUrl: identity.picture ?? null,
+    lastLoginAt: new Date(),
+  };
+
+  let user;
+  try {
+    user = await db.user.upsert({
+      where: { auth0Sub: identity.sub },
+      create: { auth0Sub: identity.sub, ...profile },
+      update: profile,
+      select: principalSelect,
+    });
+  } catch (error) {
+    if (!isUniqueConstraintViolation(error)) {
+      throw error;
+    }
+    // Two concurrent first logins for the same Auth0 identity can race on the
+    // upsert. Re-resolve by the identity key only, never by email: the email
+    // belongs to a different account, that is a real identity conflict.
+    const existing = await db.user.findUnique({
+      where: { auth0Sub: identity.sub },
+      select: { id: true },
+    });
+    if (!existing) {
+      throw identityConflict();
+    }
+    try {
+      user = await db.user.update({
+        where: { id: existing.id },
+        data: profile,
+        select: principalSelect,
+      });
+    } catch (updateError) {
+      if (!isUniqueConstraintViolation(updateError)) {
+        throw updateError;
+      }
+      throw identityConflict();
+    }
+  }
 
   if (!user.isActive) {
     throw new IdentityError("INACTIVE_USER", "This application user is inactive.");

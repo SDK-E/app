@@ -1,9 +1,13 @@
 import type { SessionData } from "@auth0/nextjs-auth0/types";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-const mocks = vi.hoisted(() => ({ upsert: vi.fn() }));
+import { Prisma } from "@/generated/prisma/client";
 
-vi.mock("@/lib/db", () => ({ getPrisma: () => ({ user: { upsert: mocks.upsert } }) }));
+const mocks = vi.hoisted(() => ({ upsert: vi.fn(), findUnique: vi.fn(), update: vi.fn() }));
+
+vi.mock("@/lib/db", () => ({
+  getPrisma: () => ({ user: { upsert: mocks.upsert, findUnique: mocks.findUnique, update: mocks.update } }),
+}));
 
 import { IdentityError, resolveAppPrincipal } from "@/lib/identity";
 
@@ -24,7 +28,11 @@ const localUser = {
 };
 
 describe("resolveAppPrincipal", () => {
-  beforeEach(() => mocks.upsert.mockReset());
+  beforeEach(() => {
+    mocks.upsert.mockReset();
+    mocks.findUnique.mockReset();
+    mocks.update.mockReset();
+  });
 
   it("resolves by Auth0 sub and creates an unassigned local identity", async () => {
     mocks.upsert.mockResolvedValue(localUser);
@@ -87,5 +95,40 @@ describe("resolveAppPrincipal", () => {
       code: "INVALID_IDENTITY",
     });
     expect(mocks.upsert).not.toHaveBeenCalled();
+  });
+
+  it("recovers from a P2002 race by re-resolving on the Auth0 sub", async () => {
+    mocks.upsert.mockRejectedValueOnce(
+      new Prisma.PrismaClientKnownRequestError("Unique constraint failed", {
+        code: "P2002",
+        clientVersion: "7.9.1",
+      })
+    );
+    mocks.findUnique.mockResolvedValueOnce({ id: "user-1" });
+    mocks.update.mockResolvedValueOnce({ ...localUser, name: "Recovered" });
+
+    await expect(
+      resolveAppPrincipal(session({ sub: "auth0|user-1", email: "person@example.test" }))
+    ).resolves.toMatchObject({ kind: "unassigned" });
+
+    expect(mocks.findUnique).toHaveBeenCalledWith({ where: { auth0Sub: "auth0|user-1" }, select: { id: true } });
+    expect(mocks.update).toHaveBeenCalledWith(
+      expect.objectContaining({ where: { id: "user-1" }, data: expect.objectContaining({ email: "person@example.test" }) })
+    );
+  });
+
+  it("does not recover from P2002 when the sub no longer exists", async () => {
+    mocks.upsert.mockRejectedValueOnce(
+      new Prisma.PrismaClientKnownRequestError("Unique constraint failed", {
+        code: "P2002",
+        clientVersion: "7.9.1",
+      })
+    );
+    mocks.findUnique.mockResolvedValueOnce(null);
+
+    await expect(
+      resolveAppPrincipal(session({ sub: "auth0|user-1", email: "person@example.test" }))
+    ).rejects.toMatchObject({ code: "IDENTITY_CONFLICT" });
+    expect(mocks.update).not.toHaveBeenCalled();
   });
 });
