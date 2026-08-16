@@ -1,8 +1,9 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useUser } from "@auth0/nextjs-auth0/client";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/Button";
@@ -35,7 +36,11 @@ export function Header({
   locale?: string;
 }) {
   const t = useTranslations(translationsNamespace);
+  const { user } = useUser();
   const [open, setOpen] = useState(false);
+  const resolvedSecondaryCta = user
+    ? { label: t("openPortal"), href: "/app" }
+    : secondaryCta;
 
   const navLinkClass = (label: string) =>
     `text-label font-bold uppercase tracking-eyebrow transition-opacity motion-reduce:transition-none hover:opacity-70 ${
@@ -72,11 +77,11 @@ export function Header({
           </nav>
 
           <div className="hidden items-center gap-3 md:flex">
-            {secondaryCta || cta ? (
+            {resolvedSecondaryCta || cta ? (
               <>
-                {secondaryCta ? (
-                  <Button href={locale ? localizePath(locale, secondaryCta.href) : secondaryCta.href} variant="outline">
-                    {secondaryCta.label}
+                {resolvedSecondaryCta ? (
+                  <Button href={locale ? localizePath(locale, resolvedSecondaryCta.href) : resolvedSecondaryCta.href} variant="outline">
+                    {resolvedSecondaryCta.label}
                   </Button>
                 ) : null}
                 {cta ? (
@@ -142,13 +147,13 @@ export function Header({
                   <LanguageSwitcher />
                 </div>
               )}
-              {secondaryCta ? (
+              {resolvedSecondaryCta ? (
                 <Button
-                  href={locale ? localizePath(locale, secondaryCta.href) : secondaryCta.href}
+                  href={locale ? localizePath(locale, resolvedSecondaryCta.href) : resolvedSecondaryCta.href}
                   variant="outline"
                   className="mt-2"
                 >
-                  {secondaryCta.label}
+                  {resolvedSecondaryCta.label}
                 </Button>
               ) : null}
               {cta ? (
