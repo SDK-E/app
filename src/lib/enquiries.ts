@@ -1,14 +1,8 @@
 "use server";
 
-import { PrismaClient } from "@/generated/prisma/client";
-import { PrismaPg } from "@prisma/adapter-pg";
 import { enquirySchema, type EnquiryInput } from "@/lib/schemas/enquiry";
 import { sendEnquiryNotification } from "@/lib/email";
-import { getServerEnv } from "@/lib/env";
-
-const env = getServerEnv();
-const adapter = new PrismaPg({ connectionString: env.DATABASE_URL });
-const prisma = new PrismaClient({ adapter });
+import { prisma } from "@/lib/db";
 
 export type EnquiryResult =
   | { success: true }

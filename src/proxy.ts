@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import createMiddleware from "next-intl/middleware";
 import { getAuth0Client } from "@/lib/auth";
-import type { UserRole } from "@/types";
 import { routing } from "@/i18n/routing";
 
 const PUBLIC_ROUTES = [
@@ -24,7 +23,6 @@ const PUBLIC_ROUTES = [
   "/llms.txt",
 ];
 const STATIC_PUBLIC_ROUTES = ["/robots.txt", "/sitemap.xml", "/llms.txt"];
-const ADMIN_ROUTES = ["/app/admin/*"];
 
 const i18nMiddleware = createMiddleware(routing);
 
@@ -71,13 +69,6 @@ export async function proxy(request: NextRequest) {
     const loginUrl = new URL("/auth/login", request.url);
     loginUrl.searchParams.set("returnTo", request.url);
     return NextResponse.redirect(loginUrl);
-  }
-
-  if (matchesRoute(pathname, ADMIN_ROUTES)) {
-    const userRole = (session.user as unknown as { role?: UserRole })?.role;
-    if (userRole !== "owner" && userRole !== "admin") {
-      return NextResponse.redirect(new URL("/app", request.url));
-    }
   }
 
   return NextResponse.next();

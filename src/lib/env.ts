@@ -16,6 +16,8 @@ const serverEnvSchema = z.object({
 type ServerEnv = z.infer<typeof serverEnvSchema>;
 type PublicEnv = Pick<ServerEnv, "AUTH0_CLIENT_ID">;
 
+const publicEnvSchema = serverEnvSchema.pick({ AUTH0_CLIENT_ID: true });
+
 function buildErrorMessage(error: z.ZodError): string {
   return error.issues
     .map(issue => `  ${issue.path.join(".")}: ${issue.message}`)
@@ -26,20 +28,6 @@ function validateServerEnv(): ServerEnv {
   const result = serverEnvSchema.safeParse(process.env);
 
   if (!result.success) {
-    if (process.env.CI === "true") {
-      return {
-        DATABASE_URL: process.env.DATABASE_URL || "postgresql://localhost:5432/sdkapp",
-        AUTH0_SECRET: process.env.AUTH0_SECRET || "ci-secret-0123456789abcdef0123456789abcdef0123456789abcdef",
-        AUTH0_ISSUER_BASE_URL: process.env.AUTH0_ISSUER_BASE_URL || "https://ci.example.auth0.com",
-        AUTH0_DOMAIN: process.env.AUTH0_DOMAIN,
-        AUTH0_BASE_URL: process.env.AUTH0_BASE_URL || "http://localhost:3000",
-        AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID || "ci-client-id",
-        AUTH0_CLIENT_SECRET: process.env.AUTH0_CLIENT_SECRET || "ci-client-secret",
-        RESEND_API_KEY: process.env.RESEND_API_KEY,
-        MAIL_SMTP_URL: process.env.MAIL_SMTP_URL || "smtp://localhost:1025",
-        NODE_ENV: (process.env.NODE_ENV as ServerEnv["NODE_ENV"]) || "development",
-      };
-    }
     throw new Error(buildErrorMessage(result.error));
   }
 
@@ -68,6 +56,6 @@ export function getServerEnv(): ServerEnv {
   return cachedEnv;
 }
 
-export const publicEnv: PublicEnv = {
-  AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID || "ci-client-id",
-};
+export const publicEnv: PublicEnv = publicEnvSchema.parse({
+  AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
+});

@@ -8,7 +8,7 @@ used. No `.env.example` file is committed; keep this document in sync instead.
 
 Server-only variables are read through the validated access point in
 `src/lib/env.ts`. Code must **never** read `process.env` directly. Missing or
-invalid variables cause the application to fail at startup in production.
+invalid variables cause the application to fail at startup in every environment.
 
 | Variable                | Required   | Description |
 |-------------------------|------------|-------------|
@@ -30,6 +30,8 @@ invalid variables cause the application to fail at startup in production.
 
 Variables safe to expose to the browser are exported from `src/lib/env.ts` via
 `publicEnv`. Today that is `AUTH0_CLIENT_ID`, used by the Auth0 SDK callback.
+No test or CI fallback credentials are embedded in application code; each
+environment must inject its own values.
 
 ## Environment files
 

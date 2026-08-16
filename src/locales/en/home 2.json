@@ -1,0 +1,132 @@
+{
+  "hero": {
+    "eyebrow": "B2B AI · Software · Cloud · Systems Engineering",
+    "heading": "One engineering partner for the stack your company needs.",
+    "leadParagraph": "SDK Enterprises builds, modernizes and operates software across the stack — backend platforms, cloud infrastructure, AI automation, realtime systems and internal tooling. You engage on one specialized problem or own a broader workstream; either way, the people doing the work are the people you talk to.",
+    "ctaStartProject": "Start a project",
+    "ctaExploreServices": "Explore services",
+    "trustFrance": "France-based B2B company",
+    "trustSenior": "Senior engineering delivery",
+    "trustAI": "AI + backend + cloud",
+    "trustClients": "European & remote clients"
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "Use all of the stack — or only the part you need.",
+    "intro": "SDK can engage on one specialized problem or own a broader technical workstream.",
+    "items": [
+      {
+        "number": "01",
+        "category": "AI Engineering",
+        "title": "AI agents & automation",
+        "copy": "LLM integrations, agents, RAG, workflow automation, developer tooling and AI-assisted operations."
+      },
+      {
+        "number": "02",
+        "category": "Backend",
+        "title": "Platforms, APIs & SaaS",
+        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs and realtime backend architecture."
+      },
+      {
+        "number": "03",
+        "category": "Frontend",
+        "title": "Web & application interfaces",
+        "copy": "React, Vue, Nuxt, TypeScript, Tailwind and Shadcn."
+      },
+      {
+        "number": "04",
+        "category": "Cloud",
+        "title": "Cloud & infrastructure",
+        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD and deployment architecture."
+      },
+      {
+        "number": "05",
+        "category": "Data",
+        "title": "Databases, cache & search",
+        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey and Elasticsearch."
+      },
+      {
+        "number": "06",
+        "category": "Modernization",
+        "title": "Legacy modernization",
+        "copy": "Framework upgrades, migration, technical debt reduction and performance optimization."
+      }
+    ]
+  },
+  "whySdk": {
+    "eyebrow": "Why SDK",
+    "title": "Senior engineering without unnecessary layers.",
+    "intro": "Direct communication, fast diagnosis and pragmatic execution.",
+    "items": [
+      {
+        "kicker": "FR",
+        "copy": "A France-based B2B company for European and remote clients."
+      },
+      {
+        "kicker": "AI",
+        "copy": "LLM integrations, agents, automation and internal tooling."
+      },
+      {
+        "kicker": "RT",
+        "copy": "Realtime and high-volume platform work."
+      },
+      {
+        "kicker": "DIRECT",
+        "copy": "You talk to the engineers doing the work, not an account layer."
+      }
+    ]
+  },
+  "engagements": {
+    "eyebrow": "Work with SDK",
+    "title": "Bring a specific problem. Get a specific answer.",
+    "intro": "You know when something in your stack is costing you. Here are the situations SDK is set up for.",
+    "items": [
+      {
+        "title": "A system too old to keep patching.",
+        "copy": "You need a migration plan, not a wish — an audit of what runs, what breaks, and the order to move in."
+      },
+      {
+        "title": "Volume your current stack wasn't built for.",
+        "copy": "Realtime ingestion, high-throughput backends and the infrastructure to keep them stable."
+      },
+      {
+        "title": "AI you can put to work.",
+        "copy": "LLM integrations, agents and automation that change an internal workflow — not a demo that stops at the pitch."
+      },
+      {
+        "title": "A team that needs senior hands.",
+        "copy": "Direct engineering delivery on your codebase, without a middle layer slowing decisions."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "How we work",
+    "title": "A clear path from problem to production.",
+    "intro": "Four steps, visible progress at every stage.",
+    "items": [
+      {
+        "title": "Understand",
+        "copy": "Business goal, stack, constraints and success criteria."
+      },
+      {
+        "title": "Design",
+        "copy": "Architecture, scope, risks and milestones."
+      },
+      {
+        "title": "Build",
+        "copy": "Implementation with visible progress."
+      },
+      {
+        "title": "Handover",
+        "copy": "Deploy, document and transfer ownership."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Work with SDK",
+    "heading": "Bring us the problem you need solved.",
+    "body": "Tell us what you're trying to build, modernize, automate or fix — we'll tell you honestly whether it's a fit and what it would take.",
+    "registeredUnder": "Registered under {company}",
+    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  }
+}

@@ -8,11 +8,21 @@ datasource db {
 }
 
 enum ClientRole {
-  COMPANY_ADMIN
-  MEMBER
+  OWNER
+  ADMINISTRATOR
+  PROJECT_MEMBER
+  BILLING
   VIEWER
 
   @@map("client_role")
+}
+
+enum SdkStaffRole {
+  ADMIN
+  DELIVERY
+  FINANCE
+
+  @@map("sdk_staff_role")
 }
 
 enum Priority {
@@ -90,6 +100,7 @@ model User {
   email        String   @unique @db.VarChar(255)
   name         String   @db.VarChar(255)
   avatarUrl    String?  @db.VarChar(1024)
+  sdkStaffRole SdkStaffRole?
   isActive     Boolean  @default(true)
   lastLoginAt  DateTime?
   createdAt    DateTime @default(now())
@@ -135,7 +146,7 @@ model Membership {
   id         String     @id @default(uuid())
   userId     String
   companyId  String
-  role       ClientRole @default(MEMBER)
+  role       ClientRole @default(PROJECT_MEMBER)
   invitedBy  String?
   invitedAt  DateTime?
   joinedAt   DateTime?
@@ -146,6 +157,7 @@ model Membership {
   company   Company  @relation("CompanyMemberships", fields: [companyId], references: [id], onDelete: Cascade)
   inviter   User?    @relation("MembershipInvitations", fields: [invitedBy], references: [id], onDelete: SetNull)
 
+  @@unique([userId])
   @@unique([userId, companyId])
   @@index([companyId])
   @@index([userId])

@@ -76,7 +76,7 @@ Shared entity for all users (both client and SDK staff).
 
 ### 3.2 Company
 
-A client company owned by a `COMPANY_ADMIN` user.
+A client company owned by an `OWNER` member.
 
 | Field | Type | Required | Notes |
 |-------|------|----------|-------|
@@ -111,7 +111,7 @@ Links exactly one `User` to exactly one `Company` with a role.
 | `id` | UUID | Yes | Primary key |
 | `userId` | UUID | Yes | FK → `User.id` |
 | `companyId` | UUID | Yes | FK → `Company.id` |
-| `role` | enum `ClientRole` | Yes | `COMPANY_ADMIN` \| `MEMBER` \| `VIEWER` |
+| `role` | enum `ClientRole` | Yes | `OWNER` \| `ADMINISTRATOR` \| `PROJECT_MEMBER` \| `BILLING` \| `VIEWER` |
 | `invitedBy` | UUID | No | FK → `User.id`; user who sent the invitation |
 | `invitedAt` | datetime | No | Set when invitation is sent |
 | `joinedAt` | datetime | No | Set when invitee accepts |
@@ -160,7 +160,7 @@ standalone Documents/Messages/Invoices.
 |-------|-----------|
 | `DRAFT` | Created but not yet submitted |
 | `SUBMITTED` | Submitted for review |
-| `IN_REVIEW` | Under review by SDK staff or COMPANY_ADMIN |
+| `IN_REVIEW` | Under review by authorized SDK staff or a client administrator |
 | `APPROVED` | Approved; may spawn a Project |
 | `REJECTED` | Rejected with reason |
 | `CLOSED` | Final state; no further changes |
@@ -346,7 +346,7 @@ A financial invoice generated for a Project, Milestone, or Request.
 **Invariants:**
 - Exactly one of `projectId`, `milestoneId`, or `requestId` must be set.
 - `companyId` is inherited from the parent entity.
-- Only `COMPANY_ADMIN` may create invoices.
+- Only roles with `invoice:create` may create invoices.
 
 ---
 
@@ -354,8 +354,10 @@ A financial invoice generated for a Project, Milestone, or Request.
 
 ```typescript
 enum ClientRole {
-  COMPANY_ADMIN = 'COMPANY_ADMIN',
-  MEMBER = 'MEMBER',
+  OWNER = 'OWNER',
+  ADMINISTRATOR = 'ADMINISTRATOR',
+  PROJECT_MEMBER = 'PROJECT_MEMBER',
+  BILLING = 'BILLING',
   VIEWER = 'VIEWER',
 }
 
