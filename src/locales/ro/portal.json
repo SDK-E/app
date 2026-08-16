@@ -131,15 +131,32 @@
       "pendingInvitations": "Invitații în așteptare",
       "expires": "Expiră {date}",
       "resend": "Resend",
-      "revoke": "Revocați"
+      "revoke": "Revocați",
+      "accessCode": "Cod de acces al companiei",
+      "accessCodeHelp": "Distribuiți acest cod oricui ar trebui să se alăture acestei companii fără invitație.",
+      "regenerate": "Regenerați codul",
+      "accessRequests": "Cereri de acces",
+      "accessRequestsEmpty": "Nu există solicitări de acces în așteptare.",
+      "approve": "Aprobați",
+      "decline": "Declin",
+      "requested": "Solicitat {date}"
     },
     "invitation": {
       "title": "Examinați-vă invitația.",
       "intro": "Ați fost invitat la {destination} ca {role}.",
       "email": "Conectați-vă cu {email} și confirmați pentru a primi acces.",
+      "invitedBy": "Invitat de {name}",
+      "expires": "Această invitație expiră {date}.",
+      "signup": "Creați-vă contul",
+      "haveAccount": "Am deja un cont",
       "accept": "Acceptă invitația",
+      "mismatch": "Această invitație este pentru {invited}, dar sunteți conectat ca {signedin}. Deconectați-vă și treceți la contul invitat.",
+      "signOut": "Deconectați-vă și schimbați contul",
       "unavailableTitle": "Această invitație nu mai este disponibilă.",
-      "unavailableBody": "Este posibil ca linkul să fi expirat, să fi fost revocat sau să fi fost deja utilizat. Întrebați persoana care v-a invitat să trimită unul nou."
+      "unavailableBody": "Este posibil ca linkul să fi expirat, să fi fost revocat sau să fi fost deja utilizat. Întrebați persoana care v-a invitat să trimită unul nou.",
+      "unavailableExpired": "Această invitație a expirat pe {date}. Întrebați persoana care v-a invitat să trimită unul nou.",
+      "unavailableRevoked": "Această invitație a fost revocată. Întrebați persoana care v-a invitat să trimită unul nou.",
+      "unavailableUsed": "Această invitație a fost deja folosită. Întrebați persoana care v-a invitat să trimită unul nou."
     },
     "onboarding": {
       "eyebrow": "Configurați-vă spațiul de lucru",
@@ -148,7 +165,20 @@
       "name": "Numele companiei",
       "create": "Creați o companie",
       "alternative": "În schimb, vă alăturați unei companii existente? Cereți proprietarului sau administratorului acestuia să invite această adresă de e-mail.",
-      "logout": "Deconectați-vă"
+      "logout": "Deconectați-vă",
+      "accessTitle": "Solicitați acces la o companie existentă.",
+      "accessIntro": "Introduceți codul de acces al companiei care vi s-a dat. Proprietarul sau administratorul unei companii examinează și aprobă solicitarea.",
+      "accessCode": "Cod de acces al companiei",
+      "accessRole": "Rolul solicitat",
+      "requestAccess": "Solicitați acces",
+      "requestsTitle": "Solicitările dvs. de acces",
+      "requestsEmpty": "Nu există încă cereri de acces.",
+      "accessStatus": {
+        "PENDING": "În așteptare",
+        "APPROVED": "Aprobat",
+        "DECLINED": "A refuzat",
+        "CANCELLED": "Anulat"
+      }
     },
     "states": {
       "loading": "Se încarcă datele portalului...",

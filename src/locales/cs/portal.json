@@ -131,15 +131,32 @@
       "pendingInvitations": "Nevyřízené pozvánky",
       "expires": "Platnost vyprší {date}",
       "resend": "Resend",
-      "revoke": "Odvolat"
+      "revoke": "Odvolat",
+      "accessCode": "Company access code",
+      "accessCodeHelp": "Sdílejte tento kód s každým, kdo by se měl k této společnosti připojit bez pozvání.",
+      "regenerate": "Regenerate code",
+      "accessRequests": "Požadavky na přístup",
+      "accessRequestsEmpty": "Žádné nevyřízené žádosti o přístup.",
+      "approve": "Schválit",
+      "decline": "Odmítnout",
+      "requested": "Requested {date}"
     },
     "invitation": {
       "title": "Zkontrolujte svou pozvánku.",
       "intro": "Byli jste pozváni do {destination} jako {role}.",
       "email": "Přihlaste se pomocí {email} a potvrďte pro získání přístupu.",
+      "invitedBy": "Pozval {name}",
+      "expires": "Platnost této pozvánky vyprší {date}.",
+      "signup": "Vytvořte si účet",
+      "haveAccount": "Už mám účet",
       "accept": "Přijměte pozvání",
+      "mismatch": "Tato pozvánka je pro {invited}, ale jste přihlášeni jako {signedin}. Odhlaste se a přepněte na pozvaný účet.",
+      "signOut": "Odhlaste se a přepněte účet",
       "unavailableTitle": "Tato pozvánka již není dostupná.",
-      "unavailableBody": "Odkaz možná vypršel, byl odvolán nebo již byl použit. Požádejte osobu, která vás pozvala, aby poslala novou."
+      "unavailableBody": "Odkaz možná vypršel, byl odvolán nebo již byl použit. Požádejte osobu, která vás pozvala, aby poslala novou.",
+      "unavailableExpired": "Platnost této pozvánky vypršela dne {date}. Požádejte osobu, která vás pozvala, aby poslala novou.",
+      "unavailableRevoked": "Tato pozvánka byla odvolána. Požádejte osobu, která vás pozvala, aby poslala novou.",
+      "unavailableUsed": "Tato pozvánka již byla použita. Požádejte osobu, která vás pozvala, aby poslala novou."
     },
     "onboarding": {
       "eyebrow": "Nastavte si pracovní prostor",
@@ -148,7 +165,20 @@
       "name": "Název společnosti",
       "create": "Vytvořit společnost",
       "alternative": "Chcete se místo toho připojit ke stávající společnosti? Požádejte jejího vlastníka nebo správce, aby tuto e-mailovou adresu pozval.",
-      "logout": "Odhlaste se"
+      "logout": "Odhlaste se",
+      "accessTitle": "Požádejte o přístup ke stávající společnosti.",
+      "accessIntro": "Zadejte přístupový kód společnosti, který jste obdrželi. Vlastník nebo správce společnosti žádost zkontroluje a schválí.",
+      "accessCode": "Company access code",
+      "accessRole": "Požadovaná role",
+      "requestAccess": "Požádejte o přístup",
+      "requestsTitle": "Vaše požadavky na přístup",
+      "requestsEmpty": "Zatím žádné žádosti o přístup.",
+      "accessStatus": {
+        "PENDING": "Čeká na vyřízení",
+        "APPROVED": "Schváleno",
+        "DECLINED": "Declined",
+        "CANCELLED": "Zrušeno"
+      }
     },
     "states": {
       "loading": "Načítání dat portálu…",

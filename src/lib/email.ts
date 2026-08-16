@@ -169,3 +169,83 @@ export async function sendInvitationNotification(invitation: InvitationNotificat
   console.log("invitation email: accepted by Resend", data?.id);
   return true;
 }
+
+export interface AccessRequestCreatedNotification {
+  to: string;
+  recipientName: string;
+  companyName: string;
+  requesterName: string;
+  requesterEmail: string;
+}
+
+export interface AccessRequestResolvedNotification {
+  to: string;
+  recipientName: string;
+  companyName: string;
+  outcome: "APPROVED" | "DECLINED";
+  role?: string;
+}
+
+async function sendAccessMessage(message: { from: string; to: string; subject: string; html: string }, label: string): Promise<boolean> {
+  if (getServerEnv().NODE_ENV !== "production") {
+    const smtpUrl = getServerEnv().MAIL_SMTP_URL ?? "smtp://localhost:1025";
+    const { createTransport } = await import("nodemailer");
+    const transport = createTransport(smtpUrl);
+    try {
+      await transport.sendMail(message);
+      return true;
+    } catch (error) {
+      console.error(`${label}: local mail sink unreachable`, error instanceof Error ? error.message : "unknown error");
+      return false;
+    } finally {
+      transport.close();
+    }
+  }
+  const apiKey = getServerEnv().RESEND_API_KEY;
+  if (!apiKey) {
+    console.error(`${label}: RESEND_API_KEY not set`);
+    return false;
+  }
+  const { Resend } = await import("resend");
+  const { data, error } = await new Resend(apiKey).emails.send(message);
+  if (error) {
+    console.error(`${label}: resend send failed`, error.name, error.message);
+    return false;
+  }
+  console.log(`${label}: accepted by Resend`, data?.id);
+  return true;
+}
+
+export async function sendAccessRequestCreatedNotification(notification: AccessRequestCreatedNotification): Promise<boolean> {
+  const html = [
+    '<div style="font-family: sans-serif; line-height: 1.5; color: #111;">',
+    `<h2>Access request for ${escapeHtml(notification.companyName)}</h2>`,
+    `<p>${escapeHtml(notification.requesterName)} (${escapeHtml(notification.requesterEmail)}) requested access to ${escapeHtml(notification.companyName)} using its company access code.</p>`,
+    "<p>Review the request and approve or decline it in the SDK portal.</p>",
+    "</div>",
+  ].join("\n");
+  return sendAccessMessage({
+    from: `SDK Enterprises <no-reply@${siteConfig.contact.domain}>`,
+    to: notification.to,
+    subject: `Access request for ${notification.companyName}`,
+    html,
+  }, "access request email");
+}
+
+export async function sendAccessRequestResolvedNotification(notification: AccessRequestResolvedNotification): Promise<boolean> {
+  const outcome = notification.outcome === "APPROVED"
+    ? `Your access request to ${escapeHtml(notification.companyName)} was approved. You now have ${escapeHtml(notification.role ?? "viewer")} access.`
+    : `Your access request to ${escapeHtml(notification.companyName)} was declined.`;
+  const html = [
+    '<div style="font-family: sans-serif; line-height: 1.5; color: #111;">',
+    `<h2>Access request ${notification.outcome === "APPROVED" ? "approved" : "declined"}</h2>`,
+    `<p>${outcome}</p>`,
+    "</div>",
+  ].join("\n");
+  return sendAccessMessage({
+    from: `SDK Enterprises <no-reply@${siteConfig.contact.domain}>`,
+    to: notification.to,
+    subject: `Access request ${notification.outcome === "APPROVED" ? "approved" : "declined"} for ${notification.companyName}`,
+    html,
+  }, "access request email");
+}

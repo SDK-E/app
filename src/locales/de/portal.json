@@ -131,15 +131,32 @@
       "pendingInvitations": "Ausstehende Einladungen",
       "expires": "Läuft {date} ab",
       "resend": "Resend",
-      "revoke": "Widerrufen"
+      "revoke": "Widerrufen",
+      "accessCode": "Firmenzugangscode",
+      "accessCodeHelp": "Teilen Sie diesen Code mit jedem, der diesem Unternehmen ohne Einladung beitreten soll.",
+      "regenerate": "Code neu generieren",
+      "accessRequests": "Zugriffsanfragen",
+      "accessRequestsEmpty": "Keine ausstehenden Zugriffsanfragen.",
+      "approve": "Genehmigen",
+      "decline": "Ablehnen",
+      "requested": "Angefordert {date}"
     },
     "invitation": {
       "title": "Überprüfen Sie Ihre Einladung.",
       "intro": "Sie wurden als {role} zu {destination} eingeladen.",
       "email": "Melden Sie sich mit {email} an und bestätigen Sie, um Zugriff zu erhalten.",
+      "invitedBy": "Eingeladen von {name}",
+      "expires": "Diese Einladung läuft {date} ab.",
+      "signup": "Erstellen Sie Ihr Konto",
+      "haveAccount": "Ich habe bereits ein Konto",
       "accept": "Einladung annehmen",
+      "mismatch": "Diese Einladung ist für {invited}, aber Sie sind als {signedin} angemeldet. Melden Sie sich ab und wechseln Sie zum eingeladenen Konto.",
+      "signOut": "Abmelden und Konto wechseln",
       "unavailableTitle": "Diese Einladung ist nicht mehr verfügbar.",
-      "unavailableBody": "Der Link ist möglicherweise abgelaufen, wurde widerrufen oder wurde bereits verwendet. Bitten Sie die Person, die Sie eingeladen hat, eine neue zu senden."
+      "unavailableBody": "Der Link ist möglicherweise abgelaufen, wurde widerrufen oder wurde bereits verwendet. Bitten Sie die Person, die Sie eingeladen hat, eine neue zu senden.",
+      "unavailableExpired": "Diese Einladung ist am {date} abgelaufen. Bitten Sie die Person, die Sie eingeladen hat, eine neue zu senden.",
+      "unavailableRevoked": "Diese Einladung wurde widerrufen. Bitten Sie die Person, die Sie eingeladen hat, eine neue zu senden.",
+      "unavailableUsed": "Diese Einladung wurde bereits verwendet. Bitten Sie die Person, die Sie eingeladen hat, eine neue zu senden."
     },
     "onboarding": {
       "eyebrow": "Richten Sie Ihren Arbeitsbereich ein",
@@ -148,7 +165,20 @@
       "name": "Firmenname",
       "create": "Unternehmen gründen",
       "alternative": "Stattdessen einem bestehenden Unternehmen beitreten? Bitten Sie den Besitzer oder Administrator, diese E-Mail-Adresse einzuladen.",
-      "logout": "Abmelden"
+      "logout": "Abmelden",
+      "accessTitle": "Fordern Sie Zugang zu einem bestehenden Unternehmen an.",
+      "accessIntro": "Geben Sie den Firmenzugangscode ein, den Sie erhalten haben. Ein Firmeninhaber oder Administrator prüft und genehmigt die Anfrage.",
+      "accessCode": "Firmenzugangscode",
+      "accessRole": "Gewünschte Rolle",
+      "requestAccess": "Zugriff anfordern",
+      "requestsTitle": "Ihre Zugriffsanfragen",
+      "requestsEmpty": "Noch keine Zugriffsanfragen.",
+      "accessStatus": {
+        "PENDING": "Ausstehend",
+        "APPROVED": "Genehmigt",
+        "DECLINED": "Abgelehnt",
+        "CANCELLED": "Abgesagt"
+      }
     },
     "states": {
       "loading": "Portaldaten werden geladen…",

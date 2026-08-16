@@ -131,15 +131,32 @@
       "pendingInvitations": "Afventende invitationer",
       "expires": "Udløber {date}",
       "resend": "Resend",
-      "revoke": "Tilbagekald"
+      "revoke": "Tilbagekald",
+      "accessCode": "Firmaadgangskode",
+      "accessCodeHelp": "Del denne kode med alle, der bør tilslutte sig denne virksomhed uden en invitation.",
+      "regenerate": "Gendan kode",
+      "accessRequests": "Adgangsanmodninger",
+      "accessRequestsEmpty": "Ingen afventende adgangsanmodninger.",
+      "approve": "Godkend",
+      "decline": "Afslå",
+      "requested": "Anmodet {date}"
     },
     "invitation": {
       "title": "Gennemgå din invitation.",
       "intro": "Du er blevet inviteret til {destination} som {role}.",
       "email": "Log ind med {email} og bekræft for at modtage adgang.",
+      "invitedBy": "Inviteret af {name}",
+      "expires": "Denne invitation udløber {date}.",
+      "signup": "Opret din konto",
+      "haveAccount": "Jeg har allerede en konto",
       "accept": "Accepter invitationen",
+      "mismatch": "Denne invitation er til {invited}, men du er logget ind som {signedin}. Log ud og skift til den inviterede konto.",
+      "signOut": "Log ud og skift konto",
       "unavailableTitle": "Denne invitation er ikke længere tilgængelig.",
-      "unavailableBody": "Linket kan være udløbet, blevet tilbagekaldt eller allerede været brugt. Bed den person, der inviterede dig, om at sende en ny."
+      "unavailableBody": "Linket kan være udløbet, blevet tilbagekaldt eller allerede været brugt. Bed den person, der inviterede dig, om at sende en ny.",
+      "unavailableExpired": "Denne invitation udløb {date}. Bed den person, der inviterede dig, om at sende en ny.",
+      "unavailableRevoked": "Denne invitation blev tilbagekaldt. Bed den person, der inviterede dig, om at sende en ny.",
+      "unavailableUsed": "Denne invitation er allerede blevet brugt. Bed den person, der inviterede dig, om at sende en ny."
     },
     "onboarding": {
       "eyebrow": "Indstil dit arbejdsområde",
@@ -148,7 +165,20 @@
       "name": "Firmanavn",
       "create": "Opret virksomhed",
       "alternative": "Bliver du med i en eksisterende virksomhed i stedet? Bed dens ejer eller administrator om at invitere denne e-mailadresse.",
-      "logout": "Log ud"
+      "logout": "Log ud",
+      "accessTitle": "Anmod om adgang til en eksisterende virksomhed.",
+      "accessIntro": "Indtast den virksomhedsadgangskode, du fik. En virksomhedsejer eller administrator gennemgår og godkender anmodningen.",
+      "accessCode": "Firmaadgangskode",
+      "accessRole": "Ønsket rolle",
+      "requestAccess": "Anmod om adgang",
+      "requestsTitle": "Dine adgangsanmodninger",
+      "requestsEmpty": "Ingen adgangsanmodninger endnu.",
+      "accessStatus": {
+        "PENDING": "Afventer",
+        "APPROVED": "Godkendt",
+        "DECLINED": "Afvist",
+        "CANCELLED": "Annulleret"
+      }
     },
     "states": {
       "loading": "Indlæser portaldata...",

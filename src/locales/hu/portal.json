@@ -131,15 +131,32 @@
       "pendingInvitations": "Függőben lévő meghívók",
       "expires": "Lejár: {date}",
       "resend": "Resend",
-      "revoke": "Visszavonás"
+      "revoke": "Visszavonás",
+      "accessCode": "Vállalati belépési kód",
+      "accessCodeHelp": "Oszd meg ezt a kódot mindenkivel, aki meghívás nélkül csatlakozna ehhez a céghez.",
+      "regenerate": "Kód újragenerálása",
+      "accessRequests": "Hozzáférési kérések",
+      "accessRequestsEmpty": "Nincsenek függőben lévő hozzáférési kérelmek.",
+      "approve": "Jóváhagyni",
+      "decline": "Elutasítás",
+      "requested": "Kért {date}"
     },
     "invitation": {
       "title": "Tekintse át a meghívót.",
       "intro": "Meghívást kapott a {destination} {role} néven.",
       "email": "Jelentkezzen be a {email} fiókkal, és erősítse meg a hozzáférést.",
+      "invitedBy": "Meghívta: {name}",
+      "expires": "Ez a meghívó lejár: {date}.",
+      "signup": "Hozd létre a fiókodat",
+      "haveAccount": "Már van fiókom",
       "accept": "Meghívás elfogadása",
+      "mismatch": "Ez a meghívó a {invited} számára szól, de Ön {signedin} néven van bejelentkezve. Jelentkezzen ki, és váltson a meghívott fiókra.",
+      "signOut": "Jelentkezzen ki, és váltson fiókot",
       "unavailableTitle": "Ez a meghívó már nem elérhető.",
-      "unavailableBody": "Lehet, hogy a link lejárt, visszavonták vagy már használták. Kérje meg a meghívót, hogy küldjön egy újat."
+      "unavailableBody": "Lehet, hogy a link lejárt, visszavonták vagy már használták. Kérje meg a meghívót, hogy küldjön egy újat.",
+      "unavailableExpired": "Ez a meghívás a következő napon járt le: {date}. Kérje meg a meghívót, hogy küldjön egy újat.",
+      "unavailableRevoked": "Ezt a meghívást visszavonták. Kérje meg a meghívót, hogy küldjön egy újat.",
+      "unavailableUsed": "Ezt a meghívót már felhasználták. Kérje meg a meghívót, hogy küldjön egy újat."
     },
     "onboarding": {
       "eyebrow": "Állítsa be a munkaterületet",
@@ -148,7 +165,20 @@
       "name": "Cégnév",
       "create": "Cég létrehozása",
       "alternative": "Inkább egy meglévő céghez csatlakozik? Kérje meg tulajdonosát vagy rendszergazdáját, hogy hívja meg ezt az e-mail-címet.",
-      "logout": "Jelentkezzen ki"
+      "logout": "Jelentkezzen ki",
+      "accessTitle": "Kérjen hozzáférést egy meglévő céghez.",
+      "accessIntro": "Adja meg a kapott vállalati hozzáférési kódot. A vállalat tulajdonosa vagy rendszergazdája felülvizsgálja és jóváhagyja a kérelmet.",
+      "accessCode": "Vállalati belépési kód",
+      "accessRole": "Kért szerepkör",
+      "requestAccess": "Kérjen hozzáférést",
+      "requestsTitle": "Az Ön hozzáférési kérelmei",
+      "requestsEmpty": "Még nincsenek hozzáférési kérelmek.",
+      "accessStatus": {
+        "PENDING": "Függőben",
+        "APPROVED": "Jóváhagyva",
+        "DECLINED": "Elutasítva",
+        "CANCELLED": "Törölve"
+      }
     },
     "states": {
       "loading": "Portáladatok betöltése…",

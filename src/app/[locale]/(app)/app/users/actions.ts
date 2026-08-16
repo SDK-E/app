@@ -4,12 +4,13 @@ import { headers } from "next/headers";
 import { revalidatePath } from "next/cache";
 
 import { getServerEnv } from "@/lib/env";
-import { sendInvitationNotification } from "@/lib/email";
+import { sendAccessRequestResolvedNotification, sendInvitationNotification } from "@/lib/email";
 import { getCurrentPrincipal } from "@/lib/identity";
-import { clientInvitationSchema, idSchema, membershipUpdateSchema, staffInvitationSchema, staffUpdateSchema } from "@/lib/schemas/userManagement";
+import { approveAccessRequestSchema, clientInvitationSchema, declineAccessRequestSchema, idSchema, membershipUpdateSchema, staffInvitationSchema, staffUpdateSchema } from "@/lib/schemas/userManagement";
 import {
-  createClientInvitation, createStaffInvitation, markInvitationDelivery, removeMembership,
-  renewInvitation, revokeInvitation, updateMembershipRole, updateStaffUser,
+  approveCompanyAccessRequest, createClientInvitation, createStaffInvitation, declineCompanyAccessRequest,
+  markInvitationDelivery, regenerateCompanyAccessCode, removeMembership, renewInvitation, revokeInvitation,
+  updateMembershipRole, updateStaffUser,
 } from "@/lib/user-management";
 
 export interface UserActionState { error?: string; success?: string }
@@ -82,5 +83,35 @@ export async function revokeInvitationAction(locale: string, _state: UserActionS
 export async function resendInvitationAction(locale: string, _state: UserActionState, formData: FormData): Promise<UserActionState> {
   const id = idSchema.safeParse(formData.get("invitationId")); if (!id.success) return { error: "Invalid invitation." };
   try { const principal = await principalOrThrow(); const renewed = await renewInvitation(principal, id.data); const sent = await deliver(locale, renewed.token, renewed.invitation, principal.name); revalidatePath(`/${locale}/app/users`); return sent ? { success: "Invitation resent." } : { error: "The invitation was renewed, but email delivery failed." }; }
+  catch (error) { return { error: errorMessage(error) }; }
+}
+
+export async function approveAccessRequestAction(locale: string, _state: UserActionState, formData: FormData): Promise<UserActionState> {
+  const parsed = approveAccessRequestSchema.safeParse({ requestId: formData.get("requestId"), role: formData.get("role") });
+  if (!parsed.success) return { error: parsed.error.issues[0]?.message };
+  try {
+    const principal = await principalOrThrow();
+    const { request } = await approveCompanyAccessRequest(principal, parsed.data.requestId, { role: parsed.data.role });
+    await sendAccessRequestResolvedNotification({ to: request.user.email, recipientName: request.user.name, companyName: request.company.name, outcome: "APPROVED", role: parsed.data.role.replaceAll("_", " ").toLowerCase() });
+    revalidatePath(`/${locale}/app/users`);
+    return { success: "Access request approved." };
+  } catch (error) { return { error: errorMessage(error) }; }
+}
+
+export async function declineAccessRequestAction(locale: string, _state: UserActionState, formData: FormData): Promise<UserActionState> {
+  const parsed = declineAccessRequestSchema.safeParse({ requestId: formData.get("requestId") });
+  if (!parsed.success) return { error: parsed.error.issues[0]?.message };
+  try {
+    const principal = await principalOrThrow();
+    const request = await declineCompanyAccessRequest(principal, parsed.data.requestId);
+    await sendAccessRequestResolvedNotification({ to: request.user.email, recipientName: request.user.name, companyName: request.company.name, outcome: "DECLINED" });
+    revalidatePath(`/${locale}/app/users`);
+    return { success: "Access request declined." };
+  } catch (error) { return { error: errorMessage(error) }; }
+}
+
+export async function regenerateAccessCodeAction(locale: string, _state: UserActionState, formData: FormData): Promise<UserActionState> {
+  const companyId = idSchema.safeParse(formData.get("companyId")); if (!companyId.success) return { error: "Invalid company." };
+  try { await regenerateCompanyAccessCode(await principalOrThrow(), companyId.data); revalidatePath(`/${locale}/app/users`); return { success: "Access code regenerated." }; }
   catch (error) { return { error: errorMessage(error) }; }
 }

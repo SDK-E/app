@@ -131,15 +131,32 @@
       "pendingInvitations": "Invitations en attente",
       "expires": "Expire {date}",
       "resend": "Resend",
-      "revoke": "Révoquer"
+      "revoke": "Révoquer",
+      "accessCode": "Code d'accès de l'entreprise",
+      "accessCodeHelp": "Partagez ce code avec toute personne souhaitant rejoindre cette entreprise sans invitation.",
+      "regenerate": "Régénérer le code",
+      "accessRequests": "Demandes d'accès",
+      "accessRequestsEmpty": "Aucune demande d'accès en attente.",
+      "approve": "Approuver",
+      "decline": "Refuser",
+      "requested": "Demandé {date}"
     },
     "invitation": {
       "title": "Vérifiez votre invitation.",
       "intro": "Vous avez été invité à {destination} en tant que {role}.",
       "email": "Connectez-vous avec {email} et confirmez pour recevoir l'accès.",
+      "invitedBy": "Invité par {name}",
+      "expires": "Cette invitation expire {date}.",
+      "signup": "Créez votre compte",
+      "haveAccount": "J'ai déjà un compte",
       "accept": "Accepter l'invitation",
+      "mismatch": "Cette invitation s'adresse à {invited}, mais vous êtes connecté en tant que {signedin}. Déconnectez-vous et passez au compte invité.",
+      "signOut": "Se déconnecter et changer de compte",
       "unavailableTitle": "Cette invitation n'est plus disponible.",
-      "unavailableBody": "Le lien a peut-être expiré, a été révoqué ou a déjà été utilisé. Demandez à la personne qui vous a invité d’en envoyer un nouveau."
+      "unavailableBody": "Le lien a peut-être expiré, a été révoqué ou a déjà été utilisé. Demandez à la personne qui vous a invité d’en envoyer un nouveau.",
+      "unavailableExpired": "Cette invitation a expiré le {date}. Demandez à la personne qui vous a invité d’en envoyer un nouveau.",
+      "unavailableRevoked": "Cette invitation a été révoquée. Demandez à la personne qui vous a invité d’en envoyer un nouveau.",
+      "unavailableUsed": "Cette invitation a déjà été utilisée. Demandez à la personne qui vous a invité d’en envoyer un nouveau."
     },
     "onboarding": {
       "eyebrow": "Configurez votre espace de travail",
@@ -148,7 +165,20 @@
       "name": "Nom de l'entreprise",
       "create": "Créer une entreprise",
       "alternative": "Rejoindre plutôt une entreprise existante ? Demandez à son propriétaire ou à son administrateur d'inviter cette adresse e-mail.",
-      "logout": "Se déconnecter"
+      "logout": "Se déconnecter",
+      "accessTitle": "Demandez l’accès à une entreprise existante.",
+      "accessIntro": "Saisissez le code d'accès de l'entreprise qui vous a été attribué. Un propriétaire ou un administrateur de l'entreprise examine et approuve la demande.",
+      "accessCode": "Code d'accès de l'entreprise",
+      "accessRole": "Rôle demandé",
+      "requestAccess": "Demander l'accès",
+      "requestsTitle": "Vos demandes d'accès",
+      "requestsEmpty": "Aucune demande d'accès pour l'instant.",
+      "accessStatus": {
+        "PENDING": "En attente",
+        "APPROVED": "Approuvé",
+        "DECLINED": "Refusé",
+        "CANCELLED": "Annulé"
+      }
     },
     "states": {
       "loading": "Chargement des données du portail…",

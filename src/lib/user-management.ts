@@ -1,7 +1,10 @@
 import { createHash, randomBytes } from "node:crypto";
 
+import { generateAccessCode } from "@/lib/companies";
 import { getPrisma } from "@/lib/db";
-import { AuthorizationError, requirePermission } from "@/lib/authorization";
+import { AuthorizationError, notFound, requireCompanyAccess, requirePermission } from "@/lib/authorization";
+import { assignCompanyMembership } from "@/lib/identity-management";
+import type { CompanyAccessRequestStatus } from "@/generated/prisma/client";
 import type { AppPrincipal, ClientRole, SdkStaffRole } from "@/types";
 
 const INVITATION_TTL_MS = 7 * 24 * 60 * 60 * 1000;
@@ -25,7 +28,7 @@ export async function getUserManagementData(principal: AppPrincipal) {
   const db = getPrisma();
   if (principal.kind === "client") {
     if (!canManageUsers(principal)) forbidden("User management is not available for this role.");
-    const [memberships, invitations] = await Promise.all([
+    const [memberships, invitations, accessRequests, company] = await Promise.all([
       db.membership.findMany({
         where: { companyId: principal.companyId },
         include: { user: true },
@@ -35,16 +38,27 @@ export async function getUserManagementData(principal: AppPrincipal) {
         where: { companyId: principal.companyId, acceptedAt: null, revokedAt: null },
         orderBy: { createdAt: "desc" },
       }),
+      db.companyAccessRequest.findMany({
+        where: { companyId: principal.companyId, status: "PENDING" },
+        include: { user: { select: { id: true, name: true, email: true, avatarUrl: true } }, company: { select: { name: true } } },
+        orderBy: { createdAt: "desc" },
+      }),
+      db.company.findUnique({ where: { id: principal.companyId } }),
     ]);
-    return { kind: "client" as const, companies: [], memberships, invitations, users: [] };
+    return { kind: "client" as const, companies: [], memberships, invitations, users: [], accessRequests, company };
   }
   if (principal.kind !== "sdk-staff" || principal.role !== "ADMIN") forbidden("SDK administrator access is required.");
-  const [users, companies, invitations] = await Promise.all([
+  const [users, companies, invitations, accessRequests] = await Promise.all([
     db.user.findMany({ include: { memberships: { include: { company: true } } }, orderBy: { createdAt: "desc" } }),
     db.company.findMany({ where: { isActive: true }, orderBy: { name: "asc" } }),
     db.invitation.findMany({ include: { company: true }, orderBy: { createdAt: "desc" }, take: 100 }),
+    db.companyAccessRequest.findMany({
+      where: { status: "PENDING" },
+      include: { user: { select: { id: true, name: true, email: true, avatarUrl: true } }, company: { select: { name: true } } },
+      orderBy: { createdAt: "desc" },
+    }),
   ]);
-  return { kind: "staff" as const, users, companies, invitations, memberships: [] };
+  return { kind: "staff" as const, users, companies, invitations, memberships: [], accessRequests };
 }
 
 function assertClientRoleGrant(principal: AppPrincipal, role: ClientRole) {
@@ -154,10 +168,13 @@ export async function updateStaffUser(principal: AppPrincipal, userId: string, i
 }
 
 export async function acceptInvitation(input: { token: string; userId: string; email: string; emailVerified: boolean }) {
-  if (!input.emailVerified) forbidden("Verify your email with Auth0 before accepting this invitation.");
+  if (!input.emailVerified) forbidden("Verify your email with Auth0 before accepting this invitation. Check the verification email in your inbox, then try again.");
   return getPrisma().$transaction(async db => {
     const invitation = await db.invitation.findUnique({ where: { tokenHash: hashInvitationToken(input.token) } });
-    if (!invitation || invitation.revokedAt || invitation.acceptedAt || invitation.expiresAt <= new Date()) forbidden("This invitation is invalid or has expired.");
+    if (!invitation) forbidden("This invitation link is not valid. Ask the person who invited you to send a new one.");
+    if (invitation.revokedAt) forbidden("This invitation has been revoked. Ask the person who invited you to send a new one.");
+    if (invitation.acceptedAt) forbidden("This invitation has already been used.");
+    if (invitation.expiresAt <= new Date()) forbidden("This invitation has expired. Ask the person who invited you to send a new one.");
     if (invitation.email !== input.email.trim().toLowerCase()) forbidden("Sign in with the email address that received this invitation.");
     const user = await db.user.findUniqueOrThrow({ where: { id: input.userId }, include: { memberships: true } });
     if (user.sdkStaffRole || user.memberships.length) forbidden("This account already has an application assignment.");
@@ -174,6 +191,101 @@ export async function acceptInvitation(input: { token: string; userId: string; e
 export async function getInvitationPreview(token: string) {
   return getPrisma().invitation.findUnique({
     where: { tokenHash: hashInvitationToken(token) },
-    select: { email: true, kind: true, clientRole: true, sdkStaffRole: true, expiresAt: true, acceptedAt: true, revokedAt: true, company: { select: { name: true } } },
+    select: {
+      email: true,
+      kind: true,
+      clientRole: true,
+      sdkStaffRole: true,
+      expiresAt: true,
+      acceptedAt: true,
+      revokedAt: true,
+      company: { select: { name: true } },
+      inviter: { select: { name: true } },
+    },
   });
+}
+
+export async function getUserAccessRequests(principal: AppPrincipal) {
+  return getPrisma().companyAccessRequest.findMany({
+    where: { userId: principal.id },
+    include: { company: { select: { name: true } } },
+    orderBy: { createdAt: "desc" },
+  });
+}
+
+export async function requestCompanyAccess(principal: AppPrincipal, input: { code: string; requestedRole?: ClientRole }) {
+  if (principal.kind !== "unassigned") forbidden("Only unassigned users can request access to a company.");
+  const requestedRole = input.requestedRole ?? "VIEWER";
+  if (requestedRole === "OWNER" || requestedRole === "ADMINISTRATOR") forbidden("Ownership and administrator access cannot be requested.");
+  const code = input.code.trim().toUpperCase();
+  if (!code) forbidden("Enter a company access code.");
+  const company = await getPrisma().company.findFirst({ where: { accessCode: code, isActive: true } });
+  if (!company) forbidden("That access code was not found. Check the code and try again.");
+  const pending = await getPrisma().companyAccessRequest.findFirst({ where: { userId: principal.id, companyId: company.id, status: "PENDING" } });
+  if (pending) forbidden("You already have a pending access request for this company.");
+  return getPrisma().companyAccessRequest.create({
+    data: { userId: principal.id, companyId: company.id, requestedRole },
+    include: { company: { select: { name: true } } },
+  });
+}
+
+export async function listCompanyAccessRequests(principal: AppPrincipal, input?: { companyId?: string; status?: CompanyAccessRequestStatus }) {
+  const assigned = requirePermission(principal, "membership:update");
+  if (!canManageUsers(principal)) forbidden("User management is not available for this role.");
+  const status = input?.status ?? "PENDING";
+  const include = {
+    user: { select: { id: true, name: true, email: true, avatarUrl: true } },
+    company: { select: { name: true } },
+  };
+  if (principal.kind === "client") {
+    const companyId = requireCompanyAccess(assigned, input?.companyId);
+    return getPrisma().companyAccessRequest.findMany({ where: { companyId, status }, include, orderBy: { createdAt: "desc" } });
+  }
+  return getPrisma().companyAccessRequest.findMany({ where: { companyId: input?.companyId, status }, include, orderBy: { createdAt: "desc" } });
+}
+
+export async function approveCompanyAccessRequest(principal: AppPrincipal, requestId: string, input: { role?: ClientRole }) {
+  const assigned = requirePermission(principal, "membership:update");
+  if (!canManageUsers(principal)) forbidden("User management is not available for this role.");
+  const role = input.role ?? "VIEWER";
+  assertClientRoleGrant(principal, role);
+  const request = await getPrisma().companyAccessRequest.findUnique({
+    where: { id: requestId },
+    include: { user: { select: { sdkStaffRole: true } } },
+  });
+  if (!request) notFound("Access request not found.");
+  requireCompanyAccess(assigned, request.companyId);
+  if (request.status !== "PENDING") forbidden("This access request has already been resolved.");
+  if (request.user.sdkStaffRole) forbidden("This user is SDK staff and cannot receive company access.");
+  const existing = await getPrisma().membership.findUnique({ where: { userId: request.userId } });
+  if (existing) forbidden("This user already has an application assignment.");
+  const membership = await assignCompanyMembership({ userId: request.userId, companyId: request.companyId, role, invitedBy: principal.id });
+  const updated = await getPrisma().companyAccessRequest.update({
+    where: { id: requestId },
+    data: { status: "APPROVED", resolvedAt: new Date(), resolvedBy: principal.id },
+    include: { company: { select: { name: true } }, user: { select: { id: true, name: true, email: true } } },
+  });
+  return { request: updated, membership };
+}
+
+export async function declineCompanyAccessRequest(principal: AppPrincipal, requestId: string) {
+  const assigned = requirePermission(principal, "membership:update");
+  if (!canManageUsers(principal)) forbidden("User management is not available for this role.");
+  const request = await getPrisma().companyAccessRequest.findUnique({ where: { id: requestId } });
+  if (!request) notFound("Access request not found.");
+  requireCompanyAccess(assigned, request.companyId);
+  if (request.status !== "PENDING") forbidden("This access request has already been resolved.");
+  return getPrisma().companyAccessRequest.update({
+    where: { id: requestId },
+    data: { status: "DECLINED", resolvedAt: new Date(), resolvedBy: principal.id },
+    include: { company: { select: { name: true } }, user: { select: { id: true, name: true, email: true } } },
+  });
+}
+
+export async function regenerateCompanyAccessCode(principal: AppPrincipal, companyId?: string) {
+  const assigned = requirePermission(principal, "company:update");
+  const targetCompanyId = requireCompanyAccess(assigned, companyId);
+  const company = await getPrisma().company.findUnique({ where: { id: targetCompanyId } });
+  if (!company) notFound("Company not found.");
+  return getPrisma().company.update({ where: { id: targetCompanyId }, data: { accessCode: generateAccessCode() } });
 }

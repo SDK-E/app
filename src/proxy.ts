@@ -11,6 +11,7 @@ const PUBLIC_ROUTES = [
   "/about",
   "/start-a-project",
   "/login",
+  "/invite/*",
   "/auth/*",
   "/favicon.ico",
   "/design-system",

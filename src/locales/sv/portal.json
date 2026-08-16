@@ -131,15 +131,32 @@
       "pendingInvitations": "Väntande inbjudningar",
       "expires": "Upphör {date}",
       "resend": "Resend",
-      "revoke": "Återkalla"
+      "revoke": "Återkalla",
+      "accessCode": "Företags åtkomstkod",
+      "accessCodeHelp": "Dela den här koden med alla som borde gå med i det här företaget utan inbjudan.",
+      "regenerate": "Återskapa kod",
+      "accessRequests": "Åtkomstförfrågningar",
+      "accessRequestsEmpty": "Inga väntande åtkomstförfrågningar.",
+      "approve": "Godkänn",
+      "decline": "Avböja",
+      "requested": "Begärt {date}"
     },
     "invitation": {
       "title": "Granska din inbjudan.",
       "intro": "Du har blivit inbjuden till {destination} som {role}.",
       "email": "Logga in med {email} och bekräfta för att få åtkomst.",
+      "invitedBy": "Inbjuden av {name}",
+      "expires": "Denna inbjudan löper ut {date}.",
+      "signup": "Skapa ditt konto",
+      "haveAccount": "Jag har redan ett konto",
       "accept": "Acceptera inbjudan",
+      "mismatch": "Den här inbjudan är för {invited}, men du är inloggad som {signedin}. Logga ut och byt till det inbjudna kontot.",
+      "signOut": "Logga ut och byt konto",
       "unavailableTitle": "Denna inbjudan är inte längre tillgänglig.",
-      "unavailableBody": "Länken kan ha löpt ut, återkallats eller redan använts. Be personen som bjöd in dig att skicka en ny."
+      "unavailableBody": "Länken kan ha löpt ut, återkallats eller redan använts. Be personen som bjöd in dig att skicka en ny.",
+      "unavailableExpired": "Denna inbjudan gick ut den {date}. Be personen som bjöd in dig att skicka en ny.",
+      "unavailableRevoked": "Denna inbjudan återkallades. Be personen som bjöd in dig att skicka en ny.",
+      "unavailableUsed": "Den här inbjudan har redan använts. Be personen som bjöd in dig att skicka en ny."
     },
     "onboarding": {
       "eyebrow": "Ställ in din arbetsyta",
@@ -148,7 +165,20 @@
       "name": "Företagsnamn",
       "create": "Skapa företag",
       "alternative": "Gå med i ett befintligt företag istället? Be dess ägare eller administratör att bjuda in den här e-postadressen.",
-      "logout": "Logga ut"
+      "logout": "Logga ut",
+      "accessTitle": "Begär tillgång till ett befintligt företag.",
+      "accessIntro": "Ange företagets åtkomstkod du fick. En företagsägare eller administratör granskar och godkänner begäran.",
+      "accessCode": "Företags åtkomstkod",
+      "accessRole": "Efterfrågad roll",
+      "requestAccess": "Begär åtkomst",
+      "requestsTitle": "Dina åtkomstförfrågningar",
+      "requestsEmpty": "Inga åtkomstförfrågningar ännu.",
+      "accessStatus": {
+        "PENDING": "Väntar",
+        "APPROVED": "Godkänd",
+        "DECLINED": "Avböjde",
+        "CANCELLED": "Avbruten"
+      }
     },
     "states": {
       "loading": "Laddar portaldata...",

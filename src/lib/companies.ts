@@ -10,6 +10,11 @@ export function buildCompanySlug(name: string, suffix = randomBytes(3).toString(
   return `${base}-${suffix}`;
 }
 
+export function generateAccessCode(): string {
+  const raw = randomBytes(4).toString("hex").toUpperCase();
+  return `${raw.slice(0, 4)}-${raw.slice(4)}`;
+}
+
 export async function createOwnedCompany(principal: AppPrincipal, name: string) {
   if (principal.kind !== "unassigned") {
     throw new AuthorizationError(403, "FORBIDDEN", "Only unassigned users can create a company.");
@@ -26,6 +31,7 @@ export async function createOwnedCompany(principal: AppPrincipal, name: string) 
       data: {
         name,
         slug: buildCompanySlug(name),
+        accessCode: generateAccessCode(),
         memberships: {
           create: { userId: user.id, role: "OWNER", joinedAt: new Date() },
         },

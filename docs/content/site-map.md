@@ -22,12 +22,15 @@ replace or casually restructure it.
 | Route | File | Status |
 |---|---|---|
 | `/` | `src/app/(marketing)/page.tsx` | **Exists** — landing page assembling the marketing sections below (hero, services, why, engagements, process, contact, footer) |
+| `/services`, `/work`, `/how-we-work`, `/about`, `/start-a-project` | `src/app/(marketing)/*` | Exists — marketing pages composed from the shared sections; copy from `marketing-architecture.md` |
 | `/design-system` | `src/app/design-system/page.tsx` | Exists — renders every token/primitive/state |
-| `/login`, `/logout` | `src/app/(app)/login`, `src/app/(app)/logout` | Exists — `/login` redirects to the Auth0 provider |
+| `/legal/*`, `/privacy`, `/terms`, `/cookies` | `src/app/(marketing)/legal*` | Exists — legal pages per `docs/content/legal-pages.md` |
+| `/login`, `/logout` | `src/app/(app)/login`, `src/app/(app)/logout` | Exists — `/login` forwards `screen_hint`, `email` (→ `login_hint`) and `returnTo` to the Auth0 provider |
 | `/auth/*` | Auth0 SDK | Exists |
-| `/app/*` | — | **Not built.** Client portal is future work; out of scope for this batch (public website only). Do not build portal UI. |
+| `/invite/[token]` | `src/app/[locale]/invite/[token]/page.tsx` | Exists — public invitation card. Anonymous: sign-up / sign-in CTAs prefilled with the invited email. Signed in: accept (matching email) or mismatch message + sign-out back to the invite |
+| `/app/*` | `src/app/[locale]/(app)/app/*` | Exists — client portal (dashboard, service requests, operations, users, profile). Unassigned users see `AccessPending` (create a company, or request access with a company access code). `/app/users` shows the company access code (owner/SDK admin regenerate) and an Access requests section for owner/administrator/SDK-admin approval |
 
-`src/proxy.ts` `PUBLIC_ROUTES = ["/", "/login", "/auth/*", "/favicon.ico", "/design-system"]`.
+`src/proxy.ts` `PUBLIC_ROUTES = ["/", "/services", "/work", "/how-we-work", "/about", "/start-a-project", "/login", "/invite/*", "/auth/*", "/favicon.ico", "/design-system", "/legal/*", "/privacy", "/terms", "/cookies", "/robots.txt", "/sitemap.xml", "/llms.txt"]`.
 Any new public page must be added there.
 
 ## 3. Component inventory (reuse these; do not rewrite)
@@ -44,6 +47,8 @@ Any new public page must be added there.
 | `Container` / `Section` / `SectionHeader` | `src/components/layout/{Container,Section,SectionHeader}.tsx` |
 | `Header` | `src/components/layout/Header.tsx` (approved logo, 11px uppercase nav, mobile menu) |
 | `Hero`, `ServicesSection`, `WhySdkSection`, `EngagementsSection`, `ProcessSection`, `ContactSection`, `SiteFooter` | `src/components/marketing/*` |
+| `AppShell`, `AccountMenu`, `LanguageSwitcher`, `AccessPending` | `src/components/layout/*` (portal shell; `AccessPending` is the unassigned-user workspace screen with company creation + access-request form) |
+| `UserActionForm`, `CompanyCreationForm`, `AccessRequestForm`, `InvitationAcceptForm`, `ActionForm`, `RequestForm` | `src/components/portal/*` (server-action forms with pending/error/success state) |
 
 Rules:
 

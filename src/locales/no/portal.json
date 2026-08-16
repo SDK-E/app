@@ -131,15 +131,32 @@
       "pendingInvitations": "Ventende invitasjoner",
       "expires": "Utløper {date}",
       "resend": "Resend",
-      "revoke": "Oppheve"
+      "revoke": "Oppheve",
+      "accessCode": "Bedriftsadgangskode",
+      "accessCodeHelp": "Del denne koden med alle som burde bli med i dette selskapet uten invitasjon.",
+      "regenerate": "Regenerer kode",
+      "accessRequests": "Forespørsler om tilgang",
+      "accessRequestsEmpty": "Ingen ventende tilgangsforespørsler.",
+      "approve": "Godkjenne",
+      "decline": "Avslå",
+      "requested": "Forespurte {date}"
     },
     "invitation": {
       "title": "Se gjennom invitasjonen din.",
       "intro": "Du har blitt invitert til {destination} som {role}.",
       "email": "Logg på med {email} og bekreft for å motta tilgang.",
+      "invitedBy": "Invitert av {name}",
+      "expires": "Denne invitasjonen utløper {date}.",
+      "signup": "Opprett kontoen din",
+      "haveAccount": "Jeg har allerede en konto",
       "accept": "Godta invitasjonen",
+      "mismatch": "Denne invitasjonen er for {invited}, men du er logget på som {signedin}. Logg av og bytt til den inviterte kontoen.",
+      "signOut": "Logg av og bytt konto",
       "unavailableTitle": "Denne invitasjonen er ikke lenger tilgjengelig.",
-      "unavailableBody": "Linken kan ha utløpt, blitt tilbakekalt eller allerede blitt brukt. Be personen som inviterte deg om å sende en ny."
+      "unavailableBody": "Linken kan ha utløpt, blitt tilbakekalt eller allerede blitt brukt. Be personen som inviterte deg om å sende en ny.",
+      "unavailableExpired": "Denne invitasjonen utløp {date}. Be personen som inviterte deg om å sende en ny.",
+      "unavailableRevoked": "Denne invitasjonen ble tilbakekalt. Be personen som inviterte deg om å sende en ny.",
+      "unavailableUsed": "Denne invitasjonen er allerede brukt. Be personen som inviterte deg om å sende en ny."
     },
     "onboarding": {
       "eyebrow": "Sett opp arbeidsområdet ditt",
@@ -148,7 +165,20 @@
       "name": "Firmanavn",
       "create": "Opprett selskap",
       "alternative": "Bli med i et eksisterende selskap i stedet? Be eieren eller administratoren om å invitere denne e-postadressen.",
-      "logout": "Logg ut"
+      "logout": "Logg ut",
+      "accessTitle": "Be om tilgang til et eksisterende selskap.",
+      "accessIntro": "Skriv inn bedriftstilgangskoden du fikk. En bedriftseier eller administrator gjennomgår og godkjenner forespørselen.",
+      "accessCode": "Bedriftsadgangskode",
+      "accessRole": "Etterspurt rolle",
+      "requestAccess": "Be om tilgang",
+      "requestsTitle": "Dine tilgangsforespørsler",
+      "requestsEmpty": "Ingen tilgangsforespørsler ennå.",
+      "accessStatus": {
+        "PENDING": "Venter",
+        "APPROVED": "Godkjent",
+        "DECLINED": "Avslått",
+        "CANCELLED": "Kansellert"
+      }
     },
     "states": {
       "loading": "Laster inn portaldata …",

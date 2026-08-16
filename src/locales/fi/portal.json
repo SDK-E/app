@@ -131,15 +131,32 @@
       "pendingInvitations": "Odottavat kutsut",
       "expires": "Vanhenee {date}",
       "resend": "Resend",
-      "revoke": "Peruuta"
+      "revoke": "Peruuta",
+      "accessCode": "Yrityksen pääsykoodi",
+      "accessCodeHelp": "Jaa tämä koodi kaikille, joiden pitäisi liittyä tähän yritykseen ilman kutsua.",
+      "regenerate": "Luo koodi uudelleen",
+      "accessRequests": "Pääsypyynnöt",
+      "accessRequestsEmpty": "Ei odottavia käyttöpyyntöjä.",
+      "approve": "Hyväksy",
+      "decline": "Hylkää",
+      "requested": "Pyydetty {date}"
     },
     "invitation": {
       "title": "Tarkista kutsusi.",
       "intro": "Sinut on kutsuttu sarjaan {destination} nimellä {role}.",
       "email": "Kirjaudu sisään tunnuksella {email} ja vahvista saadaksesi pääsyn.",
+      "invitedBy": "Kutsuja {name}",
+      "expires": "Tämä kutsu vanhenee {date}.",
+      "signup": "Luo tili",
+      "haveAccount": "Minulla on jo tili",
       "accept": "Hyväksy kutsu",
+      "mismatch": "Tämä kutsu on tarkoitettu käyttäjälle {invited}, mutta olet kirjautunut sisään nimellä {signedin}. Kirjaudu ulos ja vaihda kutsutulle tilille.",
+      "signOut": "Kirjaudu ulos ja vaihda tiliä",
       "unavailableTitle": "Tämä kutsu ei ole enää saatavilla.",
-      "unavailableBody": "Linkki voi olla vanhentunut, peruutettu tai jo käytetty. Pyydä sinua kutsujaa lähettämään uusi."
+      "unavailableBody": "Linkki voi olla vanhentunut, peruutettu tai jo käytetty. Pyydä sinua kutsujaa lähettämään uusi.",
+      "unavailableExpired": "Tämä kutsu vanhentui {date}. Pyydä sinua kutsujaa lähettämään uusi.",
+      "unavailableRevoked": "Tämä kutsu peruutettiin. Pyydä sinua kutsujaa lähettämään uusi.",
+      "unavailableUsed": "Tämä kutsu on jo käytetty. Pyydä sinua kutsujaa lähettämään uusi."
     },
     "onboarding": {
       "eyebrow": "Määritä työtilasi",
@@ -148,7 +165,20 @@
       "name": "Yrityksen nimi",
       "create": "Luo yritys",
       "alternative": "Liitytkö sen sijaan olemassa olevaan yritykseen? Pyydä sen omistajaa tai järjestelmänvalvojaa kutsumaan tämä sähköpostiosoite.",
-      "logout": "Kirjaudu ulos"
+      "logout": "Kirjaudu ulos",
+      "accessTitle": "Pyydä pääsyä olemassa olevaan yritykseen.",
+      "accessIntro": "Syötä saamasi yrityksen tunnus. Yrityksen omistaja tai järjestelmänvalvoja tarkistaa ja hyväksyy pyynnön.",
+      "accessCode": "Yrityksen pääsykoodi",
+      "accessRole": "Pyydetty rooli",
+      "requestAccess": "Pyydä käyttöoikeutta",
+      "requestsTitle": "Käyttöoikeuspyyntösi",
+      "requestsEmpty": "Ei vielä käyttöoikeuspyyntöjä.",
+      "accessStatus": {
+        "PENDING": "Odottaa",
+        "APPROVED": "Hyväksytty",
+        "DECLINED": "Hylätty",
+        "CANCELLED": "Peruutettu"
+      }
     },
     "states": {
       "loading": "Ladataan portaalin tietoja…",

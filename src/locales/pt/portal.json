@@ -131,15 +131,32 @@
       "pendingInvitations": "Convites pendentes",
       "expires": "Expira em {date}",
       "resend": "Resend",
-      "revoke": "Revogar"
+      "revoke": "Revogar",
+      "accessCode": "Código de acesso da empresa",
+      "accessCodeHelp": "Compartilhe este código com qualquer pessoa que deva ingressar nesta empresa sem convite.",
+      "regenerate": "Regenerar código",
+      "accessRequests": "Solicitações de acesso",
+      "accessRequestsEmpty": "Nenhuma solicitação de acesso pendente.",
+      "approve": "Aprovar",
+      "decline": "Recusar",
+      "requested": "{date} solicitado"
     },
     "invitation": {
       "title": "Revise seu convite.",
       "intro": "Você foi convidado para {destination} como {role}.",
       "email": "Faça login com {email} e confirme para receber acesso.",
+      "invitedBy": "Convidado por {name}",
+      "expires": "Este convite expira em {date}.",
+      "signup": "Crie sua conta",
+      "haveAccount": "Eu já tenho uma conta",
       "accept": "Aceitar convite",
+      "mismatch": "Este convite é para {invited}, mas você está conectado como {signedin}. Saia e mude para a conta convidada.",
+      "signOut": "Sair e trocar de conta",
       "unavailableTitle": "Este convite não está mais disponível.",
-      "unavailableBody": "O link pode ter expirado, sido revogado ou já ter sido usado. Peça à pessoa que o convidou para enviar um novo."
+      "unavailableBody": "O link pode ter expirado, sido revogado ou já ter sido usado. Peça à pessoa que o convidou para enviar um novo.",
+      "unavailableExpired": "Este convite expirou em {date}. Peça à pessoa que o convidou para enviar um novo.",
+      "unavailableRevoked": "Este convite foi revogado. Peça à pessoa que o convidou para enviar um novo.",
+      "unavailableUsed": "Este convite já foi usado. Peça à pessoa que o convidou para enviar um novo."
     },
     "onboarding": {
       "eyebrow": "Configure seu espaço de trabalho",
@@ -148,7 +165,20 @@
       "name": "Nome da empresa",
       "create": "Criar empresa",
       "alternative": "Em vez disso, ingressar em uma empresa existente? Peça ao proprietário ou administrador para convidar este endereço de e-mail.",
-      "logout": "Sair"
+      "logout": "Sair",
+      "accessTitle": "Solicite acesso a uma empresa existente.",
+      "accessIntro": "Digite o código de acesso da empresa que você recebeu. O proprietário ou administrador da empresa analisa e aprova a solicitação.",
+      "accessCode": "Código de acesso da empresa",
+      "accessRole": "Função solicitada",
+      "requestAccess": "Solicitar acesso",
+      "requestsTitle": "Suas solicitações de acesso",
+      "requestsEmpty": "Ainda não há solicitações de acesso.",
+      "accessStatus": {
+        "PENDING": "Pendente",
+        "APPROVED": "Aprovado",
+        "DECLINED": "Recusado",
+        "CANCELLED": "Cancelado"
+      }
     },
     "states": {
       "loading": "Carregando dados do portal…",

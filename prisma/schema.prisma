@@ -40,6 +40,15 @@ enum InvitationDeliveryStatus {
   @@map("invitation_delivery_status")
 }
 
+enum CompanyAccessRequestStatus {
+  PENDING
+  APPROVED
+  DECLINED
+  CANCELLED
+
+  @@map("company_access_request_status")
+}
+
 enum Priority {
   LOW
   MEDIUM
@@ -150,6 +159,8 @@ model User {
   documents           Document[]
   sentInvitations     Invitation[]      @relation("InvitationInviter")
   acceptedInvitations Invitation[]      @relation("InvitationAcceptor")
+  accessRequests      CompanyAccessRequest[] @relation("CompanyAccessRequestUser")
+  resolvedAccessRequests CompanyAccessRequest[] @relation("CompanyAccessRequestResolver")
 
   @@index([email])
   @@index([auth0Sub])
@@ -158,12 +169,13 @@ model User {
 }
 
 model Company {
-  id        String   @id @default(uuid())
-  name      String   @db.VarChar(255)
-  slug      String   @unique @db.VarChar(100)
-  isActive  Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id         String   @id @default(uuid())
+  name       String   @db.VarChar(255)
+  slug       String   @unique @db.VarChar(100)
+  accessCode String?  @unique @db.VarChar(16)
+  isActive   Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 
   memberships       Membership[]      @relation("CompanyMemberships")
   requests          Request[]
@@ -174,6 +186,7 @@ model Company {
   messages          Message[]
   invoices          Invoice[]
   invitations       Invitation[]
+  accessRequests    CompanyAccessRequest[]
 
   @@index([slug])
   @@index([createdAt])
@@ -232,6 +245,27 @@ model Membership {
   @@index([userId])
   @@index([createdAt])
   @@map("membership")
+}
+
+model CompanyAccessRequest {
+  id            String                     @id @default(uuid())
+  userId        String
+  companyId     String
+  requestedRole ClientRole                 @default(VIEWER)
+  status        CompanyAccessRequestStatus @default(PENDING)
+  resolvedAt    DateTime?
+  resolvedBy    String?
+  createdAt     DateTime                   @default(now())
+  updatedAt     DateTime                   @updatedAt
+
+  user     User   @relation("CompanyAccessRequestUser", fields: [userId], references: [id], onDelete: Cascade)
+  company  Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  resolver User?  @relation("CompanyAccessRequestResolver", fields: [resolvedBy], references: [id], onDelete: SetNull)
+
+  @@index([companyId, status])
+  @@index([userId, status])
+  @@index([companyId, createdAt])
+  @@map("company_access_request")
 }
 
 model Request {

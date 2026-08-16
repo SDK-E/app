@@ -131,15 +131,32 @@
       "pendingInvitations": "Oczekujące zaproszenia",
       "expires": "Wygasa {date}",
       "resend": "Resend",
-      "revoke": "Odwołaj"
+      "revoke": "Odwołaj",
+      "accessCode": "Kod dostępu firmy",
+      "accessCodeHelp": "Udostępnij ten kod każdemu, kto powinien dołączyć do tej firmy bez zaproszenia.",
+      "regenerate": "Wygeneruj ponownie kod",
+      "accessRequests": "Żądania dostępu",
+      "accessRequestsEmpty": "Brak oczekujących żądań dostępu.",
+      "approve": "Zatwierdź",
+      "decline": "Odmów",
+      "requested": "Żądano {date}"
     },
     "invitation": {
       "title": "Przejrzyj swoje zaproszenie.",
       "intro": "Zostałeś zaproszony do {destination} jako {role}.",
       "email": "Zaloguj się za pomocą {email} i potwierdź, aby otrzymać dostęp.",
+      "invitedBy": "Zaproszony przez {name}",
+      "expires": "To zaproszenie wygasa {date}.",
+      "signup": "Utwórz swoje konto",
+      "haveAccount": "Mam już konto",
       "accept": "Zaakceptuj zaproszenie",
+      "mismatch": "To zaproszenie jest przeznaczone dla {invited}, ale jesteś zalogowany jako {signedin}. Wyloguj się i przełącz na zaproszone konto.",
+      "signOut": "Wyloguj się i zmień konto",
       "unavailableTitle": "To zaproszenie nie jest już dostępne.",
-      "unavailableBody": "Link mógł wygasnąć, zostać unieważniony lub był już używany. Poproś osobę, która Cię zaprosiła, o przesłanie nowego."
+      "unavailableBody": "Link mógł wygasnąć, zostać unieważniony lub był już używany. Poproś osobę, która Cię zaprosiła, o przesłanie nowego.",
+      "unavailableExpired": "To zaproszenie wygasło w dniu {date}. Poproś osobę, która Cię zaprosiła, o przesłanie nowego.",
+      "unavailableRevoked": "Zaproszenie to zostało wycofane. Poproś osobę, która Cię zaprosiła, o przesłanie nowego.",
+      "unavailableUsed": "To zaproszenie zostało już wykorzystane. Poproś osobę, która Cię zaprosiła, o przesłanie nowego."
     },
     "onboarding": {
       "eyebrow": "Skonfiguruj swoje miejsce pracy",
@@ -148,7 +165,20 @@
       "name": "Nazwa firmy",
       "create": "Utwórz firmę",
       "alternative": "Zamiast tego dołączyć do istniejącej firmy? Poproś jego właściciela lub administratora o zaproszenie tego adresu e-mail.",
-      "logout": "Wyloguj się"
+      "logout": "Wyloguj się",
+      "accessTitle": "Poproś o dostęp do istniejącej firmy.",
+      "accessIntro": "Wpisz otrzymany kod dostępu firmy. Właściciel lub administrator firmy przegląda i zatwierdza żądanie.",
+      "accessCode": "Kod dostępu firmy",
+      "accessRole": "Żądana rola",
+      "requestAccess": "Poproś o dostęp",
+      "requestsTitle": "Twoje prośby o dostęp",
+      "requestsEmpty": "Nie ma jeszcze żadnych próśb o dostęp.",
+      "accessStatus": {
+        "PENDING": "Oczekujące",
+        "APPROVED": "Zatwierdzone",
+        "DECLINED": "Odrzucono",
+        "CANCELLED": "Anulowano"
+      }
     },
     "states": {
       "loading": "Ładowanie danych portalu…",

@@ -131,15 +131,32 @@
       "pendingInvitations": "Openstaande uitnodigingen",
       "expires": "Verloopt op {date}",
       "resend": "Resend",
-      "revoke": "Herroepen"
+      "revoke": "Herroepen",
+      "accessCode": "Toegangscode bedrijf",
+      "accessCodeHelp": "Deel deze code met iedereen die zonder uitnodiging lid zou moeten worden van dit bedrijf.",
+      "regenerate": "Code opnieuw genereren",
+      "accessRequests": "Toegangsverzoeken",
+      "accessRequestsEmpty": "Geen openstaande toegangsverzoeken.",
+      "approve": "Goedkeuren",
+      "decline": "Afwijzen",
+      "requested": "{date} aangevraagd"
     },
     "invitation": {
       "title": "Controleer uw uitnodiging.",
       "intro": "U bent uitgenodigd voor {destination} als {role}.",
       "email": "Meld u aan met {email} en bevestig om toegang te krijgen.",
+      "invitedBy": "Op uitnodiging van {name}",
+      "expires": "Deze uitnodiging verloopt op {date}.",
+      "signup": "Maak uw account aan",
+      "haveAccount": "Ik heb al een account",
       "accept": "Accepteer de uitnodiging",
+      "mismatch": "Deze uitnodiging is voor {invited}, maar u bent aangemeld als {signedin}. Meld u af en schakel over naar het uitgenodigde account.",
+      "signOut": "Meld u af en wissel van account",
       "unavailableTitle": "Deze uitnodiging is niet langer beschikbaar.",
-      "unavailableBody": "De link is mogelijk verlopen, ingetrokken of al gebruikt. Vraag de persoon die u heeft uitgenodigd om een ​​nieuwe te sturen."
+      "unavailableBody": "De link is mogelijk verlopen, ingetrokken of al gebruikt. Vraag de persoon die u heeft uitgenodigd om een ​​nieuwe te sturen.",
+      "unavailableExpired": "Deze uitnodiging is verlopen op {date}. Vraag de persoon die u heeft uitgenodigd om een ​​nieuwe te sturen.",
+      "unavailableRevoked": "Deze uitnodiging is ingetrokken. Vraag de persoon die u heeft uitgenodigd om een ​​nieuwe te sturen.",
+      "unavailableUsed": "Deze uitnodiging is al gebruikt. Vraag de persoon die u heeft uitgenodigd om een ​​nieuwe te sturen."
     },
     "onboarding": {
       "eyebrow": "Richt uw werkruimte in",
@@ -148,7 +165,20 @@
       "name": "Bedrijfsnaam",
       "create": "Bedrijf creëren",
       "alternative": "In plaats daarvan lid worden van een bestaand bedrijf? Vraag de eigenaar of beheerder om dit e-mailadres uit te nodigen.",
-      "logout": "Uitloggen"
+      "logout": "Uitloggen",
+      "accessTitle": "Toegang aanvragen tot een bestaand bedrijf.",
+      "accessIntro": "Voer de bedrijfstoegangscode in die u heeft gekregen. Een bedrijfseigenaar of -beheerder beoordeelt het verzoek en keurt het goed.",
+      "accessCode": "Toegangscode bedrijf",
+      "accessRole": "Gevraagde rol",
+      "requestAccess": "Toegang aanvragen",
+      "requestsTitle": "Uw toegangsverzoeken",
+      "requestsEmpty": "Nog geen toegangsverzoeken.",
+      "accessStatus": {
+        "PENDING": "In behandeling",
+        "APPROVED": "Goedgekeurd",
+        "DECLINED": "Afgewezen",
+        "CANCELLED": "Geannuleerd"
+      }
     },
     "states": {
       "loading": "Portaalgegevens laden...",

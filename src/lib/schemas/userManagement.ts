@@ -34,3 +34,17 @@ export const staffUpdateSchema = z.object({
   role: z.enum(sdkStaffRoles).optional(),
   isActive: z.enum(["true", "false"]).transform(value => value === "true").optional(),
 }).refine(value => value.role !== undefined || value.isActive !== undefined, "Choose a staff update.");
+
+export const requestAccessSchema = z.object({
+  code: z.string().trim().min(4, "Enter the company access code.").max(16),
+  requestedRole: z.enum(["PROJECT_MEMBER", "BILLING", "VIEWER"]).optional(),
+});
+
+export const approveAccessRequestSchema = z.object({
+  requestId: z.string().uuid(),
+  role: manageableClientRoleSchema,
+});
+
+export const declineAccessRequestSchema = z.object({
+  requestId: z.string().uuid(),
+});

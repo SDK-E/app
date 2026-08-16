@@ -131,15 +131,32 @@
       "pendingInvitations": "Invitaciones pendientes",
       "expires": "Vence {date}",
       "resend": "Resend",
-      "revoke": "Revocar"
+      "revoke": "Revocar",
+      "accessCode": "Código de acceso de la empresa",
+      "accessCodeHelp": "Comparta este código con cualquier persona que deba unirse a esta empresa sin invitación.",
+      "regenerate": "regenerar código",
+      "accessRequests": "Solicitudes de acceso",
+      "accessRequestsEmpty": "No hay solicitudes de acceso pendientes.",
+      "approve": "Aprobar",
+      "decline": "Rechazar",
+      "requested": "Solicitado {date}"
     },
     "invitation": {
       "title": "Revisa tu invitación.",
       "intro": "Has sido invitado a {destination} como {role}.",
       "email": "Inicie sesión con {email} y confirme para recibir acceso.",
+      "invitedBy": "Invitado por {name}",
+      "expires": "Esta invitación caduca {date}.",
+      "signup": "Crea tu cuenta",
+      "haveAccount": "ya tengo una cuenta",
       "accept": "Aceptar invitación",
+      "mismatch": "Esta invitación es para {invited}, pero usted ha iniciado sesión como {signedin}. Cierra sesión y cambia a la cuenta invitada.",
+      "signOut": "Cerrar sesión y cambiar de cuenta",
       "unavailableTitle": "Esta invitación ya no está disponible.",
-      "unavailableBody": "Es posible que el enlace haya caducado, haya sido revocado o ya haya sido utilizado. Pídele a la persona que te invitó que te envíe uno nuevo."
+      "unavailableBody": "Es posible que el enlace haya caducado, haya sido revocado o ya haya sido utilizado. Pídele a la persona que te invitó que te envíe uno nuevo.",
+      "unavailableExpired": "Esta invitación expiró el {date}. Pídele a la persona que te invitó que te envíe uno nuevo.",
+      "unavailableRevoked": "Esta invitación fue revocada. Pídele a la persona que te invitó que te envíe uno nuevo.",
+      "unavailableUsed": "Esta invitación ya ha sido utilizada. Pídele a la persona que te invitó que te envíe uno nuevo."
     },
     "onboarding": {
       "eyebrow": "Configura tu espacio de trabajo",
@@ -148,7 +165,20 @@
       "name": "Nombre de empresa",
       "create": "crear empresa",
       "alternative": "¿Unirse a una empresa existente en su lugar? Pídale a su propietario o administrador que invite a esta dirección de correo electrónico.",
-      "logout": "Finalizar la sesión"
+      "logout": "Finalizar la sesión",
+      "accessTitle": "Solicitar acceso a una empresa existente.",
+      "accessIntro": "Ingrese el código de acceso a la empresa que le proporcionaron. El propietario o administrador de la empresa revisa y aprueba la solicitud.",
+      "accessCode": "Código de acceso de la empresa",
+      "accessRole": "Rol solicitado",
+      "requestAccess": "Solicitar acceso",
+      "requestsTitle": "Tus solicitudes de acceso",
+      "requestsEmpty": "Aún no hay solicitudes de acceso.",
+      "accessStatus": {
+        "PENDING": "Pendiente",
+        "APPROVED": "Aprobado",
+        "DECLINED": "Rechazado",
+        "CANCELLED": "Cancelado"
+      }
     },
     "states": {
       "loading": "Cargando datos del portal…",
