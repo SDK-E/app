@@ -10,6 +10,7 @@ const PUBLIC_ROUTES = [
   "/how-we-work",
   "/about",
   "/start-a-project",
+  "/service-providers",
   "/login",
   "/auth/*",
   "/favicon.ico",

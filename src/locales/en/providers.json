@@ -1,0 +1,11 @@
+{
+  "providers": {
+    "meta": { "title": "Work with SDK Enterprises", "description": "Apply to work with SDK Enterprises as an independent service provider." },
+    "eyebrow": "Independent specialists",
+    "title": "Apply to work with SDK Enterprises.",
+    "intro": "Tell us what you do and where you operate. SDK reviews each application before inviting a provider to complete legal onboarding or join client work.",
+    "successTitle": "Your application has been received.",
+    "successBody": "SDK will review it before deciding whether to invite you into provider onboarding.",
+    "form": { "title": "Provider application", "name": "Name", "email": "Professional email", "country": "Country code", "headline": "Professional headline", "summary": "Experience and services", "portfolio": "Portfolio or professional profile", "privacy": "I agree that SDK may process this information to review my provider application.", "submit": "Submit application" }
+  }
+}

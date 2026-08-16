@@ -20,6 +20,8 @@ invalid variables cause the application to fail at startup in every environment.
 | `AUTH0_CLIENT_ID`       | yes        | Auth0 application client ID. |
 | `AUTH0_CLIENT_SECRET`   | yes        | Auth0 application client secret. |
 | `RESEND_API_KEY`        | prod-only  | Resend API key for project-enquiry notifications and authenticated user invitations. Server-only. Required in production for email delivery; its absence must fail loudly, never silently succeed. |
+| `BLOB_READ_WRITE_TOKEN` | prod-only  | Vercel Blob token for private provider legal documents and supplier invoice files. Server-only; required whenever private-file operations are enabled. |
+| `DATA_ENCRYPTION_KEY`   | prod-only  | Base64-encoded 32-byte AES key for provider tax, payout, and webhook-secret encryption. Server-only. Rotate through an explicit data-migration procedure. |
 | `MAIL_SMTP_URL`         | no         | Development only: SMTP URL of the local mail sink (`scripts/mail-sink.ts`, smtp-tester) that enquiry and invitation emails are delivered to. Defaults to `smtp://localhost:1025`. The sink auto-starts with `npm run dev`; run standalone with `npm run mail`. Received email is checked via `npm run mail:*` CLI commands or the `maildev` MCP server — no UI. Ignored in production. |
 | `MAIL_HTTP_URL`         | no         | Development only: HTTP base URL of the mail sink API. Defaults to `http://localhost:1080`. Read by the mail CLI (`scripts/mail-cli.ts`) and the `maildev` MCP server (`scripts/mail-mcp.ts`). |
 | `MAIL_SMTP_PORT`        | no         | Development only: SMTP port the mail sink binds to. Defaults to `1025`. Overrides the sink's listening port (e.g. on a conflict); if changed, `MAIL_SMTP_URL` must point at the new port. |

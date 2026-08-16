@@ -11,7 +11,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ locale
   const [{ locale }, principal] = await Promise.all([params, getCurrentPrincipal()]);
   if (!principal || principal.kind === "unassigned") return null;
   const t = await getTranslations({ locale, namespace: "portal.profile" });
-  const role = principal.role.replaceAll("_", " ").toLowerCase();
+  const role = principal.kind === "service-provider" ? "service provider" : principal.role.replaceAll("_", " ").toLowerCase();
   return <section className="max-w-3xl">
     <p className="text-label font-extrabold uppercase tracking-eyebrow text-muted-foreground">{t("eyebrow")}</p>
     <h1 className="mt-4 text-[32px] font-extrabold md:text-h1">{t("title")}</h1>
@@ -25,7 +25,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ locale
         <div><dt className="text-label font-extrabold uppercase tracking-eyebrow">{t("role")}</dt><dd className="mt-2 text-body capitalize">{role}</dd></div>
         <div><dt className="text-label font-extrabold uppercase tracking-eyebrow">{t("workspace")}</dt><dd className="mt-2 text-body">{principal.kind === "client" ? principal.companyName : "SDK Enterprises"}</dd></div>
         <div><dt className="text-label font-extrabold uppercase tracking-eyebrow">{t("language")}</dt><dd className="mt-2 text-body uppercase">{principal.preferredLocale}</dd></div>
-        <div><dt className="text-label font-extrabold uppercase tracking-eyebrow">{t("status")}</dt><dd className="mt-2 text-body">{t("active")}</dd></div>
+        <div><dt className="text-label font-extrabold uppercase tracking-eyebrow">{t("status")}</dt><dd className="mt-2 text-body capitalize">{principal.kind === "service-provider" ? principal.status.replaceAll("_", " ").toLowerCase() : t("active")}</dd></div>
       </dl>
     </Card>
     <p className="mt-6 text-body text-muted-foreground">{t("identityNote")}</p>

@@ -19,6 +19,8 @@ const serverEnvSchema = z.object({
   AUTH0_CLIENT_ID: z.string().min(1, "AUTH0_CLIENT_ID is required"),
   AUTH0_CLIENT_SECRET: z.string().min(1, "AUTH0_CLIENT_SECRET is required"),
   RESEND_API_KEY: z.string().min(1, "RESEND_API_KEY must be a non-empty string").optional(),
+  BLOB_READ_WRITE_TOKEN: z.string().min(1, "BLOB_READ_WRITE_TOKEN must be a non-empty string").optional(),
+  DATA_ENCRYPTION_KEY: z.string().min(1, "DATA_ENCRYPTION_KEY must be a non-empty string").optional(),
   MAIL_SMTP_URL: z.string().url("MAIL_SMTP_URL must be a valid URL").optional(),
   NODE_ENV: z.enum(["development", "test", "production"]),
 });

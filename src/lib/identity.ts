@@ -3,7 +3,7 @@ import { z } from "zod";
 
 import { Prisma } from "@/generated/prisma/client";
 import { getPrisma } from "@/lib/db";
-import type { AppPrincipal, ClientRole, SdkStaffRole } from "@/types";
+import type { AppPrincipal, ClientRole, SdkStaffRole, ServiceProviderStatus } from "@/types";
 
 const auth0IdentitySchema = z.object({
   sub: z.string().min(1),
@@ -37,6 +37,7 @@ const principalSelect = {
       company: { select: { id: true, name: true, isActive: true } },
     },
   },
+  providerProfile: { select: { id: true, status: true } },
 } as const;
 
 function isUniqueConstraintViolation(error: unknown): error is Prisma.PrismaClientKnownRequestError {
@@ -106,10 +107,11 @@ export async function resolveAppPrincipal(session: SessionData): Promise<AppPrin
   }
 
   const membership = user.memberships[0];
-  if (user.sdkStaffRole && membership) {
+  const provider = user.providerProfile;
+  if ([Boolean(user.sdkStaffRole), Boolean(membership), Boolean(provider)].filter(Boolean).length > 1) {
     throw new IdentityError(
       "IDENTITY_CONFLICT",
-      "An SDK staff user cannot also have a client-company membership."
+      "A user cannot be assigned to more than one application identity category."
     );
   }
 
@@ -136,6 +138,16 @@ export async function resolveAppPrincipal(session: SessionData): Promise<AppPrin
       companyId: membership.company.id,
       companyName: membership.company.name,
       role: membership.role as ClientRole,
+    };
+  }
+
+
+  if (provider) {
+    return {
+      ...common,
+      kind: "service-provider",
+      providerId: provider.id,
+      status: provider.status as ServiceProviderStatus,
     };
   }
 

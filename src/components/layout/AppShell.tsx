@@ -15,13 +15,21 @@ interface AppShellProps {
 export async function AppShell({ children, locale, principal }: AppShellProps) {
   const t = await getTranslations({ locale, namespace: "portal.nav" });
   const context = principal.kind === "client" ? principal.companyName : "SDK Enterprises";
-  const areaLabel = principal.kind === "client" ? t("clientArea") : t("staffArea");
+  const areaLabel = principal.kind === "client" ? t("clientArea") : principal.kind === "service-provider" ? t("providerArea") : t("staffArea");
   const links = principal.kind === "client"
     ? [{ href: `/${locale}/app`, label: t("dashboard") }, { href: `/${locale}/app/requests`, label: t("requests") }]
+    : principal.kind === "service-provider"
+      ? [
+          { href: `/${locale}/app`, label: t("dashboard") },
+          { href: `/${locale}/app/provider/projects`, label: t("projects") },
+          { href: `/${locale}/app/provider/time`, label: t("time") },
+          { href: `/${locale}/app/provider/invoices`, label: t("providerInvoices") },
+          { href: `/${locale}/app/provider/onboarding`, label: t("legalDetails") },
+        ]
     : [{ href: `/${locale}/app`, label: t("operations") }];
   const canManageUsers = principal.kind === "sdk-staff"
     ? principal.role === "ADMIN"
-    : ["OWNER", "ADMINISTRATOR"].includes(principal.role);
+    : principal.kind === "client" && ["OWNER", "ADMINISTRATOR"].includes(principal.role);
   if (canManageUsers) links.push({ href: `/${locale}/app/users`, label: principal.kind === "client" ? t("team") : t("users") });
 
   return (

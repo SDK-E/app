@@ -65,6 +65,23 @@ export const permissions = [
   "staff:view",
   "staff:create",
   "staff:update",
+  "provider:view",
+  "provider:create",
+  "provider:update",
+  "provider:review",
+  "provider:compliance:view",
+  "provider:compliance:review",
+  "provider:assignment:view",
+  "provider:assignment:manage",
+  "provider:time:view",
+  "provider:time:review",
+  "provider:invoice:view",
+  "provider:invoice:review",
+  "provider:invoice:pay",
+  "provider:form:view",
+  "provider:form:manage",
+  "automation:view",
+  "automation:manage",
 ] as const;
 
 export type Permission = (typeof permissions)[number];
@@ -94,5 +111,23 @@ export interface SdkStaffPrincipal extends PrincipalUser {
   role: SdkStaffRole;
 }
 
-export type AssignedPrincipal = ClientPrincipal | SdkStaffPrincipal;
+export const serviceProviderStatuses = [
+  "APPLICANT",
+  "ONBOARDING",
+  "UNDER_REVIEW",
+  "ACTIVE",
+  "SUSPENDED",
+  "REJECTED",
+  "ARCHIVED",
+] as const;
+
+export type ServiceProviderStatus = (typeof serviceProviderStatuses)[number];
+
+export interface ServiceProviderPrincipal extends PrincipalUser {
+  kind: "service-provider";
+  providerId: string;
+  status: ServiceProviderStatus;
+}
+
+export type AssignedPrincipal = ClientPrincipal | SdkStaffPrincipal | ServiceProviderPrincipal;
 export type AppPrincipal = UnassignedPrincipal | AssignedPrincipal;

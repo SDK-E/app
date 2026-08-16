@@ -1,6 +1,7 @@
 {
   "portal": {
-    "nav": { "dashboard": "Dashboard", "requests": "Service requests", "operations": "Request operations", "team": "Team", "users": "Users", "profile": "Profile", "language": "Language", "logout": "Log out", "clientArea": "Client portal", "staffArea": "SDK workspace" },
+    "nav": { "dashboard": "Dashboard", "requests": "Service requests", "operations": "Request operations", "team": "Team", "users": "Users", "profile": "Profile", "language": "Language", "logout": "Log out", "clientArea": "Client portal", "staffArea": "SDK workspace", "providerArea": "Provider portal", "projects": "Projects", "time": "Time", "providerInvoices": "Invoices", "legalDetails": "Legal details" },
+    "providerDashboard": { "eyebrow": "Service provider", "title": "Your work with SDK, in one place.", "intro": "Complete onboarding, follow your assignments, submit time and track invoices payable by SDK.", "onboarding": "Onboarding and legal review", "requirements": "{count, plural, =0 {All requirements are complete.} one {# requirement needs attention.} other {# requirements need attention.}}", "assignments": "Current assignments", "noAssignments": "No active assignments yet.", "invoices": "Recent invoices", "noInvoices": "No supplier invoices yet." },
     "dashboard": {
       "eyebrow": "Client dashboard", "title": "The work that needs your attention.", "intro": "Respond to open questions, follow active work and see what is expected next.",
       "attention": "Needs your attention", "activeWork": "Active work", "openRequests": "Open requests", "invoices": "Invoice summary", "recentActivity": "Recent activity", "next": "What happens next",

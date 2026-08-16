@@ -87,6 +87,26 @@ export async function createStaffInvitation(principal: AppPrincipal, input: { em
   return { invitation, token };
 }
 
+export async function createProviderInvitation(principal: AppPrincipal, applicationId: string) {
+  requirePermission(principal, "provider:create");
+  if (principal.kind !== "sdk-staff" || principal.role !== "ADMIN") forbidden("SDK administrator access is required.");
+  const application = await getPrisma().providerApplication.findUniqueOrThrow({ where: { id: applicationId } });
+  if (application.rejectedAt) forbidden("A rejected application cannot be invited.");
+  const token = randomBytes(32).toString("base64url");
+  const invitation = await getPrisma().invitation.create({
+    data: {
+      tokenHash: hashInvitationToken(token),
+      email: application.email,
+      kind: "SERVICE_PROVIDER",
+      providerApplicationId: application.id,
+      invitedBy: principal.id,
+      expiresAt: new Date(Date.now() + INVITATION_TTL_MS),
+    },
+  });
+  await getPrisma().providerApplication.update({ where: { id: application.id }, data: { reviewedAt: new Date(), reviewedBy: principal.id, invitedAt: new Date() } });
+  return { invitation, token };
+}
+
 export async function markInvitationDelivery(id: string, sent: boolean) {
   return getPrisma().invitation.update({ where: { id }, data: { deliveryStatus: sent ? "SENT" : "FAILED", lastSentAt: new Date() } });
 }
@@ -159,12 +179,24 @@ export async function acceptInvitation(input: { token: string; userId: string; e
     const invitation = await db.invitation.findUnique({ where: { tokenHash: hashInvitationToken(input.token) } });
     if (!invitation || invitation.revokedAt || invitation.acceptedAt || invitation.expiresAt <= new Date()) forbidden("This invitation is invalid or has expired.");
     if (invitation.email !== input.email.trim().toLowerCase()) forbidden("Sign in with the email address that received this invitation.");
-    const user = await db.user.findUniqueOrThrow({ where: { id: input.userId }, include: { memberships: true } });
-    if (user.sdkStaffRole || user.memberships.length) forbidden("This account already has an application assignment.");
+    const user = await db.user.findUniqueOrThrow({ where: { id: input.userId }, include: { memberships: true, providerProfile: true } });
+    if (user.sdkStaffRole || user.memberships.length || user.providerProfile) forbidden("This account already has an application assignment.");
     if (invitation.kind === "CLIENT" && invitation.companyId && invitation.clientRole) {
       await db.membership.create({ data: { userId: user.id, companyId: invitation.companyId, role: invitation.clientRole, invitedBy: invitation.invitedBy, invitedAt: invitation.createdAt, joinedAt: new Date() } });
     } else if (invitation.kind === "SDK_STAFF" && invitation.sdkStaffRole) {
       await db.user.update({ where: { id: user.id }, data: { sdkStaffRole: invitation.sdkStaffRole } });
+    } else if (invitation.kind === "SERVICE_PROVIDER" && invitation.providerApplicationId) {
+      const application = await db.providerApplication.findUniqueOrThrow({ where: { id: invitation.providerApplicationId } });
+      await db.serviceProviderProfile.create({
+        data: {
+          userId: user.id,
+          status: "ONBOARDING",
+          professionalHeadline: application.professionalHeadline,
+          professionalEmail: application.email,
+          countryCode: application.countryCode,
+          taxResidenceCode: application.countryCode,
+        },
+      });
     } else forbidden("This invitation has an invalid target.");
     await db.invitation.update({ where: { id: invitation.id }, data: { acceptedAt: new Date(), acceptedBy: user.id } });
     return invitation;

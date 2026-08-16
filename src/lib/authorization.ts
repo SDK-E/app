@@ -6,6 +6,7 @@ import type {
   Permission,
   SdkStaffPrincipal,
   SdkStaffRole,
+  ServiceProviderPrincipal,
 } from "@/types";
 
 export type AuthorizationErrorCode =
@@ -60,8 +61,24 @@ export function requireSdkStaff(
   return principal;
 }
 
+export function requireServiceProvider(principal: AppPrincipal): ServiceProviderPrincipal {
+  if (principal.kind !== "service-provider") {
+    throw new AuthorizationError(403, "FORBIDDEN", "Service-provider access is required.");
+  }
+  return principal;
+}
+
+export function requireActiveServiceProvider(principal: AppPrincipal): ServiceProviderPrincipal {
+  const provider = requireServiceProvider(principal);
+  if (provider.status !== "ACTIVE") {
+    throw new AuthorizationError(403, "FORBIDDEN", "An active service-provider account is required.");
+  }
+  return provider;
+}
+
 export function hasPermission(principal: AppPrincipal, permission: Permission): boolean {
   if (principal.kind === "unassigned") return false;
+  if (principal.kind === "service-provider") return false;
   const rolePermissions =
     principal.kind === "client"
       ? clientRolePermissions[principal.role]
@@ -89,6 +106,11 @@ export function requireCompanyAccess(
       throw new AuthorizationError(403, "FORBIDDEN", "Cross-company access is denied.");
     }
     return principal.companyId;
+  }
+
+
+  if (principal.kind === "service-provider") {
+    throw new AuthorizationError(403, "FORBIDDEN", "Providers do not have company-wide access.");
   }
 
   if (!requestedCompanyId) {

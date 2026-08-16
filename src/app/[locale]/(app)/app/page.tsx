@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { getClientDashboard, listActiveCompanies } from "@/lib/data/serviceRequests";
 import { getCurrentPrincipal } from "@/lib/identity";
+import { getProviderDashboard } from "@/lib/data/providers";
 
 export const metadata: Metadata = {
   title: "Portal | SDK Enterprises",
@@ -16,6 +17,19 @@ export default async function AppHomePage({ params }: { params: Promise<{ locale
   const [{ locale }, principal] = await Promise.all([params, getCurrentPrincipal()]);
   if (!principal || principal.kind === "unassigned") return null;
   const t = await getTranslations({ locale, namespace: "portal" });
+  if (principal.kind === "service-provider") {
+    const data = await getProviderDashboard(principal);
+    return <section>
+      <p className="text-label font-extrabold uppercase tracking-eyebrow text-muted-foreground">{t("providerDashboard.eyebrow")}</p>
+      <h1 className="mt-4 text-[32px] font-extrabold md:text-h1">{t("providerDashboard.title")}</h1>
+      <p className="mt-5 max-w-[65ch] text-body text-muted-foreground">{t("providerDashboard.intro")}</p>
+      <div className="mt-10 grid gap-6 xl:grid-cols-2">
+        <Card><h2 className="text-h3 font-extrabold">{t("providerDashboard.onboarding")}</h2><p className="mt-4 text-body capitalize">{data.status.replaceAll("_", " ").toLowerCase()}</p><p className="mt-2 text-body text-muted-foreground">{t("providerDashboard.requirements", { count: data.requirements.filter(item => !["VERIFIED", "WAIVED"].includes(item.status)).length })}</p></Card>
+        <Card><h2 className="text-h3 font-extrabold">{t("providerDashboard.assignments")}</h2><div className="mt-4 space-y-3">{data.assignments.map(item => <Link key={item.id} href={`/${locale}/app/provider/projects`} className="block border-t border-line pt-3"><span className="text-body font-semibold">{item.project.name}</span><span className="block text-body text-muted-foreground">{item.company.name} · {item.roleTitle}</span></Link>)}{!data.assignments.length ? <p className="text-body text-muted-foreground">{t("providerDashboard.noAssignments")}</p> : null}</div></Card>
+        <Card><h2 className="text-h3 font-extrabold">{t("providerDashboard.invoices")}</h2><div className="mt-4 space-y-3">{data.invoices.map(item => <p key={item.id} className="border-t border-line pt-3 text-body"><span className="font-semibold">{item.supplierInvoiceNumber}</span><span className="block text-muted-foreground">{item.currency} {item.total.toString()} · {item.status.toLowerCase()}</span></p>)}{!data.invoices.length ? <p className="text-body text-muted-foreground">{t("providerDashboard.noInvoices")}</p> : null}</div></Card>
+      </div>
+    </section>;
+  }
   if (principal.kind === "sdk-staff") {
     const companies = principal.role === "FINANCE" ? [] : await listActiveCompanies(principal);
     return <section><p className="text-label font-extrabold uppercase tracking-eyebrow text-muted-foreground">SDK</p><h1 className="mt-4 text-h1 font-extrabold">{t("operations.title")}</h1><p className="mt-4 max-w-[65ch] text-body text-muted-foreground">{t("operations.intro")}</p><div className="mt-8 grid gap-4 md:grid-cols-2">{companies.map((company) => <Link key={company.id} href={`/${locale}/app/companies/${company.id}/requests`}><Card className="transition-colors hover:border-dark"><h2 className="text-h3 font-extrabold">{company.name}</h2><p className="mt-2 text-body text-muted-foreground">{t("operations.companies")}</p></Card></Link>)}</div>{companies.length === 0 ? <p className="mt-8 text-body text-muted-foreground">{t("operations.none")}</p> : null}</section>;
