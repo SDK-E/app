@@ -28,7 +28,7 @@ When a Prisma Next call fails, the framework returns a **structured envelope**. 
 
 Prisma Next emits **two distinct envelopes** depending on which seam threw. Read which one you have _before_ routing.
 
-**1. CLI envelope** — produced by `prisma-next ...` commands (emit, db init/update/verify/sign/schema, migration plan/apply/show/status, init). Shape (see `CliErrorEnvelope` in `packages/1-framework/1-core/errors/src/control.ts`):
+**1. CLI envelope** — produced by `prisma-next ...` commands (emit, db init/update/verify/sign/schema, migration plan/apply/show/status, init). Shape:
 
 ```json
 {
@@ -47,7 +47,7 @@ Prisma Next emits **two distinct envelopes** depending on which seam threw. Read
 
 The full code is `PN-<domain>-<NNNN>`. Domains in use: `CLI`, `MIG`, `RUN`, `CON`, `SCHEMA`. Severity is `error | warn | info` — `migration status` exits 0 when its diagnostics are `warn`, so route on **severity + code together**, not on exit code alone.
 
-**2. Runtime envelope** — thrown by the in-process runtime when executing a query (see `RuntimeErrorEnvelope` in `packages/1-framework/1-core/framework-components/src/execution/runtime-error.ts`):
+**2. Runtime envelope** — thrown by the in-process runtime when executing a query:
 
 ```ts
 { name: 'RuntimeError', code: 'BUDGET.TIME_EXCEEDED', category: 'BUDGET', severity: 'error', message: '...', details: { ... } }
@@ -55,7 +55,7 @@ The full code is `PN-<domain>-<NNNN>`. Domains in use: `CLI`, `MIG`, `RUN`, `CON
 
 `category` is one of `PLAN | CONTRACT | LINT | BUDGET | RUNTIME` (the prefix of `code`). `details` holds the structured context (`details` is the runtime envelope's equivalent of the CLI envelope's `meta`).
 
-**3. SQL driver errors** — surface as `SqlQueryError` / `SqlConnectionError` (see `packages/2-sql/1-core/errors/`). Fields on `SqlQueryError`: `kind: 'sql_query'`, `sqlState` (Postgres SQLSTATE, e.g. `'23505'`), `constraint`, `table`, `column`, `detail`, `cause`. These are _not_ `PN-*` codes — route on `sqlState` and the constraint metadata. SQL driver errors are typically wrapped by middleware before reaching the user, but raw-SQL paths can surface them directly.
+**3. SQL driver errors** — surface as `SqlQueryError` / `SqlConnectionError`. Fields on `SqlQueryError`: `kind: 'sql_query'`, `sqlState` (Postgres SQLSTATE, e.g. `'23505'`), `constraint`, `table`, `column`, `detail`, `cause`. These are _not_ `PN-*` codes — route on `sqlState` and the constraint metadata. SQL driver errors are typically wrapped by middleware before reaching the user, but raw-SQL paths can surface them directly.
 
 ### Wrapped errors and `meta.code`
 

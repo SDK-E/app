@@ -30,7 +30,7 @@ The tool is a conservative local normalization pass, not a semantic rewriter. Fo
 
 Before the call, record or pass as `protected_terms` all names, URLs, claims, product terms, compliance/legal phrases, and identifiers. The server automatically checks common URLs, numbers, inline code, constants, and dotted identifiers, but cannot judge whether a rewritten claim remains true. After the call, compare source and result line by line. Keep exact legal language verbatim unless an authorized legal review explicitly permits editing.
 
-For Markdown and similar files, complete fenced code blocks remain exact. The tools reject unclosed fences without editing; fix malformed Markdown before retrying. Do not assume other structured regions are protected—pass critical fragments explicitly or process only selected prose strings.
+For Markdown and similar files, complete fenced code blocks remain exact. The tools reject unclosed fences without editing; fix malformed Markdown before retrying. Do not assume other structured regions are protected — pass critical fragments explicitly or process only selected prose strings.
 
 ## Website copy
 

@@ -12,8 +12,7 @@ metadata:
 
 # i18n (SDK Enterprises)
 
-next-intl v4 with Next.js 16 App Router. 17 European locales: `en, fr, de, es,
-pt, it, nl, sv, no, da, fi, pl, cs, hu, ro, bg, el`.
+next-intl v4 with Next.js 16 App Router. 17 European locales: `en, fr, de, es, pt, it, nl, sv, no, da, fi, pl, cs, hu, ro, bg, el`.
 
 ## Source of truth
 
@@ -24,15 +23,10 @@ pt, it, nl, sv, no, da, fi, pl, cs, hu, ro, bg, el`.
 
 ## Adding a new translation key
 
-1. Add the key to the appropriate file under `src/locales/en/` (English file
-   paths, keys, nesting, and key order are the source of truth).
-2. Run `npm run i18n:translate`. The incremental translator updates only
-   strings whose English source was added or changed, across all 16 targets.
-3. Review the generated copy in context. Machine translation is a first pass,
-   especially for legal, marketing, and idiomatic copy; never treat successful
-   execution alone as linguistic approval.
-4. Run `npm run i18n:check` to verify JSON shape, keys, arrays, interpolation
-   variables, and the absence of placeholders or leaked preservation markers.
+1. Add the key to the appropriate file under `src/locales/en/` (English file paths, keys, nesting, and key order are the source of truth).
+2. Run `npm run i18n:translate`. The incremental translator updates only strings whose English source was added or changed, across all 16 targets.
+3. Review the generated copy in context. Machine translation is a first pass, especially for legal, marketing, and idiomatic copy; never treat successful execution alone as linguistic approval.
+4. Run `npm run i18n:check` to verify JSON shape, keys, arrays, interpolation variables, and the absence of placeholders or leaked preservation markers.
 5. Use `getTranslations({ locale, namespace })` in server components.
 6. Use `useTranslations(namespace)` in client components.
 
@@ -45,38 +39,26 @@ npm run i18n:translate -- --all fr     # deliberately regenerate all French
 npm run i18n:check                     # offline validation, no writes
 ```
 
-The script is `scripts/translate-locales.py`; its per-locale English baseline is
-`src/locales/.translation-state.json`. It recursively mirrors English files,
-adds missing target files and keys, orders nested keys like English, and removes
-target files or keys that no longer exist in English. Commit both the updated
-catalogs and baseline after review. Never hand-write `[TRANSLATE:...]`
-placeholders.
+The script is `scripts/translate-locales.py`; its per-locale English baseline is `src/locales/.translation-state.json`. It recursively mirrors English files, adds missing target files and keys, orders nested keys like English, and removes target files or keys that no longer exist in English. Commit both the updated catalogs and baseline after review. Never hand-write `[TRANSLATE:...]` placeholders.
 
 ## Catalog layout
 
 - `shared.json` — `meta`, `nav`, `footer`, `auth`, `errors`.
-- `home.json` — homepage namespaces: `hero`, `services`, `whySdk`,
-  `engagements`, `process`, `contact`.
+- `home.json` — homepage namespaces: `hero`, `services`, `whySdk`, `engagements`, `process`, `contact`.
 - `enquiry.json` — `enquiry`.
 - `design-system.json` — `designSystem`.
 - `pages/{route}.json` — one public page namespace per file.
 - `legal/{document}.json` — one legal document per file.
 
-Every shard retains its full next-intl namespace wrapper. Components continue
-to use namespaces such as `servicesPage`, `enquiry`, and `legal.privacy`; file
-boundaries never become part of a translation key.
+Every shard retains its full next-intl namespace wrapper. Components continue to use namespaces such as `servicesPage`, `enquiry`, and `legal.privacy`; file boundaries never become part of a translation key.
 
-The translator protects next-intl `{variables}`, SDK Enterprises, processor
-names, legal identifiers, URLs, and technology/product names. If new copy adds
-a proper noun or identifier that must stay verbatim, add it to the script's
-protected terms before translating.
+The translator protects next-intl `{variables}`, SDK Enterprises, processor names, legal identifiers, URLs, and technology/product names. If new copy adds a proper noun or identifier that must stay verbatim, add it to the script's protected terms before translating.
 
 ## Component conventions
 
 - Server components by default; `"use client"` only when interactivity requires it.
 - Pass `locale` as a prop from pages to marketing/legal components.
-- Legal pages are single-language per locale: FR locale renders `fr` section,
-  all other locales render `en` section.
+- Legal pages are single-language per locale: FR locale renders `fr` section, all other locales render `en` section.
 - Marketing components use `getTranslations` with `locale` prop.
 - Header accepts `locale` prop to render the `LanguageSwitcher`.
 
