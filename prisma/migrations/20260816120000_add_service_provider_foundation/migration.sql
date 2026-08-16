@@ -1,5 +1,3 @@
-Loaded Prisma config from prisma.config.ts.
-
 -- CreateEnum
 CREATE TYPE "service_provider_status" AS ENUM ('APPLICANT', 'ONBOARDING', 'UNDER_REVIEW', 'ACTIVE', 'SUSPENDED', 'REJECTED', 'ARCHIVED');
 
