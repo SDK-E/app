@@ -1,0 +1,104 @@
+{
+  "portal": {
+    "nav": {
+      "dashboard": "Tableau de bord",
+      "requests": "Demandes de services",
+      "operations": "Traitement des demandes",
+      "logout": "Se déconnecter",
+      "clientArea": "Portail clients",
+      "staffArea": "Espace de travail SDK"
+    },
+    "dashboard": {
+      "eyebrow": "Tableau de bord client",
+      "title": "Le travail qui nécessite votre attention.",
+      "intro": "Répondez aux questions ouvertes, suivez le travail actif et voyez ce qui est attendu ensuite.",
+      "attention": "À traiter",
+      "activeWork": "Travail actif",
+      "openRequests": "Demandes ouvertes",
+      "invoices": "Résumé des factures",
+      "recentActivity": "Activité récente",
+      "next": "Prochaine étape",
+      "noAttention": "Rien ne vous attend pour le moment.",
+      "noProjects": "Aucun projet actif pour l'instant.",
+      "noRequests": "Aucune demande ouverte.",
+      "noInvoices": "Aucune facture envoyée ou en retard.",
+      "noActivity": "Aucune activité de demande pour l'instant.",
+      "newRequest": "Créer une demande de service",
+      "viewRequests": "Afficher toutes les demandes",
+      "informationNeeded": "SDK attend plus d’informations.",
+      "overdueInvoice": "Une facture est en retard.",
+      "overdue": "En retard",
+      "nextDefault": "Créez une demande lorsque vous avez un problème, une contrainte ou un projet à discuter."
+    },
+    "requests": {
+      "eyebrow": "Demandes de services",
+      "title": "Présentez le problème et son contexte.",
+      "intro": "Enregistrez un brouillon, examinez les détails et soumettez-le lorsque la demande est prête pour SDK.",
+      "new": "Nouvelle demande",
+      "emptyTitle": "Aucune demande de service pour l'instant",
+      "emptyBody": "Créez une demande pour démarrer une conversation structurée avec SDK.",
+      "details": "Détails de la demande",
+      "conversation": "Conversation",
+      "noMessages": "Aucun message pour l'instant.",
+      "history": "Historique d'activité",
+      "reply": "Envoyer des informations",
+      "accept": "Accepter la proposition",
+      "editAndSubmit": "Modifier et soumettre",
+      "converted": "Converti en projet",
+      "createdBy": "Créée par {name}",
+      "form": {
+        "title": "Titre de la demande",
+        "capability": "Compétence concernée",
+        "description": "Problème ou projet",
+        "businessContext": "Contexte métier et projet",
+        "supportingInformation": "Informations complémentaires",
+        "supportingLinks": "Liens pris en charge : une URL HTTP(S) par ligne",
+        "saveDraft": "Enregistrer le brouillon",
+        "review": "Relire la demande",
+        "back": "Retour à l'édition",
+        "submit": "Soumettre la demande",
+        "reviewHeading": "Vérifier avant de soumettre",
+        "working": "Traitement…"
+      },
+      "capabilities": {
+        "modernization": "Modernisation du logiciel",
+        "platforms": "Plateformes backend et intégrations",
+        "ai-automation": "IA et automatisation des flux de travail",
+        "production-systems": "Systèmes cloud et de production",
+        "data-interfaces": "Interfaces de données et de produits",
+        "other": "Autre ou pas sûr"
+      },
+      "statuses": {
+        "DRAFT": "Brouillon",
+        "SUBMITTED": "Soumis",
+        "IN_REVIEW": "En cours de révision",
+        "INFORMATION_REQUIRED": "Informations requises",
+        "PROPOSAL_READY": "Proposition prête",
+        "APPROVED": "Accepté",
+        "REJECTED": "Rejeté",
+        "CLOSED": "Fermé"
+      }
+    },
+    "operations": {
+      "title": "Traitement des demandes",
+      "intro": "Choisissez une entreprise, examinez ses demandes et enregistrez la prochaine décision.",
+      "companies": "Entreprises actives",
+      "none": "Aucune opération de demande n’est disponible pour votre rôle.",
+      "startReview": "Commencer l'examen",
+      "requestInformation": "Demander des informations",
+      "proposalReady": "Marquer la proposition comme prête",
+      "reject": "Rejeter la demande",
+      "response": "Question, réponse à la proposition ou raison",
+      "convert": "Convertir en projet",
+      "projectName": "Nom du projet",
+      "projectDescription": "Descriptif du projet"
+    },
+    "states": {
+      "loading": "Chargement des données du portail…",
+      "working": "Travailler…",
+      "errorTitle": "Cette partie du portail n'a pas pu se charger",
+      "errorBody": "Essayer à nouveau. Si le problème persiste, contactez SDK avec la page que vous utilisiez.",
+      "tryAgain": "Réessayez"
+    }
+  }
+}

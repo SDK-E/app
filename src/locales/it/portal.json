@@ -1,0 +1,104 @@
+{
+  "portal": {
+    "nav": {
+      "dashboard": "Pannello di controllo",
+      "requests": "Richieste di servizio",
+      "operations": "Richiedi operazioni",
+      "logout": "Esci",
+      "clientArea": "Portale clienti",
+      "staffArea": "Area di lavoro SDK"
+    },
+    "dashboard": {
+      "eyebrow": "Cruscotto cliente",
+      "title": "Il lavoro che richiede la tua attenzione.",
+      "intro": "Rispondi alle domande aperte, segui il lavoro attivo e scopri cosa ci si aspetta dopo.",
+      "attention": "Ha bisogno della tua attenzione",
+      "activeWork": "Lavoro attivo",
+      "openRequests": "Richieste aperte",
+      "invoices": "Riepilogo fatture",
+      "recentActivity": "Attività recente",
+      "next": "Cosa succede dopo",
+      "noAttention": "Niente ti sta aspettando in questo momento.",
+      "noProjects": "Nessun progetto attivo ancora.",
+      "noRequests": "Nessuna richiesta aperta.",
+      "noInvoices": "Nessuna fattura inviata o scaduta.",
+      "noActivity": "Nessuna attività di richiesta ancora.",
+      "newRequest": "Crea una richiesta di servizio",
+      "viewRequests": "Visualizza tutte le richieste",
+      "informationNeeded": "SDK è in attesa di ulteriori informazioni.",
+      "overdueInvoice": "Una fattura è scaduta.",
+      "overdue": "In ritardo",
+      "nextDefault": "Crea una richiesta quando hai un problema, un vincolo o un progetto da discutere."
+    },
+    "requests": {
+      "eyebrow": "Richieste di servizio",
+      "title": "Porta il problema e il contesto.",
+      "intro": "Salva una bozza, rivedi i dettagli e invia quando la richiesta è pronta per SDK.",
+      "new": "Nuova richiesta",
+      "emptyTitle": "Nessuna richiesta di servizio ancora",
+      "emptyBody": "Crea una richiesta per avviare una conversazione strutturata con SDK.",
+      "details": "Richiedi dettagli",
+      "conversation": "Conversazione",
+      "noMessages": "Nessun messaggio ancora.",
+      "history": "Cronologia delle attività",
+      "reply": "Invia informazioni",
+      "accept": "Accetta la proposta",
+      "editAndSubmit": "Modifica e invia",
+      "converted": "Convertito in progetto",
+      "createdBy": "Creato da {name}",
+      "form": {
+        "title": "Richiedi titolo",
+        "capability": "Capacità rilevante",
+        "description": "Problema o progetto",
+        "businessContext": "Contesto aziendale e di progetto",
+        "supportingInformation": "Informazioni di supporto",
+        "supportingLinks": "Collegamenti di supporto: un URL HTTP(S) per riga",
+        "saveDraft": "Salva bozza",
+        "review": "Richiesta di revisione",
+        "back": "Torniamo alla modifica",
+        "submit": "Invia richiesta",
+        "reviewHeading": "Rivedere prima di inviare",
+        "working": "Lavorando…"
+      },
+      "capabilities": {
+        "modernization": "Modernizzazione del software",
+        "platforms": "Piattaforme backend e integrazioni",
+        "ai-automation": "Intelligenza artificiale e automazione del flusso di lavoro",
+        "production-systems": "Cloud e sistemi di produzione",
+        "data-interfaces": "Interfacce dati e prodotto",
+        "other": "Altro o non sono sicuro"
+      },
+      "statuses": {
+        "DRAFT": "Bozza",
+        "SUBMITTED": "Inviato",
+        "IN_REVIEW": "In fase di revisione",
+        "INFORMATION_REQUIRED": "Informazioni richieste",
+        "PROPOSAL_READY": "Proposta pronta",
+        "APPROVED": "Accettato",
+        "REJECTED": "Respinto",
+        "CLOSED": "Chiuso"
+      }
+    },
+    "operations": {
+      "title": "Richiedi operazioni",
+      "intro": "Scegli un'azienda, esamina le sue richieste e registra la decisione successiva.",
+      "companies": "Aziende attive",
+      "none": "Nessuna operazione di richiesta disponibile per il tuo ruolo.",
+      "startReview": "Inizia la revisione",
+      "requestInformation": "Richiedi informazioni",
+      "proposalReady": "Segna la proposta come pronta",
+      "reject": "Rifiuta la richiesta",
+      "response": "Domanda, risposta alla proposta o motivo",
+      "convert": "Converti in progetto",
+      "projectName": "Nome del progetto",
+      "projectDescription": "Descrizione del progetto"
+    },
+    "states": {
+      "loading": "Caricamento dati del portale…",
+      "working": "Lavorando…",
+      "errorTitle": "Impossibile caricare questa parte del portale",
+      "errorBody": "Riprova. Se il problema persiste, contatta SDK con la pagina che stavi utilizzando.",
+      "tryAgain": "Riprova"
+    }
+  }
+}

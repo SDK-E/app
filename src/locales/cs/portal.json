@@ -1,0 +1,104 @@
+{
+  "portal": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "requests": "Servisní požadavky",
+      "operations": "Operace žádostí",
+      "logout": "Odhlaste se",
+      "clientArea": "Klientský portál",
+      "staffArea": "Pracovní plocha SDK"
+    },
+    "dashboard": {
+      "eyebrow": "Klientský panel",
+      "title": "Práce, která vyžaduje vaši pozornost.",
+      "intro": "Odpovídejte na otevřené otázky, sledujte aktivní práci a uvidíte, co se očekává dále.",
+      "attention": "Vyžaduje vaši pozornost",
+      "activeWork": "Aktivní práce",
+      "openRequests": "Otevřené požadavky",
+      "invoices": "Přehled faktury",
+      "recentActivity": "Nedávná aktivita",
+      "next": "Co bude dál",
+      "noAttention": "Nic tě teď nečeká.",
+      "noProjects": "Zatím žádné aktivní projekty.",
+      "noRequests": "Žádné otevřené požadavky.",
+      "noInvoices": "Žádné odeslané nebo po splatnosti faktury.",
+      "noActivity": "Zatím žádná aktivita požadavku.",
+      "newRequest": "Vytvořte požadavek na službu",
+      "viewRequests": "Zobrazit všechny žádosti",
+      "informationNeeded": "SDK čeká na další informace.",
+      "overdueInvoice": "Faktura je po splatnosti.",
+      "overdue": "Po splatnosti",
+      "nextDefault": "Vytvořte žádost, když máte problém, omezení nebo projekt, který chcete prodiskutovat."
+    },
+    "requests": {
+      "eyebrow": "Servisní požadavky",
+      "title": "Uveďte problém a kontext.",
+      "intro": "Uložte koncept, zkontrolujte podrobnosti a odešlete, až bude požadavek připraven pro SDK.",
+      "new": "Nová žádost",
+      "emptyTitle": "Zatím žádné servisní požadavky",
+      "emptyBody": "Vytvořte požadavek na zahájení strukturované konverzace pomocí SDK.",
+      "details": "Vyžádejte si podrobnosti",
+      "conversation": "Konverzace",
+      "noMessages": "Zatím žádné zprávy.",
+      "history": "Historie aktivit",
+      "reply": "Odešlete informace",
+      "accept": "Přijmout návrh",
+      "editAndSubmit": "Upravit a odeslat",
+      "converted": "Převedeno na projekt",
+      "createdBy": "Vytvořil {name}",
+      "form": {
+        "title": "Žádost o titul",
+        "capability": "Příslušná schopnost",
+        "description": "Problém nebo projekt",
+        "businessContext": "Kontext podnikání a projektu",
+        "supportingInformation": "Podpůrné informace",
+        "supportingLinks": "Podpůrné odkazy — jedna HTTP(S) URL na řádek",
+        "saveDraft": "Uložit koncept",
+        "review": "Žádost o kontrolu",
+        "back": "Zpět k úpravám",
+        "submit": "Odeslat žádost",
+        "reviewHeading": "Zkontrolujte před odesláním",
+        "working": "Práce…"
+      },
+      "capabilities": {
+        "modernization": "Modernizace softwaru",
+        "platforms": "Backendové platformy a integrace",
+        "ai-automation": "AI a automatizace pracovních postupů",
+        "production-systems": "Cloud a produkční systémy",
+        "data-interfaces": "Datová a produktová rozhraní",
+        "other": "Jiné nebo si nejsem jistý"
+      },
+      "statuses": {
+        "DRAFT": "Koncept",
+        "SUBMITTED": "Odesláno",
+        "IN_REVIEW": "Probíhá kontrola",
+        "INFORMATION_REQUIRED": "Požadované informace",
+        "PROPOSAL_READY": "Návrh připraven",
+        "APPROVED": "Přijato",
+        "REJECTED": "Odmítnuto",
+        "CLOSED": "Zavřeno"
+      }
+    },
+    "operations": {
+      "title": "Operace žádostí",
+      "intro": "Vyberte si společnost, zkontrolujte její požadavky a zaznamenejte další rozhodnutí.",
+      "companies": "Aktivní společnosti",
+      "none": "Pro vaši roli nejsou k dispozici žádné operace požadavků.",
+      "startReview": "Spustit recenzi",
+      "requestInformation": "Vyžádejte si informace",
+      "proposalReady": "Označte návrh jako připravený",
+      "reject": "Odmítnout žádost",
+      "response": "Otázka, odpověď na návrh nebo důvod",
+      "convert": "Převést na projekt",
+      "projectName": "Název projektu",
+      "projectDescription": "Popis projektu"
+    },
+    "states": {
+      "loading": "Načítání dat portálu…",
+      "working": "Práce…",
+      "errorTitle": "Tuto část portálu se nepodařilo načíst",
+      "errorBody": "Zkuste to znovu. Pokud problém přetrvává, kontaktujte SDK se stránkou, kterou jste používali.",
+      "tryAgain": "Zkuste to znovu"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "portal": {
+    "nav": {
+      "dashboard": "Pulpit nawigacyjny",
+      "requests": "Żądania serwisowe",
+      "operations": "Poproś o operacje",
+      "logout": "Wyloguj się",
+      "clientArea": "Portal klienta",
+      "staffArea": "Obszar roboczy SDK"
+    },
+    "dashboard": {
+      "eyebrow": "Panel klienta",
+      "title": "Praca wymagająca Twojej uwagi.",
+      "intro": "Odpowiadaj na pytania otwarte, śledź aktywną pracę i zobacz, czego oczekujesz dalej.",
+      "attention": "Potrzebuje twojej uwagi",
+      "activeWork": "Aktywna praca",
+      "openRequests": "Otwórz prośby",
+      "invoices": "Podsumowanie faktury",
+      "recentActivity": "Ostatnia aktywność",
+      "next": "Co stanie się dalej",
+      "noAttention": "W tej chwili nic na Ciebie nie czeka.",
+      "noProjects": "Nie ma jeszcze aktywnych projektów.",
+      "noRequests": "Brak otwartych próśb.",
+      "noInvoices": "Brak wysłanych i zaległych faktur.",
+      "noActivity": "Brak aktywności związanej z żądaniami.",
+      "newRequest": "Utwórz zgłoszenie serwisowe",
+      "viewRequests": "Zobacz wszystkie prośby",
+      "informationNeeded": "SDK czeka na więcej informacji.",
+      "overdueInvoice": "Faktura jest przeterminowana.",
+      "overdue": "Zaległe",
+      "nextDefault": "Utwórz prośbę, jeśli masz problem, ograniczenie lub projekt do omówienia."
+    },
+    "requests": {
+      "eyebrow": "Żądania serwisowe",
+      "title": "Przedstaw problem i kontekst.",
+      "intro": "Zapisz wersję roboczą, przejrzyj szczegóły i prześlij, gdy żądanie będzie gotowe dla SDK.",
+      "new": "Nowa prośba",
+      "emptyTitle": "Nie ma jeszcze żadnych zgłoszeń serwisowych",
+      "emptyBody": "Utwórz prośbę o rozpoczęcie zorganizowanej rozmowy z SDK.",
+      "details": "Zapytaj o szczegóły",
+      "conversation": "Rozmowa",
+      "noMessages": "Nie ma jeszcze żadnych wiadomości.",
+      "history": "Historia aktywności",
+      "reply": "Wyślij informacje",
+      "accept": "Zaakceptuj propozycję",
+      "editAndSubmit": "Edytuj i prześlij",
+      "converted": "Przekształcone w projekt",
+      "createdBy": "Stworzony przez {name}",
+      "form": {
+        "title": "Poproś o tytuł",
+        "capability": "Odpowiednia zdolność",
+        "description": "Problem lub projekt",
+        "businessContext": "Kontekst biznesowy i projektowy",
+        "supportingInformation": "Informacje pomocnicze",
+        "supportingLinks": "Obsługiwane łącza — jeden adres URL HTTP(S) w wierszu",
+        "saveDraft": "Zapisz wersję roboczą",
+        "review": "Przejrzyj prośbę",
+        "back": "Powrót do edycji",
+        "submit": "Prześlij prośbę",
+        "reviewHeading": "Przejrzyj przed przesłaniem",
+        "working": "Pracuję…"
+      },
+      "capabilities": {
+        "modernization": "Modernizacja oprogramowania",
+        "platforms": "Platformy backendowe i integracje",
+        "ai-automation": "Sztuczna inteligencja i automatyzacja przepływu pracy",
+        "production-systems": "Chmura i systemy produkcyjne",
+        "data-interfaces": "Interfejsy danych i produktów",
+        "other": "Inne lub nie jestem pewien"
+      },
+      "statuses": {
+        "DRAFT": "Wersja robocza",
+        "SUBMITTED": "Przesłane",
+        "IN_REVIEW": "W trakcie przeglądu",
+        "INFORMATION_REQUIRED": "Wymagane informacje",
+        "PROPOSAL_READY": "Propozycja gotowa",
+        "APPROVED": "Zaakceptowano",
+        "REJECTED": "Odrzucony",
+        "CLOSED": "Zamknięte"
+      }
+    },
+    "operations": {
+      "title": "Poproś o operacje",
+      "intro": "Wybierz firmę, przejrzyj jej prośby i zapisz kolejną decyzję.",
+      "companies": "Aktywne firmy",
+      "none": "Dla Twojej roli nie są dostępne żadne operacje na żądaniach.",
+      "startReview": "Rozpocznij recenzję",
+      "requestInformation": "Poproś o informacje",
+      "proposalReady": "Oznacz propozycję jako gotową",
+      "reject": "Odrzuć prośbę",
+      "response": "Pytanie, propozycja, odpowiedź lub powód",
+      "convert": "Konwertuj na projekt",
+      "projectName": "Nazwa projektu",
+      "projectDescription": "Opis projektu"
+    },
+    "states": {
+      "loading": "Ładowanie danych portalu…",
+      "working": "Pracuję…",
+      "errorTitle": "Nie udało się załadować tej części portalu",
+      "errorBody": "Spróbuj ponownie. Jeśli problem będzie się powtarzał, skontaktuj się z SDK, podając stronę, z której korzystałeś.",
+      "tryAgain": "Spróbuj ponownie"
+    }
+  }
+}

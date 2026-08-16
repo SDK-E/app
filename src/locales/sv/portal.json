@@ -1,0 +1,104 @@
+{
+  "portal": {
+    "nav": {
+      "dashboard": "Instrumentbräda",
+      "requests": "Serviceförfrågningar",
+      "operations": "Begär operationer",
+      "logout": "Logga ut",
+      "clientArea": "Kundportal",
+      "staffArea": "SDK arbetsyta"
+    },
+    "dashboard": {
+      "eyebrow": "Kundens instrumentpanel",
+      "title": "Arbetet som kräver din uppmärksamhet.",
+      "intro": "Svara på öppna frågor, följ aktivt arbete och se vad som förväntas härnäst.",
+      "attention": "Behöver din uppmärksamhet",
+      "activeWork": "Aktivt arbete",
+      "openRequests": "Öppna förfrågningar",
+      "invoices": "Fakturasammanfattning",
+      "recentActivity": "Senaste aktiviteten",
+      "next": "Vad händer härnäst",
+      "noAttention": "Inget väntar på dig just nu.",
+      "noProjects": "Inga aktiva projekt ännu.",
+      "noRequests": "Inga öppna förfrågningar.",
+      "noInvoices": "Inga skickade eller förfallna fakturor.",
+      "noActivity": "Ingen begäranden aktivitet ännu.",
+      "newRequest": "Skapa en serviceförfrågan",
+      "viewRequests": "Visa alla förfrågningar",
+      "informationNeeded": "SDK väntar på mer information.",
+      "overdueInvoice": "En faktura är försenad.",
+      "overdue": "Försenad",
+      "nextDefault": "Skapa en förfrågan när du har ett problem, begränsning eller projekt att diskutera."
+    },
+    "requests": {
+      "eyebrow": "Serviceförfrågningar",
+      "title": "Ta med problemet och sammanhanget.",
+      "intro": "Spara ett utkast, granska detaljerna och skicka när begäran är klar för SDK.",
+      "new": "Ny begäran",
+      "emptyTitle": "Inga serviceförfrågningar ännu",
+      "emptyBody": "Skapa en begäran om att starta en strukturerad konversation med SDK.",
+      "details": "Begär detaljer",
+      "conversation": "Konversation",
+      "noMessages": "Inga meddelanden än.",
+      "history": "Aktivitetshistorik",
+      "reply": "Skicka information",
+      "accept": "Acceptera förslaget",
+      "editAndSubmit": "Redigera och skicka",
+      "converted": "Konverterat till projekt",
+      "createdBy": "Skapad av {name}",
+      "form": {
+        "title": "Begär titel",
+        "capability": "Relevant förmåga",
+        "description": "Problem eller projekt",
+        "businessContext": "Affärs- och projektsammanhang",
+        "supportingInformation": "Stödinformation",
+        "supportingLinks": "Stödlänkar — en HTTP(S) URL per rad",
+        "saveDraft": "Spara utkast",
+        "review": "Granska begäran",
+        "back": "Tillbaka till redigering",
+        "submit": "Skicka in begäran",
+        "reviewHeading": "Granska innan du skickar in",
+        "working": "Jobbar..."
+      },
+      "capabilities": {
+        "modernization": "Mjukvarumodernisering",
+        "platforms": "Backend-plattformar och integrationer",
+        "ai-automation": "AI och arbetsflödesautomatisering",
+        "production-systems": "Moln och produktionssystem",
+        "data-interfaces": "Data och produktgränssnitt",
+        "other": "Annat eller osäkert"
+      },
+      "statuses": {
+        "DRAFT": "Utkast",
+        "SUBMITTED": "Inlämnad",
+        "IN_REVIEW": "Under granskning",
+        "INFORMATION_REQUIRED": "Information krävs",
+        "PROPOSAL_READY": "Förslaget klart",
+        "APPROVED": "Godkänd",
+        "REJECTED": "Avvisad",
+        "CLOSED": "Stängt"
+      }
+    },
+    "operations": {
+      "title": "Begär operationer",
+      "intro": "Välj ett företag, granska dess önskemål och spela in nästa beslut.",
+      "companies": "Aktiva företag",
+      "none": "Inga förfrågningsåtgärder är tillgängliga för din roll.",
+      "startReview": "Börja recension",
+      "requestInformation": "Begär information",
+      "proposalReady": "Markera förslaget som klart",
+      "reject": "Avvisa begäran",
+      "response": "Fråga, förslagssvar eller skäl",
+      "convert": "Konvertera till projekt",
+      "projectName": "Projektnamn",
+      "projectDescription": "Projektbeskrivning"
+    },
+    "states": {
+      "loading": "Laddar portaldata...",
+      "working": "Jobbar...",
+      "errorTitle": "Den här delen av portalen kunde inte laddas",
+      "errorBody": "Försök igen. Om problemet kvarstår, kontakta SDK med sidan du använde.",
+      "tryAgain": "Försök igen"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "portal": {
+    "nav": {
+      "dashboard": "Kojelauta",
+      "requests": "Palvelupyynnöt",
+      "operations": "Pyydä toimintoja",
+      "logout": "Kirjaudu ulos",
+      "clientArea": "Asiakasportaali",
+      "staffArea": "SDK työtila"
+    },
+    "dashboard": {
+      "eyebrow": "Asiakkaan kojelauta",
+      "title": "Työ, joka vaatii huomiota.",
+      "intro": "Vastaa avoimiin kysymyksiin, seuraa aktiivista työtä ja katso mitä seuraavaksi odotetaan.",
+      "attention": "Tarvitsee huomiotasi",
+      "activeWork": "Aktiivista työtä",
+      "openRequests": "Avoimet pyynnöt",
+      "invoices": "Laskun yhteenveto",
+      "recentActivity": "Viimeaikainen toiminta",
+      "next": "Mitä tapahtuu seuraavaksi",
+      "noAttention": "Mikään ei odota sinua juuri nyt.",
+      "noProjects": "Ei vielä aktiivisia projekteja.",
+      "noRequests": "Ei avoimia pyyntöjä.",
+      "noInvoices": "Ei lähetettyjä tai myöhässä olevia laskuja.",
+      "noActivity": "Ei vielä pyyntötoimintaa.",
+      "newRequest": "Luo palvelupyyntö",
+      "viewRequests": "Näytä kaikki pyynnöt",
+      "informationNeeded": "SDK odottaa lisätietoja.",
+      "overdueInvoice": "Lasku on erääntynyt.",
+      "overdue": "Myöhässä",
+      "nextDefault": "Luo pyyntö, kun sinulla on ongelma, rajoitus tai projekti, josta keskustella."
+    },
+    "requests": {
+      "eyebrow": "Palvelupyynnöt",
+      "title": "Tuo ongelma ja konteksti.",
+      "intro": "Tallenna luonnos, tarkista tiedot ja lähetä, kun pyyntö on valmis SDK:lle.",
+      "new": "Uusi pyyntö",
+      "emptyTitle": "Ei vielä palvelupyyntöjä",
+      "emptyBody": "Luo pyyntö strukturoidun keskustelun aloittamiseksi SDK:n kanssa.",
+      "details": "Pyydä lisätietoja",
+      "conversation": "Keskustelu",
+      "noMessages": "Ei viestejä vielä.",
+      "history": "Toimintahistoria",
+      "reply": "Lähetä tiedot",
+      "accept": "Hyväksy ehdotus",
+      "editAndSubmit": "Muokkaa ja lähetä",
+      "converted": "Muunnettu projektiksi",
+      "createdBy": "Luonut {name}",
+      "form": {
+        "title": "Pyydä otsikkoa",
+        "capability": "Asiaankuuluva kyky",
+        "description": "Ongelma tai projekti",
+        "businessContext": "Liiketoiminta- ja projektikonteksti",
+        "supportingInformation": "Tukitiedot",
+        "supportingLinks": "Tukilinkit – yksi HTTP(S)-URL riviä kohden",
+        "saveDraft": "Tallenna luonnos",
+        "review": "Tarkista pyyntö",
+        "back": "Takaisin editointiin",
+        "submit": "Lähetä pyyntö",
+        "reviewHeading": "Tarkista ennen lähettämistä",
+        "working": "Työskentely…"
+      },
+      "capabilities": {
+        "modernization": "Ohjelmiston modernisointi",
+        "platforms": "Taustaympäristöt ja integraatiot",
+        "ai-automation": "AI ja työnkulun automatisointi",
+        "production-systems": "Pilvi- ja tuotantojärjestelmät",
+        "data-interfaces": "Tietojen ja tuotteiden rajapinnat",
+        "other": "Muu tai epävarma"
+      },
+      "statuses": {
+        "DRAFT": "Luonnos",
+        "SUBMITTED": "Lähetetty",
+        "IN_REVIEW": "Tarkistuksessa",
+        "INFORMATION_REQUIRED": "Tiedot vaaditaan",
+        "PROPOSAL_READY": "Ehdotus valmis",
+        "APPROVED": "Hyväksytty",
+        "REJECTED": "Hylätty",
+        "CLOSED": "Suljettu"
+      }
+    },
+    "operations": {
+      "title": "Pyydä toimintoja",
+      "intro": "Valitse yritys, käy läpi sen toiveet ja kirjaa seuraava päätös.",
+      "companies": "Aktiiviset yritykset",
+      "none": "Roolillesi ei ole saatavilla pyyntötoimintoja.",
+      "startReview": "Aloita tarkistus",
+      "requestInformation": "Pyydä tietoja",
+      "proposalReady": "Merkitse ehdotus valmiiksi",
+      "reject": "Hylkää pyyntö",
+      "response": "Kysymys, vastausehdotus tai syy",
+      "convert": "Muunna projektiksi",
+      "projectName": "Projektin nimi",
+      "projectDescription": "Projektin kuvaus"
+    },
+    "states": {
+      "loading": "Ladataan portaalin tietoja…",
+      "working": "Työskentely…",
+      "errorTitle": "Tätä portaalin osaa ei voitu ladata",
+      "errorBody": "Yritä uudelleen. Jos ongelma jatkuu, ota yhteyttä SDK:ään käyttämällä käyttämääsi sivua.",
+      "tryAgain": "Yritä uudelleen"
+    }
+  }
+}

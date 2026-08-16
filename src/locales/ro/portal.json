@@ -1,0 +1,104 @@
+{
+  "portal": {
+    "nav": {
+      "dashboard": "Tabloul de bord",
+      "requests": "Cereri de servicii",
+      "operations": "Operațiuni de solicitare",
+      "logout": "Deconectați-vă",
+      "clientArea": "Portalul clientului",
+      "staffArea": "SDK spațiu de lucru"
+    },
+    "dashboard": {
+      "eyebrow": "Tabloul de bord client",
+      "title": "Lucrarea care necesită atenția ta.",
+      "intro": "Răspunde la întrebări deschise, urmărește munca activă și vezi ce se așteaptă în continuare.",
+      "attention": "Are nevoie de atenția ta",
+      "activeWork": "Munca activa",
+      "openRequests": "Cereri deschise",
+      "invoices": "Rezumatul facturii",
+      "recentActivity": "Activitate recentă",
+      "next": "Ce se întâmplă în continuare",
+      "noAttention": "Nimic nu te așteaptă acum.",
+      "noProjects": "Niciun proiect activ încă.",
+      "noRequests": "Fără cereri deschise.",
+      "noInvoices": "Fără facturi trimise sau restante.",
+      "noActivity": "Nicio activitate de solicitare încă.",
+      "newRequest": "Creați o cerere de serviciu",
+      "viewRequests": "Vezi toate cererile",
+      "informationNeeded": "SDK așteaptă mai multe informații.",
+      "overdueInvoice": "O factură este restante.",
+      "overdue": "Întârziat",
+      "nextDefault": "Creați o solicitare atunci când aveți o problemă, o constrângere sau un proiect de discutat."
+    },
+    "requests": {
+      "eyebrow": "Cereri de servicii",
+      "title": "Aduceți problema și contextul.",
+      "intro": "Salvați o versiune nefinalizată, examinați detaliile și trimiteți-l când cererea este gata pentru SDK.",
+      "new": "Cerere nouă",
+      "emptyTitle": "Nu există încă solicitări de servicii",
+      "emptyBody": "Creați o solicitare pentru a începe o conversație structurată cu SDK.",
+      "details": "Solicitați detalii",
+      "conversation": "Conversație",
+      "noMessages": "Încă nu există mesaje.",
+      "history": "Istoricul activității",
+      "reply": "Trimiteți informații",
+      "accept": "Acceptă propunerea",
+      "editAndSubmit": "Editați și trimiteți",
+      "converted": "Convertit în proiect",
+      "createdBy": "Creat de {name}",
+      "form": {
+        "title": "Solicitați titlul",
+        "capability": "Capacitate relevantă",
+        "description": "Problemă sau proiect",
+        "businessContext": "Contextul afacerii și al proiectului",
+        "supportingInformation": "Informații de sprijin",
+        "supportingLinks": "Linkuri de suport — o adresă URL HTTP(S) pe linie",
+        "saveDraft": "Salvați schița",
+        "review": "Solicitare de revizuire",
+        "back": "Înapoi la editare",
+        "submit": "Trimiteți cererea",
+        "reviewHeading": "Examinați înainte de a trimite",
+        "working": "Lucrează…"
+      },
+      "capabilities": {
+        "modernization": "Modernizare software",
+        "platforms": "Platforme și integrări backend",
+        "ai-automation": "AI și automatizarea fluxului de lucru",
+        "production-systems": "Cloud și sisteme de producție",
+        "data-interfaces": "Interfețe de date și produse",
+        "other": "Altele sau nu sunt sigur"
+      },
+      "statuses": {
+        "DRAFT": "Ciornă",
+        "SUBMITTED": "Trimis",
+        "IN_REVIEW": "În curs de revizuire",
+        "INFORMATION_REQUIRED": "Informații necesare",
+        "PROPOSAL_READY": "Propunerea gata",
+        "APPROVED": "Acceptat",
+        "REJECTED": "Respins",
+        "CLOSED": "Închis"
+      }
+    },
+    "operations": {
+      "title": "Operațiuni de solicitare",
+      "intro": "Alegeți o companie, revizuiți-i cererile și înregistrați următoarea decizie.",
+      "companies": "Firme active",
+      "none": "Nu sunt disponibile operațiuni de solicitare pentru rolul dvs.",
+      "startReview": "Începeți revizuirea",
+      "requestInformation": "Solicitați informații",
+      "proposalReady": "Marcați propunerea gata",
+      "reject": "Respinge cererea",
+      "response": "Întrebare, răspuns la propunere sau motiv",
+      "convert": "Convertiți în proiect",
+      "projectName": "Numele proiectului",
+      "projectDescription": "Descrierea proiectului"
+    },
+    "states": {
+      "loading": "Se încarcă datele portalului...",
+      "working": "Lucrează…",
+      "errorTitle": "Această parte a portalului nu s-a putut încărca",
+      "errorBody": "Încercați din nou. Dacă problema continuă, contactați SDK cu pagina pe care o utilizați.",
+      "tryAgain": "Încercați din nou"
+    }
+  }
+}

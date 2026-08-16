@@ -1,0 +1,104 @@
+{
+  "portal": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "requests": "Serviceverzoeken",
+      "operations": "Bewerkingen aanvragen",
+      "logout": "Uitloggen",
+      "clientArea": "Klantenportaal",
+      "staffArea": "SDK-werkruimte"
+    },
+    "dashboard": {
+      "eyebrow": "Klantendashboard",
+      "title": "Het werk dat uw aandacht nodig heeft.",
+      "intro": "Reageer op open vragen, volg actief werk en kijk wat er vervolgens wordt verwacht.",
+      "attention": "Heeft uw aandacht nodig",
+      "activeWork": "Actief werk",
+      "openRequests": "Openstaande verzoeken",
+      "invoices": "Factuuroverzicht",
+      "recentActivity": "Recente activiteit",
+      "next": "Wat gebeurt er daarna",
+      "noAttention": "Er staat je momenteel niets te wachten.",
+      "noProjects": "Nog geen actieve projecten.",
+      "noRequests": "Geen openstaande verzoeken.",
+      "noInvoices": "Geen verzonden of achterstallige facturen.",
+      "noActivity": "Nog geen verzoekactiviteit.",
+      "newRequest": "Maak een serviceaanvraag aan",
+      "viewRequests": "Bekijk alle aanvragen",
+      "informationNeeded": "SDK wacht op meer informatie.",
+      "overdueInvoice": "Een factuur is te laat.",
+      "overdue": "Verlopen",
+      "nextDefault": "Maak een verzoek aan als u een probleem, beperking of project wilt bespreken."
+    },
+    "requests": {
+      "eyebrow": "Serviceverzoeken",
+      "title": "Breng het probleem en de context naar voren.",
+      "intro": "Sla een concept op, bekijk de details en verzend deze zodra de aanvraag gereed is voor SDK.",
+      "new": "Nieuw verzoek",
+      "emptyTitle": "Nog geen serviceaanvragen",
+      "emptyBody": "Maak een verzoek aan om een ​​gestructureerd gesprek te starten met SDK.",
+      "details": "Vraag details aan",
+      "conversation": "Gesprek",
+      "noMessages": "Nog geen berichten.",
+      "history": "Activiteitengeschiedenis",
+      "reply": "Informatie verzenden",
+      "accept": "Accepteer voorstel",
+      "editAndSubmit": "Bewerken en verzenden",
+      "converted": "Omgezet naar project",
+      "createdBy": "Gemaakt door {name}",
+      "form": {
+        "title": "Vraag titel aan",
+        "capability": "Relevante capaciteit",
+        "description": "Probleem of project",
+        "businessContext": "Bedrijfs- en projectcontext",
+        "supportingInformation": "Ondersteunende informatie",
+        "supportingLinks": "Ondersteunende links: één HTTP(S)-URL per regel",
+        "saveDraft": "Concept opslaan",
+        "review": "Beoordelingsverzoek",
+        "back": "Terug naar bewerken",
+        "submit": "Verzoek indienen",
+        "reviewHeading": "Beoordeel voordat u het verzendt",
+        "working": "Werken…"
+      },
+      "capabilities": {
+        "modernization": "Modernisering van software",
+        "platforms": "Backendplatforms en integraties",
+        "ai-automation": "AI en workflowautomatisering",
+        "production-systems": "Cloud- en productiesystemen",
+        "data-interfaces": "Data- en productinterfaces",
+        "other": "Anders of niet zeker"
+      },
+      "statuses": {
+        "DRAFT": "Voorlopige versie",
+        "SUBMITTED": "Ingediend",
+        "IN_REVIEW": "Wordt beoordeeld",
+        "INFORMATION_REQUIRED": "Informatie vereist",
+        "PROPOSAL_READY": "Voorstel klaar",
+        "APPROVED": "Geaccepteerd",
+        "REJECTED": "Afgewezen",
+        "CLOSED": "Gesloten"
+      }
+    },
+    "operations": {
+      "title": "Bewerkingen aanvragen",
+      "intro": "Kies een bedrijf, bekijk de verzoeken en noteer de volgende beslissing.",
+      "companies": "Actieve bedrijven",
+      "none": "Er zijn geen aanvraagbewerkingen beschikbaar voor uw rol.",
+      "startReview": "Beoordeling starten",
+      "requestInformation": "Vraag informatie aan",
+      "proposalReady": "Voorstel als gereed markeren",
+      "reject": "Verzoek afwijzen",
+      "response": "Vraag, voorstel, antwoord of reden",
+      "convert": "Converteren naar project",
+      "projectName": "Projectnaam",
+      "projectDescription": "Projectbeschrijving"
+    },
+    "states": {
+      "loading": "Portaalgegevens laden...",
+      "working": "Werken…",
+      "errorTitle": "Dit deel van de portal kan niet worden geladen",
+      "errorBody": "Probeer het opnieuw. Als het probleem zich blijft voordoen, neem dan contact op met SDK via de pagina die u gebruikte.",
+      "tryAgain": "Probeer het opnieuw"
+    }
+  }
+}

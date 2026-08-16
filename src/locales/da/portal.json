@@ -1,0 +1,104 @@
+{
+  "portal": {
+    "nav": {
+      "dashboard": "Dashboard",
+      "requests": "Serviceanmodninger",
+      "operations": "Anmod om operationer",
+      "logout": "Log ud",
+      "clientArea": "Kundeportal",
+      "staffArea": "SDK arbejdsområde"
+    },
+    "dashboard": {
+      "eyebrow": "Klient dashboard",
+      "title": "Det arbejde, der kræver din opmærksomhed.",
+      "intro": "Svar på åbne spørgsmål, følg aktivt arbejde og se, hvad der forventes næste gang.",
+      "attention": "Har brug for din opmærksomhed",
+      "activeWork": "Aktivt arbejde",
+      "openRequests": "Åbne anmodninger",
+      "invoices": "Fakturaoversigt",
+      "recentActivity": "Seneste aktivitet",
+      "next": "Hvad sker der så",
+      "noAttention": "Der er ikke noget, der venter på dig lige nu.",
+      "noProjects": "Ingen aktive projekter endnu.",
+      "noRequests": "Ingen åbne anmodninger.",
+      "noInvoices": "Ingen afsendte eller forfaldne fakturaer.",
+      "noActivity": "Ingen anmodningsaktivitet endnu.",
+      "newRequest": "Opret en serviceanmodning",
+      "viewRequests": "Se alle anmodninger",
+      "informationNeeded": "SDK venter på mere information.",
+      "overdueInvoice": "En faktura er forfalden.",
+      "overdue": "Forfalden",
+      "nextDefault": "Opret en anmodning, når du har et problem, en begrænsning eller et projekt, der skal diskuteres."
+    },
+    "requests": {
+      "eyebrow": "Serviceanmodninger",
+      "title": "Kom med problemet og konteksten.",
+      "intro": "Gem en kladde, gennemgå detaljerne og send, når anmodningen er klar til SDK.",
+      "new": "Ny anmodning",
+      "emptyTitle": "Ingen serviceanmodninger endnu",
+      "emptyBody": "Opret en anmodning om at starte en struktureret samtale med SDK.",
+      "details": "Anmod om detaljer",
+      "conversation": "Samtale",
+      "noMessages": "Ingen beskeder endnu.",
+      "history": "Aktivitetshistorik",
+      "reply": "Send oplysninger",
+      "accept": "Accepter forslaget",
+      "editAndSubmit": "Rediger og indsend",
+      "converted": "Konverteret til projekt",
+      "createdBy": "Skabt af {name}",
+      "form": {
+        "title": "Anmod om titel",
+        "capability": "Relevant evne",
+        "description": "Problem eller projekt",
+        "businessContext": "Forretnings- og projektsammenhæng",
+        "supportingInformation": "Understøttende information",
+        "supportingLinks": "Understøttende links — én HTTP(S) URL pr. linje",
+        "saveDraft": "Gem kladde",
+        "review": "Gennemgå anmodning",
+        "back": "Tilbage til redigering",
+        "submit": "Indsend anmodning",
+        "reviewHeading": "Gennemgå før indsendelse",
+        "working": "Arbejder..."
+      },
+      "capabilities": {
+        "modernization": "Software modernisering",
+        "platforms": "Backend platforme og integrationer",
+        "ai-automation": "AI og workflowautomatisering",
+        "production-systems": "Cloud og produktionssystemer",
+        "data-interfaces": "Data- og produktgrænseflader",
+        "other": "Andet eller ikke sikker"
+      },
+      "statuses": {
+        "DRAFT": "Udkast",
+        "SUBMITTED": "Indsendt",
+        "IN_REVIEW": "Under revision",
+        "INFORMATION_REQUIRED": "Oplysninger påkrævet",
+        "PROPOSAL_READY": "Forslaget klar",
+        "APPROVED": "Accepteret",
+        "REJECTED": "Afvist",
+        "CLOSED": "Lukket"
+      }
+    },
+    "operations": {
+      "title": "Anmod om operationer",
+      "intro": "Vælg en virksomhed, gennemgå dens anmodninger og noter den næste beslutning.",
+      "companies": "Aktive virksomheder",
+      "none": "Ingen anmodningshandlinger er tilgængelige for din rolle.",
+      "startReview": "Start anmeldelse",
+      "requestInformation": "Anmod om oplysninger",
+      "proposalReady": "Markér forslaget klar",
+      "reject": "Afvis anmodning",
+      "response": "Spørgsmål, forslagssvar eller begrundelse",
+      "convert": "Konverter til projekt",
+      "projectName": "Projektnavn",
+      "projectDescription": "Projektbeskrivelse"
+    },
+    "states": {
+      "loading": "Indlæser portaldata...",
+      "working": "Arbejder...",
+      "errorTitle": "Denne del af portalen kunne ikke indlæses",
+      "errorBody": "Prøv igen. Hvis problemet fortsætter, skal du kontakte SDK med den side, du brugte.",
+      "tryAgain": "Prøv igen"
+    }
+  }
+}

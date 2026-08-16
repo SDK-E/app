@@ -1,0 +1,104 @@
+{
+  "portal": {
+    "nav": {
+      "dashboard": "Armaturenbrett",
+      "requests": "Serviceanfragen",
+      "operations": "Vorgänge anfordern",
+      "logout": "Abmelden",
+      "clientArea": "Kundenportal",
+      "staffArea": "SDK-Arbeitsbereich"
+    },
+    "dashboard": {
+      "eyebrow": "Kunden-Dashboard",
+      "title": "Die Arbeit, die Ihre Aufmerksamkeit erfordert.",
+      "intro": "Beantworten Sie offene Fragen, verfolgen Sie die aktive Arbeit und sehen Sie, was als nächstes erwartet wird.",
+      "attention": "Braucht Ihre Aufmerksamkeit",
+      "activeWork": "Aktive Arbeit",
+      "openRequests": "Offene Anfragen",
+      "invoices": "Rechnungszusammenfassung",
+      "recentActivity": "Aktuelle Aktivität",
+      "next": "Was passiert als nächstes?",
+      "noAttention": "Im Moment wartet nichts auf Sie.",
+      "noProjects": "Noch keine aktiven Projekte.",
+      "noRequests": "Keine offenen Anfragen.",
+      "noInvoices": "Keine versendeten oder überfälligen Rechnungen.",
+      "noActivity": "Noch keine Anfrageaktivität.",
+      "newRequest": "Erstellen Sie eine Serviceanfrage",
+      "viewRequests": "Alle Anfragen anzeigen",
+      "informationNeeded": "SDK wartet auf weitere Informationen.",
+      "overdueInvoice": "Eine Rechnung ist überfällig.",
+      "overdue": "Überfällig",
+      "nextDefault": "Erstellen Sie eine Anfrage, wenn Sie ein Problem, eine Einschränkung oder ein Projekt besprechen möchten."
+    },
+    "requests": {
+      "eyebrow": "Serviceanfragen",
+      "title": "Bringen Sie das Problem und den Kontext mit.",
+      "intro": "Speichern Sie einen Entwurf, überprüfen Sie die Details und senden Sie ihn ab, wenn die Anfrage für SDK bereit ist.",
+      "new": "Neue Anfrage",
+      "emptyTitle": "Noch keine Serviceanfragen",
+      "emptyBody": "Erstellen Sie eine Anfrage, um ein strukturiertes Gespräch mit SDK zu beginnen.",
+      "details": "Details anfordern",
+      "conversation": "Gespräch",
+      "noMessages": "Noch keine Nachrichten.",
+      "history": "Aktivitätsverlauf",
+      "reply": "Informationen senden",
+      "accept": "Vorschlag annehmen",
+      "editAndSubmit": "Bearbeiten und abschicken",
+      "converted": "In Projekt umgewandelt",
+      "createdBy": "Erstellt von {name}",
+      "form": {
+        "title": "Titel anfordern",
+        "capability": "Relevante Fähigkeit",
+        "description": "Problem oder Projekt",
+        "businessContext": "Geschäfts- und Projektkontext",
+        "supportingInformation": "Unterstützende Informationen",
+        "supportingLinks": "Unterstützende Links – eine HTTP(S)-URL pro Zeile",
+        "saveDraft": "Entwurf speichern",
+        "review": "Überprüfungsanfrage",
+        "back": "Zurück zur Bearbeitung",
+        "submit": "Anfrage abschicken",
+        "reviewHeading": "Überprüfen Sie es vor dem Absenden",
+        "working": "Arbeiten…"
+      },
+      "capabilities": {
+        "modernization": "Softwaremodernisierung",
+        "platforms": "Backend-Plattformen und Integrationen",
+        "ai-automation": "KI und Workflow-Automatisierung",
+        "production-systems": "Cloud- und Produktionssysteme",
+        "data-interfaces": "Daten- und Produktschnittstellen",
+        "other": "Andere oder nicht sicher"
+      },
+      "statuses": {
+        "DRAFT": "Entwurf",
+        "SUBMITTED": "Eingereicht",
+        "IN_REVIEW": "Wird überprüft",
+        "INFORMATION_REQUIRED": "Informationen erforderlich",
+        "PROPOSAL_READY": "Vorschlag fertig",
+        "APPROVED": "Akzeptiert",
+        "REJECTED": "Abgelehnt",
+        "CLOSED": "Geschlossen"
+      }
+    },
+    "operations": {
+      "title": "Vorgänge anfordern",
+      "intro": "Wählen Sie ein Unternehmen aus, überprüfen Sie seine Anfragen und notieren Sie die nächste Entscheidung.",
+      "companies": "Aktive Unternehmen",
+      "none": "Für Ihre Rolle sind keine Anforderungsvorgänge verfügbar.",
+      "startReview": "Überprüfung starten",
+      "requestInformation": "Informationen anfordern",
+      "proposalReady": "Vorschlag als fertig markieren",
+      "reject": "Anfrage ablehnen",
+      "response": "Frage, Vorschlag, Antwort oder Grund",
+      "convert": "In Projekt konvertieren",
+      "projectName": "Projektname",
+      "projectDescription": "Projektbeschreibung"
+    },
+    "states": {
+      "loading": "Portaldaten werden geladen…",
+      "working": "Arbeiten…",
+      "errorTitle": "Dieser Teil des Portals konnte nicht geladen werden",
+      "errorBody": "Versuchen Sie es erneut. Wenn das Problem weiterhin besteht, wenden Sie sich mit der von Ihnen verwendeten Seite an SDK.",
+      "tryAgain": "Versuchen Sie es erneut"
+    }
+  }
+}

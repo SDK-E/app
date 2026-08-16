@@ -1,0 +1,19 @@
+{
+  "portal": {
+    "nav": { "dashboard": "Dashboard", "requests": "Service requests", "operations": "Request operations", "logout": "Log out", "clientArea": "Client portal", "staffArea": "SDK workspace" },
+    "dashboard": {
+      "eyebrow": "Client dashboard", "title": "The work that needs your attention.", "intro": "Respond to open questions, follow active work and see what is expected next.",
+      "attention": "Needs your attention", "activeWork": "Active work", "openRequests": "Open requests", "invoices": "Invoice summary", "recentActivity": "Recent activity", "next": "What happens next",
+      "noAttention": "Nothing is waiting on you right now.", "noProjects": "No active projects yet.", "noRequests": "No open requests.", "noInvoices": "No sent or overdue invoices.", "noActivity": "No request activity yet.",
+      "newRequest": "Create a service request", "viewRequests": "View all requests", "informationNeeded": "SDK is waiting for more information.", "overdueInvoice": "An invoice is overdue.", "overdue": "Overdue", "nextDefault": "Create a request when you have a problem, constraint or project to discuss."
+    },
+    "requests": {
+      "eyebrow": "Service requests", "title": "Bring the problem and the context.", "intro": "Save a draft, review the details and submit when the request is ready for SDK.", "new": "New request", "emptyTitle": "No service requests yet", "emptyBody": "Create a request to start a structured conversation with SDK.", "details": "Request details", "conversation": "Conversation", "noMessages": "No messages yet.", "history": "Activity history", "reply": "Send information", "accept": "Accept proposal", "editAndSubmit": "Edit and submit", "converted": "Converted to project", "createdBy": "Created by {name}",
+      "form": { "title": "Request title", "capability": "Relevant capability", "description": "Problem or project", "businessContext": "Business and project context", "supportingInformation": "Supporting information", "supportingLinks": "Supporting links — one HTTP(S) URL per line", "saveDraft": "Save draft", "review": "Review request", "back": "Back to editing", "submit": "Submit request", "reviewHeading": "Review before submitting", "working": "Working…" },
+      "capabilities": { "modernization": "Software modernization", "platforms": "Backend platforms and integrations", "ai-automation": "AI and workflow automation", "production-systems": "Cloud and production systems", "data-interfaces": "Data and product interfaces", "other": "Other or not sure" },
+      "statuses": { "DRAFT": "Draft", "SUBMITTED": "Submitted", "IN_REVIEW": "Under review", "INFORMATION_REQUIRED": "Information required", "PROPOSAL_READY": "Proposal ready", "APPROVED": "Accepted", "REJECTED": "Rejected", "CLOSED": "Closed" }
+    },
+    "operations": { "title": "Request operations", "intro": "Choose a company, review its requests and record the next decision.", "companies": "Active companies", "none": "No request operations are available for your role.", "startReview": "Start review", "requestInformation": "Request information", "proposalReady": "Mark proposal ready", "reject": "Reject request", "response": "Question, proposal response or reason", "convert": "Convert to project", "projectName": "Project name", "projectDescription": "Project description" },
+    "states": { "loading": "Loading portal data…", "working": "Working…", "errorTitle": "This part of the portal could not load", "errorBody": "Try again. If the problem continues, contact SDK with the page you were using.", "tryAgain": "Try again" }
+  }
+}

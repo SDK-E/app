@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 
 import type { AssignedPrincipal } from "@/types";
 
@@ -9,9 +10,13 @@ interface AppShellProps {
   principal: AssignedPrincipal;
 }
 
-export function AppShell({ children, locale, principal }: AppShellProps) {
+export async function AppShell({ children, locale, principal }: AppShellProps) {
+  const t = await getTranslations({ locale, namespace: "portal.nav" });
   const context = principal.kind === "client" ? principal.companyName : "SDK Enterprises";
-  const areaLabel = principal.kind === "client" ? "Client portal" : "SDK workspace";
+  const areaLabel = principal.kind === "client" ? t("clientArea") : t("staffArea");
+  const links = principal.kind === "client"
+    ? [{ href: `/${locale}/app`, label: t("dashboard") }, { href: `/${locale}/app/requests`, label: t("requests") }]
+    : [{ href: `/${locale}/app`, label: t("operations") }];
 
   return (
     <div className="min-h-screen bg-background text-foreground lg:grid lg:grid-cols-[260px_1fr]">
@@ -30,12 +35,9 @@ export function AppShell({ children, locale, principal }: AppShellProps) {
           </span>
         </div>
         <nav aria-label="Application" className="border-t border-[#2d4b28] px-3 py-3 lg:px-4">
-          <Link
-            href={`/${locale}/app`}
-            className="block rounded-nav bg-brand px-4 py-3 text-label font-extrabold uppercase tracking-eyebrow text-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-          >
-            Portal home
-          </Link>
+          <div className="flex gap-2 overflow-x-auto lg:block lg:space-y-2">
+            {links.map((link) => <Link key={link.href} href={link.href} className="block min-h-11 whitespace-nowrap rounded-nav px-4 py-3 text-label font-extrabold uppercase tracking-eyebrow text-light transition-colors hover:bg-[#2d4b28] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">{link.label}</Link>)}
+          </div>
         </nav>
       </aside>
 
@@ -49,7 +51,7 @@ export function AppShell({ children, locale, principal }: AppShellProps) {
             href="/auth/logout"
             className="rounded-control border border-dark px-4 py-3 text-label font-extrabold uppercase tracking-eyebrow transition-colors hover:bg-dark hover:text-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark"
           >
-            Log out
+            {t("logout")}
           </Link>
         </header>
         <main className="px-6 py-12 lg:px-10 lg:py-16">{children}</main>
