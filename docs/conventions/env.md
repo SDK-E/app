@@ -46,7 +46,7 @@ Local development uses a local Prisma dev server — never the production databa
 Start the local Postgres server (detached, runs in the background):
 
 ```bash
-npx prisma dev --detach -n sdk-app -P 5432
+npx prisma dev --detach -n app -P 5432
 ```
 
 Check the running server and its actual DB port (it may not be `5432` if the port
@@ -64,22 +64,22 @@ npx prisma dev stop      # stop the current project's server
 npx prisma dev start     # restart a stopped server
 ```
 
-Then create the `sdkapp` database on that server (once):
+Then create the `app` database on that server (once):
 
 ```bash
 DATABASE_URL="<tcp URL from prisma dev ls>" npx prisma db execute --stdin <<'SQL'
-CREATE DATABASE sdkapp;
+CREATE DATABASE app;
 SQL
 ```
 
 Create a `.env.local` in the project root with the required values. Point all
-three database variables at the local server and the `sdkapp` database — replace
+three database variables at the local server and the `app` database — replace
 `<port>` with the value from `npx prisma dev ls`:
 
 ```bash
-DATABASE_URL=postgres://postgres:postgres@localhost:<port>/sdkapp?sslmode=disable
-POSTGRES_URL=postgres://postgres:postgres@localhost:<port>/sdkapp?sslmode=disable
-PRISMA_DATABASE_URL=postgres://postgres:postgres@localhost:<port>/sdkapp?sslmode=disable
+DATABASE_URL=postgres://postgres:postgres@localhost:<port>/app?sslmode=disable
+POSTGRES_URL=postgres://postgres:postgres@localhost:<port>/app?sslmode=disable
+PRISMA_DATABASE_URL=postgres://postgres:postgres@localhost:<port>/app?sslmode=disable
 AUTH0_SECRET=replace-with-openssl-rand-hex-32
 AUTH0_ISSUER_BASE_URL=https://dev-xxx.us.auth0.com
 AUTH0_BASE_URL=http://localhost:3000
