@@ -31,9 +31,14 @@ Do not assume versions — the exact stack is:
 - One component per file; named exports for shared components, default exports for routes.
 - Route dirs `kebab-case`; reserved route files only (`page.tsx`, `layout.tsx`, ...).
 - Import order: builtin → external → internal `@/` → relative.
+- The dedicated Read tool (not `cat`, `sed`, `head`, `tail`, `awk`, or `echo`)
+  for reading file contents — enforce this in every agent session.
 
-**Do NOT:**
+**Do NOT Use:**
 
+- `cat`, `sed`, `head`, `tail`, `awk`, `echo`, or `grep -r` to read file
+  contents. Always use the dedicated Read and Grep/Glob tools instead — in
+  every agent session.
 - Invent file paths or helper functions — verify they exist with grep/glob first.
 - Assume unstated requirements or context (team size, sharing needs, deployment
   targets, who will use the code). Ask the user instead of building for a
