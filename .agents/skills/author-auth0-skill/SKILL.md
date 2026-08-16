@@ -44,13 +44,13 @@ and [`docs/architecture.md`](../../../docs/architecture.md).
 
 ## Step 0 — Classify the contribution
 
-| What you're adding | Prefix | Router edits |
-|---|---|---|
+| What you're adding                 | Prefix              | Router edits                                        |
+| ---------------------------------- | ------------------- | --------------------------------------------------- |
 | A single SDK/framework integration | `framework-<name>/` | Step 2 all 3 tiers (+ variant row if web/API split) |
-| A capability spanning frameworks | `feature-<name>/` | Step 1 intent row + Step 4 load block |
-| A provisioning tool | `tooling-<name>/` | Step 3 tooling table |
-| Cross-cutting guidance | `pattern-<name>/` | Step 4 load block(s) referencing it |
-| Editing an existing reference | (n/a) | Usually none — re-check the depth-3 tree rules |
+| A capability spanning frameworks   | `feature-<name>/`   | Step 1 intent row + Step 4 load block               |
+| A provisioning tool                | `tooling-<name>/`   | Step 3 tooling table                                |
+| Cross-cutting guidance             | `pattern-<name>/`   | Step 4 load block(s) referencing it                 |
+| Editing an existing reference      | (n/a)               | Usually none — re-check the depth-3 tree rules      |
 
 Then follow the matching path below.
 
@@ -89,21 +89,21 @@ Then follow the matching path below.
    heading is Markdown (`### feature:passwordless`); the `Read:` lines sit inside
    a fenced block beneath it, matching the existing Step 4 blocks:
 
-   ~~~
+   ````
    ### feature:passwordless
    ```
    Read: references/feature-passwordless/index.md
    Read: references/tooling-{tooling}/index.md
    If framework detected: Read references/framework-{framework}/index.md
    ```
-   ~~~
+   ````
 
 ## Path C — New tooling or pattern reference
 
 - **Tooling:** create
   `plugins/auth0/skills/auth0/references/tooling-<slug>/index.md`, then add a
   row to the Step 3 table. Backtick the value exactly as the existing rows do
-  (`` | <project signal> | `tooling-<slug>/index.md` | ``) — reachability picks
+  (``| <project signal> | `tooling-<slug>/index.md` |``) — reachability picks
   up tooling references only via their backticked group name, so an
   unbackticked value leaves the reference unreachable. Note
   `validate-skill.sh` hardcodes `cli mcp terraform` — a genuinely new tooling
@@ -190,6 +190,7 @@ uvx skillsaw --strict
 ```
 
 What each catches:
+
 - unreachable reference, orphaned leaf, or a link that breaks the depth-3 tree
   (sideways/cross-group/second-hop-from-a-sink) → `check_router_reachability.py`
 - a routing decision that doesn't match `evals/routing-cases.json` →

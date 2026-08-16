@@ -13,10 +13,6 @@
       "type": "local",
       "command": ["npx", "-y", "@playwright/mcp@0.0.79", "--browser", "chromium"]
     },
-    "postgres": {
-      "type": "local",
-      "command": ["npx", "-y", "@microsoft/postgres-mcp@0.1.0-rc.6", "run"]
-    },
     "prisma": {
       "type": "local",
       "command": ["npx", "prisma", "mcp"]
@@ -42,6 +38,14 @@
       "path": "docs",
       "description": "Project docs: conventions (structure, env), architecture, ADRs, design system (design/), content standards + claims rules (content/). Consult before writing code or copy."
     }
+  },
+  "compaction": {
+    "auto": true,
+    "tail_turns": 15
+  },
+  "tool_output": {
+    "max_lines": 200,
+    "max_bytes": 8192
   },
   "command": {
     "typecheck": {

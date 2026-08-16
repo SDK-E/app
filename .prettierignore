@@ -1,0 +1,22 @@
+# dependencies
+node_modules
+
+# build output
+.next
+out
+build
+
+# generated
+src/generated/prisma
+
+# misc
+.DS_Store
+coverage
+
+# env
+.env
+.env.local
+.env.*.local
+
+# lockfile formatting (npm-owned)
+package-lock.json

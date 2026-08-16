@@ -111,7 +111,7 @@ Guidelines:
 
 ## 6. Verify a send
 
-- **Dev (sink):** start `npm run mail:wait "New project enquiry"` *before*
+- **Dev (sink):** start `npm run mail:wait "New project enquiry"` _before_
   submitting the form; the command exits with the full message once the email
   lands. Or call the `maildev` MCP `wait_for_email` tool the same way. For an
   already-received message use `npm run mail:list` / `npm run mail:read -- <id>`.

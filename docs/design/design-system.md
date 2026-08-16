@@ -32,21 +32,21 @@ address, phone, email. See `docs/content/voice-and-standards.md`.
 
 ## 2. Palette
 
-| Token | Hex | Usage |
-|---|---|---|
-| `dark` | `#082003` | Primary text on light; dark section backgrounds; strong buttons |
-| `brand` | `#2cdb16` | Primary actions (background); highlights on dark (text); active nav |
-| `light` | `#d7e8d3` | Page background; primary text on dark surfaces |
-| `paper` | `#f8fbf7` | Card/surface background on light pages |
-| `muted` | `#536b4f` | Secondary/tertiary text on light surfaces (AA ≥ 4.5:1); rendered as `text-muted-foreground` |
-| `fog` | `#abc4a6` | Secondary text on dark surfaces |
-| `line` | `#9db497` | Thin borders and separators on light surfaces |
-| `background` | `#d7e8d3` | Alias for page background (`bg-background`) |
-| `foreground` | `#082003` | Alias for primary text (`text-foreground`) |
+| Token        | Hex       | Usage                                                                                       |
+| ------------ | --------- | ------------------------------------------------------------------------------------------- |
+| `dark`       | `#082003` | Primary text on light; dark section backgrounds; strong buttons                             |
+| `brand`      | `#2cdb16` | Primary actions (background); highlights on dark (text); active nav                         |
+| `light`      | `#d7e8d3` | Page background; primary text on dark surfaces                                              |
+| `paper`      | `#f8fbf7` | Card/surface background on light pages                                                      |
+| `muted`      | `#536b4f` | Secondary/tertiary text on light surfaces (AA ≥ 4.5:1); rendered as `text-muted-foreground` |
+| `fog`        | `#abc4a6` | Secondary text on dark surfaces                                                             |
+| `line`       | `#9db497` | Thin borders and separators on light surfaces                                               |
+| `background` | `#d7e8d3` | Alias for page background (`bg-background`)                                                 |
+| `foreground` | `#082003` | Alias for primary text (`text-foreground`)                                                  |
 
 The shadcn semantic variables (`--muted`, `--accent`, `--border`, `--input`,
 `--ring`, …) in `src/app/globals.css` derive from this palette. Note that
-shadcn's `muted` and `accent` utilities are *surface* tones (subtle hover
+shadcn's `muted` and `accent` utilities are _surface_ tones (subtle hover
 backgrounds); the `#536b4f` text color is `text-muted-foreground`. The brand
 green is a plain theme token (`bg-brand`), not shadcn's `accent`.
 
@@ -75,16 +75,16 @@ Loaded via `next/font/google` as `--font-jetbrains`; both `--font-sans` and
 Sizes are tokenized in `src/app/globals.css` (`--text-*`). Use the tokens, do
 not invent new sizes.
 
-| Token | Size | Line-height | Tracking | Use |
-|---|---|---|---|---|
-| `display` | 76px | 0.95 | -0.065em | Landing hero headline |
-| `title` | 52px | 1 | -0.05em | Section headings |
-| `h1` | 42px | 1.04 | -0.045em | Portal page headings |
-| `h3` | 23px | 1.12 | normal | Card/block titles |
-| `lead` | 18px | 1.7 | normal | Hero lead paragraph |
-| `body` | 14px | 1.7 | normal | Base body copy |
-| `label` | 11px | 1 | +0.14em | Eyebrows, nav, buttons, table heads |
-| `micro` | 10px | 1 | +0.11em | Meta, captions, tags |
+| Token     | Size | Line-height | Tracking | Use                                 |
+| --------- | ---- | ----------- | -------- | ----------------------------------- |
+| `display` | 76px | 0.95        | -0.065em | Landing hero headline               |
+| `title`   | 52px | 1           | -0.05em  | Section headings                    |
+| `h1`      | 42px | 1.04        | -0.045em | Portal page headings                |
+| `h3`      | 23px | 1.12        | normal   | Card/block titles                   |
+| `lead`    | 18px | 1.7         | normal   | Hero lead paragraph                 |
+| `body`    | 14px | 1.7         | normal   | Base body copy                      |
+| `label`   | 11px | 1           | +0.14em  | Eyebrows, nav, buttons, table heads |
+| `micro`   | 10px | 1           | +0.11em  | Meta, captions, tags                |
 
 ### 3.2 Typography rules
 
@@ -115,12 +115,12 @@ not invent new sizes.
 
 ## 5. Radii & borders
 
-| Token | Value | Use |
-|---|---|---|
-| `rounded-card` | 10px | Cards, panels, contact box |
-| `rounded-control` | 8px | Buttons, inputs |
-| `rounded-nav` | 7px | Nav items, sidebar links |
-| `rounded-full` | 999px | Tags/pills only |
+| Token             | Value | Use                        |
+| ----------------- | ----- | -------------------------- |
+| `rounded-card`    | 10px  | Cards, panels, contact box |
+| `rounded-control` | 8px   | Buttons, inputs            |
+| `rounded-nav`     | 7px   | Nav items, sidebar links   |
+| `rounded-full`    | 999px | Tags/pills only            |
 
 - Limited, consistent radius. Never randomly larger radii.
 - All borders are `1px`, using `line` (light) or `#2d4b28` (dark).
@@ -132,11 +132,11 @@ not invent new sizes.
 Three section tones, used to create light/dark composition and purposeful
 variation:
 
-| Tone | Background | Text | Secondary text |
-|---|---|---|---|
-| `light` (default) | `light` | `dark` | `muted-foreground` |
-| `dark` | `dark` | `light` | `fog` |
-| `brand` | `brand` | `dark` | `dark` |
+| Tone              | Background | Text    | Secondary text     |
+| ----------------- | ---------- | ------- | ------------------ |
+| `light` (default) | `light`    | `dark`  | `muted-foreground` |
+| `dark`            | `dark`     | `light` | `fog`              |
+| `brand`           | `brand`    | `dark`  | `dark`             |
 
 - **One brand section per page at most** (e.g. the contact band).
 - Cards sit on `paper` with a `line` border — on the `light` page background
@@ -151,15 +151,15 @@ Defined and implemented in `src/components/ui` (interactive/feedback) and
 `src/components/layout` (structure). See `docs/design/patterns.md` for states
 (loading, empty, error, focus).
 
-| Component | Definition |
-|---|---|
-| `Button` | 11px, 800 weight, uppercase; primary = `bg-brand text-dark`, outline = `border border-dark`, dark = `bg-dark text-light`; radius `rounded-control`; padding `14px 18px`; focus ring visible |
-| `Badge` | Status chip: `live` (green bg / dark text), `review` (dark border), `neutral` (line border); radius `rounded-control`; 9px, 800 weight, uppercase |
-| `Card` | `bg-paper border border-line rounded-card`; padding `24px` (page cards), `17px` (portal panels) |
-| `Tag` | Pill (`rounded-full`), 9px, thin `line` border |
-| `ArrowLink` | 9–11px inline link with `→` suffix, used for "View all →" affordances |
-| `Header` | Approved logo asset (`public/brand/sdk-logo-light.png` — dark wordmark + `#2cdb16` period on `--color-light`; never re-typed); 11px uppercase nav links; CTA button; mobile collapse |
-| `Container` / `Section` / `SectionHeader` | Structural primitives per §4 and §6 |
+| Component                                 | Definition                                                                                                                                                                                  |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Button`                                  | 11px, 800 weight, uppercase; primary = `bg-brand text-dark`, outline = `border border-dark`, dark = `bg-dark text-light`; radius `rounded-control`; padding `14px 18px`; focus ring visible |
+| `Badge`                                   | Status chip: `live` (green bg / dark text), `review` (dark border), `neutral` (line border); radius `rounded-control`; 9px, 800 weight, uppercase                                           |
+| `Card`                                    | `bg-paper border border-line rounded-card`; padding `24px` (page cards), `17px` (portal panels)                                                                                             |
+| `Tag`                                     | Pill (`rounded-full`), 9px, thin `line` border                                                                                                                                              |
+| `ArrowLink`                               | 9–11px inline link with `→` suffix, used for "View all →" affordances                                                                                                                       |
+| `Header`                                  | Approved logo asset (`public/brand/sdk-logo-light.png` — dark wordmark + `#2cdb16` period on `--color-light`; never re-typed); 11px uppercase nav links; CTA button; mobile collapse        |
+| `Container` / `Section` / `SectionHeader` | Structural primitives per §4 and §6                                                                                                                                                         |
 
 ## 8. Motion
 

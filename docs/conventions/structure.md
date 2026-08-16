@@ -68,17 +68,17 @@ maps to `./src/*`.
 
 ### Where does code go?
 
-| Kind of code | Location | Alias |
-|---|---|---|
-| Routes, layouts, pages | `src/app/**` | `@/app/**` |
-| Shared UI components | `src/components/**` | `@/components/**` |
-| Data access, server utils | `src/lib/**` | `@/lib/**` |
-| React hooks | `src/hooks/**` | `@/hooks/**` |
-| Shared types/schemas | `src/types/**` | `@/types/**` |
-| Prisma schema & migrations | `prisma/**` | — |
-| Dev tooling (mail sink, CLI, MCP) | `scripts/**` | — |
-| E2E tests | `tests/**` | — |
-| Static assets (images, fonts) | `public/**` | `/...` |
+| Kind of code                      | Location            | Alias             |
+| --------------------------------- | ------------------- | ----------------- |
+| Routes, layouts, pages            | `src/app/**`        | `@/app/**`        |
+| Shared UI components              | `src/components/**` | `@/components/**` |
+| Data access, server utils         | `src/lib/**`        | `@/lib/**`        |
+| React hooks                       | `src/hooks/**`      | `@/hooks/**`      |
+| Shared types/schemas              | `src/types/**`      | `@/types/**`      |
+| Prisma schema & migrations        | `prisma/**`         | —                 |
+| Dev tooling (mail sink, CLI, MCP) | `scripts/**`        | —                 |
+| E2E tests                         | `tests/**`          | —                 |
+| Static assets (images, fonts)     | `public/**`         | `/...`            |
 
 ### Rules
 
@@ -96,17 +96,17 @@ maps to `./src/*`.
 
 ### Files & directories
 
-| Type | Convention | Example |
-|---|---|---|
-| Page/route directories | `kebab-case` | `src/app/checkout/` |
-| Components (React) | `PascalCase.tsx` | `Button.tsx`, `UserProfile.tsx` |
-| Hooks | `useX` camelCase | `useAuth.ts` |
-| Utilities / modules | camelCase | `utils.ts`, `formatCurrency.ts` |
-| Constants | camelCase (`.ts`) | `siteConfig.ts` |
-| Types | `PascalCase` | `User.ts`, `Session.ts` |
-| Styles | camelCase `.css` | `globals.css` |
-| Test files | `*.test.ts(x)` / `*.spec.ts` | `utils.test.ts`, `checkout.spec.ts` |
-| Env docs | `docs/conventions/env.md` | — |
+| Type                   | Convention                   | Example                             |
+| ---------------------- | ---------------------------- | ----------------------------------- |
+| Page/route directories | `kebab-case`                 | `src/app/checkout/`                 |
+| Components (React)     | `PascalCase.tsx`             | `Button.tsx`, `UserProfile.tsx`     |
+| Hooks                  | `useX` camelCase             | `useAuth.ts`                        |
+| Utilities / modules    | camelCase                    | `utils.ts`, `formatCurrency.ts`     |
+| Constants              | camelCase (`.ts`)            | `siteConfig.ts`                     |
+| Types                  | `PascalCase`                 | `User.ts`, `Session.ts`             |
+| Styles                 | camelCase `.css`             | `globals.css`                       |
+| Test files             | `*.test.ts(x)` / `*.spec.ts` | `utils.test.ts`, `checkout.spec.ts` |
+| Env docs               | `docs/conventions/env.md`    | —                                   |
 
 ### Components
 
@@ -157,17 +157,17 @@ docs(structure): document directory conventions
 
 ### Allowed types
 
-| Type | Use for |
-|---|---|
-| `feat` | New user-facing or API feature |
-| `fix` | Bug fix |
+| Type       | Use for                                                 |
+| ---------- | ------------------------------------------------------- |
+| `feat`     | New user-facing or API feature                          |
+| `fix`      | Bug fix                                                 |
 | `refactor` | Code change that neither fixes a bug nor adds a feature |
-| `test` | Adding/fixing tests |
-| `docs` | Documentation only |
-| `chore` | Tooling, deps, config, housekeeping |
-| `build` | Build system / dependency changes |
-| `perf` | Performance improvement |
-| `style` | Formatting, whitespace (no logic change) |
+| `test`     | Adding/fixing tests                                     |
+| `docs`     | Documentation only                                      |
+| `chore`    | Tooling, deps, config, housekeeping                     |
+| `build`    | Build system / dependency changes                       |
+| `perf`     | Performance improvement                                 |
+| `style`    | Formatting, whitespace (no logic change)                |
 
 ### Rules
 
@@ -185,6 +185,14 @@ docs(structure): document directory conventions
   explicitly justified with a comment.
 - TypeScript `strict: true` is enabled — do not disable it.
 - Import order: builtin → external → internal `@/` → relative.
+- Prettier (devDependency, `.prettierrc.json`, `printWidth: 100`) handles
+  mechanical formatting — wrapping long calls, consistent whitespace. Run
+  `npm run format` on the files you touch. Do not reformat unrelated files in
+  the same change.
+- Structure is the author's job, not the formatter's: one concern per file,
+  ~200-line soft cap, domain folders with `index.ts` barrels, and a blank line
+  between logical steps (see AGENTS.md "Coding standards"). Prettier collapses
+  blank lines but does not add them where a block boundary is missing.
 
 ## 5. Development Commands
 

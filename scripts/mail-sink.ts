@@ -34,7 +34,7 @@ smtp.bind((_recipient, id, email) => {
   };
   messages.push(message);
   console.log(
-    `mail sink: received #${id} — ${subject} (from ${message.sender} to ${message.receivers.join(", ")})`,
+    `mail sink: received #${id} — ${subject} (from ${message.sender} to ${message.receivers.join(", ")})`
   );
 });
 
@@ -60,7 +60,12 @@ const httpServer = createServer((req: IncomingMessage, res: ServerResponse) => {
   const { pathname } = url;
 
   if (req.method === "GET" && pathname === "/api/health") {
-    sendJson(res, 200, { ok: true, smtpPort: SMTP_PORT, httpUrl: `http://localhost:${HTTP_PORT}`, messageCount: messages.length });
+    sendJson(res, 200, {
+      ok: true,
+      smtpPort: SMTP_PORT,
+      httpUrl: `http://localhost:${HTTP_PORT}`,
+      messageCount: messages.length,
+    });
     return;
   }
 

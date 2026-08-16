@@ -9,11 +9,11 @@ accidental data leakage or corruption.
 Environments are distinguished by `NODE_ENV` and by separate database
 connections. These two signals must always agree; never rely on one alone.
 
-| Signal | Development | Production |
-|---|---|---|
-| `NODE_ENV` | `development` | `production` |
-| `DATABASE_URL` | Local/dev database (e.g. SQLite file or local Postgres) | Production database (e.g. managed Postgres) |
-| `.env` file | `.env` or `.env.local` (gitignored) | `.env` (injected by platform secret manager) |
+| Signal         | Development                                             | Production                                   |
+| -------------- | ------------------------------------------------------- | -------------------------------------------- |
+| `NODE_ENV`     | `development`                                           | `production`                                 |
+| `DATABASE_URL` | Local/dev database (e.g. SQLite file or local Postgres) | Production database (e.g. managed Postgres)  |
+| `.env` file    | `.env` or `.env.local` (gitignored)                     | `.env` (injected by platform secret manager) |
 
 ### Env var access
 
@@ -54,6 +54,7 @@ requests, projects, milestones, documents, messages, and invoices for
 development and testing.
 
 All seed data must be:
+
 - Clearly labeled as synthetic (e.g., email domains like `@example.com`,
   company names like `Acme Corp (Dev)`).
 - Realistic in shape but not derived from real users or companies.
@@ -77,13 +78,13 @@ any requests.
 
 ### Required production variables
 
-| Variable | Purpose | Failure behavior |
-|---|---|---|
-| `DATABASE_URL` | Database connection string | App exits with clear error: `DATABASE_URL is required in production` |
-| `AUTH0_SECRET` | Session encryption secret | App exits with clear error: `AUTH0_SECRET is required in production` |
-| `AUTH0_ISSUER_BASE_URL` | Auth0 tenant issuer | App exits with clear error: `AUTH0_ISSUER_BASE_URL is required in production` |
-| `AUTH0_BASE_URL` | Application base URL | App exits with clear error: `AUTH0_BASE_URL is required in production` |
-| `NODE_ENV` | Environment mode | App exits with clear error: `NODE_ENV must be 'production' in production` |
+| Variable                | Purpose                    | Failure behavior                                                              |
+| ----------------------- | -------------------------- | ----------------------------------------------------------------------------- |
+| `DATABASE_URL`          | Database connection string | App exits with clear error: `DATABASE_URL is required in production`          |
+| `AUTH0_SECRET`          | Session encryption secret  | App exits with clear error: `AUTH0_SECRET is required in production`          |
+| `AUTH0_ISSUER_BASE_URL` | Auth0 tenant issuer        | App exits with clear error: `AUTH0_ISSUER_BASE_URL is required in production` |
+| `AUTH0_BASE_URL`        | Application base URL       | App exits with clear error: `AUTH0_BASE_URL is required in production`        |
+| `NODE_ENV`              | Environment mode           | App exits with clear error: `NODE_ENV must be 'production' in production`     |
 
 ### Validation behavior
 
@@ -97,10 +98,10 @@ any requests.
 Each environment connects to its own database. Connection strings are never
 shared between environments.
 
-| Environment | Isolation method |
-|---|---|
-| Development | Local file (`file:./dev.db`) or local Docker Postgres |
-| Production | Managed production database, access restricted to application runtime |
+| Environment | Isolation method                                                      |
+| ----------- | --------------------------------------------------------------------- |
+| Development | Local file (`file:./dev.db`) or local Docker Postgres                 |
+| Production  | Managed production database, access restricted to application runtime |
 
 ### Migration safety
 
@@ -113,14 +114,14 @@ shared between environments.
 
 ## 6. Safety Rules Summary
 
-| Rule | Enforcement mechanism |
-|---|---|
-| Never seed production | Seed script checks `NODE_ENV !== 'production'` and refuses to run |
-| No fake sensitive data in production | Code review gate; production insert paths require explicit `allowWrite` |
-| No fallbacks to dev defaults | `src/lib/env.ts` throws on missing production vars |
-| Separate databases per environment | Separate `DATABASE_URL` per environment; never hardcode connection strings |
-| Real data only in production | Policy enforced by review and runtime guards |
-| Missing production config fails clearly | Startup validation with descriptive error messages |
+| Rule                                    | Enforcement mechanism                                                      |
+| --------------------------------------- | -------------------------------------------------------------------------- |
+| Never seed production                   | Seed script checks `NODE_ENV !== 'production'` and refuses to run          |
+| No fake sensitive data in production    | Code review gate; production insert paths require explicit `allowWrite`    |
+| No fallbacks to dev defaults            | `src/lib/env.ts` throws on missing production vars                         |
+| Separate databases per environment      | Separate `DATABASE_URL` per environment; never hardcode connection strings |
+| Real data only in production            | Policy enforced by review and runtime guards                               |
+| Missing production config fails clearly | Startup validation with descriptive error messages                         |
 
 ## 7. Open Questions
 

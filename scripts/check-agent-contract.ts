@@ -54,7 +54,15 @@ for (const [name, command] of Object.entries(canonicalMcp)) {
 
 const packageJson = readJson("package.json");
 const scripts = packageJson.scripts as Record<string, string>;
-for (const required of ["agents:check", "typecheck", "lint", "test:run", "i18n:check", "build", "verify"]) {
+for (const required of [
+  "agents:check",
+  "typecheck",
+  "lint",
+  "test:run",
+  "i18n:check",
+  "build",
+  "verify",
+]) {
   if (!scripts[required]) fail(`package.json is missing the ${required} script`);
 }
 

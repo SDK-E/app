@@ -28,11 +28,11 @@ surfaces, components). Rendered on `/design-system`.
 
 ## 4. Statuses
 
-| Status | Badge tone | Meaning |
-|---|---|---|
-| `live` / in progress / on track | `bg-brand text-dark` | Active, healthy |
-| `review` / needs attention | dark outline | Human review required |
-| `neutral` / pending | `line` border, `muted-foreground` text | Waiting, not actionable yet |
+| Status                          | Badge tone                             | Meaning                     |
+| ------------------------------- | -------------------------------------- | --------------------------- |
+| `live` / in progress / on track | `bg-brand text-dark`                   | Active, healthy             |
+| `review` / needs attention      | dark outline                           | Human review required       |
+| `neutral` / pending             | `line` border, `muted-foreground` text | Waiting, not actionable yet |
 
 - On dark surfaces use the `live` tone as-is and switch `review`/`neutral`
   borders to `#2d4b28` with `light` text.

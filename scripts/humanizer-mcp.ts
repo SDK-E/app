@@ -65,11 +65,7 @@ function fencedBlocks(text: string): string[] {
     } else if (open && fence) {
       const marker = fence[1];
       const remainder = fence[2];
-      if (
-        marker[0] === open.character &&
-        marker.length >= open.length &&
-        remainder.trim() === ""
-      ) {
+      if (marker[0] === open.character && marker.length >= open.length && remainder.trim() === "") {
         blocks.push(text.slice(open.start, offset + lineWithEnding.length));
         open = undefined;
       }
@@ -87,7 +83,9 @@ export function protectedValues(text: string, explicit: string[] = []): string[]
   const values = [...explicit, ...fencedBlocks(text)];
   patterns.forEach((pattern, index) => {
     const matches = text.match(pattern) ?? [];
-    values.push(...(index === 0 ? matches.map((value) => value.replace(/[.,;:!?]+$/u, "")) : matches));
+    values.push(
+      ...(index === 0 ? matches.map((value) => value.replace(/[.,;:!?]+$/u, "")) : matches)
+    );
   });
   return [...new Set(values.filter(Boolean))];
 }
@@ -95,14 +93,17 @@ export function protectedValues(text: string, explicit: string[] = []): string[]
 export function changedProtectedValues(
   original: string,
   rewritten: string,
-  explicit: string[] = [],
+  explicit: string[] = []
 ): string[] {
   return protectedValues(original, explicit).filter(
-    (value) => original.split(value).length !== rewritten.split(value).length,
+    (value) => original.split(value).length !== rewritten.split(value).length
   );
 }
 
-function protect(text: string, terms: string[]): { masked: string; restore: (value: string) => string } {
+function protect(
+  text: string,
+  terms: string[]
+): { masked: string; restore: (value: string) => string } {
   const replacements = [...terms].sort((left, right) => right.length - left.length);
   let masked = text;
   const tokens = new Map<string, string>();
@@ -130,14 +131,14 @@ function tidyParagraph(paragraph: string): string {
     .trim();
   return tidied.replace(
     /(^|[.!?]\s+)([a-z])/gu,
-    (_match, boundary: string, letter: string) => `${boundary}${letter.toUpperCase()}`,
+    (_match, boundary: string, letter: string) => `${boundary}${letter.toUpperCase()}`
   );
 }
 
 export function humanizeLocally(
   text: string,
   intensity: "light" | "standard" = "standard",
-  explicit: string[] = [],
+  explicit: string[] = []
 ): string {
   const guarded = protect(text, protectedValues(text, explicit));
   const edits = intensity === "light" ? lightEdits : [...lightEdits, ...standardEdits];
@@ -153,7 +154,7 @@ export function humanizeLocally(
 function humanizeChecked(
   text: string,
   intensity: "light" | "standard",
-  protectedTerms: string[],
+  protectedTerms: string[]
 ): { text: string; changed: string[] } {
   const rewritten = humanizeLocally(text, intensity, protectedTerms);
   return {
@@ -215,7 +216,7 @@ server.registerTool(
         isError: true,
       };
     }
-  },
+  }
 );
 
 server.registerTool(
@@ -242,7 +243,12 @@ server.registerTool(
         results.push(humanizeChecked(text, intensity, protected_terms));
       } catch (error) {
         return {
-          content: [{ type: "text" as const, text: `Item ${index} rejected. ${processingError("text", error)}` }],
+          content: [
+            {
+              type: "text" as const,
+              text: `Item ${index} rejected. ${processingError("text", error)}`,
+            },
+          ],
           isError: true,
         };
       }
@@ -250,17 +256,21 @@ server.registerTool(
     const unsafeIndex = results.findIndex((result) => result.changed.length > 0);
     if (unsafeIndex >= 0) {
       return {
-        content: [{
-          type: "text" as const,
-          text: `Item ${unsafeIndex} rejected. ${protectedError(results[unsafeIndex].changed)}`,
-        }],
+        content: [
+          {
+            type: "text" as const,
+            text: `Item ${unsafeIndex} rejected. ${protectedError(results[unsafeIndex].changed)}`,
+          },
+        ],
         isError: true,
       };
     }
     return {
-      content: [{ type: "text" as const, text: JSON.stringify(results.map((result) => result.text)) }],
+      content: [
+        { type: "text" as const, text: JSON.stringify(results.map((result) => result.text)) },
+      ],
     };
-  },
+  }
 );
 
 server.registerTool(
@@ -287,14 +297,16 @@ server.registerTool(
       return { content: [{ type: "text" as const, text: result.text }] };
     } catch (error) {
       return {
-        content: [{
-          type: "text" as const,
-          text: processingError("file", error),
-        }],
+        content: [
+          {
+            type: "text" as const,
+            text: processingError("file", error),
+          },
+        ],
         isError: true,
       };
     }
-  },
+  }
 );
 
 await server.connect(new StdioServerTransport());

@@ -8,12 +8,12 @@ re-compose deliberately at each size.
 
 Tailwind defaults:
 
-| Name | Min-width | Used for |
-|---|---|---|
-| `sm` | 640px | Small phone → large phone / small tablet |
-| `md` | 768px | Tablet → small laptop; nav expands |
-| `lg` | 1024px | Desktop; 3–4 column grids appear |
-| `xl` | 1280px | Full desktop container comfort |
+| Name | Min-width | Used for                                 |
+| ---- | --------- | ---------------------------------------- |
+| `sm` | 640px     | Small phone → large phone / small tablet |
+| `md` | 768px     | Tablet → small laptop; nav expands       |
+| `lg` | 1024px    | Desktop; 3–4 column grids appear         |
+| `xl` | 1280px    | Full desktop container comfort           |
 
 Design is desktop-first authored, mobile-first responsive (build mobile, layer
 up with `sm:`/`md:`/`lg:`).
@@ -30,12 +30,12 @@ up with `sm:`/`md:`/`lg:`).
 Type is set large on desktop and steps down deliberately — never squeezed or
 hyphen-stuffed.
 
-| Role | Mobile | Desktop |
-|---|---|---|
-| Hero `display` | `40px` | `76px` |
-| Section `title` | `36px` | `52px` |
-| Portal `h1` | `32px` | `42px` |
-| `h3` | `20px` | `23px` |
+| Role            | Mobile                      | Desktop   |
+| --------------- | --------------------------- | --------- |
+| Hero `display`  | `40px`                      | `76px`    |
+| Section `title` | `36px`                      | `52px`    |
+| Portal `h1`     | `32px`                      | `42px`    |
+| `h3`            | `20px`                      | `23px`    |
 | `lead` / `body` | unchanged (`18px` / `14px`) | unchanged |
 
 Recommended classes: `text-[40px] md:text-display` (hero),
@@ -46,11 +46,11 @@ Line length caps at ~65ch; on mobile that is naturally satisfied.
 
 ## 4. Grids
 
-| Grid | Mobile | `sm` | `lg` |
-|---|---|---|---|
-| 4-column (metrics, proofs) | 1 | 2 | 4 |
-| 3-column (service cards) | 1 | 2 | 3 |
-| 2-column (case studies, content) | 1 | 1 | 2 |
+| Grid                                 | Mobile  | `sm`    | `lg`                 |
+| ------------------------------------ | ------- | ------- | -------------------- |
+| 4-column (metrics, proofs)           | 1       | 2       | 4                    |
+| 3-column (service cards)             | 1       | 2       | 3                    |
+| 2-column (case studies, content)     | 1       | 1       | 2                    |
 | Section head (eyebrow + title/intro) | stacked | stacked | 2-col `.65fr/1.35fr` |
 
 Gaps stay `12–14px` at every size. Cards never shrink below a comfortable

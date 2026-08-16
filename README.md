@@ -33,6 +33,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 To populate your local database with development seed data:
 
 1. Ensure your database is migrated:
+
    ```bash
    npx prisma migrate dev
    ```

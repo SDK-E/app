@@ -32,6 +32,7 @@ authentication (password, social, enterprise SSO) and returns a stable `sub` cla
 Our database is the source of truth for identity and company associations.
 
 **Why not Auth0 Organizations:**
+
 - SDK staff are not in any company; Organizations assumes every user belongs to an org.
 - Company and Membership are core domain entities; keeping them in our database avoids a
   dual-source-of-truth problem.
@@ -40,6 +41,7 @@ Our database is the source of truth for identity and company associations.
 - Vendor lock-in concerns.
 
 **Why not pure custom auth:**
+
 - Enterprise customers expect IdP integration (SAML/OIDC).
 - Password security, MFA, breach detection, and session security are hard to get right.
 
@@ -48,15 +50,15 @@ Our database is the source of truth for identity and company associations.
 
 ### 3.1 Environment Variables
 
-| Variable | Purpose | Server-only |
-|----------|---------|-------------|
-| `AUTH0_SECRET` | Session encryption secret | Yes |
-| `AUTH0_ISSUER_BASE_URL` | Auth0 domain | Yes |
-| `AUTH0_BASE_URL` | Application base URL | Yes |
-| `AUTH0_CLIENT_ID` | Auth0 application client ID | No |
-| `AUTH0_CLIENT_SECRET` | Auth0 application client secret | Yes |
-| `DATABASE_URL` | PostgreSQL connection string | Yes |
-| `NODE_ENV` | Environment mode | No |
+| Variable                | Purpose                         | Server-only |
+| ----------------------- | ------------------------------- | ----------- |
+| `AUTH0_SECRET`          | Session encryption secret       | Yes         |
+| `AUTH0_ISSUER_BASE_URL` | Auth0 domain                    | Yes         |
+| `AUTH0_BASE_URL`        | Application base URL            | Yes         |
+| `AUTH0_CLIENT_ID`       | Auth0 application client ID     | No          |
+| `AUTH0_CLIENT_SECRET`   | Auth0 application client secret | Yes         |
+| `DATABASE_URL`          | PostgreSQL connection string    | Yes         |
+| `NODE_ENV`              | Environment mode                | No          |
 
 All environment variables must be validated at startup. Code must never call `process.env` directly. Missing production variables cause the application to fail at startup.
 
@@ -71,10 +73,10 @@ exist only for client users. SDK staff have no `Membership` and no `companyId`.
 
 ### 4.1 Entities
 
-| Entity | Key Fields | Notes |
-|--------|-----------|-------|
-| `User` | `id` (UUID), `auth0Sub` (unique), `email` (unique), `name`, `isActive`, `lastLoginAt` | Shared by all users |
-| `Company` | `id` (UUID), `name`, `slug` (unique), `isActive` | Client companies only |
+| Entity       | Key Fields                                                                              | Notes                 |
+| ------------ | --------------------------------------------------------------------------------------- | --------------------- |
+| `User`       | `id` (UUID), `auth0Sub` (unique), `email` (unique), `name`, `isActive`, `lastLoginAt`   | Shared by all users   |
+| `Company`    | `id` (UUID), `name`, `slug` (unique), `isActive`                                        | Client companies only |
 | `Membership` | `id` (UUID), `userId`, `companyId`, `role` (enum), `invitedBy`, `invitedAt`, `joinedAt` | Links User to Company |
 
 **Unique constraint:** `(userId, companyId)` on Membership.
@@ -95,14 +97,14 @@ The session cookie stores the following claims:
 
 ```typescript
 interface SessionClaims {
-  sub: string;              // Auth0 user.sub
-  email: string;            // Verified email
-  name: string;             // Display name
-  picture?: string;         // Avatar URL (optional)
-  companyId?: string;       // Active company ID (null for SDK staff)
-  membershipRole?: string;  // COMPANY_ADMIN | MEMBER | VIEWER
-  isSdkStaff: boolean;      // true if user has no company
-  sdkStaffRole?: string;    // SUPER_ADMIN | ADMIN | STAFF
+  sub: string; // Auth0 user.sub
+  email: string; // Verified email
+  name: string; // Display name
+  picture?: string; // Avatar URL (optional)
+  companyId?: string; // Active company ID (null for SDK staff)
+  membershipRole?: string; // COMPANY_ADMIN | MEMBER | VIEWER
+  isSdkStaff: boolean; // true if user has no company
+  sdkStaffRole?: string; // SUPER_ADMIN | ADMIN | STAFF
   iat: number;
   exp: number;
 }
@@ -119,19 +121,19 @@ interface SessionClaims {
 
 ### 5.1 Client Roles (Membership.role)
 
-| Role | Permissions |
-|------|-------------|
+| Role            | Permissions                                                                       |
+| --------------- | --------------------------------------------------------------------------------- |
 | `COMPANY_ADMIN` | Full access within company: invite/remove members, manage projects, view invoices |
-| `MEMBER` | Create and edit company resources, cannot manage members |
-| `VIEWER` | Read-only access to company resources |
+| `MEMBER`        | Create and edit company resources, cannot manage members                          |
+| `VIEWER`        | Read-only access to company resources                                             |
 
 ### 5.2 SDK Staff Roles
 
-| Role | Permissions |
-|------|-------------|
+| Role          | Permissions                                                                    |
+| ------------- | ------------------------------------------------------------------------------ |
 | `SUPER_ADMIN` | Full platform admin: manage all companies, manage all staff, platform settings |
-| `ADMIN` | Platform admin: manage companies, manage staff (excluding SUPER_ADMIN) |
-| `STAFF` | Read-only access to company data, restricted admin operations |
+| `ADMIN`       | Platform admin: manage companies, manage staff (excluding SUPER_ADMIN)         |
+| `STAFF`       | Read-only access to company data, restricted admin operations                  |
 
 ### 5.3 Role Hierarchy
 
@@ -176,14 +178,14 @@ staff role, not by membership.
 
 Every resource belongs to exactly one `Company` via `companyId`.
 
-| Resource | companyId Source |
-|----------|-----------------|
-| `Request` | Inherited from creating user's Membership |
-| `Project` | Inherited from creating user's Membership or parent Request |
-| `Milestone` | Inherited from parent Project |
-| `Document` | Inherited from parent Project, Milestone, or Request |
-| `Message` | Inherited from parent Project, Milestone, or Request |
-| `Invoice` | Inherited from parent Project, Milestone, or Request |
+| Resource    | companyId Source                                            |
+| ----------- | ----------------------------------------------------------- |
+| `Request`   | Inherited from creating user's Membership                   |
+| `Project`   | Inherited from creating user's Membership or parent Request |
+| `Milestone` | Inherited from parent Project                               |
+| `Document`  | Inherited from parent Project, Milestone, or Request        |
+| `Message`   | Inherited from parent Project, Milestone, or Request        |
+| `Invoice`   | Inherited from parent Project, Milestone, or Request        |
 
 ### 6.2 Isolation Enforcement Layers
 
@@ -194,11 +196,11 @@ Every resource belongs to exactly one `Company` via `companyId`.
 
 ### 6.3 Cross-Company Access by SDK Staff
 
-| SDK Staff Role | Cross-Company Access |
-|----------------|---------------------|
-| `SUPER_ADMIN` | Full (read + write + admin) across all companies |
-| `ADMIN` | Full (read + write + admin) across all companies |
-| `STAFF` | Read-only across all companies |
+| SDK Staff Role | Cross-Company Access                             |
+| -------------- | ------------------------------------------------ |
+| `SUPER_ADMIN`  | Full (read + write + admin) across all companies |
+| `ADMIN`        | Full (read + write + admin) across all companies |
+| `STAFF`        | Read-only across all companies                   |
 
 **Reference:** [docs/architecture/resource-isolation.md](architecture/resource-isolation.md)
 
@@ -212,10 +214,10 @@ development tooling.
 
 ### 7.1 Environment Isolation
 
-| Environment | Database | Seed Data |
-|-------------|----------|-----------|
+| Environment | Database                      | Seed Data            |
+| ----------- | ----------------------------- | -------------------- |
 | Development | Local file or Docker Postgres | Yes (synthetic only) |
-| Production | Managed Postgres | Never |
+| Production  | Managed Postgres              | Never                |
 
 ### 7.2 Safety Rules
 
@@ -287,7 +289,7 @@ permissions; all checks happen server-side.
 - `requireAuth(session)` — user must be authenticated
 - `requireRole(session, allowedRoles)` — user must have one of the specified roles
 - `requireCompanyAccess(session, companyId)` — user must belong to the company
-- `requireStaffRole(session, minRole)` — SDK staff must meet minimum role level *(documented but not yet implemented)*
+- `requireStaffRole(session, minRole)` — SDK staff must meet minimum role level _(documented but not yet implemented)_
 
 ---
 
@@ -374,18 +376,17 @@ The project follows Next.js 16 App Router conventions:
 12. **Audit logging** — Where and how should authentication events and
     cross-company access by SDK staff be logged for compliance?
 
-
 ---
 
 ## 13. References
 
-| Document | Description |
-|----------|-------------|
-| [ADR-001: Authentication Provider Strategy](adr/001-auth-provider-strategy.md) | Why Auth0 without Organizations |
-| [docs/architecture/auth-architecture.md](architecture/auth-architecture.md) | Detailed auth architecture |
-| [docs/architecture/identity-model.md](architecture/identity-model.md) | User, Company, Membership entities |
-| [docs/architecture/rbac.md](architecture/rbac.md) | Role model and permission enforcement |
-| [docs/architecture/resource-isolation.md](architecture/resource-isolation.md) | Cross-company access rules |
-| [docs/architecture/domain-model.md](architecture/domain-model.md) | Complete entity reference |
-| [docs/data-strategy.md](../data-strategy.md) | Environment and database isolation |
-| [docs/conventions/structure.md](../conventions/structure.md) | Project structure and conventions |
+| Document                                                                       | Description                           |
+| ------------------------------------------------------------------------------ | ------------------------------------- |
+| [ADR-001: Authentication Provider Strategy](adr/001-auth-provider-strategy.md) | Why Auth0 without Organizations       |
+| [docs/architecture/auth-architecture.md](architecture/auth-architecture.md)    | Detailed auth architecture            |
+| [docs/architecture/identity-model.md](architecture/identity-model.md)          | User, Company, Membership entities    |
+| [docs/architecture/rbac.md](architecture/rbac.md)                              | Role model and permission enforcement |
+| [docs/architecture/resource-isolation.md](architecture/resource-isolation.md)  | Cross-company access rules            |
+| [docs/architecture/domain-model.md](architecture/domain-model.md)              | Complete entity reference             |
+| [docs/data-strategy.md](../data-strategy.md)                                   | Environment and database isolation    |
+| [docs/conventions/structure.md](../conventions/structure.md)                   | Project structure and conventions     |

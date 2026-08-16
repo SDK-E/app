@@ -6,12 +6,12 @@ recreated with application fonts or re-drawn.
 
 ## 0. Assets in this repository
 
-| Asset | Canonical source | App copy (served at) |
-|---|---|---|
-| Full wordmark, dark surface (light letters, `#2cdb16` period on `#082003`) | `docs/brand/Logo Dark.png` | `public/brand/sdk-logo-dark.png` |
+| Asset                                                                      | Canonical source            | App copy (served at)              |
+| -------------------------------------------------------------------------- | --------------------------- | --------------------------------- |
+| Full wordmark, dark surface (light letters, `#2cdb16` period on `#082003`) | `docs/brand/Logo Dark.png`  | `public/brand/sdk-logo-dark.png`  |
 | Full wordmark, light surface (dark letters, `#2cdb16` period on `#d7e8d3`) | `docs/brand/Logo Light.png` | `public/brand/sdk-logo-light.png` |
-| Compact `S.` mark, dark surface | `docs/brand/Mark Dark.png` | `public/brand/sdk-mark-dark.png` |
-| Compact `S.` mark, light surface | `docs/brand/Mark Light.png` | `public/brand/sdk-mark-light.png` |
+| Compact `S.` mark, dark surface                                            | `docs/brand/Mark Dark.png`  | `public/brand/sdk-mark-dark.png`  |
+| Compact `S.` mark, light surface                                           | `docs/brand/Mark Light.png` | `public/brand/sdk-mark-light.png` |
 
 - `docs/brand/` is the source of truth; `public/brand/` copies are trimmed for
   in-app use (uniform brand-surface margin removed; glyph geometry unchanged).

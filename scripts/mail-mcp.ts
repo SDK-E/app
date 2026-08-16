@@ -54,7 +54,7 @@ server.registerTool(
     } catch {
       return { content: [{ type: "text", text: sinkUnreachable() }] };
     }
-  },
+  }
 );
 
 server.registerTool(
@@ -71,9 +71,7 @@ server.registerTool(
       const message = (await fetchJson(`/api/email/${id}`)) as SinkMessage;
       const body = message.text ?? message.html ?? "(no body)";
       return {
-        content: [
-          { type: "text", text: `${listLine(message)}\n---\n${body}` },
-        ],
+        content: [{ type: "text", text: `${listLine(message)}\n---\n${body}` }],
       };
     } catch (err) {
       return {
@@ -88,7 +86,7 @@ server.registerTool(
         ],
       };
     }
-  },
+  }
 );
 
 server.registerTool(
@@ -110,7 +108,7 @@ server.registerTool(
     } catch {
       return { content: [{ type: "text", text: sinkUnreachable() }] };
     }
-  },
+  }
 );
 
 server.registerTool(
@@ -133,9 +131,7 @@ server.registerTool(
   },
   async ({ match, timeout_seconds }) => {
     try {
-      const before = new Set(
-        ((await fetchJson("/api/email")) as SinkMessage[]).map((m) => m.id),
-      );
+      const before = new Set(((await fetchJson("/api/email")) as SinkMessage[]).map((m) => m.id));
       const matches = (m: SinkMessage): boolean => {
         if (!match) return true;
         return (
@@ -168,7 +164,7 @@ server.registerTool(
     } catch {
       return { content: [{ type: "text", text: sinkUnreachable() }] };
     }
-  },
+  }
 );
 
 await server.connect(new StdioServerTransport());

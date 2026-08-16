@@ -32,10 +32,10 @@ database is managed PostgreSQL. The Prisma schema is written for PostgreSQL.
 
 ### Environment Strategy
 
-| Environment | Database | Connection |
-|-------------|----------|------------|
-| Development | Local SQLite or Docker Postgres | `DATABASE_URL=file:./dev.db` or local Postgres |
-| Production | Managed PostgreSQL | `DATABASE_URL` injected by platform secret manager |
+| Environment | Database                        | Connection                                         |
+| ----------- | ------------------------------- | -------------------------------------------------- |
+| Development | Local SQLite or Docker Postgres | `DATABASE_URL=file:./dev.db` or local Postgres     |
+| Production  | Managed PostgreSQL              | `DATABASE_URL` injected by platform secret manager |
 
 ### Why PostgreSQL
 

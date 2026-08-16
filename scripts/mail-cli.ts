@@ -30,7 +30,7 @@ function printMessage(message: SinkMessage): void {
 
 function usage(): void {
   console.error(
-    "usage: node scripts/mail-cli.ts <list|read <id>|wait [match] [--timeout SECONDS]|clear|health>",
+    "usage: node scripts/mail-cli.ts <list|read <id>|wait [match] [--timeout SECONDS]|clear|health>"
   );
 }
 
@@ -108,7 +108,7 @@ async function run(): Promise<number> {
         messageCount: number;
       };
       console.log(
-        `mail sink: SMTP :${health.smtpPort}, HTTP ${health.httpUrl} — ${health.messageCount} message(s)`,
+        `mail sink: SMTP :${health.smtpPort}, HTTP ${health.httpUrl} — ${health.messageCount} message(s)`
       );
       return 0;
     }
@@ -125,7 +125,7 @@ run()
   .catch((err: unknown) => {
     console.error(
       `mail sink unreachable at ${HTTP_URL} — start it with \`npm run dev\` or \`npm run mail\``,
-      err instanceof Error ? `(${err.message})` : "",
+      err instanceof Error ? `(${err.message})` : ""
     );
     process.exit(1);
   });
