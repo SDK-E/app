@@ -1,4 +1,5 @@
 import type { SessionData } from "@auth0/nextjs-auth0/types";
+import { cache } from "react";
 import { z } from "zod";
 
 import { Prisma } from "@/generated/prisma/client";
@@ -142,8 +143,10 @@ export async function resolveAppPrincipal(session: SessionData): Promise<AppPrin
   return { ...common, kind: "unassigned" };
 }
 
-export async function getCurrentPrincipal(): Promise<AppPrincipal | null> {
-  const { getAuth0Client } = await import("@/lib/auth");
-  const session = await getAuth0Client().getSession();
-  return session ? resolveAppPrincipal(session) : null;
-}
+export const getCurrentPrincipal = cache(
+  async (): Promise<AppPrincipal | null> => {
+    const { getAuth0Client } = await import("@/lib/auth");
+    const session = await getAuth0Client().getSession();
+    return session ? resolveAppPrincipal(session) : null;
+  }
+);
