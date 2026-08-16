@@ -319,10 +319,10 @@ model Invoice {
   createdAt   DateTime        @default(now())
   updatedAt   DateTime        @updatedAt
 
-  company     Company    @relation(fields: [companyId], references: [id])
-  project     Project?   @relation(fields: [projectId], references: [id])
-  milestone   Milestone? @relation(fields: [milestoneId], references: [id])
-  request     Request?   @relation(fields: [requestId], references: [id])
+  company    Company    @relation(fields: [companyId], references: [id])
+  project    Project?   @relation(fields: [projectId], references: [id])
+  milestone  Milestone? @relation(fields: [milestoneId], references: [id])
+  request    Request?   @relation(fields: [requestId], references: [id])
   createdByUser User     @relation(fields: [createdBy], references: [id], onDelete: Restrict)
 
   @@index([companyId])
@@ -333,4 +333,22 @@ model Invoice {
   @@index([status])
   @@index([createdAt])
   @@map("invoice")
+}
+
+model Enquiry {
+  id           String   @id @default(uuid())
+  companyName  String   @db.VarChar(255)
+  email        String   @db.VarChar(255)
+  website      String?  @db.VarChar(1024)
+  capability   String   @db.VarChar(255)
+  description  String   @db.Text
+  environment  String?  @db.Text
+  timeline     String?  @db.VarChar(255)
+  budgetRange  String?  @db.VarChar(255)
+  context      String?  @db.Text
+  createdAt    DateTime @default(now())
+
+  @@index([email])
+  @@index([createdAt])
+  @@map("enquiry")
 }

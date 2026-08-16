@@ -64,46 +64,41 @@ export default async function MentionsLegalesPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "legal.mentionsLegales" });
-  const lang = locale === "fr" ? "fr" : "en";
-  const section = t.raw(lang) as Record<string, string | string[]>;
-
-  const domain = siteConfig.name.toLowerCase().replace(/\s+/g, ".");
 
   return (
     <LegalPage locale={locale}>
       <LegalTitle>{t("title")}</LegalTitle>
       <LegalIntro>{t("intro")}</LegalIntro>
 
-      <LegalH2>{section[lang === "fr" ? "editorTitle" : "publisherTitle"] as string}</LegalH2>
+      <LegalH2>{t("publisherTitle")}</LegalH2>
       <LegalParagraph>
-        {(section[lang === "fr" ? "editorWebsite" : "publisherWebsite"] as string)
-          .replace("{domain}", domain)
-          .replace("{company}", siteConfig.contact.company)
-          .replace("{name}", siteConfig.name)}
+        {t("publisherWebsite", {
+          domain: siteConfig.name.toLowerCase().replace(/\s+/g, "."),
+          company: siteConfig.contact.company,
+          name: siteConfig.name,
+        })}
       </LegalParagraph>
       <LegalList
         items={[
-          (section.siren as string).replace("{siren}", siteConfig.contact.siren),
-          (section.siret as string).replace("{siret}", siteConfig.contact.siret),
-          (section.registeredOffice as string).replace("{address}", siteConfig.contact.address),
-          section.legalForm as string,
-          (section.registration as string).replace("{siren}", siteConfig.contact.siren),
+          t("siren", { siren: siteConfig.contact.siren }),
+          t("siret", { siret: siteConfig.contact.siret }),
+          t("registeredOffice", { address: siteConfig.contact.address }),
+          t("legalForm"),
+          t("registration", { siren: siteConfig.contact.siren }),
         ]}
       />
-      <LegalH2>{section.directorTitle as string}</LegalH2>
-      <LegalParagraph>{section.director as string}</LegalParagraph>
-      <LegalH2>{section.hostingTitle as string}</LegalH2>
-      <LegalParagraph>{section.hosting as string}</LegalParagraph>
-      <LegalH2>{section.contactTitle as string}</LegalH2>
+      <LegalH2>{t("directorTitle")}</LegalH2>
+      <LegalParagraph>{t("director")}</LegalParagraph>
+      <LegalH2>{t("hostingTitle")}</LegalH2>
+      <LegalParagraph>{t("hosting")}</LegalParagraph>
+      <LegalH2>{t("contactTitle")}</LegalH2>
       <LegalParagraph>
-        {(section.contact as string)
-          .replace("{email}", siteConfig.contact.email)
-          .replace("{phone}", siteConfig.contact.phone)}
+        {t("contact", { email: siteConfig.contact.email, phone: siteConfig.contact.phone })}
       </LegalParagraph>
-      <LegalH2>{section.intellectualPropertyTitle as string}</LegalH2>
-      <LegalParagraph>{section.intellectualProperty as string}</LegalParagraph>
-      <LegalH2>{section.legalFrameworkTitle as string}</LegalH2>
-      <LegalParagraph>{section.legalFramework as string}</LegalParagraph>
+      <LegalH2>{t("intellectualPropertyTitle")}</LegalH2>
+      <LegalParagraph>{t("intellectualProperty")}</LegalParagraph>
+      <LegalH2>{t("legalFrameworkTitle")}</LegalH2>
+      <LegalParagraph>{t("legalFramework")}</LegalParagraph>
     </LegalPage>
   );
 }

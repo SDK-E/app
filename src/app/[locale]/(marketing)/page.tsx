@@ -63,12 +63,12 @@ export default async function LandingPage({
     <div className="bg-light text-dark">
       <Header
         links={[
-          { label: t("services"), href: "#services" },
-          { label: t("work"), href: "#work" },
-          { label: t("process"), href: "#process" },
-          { label: t("about"), href: "#about" },
+          { label: t("services"), href: `/${locale}/services` },
+          { label: t("work"), href: `/${locale}/work` },
+          { label: t("process"), href: `/${locale}/how-we-work` },
+          { label: t("about"), href: `/${locale}/about` },
         ]}
-        cta={{ label: t("discussProject"), href: "#about" }}
+        cta={{ label: t("discussProject"), href: `/${locale}/start-a-project` }}
         secondaryCta={{ label: t("signIn"), href: `/${locale}/login` }}
         translationsNamespace="nav"
         locale={locale}

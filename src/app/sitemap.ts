@@ -4,6 +4,11 @@ import { getSiteUrl } from "@/lib/seo";
 
 const PUBLIC_PATHS = [
   "/",
+  "/services",
+  "/work",
+  "/how-we-work",
+  "/about",
+  "/start-a-project",
   "/privacy",
   "/terms",
   "/cookies",

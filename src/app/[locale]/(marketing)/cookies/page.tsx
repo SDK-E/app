@@ -63,25 +63,23 @@ export default async function CookiesPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "legal.cookies" });
-  const lang = locale === "fr" ? "fr" : "en";
-  const section = t.raw(lang) as Record<string, string>;
 
   return (
     <LegalPage locale={locale}>
       <LegalTitle>{t("title")}</LegalTitle>
       <LegalIntro>{t("intro")}</LegalIntro>
 
-      <LegalH2>{section.whatIsTitle as string}</LegalH2>
-      <LegalParagraph>{section.whatIs as string}</LegalParagraph>
+      <LegalH2>{t("whatIsTitle")}</LegalH2>
+      <LegalParagraph>{t("whatIs")}</LegalParagraph>
 
-      <LegalH2>{section.thisSiteTitle as string}</LegalH2>
-      <LegalParagraph>{section.thisSite as string}</LegalParagraph>
+      <LegalH2>{t("thisSiteTitle")}</LegalH2>
+      <LegalParagraph>{t("thisSite")}</LegalParagraph>
 
-      <LegalH2>{section.consentBannerTitle as string}</LegalH2>
-      <LegalParagraph>{section.consentBanner as string}</LegalParagraph>
+      <LegalH2>{t("consentBannerTitle")}</LegalH2>
+      <LegalParagraph>{t("consentBanner")}</LegalParagraph>
 
-      <LegalH2>{section.browserSettingsTitle as string}</LegalH2>
-      <LegalParagraph>{section.browserSettings as string}</LegalParagraph>
+      <LegalH2>{t("browserSettingsTitle")}</LegalH2>
+      <LegalParagraph>{t("browserSettings")}</LegalParagraph>
     </LegalPage>
   );
 }

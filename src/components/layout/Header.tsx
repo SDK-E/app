@@ -36,7 +36,7 @@ export function Header({
 
   const navLinkClass = (label: string) =>
     `text-label font-bold uppercase tracking-eyebrow transition-opacity motion-reduce:transition-none hover:opacity-70 ${
-      activeLabel === label ? "text-accent" : "text-dark"
+      activeLabel === label ? "text-dark border-b-2 border-brand" : "text-dark"
     }`;
 
   return (

@@ -6,6 +6,11 @@ import { routing } from "@/i18n/routing";
 
 const PUBLIC_ROUTES = [
   "/",
+  "/services",
+  "/work",
+  "/how-we-work",
+  "/about",
+  "/start-a-project",
   "/login",
   "/auth/*",
   "/favicon.ico",

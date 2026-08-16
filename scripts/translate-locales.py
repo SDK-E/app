@@ -82,17 +82,10 @@ def translate_batch(texts, target_lang):
         raise RuntimeError(f"translation batch split mismatch: expected {len(texts)}, got {len(parts)}")
     return parts
 
-def should_skip(key_path):
-    parts = key_path.split(".")
-    if len(parts) >= 2 and parts[-2] == "fr" and parts[-3] in ("mentionsLegales", "privacy", "terms", "cookies"):
-        return True
-    return False
-
 def collect_strings(obj, key_path="root"):
     strings = []
     if isinstance(obj, str):
-        if not should_skip(key_path):
-            strings.append((key_path, obj))
+        strings.append((key_path, obj))
     elif isinstance(obj, list):
         for i, item in enumerate(obj):
             strings.extend(collect_strings(item, f"{key_path}[{i}]"))
@@ -114,7 +107,7 @@ def flatten_strings(value, key_path="root", result=None):
     return result
 
 
-def validate(source, target, locale):
+def validate(source, target, locale, allow_missing=False):
     errors = []
 
     def walk(source_value, target_value, key_path):
@@ -135,10 +128,20 @@ def validate(source, target, locale):
             for index, item in enumerate(source_value):
                 walk(item, target_value[index], f"{key_path}[{index}]")
         elif isinstance(source_value, dict):
-            if not isinstance(target_value, dict) or list(source_value) != list(target_value):
+            if not isinstance(target_value, dict):
+                if allow_missing:
+                    return
+                errors.append(f"{key_path}: expected object")
+                return
+            if not allow_missing and list(source_value) != list(target_value):
                 errors.append(f"{key_path}: object keys differ from English")
                 return
             for key, item in source_value.items():
+                if key not in target_value:
+                    if allow_missing:
+                        continue
+                    errors.append(f"{key_path}: missing key {key}")
+                    continue
                 walk(item, target_value[key], f"{key_path}.{key}")
 
     walk(source, target, "root")
@@ -171,7 +174,7 @@ def main():
         output_file = f"src/locales/{locale}.json"
         with open(output_file, "r", encoding="utf-8") as target_file:
             existing = json.load(target_file)
-        validate(source, existing, locale)
+        validate(source, existing, locale, allow_missing=True)
         if args.check:
             print(f"{locale}: OK")
             continue
@@ -187,7 +190,6 @@ def main():
         translatable = [
             (key_path, text) for key_path, text in source_strings.items()
             if key_path in changed_paths
-            and (locale == "fr" or not (".legal." in key_path and ".fr." in key_path))
         ]
         if not translatable:
             print(f"{locale}: already current")
@@ -215,18 +217,21 @@ def main():
 
         def rebuild(source_value, existing_value, key_path):
             if isinstance(source_value, str):
-                is_french_legal = ".legal." in key_path and ".fr." in key_path
-                if locale != "fr" and is_french_legal:
-                    return source_value
-                if key_path not in changed_paths and isinstance(existing_value, str):
-                    return existing_value
-                return cache[source_value]
+                if key_path in changed_paths or not isinstance(existing_value, str):
+                    return cache[source_value]
+                return existing_value
             if isinstance(source_value, list):
                 old = existing_value if isinstance(existing_value, list) else []
                 return [rebuild(item, old[index] if index < len(old) else None, f"{key_path}[{index}]") for index, item in enumerate(source_value)]
             if isinstance(source_value, dict):
                 old = existing_value if isinstance(existing_value, dict) else {}
-                return {key: rebuild(item, old.get(key), f"{key_path}.{key}") for key, item in source_value.items()}
+                result = {}
+                for key, item in source_value.items():
+                    if key in old:
+                        result[key] = rebuild(item, old[key], f"{key_path}.{key}")
+                    else:
+                        result[key] = rebuild(item, None, f"{key_path}.{key}")
+                return result
             return source_value
 
         target = rebuild(source, existing, "root")

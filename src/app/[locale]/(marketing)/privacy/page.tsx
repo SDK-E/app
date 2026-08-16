@@ -64,8 +64,6 @@ export default async function PrivacyPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "legal.privacy" });
-  const lang = locale === "fr" ? "fr" : "en";
-  const section = t.raw(lang) as Record<string, string | string[]>;
   const processors = t.raw("processors") as Array<{ name: string; role: string }>;
 
   return (
@@ -73,25 +71,26 @@ export default async function PrivacyPage({
       <LegalTitle>{t("title")}</LegalTitle>
       <LegalIntro>{t("intro")}</LegalIntro>
 
-      <LegalH2>{section.controllerTitle as string}</LegalH2>
+      <LegalH2>{t("controllerTitle")}</LegalH2>
       <LegalParagraph>
-        {(section.controller as string)
-          .replace("{company}", siteConfig.contact.company)
-          .replace("{name}", siteConfig.name)
-          .replace("{address}", siteConfig.contact.address)
-          .replace("{email}", siteConfig.contact.email)}
+        {t("controller", {
+          company: siteConfig.contact.company,
+          name: siteConfig.name,
+          address: siteConfig.contact.address,
+          email: siteConfig.contact.email,
+        })}
       </LegalParagraph>
 
-      <LegalH2>{section.collectedDataTitle as string}</LegalH2>
-      <LegalParagraph>{section.collectedData as string}</LegalParagraph>
-      <LegalList items={section.collectedDataItems as string[]} />
+      <LegalH2>{t("collectedDataTitle")}</LegalH2>
+      <LegalParagraph>{t("collectedData")}</LegalParagraph>
+      <LegalList items={t.raw("collectedDataItems") as string[]} />
 
-      <LegalH2>{section.purposesTitle as string}</LegalH2>
-      <LegalParagraph>{section.purposesNote as string}</LegalParagraph>
-      <LegalList items={section.purposeItems as string[]} />
+      <LegalH2>{t("purposesTitle")}</LegalH2>
+      <LegalParagraph>{t("purposesNote")}</LegalParagraph>
+      <LegalList items={t.raw("purposeItems") as string[]} />
 
-      <LegalH2>{section.recipientsTitle as string}</LegalH2>
-      <LegalParagraph>{section.recipientsNote as string}</LegalParagraph>
+      <LegalH2>{t("recipientsTitle")}</LegalH2>
+      <LegalParagraph>{t("recipientsNote")}</LegalParagraph>
       <LegalList
         items={processors.map((processor) => (
           <span key={processor.name}>
@@ -100,29 +99,29 @@ export default async function PrivacyPage({
         ))}
       />
 
-      <LegalH2>{section.transfersTitle as string}</LegalH2>
-      <LegalParagraph>{section.transfers as string}</LegalParagraph>
+      <LegalH2>{t("transfersTitle")}</LegalH2>
+      <LegalParagraph>{t("transfers")}</LegalParagraph>
 
-      <LegalH2>{section.retentionTitle as string}</LegalH2>
-      <LegalParagraph>{section.retention as string}</LegalParagraph>
+      <LegalH2>{t("retentionTitle")}</LegalH2>
+      <LegalParagraph>{t("retention")}</LegalParagraph>
 
-      <LegalH2>{section.rightsTitle as string}</LegalH2>
-      <LegalParagraph>{section.rightsNote as string}</LegalParagraph>
+      <LegalH2>{t("rightsTitle")}</LegalH2>
+      <LegalParagraph>{t("rightsNote")}</LegalParagraph>
       <LegalParagraph>
-        {(section.rightsContact as string).replace("{email}", siteConfig.contact.email)}
+        {t("rightsContact", { email: siteConfig.contact.email })}
       </LegalParagraph>
 
-      <LegalH2>{section.childrenTitle as string}</LegalH2>
-      <LegalParagraph>{section.children as string}</LegalParagraph>
+      <LegalH2>{t("childrenTitle")}</LegalH2>
+      <LegalParagraph>{t("children")}</LegalParagraph>
 
-      <LegalH2>{section.automatedTitle as string}</LegalH2>
-      <LegalParagraph>{section.automated as string}</LegalParagraph>
+      <LegalH2>{t("automatedTitle")}</LegalH2>
+      <LegalParagraph>{t("automated")}</LegalParagraph>
 
-      <LegalH2>{section.securityTitle as string}</LegalH2>
-      <LegalParagraph>{section.security as string}</LegalParagraph>
+      <LegalH2>{t("securityTitle")}</LegalH2>
+      <LegalParagraph>{t("security")}</LegalParagraph>
 
-      <LegalH2>{section.registerTitle as string}</LegalH2>
-      <LegalParagraph>{section.register as string}</LegalParagraph>
+      <LegalH2>{t("registerTitle")}</LegalH2>
+      <LegalParagraph>{t("register")}</LegalParagraph>
     </LegalPage>
   );
 }
