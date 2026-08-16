@@ -66,15 +66,15 @@ export default async function WorkPage({
           <h2 className="mt-4 text-title tracking-title">{t("lookForHeading")}</h2>
           <p className="mt-4 max-w-[65ch] text-body text-fog">{t("lookForBody")}</p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-card border border-[#2f4d2b] bg-paper p-6">
+            <div className="rounded-card border border-[#2f4d2b] bg-paper p-6 text-dark">
               <h3 className="text-h3">{t("lookFor1Title")}</h3>
               <p className="mt-3 text-body text-muted-foreground">{t("lookFor1Body")}</p>
             </div>
-            <div className="rounded-card border border-[#2f4d2b] bg-paper p-6">
+            <div className="rounded-card border border-[#2f4d2b] bg-paper p-6 text-dark">
               <h3 className="text-h3">{t("lookFor2Title")}</h3>
               <p className="mt-3 text-body text-muted-foreground">{t("lookFor2Body")}</p>
             </div>
-            <div className="rounded-card border border-[#2f4d2b] bg-paper p-6">
+            <div className="rounded-card border border-[#2f4d2b] bg-paper p-6 text-dark">
               <h3 className="text-h3">{t("lookFor3Title")}</h3>
               <p className="mt-3 text-body text-muted-foreground">{t("lookFor3Body")}</p>
             </div>

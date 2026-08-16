@@ -68,19 +68,19 @@ export default async function StartAProjectPage({
           <h2 className="mt-4 text-title tracking-title">{t("nextStepsHeading")}</h2>
           <p className="mt-4 max-w-[65ch] text-body text-fog">{t("nextStepsBody")}</p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-card border border-[#2f4d2b] bg-paper p-6">
+            <div className="rounded-card border border-[#2f4d2b] bg-paper p-6 text-dark">
               <h3 className="text-h3">{t("nextStep1Title")}</h3>
               <p className="mt-3 text-body text-muted-foreground">{t("nextStep1Body")}</p>
             </div>
-            <div className="rounded-card border border-[#2f4d2b] bg-paper p-6">
+            <div className="rounded-card border border-[#2f4d2b] bg-paper p-6 text-dark">
               <h3 className="text-h3">{t("nextStep2Title")}</h3>
               <p className="mt-3 text-body text-muted-foreground">{t("nextStep2Body")}</p>
             </div>
-            <div className="rounded-card border border-[#2f4d2b] bg-paper p-6">
+            <div className="rounded-card border border-[#2f4d2b] bg-paper p-6 text-dark">
               <h3 className="text-h3">{t("nextStep3Title")}</h3>
               <p className="mt-3 text-body text-muted-foreground">{t("nextStep3Body")}</p>
             </div>
-            <div className="rounded-card border border-[#2f4d2b] bg-paper p-6">
+            <div className="rounded-card border border-[#2f4d2b] bg-paper p-6 text-dark">
               <h3 className="text-h3">{t("nextStep4Title")}</h3>
               <p className="mt-3 text-body text-muted-foreground">{t("nextStep4Body")}</p>
             </div>
