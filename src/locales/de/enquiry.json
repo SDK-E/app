@@ -1,14 +1,49 @@
 {
   "enquiry": {
+    "eyebrow": "Besprechen Sie ein Projekt",
     "title": "Starten Sie ein Projekt",
-    "subtitle": "Sagen Sie uns, was Sie bauen, modernisieren, automatisieren oder reparieren möchten. Wir werden innerhalb von 2 Werktagen mit einer ehrlichen Einschätzung der Eignung und der erforderlichen Voraussetzungen antworten.",
+    "subtitle": "Sagen Sie uns, was Sie bauen, modernisieren, automatisieren oder reparieren möchten. Eine sinnvolle Untersuchung beginnt mit der Belastung des Systems und der Entscheidung, die Sie treffen müssen.",
     "body": "Das Formular sammelt die Mindestinformationen, die für eine durchdachte Antwort erforderlich sind. Außerhalb von SDK Enterprises wird nichts weitergegeben, und Sie können uns auch direkt unter hello@sdk.enterprises erreichen.",
-    "body2": "Wir prüfen jede Anfrage selbst. Keine Account Manager, keine Qualifizierungsskripte, keine Übergaben.",
+    "body2": "Ihr technischer und kommerzieller Kontext bleibt zusammen, während SDK beurteilt, ob die Arbeit passt.",
+    "heroSignals": [
+      "Eine fertige Spezifikation ist nicht erforderlich",
+      "Technischer und kommerzieller Kontext bleiben zusammen",
+      "Kontext für eine überlegte Antwort",
+      "Der direkte Firmenkontakt bleibt bestehen"
+    ],
+    "reasonsEyebrow": "Nützliche Ausgangspunkte",
+    "reasonsHeading": "Üben Sie Druck auf das System aus, nicht auf ein ausgefeiltes Beschaffungsdokument.",
+    "reasonsIntro": "Mit dem Formular soll festgestellt werden, ob SDK die nächste technische Entscheidung erleichtern kann.",
+    "reasons": [
+      {
+        "number": "01",
+        "title": "Ein System muss sich ändern",
+        "copy": "Modernisierungs-, Migrations- oder Integrationsarbeiten werden durch die Unsicherheit der aktuellen Lage blockiert."
+      },
+      {
+        "number": "02",
+        "title": "Eine Plattform steht unter Druck",
+        "copy": "Zuverlässigkeit, Liefergeschwindigkeit, Infrastruktur oder Datenverhalten sind zu geschäftlichen Einschränkungen geworden."
+      },
+      {
+        "number": "03",
+        "title": "Ein KI-Workflow benötigt technische Kontrollen",
+        "copy": "Der Anwendungsfall ist vielversprechend, Daten, Auswertung, Überprüfung oder Betrieb sind jedoch noch nicht definiert."
+      },
+      {
+        "number": "04",
+        "title": "Ein Workstream braucht die richtigen Spezialisten",
+        "copy": "Das Ergebnis ist klar, aber das Projekt überschreitet Disziplinen, die das aktuelle Team nicht alleine abdecken kann."
+      }
+    ],
+    "formEyebrow": "Projektkontext",
+    "formHeading": "Geben Sie uns genügend Informationen, um sinnvoll reagieren zu können.",
+    "formIntro": "Erklären Sie, was passiert, warum es wichtig ist und was bereits versucht wurde. Unbekannte Budget-, Zeit- oder technische Details können als solche gekennzeichnet bleiben.",
     "nextStepsEyebrow": "Was passiert als nächstes?",
     "nextStepsHeading": "Von der Anfrage bis zum Engagement",
     "nextStepsBody": "Nachdem Sie das Formular abgeschickt haben, lesen wir es selbst. Wenn es passt, werden wir mit einer kurzen schriftlichen Bewertung und einem vorgeschlagenen Engagement-Modell antworten. Sollte es nicht passen, sagen wir Ihnen den Grund und schlagen Ihnen eine Alternative vor.",
     "nextStep1Title": "Rezension",
-    "nextStep1Body": "Wir lesen Ihre Einreichung und prüfen sie anhand unserer aktuellen Kapazitäten und Fachkenntnisse. Normalerweise innerhalb von 2 Werktagen.",
+    "nextStep1Body": "Wir überprüfen das System, die Einschränkungen und das gewünschte Ergebnis anhand der aktuellen Kapazität und des relevanten Fachwissens von SDK.",
     "nextStep2Title": "Bewertung",
     "nextStep2Body": "Eine kurze schriftliche Antwort: Was unserer Meinung nach das Problem ist, ob es passt und was der erste Schritt wäre.",
     "nextStep3Title": "Anruf oder asynchron",
@@ -64,7 +99,7 @@
     },
     "success": {
       "title": "Anfrage gesendet",
-      "body": "Vielen Dank – wir prüfen Ihr Projekt und antworten innerhalb von 2 Werktagen."
+      "body": "Vielen Dank – wir überprüfen den Projektkontext und antworten mit der nächsten nützlichen Frage oder einer Einschätzung der Eignung."
     },
     "error": {
       "title": "Etwas ist schief gelaufen",

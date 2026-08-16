@@ -1,22 +1,139 @@
 {
   "workPage": {
-    "eyebrow": "Lucrați cu SDK",
-    "body": "Știi când ceva din teancul tău te costă. Iată situațiile pentru care este construit SDK.",
-    "cta": "Începeți un proiect",
-    "engagementsEyebrow": "Angajamente",
-    "engagementsHeading": "Cum încep de obicei angajamentele",
-    "engagementsBody": "Majoritatea angajamentelor încep cu o scurtă conversație sau un rezumat scris al problemei. De acolo, SDK propune un răspuns definit: un audit cu preț fix, un flux de lucru cu timp și materiale sau un model hibrid, în funcție de incertitudinea din sistem și de claritatea obiectivului.",
-    "lookForEyebrow": "Ceea ce căutăm",
-    "lookForHeading": "O problemă clară și o echipă dispusă să se implice în ea.",
-    "lookForBody": "Cele mai bune angajamente încep atunci când clientul știe că ceva nu este în regulă, dar nu știe încă întreaga amploare. Căutăm echipe care doresc să înțeleagă mecanismul, nu doar să primească un slide deck.",
-    "lookFor1Title": "O constrângere specifică",
-    "lookFor1Body": "Performanță, fiabilitate, cost, viteza de livrare sau conformitate. Problema nu trebuie să fie nouă, ci trebuie să fie reală și măsurabilă.",
-    "lookFor2Title": "Acces la sistem",
-    "lookFor2Body": "Acces de citire la baza de cod, infrastructură și oamenii care înțeleg starea actuală. Fără aceasta, orice evaluare este o presupunere.",
-    "lookFor3Title": "Un factor de decizie",
-    "lookFor3Body": "Cineva care poate aproba domeniul de aplicare, bugetul și calendarul. Nu un comitet, ci o persoană cu autoritatea de a avansa munca.",
-    "fitEyebrow": "Fit",
-    "fitHeading": "Când SDK nu este răspunsul corect",
-    "fitBody": "Nu spunem mai des decât v-ați aștepta. SDK nu este un atelier de caroserie pentru bilete de preaplin și nu luăm angajamente în care problema nu este încă definită sau echipa nu se poate angaja în acest proces."
+    "hero": {
+      "eyebrow": "Probleme pe care suntem pregătiți să le rezolvăm",
+      "title": "Priviți problema de inginerie înainte de a prescrie proiectul.",
+      "intro": "Scenariile de mai jos arată modul în care SDK abordează situațiile cu consecințe din punct de vedere tehnic. Ele descriu capacități și căi de decizie, nu studii de caz inventate de clienți sau rezultate nesusținute.",
+      "primaryCta": "Discutați o situație",
+      "secondaryCta": "Explorați scenariile",
+      "signals": [
+        "Fără studii de caz fabricate",
+        "Dovezi înainte de prescripție",
+        "Deciziile clientului definite",
+        "Livrabile tangibile"
+      ]
+    },
+    "scenarios": {
+      "eyebrow": "Scenarii de implicare",
+      "heading": "Recunoașteți presiunea. Apoi găsiți prima mișcare responsabilă.",
+      "intro": "Un răspuns util conectează expunerea afacerii de dovezi tehnice și de o decizie asupra căreia organizația poate acționa.",
+      "labels": {
+        "signals": "Ceea ce puteți vedea",
+        "questions": "Ce trebuie să învățăm",
+        "deliverables": "Ceea ce creează progres"
+      },
+      "items": [
+        {
+          "number": "01 / MODERNIZARE",
+          "title": "Sistemul este prea important pentru a fi înlocuit orbește și prea costisitor pentru a fi lăsat în pace.",
+          "situation": "Livrarea încetinește pe măsură ce dependențele îmbătrânesc, cunoștințele se îngustează și fiecare schimbare ajunge mai departe decât se aștepta.",
+          "signals": [
+            "Upgrade-uri amânate în mod repetat",
+            "Modificările necesită recuperare manuală",
+            "Comportamentul critic este nedocumentat"
+          ],
+          "questions": [
+            "Ce granițe se pot deplasa independent?",
+            "Unde este codificat comportamentul de afaceri?",
+            "Ce trebuie să rămână disponibil în timpul schimbării?"
+          ],
+          "deliverables": [
+            "Harta stării curente",
+            "Opțiuni clasificate în funcție de risc",
+            "Secvență de migrare incrementală"
+          ]
+        },
+        {
+          "number": "02 / FIABILITATE",
+          "title": "Platforma este sub presiune, dar capacitatea poate să nu fie adevărata problemă.",
+          "situation": "Latența, incidentele sau costul infrastructurii sunt în creștere și semnalele disponibile nu explică de ce.",
+          "signals": [
+            "Eșecurile sunt greu de reprodus",
+            "Schimbările de scalare mută blocajul",
+            "Recuperarea depinde de câțiva oameni"
+          ],
+          "questions": [
+            "Unde se duce timpul și capacitatea?",
+            "Ce moduri de eroare afectează utilizatorii?",
+            "Ce dovezi lipsesc în timpul incidentelor?"
+          ],
+          "deliverables": [
+            "Blocaje observate",
+            "Registrul riscului operațional",
+            "Plan de stabilizare prioritizat"
+          ]
+        },
+        {
+          "number": "03 / FLUX DE LUCRU AI",
+          "title": "Demo-ul AI funcționează. Modelul de operare din jurul lui nu există încă.",
+          "situation": "Un model de interacțiune promițător trebuie să devină un flux de lucru controlat, cu date de încredere, evaluare și responsabilitate umană.",
+          "signals": [
+            "Calitatea este judecată după impresie",
+            "Permisiunile sursei sunt neclare",
+            "Eșecurile nu au o cale de revizuire"
+          ],
+          "questions": [
+            "Care este un rezultat acceptabil?",
+            "Ce decizii necesită revizuire umană?",
+            "Cum va fi măsurată calitatea în timp?"
+          ],
+          "deliverables": [
+            "Flux de lucru și design de control",
+            "Abordarea evaluării",
+            "Limita de implementare"
+          ]
+        },
+        {
+          "number": "04 / PROPRIETATE TEHNICA",
+          "title": "Produsul necesită o proprietate inginerească concentrată pentru o fază critică.",
+          "situation": "Echipa internă are o prioritate definită, dar îi lipsește una sau mai multe discipline necesare pentru a desfășura fluxul de lucru în siguranță.",
+          "signals": [
+            "Un element critic al foii de parcurs rămâne blocat",
+            "Mai multe sisteme trebuie să se schimbe împreună",
+            "Contribuitorii externi ar avea nevoie de coordonare"
+          ],
+          "questions": [
+            "Ce rezultat poate avea SDK?",
+            "Ce expertiză este cu adevărat necesară?",
+            "Unde rămân esențiale deciziile clienților?"
+          ],
+          "deliverables": [
+            "Echipa specifică proiectului",
+            "Înregistrare vizibilă de livrare",
+            "Transferul de proprietate documentat"
+          ]
+        }
+      ]
+    },
+    "principle": {
+      "eyebrow": "De ce scenarii",
+      "heading": "Un portofoliu este persuasiv doar atunci când dovezile sunt reale.",
+      "body": "SDK va publica clienții numiți, rezultatele cuantificate și mărturiile numai atunci când munca, rezultatul și permisiunea pot fi verificate. Până atunci, această pagină arată situațiile pe care suntem pregătiți să le investigăm și rezultatele care le duc mai departe."
+    },
+    "fit": {
+      "eyebrow": "Potrivire de logodnă",
+      "heading": "Cea mai puternică muncă începe cu acces, responsabilitate și o decizie reală de luat.",
+      "intro": "Dificultatea tehnică este binevenită. Un angajament devine ineficient atunci când organizația nu poate oferi contextul, accesul sau proprietatea asupra deciziilor.",
+      "fitTitle": "Condiții bune pentru SDK",
+      "notFitTitle": "Condiții proaste pentru SDK",
+      "fitItems": [
+        "Un software material, date, AI sau constrângere de infrastructură",
+        "Acces la sistem și oameni care înțeleg starea lui actuală",
+        "Un factor de decizie care poate rezolva domeniul de aplicare și compromisuri",
+        "Disponibilitatea de a examina dovezile înainte de a se angaja la o soluție"
+      ],
+      "notFitItems": [
+        "Capacitate anonimă de bilete fără rezultat deținut",
+        "O cerere de validare a unui răspuns prestabilit, indiferent de dovezi",
+        "Nu există acces practic la sistemul sau părțile interesate relevante",
+        "Selecția bazată numai pe cel mai mic tarif individual pe zi"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Adu-ne situația reală",
+      "title": "Începeți cu cât costă sistemul, întârzie sau pune în pericol.",
+      "body": "Nu trebuie să îl diagnosticați înainte de a contacta SDK. Spune-ne ce se întâmplă și ce decizie este blocată în prezent.",
+      "label": "Discutați situația"
+    }
   }
 }

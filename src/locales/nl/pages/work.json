@@ -1,22 +1,139 @@
 {
   "workPage": {
-    "eyebrow": "Werken met SDK",
-    "body": "Je weet wanneer iets in je stapel je iets kost. Dit zijn de situaties waarvoor de SDK is gebouwd.",
-    "cta": "Start een project",
-    "engagementsEyebrow": "Verlovingen",
-    "engagementsHeading": "Hoe engagementen gewoonlijk beginnen",
-    "engagementsBody": "De meeste opdrachten beginnen met een kort gesprek of een schriftelijke samenvatting van het probleem. Van daaruit stelt SDK een uitgebreid antwoord voor: een audit met een vaste prijs, een werkstroom met tijd en materialen, of een hybride model, afhankelijk van de onzekerheid in het systeem en de duidelijkheid van het doel.",
-    "lookForEyebrow": "Waar we naar op zoek zijn",
-    "lookForHeading": "Een duidelijk probleem en een team dat zich ermee wil bezighouden.",
-    "lookForBody": "De beste opdrachten beginnen wanneer de klant weet dat er iets mis is, maar nog niet de volledige omvang ervan kent. We zoeken naar teams die het mechanisme willen begrijpen en niet alleen maar een slidedeck willen ontvangen.",
-    "lookFor1Title": "Een specifieke beperking",
-    "lookFor1Body": "Prestaties, betrouwbaarheid, kosten, snelheid van levering of compliance. Het probleem hoeft niet nieuw te zijn; het moet reëel en meetbaar zijn.",
-    "lookFor2Title": "Toegang tot het systeem",
-    "lookFor2Body": "Leestoegang tot de codebase, infrastructuur en de mensen die de huidige status begrijpen. Zonder dit is elke beoordeling giswerk.",
-    "lookFor3Title": "Een beslisser",
-    "lookFor3Body": "Iemand die de scope, het budget en de tijdlijn kan goedkeuren. Geen commissie – één persoon met de autoriteit om het werk vooruit te helpen.",
-    "fitEyebrow": "Pasvorm",
-    "fitHeading": "Wanneer SDK niet het juiste antwoord is",
-    "fitBody": "Wij zeggen vaker nee dan je zou verwachten. SDK is geen schadeherstelbedrijf voor overflowtickets en we gaan geen opdrachten aan waarbij het probleem nog niet is gedefinieerd of het team zich niet aan het proces kan binden."
+    "hero": {
+      "eyebrow": "Problemen die we moeten oplossen",
+      "title": "Kijk naar het technische probleem voordat u het project voorschrijft.",
+      "intro": "De onderstaande scenario's laten zien hoe de SDK technisch gevolgsituaties benadert. Ze beschrijven capaciteiten en beslissingstrajecten, geen verzonnen klantcasestudies of niet-ondersteunde resultaten.",
+      "primaryCta": "Bespreek een situatie",
+      "secondaryCta": "Verken de scenario's",
+      "signals": [
+        "Geen verzonnen casestudies",
+        "Bewijs vóór recept",
+        "Gedefinieerde klantbeslissingen",
+        "Tastbare resultaten"
+      ]
+    },
+    "scenarios": {
+      "eyebrow": "Betrokkenheidsscenario's",
+      "heading": "Herken de druk. Zoek dan de verantwoordelijke eerste zet.",
+      "intro": "Een nuttig antwoord koppelt zakelijke blootstelling aan technisch bewijsmateriaal en een beslissing waar de organisatie op kan reageren.",
+      "labels": {
+        "signals": "Wat je misschien ziet",
+        "questions": "Wat we moeten leren",
+        "deliverables": "Wat zorgt voor vooruitgang"
+      },
+      "items": [
+        {
+          "number": "01 / MODERNISERING",
+          "title": "Het systeem is te belangrijk om blindelings te vervangen, en te duur om met rust te laten.",
+          "situation": "De levering vertraagt ​​naarmate afhankelijkheden ouder worden, de kennis kleiner wordt en elke verandering verder reikt dan verwacht.",
+          "signals": [
+            "Upgrades herhaaldelijk uitgesteld",
+            "Wijzigingen vereisen handmatig herstel",
+            "Kritisch gedrag is niet gedocumenteerd"
+          ],
+          "questions": [
+            "Welke grenzen kunnen onafhankelijk bewegen?",
+            "Waar wordt zakelijk gedrag gecodeerd?",
+            "Wat moet beschikbaar blijven tijdens de verandering?"
+          ],
+          "deliverables": [
+            "Kaart van de huidige staat",
+            "Op risico gerangschikte opties",
+            "Incrementele migratievolgorde"
+          ]
+        },
+        {
+          "number": "02 / BETROUWBAARHEID",
+          "title": "Het platform staat onder druk, maar capaciteit is misschien niet het echte probleem.",
+          "situation": "Latentie, incidenten of infrastructuurkosten nemen toe en de beschikbare signalen verklaren niet waarom.",
+          "signals": [
+            "Mislukkingen zijn moeilijk te reproduceren",
+            "Schaalveranderingen verplaatsen het knelpunt",
+            "Herstel is afhankelijk van een paar mensen"
+          ],
+          "questions": [
+            "Waar gaan tijd en capaciteit naartoe?",
+            "Welke faalmodi zijn van invloed op gebruikers?",
+            "Welk bewijs ontbreekt bij incidenten?"
+          ],
+          "deliverables": [
+            "Gesignaleerde knelpunten",
+            "Operationeel risicoregister",
+            "Geprioriteerd stabilisatieplan"
+          ]
+        },
+        {
+          "number": "03 / AI-WORKFLOW",
+          "title": "De AI-demo werkt. Het operationele model eromheen bestaat nog niet.",
+          "situation": "Een veelbelovende modelinteractie moet een gecontroleerde workflow worden met betrouwbare data, evaluatie en menselijke verantwoordelijkheid.",
+          "signals": [
+            "Kwaliteit wordt beoordeeld aan de hand van indruk",
+            "Bronrechten zijn onduidelijk",
+            "Mislukkingen hebben geen beoordelingspad"
+          ],
+          "questions": [
+            "Wat is een acceptabel resultaat?",
+            "Welke beslissingen vereisen menselijke beoordeling?",
+            "Hoe wordt de kwaliteit in de loop van de tijd gemeten?"
+          ],
+          "deliverables": [
+            "Ontwerp van workflow en besturing",
+            "Evaluatiebenadering",
+            "Implementatiegrens"
+          ]
+        },
+        {
+          "number": "04 / TECHNISCH EIGENDOM",
+          "title": "Het product heeft gericht technisch eigendom nodig voor een kritieke fase.",
+          "situation": "Het interne team heeft een gedefinieerde prioriteit, maar mist een of meer disciplines die nodig zijn om de werkstroom veilig uit te voeren.",
+          "signals": [
+            "Een cruciaal roadmapitem blijft geblokkeerd",
+            "Verschillende systemen moeten samen veranderen",
+            "Externe contribuanten zouden coördinatie nodig hebben"
+          ],
+          "questions": [
+            "Welke uitkomst kan SDK bezitten?",
+            "Welke expertise is werkelijk nodig?",
+            "Waar blijven klantbeslissingen essentieel?"
+          ],
+          "deliverables": [
+            "Projectspecifiek team",
+            "Zichtbare leveringsbon",
+            "Gedocumenteerde eigendomsoverdracht"
+          ]
+        }
+      ]
+    },
+    "principle": {
+      "eyebrow": "Waarom scenario's",
+      "heading": "Een portfolio is alleen overtuigend als het bewijsmateriaal reëel is.",
+      "body": "SDK zal alleen genoemde klanten, gekwantificeerde resultaten en getuigenissen publiceren als het werk, het resultaat en de toestemming kunnen worden geverifieerd. Tot die tijd toont deze pagina de situaties die we kunnen onderzoeken en de resultaten die deze situaties vooruit helpen."
+    },
+    "fit": {
+      "eyebrow": "Betrokkenheid past",
+      "heading": "Het sterkste werk begint met toegang, verantwoordelijkheid en een echte beslissing.",
+      "intro": "Technische problemen zijn welkom. Een engagement wordt ineffectief als de organisatie geen context, toegang of beslissingseigendom kan bieden.",
+      "fitTitle": "Goede omstandigheden voor SDK",
+      "notFitTitle": "Slechte omstandigheden voor SDK",
+      "fitItems": [
+        "Een materiële software-, data-, AI- of infrastructuurbeperking",
+        "Toegang tot het systeem en mensen die de huidige staat ervan begrijpen",
+        "Een beslisser die reikwijdte en afwegingen kan maken",
+        "Bereidheid om bewijsmateriaal te onderzoeken alvorens zich tot een oplossing te verbinden"
+      ],
+      "notFitItems": [
+        "Anonieme ticketcapaciteit zonder eigen uitkomst",
+        "Een verzoek om een ​​vooraf bepaald antwoord te valideren, ongeacht bewijs",
+        "Geen praktische toegang tot het relevante systeem of belanghebbenden",
+        "Selectie uitsluitend op basis van het laagste individuele dagtarief"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Breng ons de werkelijke situatie",
+      "title": "Begin met wat het systeem kost, vertraagt ​​of in gevaar brengt.",
+      "body": "U hoeft geen diagnose te stellen voordat u contact opneemt met SDK. Vertel ons wat er aan de hand is en welk besluit momenteel is geblokkeerd.",
+      "label": "Bespreek de situatie"
+    }
   }
 }

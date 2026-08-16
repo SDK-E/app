@@ -1,14 +1,49 @@
 {
   "enquiry": {
+    "eyebrow": "Omów projekt",
     "title": "Rozpocznij projekt",
-    "subtitle": "Powiedz nam, co próbujesz zbudować, zmodernizować, zautomatyzować lub naprawić. Odpowiemy w ciągu 2 dni roboczych, przedstawiając rzetelną ocenę dopasowania i kosztów.",
+    "subtitle": "Powiedz nam, co próbujesz zbudować, zmodernizować, zautomatyzować lub naprawić. Przydatne dochodzenie zaczyna się od presji na system i decyzji, którą musisz podjąć.",
     "body": "Formularz zbiera minimum informacji potrzebnych do przemyślanej odpowiedzi. Nic nie jest udostępniane poza SDK Enterprises, możesz także skontaktować się z nami bezpośrednio pod adresem hello@sdk.enterprises.",
-    "body2": "Sami sprawdzamy każde zapytanie. Żadnych menedżerów kont, żadnych skryptów kwalifikacyjnych, żadnych przekazań.",
+    "body2": "Kontekst techniczny i handlowy pozostają ze sobą spójne, podczas gdy SDK ocenia, czy praca jest dopasowana.",
+    "heroSignals": [
+      "Gotowa specyfikacja nie jest wymagana",
+      "Kontekst techniczny i komercyjny pozostają ze sobą w zgodzie",
+      "Kontekst przemyślanej odpowiedzi",
+      "Bezpośredni kontakt z firmą pozostaje dostępny"
+    ],
+    "reasonsEyebrow": "Przydatne punkty wyjścia",
+    "reasonsHeading": "Wywieraj presję na system, a nie na dopracowany dokument zamówienia.",
+    "reasonsIntro": "Formularz ma na celu ustalenie, czy SDK może ułatwić podjęcie kolejnej decyzji technicznej.",
+    "reasons": [
+      {
+        "number": "01",
+        "title": "System musi się zmienić",
+        "copy": "Prace modernizacyjne, migracyjne czy integracyjne blokuje niepewność stanu obecnego."
+      },
+      {
+        "number": "02",
+        "title": "Platforma jest pod presją",
+        "copy": "Niezawodność, szybkość dostaw, infrastruktura lub zachowanie danych stały się ograniczeniami biznesowymi."
+      },
+      {
+        "number": "03",
+        "title": "Przepływ pracy oparty na sztucznej inteligencji wymaga kontroli inżynieryjnych",
+        "copy": "Przypadek użycia jest obiecujący, ale dane, ocena, przegląd lub operacja nie zostały jeszcze zdefiniowane."
+      },
+      {
+        "number": "04",
+        "title": "Strumień pracy potrzebuje odpowiednich specjalistów",
+        "copy": "Wynik jest jasny, ale projekt przekracza dyscypliny, których obecny zespół nie jest w stanie zająć się sam."
+      }
+    ],
+    "formEyebrow": "Kontekst projektu",
+    "formHeading": "Podaj nam wystarczająco dużo informacji, abyśmy mogli udzielić przydatnej odpowiedzi.",
+    "formIntro": "Wyjaśnij, co się dzieje, dlaczego jest to ważne i co już próbowano. Nieznany budżet, harmonogram lub szczegóły techniczne mogą pozostać oznaczone jako takie.",
     "nextStepsEyebrow": "Co stanie się dalej",
     "nextStepsHeading": "Od zapytania do zaangażowania",
     "nextStepsBody": "Po przesłaniu formularza sami go czytamy. Jeśli będzie pasować, prześlemy krótką pisemną ocenę i proponowany model zaangażowania. Jeżeli nie będzie to dla Ciebie odpowiednie rozwiązanie, poinformujemy Cię dlaczego i zaproponujemy alternatywę.",
     "nextStep1Title": "Recenzja",
-    "nextStep1Body": "Czytamy Twoje zgłoszenie i porównujemy je z naszymi obecnymi możliwościami i wiedzą specjalistyczną. Zwykle w ciągu 2 dni roboczych.",
+    "nextStep1Body": "Dokonujemy przeglądu systemu, ograniczeń i wymaganego wyniku pod kątem aktualnej wydajności SDK i odpowiedniej wiedzy specjalistycznej.",
     "nextStep2Title": "Ocena",
     "nextStep2Body": "Krótka pisemna odpowiedź: na czym naszym zdaniem polega problem, czy pasuje i jaki byłby pierwszy ruch.",
     "nextStep3Title": "Zadzwoń lub asynchronizuj",
@@ -64,7 +99,7 @@
     },
     "success": {
       "title": "Zapytanie wysłane",
-      "body": "Dziękujemy — sprawdzimy Twój projekt i odpowiemy w ciągu 2 dni roboczych."
+      "body": "Dziękujemy — sprawdzimy kontekst projektu i odpowiemy, zadając kolejne przydatne pytanie lub ocenę dopasowania."
     },
     "error": {
       "title": "Coś poszło nie tak",

@@ -1,132 +1,145 @@
 {
-  "hero": {
-    "eyebrow": "B2B AI · Software · Cloud · Ingineria sistemelor",
-    "heading": "Un partener de inginerie pentru stiva de care compania dumneavoastră are nevoie.",
-    "leadParagraph": "SDK Enterprises construiește, modernizează și operează software în întreaga stivă — platforme backend, infrastructură cloud, automatizare AI, sisteme în timp real și instrumente interne. Te implici într-o problemă specializată sau deții un flux de lucru mai larg; oricum, oamenii care lucrează sunt cei cu care vorbești.",
-    "ctaStartProject": "Începeți un proiect",
-    "ctaExploreServices": "Explorați serviciile",
-    "trustFrance": "Companie B2B cu sediul în Franța",
-    "trustSenior": "Livrare de inginerie senior",
-    "trustAI": "AI + backend + cloud",
-    "trustClients": "Clienți europeni și la distanță"
-  },
-  "services": {
-    "eyebrow": "Servicii",
-    "title": "Folosiți toată stiva - sau doar partea de care aveți nevoie.",
-    "intro": "SDK se poate implica într-o problemă specializată sau poate deține un flux de lucru tehnic mai larg.",
-    "items": [
-      {
-        "number": "01",
-        "category": "Inginerie AI",
-        "title": "Agenți AI și automatizare",
-        "copy": "LLM integrări, agenți, RAG, automatizare a fluxului de lucru, instrumente pentru dezvoltatori și operațiuni asistate de AI."
-      },
-      {
-        "number": "02",
-        "category": "Backend",
-        "title": "Platforme, APIs și SaaS",
-        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs și arhitectură backend în timp real."
-      },
-      {
-        "number": "03",
-        "category": "Frontend",
-        "title": "Interfețe web și aplicații",
-        "copy": "React, Vue, Nuxt, TypeScript, Tailwind și Shadcn."
-      },
-      {
-        "number": "04",
-        "category": "nor",
-        "title": "Cloud și infrastructură",
-        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD și arhitectura de implementare."
-      },
-      {
-        "number": "05",
-        "category": "Date",
-        "title": "Baze de date, cache și căutare",
-        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey și Elasticsearch."
-      },
-      {
-        "number": "06",
-        "category": "Modernizare",
-        "title": "Modernizare moștenire",
-        "copy": "Actualizări de cadru, migrare, reducerea datoriilor tehnice și optimizarea performanței."
-      }
-    ]
-  },
-  "whySdk": {
-    "eyebrow": "De ce SDK",
-    "title": "Inginerie superioară fără straturi inutile.",
-    "intro": "Comunicare directa, diagnosticare rapida si executie pragmatica.",
-    "items": [
-      {
-        "kicker": "FR",
-        "copy": "O companie B2B cu sediul în Franța pentru clienți europeni și la distanță."
-      },
-      {
-        "kicker": "AI",
-        "copy": "LLM integrări, agenți, automatizare și instrumente interne."
-      },
-      {
-        "kicker": "RT",
-        "copy": "Lucru pe platformă în timp real și cu volum mare."
-      },
-      {
-        "kicker": "DIRECT",
-        "copy": "Vorbești cu inginerii care fac munca, nu cu un strat de cont."
-      }
-    ]
-  },
-  "engagements": {
-    "eyebrow": "Lucrați cu SDK",
-    "title": "Aduceți o problemă specifică. Obțineți un răspuns specific.",
-    "intro": "Știi când ceva din teancul tău te costă. Iată situațiile pentru care este configurat SDK.",
-    "items": [
-      {
-        "title": "Un sistem prea vechi pentru a continua corecțiile.",
-        "copy": "Aveți nevoie de un plan de migrare, nu de o dorință - un audit al ceea ce rulează, ce se întrerupe și ordinea de mutare."
-      },
-      {
-        "title": "Volumul pentru care stiva dvs. actuală nu a fost creată.",
-        "copy": "Asimilare în timp real, backend-uri de mare debit și infrastructura pentru a le menține stabile."
-      },
-      {
-        "title": "AI pe care o poți pune la treabă.",
-        "copy": "LLM integrări, agenți și automatizări care schimbă un flux de lucru intern - nu o demonstrație care se oprește la teren."
-      },
-      {
-        "title": "O echipă care are nevoie de mâini seniori.",
-        "copy": "Livrare directă de inginerie pe baza de cod, fără ca un strat mijlociu să încetinească deciziile."
-      }
-    ]
-  },
-  "process": {
-    "eyebrow": "Cum lucrăm",
-    "title": "O cale clară de la problemă la producție.",
-    "intro": "Patru pași, progres vizibil în fiecare etapă.",
-    "items": [
-      {
-        "title": "Înțelege",
-        "copy": "Scopul afacerii, stiva, constrângerile și criteriile de succes."
-      },
-      {
-        "title": "Design",
-        "copy": "Arhitectură, domeniul de aplicare, riscuri și repere."
-      },
-      {
-        "title": "Construiește",
-        "copy": "Implementare cu progres vizibil."
-      },
-      {
-        "title": "Predarea",
-        "copy": "Implementați, documentați și transferați proprietatea."
-      }
-    ]
-  },
-  "contact": {
-    "eyebrow": "Lucrați cu SDK",
-    "heading": "Adu-ne problema de care ai nevoie să o rezolvi.",
-    "body": "Spuneți-ne ce încercați să construiți, să modernizați, să automatizați sau să remediați — vă vom spune sincer dacă este potrivit și ce ar fi nevoie.",
-    "registeredUnder": "Înregistrat sub {company}",
-    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  "homePage": {
+    "hero": {
+      "eyebrow": "Software · AI · Cloud · Date · Ingineria sistemelor",
+      "title": "Aduceți sistemul care are nevoie de o cale responsabilă înainte.",
+      "intro": "SDK Enterprises reunește specialiștii de inginerie pe care un proiect îi cere de fapt, le coordonează munca și rămâne responsabil pentru cadrul de calitate prezentat clientului. Ajutăm organizațiile să diagnosticheze, să modernizeze, să construiască și să opereze software cu consecințe tehnice.",
+      "primaryCta": "Discutați situația",
+      "secondaryCta": "Vezi de unde să începi",
+      "signals": [
+        "Componența echipei conduse de probleme",
+        "Specialiști independenți",
+        "Cadru de livrare condus de SDK",
+        "Sisteme controlate de client"
+      ]
+    },
+    "opening": {
+      "eyebrow": "Punctul de plecare",
+      "heading": "O listă de tehnologie nu vă poate spune de ce are nevoie proiectul.",
+      "body": "Un program de modernizare, un flux de lucru AI și o problemă de fiabilitate a platformei pot atinge tehnologii similare, în timp ce necesită decizii, discipline și controale de livrare complet diferite. SDK începe cu presiunea asupra sistemului și rezultatul pe care trebuie să-l dețină organizația.",
+      "body2": "Acest lucru poate duce la o evaluare tehnică limitată, un flux de lucru de inginerie concentrat sau un parteneriat tehnic continuu. Angajamentul ar trebui să se potrivească cu ceea ce este deja cunoscut – nu să ascundă incertitudinea în interiorul unei propuneri mai mari.",
+      "principles": [
+        {
+          "number": "01",
+          "title": "Dovezi înainte de angajament",
+          "copy": "Când starea curentă sau calea de implementare este neclară, stabiliți mai întâi dovezile necesare pentru o decizie responsabilă."
+        },
+        {
+          "number": "02",
+          "title": "Capacitate în jurul problemei",
+          "copy": "Selectați disciplinele pe care sistemul le necesită, în loc să forțați fiecare angajament în aceeași echipă disponibilă."
+        },
+        {
+          "number": "03",
+          "title": "Proprietate care supraviețuiește predării",
+          "copy": "Păstrați deciziile, depozitele, infrastructura, documentația și cunoștințele de operare sub controlul clientului."
+        }
+      ]
+    },
+    "system": {
+      "eyebrow": "Un singur sistem, decizii legate",
+      "heading": "Lucrarea se oprește rareori la limita unei tehnologii.",
+      "intro": "SDK se poate concentra pe un singur strat sau poate coordona un flux de lucru care traversează mai multe. Harta de mai jos arată preocupările de inginerie care adesea trebuie luate în considerare împreună.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Flux de lucru și interfață",
+          "copy": "Sarcina utilizatorului, decizia operațională și calea de recuperare pe care software-ul trebuie să le facă ușor de înțeles.",
+          "systems": [
+            "React",
+            "Vue",
+            "Nuxt",
+            "TypeScript"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Platforma de afaceri",
+          "copy": "Serviciile, APIs, permisiunile și contractele de integrare care poartă regulile organizației.",
+          "systems": [
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PHP"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "AI și automatizare",
+          "copy": "Deciziile asistate de model, regăsirea, evaluarea și controlul revizuirii umane în cadrul unui flux de lucru real.",
+          "systems": [
+            "LLM",
+            "RAG",
+            "Agenți",
+            "APIs"
+          ]
+        },
+        {
+          "number": "04",
+          "title": "Date și stare",
+          "copy": "Regulile de proprietate, consecvență, căutare, cache și ciclul de viață din spatele comportamentului sistemului.",
+          "systems": [
+            "PostgreSQL",
+            "MongoDB",
+            "Redis",
+            "Elasticsearch"
+          ]
+        },
+        {
+          "number": "05",
+          "title": "Operațiunea de producție",
+          "copy": "Mecanismele de implementare, observabilitate, recuperare și infrastructură necesare pentru operarea sistemului.",
+          "systems": [
+            "AWS",
+            "GCP",
+            "Azure",
+            "Kubernetes",
+            "CI/CD"
+          ]
+        }
+      ]
+    },
+    "scenarios": {
+      "eyebrow": "Recunoașteți situația",
+      "heading": "Lucrările tehnice devin urgente prin efectul ei asupra afacerii.",
+      "intro": "Următoarele scenarii sunt exemple de capabilități, nu studii de caz inventate de clienți. Acestea arată modul în care SDK conectează simptomele cu întrebările și următoarele livrabile tangibile.",
+      "link": "Explorați toate scenariile de lucru"
+    },
+    "companyModel": {
+      "eyebrow": "Modelul de operare SDK",
+      "heading": "O echipă specifică proiectului fără a transfera riscul de coordonare către client.",
+      "intro": "SDK lucrează cu specialiști independenți în inginerie. Disciplinele se pot schimba odată cu munca, în timp ce clientul păstrează o relație de companie și un cadru de livrare.",
+      "link": "Înțelegeți modelul companiei"
+    },
+    "engagements": {
+      "eyebrow": "Alegeți nivelul potrivit de angajament",
+      "heading": "Nu cumpărați implementare înainte ca sistemul să poată susține o decizie de implementare.",
+      "intro": "Începeți cu dovezi când incertitudinea este semnificativă. Treceți direct la livrare când rezultatul, limitele și condițiile de acceptare sunt deja înțelese.",
+      "link": "Explorați serviciile și modelele de implicare"
+    },
+    "process": {
+      "eyebrow": "De la incertitudine la proprietate",
+      "heading": "Fiecare etapă ar trebui să se încheie cu dovezi și cu o decizie.",
+      "intro": "Activitatea singură nu arată că un proiect progresează. SDK structurează angajamentul astfel încât clientul să poată revizui ceea ce a fost învățat, construit și transferat înainte de a-și lua următorul angajament.",
+      "link": "Vedeți procesul complet de livrare"
+    },
+    "quality": {
+      "eyebrow": "Calitate pe care o puteți inspecta",
+      "heading": "Încrederea ar trebui să vină din mecanisme vizibile, nu din adjective.",
+      "intro": "Termeni precum sigur, scalabil și pregătit pentru producție devin semnificativi doar atunci când angajamentul definește modul în care vor fi examinați pentru sistemul și riscul actual.",
+      "link": "Vedeți cum funcționează SDK"
+    },
+    "fit": {
+      "eyebrow": "Înainte să discutăm despre o echipă",
+      "heading": "Angajamentul are nevoie de o constrângere reală, acces la sistem și cineva capabil să decidă.",
+      "intro": "SDK este proiectat pentru rezultate tehnice deținute. Nu este o piață pentru capacitatea de bilete anonimă sau o modalitate de a valida un răspuns predeterminat fără a examina dovezile.",
+      "link": "Examinați potrivirea angajamentului"
+    },
+    "cta": {
+      "eyebrow": "Începeți cu situația reală",
+      "title": "Nu trebuie să transformați mai întâi problema într-o specificație șlefuită.",
+      "body": "Spuneți-ne ce face sistemul, ce costă sau întârzie și ce decizie este blocată în prezent. SDK va începe prin a determina dacă lucrarea este potrivită și care ar trebui să fie prima mișcare utilă.",
+      "label": "Discutați situația"
+    }
   }
 }

@@ -1,14 +1,49 @@
 {
   "enquiry": {
+    "eyebrow": "Bespreek een project",
     "title": "Start een project",
-    "subtitle": "Vertel ons wat u probeert te bouwen, moderniseren, automatiseren of repareren. We zullen binnen 2 werkdagen antwoorden met een eerlijke beoordeling van de geschiktheid en wat ervoor nodig is.",
+    "subtitle": "Vertel ons wat u probeert te bouwen, moderniseren, automatiseren of repareren. Een nuttig onderzoek begint met de druk op het systeem en de beslissing die u moet nemen.",
     "body": "Het formulier verzamelt de minimale informatie die nodig is om doordacht te reageren. Er wordt niets gedeeld buiten SDK Enterprises, maar u kunt ons ook rechtstreeks bereiken via hello@sdk.enterprises.",
-    "body2": "Wij beoordelen elke aanvraag zelf. Geen accountmanagers, geen kwalificatiescripts, geen overdrachten.",
+    "body2": "Jouw technische en commerciële context blijft bij elkaar terwijl SDK beoordeelt of het werk bij je past.",
+    "heroSignals": [
+      "Een voltooide specificatie is niet vereist",
+      "Technische en commerciële context blijven bij elkaar",
+      "Context voor een weloverwogen antwoord",
+      "Direct bedrijfscontact blijft beschikbaar"
+    ],
+    "reasonsEyebrow": "Nuttige uitgangspunten",
+    "reasonsHeading": "Breng de druk op het systeem, en niet op een gepolijst aanbestedingsdocument.",
+    "reasonsIntro": "Het formulier is bedoeld om vast te stellen of SDK de volgende technische beslissing eenvoudiger kan maken.",
+    "reasons": [
+      {
+        "number": "01",
+        "title": "Een systeem moet veranderen",
+        "copy": "Moderniserings-, migratie- of integratiewerk wordt geblokkeerd door de onzekerheid in de huidige situatie."
+      },
+      {
+        "number": "02",
+        "title": "Een platform staat onder druk",
+        "copy": "Betrouwbaarheid, leveringssnelheid, infrastructuur of datagedrag zijn een zakelijke beperking geworden."
+      },
+      {
+        "number": "03",
+        "title": "Een AI-workflow heeft technische controles nodig",
+        "copy": "De use case is veelbelovend, maar data, evaluatie, review of werking zijn nog niet gedefinieerd."
+      },
+      {
+        "number": "04",
+        "title": "Een werkstroom heeft de juiste specialisten nodig",
+        "copy": "De uitkomst is duidelijk, maar het project overstijgt disciplines die het huidige team niet alleen kan bestrijken."
+      }
+    ],
+    "formEyebrow": "Projectcontext",
+    "formHeading": "Geef ons voldoende informatie om nuttig te kunnen reageren.",
+    "formIntro": "Leg uit wat er gebeurt, waarom het ertoe doet en wat er al is geprobeerd. Onbekend budget, timing of technische details kunnen als zodanig gemarkeerd blijven.",
     "nextStepsEyebrow": "Wat gebeurt er daarna",
     "nextStepsHeading": "Van onderzoek naar betrokkenheid",
     "nextStepsBody": "Nadat u het formulier heeft verzonden, lezen wij het zelf. Als het past, zullen we antwoorden met een korte schriftelijke beoordeling en een voorgesteld engagementmodel. Als het niet past, vertellen we u waarom en stellen we een alternatief voor.",
     "nextStep1Title": "Beoordeling",
-    "nextStep1Body": "Wij lezen uw inzending en toetsen deze aan onze huidige capaciteit en expertise. Meestal binnen 2 werkdagen.",
+    "nextStep1Body": "We beoordelen het systeem, de beperking en het gevraagde resultaat aan de hand van de huidige capaciteit en relevante expertise van SDK.",
     "nextStep2Title": "Beoordeling",
     "nextStep2Body": "Een korte schriftelijke reactie: wat wij denken dat het probleem is, of het past en wat de eerste stap zou zijn.",
     "nextStep3Title": "Bellen of asynchroon",
@@ -64,7 +99,7 @@
     },
     "success": {
       "title": "Onderzoek verzonden",
-      "body": "Bedankt. We zullen uw project beoordelen en binnen twee werkdagen reageren."
+      "body": "Bedankt. We zullen de projectcontext bekijken en antwoorden met de volgende nuttige vraag of een beoordeling van de geschiktheid."
     },
     "error": {
       "title": "Er is iets misgegaan",

@@ -1,14 +1,49 @@
 {
   "enquiry": {
+    "eyebrow": "Diskuter et projekt",
     "title": "Start et projekt",
-    "subtitle": "Fortæl os, hvad du prøver at bygge, modernisere, automatisere eller reparere. Vi svarer inden for 2 hverdage med en ærlig vurdering af pasform, og hvad det ville kræve.",
+    "subtitle": "Fortæl os, hvad du prøver at bygge, modernisere, automatisere eller reparere. En nyttig forespørgsel starter med presset på systemet og den beslutning, du skal træffe.",
     "body": "Formularen indsamler de minimumsoplysninger, der er nødvendige for at reagere med omtanke. Intet deles uden for SDK Enterprises, og du kan også kontakte os direkte på hello@sdk.enterprises.",
-    "body2": "Vi gennemgår selv hver forespørgsel. Ingen account managers, ingen kvalifikationsscripts, ingen hand-offs.",
+    "body2": "Din tekniske og kommercielle kontekst forbliver sammen, mens SDK vurderer, om arbejdet passer.",
+    "heroSignals": [
+      "En færdig specifikation er ikke påkrævet",
+      "Teknisk og kommerciel sammenhæng forbliver sammen",
+      "Kontekst for et velovervejet svar",
+      "Direkte virksomhedskontakt er fortsat tilgængelig"
+    ],
+    "reasonsEyebrow": "Nyttige udgangspunkter",
+    "reasonsHeading": "Bring trykket på systemet, ikke et poleret indkøbsdokument.",
+    "reasonsIntro": "Skemaet er designet til at fastslå, om SDK kan gøre den næste tekniske beslutning lettere.",
+    "reasons": [
+      {
+        "number": "01",
+        "title": "Et system skal ændres",
+        "copy": "Modernisering, migration eller integrationsarbejde er blokeret af usikkerhed i den nuværende tilstand."
+      },
+      {
+        "number": "02",
+        "title": "En platform er under pres",
+        "copy": "Pålidelighed, leveringshastighed, infrastruktur eller dataadfærd er blevet en forretningsmæssig begrænsning."
+      },
+      {
+        "number": "03",
+        "title": "En AI-arbejdsgang kræver tekniske kontroller",
+        "copy": "Use casen er lovende, men data, evaluering, gennemgang eller drift er endnu ikke defineret."
+      },
+      {
+        "number": "04",
+        "title": "En arbejdsstrøm har brug for de rigtige specialister",
+        "copy": "Resultatet er klart, men projektet krydser discipliner, som det nuværende team ikke kan dække alene."
+      }
+    ],
+    "formEyebrow": "Projektkontekst",
+    "formHeading": "Giv os nok information til at svare nyttigt.",
+    "formIntro": "Forklar, hvad der sker, hvorfor det betyder noget, og hvad der allerede er blevet prøvet. Ukendt budget, timing eller tekniske detaljer kan forblive markeret som sådan.",
     "nextStepsEyebrow": "Hvad sker der så",
     "nextStepsHeading": "Fra forespørgsel til engagement",
     "nextStepsBody": "Når du har indsendt formularen, læser vi den selv. Hvis det passer, svarer vi med en kort skriftlig vurdering og en foreslået engagementsmodel. Hvis det ikke passer, fortæller vi dig hvorfor og foreslår et alternativ.",
     "nextStep1Title": "Gennemgå",
-    "nextStep1Body": "Vi læser din indsendelse og kontrollerer den i forhold til vores nuværende kapacitet og ekspertise. Normalt inden for 2 hverdage.",
+    "nextStep1Body": "Vi gennemgår systemet, begrænsningen og det ønskede resultat i forhold til SDK's nuværende kapacitet og relevante ekspertise.",
     "nextStep2Title": "Vurdering",
     "nextStep2Body": "Et kort skriftligt svar: hvad tror vi problemet er, om det passer, og hvad det første skridt ville være.",
     "nextStep3Title": "Ring eller asynkron",
@@ -64,7 +99,7 @@
     },
     "success": {
       "title": "Forespørgsel sendt",
-      "body": "Tak – vi gennemgår dit projekt og svarer inden for 2 hverdage."
+      "body": "Tak – vi gennemgår projektkonteksten og svarer med det næste nyttige spørgsmål eller en vurdering af egnethed."
     },
     "error": {
       "title": "Noget gik galt",

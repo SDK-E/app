@@ -1,22 +1,139 @@
 {
   "workPage": {
-    "eyebrow": "Dolgozzon a SDK-vel",
-    "body": "Tudod, ha valami a stackedben kerül neked. Itt vannak azok a helyzetek, amelyekre a SDK készült.",
-    "cta": "Indítson el egy projektet",
-    "engagementsEyebrow": "Eljegyzések",
-    "engagementsHeading": "Általában hogyan kezdődnek az eljegyzések",
-    "engagementsBody": "A legtöbb eljegyzés egy rövid beszélgetéssel vagy a probléma írásos összefoglalásával kezdődik. Innentől kezdve a SDK hatókörű választ javasol: fix árú auditot, időt és anyagokat használó munkafolyamatot vagy hibrid modellt a rendszer bizonytalanságától és a cél egyértelműségétől függően.",
-    "lookForEyebrow": "Amit keresünk",
-    "lookForHeading": "Egyértelmű probléma, és egy csapat hajlandó foglalkozni vele.",
-    "lookForBody": "A legjobb elköteleződés akkor kezdődik, amikor az ügyfél tudja, hogy valami nincs rendben, de még nem tudja a teljes terjedelmét. Olyan csapatokat keresünk, akik meg akarják érteni a mechanizmust, nem csak egy csúszdát kapnak.",
-    "lookFor1Title": "Egy konkrét megkötés",
-    "lookFor1Body": "Teljesítmény, megbízhatóság, költség, szállítási sebesség vagy megfelelőség. A problémának nem kell újszerűnek lennie – valósnak és mérhetőnek kell lennie.",
-    "lookFor2Title": "Hozzáférés a rendszerhez",
-    "lookFor2Body": "Olvasási hozzáférés a kódbázishoz, az infrastruktúrához és azokhoz az emberekhez, akik megértik a jelenlegi állapotot. E nélkül minden értékelés csak találgatás.",
-    "lookFor3Title": "Döntéshozó",
-    "lookFor3Body": "Valaki, aki jóváhagyhatja a hatókört, a költségvetést és az idővonalat. Nem egy bizottság – egy személy, akinek felhatalmazása van a munka előremozdítására.",
-    "fitEyebrow": "Fit",
-    "fitHeading": "Amikor a SDK nem a megfelelő válasz",
-    "fitBody": "Nem mondjuk gyakrabban, mint gondolnád. A SDK nem a túlcsordulási jegyek karosszériája, és nem vállalunk olyan megbízásokat, ahol a probléma még nincs meghatározva, vagy a csapat nem tud elköteleződni a folyamat mellett."
+    "hero": {
+      "eyebrow": "Problémák, amelyek megoldására készülünk",
+      "title": "A projekt előírása előtt nézze meg a mérnöki problémát.",
+      "intro": "Az alábbi forgatókönyvek bemutatják, hogy a SDK hogyan közelíti meg a technikailag következményes helyzeteket. Leírják a képességeket és a döntési utakat, nem pedig kitalált kliens esettanulmányokat vagy nem támogatott eredményeket.",
+      "primaryCta": "Beszéljetek meg egy helyzetet",
+      "secondaryCta": "Fedezze fel a forgatókönyveket",
+      "signals": [
+        "Nincsenek koholt esettanulmányok",
+        "Bizonyítékok felírás előtt",
+        "Meghatározott ügyféldöntések",
+        "Kézzelfogható eredmények"
+      ]
+    },
+    "scenarios": {
+      "eyebrow": "Eljegyzési forgatókönyvek",
+      "heading": "Ismerje fel a nyomást. Ezután találja meg a felelős első lépést.",
+      "intro": "A hasznos válasz összekapcsolja az üzleti tevékenységet a technikai bizonyítékokkal és a döntéssel, amely alapján a szervezet cselekedhet.",
+      "labels": {
+        "signals": "Amit láthatsz",
+        "questions": "Amit meg kell tanulnunk",
+        "deliverables": "Mi okozza a fejlődést"
+      },
+      "items": [
+        {
+          "number": "01 / MODERNIZÁCIÓ",
+          "title": "A rendszer túl fontos ahhoz, hogy vakon lecseréljük – és túl költséges ahhoz, hogy magára hagyjuk.",
+          "situation": "A szállítás lelassul, ahogy a függőségek öregszenek, a tudás szűkül, és minden változás a vártnál tovább terjed.",
+          "signals": [
+            "A frissítéseket többször is elhalasztották",
+            "A változtatások kézi helyreállítást igényelnek",
+            "A kritikus viselkedés nem dokumentált"
+          ],
+          "questions": [
+            "Mely határok mozoghatnak függetlenül?",
+            "Hol van kódolva az üzleti magatartás?",
+            "Minek kell elérhetőnek maradnia a változás során?"
+          ],
+          "deliverables": [
+            "Jelenlegi állapotú térkép",
+            "Kockázat szerinti opciók",
+            "Növekményes migrációs szekvencia"
+          ]
+        },
+        {
+          "number": "02 / MEGBÍZHATÓSÁG",
+          "title": "A platform nyomás alatt van, de lehet, hogy nem a kapacitás az igazi probléma.",
+          "situation": "A késleltetés, az incidensek vagy az infrastruktúra költségei nőnek, és a rendelkezésre álló jelek nem magyarázzák meg, miért.",
+          "signals": [
+            "A kudarcokat nehéz reprodukálni",
+            "A méretezési változtatások áthelyezik a szűk keresztmetszetet",
+            "A felépülés néhány embertől függ"
+          ],
+          "questions": [
+            "Hová megy az idő és a kapacitás?",
+            "Mely hibamódok érintik a felhasználókat?",
+            "Milyen bizonyítékok hiányoznak az incidensek során?"
+          ],
+          "deliverables": [
+            "Megfigyelt szűk keresztmetszetek",
+            "Működési kockázati nyilvántartás",
+            "Kiemelt stabilizációs terv"
+          ]
+        },
+        {
+          "number": "03 / AI WORKFLOW",
+          "title": "Az AI demó működik. A körülötte lévő működési modell még nem létezik.",
+          "situation": "Egy ígéretes modellinterakciónak ellenőrzött munkafolyamattá kell válnia megbízható adatokkal, értékeléssel és emberi felelősséggel.",
+          "signals": [
+            "A minőséget a benyomás alapján ítélik meg",
+            "A forrásengedélyek nem tisztázottak",
+            "A hibáknak nincs felülvizsgálati útvonala"
+          ],
+          "questions": [
+            "Mi az elfogadható eredmény?",
+            "Mely döntések igényelnek emberi felülvizsgálatot?",
+            "Hogyan mérhető a minőség az idő múlásával?"
+          ],
+          "deliverables": [
+            "Munkafolyamat és vezérlés tervezése",
+            "Értékelési megközelítés",
+            "Megvalósítási határ"
+          ]
+        },
+        {
+          "number": "04 / MŰSZAKI TULAJDONJOG",
+          "title": "A terméknek összpontosított mérnöki tulajdonra van szüksége egy kritikus szakaszhoz.",
+          "situation": "A belső csapatnak meghatározott prioritása van, de hiányzik egy vagy több fegyelem a munkafolyamat biztonságos végrehajtásához.",
+          "signals": [
+            "Egy kritikus ütemterv-elem blokkolva marad",
+            "Több rendszernek együtt kell változnia",
+            "A külső közreműködőknek koordinációra lenne szükségük"
+          ],
+          "questions": [
+            "Milyen eredményt érhet el a SDK?",
+            "Melyik szakértelemre van igazán szükség?",
+            "Hol maradnak lényegesek az ügyfelek döntései?"
+          ],
+          "deliverables": [
+            "Projektspecifikus csapat",
+            "Látható szállítási rekord",
+            "Dokumentált tulajdonátruházás"
+          ]
+        }
+      ]
+    },
+    "principle": {
+      "eyebrow": "Miért forgatókönyvek",
+      "heading": "A portfólió csak akkor meggyőző, ha a bizonyíték valódi.",
+      "body": "A SDK csak akkor teszi közzé a megnevezett ügyfeleket, a számszerűsített eredményeket és az ajánlásokat, ha a munka, az eredmény és az engedély ellenőrizhető. Addig is ezen az oldalon láthatók azok a helyzetek, amelyek kivizsgálására felkészültünk, és az azokat előrevivő eredmények."
+    },
+    "fit": {
+      "eyebrow": "Eljegyzési illeszkedés",
+      "heading": "A legerősebb munka a hozzáféréssel, a felelősséggel és egy valódi döntéssel kezdődik.",
+      "intro": "A technikai nehézségek üdvözlendőek. A megbízás akkor válik hatástalanná, ha a szervezet nem tud kontextust, hozzáférést vagy döntési tulajdonjogot biztosítani.",
+      "fitTitle": "Jó feltételek a SDK számára",
+      "notFitTitle": "Rossz feltételek a SDK számára",
+      "fitItems": [
+        "Lényeges szoftver, adat, mesterséges intelligencia vagy infrastruktúra-korlátozás",
+        "Hozzáférés a rendszerhez és olyan emberekhez, akik megértik annak jelenlegi állapotát",
+        "Döntéshozó, aki képes megoldani a terjedelmet és a kompromisszumokat",
+        "Hajlandóság a bizonyítékok megvizsgálására, mielőtt elkötelezné magát a megoldás mellett"
+      ],
+      "notFitItems": [
+        "Névtelen jegykapacitás saját eredmény nélkül",
+        "Egy előre meghatározott válasz érvényesítésére irányuló kérelem bizonyítékoktól függetlenül",
+        "Nincs gyakorlati hozzáférés az érintett rendszerhez vagy érdekelt felekhez",
+        "Kiválasztás csak a legalacsonyabb egyedi napi díj alapján"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Mutassa be nekünk a valós helyzetet",
+      "title": "Kezdje azzal, hogy a rendszer mennyibe kerül, mennyit késik vagy kockáztat.",
+      "body": "Nem kell diagnosztizálnia, mielőtt kapcsolatba lépne a SDK-vel. Mondja el nekünk, mi történik, és melyik döntés van jelenleg blokkolva.",
+      "label": "Beszéljétek meg a helyzetet"
+    }
   }
 }

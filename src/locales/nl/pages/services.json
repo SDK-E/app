@@ -1,19 +1,259 @@
 {
   "servicesPage": {
-    "eyebrow": "Diensten",
-    "body": "We bouwen en exploiteren software voor de volledige stack: AI-agents en automatisering, backendplatforms, webinterfaces, cloudinfrastructuur, datasystemen en verouderde modernisering. Eén gespecialiseerd probleem of een hele werkstroom: de ingenieurs die het werk doen, zijn degenen met wie u praat.",
-    "cta": "Start een project",
-    "engagementEyebrow": "Betrokkenheidsmodellen",
-    "engagementHeading": "Hoe wij betrokken zijn",
-    "engagementBody": "SDK komt op twee manieren binnen: een audit tegen een vaste prijs die een specifiek probleem diagnosticeert en een pad voorwaarts voorstelt, of een speciale technische werkstroom waarbij een senior team de implementatie van begin tot eind in handen heeft. Er bestaan ​​hybride arrangementen voor systemen die zowel diagnose als langdurige levering nodig hebben.",
-    "engagementModel1Title": "Audit tegen een vaste prijs",
-    "engagementModel1Body": "Een uitgebreide diagnose van een specifiek probleem: architectuurbeoordeling, migratiepad, prestatieknelpunt of beveiligingsbeoordeling. Output is een schriftelijk plan met prioriteiten, risico's en geschatte inspanningen.",
-    "engagementModel2Title": "Technische werkstroom",
-    "engagementModel2Body": "Een seniorenteam ingebed in uw stack voor een bepaalde periode. Wekelijkse oplevering, zichtbare voortgang en directe communicatie met de engineers die de software bouwen.",
-    "engagementModel3Title": "Hybride",
-    "engagementModel3Body": "Eerst audit, daarna werkstroom. Het team dat het probleem diagnosticeert, blijft om de oplossing te implementeren. Geen overdracht naar een ander accountteam.",
-    "whatWeDontDoEyebrow": "Wat wij niet doen",
-    "whatWeDontDoHeading": "We verbergen het mechanisme niet.",
-    "whatWeDontDoBody": "Geen junioren op uw codebase. Geen accountmanager tussen jou en de engineers. Geen offshore-overdracht na het voorstel. Geen betrokkenheid die afhankelijk is van de verkoop van een groter bereik dan u nodig heeft."
+    "hero": {
+      "eyebrow": "Software · AI · Cloud · Gegevens",
+      "title": "Het probleem definieert het technische team.",
+      "intro": "SDK brengt de specialisten samen die een systeem daadwerkelijk nodig heeft, coördineert hun werkzaamheden en blijft verantwoordelijk voor de kwaliteit van de levering. Begin met één technische beslissing of geef ons een gedefinieerde werkstroom waar we eigenaar van zijn.",
+      "primaryCta": "Bespreek een project",
+      "secondaryCta": "Vind je startpunt",
+      "signals": [
+        "Probleemgestuurde teamsamenstelling",
+        "Onafhankelijke specialisten",
+        "SDK-geleide kwaliteitscontrole",
+        "Systemen die eigendom zijn van de klant"
+      ]
+    },
+    "navigator": {
+      "heading": "Begin met de druk op het systeem.",
+      "intro": "Een nuttige betrokkenheid begint met de beperking, niet met een catalogus van technologieën.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Moderniseren",
+          "copy": "Verminder het risico en de kosten van het wijzigen van software die niet langer patches kan blijven verzamelen.",
+          "href": "#modernisering"
+        },
+        {
+          "number": "02",
+          "title": "Bouwen",
+          "copy": "Ontwerp en lever backendplatforms, integraties en productsystemen rond een duidelijke operationele behoefte.",
+          "href": "#platformen"
+        },
+        {
+          "number": "03",
+          "title": "Automatiseer",
+          "copy": "Zet AI in een echte workflow met de gegevens, evaluatie en operationele controles die het nodig heeft.",
+          "href": "#ai-automatisering"
+        },
+        {
+          "number": "04",
+          "title": "Stabiliseren",
+          "copy": "Vind de oorzaken achter problemen met de betrouwbaarheid, implementatie, prestaties of gegevensstroom.",
+          "href": "#productiesystemen"
+        },
+        {
+          "number": "05",
+          "title": "Diagnose",
+          "copy": "Zet een onduidelijke technische situatie om in bewijsmateriaal, opties en een verdedigbare volgende beslissing.",
+          "href": "#engagementen"
+        }
+      ]
+    },
+    "capabilities": {
+      "eyebrow": "Mogelijkheden",
+      "heading": "Technische diepgang, georganiseerd rond de beslissing die voor u ligt.",
+      "intro": "Elke mogelijkheid kan op zichzelf staan ​​of worden gecombineerd met andere wanneer het systeem grenzen overschrijdt.",
+      "labels": {
+        "investigation": "Wat wij onderzoeken",
+        "delivery": "Wat wij kunnen leveren",
+        "evidence": "Relevante systemen",
+        "firstStep": "Nuttige eerste zet"
+      },
+      "items": [
+        {
+          "number": "01 / MODERNISERING",
+          "id": "modernisering",
+          "title": "Verander een verouderend systeem zonder te verliezen wat nog werkt.",
+          "situation": "Het systeem is belangrijk voor het bedrijf, maar upgrades zijn riskant, de levering vertraagt ​​of te veel kennis zit in ongedocumenteerd gedrag.",
+          "investigation": [
+            "Afhankelijkheden, runtimebeperkingen en niet-ondersteunde componenten",
+            "Datastromen, integraties en verborgen operationele koppelingen",
+            "Verander risico's, test dekking en migratiegrenzen"
+          ],
+          "delivery": [
+            "Beoordeling van de huidige stand van zaken en een geprioriteerd moderniseringsplan",
+            "Framework-, runtime- of servicemigratie",
+            "Incrementele vervanging met gecontroleerde cutover"
+          ],
+          "evidence": [
+            "PHP",
+            "Laravel",
+            "Symfony",
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PostgreSQL"
+          ],
+          "firstStep": "Breng in kaart wat het systeem vandaag de dag doet, waar verandering gevaarlijk is en welke grens het eerst kan worden verlegd."
+        },
+        {
+          "number": "02 / PLATFORMEN",
+          "id": "platforms",
+          "title": "Bouw de onderdelen van het product die de bedrijfsregels bevatten.",
+          "situation": "Een product heeft APIs, integraties, autorisatie, asynchroon werk of realtime gedrag nodig dat begrijpelijk moet blijven als de vereisten veranderen.",
+          "investigation": [
+            "Domeingrenzen, gebruikers en toegangsregels",
+            "Integratiecontracten, faalmodi en data-eigendom",
+            "Vereisten voor operationeel volume, latentie en consistentie"
+          ],
+          "delivery": [
+            "Backend-services, APIs en integratielagen",
+            "Authenticatie, autorisatie en huurderisolatie",
+            "Wachtrijen, gebeurtenissen en realtime applicatiestromen"
+          ],
+          "evidence": [
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PHP",
+            "PostgreSQL",
+            "Redis",
+            "Valkey"
+          ],
+          "firstStep": "Definieer de bedrijfsgrens, de gegevens die het bezit en de faalomstandigheden die het ontwerp moet tolereren."
+        },
+        {
+          "number": "03 / AI-AUTOMATISERING",
+          "id": "ai-automatisering",
+          "title": "Verplaats AI van een overtuigende demo naar een verantwoordelijke workflow.",
+          "situation": "Een handmatig proces is duur of traag, maar een AI-functie zal alleen nuttig zijn als de input, output, evaluatie en terugvalgedrag worden gecontroleerd.",
+          "investigation": [
+            "Workflowbeslissingen waarvoor een model nodig is en beslissingen die dat niet doen",
+            "Brongegevens, rechten en ophaalkwaliteit",
+            "Evaluatiecriteria, menselijke beoordeling en afhandeling van fouten"
+          ],
+          "delivery": [
+            "LLM-integraties, agenten en workflowautomatisering",
+            "Ophaal- en geaarde responssystemen",
+            "Evaluatie-, waarneembaarheids- en beoordelingscontroles"
+          ],
+          "evidence": [
+            "LLM",
+            "RAG",
+            "APIs",
+            "PostgreSQL",
+            "Elasticsearch",
+            "Python",
+            "Node.js"
+          ],
+          "firstStep": "Kies één workflow, definieer een acceptabel resultaat en meet het huidige menselijke proces voordat u het automatiseert."
+        },
+        {
+          "number": "04 / PRODUCTIESYSTEMEN",
+          "id": "productie-systemen",
+          "title": "Maak productiegedrag zichtbaar voordat capaciteit wordt gewijzigd.",
+          "situation": "Implementaties zijn kwetsbaar, incidenten zijn moeilijk uit te leggen, de infrastructuurkosten zijn onduidelijk of het systeem nadert een operationele limiet.",
+          "investigation": [
+            "Implementatiepad, omgevingen en herstelprocedures",
+            "Logboeken, statistieken, sporen en incidentbewijs",
+            "Beperkingen van hulpbronnen, knelpunten en aannames over schaalvergroting"
+          ],
+          "delivery": [
+            "Implementatiearchitectuur en CI/CD-workflows",
+            "Waarneembaarheid, waarschuwingen en operationele runbooks",
+            "Verbeteringen in de cloud, containers en orkestratie"
+          ],
+          "evidence": [
+            "AWS",
+            "GCP",
+            "Azure",
+            "Kubernetes",
+            "Helm",
+            "CI/CD",
+            "Redis"
+          ],
+          "firstStep": "Stel vast wat het systeem doet onder echte belasting en hoe het team momenteel storingen detecteert en hiervan herstelt."
+        },
+        {
+          "number": "05 / GEGEVENS & INTERFACES",
+          "id": "data-interfaces",
+          "title": "Verbind gegevens, activiteiten en de mensen die het systeem gebruiken.",
+          "situation": "Het product heeft een betrouwbaar datapad nodig en een interface die complex operationeel werk gemakkelijker te begrijpen en te voltooien maakt.",
+          "investigation": [
+            "Gegevenseigendom, levenscyclus, zoek- en toegangspatronen",
+            "Gebruikerstaken, beslissingspunten en foutherstel",
+            "Server- en browsergrenzen die de prestaties beïnvloeden"
+          ],
+          "delivery": [
+            "Datamodellen, zoek-, cache- en opnamestromen",
+            "Operationele webinterfaces en interne tooling",
+            "Toegankelijke, responsieve applicatie-ervaringen"
+          ],
+          "evidence": [
+            "PostgreSQL",
+            "MongoDB",
+            "Elasticsearch",
+            "React",
+            "Vue",
+            "Nuxt",
+            "TypeScript"
+          ],
+          "firstStep": "Volg één cruciale gebruikerstaak, van brongegevens tot de uiteindelijke beslissing, en identificeer waar context verloren gaat."
+        }
+      ]
+    },
+    "engagements": {
+      "eyebrow": "Manieren om mee te doen",
+      "heading": "Match de commitment met wat al bekend is.",
+      "intro": "Een onzeker systeem heeft bewijs nodig voordat er een verantwoorde implementatietoezegging kan worden gedaan. Een gedefinieerd resultaat kan direct in een gerichte werkstroom terechtkomen.",
+      "labels": {
+        "bestFor": "Beste voor",
+        "output": "Primaire uitvoer",
+        "commitment": "Inzet"
+      },
+      "options": [
+        {
+          "title": "Technische beoordeling",
+          "bestFor": "Een consequentiebeslissing waarbij de huidige status, het risico of het implementatiepad onduidelijk is.",
+          "output": "Bewijs, opties, risico's en een geprioriteerde aanbeveling die de klant kan gebruiken met of zonder SDK.",
+          "commitment": "Een begrensd onderzoek met afgesproken toegang, vragen en resultaten."
+        },
+        {
+          "title": "Technische werkstroom",
+          "bestFor": "Een gedefinieerd technisch resultaat dat een samengesteld team en een duidelijk leveringseigenaarschap vereist.",
+          "output": "Werkwijzigingen, herziene beslissingen, implementatiebewijs en documentatie voor de overeengekomen reikwijdte.",
+          "commitment": "Een gerichte levertijd met zichtbare controlepunten en acceptatiecriteria."
+        },
+        {
+          "title": "Technisch partnerschap",
+          "bestFor": "Een systeem dat gefaseerde modernisering of voortdurend eigenaarschap over een technische werkstroom nodig heeft.",
+          "output": "Een bijgehouden routekaart, incrementele levering en een operationeel overzicht van beslissingen, risico's en voortgang.",
+          "commitment": "Een voortdurende betrokkenheid, beoordeeld aan de hand van een overeengekomen werkstroom en prioriteiten."
+        }
+      ]
+    },
+    "teamModel": {
+      "eyebrow": "Het SDK-model",
+      "heading": "Specialisten geselecteerd voor het systeem. Eén bedrijf dat verantwoording aflegt aan de klant.",
+      "body": "SDK werkt met onafhankelijke ingenieursspecialisten. We stellen het team rond het probleem samen, coördineren het werk en stellen het kwaliteitskader voor de opdracht vast. De klant hoeft geen verzameling niet-gerelateerde bijdragers te werven, op één lijn te brengen en te beheren.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Definieer de behoefte",
+          "copy": "Verduidelijk het systeem, de beperkingen, de beslissingen en de uitkomst voordat u beslist wie het werk moet doen."
+        },
+        {
+          "number": "02",
+          "title": "Stel het team samen",
+          "copy": "Selecteer de disciplines en ervaring die relevant zijn voor de opdracht, in plaats van deze op een vaste plek te dwingen."
+        },
+        {
+          "number": "03",
+          "title": "Controle kwaliteit",
+          "copy": "Gebruik zichtbare beslissingen, beoordelingen, acceptatiecriteria en operationeel bewijsmateriaal gedurende de hele levering."
+        },
+        {
+          "number": "04",
+          "title": "Eigendom overdragen",
+          "copy": "Houd code, infrastructuur, documentatie en operationele kennis binnen de controle van de klant."
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Breng ons de beperking",
+      "title": "U hoeft niet met een voltooide specificatie te arriveren.",
+      "body": "Beschrijf het systeem, de druk erop en de beslissing die u moet nemen. We beginnen met het bepalen of de SDK een nuttige pasvorm is.",
+      "label": "Bespreek het probleem"
+    }
   }
 }

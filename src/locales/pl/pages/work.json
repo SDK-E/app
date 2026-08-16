@@ -1,22 +1,139 @@
 {
   "workPage": {
-    "eyebrow": "Pracuj z SDK",
-    "body": "Wiesz, kiedy coś na Twoim stosie Cię kosztuje. Oto sytuacje, do których stworzono SDK.",
-    "cta": "Rozpocznij projekt",
-    "engagementsEyebrow": "Zaręczyny",
-    "engagementsHeading": "Jak zwykle zaczynają się zaręczyny",
-    "engagementsBody": "Większość spotkań rozpoczyna się od krótkiej rozmowy lub pisemnego podsumowania problemu. Na tej podstawie SDK proponuje reakcję o szerokim zakresie: audyt ze stałą ceną, strumień pracy uwzględniający czas i materiały lub model hybrydowy, w zależności od niepewności w systemie i jasności celu.",
-    "lookForEyebrow": "Czego szukamy",
-    "lookForHeading": "Jasny problem i zespół chętny do zajęcia się nim.",
-    "lookForBody": "Najlepsza współpraca zaczyna się, gdy klient wie, że coś jest nie tak, ale nie wie jeszcze w pełnym zakresie. Poszukujemy zespołów, które chcą zrozumieć mechanizm, a nie tylko otrzymać prezentację.",
-    "lookFor1Title": "Konkretne ograniczenie",
-    "lookFor1Body": "Wydajność, niezawodność, koszt, szybkość dostawy lub zgodność. Problem nie musi być nowatorski – musi być realny i mierzalny.",
-    "lookFor2Title": "Dostęp do systemu",
-    "lookFor2Body": "Dostęp do odczytu bazy kodu, infrastruktury i ludzi, którzy rozumieją bieżący stan. Bez tego jakakolwiek ocena jest domysłem.",
-    "lookFor3Title": "Osoba podejmująca decyzje",
-    "lookFor3Body": "Ktoś, kto może zatwierdzić zakres, budżet i harmonogram. Nie komitet – jedna osoba posiadająca uprawnienia do posunięcia prac do przodu.",
-    "fitEyebrow": "Dopasuj",
-    "fitHeading": "Kiedy SDK nie jest właściwą odpowiedzią",
-    "fitBody": "Mówimy nie częściej, niż można by się spodziewać. SDK nie jest warsztatem zajmującym się mandatami za przepełnienie i nie podejmujemy się zleceń, w których problem nie jest jeszcze zdefiniowany lub zespół nie może zaangażować się w proces."
+    "hero": {
+      "eyebrow": "Problemy, które mamy rozwiązywać",
+      "title": "Przyjrzyj się problemowi inżynieryjnemu przed przepisaniem projektu.",
+      "intro": "Poniższe scenariusze pokazują, jak SDK radzi sobie z sytuacjami mającymi konsekwencje techniczne. Opisują możliwości i ścieżki decyzyjne, a nie wymyślone studia przypadków klientów lub niepoparte wynikami.",
+      "primaryCta": "Omów sytuację",
+      "secondaryCta": "Poznaj scenariusze",
+      "signals": [
+        "Żadnych sfabrykowanych studiów przypadku",
+        "Dowód przed receptą",
+        "Zdefiniowane decyzje klienta",
+        "Wymierne rezultaty"
+      ]
+    },
+    "scenarios": {
+      "eyebrow": "Scenariusze zaangażowania",
+      "heading": "Rozpoznaj ciśnienie. Następnie znajdź odpowiedzialny pierwszy ruch.",
+      "intro": "Przydatna reakcja łączy kontakt biznesowy z dowodami technicznymi i decyzją, na podstawie której organizacja może podjąć działania.",
+      "labels": {
+        "signals": "Co możesz zobaczyć",
+        "questions": "Czego musimy się nauczyć",
+        "deliverables": "Co tworzy postęp"
+      },
+      "items": [
+        {
+          "number": "01 / MODERNIZACJA",
+          "title": "System jest zbyt ważny, aby go wymieniać na ślepo, i zbyt kosztowny, aby pozostawić go w spokoju.",
+          "situation": "Dostawa spowalnia wraz ze starzeniem się zależności, zawężaniem się wiedzy i każdą zmianą sięgającą dalej niż oczekiwano.",
+          "signals": [
+            "Aktualizacje wielokrotnie odkładane",
+            "Zmiany wymagają ręcznego odzyskiwania",
+            "Krytyczne zachowanie jest nieudokumentowane"
+          ],
+          "questions": [
+            "Które granice mogą przesuwać się niezależnie?",
+            "Gdzie kodowane są zachowania biznesowe?",
+            "Co musi pozostać dostępne podczas zmiany?"
+          ],
+          "deliverables": [
+            "Mapa stanu aktualnego",
+            "Opcje z oceną ryzyka",
+            "Przyrostowa sekwencja migracji"
+          ]
+        },
+        {
+          "number": "02 / NIEZAWODNOŚĆ",
+          "title": "Platforma jest pod presją, ale przepustowość może nie być prawdziwym problemem.",
+          "situation": "Zwiększają się opóźnienia, incydenty lub koszty infrastruktury, a dostępne sygnały nie wyjaśniają, dlaczego.",
+          "signals": [
+            "Awarie są trudne do odtworzenia",
+            "Zmiany skalowania przesuwają wąskie gardło",
+            "Powrót do zdrowia zależy od kilku osób"
+          ],
+          "questions": [
+            "Gdzie ucieka czas i możliwości?",
+            "Które tryby awarii wpływają na użytkowników?",
+            "Jakich dowodów brakuje podczas incydentów?"
+          ],
+          "deliverables": [
+            "Zaobserwowane wąskie gardła",
+            "Rejestr ryzyka operacyjnego",
+            "Priorytetowy plan stabilizacji"
+          ]
+        },
+        {
+          "number": "03 / PRZEPŁYW PRACY AI",
+          "title": "Demo AI działa. Model operacyjny wokół tego jeszcze nie istnieje.",
+          "situation": "Obiecująca interakcja modelu musi stać się kontrolowanym przepływem pracy z zaufanymi danymi, oceną i odpowiedzialnością ludzką.",
+          "signals": [
+            "Jakość ocenia się na podstawie wrażenia",
+            "Uprawnienia źródłowe są niejasne",
+            "Awarie nie mają ścieżki przeglądu"
+          ],
+          "questions": [
+            "Jaki jest akceptowalny wynik?",
+            "Które decyzje wymagają przeglądu przez człowieka?",
+            "Jak jakość będzie mierzona w czasie?"
+          ],
+          "deliverables": [
+            "Projekt przepływu pracy i kontroli",
+            "Podejście ewaluacyjne",
+            "Granica wdrożenia"
+          ]
+        },
+        {
+          "number": "04 / WŁASNOŚĆ TECHNICZNA",
+          "title": "Produkt wymaga skupienia się na inżynierii w fazie krytycznej.",
+          "situation": "Zespół wewnętrzny ma określony priorytet, ale brakuje mu jednej lub więcej dyscyplin niezbędnych do bezpiecznej realizacji strumienia pracy.",
+          "signals": [
+            "Krytyczny element planu działania pozostaje zablokowany",
+            "Kilka systemów musi się zmienić razem",
+            "Współautorzy zewnętrzni potrzebowaliby koordynacji"
+          ],
+          "questions": [
+            "Jaki wynik może osiągnąć SDK?",
+            "Jaka wiedza specjalistyczna jest rzeczywiście wymagana?",
+            "Gdzie decyzje klientów pozostają istotne?"
+          ],
+          "deliverables": [
+            "Zespół zajmujący się konkretnym projektem",
+            "Widoczny dowód dostawy",
+            "Udokumentowane przeniesienie własności"
+          ]
+        }
+      ]
+    },
+    "principle": {
+      "eyebrow": "Dlaczego scenariusze",
+      "heading": "Portfolio jest przekonujące tylko wtedy, gdy dowody są prawdziwe.",
+      "body": "SDK opublikuje nazwanych klientów, wymierne wyniki i referencje tylko wtedy, gdy będzie można zweryfikować pracę, wynik i pozwolenie. Do tego czasu na tej stronie znajdują się sytuacje, które jesteśmy w stanie zbadać, oraz elementy, które popychają je do przodu."
+    },
+    "fit": {
+      "eyebrow": "Dopasowanie zaręczynowe",
+      "heading": "Najsilniejsza praca zaczyna się od dostępu, odpowiedzialności i podjęcia prawdziwej decyzji.",
+      "intro": "Trudności techniczne mile widziane. Zaangażowanie staje się nieskuteczne, gdy organizacja nie może zapewnić kontekstu, dostępu ani własności decyzji.",
+      "fitTitle": "Dobre warunki dla SDK",
+      "notFitTitle": "Złe warunki dla SDK",
+      "fitItems": [
+        "Istotne ograniczenie dotyczące oprogramowania, danych, sztucznej inteligencji lub infrastruktury",
+        "Dostęp do systemu i ludzi rozumiejących jego aktualny stan",
+        "Osoba podejmująca decyzje, która potrafi określić zakres i kompromisy",
+        "Chęć zbadania dowodów przed podjęciem decyzji o rozwiązaniu"
+      ],
+      "notFitItems": [
+        "Anonimowa pojemność biletów bez własnego wyniku",
+        "Prośba o potwierdzenie wcześniej ustalonej odpowiedzi niezależnie od dowodów",
+        "Brak praktycznego dostępu do odpowiedniego systemu lub interesariuszy",
+        "Wybór oparty wyłącznie na najniższej indywidualnej stawce dziennej"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Przedstaw nam prawdziwą sytuację",
+      "title": "Zacznij od tego, ile system kosztuje, opóźnia lub naraża na ryzyko.",
+      "body": "Nie musisz go diagnozować przed skontaktowaniem się z SDK. Powiedz nam, co się dzieje i która decyzja jest obecnie zablokowana.",
+      "label": "Omów sytuację"
+    }
   }
 }

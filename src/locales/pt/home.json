@@ -1,132 +1,145 @@
 {
-  "hero": {
-    "eyebrow": "B2B AI · Software · Nuvem · Engenharia de Sistemas",
-    "heading": "Um parceiro de engenharia para a pilha que sua empresa precisa.",
-    "leadParagraph": "SDK Enterprises cria, moderniza e opera software em toda a pilha – plataformas de back-end, infraestrutura em nuvem, automação de IA, sistemas em tempo real e ferramentas internas. Você se envolve em um problema especializado ou possui um fluxo de trabalho mais amplo; de qualquer forma, as pessoas que fazem o trabalho são as pessoas com quem você conversa.",
-    "ctaStartProject": "Iniciar um projeto",
-    "ctaExploreServices": "Explorar serviços",
-    "trustFrance": "Empresa B2B com sede na França",
-    "trustSenior": "Entrega de engenharia sênior",
-    "trustAI": "IA + back-end + nuvem",
-    "trustClients": "Clientes europeus e remotos"
-  },
-  "services": {
-    "eyebrow": "Serviços",
-    "title": "Use toda a pilha – ou apenas a parte necessária.",
-    "intro": "SDK pode se envolver em um problema especializado ou possuir um fluxo de trabalho técnico mais amplo.",
-    "items": [
-      {
-        "number": "01",
-        "category": "Engenharia de IA",
-        "title": "Agentes e automação de IA",
-        "copy": "Integrações LLM, agentes, RAG, automação de fluxo de trabalho, ferramentas de desenvolvedor e operações assistidas por IA."
-      },
-      {
-        "number": "02",
-        "category": "Back-end",
-        "title": "Plataformas, APIs e SaaS",
-        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs e arquitetura de backend em tempo real."
-      },
-      {
-        "number": "03",
-        "category": "Interface",
-        "title": "Interfaces da Web e de aplicativos",
-        "copy": "React, Vue, Nuxt, TypeScript, Tailwind e Shadcn."
-      },
-      {
-        "number": "04",
-        "category": "Nuvem",
-        "title": "Nuvem e infraestrutura",
-        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD e arquitetura de implantação."
-      },
-      {
-        "number": "05",
-        "category": "Dados",
-        "title": "Bancos de dados, cache e pesquisa",
-        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey e Elasticsearch."
-      },
-      {
-        "number": "06",
-        "category": "Modernização",
-        "title": "Modernização legada",
-        "copy": "Atualizações de framework, migração, redução de dívida técnica e otimização de desempenho."
-      }
-    ]
-  },
-  "whySdk": {
-    "eyebrow": "Por que SDK",
-    "title": "Engenharia sênior sem camadas desnecessárias.",
-    "intro": "Comunicação direta, diagnóstico rápido e execução pragmática.",
-    "items": [
-      {
-        "kicker": "França",
-        "copy": "Uma empresa B2B com sede na França para clientes europeus e remotos."
-      },
-      {
-        "kicker": "IA",
-        "copy": "Integrações LLM, agentes, automação e ferramentas internas."
-      },
-      {
-        "kicker": "TR",
-        "copy": "Trabalho de plataforma em tempo real e de alto volume."
-      },
-      {
-        "kicker": "DIRETO",
-        "copy": "Você conversa com os engenheiros que fazem o trabalho, não com uma camada de conta."
-      }
-    ]
-  },
-  "engagements": {
-    "eyebrow": "Trabalhe com SDK",
-    "title": "Traga um problema específico. Obtenha uma resposta específica.",
-    "intro": "Você sabe quando algo em sua pilha está custando caro. Aqui estão as situações para as quais o SDK está configurado.",
-    "items": [
-      {
-        "title": "Um sistema muito antigo para continuar corrigindo.",
-        "copy": "Você precisa de um plano de migração, não de um desejo – uma auditoria do que funciona, do que quebra e da ordem de mudança."
-      },
-      {
-        "title": "Volume para o qual sua pilha atual não foi criada.",
-        "copy": "Ingestão em tempo real, back-ends de alto rendimento e infraestrutura para mantê-los estáveis."
-      },
-      {
-        "title": "IA que você pode colocar para trabalhar.",
-        "copy": "Integrações, agentes e automação LLM que mudam um fluxo de trabalho interno - não uma demonstração que pára no campo."
-      },
-      {
-        "title": "Uma equipe que precisa de mãos experientes.",
-        "copy": "Entrega direta de engenharia em sua base de código, sem uma camada intermediária que atrapalhe as decisões."
-      }
-    ]
-  },
-  "process": {
-    "eyebrow": "Como trabalhamos",
-    "title": "Um caminho claro do problema à produção.",
-    "intro": "Quatro etapas, progresso visível em todas as fases.",
-    "items": [
-      {
-        "title": "Entenda",
-        "copy": "Objetivo de negócios, pilha, restrições e critérios de sucesso."
-      },
-      {
-        "title": "Projeto",
-        "copy": "Arquitetura, escopo, riscos e marcos."
-      },
-      {
-        "title": "Construir",
-        "copy": "Implementação com progresso visível."
-      },
-      {
-        "title": "Transferência",
-        "copy": "Implante, documente e transfira propriedade."
-      }
-    ]
-  },
-  "contact": {
-    "eyebrow": "Trabalhe com SDK",
-    "heading": "Traga-nos o problema que você precisa resolvido.",
-    "body": "Diga-nos o que você está tentando construir, modernizar, automatizar ou consertar – nós lhe diremos honestamente se é adequado e o que seria necessário.",
-    "registeredUnder": "Registrado sob {company}",
-    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  "homePage": {
+    "hero": {
+      "eyebrow": "Software · IA · Nuvem · Dados · Engenharia de sistemas",
+      "title": "Traga o sistema que precisa de um caminho responsável.",
+      "intro": "A SDK Enterprises reúne os especialistas de engenharia que um projeto realmente necessita, coordena seu trabalho e se responsabiliza pelo quadro de qualidade apresentado ao cliente. Ajudamos as organizações a diagnosticar, modernizar, construir e operar software tecnicamente relevante.",
+      "primaryCta": "Discuta a situação",
+      "secondaryCta": "Veja por onde começar",
+      "signals": [
+        "Composição da equipe liderada por problemas",
+        "Especialistas independentes",
+        "Estrutura de entrega liderada por SDK",
+        "Sistemas controlados pelo cliente"
+      ]
+    },
+    "opening": {
+      "eyebrow": "O ponto de partida",
+      "heading": "Uma lista de tecnologias não pode dizer o que o projeto precisa.",
+      "body": "Um programa de modernização, um fluxo de trabalho de IA e um problema de fiabilidade da plataforma podem afetar tecnologias semelhantes, ao mesmo tempo que exigem decisões, disciplinas e controlos de entrega completamente diferentes. SDK começa com a pressão sobre o sistema e o resultado que a organização precisa assumir.",
+      "body2": "Isso pode levar a uma avaliação técnica limitada, a um fluxo de trabalho de engenharia focado ou a uma parceria técnica contínua. O compromisso deve corresponder ao que já é conhecido – e não esconder a incerteza dentro de uma proposta mais ampla.",
+      "principles": [
+        {
+          "number": "01",
+          "title": "Evidência antes do compromisso",
+          "copy": "Quando o estado atual ou o caminho de implementação não for claro, estabeleça primeiro as evidências necessárias para uma decisão responsável."
+        },
+        {
+          "number": "02",
+          "title": "Capacidade em torno do problema",
+          "copy": "Selecione as disciplinas que o sistema exige, em vez de forçar cada envolvimento na mesma equipe disponível."
+        },
+        {
+          "number": "03",
+          "title": "Propriedade que sobrevive à transferência",
+          "copy": "Mantenha decisões, repositórios, infraestrutura, documentação e conhecimento operacional sob controle do cliente."
+        }
+      ]
+    },
+    "system": {
+      "eyebrow": "Um sistema, decisões conectadas",
+      "heading": "O trabalho raramente pára na fronteira de uma tecnologia.",
+      "intro": "SDK pode focar em uma camada ou coordenar um fluxo de trabalho que atravessa várias. O mapa abaixo mostra as preocupações de engenharia que muitas vezes precisam ser consideradas em conjunto.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Fluxo de trabalho e interface",
+          "copy": "A tarefa do usuário, a decisão operacional e o caminho de recuperação que o software deve tornar compreensíveis.",
+          "systems": [
+            "React",
+            "Vue",
+            "Nuxt",
+            "TypeScript"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Plataforma de negócios",
+          "copy": "Os serviços, APIs, permissões e contratos de integração que atendem às regras da organização.",
+          "systems": [
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PHP"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "IA e automação",
+          "copy": "As decisões assistidas por modelo, recuperação, avaliação e controles de revisão humana dentro de um fluxo de trabalho real.",
+          "systems": [
+            "LLM",
+            "RAG",
+            "Agentes",
+            "APIs"
+          ]
+        },
+        {
+          "number": "04",
+          "title": "Dados e estado",
+          "copy": "As regras de propriedade, consistência, pesquisa, cache e ciclo de vida por trás do comportamento do sistema.",
+          "systems": [
+            "PostgreSQL",
+            "MongoDB",
+            "Redis",
+            "Elasticsearch"
+          ]
+        },
+        {
+          "number": "05",
+          "title": "Operação de produção",
+          "copy": "Os mecanismos de implantação, observabilidade, recuperação e infraestrutura necessários para operar o sistema.",
+          "systems": [
+            "AWS",
+            "GCP",
+            "Azure",
+            "Kubernetes",
+            "CI/CD"
+          ]
+        }
+      ]
+    },
+    "scenarios": {
+      "eyebrow": "Reconheça a situação",
+      "heading": "O trabalho técnico torna-se urgente através do seu efeito sobre o negócio.",
+      "intro": "Os cenários a seguir são exemplos de capacidades e não estudos de caso inventados de clientes. Eles mostram como SDK conecta sintomas a perguntas e próximos resultados tangíveis.",
+      "link": "Explore todos os cenários de trabalho"
+    },
+    "companyModel": {
+      "eyebrow": "O modelo operacional SDK",
+      "heading": "Uma equipe específica do projeto sem transferir o risco de coordenação para o cliente.",
+      "intro": "SDK trabalha com especialistas de engenharia independentes. As disciplinas podem mudar com o trabalho, enquanto o cliente mantém um relacionamento com a empresa e uma estrutura de entrega.",
+      "link": "Entenda o modelo da empresa"
+    },
+    "engagements": {
+      "eyebrow": "Escolha o nível certo de comprometimento",
+      "heading": "Não compre a implementação antes que o sistema possa apoiar uma decisão de implementação.",
+      "intro": "Comece com evidências quando a incerteza for material. Passe diretamente para a entrega quando o resultado, os limites e as condições de aceitação já forem compreendidos.",
+      "link": "Explore serviços e modelos de engajamento"
+    },
+    "process": {
+      "eyebrow": "Da incerteza à propriedade",
+      "heading": "Cada etapa deve terminar com evidências e uma decisão.",
+      "intro": "A atividade por si só não mostra que um projeto está progredindo. SDK estrutura o engajamento para que o cliente possa revisar o que foi aprendido, construído e transferido antes de assumir o próximo compromisso.",
+      "link": "Veja o processo completo de entrega"
+    },
+    "quality": {
+      "eyebrow": "Qualidade que você pode inspecionar",
+      "heading": "A confiança deve vir de mecanismos visíveis e não de adjetivos.",
+      "intro": "Termos como seguro, escalável e pronto para produção só se tornam significativos quando o trabalho define como eles serão examinados em relação ao sistema e ao risco reais.",
+      "link": "Veja como funciona o SDK"
+    },
+    "fit": {
+      "eyebrow": "Antes de discutirmos uma equipe",
+      "heading": "O envolvimento precisa de uma restrição real, de acesso ao sistema e de alguém capaz de decidir.",
+      "intro": "SDK foi projetado para resultados técnicos próprios. Não é um mercado para capacidade de tickets anônimos ou uma forma de validar uma resposta predeterminada sem examinar as evidências.",
+      "link": "Revise o ajuste do engajamento"
+    },
+    "cta": {
+      "eyebrow": "Comece com a situação real",
+      "title": "Você não precisa primeiro transformar o problema em uma especificação refinada.",
+      "body": "Diga-nos o que o sistema está fazendo, o que está custando ou atrasando e qual decisão está atualmente bloqueada. SDK começará determinando se o trabalho é adequado e qual deve ser o primeiro movimento útil.",
+      "label": "Discuta a situação"
+    }
   }
 }

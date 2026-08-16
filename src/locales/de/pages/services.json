@@ -1,19 +1,259 @@
 {
   "servicesPage": {
-    "eyebrow": "Dienstleistungen",
-    "body": "Wir entwickeln und betreiben Software für den gesamten Stack: KI-Agenten und -Automatisierung, Backend-Plattformen, Webschnittstellen, Cloud-Infrastruktur, Datensysteme und Legacy-Modernisierung. Ein spezielles Problem oder ein ganzer Arbeitsablauf – die Ingenieure, die die Arbeit erledigen, sind diejenigen, mit denen Sie sprechen.",
-    "cta": "Starten Sie ein Projekt",
-    "engagementEyebrow": "Engagement-Modelle",
-    "engagementHeading": "Wie wir uns engagieren",
-    "engagementBody": "SDK beteiligt sich auf zwei Arten: als Festpreisprüfung, die ein spezifisches Problem diagnostiziert und einen Weg nach vorne vorschlägt, oder als dedizierter Engineering-Workstream, bei dem ein leitendes Team die gesamte Implementierung übernimmt. Für Systeme, die sowohl eine Diagnose als auch eine kontinuierliche Bereitstellung benötigen, gibt es Hybridvereinbarungen.",
-    "engagementModel1Title": "Audit zum Festpreis",
-    "engagementModel1Body": "Eine umfassende Diagnose eines bestimmten Problems: Architekturüberprüfung, Migrationspfad, Leistungsengpass oder Sicherheitsüberprüfung. Das Ergebnis ist ein schriftlicher Plan mit Prioritäten, Risiken und geschätztem Aufwand.",
-    "engagementModel2Title": "Engineering-Workstream",
-    "engagementModel2Body": "Ein hochrangiges Team, das für einen definierten Zeitraum in Ihren Stack eingebettet ist. Wöchentliche Lieferung, sichtbarer Fortschritt und direkte Kommunikation mit den Ingenieuren, die die Software entwickeln.",
-    "engagementModel3Title": "Hybrid",
-    "engagementModel3Body": "Zuerst Audit, dann Workstream. Das Team, das das Problem diagnostiziert, bleibt an der Umsetzung der Lösung. Keine Übergabe an ein anderes Account-Team.",
-    "whatWeDontDoEyebrow": "Was wir nicht tun",
-    "whatWeDontDoHeading": "Wir verstecken den Mechanismus nicht.",
-    "whatWeDontDoBody": "Keine Junioren in Ihrer Codebasis. Kein Account Manager zwischen Ihnen und den Ingenieuren. Keine Offshore-Übergabe nach dem Vorschlag. Kein Engagement, bei dem es darum geht, Ihnen einen größeren Umfang zu verkaufen, als Sie benötigen."
+    "hero": {
+      "eyebrow": "Software · KI · Cloud · Daten",
+      "title": "Das Problem definiert das Engineering-Team.",
+      "intro": "SDK bringt die Spezialisten zusammen, die ein System tatsächlich benötigt, koordiniert ihre Arbeit und bleibt für die Lieferqualität verantwortlich. Beginnen Sie mit einer technischen Entscheidung oder geben Sie uns einen definierten Arbeitsablauf.",
+      "primaryCta": "Besprechen Sie ein Projekt",
+      "secondaryCta": "Finden Sie Ihren Ausgangspunkt",
+      "signals": [
+        "Problemorientierte Teamzusammensetzung",
+        "Unabhängige Spezialisten",
+        "SDK-geführte Qualitätskontrolle",
+        "Kundeneigene Systeme"
+      ]
+    },
+    "navigator": {
+      "heading": "Beginnen Sie mit dem Druck auf das System.",
+      "intro": "Ein sinnvolles Engagement beginnt mit der Einschränkung, nicht mit einem Katalog von Technologien.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Modernisieren",
+          "copy": "Reduzieren Sie das Risiko und die Kosten für den Wechsel von Software, die keine weiteren Patches mehr ansammeln kann.",
+          "href": "#Modernisierung"
+        },
+        {
+          "number": "02",
+          "title": "Bauen",
+          "copy": "Entwerfen und liefern Sie Backend-Plattformen, Integrationen und Produktsysteme entsprechend einem klaren Betriebsbedarf.",
+          "href": "#Plattformen"
+        },
+        {
+          "number": "03",
+          "title": "Automatisieren",
+          "copy": "Integrieren Sie KI in einen echten Arbeitsablauf mit den benötigten Daten, Auswertungen und Betriebskontrollen.",
+          "href": "#ai-Automatisierung"
+        },
+        {
+          "number": "04",
+          "title": "Stabilisieren",
+          "copy": "Finden Sie die Ursachen für Zuverlässigkeits-, Bereitstellungs-, Leistungs- oder Datenflussprobleme.",
+          "href": "#Produktionssysteme"
+        },
+        {
+          "number": "05",
+          "title": "Diagnostizieren",
+          "copy": "Verwandeln Sie eine unklare technische Situation in Beweise, Optionen und eine vertretbare nächste Entscheidung.",
+          "href": "#Engagements"
+        }
+      ]
+    },
+    "capabilities": {
+      "eyebrow": "Fähigkeiten",
+      "heading": "Technische Tiefe, organisiert rund um die vor Ihnen liegende Entscheidung.",
+      "intro": "Jede Fähigkeit kann für sich allein stehen oder mit anderen kombiniert werden, wenn das System Grenzen überschreitet.",
+      "labels": {
+        "investigation": "Was wir untersuchen",
+        "delivery": "Was wir liefern können",
+        "evidence": "Relevante Systeme",
+        "firstStep": "Nützlicher erster Schritt"
+      },
+      "items": [
+        {
+          "number": "01 / MODERNISIERUNG",
+          "id": "Modernisierung",
+          "title": "Ändern Sie ein veraltetes System, ohne das zu verlieren, was noch funktioniert.",
+          "situation": "Das System ist für das Unternehmen wichtig, aber Upgrades sind riskant, die Bereitstellung verlangsamt sich oder zu viel Wissen steckt in undokumentiertem Verhalten.",
+          "investigation": [
+            "Abhängigkeiten, Laufzeiteinschränkungen und nicht unterstützte Komponenten",
+            "Datenflüsse, Integrationen und versteckte betriebliche Kopplung",
+            "Ändern Sie Risiken, Testabdeckung und Migrationsgrenzen"
+          ],
+          "delivery": [
+            "Ist-Zustandsbewertung und priorisierter Modernisierungsplan",
+            "Framework-, Laufzeit- oder Servicemigration",
+            "Inkrementeller Ersatz mit kontrollierter Umstellung"
+          ],
+          "evidence": [
+            "PHP",
+            "Laravel",
+            "Symfony",
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PostgreSQL"
+          ],
+          "firstStep": "Stellen Sie dar, was das System heute tut, wo Veränderungen gefährlich sind und welche Grenzen sich zuerst verschieben können."
+        },
+        {
+          "number": "02 / PLATTFORMEN",
+          "id": "Plattformen",
+          "title": "Erstellen Sie die Teile des Produkts, die die Geschäftsregeln enthalten.",
+          "situation": "Ein Produkt benötigt APIs, Integrationen, Autorisierung, asynchrone Arbeit oder Echtzeitverhalten, das bei sich ändernden Anforderungen verständlich bleiben muss.",
+          "investigation": [
+            "Domänengrenzen, Benutzer und Zugriffsregeln",
+            "Integrationsverträge, Fehlermodi und Dateneigentum",
+            "Anforderungen an Betriebsvolumen, Latenz und Konsistenz"
+          ],
+          "delivery": [
+            "Backend-Dienste, APIs und Integrationsschichten",
+            "Authentifizierung, Autorisierung und Mandantenisolierung",
+            "Warteschlangen, Ereignisse und Echtzeit-Anwendungsflüsse"
+          ],
+          "evidence": [
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PHP",
+            "PostgreSQL",
+            "Redis",
+            "Valkey"
+          ],
+          "firstStep": "Definieren Sie die Geschäftsgrenzen, die Daten, die das Unternehmen besitzt, und die Fehlerbedingungen, die das Design tolerieren muss."
+        },
+        {
+          "number": "03 / KI-AUTOMATISIERUNG",
+          "id": "KI-Automatisierung",
+          "title": "Verwandeln Sie KI von einer überzeugenden Demo in einen nachvollziehbaren Workflow.",
+          "situation": "Ein manueller Prozess ist teuer oder langsam, aber eine KI-Funktion ist nur dann nützlich, wenn ihre Eingaben, Ausgaben, Auswertung und Fallback-Verhalten kontrolliert werden.",
+          "investigation": [
+            "Workflow-Entscheidungen, die ein Modell erfordern, und solche, die dies nicht tun",
+            "Quelldaten, Berechtigungen und Abrufqualität",
+            "Bewertungskriterien, menschliche Überprüfung und Fehlerbehandlung"
+          ],
+          "delivery": [
+            "LLM-Integrationen, Agenten und Workflow-Automatisierung",
+            "Retrieval- und Grounded-Response-Systeme",
+            "Bewertung, Beobachtbarkeit und Überprüfungskontrollen"
+          ],
+          "evidence": [
+            "LLM",
+            "RAG",
+            "APIs",
+            "PostgreSQL",
+            "Elasticsearch",
+            "Python",
+            "Node.js"
+          ],
+          "firstStep": "Wählen Sie einen Arbeitsablauf, definieren Sie ein akzeptables Ergebnis und messen Sie den aktuellen menschlichen Prozess, bevor Sie ihn automatisieren."
+        },
+        {
+          "number": "04 / PRODUKTIONSSYSTEME",
+          "id": "Produktionssysteme",
+          "title": "Machen Sie das Produktionsverhalten sichtbar, bevor Sie die Kapazität ändern.",
+          "situation": "Bereitstellungen sind fragil, Vorfälle sind schwer zu erklären, Infrastrukturkosten sind unklar oder das System nähert sich einer Betriebsgrenze.",
+          "investigation": [
+            "Bereitstellungspfad, Umgebungen und Wiederherstellungsverfahren",
+            "Protokolle, Metriken, Spuren und Vorfallbeweise",
+            "Ressourcenbeschränkungen, Engpässe und Skalierungsannahmen"
+          ],
+          "delivery": [
+            "Bereitstellungsarchitektur und CI/CD-Workflows",
+            "Beobachtbarkeit, Alarmierung und betriebliche Runbooks",
+            "Verbesserungen bei Cloud, Container und Orchestrierung"
+          ],
+          "evidence": [
+            "AWS",
+            "GCP",
+            "Azure",
+            "Kubernetes",
+            "Helm",
+            "CI/CD",
+            "Redis"
+          ],
+          "firstStep": "Stellen Sie fest, was das System unter realer Last tut und wie das Team derzeit Fehler erkennt und behebt."
+        },
+        {
+          "number": "05 / DATEN & SCHNITTSTELLEN",
+          "id": "Datenschnittstellen",
+          "title": "Verbinden Sie Daten, Abläufe und die Menschen, die das System nutzen.",
+          "situation": "Das Produkt benötigt einen zuverlässigen Datenpfad und eine Schnittstelle, die das Verständnis und die Durchführung komplexer betrieblicher Arbeiten erleichtert.",
+          "investigation": [
+            "Dateneigentum, Lebenszyklus, Such- und Zugriffsmuster",
+            "Benutzeraufgaben, Entscheidungspunkte und Fehlerbehebung",
+            "Server- und Browsergrenzen, die sich auf die Leistung auswirken"
+          ],
+          "delivery": [
+            "Datenmodelle, Such-, Cache- und Aufnahmeflüsse",
+            "Operative Webschnittstellen und interne Tools",
+            "Zugängliche, reaktionsfähige Anwendungserlebnisse"
+          ],
+          "evidence": [
+            "PostgreSQL",
+            "MongoDB",
+            "Elasticsearch",
+            "React",
+            "Vue",
+            "Nuxt",
+            "TypeScript"
+          ],
+          "firstStep": "Verfolgen Sie eine kritische Benutzeraufgabe von den Quelldaten bis zur endgültigen Entscheidung und identifizieren Sie, wo Kontext verloren geht."
+        }
+      ]
+    },
+    "engagements": {
+      "eyebrow": "Möglichkeiten, sich zu engagieren",
+      "heading": "Passen Sie das Engagement an das an, was bereits bekannt ist.",
+      "intro": "Ein unsicheres System benötigt Beweise vor einer verantwortungsvollen Umsetzungsverpflichtung. Ein definiertes Ergebnis kann direkt in einen fokussierten Arbeitsablauf übergehen.",
+      "labels": {
+        "bestFor": "Am besten für",
+        "output": "Primärer Output",
+        "commitment": "Engagement"
+      },
+      "options": [
+        {
+          "title": "Technische Beurteilung",
+          "bestFor": "Eine folgenreiche Entscheidung, bei der der aktuelle Stand, das Risiko oder der Umsetzungspfad unklar ist.",
+          "output": "Beweise, Optionen, Risiken und eine priorisierte Empfehlung, die der Kunde mit oder ohne SDK nutzen kann.",
+          "commitment": "Eine begrenzte Untersuchung mit vereinbartem Zugriff, Fragen und Ergebnissen."
+        },
+        {
+          "title": "Engineering-Workstream",
+          "bestFor": "Ein definiertes technisches Ergebnis, das ein zusammengesetztes Team und eine klare Verantwortung für die Lieferung erfordert.",
+          "output": "Arbeitsänderungen, überprüfte Entscheidungen, Bereitstellungsnachweise und Dokumentation für den vereinbarten Umfang.",
+          "commitment": "Ein fokussierter Lieferzeitraum mit sichtbaren Kontrollpunkten und Abnahmekriterien."
+        },
+        {
+          "title": "Technische Partnerschaft",
+          "bestFor": "Ein System, das schrittweise modernisiert werden muss oder bei dem ein technischer Arbeitsablauf weiterhin in Besitz genommen werden muss.",
+          "output": "Eine gepflegte Roadmap, schrittweise Lieferung und eine Betriebsaufzeichnung von Entscheidungen, Risiken und Fortschritten.",
+          "commitment": "Ein kontinuierliches Engagement, das anhand eines vereinbarten Arbeitsablaufs und vereinbarter Prioritäten überprüft wird."
+        }
+      ]
+    },
+    "teamModel": {
+      "eyebrow": "Das Modell SDK",
+      "heading": "Für das System ausgewählte Spezialisten. Ein Unternehmen, das gegenüber dem Kunden rechenschaftspflichtig ist.",
+      "body": "SDK arbeitet mit unabhängigen Ingenieurspezialisten zusammen. Wir stellen das Team rund um das Problem zusammen, koordinieren die Arbeit und legen den Qualitätsrahmen für den Auftrag fest. Der Kunde muss keine Gruppe unabhängiger Mitwirkender rekrutieren, koordinieren und verwalten.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Definieren Sie den Bedarf",
+          "copy": "Klären Sie das System, die Einschränkungen, Entscheidungen und das Ergebnis, bevor Sie entscheiden, wer die Arbeit erledigen soll."
+        },
+        {
+          "number": "02",
+          "title": "Stellen Sie das Team zusammen",
+          "copy": "Wählen Sie die Disziplinen und Erfahrungen aus, die für das Engagement relevant sind, anstatt es auf eine feste Bank zu zwingen."
+        },
+        {
+          "number": "03",
+          "title": "Kontrollieren Sie die Qualität",
+          "copy": "Nutzen Sie während der gesamten Bereitstellung sichtbare Entscheidungen, Überprüfungen, Akzeptanzkriterien und betriebliche Nachweise."
+        },
+        {
+          "number": "04",
+          "title": "Eigentum übertragen",
+          "copy": "Behalten Sie die Kontrolle über Code, Infrastruktur, Dokumentation und Betriebswissen beim Kunden."
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Bringen Sie uns die Einschränkung",
+      "title": "Sie müssen nicht mit einer fertigen Spezifikation anreisen.",
+      "body": "Beschreiben Sie das System, den Druck, der darauf lastet, und die Entscheidung, die Sie treffen müssen. Wir beginnen damit, festzustellen, ob SDK eine sinnvolle Lösung ist.",
+      "label": "Besprechen Sie das Problem"
+    }
   }
 }

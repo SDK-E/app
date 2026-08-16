@@ -1,14 +1,49 @@
 {
   "enquiry": {
+    "eyebrow": "Egy projekt megbeszélése",
     "title": "Indítson el egy projektet",
-    "subtitle": "Mondja el, mit próbál építeni, modernizálni, automatizálni vagy javítani. 2 munkanapon belül válaszolunk az alkalmasság őszinte értékelésével és a szükséges lépésekkel.",
+    "subtitle": "Mondja el, mit próbál építeni, modernizálni, automatizálni vagy javítani. A hasznos vizsgálat a rendszerre nehezedő nyomással és a meghozandó döntéssel kezdődik.",
     "body": "Az űrlap összegyűjti az átgondolt válaszadáshoz szükséges minimális információkat. Semmit sem osztanak meg a SDK Enterprises-n kívül, és közvetlenül is elérhet minket a hello@sdk.enterprises címen.",
-    "body2": "Minden megkeresést mi magunk vizsgálunk meg. Nincsenek fiókkezelők, nincsenek minősítési szkriptek, nincsenek átadások.",
+    "body2": "A műszaki és kereskedelmi kontextus együtt marad, míg a SDK felméri, hogy a munka megfelelő-e.",
+    "heroSignals": [
+      "Kész specifikáció nem szükséges",
+      "A műszaki és kereskedelmi kontextus együtt marad",
+      "A megfontolt válasz kontextusa",
+      "A közvetlen céges kapcsolat továbbra is elérhető"
+    ],
+    "reasonsEyebrow": "Hasznos kiindulópontok",
+    "reasonsHeading": "A rendszerre gyakoroljon nyomást, ne egy csiszolt közbeszerzési dokumentumot.",
+    "reasonsIntro": "Az űrlap célja annak megállapítása, hogy a SDK képes-e megkönnyíteni a következő műszaki döntést.",
+    "reasons": [
+      {
+        "number": "01",
+        "title": "Egy rendszeren változtatni kell",
+        "copy": "A modernizációs, migrációs vagy integrációs munkát a jelenlegi állapot bizonytalansága akadályozza."
+      },
+      {
+        "number": "02",
+        "title": "Egy platform nyomás alatt van",
+        "copy": "A megbízhatóság, a szállítási sebesség, az infrastruktúra vagy az adatok viselkedése üzleti korlátokká vált."
+      },
+      {
+        "number": "03",
+        "title": "A mesterséges intelligencia munkafolyamatához műszaki ellenőrzésekre van szükség",
+        "copy": "A felhasználási eset ígéretes, de az adatok, az értékelés, az áttekintés vagy a működés még nincs meghatározva."
+      },
+      {
+        "number": "04",
+        "title": "A munkafolyamathoz megfelelő szakemberekre van szükség",
+        "copy": "Az eredmény egyértelmű, de a projekt keresztezi azokat a szakterületeket, amelyeket a jelenlegi csapat nem képes egyedül megbirkózni."
+      }
+    ],
+    "formEyebrow": "Projektkörnyezet",
+    "formHeading": "Adjon elég információt ahhoz, hogy hasznosan válaszolhassunk.",
+    "formIntro": "Magyarázza el, mi történik, miért számít, és mit próbáltak már ki. Az ismeretlen költségvetés, időzítés vagy műszaki adatok továbbra is megjelölve maradhatnak.",
     "nextStepsEyebrow": "Mi történik ezután",
     "nextStepsHeading": "A megkereséstől az eljegyzésig",
     "nextStepsBody": "Miután elküldte az űrlapot, mi magunk olvassuk el. Ha megfelelő, rövid írásbeli értékeléssel és javasolt elköteleződési modellel válaszolunk. Ha nem megfelelő, elmondjuk, miért, és alternatívát javasolunk.",
     "nextStep1Title": "Tekintse át",
-    "nextStep1Body": "Elolvastuk beadványát, és összevetjük jelenlegi kapacitásunkkal és szakértelmünkkel. Általában 2 munkanapon belül.",
+    "nextStep1Body": "Felülvizsgáljuk a rendszert, a korlátozást és a kért eredményt a SDK jelenlegi kapacitása és releváns szakértelme alapján.",
     "nextStep2Title": "Értékelés",
     "nextStep2Body": "Egy rövid írásbeli válasz: szerintünk mi a probléma, megfelel-e, és mi lenne az első lépés.",
     "nextStep3Title": "Hívás vagy aszinkron",
@@ -64,7 +99,7 @@
     },
     "success": {
       "title": "Megkeresés elküldve",
-      "body": "Köszönjük – felülvizsgáljuk projektjét, és 2 munkanapon belül válaszolunk."
+      "body": "Köszönjük – áttekintjük a projekt kontextusát, és válaszolunk a következő hasznos kérdésre vagy az illeszkedés értékelésére."
     },
     "error": {
       "title": "Valami elromlott",

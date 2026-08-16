@@ -1,22 +1,139 @@
 {
   "workPage": {
-    "eyebrow": "Arbejd med SDK",
-    "body": "Du ved, hvornår noget i din stak koster dig. Her er de situationer, SDK er bygget til.",
-    "cta": "Start et projekt",
-    "engagementsEyebrow": "Forlovelser",
-    "engagementsHeading": "Sådan starter engagementer normalt",
-    "engagementsBody": "De fleste engagementer begynder med en kort samtale eller et skriftligt resumé af problemet. Derfra foreslår SDK et scoped svar: en fastprisrevision, en tids- og materialearbejdsstrøm eller en hybrid model afhængigt af usikkerheden i systemet og klarheden af ​​målet.",
-    "lookForEyebrow": "Hvad vi leder efter",
-    "lookForHeading": "Et klart problem og et team, der er villige til at engagere sig i det.",
-    "lookForBody": "De bedste engagementer starter, når klienten ved, at noget er galt, men endnu ikke kender det fulde omfang. Vi leder efter hold, der ønsker at forstå mekanismen, ikke bare modtage et slide deck.",
-    "lookFor1Title": "En specifik begrænsning",
-    "lookFor1Body": "Ydeevne, pålidelighed, omkostninger, leveringshastighed eller overholdelse. Problemet behøver ikke at være nyt – det skal være reelt og målbart.",
-    "lookFor2Title": "Adgang til systemet",
-    "lookFor2Body": "Læseadgang til kodebasen, infrastrukturen og de mennesker, der forstår den aktuelle tilstand. Uden dette er enhver vurdering gætværk.",
-    "lookFor3Title": "En beslutningstager",
-    "lookFor3Body": "En person, der kan godkende omfanget, budgettet og tidslinjen. Ikke et udvalg - én person med bemyndigelse til at fremme arbejdet.",
-    "fitEyebrow": "Tilpas",
-    "fitHeading": "Når SDK ikke er det rigtige svar",
-    "fitBody": "Vi siger ikke oftere, end du måske forventer. SDK er ikke et værksted for overløbsbilletter, og vi tager ikke engagementer, hvor problemet endnu ikke er defineret, eller teamet ikke kan forpligte sig til processen."
+    "hero": {
+      "eyebrow": "Problemer vi er sat op til at løse",
+      "title": "Se på det tekniske problem, før du ordinerer projektet.",
+      "intro": "Scenarierne nedenfor viser, hvordan SDK griber teknisk konsekvenssituationer an. De beskriver kapaciteter og beslutningsveje, ikke opfundne klientcasestudier eller ikke-understøttede resultater.",
+      "primaryCta": "Diskuter en situation",
+      "secondaryCta": "Udforsk scenarierne",
+      "signals": [
+        "Ingen opdigtede casestudier",
+        "Bevis før recept",
+        "Definerede kundebeslutninger",
+        "Håndgribelige leverancer"
+      ]
+    },
+    "scenarios": {
+      "eyebrow": "Engagement scenarier",
+      "heading": "Genkend presset. Find derefter det ansvarlige første træk.",
+      "intro": "Et nyttigt svar forbinder virksomhedens eksponering med teknisk dokumentation og en beslutning, som organisationen kan handle på.",
+      "labels": {
+        "signals": "Hvad du kan se",
+        "questions": "Hvad vi skal lære",
+        "deliverables": "Hvad skaber fremskridt"
+      },
+      "items": [
+        {
+          "number": "01 / MODERNISERING",
+          "title": "Systemet er for vigtigt til at erstatte blindt – og for dyrt til at lade være.",
+          "situation": "Leveringen aftager, efterhånden som afhængighederne ældes, viden indsnævres, og hver ændring når længere end forventet.",
+          "signals": [
+            "Opgraderinger gentagne gange udskudt",
+            "Ændringer kræver manuel gendannelse",
+            "Kritisk adfærd er udokumenteret"
+          ],
+          "questions": [
+            "Hvilke grænser kan bevæge sig selvstændigt?",
+            "Hvor er forretningsadfærd kodet?",
+            "Hvad skal forblive tilgængeligt under forandring?"
+          ],
+          "deliverables": [
+            "Kort over nuværende tilstand",
+            "Risikorangerede muligheder",
+            "Inkrementel migrationssekvens"
+          ]
+        },
+        {
+          "number": "02 / PÅLIDELIGHED",
+          "title": "Platformen er under pres, men kapaciteten er måske ikke det egentlige problem.",
+          "situation": "Latens, hændelser eller infrastrukturomkostninger stiger, og de tilgængelige signaler forklarer ikke hvorfor.",
+          "signals": [
+            "Fejl er svære at reproducere",
+            "Skaleringsændringer flytter flaskehalsen",
+            "Restitution afhænger af nogle få personer"
+          ],
+          "questions": [
+            "Hvor bliver tiden og kapaciteten af?",
+            "Hvilke fejltilstande påvirker brugerne?",
+            "Hvilke beviser mangler under hændelser?"
+          ],
+          "deliverables": [
+            "Observerede flaskehalse",
+            "Operationelt risikoregister",
+            "Prioriteret stabiliseringsplan"
+          ]
+        },
+        {
+          "number": "03 / AI WORKFLOW",
+          "title": "AI-demoen virker. Driftsmodellen omkring det eksisterer ikke endnu.",
+          "situation": "En lovende modelinteraktion skal blive en kontrolleret arbejdsgang med pålidelige data, evaluering og menneskeligt ansvar.",
+          "signals": [
+            "Kvalitet bedømmes efter indtryk",
+            "Kildetilladelser er uklare",
+            "Fejl har ingen anmeldelsessti"
+          ],
+          "questions": [
+            "Hvad er et acceptabelt resultat?",
+            "Hvilke beslutninger kræver menneskelig vurdering?",
+            "Hvordan vil kvalitet blive målt over tid?"
+          ],
+          "deliverables": [
+            "Workflow og kontroldesign",
+            "Evalueringstilgang",
+            "Implementeringsgrænse"
+          ]
+        },
+        {
+          "number": "04 / TEKNISK EJERSKAB",
+          "title": "Produktet har brug for fokuseret ingeniørmæssigt ejerskab i en kritisk fase.",
+          "situation": "Det interne team har en defineret prioritet, men mangler en eller flere discipliner, der er nødvendige for at udføre arbejdsstrømmen sikkert.",
+          "signals": [
+            "Et kritisk punkt i køreplanen forbliver blokeret",
+            "Flere systemer skal ændres sammen",
+            "Eksterne bidragydere ville have brug for koordinering"
+          ],
+          "questions": [
+            "Hvilket resultat kan SDK eje?",
+            "Hvilken ekspertise er der virkelig brug for?",
+            "Hvor forbliver kundens beslutninger afgørende?"
+          ],
+          "deliverables": [
+            "Projektspecifikt team",
+            "Synlig leveringsjournal",
+            "Dokumenteret overdragelse af ejerskab"
+          ]
+        }
+      ]
+    },
+    "principle": {
+      "eyebrow": "Hvorfor scenarier",
+      "heading": "En portefølje er kun overbevisende, når beviserne er reelle.",
+      "body": "SDK vil kun offentliggøre navngivne kunder, kvantificerede resultater og udtalelser, når arbejdet, resultatet og tilladelsen kan verificeres. Indtil da viser denne side de situationer, vi er rustet til at undersøge, og de leverancer, der bringer dem fremad."
+    },
+    "fit": {
+      "eyebrow": "Forlovelsespasning",
+      "heading": "Det stærkeste arbejde starter med adgang, ansvar og en reel beslutning at træffe.",
+      "intro": "Tekniske vanskeligheder er velkomne. Et engagement bliver ineffektivt, når organisationen ikke kan give kontekst, adgang eller beslutningsejerskab.",
+      "fitTitle": "Gode forhold for SDK",
+      "notFitTitle": "Dårlige forhold for SDK",
+      "fitItems": [
+        "En væsentlig software-, data-, AI- eller infrastrukturbegrænsning",
+        "Adgang til systemet og mennesker, der forstår dets nuværende tilstand",
+        "En beslutningstager, der kan løse scope og trade-offs",
+        "Vilje til at undersøge beviser, før man forpligter sig til en løsning"
+      ],
+      "notFitItems": [
+        "Anonym billetkapacitet uden ejet resultat",
+        "En anmodning om at validere et forudbestemt svar uanset beviser",
+        "Ingen praktisk adgang til det relevante system eller interessenter",
+        "Udvalg kun baseret på den laveste individuelle dagspris"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Bring os den virkelige situation",
+      "title": "Start med, hvad systemet koster, forsinker eller sætter i fare.",
+      "body": "Du behøver ikke at diagnosticere det, før du kontakter SDK. Fortæl os, hvad der sker, og hvilken beslutning der i øjeblikket er blokeret.",
+      "label": "Diskuter situationen"
+    }
   }
 }

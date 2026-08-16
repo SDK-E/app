@@ -1,132 +1,145 @@
 {
-  "hero": {
-    "eyebrow": "B2B AI · Software · Cloud · Systeemtechniek",
-    "heading": "Eén engineeringpartner voor de stack die uw bedrijf nodig heeft.",
-    "leadParagraph": "SDK Enterprises bouwt, moderniseert en exploiteert software over de gehele stack: backendplatforms, cloudinfrastructuur, AI-automatisering, realtime systemen en interne tooling. Je houdt je bezig met één gespecialiseerd probleem of bezit een bredere werkstroom; Hoe dan ook, de mensen die het werk doen, zijn de mensen met wie je praat.",
-    "ctaStartProject": "Start een project",
-    "ctaExploreServices": "Ontdek diensten",
-    "trustFrance": "Het in Frankrijk gevestigde bedrijf B2B",
-    "trustSenior": "Senior technische levering",
-    "trustAI": "AI + backend + cloud",
-    "trustClients": "Europese en externe klanten"
-  },
-  "services": {
-    "eyebrow": "Diensten",
-    "title": "Gebruik de hele stapel, of alleen het deel dat je nodig hebt.",
-    "intro": "SDK kan zich bezighouden met één gespecialiseerd probleem of eigenaar zijn van een bredere technische werkstroom.",
-    "items": [
-      {
-        "number": "01",
-        "category": "AI-techniek",
-        "title": "AI-agenten en automatisering",
-        "copy": "LLM-integraties, agenten, RAG, workflowautomatisering, ontwikkelaarstools en AI-ondersteunde bewerkingen."
-      },
-      {
-        "number": "02",
-        "category": "Achterkant",
-        "title": "Platformen, APIs en SaaS",
-        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs en realtime backend-architectuur."
-      },
-      {
-        "number": "03",
-        "category": "Frontend",
-        "title": "Web- en applicatie-interfaces",
-        "copy": "React, Vue, Nuxt, TypeScript, Tailwind en Shadcn."
-      },
-      {
-        "number": "04",
-        "category": "Wolk",
-        "title": "Cloud & infrastructuur",
-        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD en implementatiearchitectuur."
-      },
-      {
-        "number": "05",
-        "category": "Gegevens",
-        "title": "Databases, cache en zoeken",
-        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey en Elasticsearch."
-      },
-      {
-        "number": "06",
-        "category": "Modernisering",
-        "title": "Modernisering van de erfenis",
-        "copy": "Framework-upgrades, migratie, reductie van technische schulden en prestatie-optimalisatie."
-      }
-    ]
-  },
-  "whySdk": {
-    "eyebrow": "Waarom SDK",
-    "title": "Senior engineering zonder onnodige lagen.",
-    "intro": "Directe communicatie, snelle diagnose en pragmatische uitvoering.",
-    "items": [
-      {
-        "kicker": "FR",
-        "copy": "Een in Frankrijk gevestigd B2B-bedrijf voor Europese en externe klanten."
-      },
-      {
-        "kicker": "AI",
-        "copy": "LLM-integraties, agenten, automatisering en interne tooling."
-      },
-      {
-        "kicker": "RT",
-        "copy": "Realtime platformwerk met grote volumes."
-      },
-      {
-        "kicker": "DIRECT",
-        "copy": "Je praat met de engineers die het werk doen, niet met een accountlaag."
-      }
-    ]
-  },
-  "engagements": {
-    "eyebrow": "Werken met SDK",
-    "title": "Breng een specifiek probleem mee. Krijg een specifiek antwoord.",
-    "intro": "Je weet wanneer iets in je stapel je iets kost. Dit zijn de situaties waarvoor de SDK is ingesteld.",
-    "items": [
-      {
-        "title": "Een systeem dat te oud is om te blijven patchen.",
-        "copy": "Je hebt een migratieplan nodig, geen wens: een audit van wat loopt, wat kapot gaat en de volgorde om er in te trekken."
-      },
-      {
-        "title": "Volume waarvoor uw huidige stapel niet is gebouwd.",
-        "copy": "Realtime opname, backends met hoge doorvoer en de infrastructuur om ze stabiel te houden."
-      },
-      {
-        "title": "AI die u aan het werk kunt zetten.",
-        "copy": "LLM-integraties, agenten en automatisering die een interne workflow veranderen – geen demo die stopt op het veld."
-      },
-      {
-        "title": "Een team dat senioren nodig heeft.",
-        "copy": "Directe engineeringlevering op uw codebase, zonder dat een middenlaag beslissingen vertraagt."
-      }
-    ]
-  },
-  "process": {
-    "eyebrow": "Hoe wij werken",
-    "title": "Een duidelijk pad van probleem naar productie.",
-    "intro": "Vier stappen, zichtbare vooruitgang in elke fase.",
-    "items": [
-      {
-        "title": "Begrijp het",
-        "copy": "Bedrijfsdoel, stapel, beperkingen en succescriteria."
-      },
-      {
-        "title": "Ontwerp",
-        "copy": "Architectuur, reikwijdte, risico's en mijlpalen."
-      },
-      {
-        "title": "Bouw",
-        "copy": "Implementatie met zichtbare voortgang."
-      },
-      {
-        "title": "Overdracht",
-        "copy": "Implementeren, documenteren en eigendom overdragen."
-      }
-    ]
-  },
-  "contact": {
-    "eyebrow": "Werken met SDK",
-    "heading": "Breng ons het probleem dat u opgelost wilt hebben.",
-    "body": "Vertel ons wat u probeert te bouwen, moderniseren, automatiseren of repareren. Wij vertellen u eerlijk of het past en wat daarvoor nodig is.",
-    "registeredUnder": "Geregistreerd onder {company}",
-    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  "homePage": {
+    "hero": {
+      "eyebrow": "Software · AI · Cloud · Data · Systeemtechniek",
+      "title": "Breng het systeem dat een verantwoorde weg nodig heeft vooruit.",
+      "intro": "SDK Enterprises brengt de engineeringspecialisten bijeen die een project daadwerkelijk nodig heeft, coördineert hun werkzaamheden en blijft verantwoordelijk voor het kwaliteitskader dat aan de opdrachtgever wordt gepresenteerd. Wij helpen organisaties bij het diagnosticeren, moderniseren, bouwen en exploiteren van technisch consequente software.",
+      "primaryCta": "Bespreek de situatie",
+      "secondaryCta": "Kijk waar u moet beginnen",
+      "signals": [
+        "Probleemgestuurde teamsamenstelling",
+        "Onafhankelijke specialisten",
+        "SDK-geleid leveringsframework",
+        "Klantgestuurde systemen"
+      ]
+    },
+    "opening": {
+      "eyebrow": "Het startpunt",
+      "heading": "Een technologielijst kan u niet vertellen wat het project nodig heeft.",
+      "body": "Een moderniseringsprogramma, een AI-workflow en een probleem met de betrouwbaarheid van platforms kunnen soortgelijke technologieën raken, terwijl er compleet andere beslissingen, disciplines en leveringscontroles nodig zijn. SDK begint met de druk op het systeem en de uitkomsten die de organisatie moet bezitten.",
+      "body2": "Dat kan leiden tot een beperkte technische beoordeling, een gerichte technische werkstroom of een voortdurend technisch partnerschap. De toezegging moet overeenkomen met wat al bekend is – en mag de onzekerheid niet verbergen in een groter voorstel.",
+      "principles": [
+        {
+          "number": "01",
+          "title": "Bewijs vóór verplichting",
+          "copy": "Wanneer de huidige stand van zaken of het implementatietraject onduidelijk is, stel dan eerst het bewijs vast dat nodig is voor een verantwoorde beslissing."
+        },
+        {
+          "number": "02",
+          "title": "Mogelijkheid rond het probleem",
+          "copy": "Selecteer de disciplines die het systeem nodig heeft, in plaats van elke opdracht in hetzelfde beschikbare team te forceren."
+        },
+        {
+          "number": "03",
+          "title": "Eigendom dat de overdracht overleeft",
+          "copy": "Houd beslissingen, opslagplaatsen, infrastructuur, documentatie en operationele kennis onder controle van de klant."
+        }
+      ]
+    },
+    "system": {
+      "eyebrow": "Eén systeem, verbonden beslissingen",
+      "heading": "Het werk stopt zelden op de grens van één technologie.",
+      "intro": "De SDK kan zich op één laag concentreren of een werkstroom coördineren die meerdere lagen omvat. De onderstaande kaart toont de technische problemen die vaak samen moeten worden overwogen.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Werkstroom en interface",
+          "copy": "De gebruikerstaak, operationele beslissing en herstelpad die de software begrijpelijk moet maken.",
+          "systems": [
+            "React",
+            "Vue",
+            "Nuxt",
+            "TypeScript"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Zakelijk platform",
+          "copy": "De services, APIs, machtigingen en integratiecontracten die de regels van de organisatie bevatten.",
+          "systems": [
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PHP"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "AI en automatisering",
+          "copy": "De modelondersteunde beslissingen, ophaal-, evaluatie- en menselijke beoordelingscontroles binnen een echte workflow.",
+          "systems": [
+            "LLM",
+            "RAG",
+            "Agenten",
+            "APIs"
+          ]
+        },
+        {
+          "number": "04",
+          "title": "Gegevens en staat",
+          "copy": "De eigendoms-, consistentie-, zoek-, cache- en levenscyclusregels achter het systeemgedrag.",
+          "systems": [
+            "PostgreSQL",
+            "MongoDB",
+            "Redis",
+            "Elasticsearch"
+          ]
+        },
+        {
+          "number": "05",
+          "title": "Productie operatie",
+          "copy": "De implementatie-, waarneembaarheids-, herstel- en infrastructuurmechanismen die nodig zijn om het systeem te laten functioneren.",
+          "systems": [
+            "AWS",
+            "GCP",
+            "Azure",
+            "Kubernetes",
+            "CI/CD"
+          ]
+        }
+      ]
+    },
+    "scenarios": {
+      "eyebrow": "Herken de situatie",
+      "heading": "Technisch werk wordt urgent door het effect ervan op het bedrijf.",
+      "intro": "De volgende scenario's zijn voorbeelden van capaciteiten en geen verzonnen casestudies van klanten. Ze laten zien hoe SDK symptomen koppelt aan vragen en tastbare volgende resultaten.",
+      "link": "Ontdek alle werkscenario's"
+    },
+    "companyModel": {
+      "eyebrow": "Het SDK-bedrijfsmodel",
+      "heading": "Een projectspecifiek team zonder het coördinatierisico over te dragen aan de opdrachtgever.",
+      "intro": "SDK werkt met onafhankelijke ingenieursspecialisten. De disciplines kunnen mee veranderen met de werkzaamheden, terwijl de opdrachtgever één bedrijfsrelatie en één leveringskader behoudt.",
+      "link": "Begrijp het bedrijfsmodel"
+    },
+    "engagements": {
+      "eyebrow": "Kies het juiste niveau van betrokkenheid",
+      "heading": "Koop geen implementatie voordat het systeem een ​​implementatiebeslissing kan ondersteunen.",
+      "intro": "Begin met bewijsmateriaal als de onzekerheid materieel is. Ga direct over tot de levering wanneer de uitkomst, de grens en de acceptatievoorwaarden al bekend zijn.",
+      "link": "Ontdek diensten en betrokkenheidsmodellen"
+    },
+    "process": {
+      "eyebrow": "Van onzekerheid naar eigenaarschap",
+      "heading": "Elke fase moet eindigen met bewijs en een beslissing.",
+      "intro": "Activiteit alleen laat niet zien dat een project vooruitgang boekt. SDK structureert de opdracht zodat de klant kan beoordelen wat er is geleerd, opgebouwd en overgedragen voordat hij de volgende toezegging doet.",
+      "link": "Bekijk het volledige leveringsproces"
+    },
+    "quality": {
+      "eyebrow": "Kwaliteit die u kunt inspecteren",
+      "heading": "Vertrouwen moet voortkomen uit zichtbare mechanismen, niet uit bijvoeglijke naamwoorden.",
+      "intro": "Termen als veilig, schaalbaar en productieklaar krijgen pas betekenis als de opdracht definieert hoe ze zullen worden onderzocht op het daadwerkelijke systeem en de risico's.",
+      "link": "Bekijk hoe SDK werkt"
+    },
+    "fit": {
+      "eyebrow": "Voordat we een team bespreken",
+      "heading": "De betrokkenheid vereist een echte beperking, systeemtoegang en iemand die kan beslissen.",
+      "intro": "SDK is ontworpen voor eigen technische resultaten. Het is geen marktplaats voor anonieme ticketcapaciteit of een manier om een ​​vooraf bepaald antwoord te valideren zonder het bewijsmateriaal te onderzoeken.",
+      "link": "Beoordeel de betrokkenheid"
+    },
+    "cta": {
+      "eyebrow": "Begin met de werkelijke situatie",
+      "title": "Je hoeft het probleem niet eerst om te zetten in een gepolijste specificatie.",
+      "body": "Vertel ons wat het systeem doet, wat het kost of vertraagt, en welke beslissing momenteel geblokkeerd is. SDK begint met het bepalen of het werk past en wat de eerste nuttige zet zou moeten zijn.",
+      "label": "Bespreek de situatie"
+    }
   }
 }

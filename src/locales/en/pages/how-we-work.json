@@ -1,37 +1,55 @@
 {
   "howWeWorkPage": {
-    "eyebrow": "How we work",
-    "body": "Every engagement follows the same four-phase path. The output of each phase is a concrete artifact the team can review, challenge, or approve before the next one starts.",
-    "expectEyebrow": "Each phase",
-    "expectHeading": "What to expect in each phase",
-    "expectIntro": "A visible deliverable at every stage, so there are no surprises at handover.",
-    "understandTitle": "Understand",
-    "understandBody": "Business goal, stack, constraints and success criteria. Output: a short brief and a proposed scope.",
-    "designTitle": "Design",
-    "designBody": "Architecture, scope, risks and milestones. Output: a technical plan with visible checkpoints.",
-    "buildTitle": "Build",
-    "buildBody": "Implementation with visible progress. Output: running software, reviewed in short cycles.",
-    "handoverTitle": "Handover",
-    "handoverBody": "Deploy, document and transfer ownership. Output: working system, runbooks and a knowledge transfer session.",
-    "deliverablesEyebrow": "Deliverables",
-    "deliverablesHeading": "What you receive at the end",
-    "deliverablesBody": "Every engagement ends with a transfer of ownership, not a hand-off to a maintenance contract. The team that receives the work gets the software, the documentation, and the knowledge to operate it.",
-    "deliverable1Title": "Working software",
-    "deliverable1Body": "Deployed, tested, and running in your environment. Not a prototype, not a pilot — production-ready code.",
-    "deliverable2Title": "Technical documentation",
-    "deliverable2Body": "Architecture decisions, runbooks, deployment steps, and operational notes written for the team that will maintain the system.",
-    "deliverable3Title": "Knowledge transfer",
-    "deliverable3Body": "A structured session with the engineers who will own the system going forward. Questions answered, trade-offs explained, next steps agreed.",
-    "principlesEyebrow": "Principles",
-    "principlesHeading": "How we show up",
-    "principlesBody": "These are not values on a poster. They are the constraints we operate within on every engagement.",
-    "principle1Title": "Direct communication",
-    "principle1Body": "You speak to the engineer doing the work. No account manager, no project coordinator, no translation layer.",
-    "principle2Title": "Visible progress",
-    "principle2Body": "Every two weeks you see working software and a written update. No black boxes, no surprise invoices.",
-    "principle3Title": "Honest scope",
-    "principle3Body": "We will tell you if something is outside what we can deliver well. A fixed-price audit is often the right first step when the problem is unclear.",
-    "principle4Title": "No lock-in",
-    "principle4Body": "The code, the infrastructure, and the documentation belong to you. We do not build dependencies on our continued involvement."
+    "hero": {
+      "eyebrow": "How we work", "title": "Reduce uncertainty before it becomes delivery risk.",
+      "intro": "SDK makes the problem, decisions, responsibilities and evidence visible throughout an engagement. The process adapts to the system, but the client always knows what is being decided and what comes next.",
+      "primaryCta": "Discuss a project", "secondaryCta": "See the process",
+      "signals": ["Defined decision points", "Visible delivery evidence", "Project-specific specialists", "Documented handover"]
+    },
+    "entryPaths": {
+      "eyebrow": "Where work begins", "heading": "The first step depends on what you already know.",
+      "intro": "Starting implementation too early makes uncertainty expensive. Starting with another generic discovery exercise wastes time when the outcome is already clear.",
+      "items": [
+        {"number": "01", "title": "The outcome is defined", "copy": "The system boundary, desired change and acceptance conditions are understood. We validate assumptions, compose the delivery team and plan the workstream.", "href": "#process"},
+        {"number": "02", "title": "The problem is visible, but the path is not", "copy": "The system is creating cost, risk or delay, but the cause or responsible response is unclear. We begin with a bounded technical assessment.", "href": "#process"}
+      ]
+    },
+    "process": {
+      "eyebrow": "The engagement path", "heading": "Four stages, each ending in a decision.",
+      "intro": "Progress is not measured by activity alone. Each stage produces evidence the client can review before more commitment is made.",
+      "labels": {"output": "Output", "decision": "Decision"},
+      "items": [
+        {"number": "01", "title": "Understand", "purpose": "Establish what the business needs, what the system does today and where uncertainty sits.", "activities": ["Review goals, constraints and stakeholders", "Inspect the relevant system and operating context", "Define success, access and known unknowns"], "output": "A concise problem definition, current-state view and proposed scope.", "decision": "Is there enough evidence to design the response?"},
+        {"number": "02", "title": "Design", "purpose": "Turn the problem into technical options, delivery boundaries and explicit trade-offs.", "activities": ["Model architecture and system boundaries", "Identify risks, dependencies and migration steps", "Compose the required specialist team"], "output": "A technical approach, decision record, milestones and acceptance criteria.", "decision": "Is this the right approach and commitment?"},
+        {"number": "03", "title": "Build", "purpose": "Deliver the agreed change while keeping quality, risk and progress visible.", "activities": ["Implement in reviewable increments", "Test assumptions against working software", "Record decisions, evidence and unresolved risks"], "output": "Working changes, review evidence and current operational documentation.", "decision": "Does the increment meet its acceptance conditions?"},
+        {"number": "04", "title": "Handover", "purpose": "Place the system and the knowledge needed to operate it under client control.", "activities": ["Verify deployment and recovery procedures", "Complete technical and operational documentation", "Transfer context to the people retaining ownership"], "output": "Client-controlled code, infrastructure, documentation and agreed follow-up actions.", "decision": "Can the client operate and evolve the delivered scope?"}
+      ]
+    },
+    "responsibility": {
+      "eyebrow": "Team and accountability", "heading": "The team can change with the work. Responsibility does not disappear between specialists.",
+      "body": "SDK selects independent specialists for the disciplines an engagement requires and coordinates them through one delivery framework. Decisions, access, documentation and work status are kept visible so knowledge does not remain with one individual.",
+      "items": [
+        {"number": "01", "title": "SDK", "copy": "Defines the engagement framework, coordinates delivery and remains accountable for the quality controls agreed with the client."},
+        {"number": "02", "title": "Specialists", "copy": "Contribute the experience required by the system and work within shared decisions, review practices and acceptance criteria."},
+        {"number": "03", "title": "Client", "copy": "Provides business context, system access and timely decisions while retaining control of its repositories, infrastructure and information."},
+        {"number": "04", "title": "Shared record", "copy": "Keeps architecture decisions, risks, progress and operating knowledge accessible beyond any single contributor."}
+      ]
+    },
+    "quality": {
+      "eyebrow": "Quality controls", "heading": "Confidence comes from mechanisms you can inspect.",
+      "intro": "We avoid unqualified promises such as secure, scalable or production-ready. The engagement defines how those qualities will be examined and evidenced for the system in question.",
+      "items": [
+        {"number": "01", "title": "Written decisions", "copy": "Material architecture and scope choices record the context, trade-offs and consequences instead of disappearing into meetings."},
+        {"number": "02", "title": "Reviewable increments", "copy": "Work is divided into changes that can be inspected, tested and accepted before risk accumulates."},
+        {"number": "03", "title": "Appropriate verification", "copy": "Tests, security checks, performance evidence and deployment controls are selected according to the actual failure risk."},
+        {"number": "04", "title": "Operational ownership", "copy": "Documentation, access, recovery steps and unresolved risks are treated as delivery work, not optional material after launch."}
+      ]
+    },
+    "scope": {
+      "eyebrow": "When reality changes the plan", "heading": "Surface the change. Explain the consequence. Decide before proceeding.",
+      "body": "Existing systems reveal information as they are inspected and changed. When an assumption fails or a new dependency appears, SDK records the evidence, explains its effect on scope, risk and sequence, and asks for a decision. The change does not disappear into an invoice or a delayed handover.",
+      "steps": ["Record the new evidence", "Explain the technical and commercial consequence", "Present viable options", "Agree the change before continuing"]
+    },
+    "cta": {"eyebrow": "Choose the first useful decision", "title": "Start with the uncertainty that is blocking the work.", "body": "Tell us what is known, what is under pressure and what decision your organization needs to make next.", "label": "Discuss the situation"}
   }
 }

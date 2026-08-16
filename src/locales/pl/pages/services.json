@@ -1,19 +1,259 @@
 {
   "servicesPage": {
-    "eyebrow": "Usługi",
-    "body": "Tworzymy i obsługujemy oprogramowanie w pełnym zakresie: agentów i automatyzacji AI, platform backendowych, interfejsów internetowych, infrastruktury chmurowej, systemów danych i modernizacji starszych rozwiązań. Jeden wyspecjalizowany problem lub cały strumień pracy — rozmawiasz z inżynierami wykonującymi daną pracę.",
-    "cta": "Rozpocznij projekt",
-    "engagementEyebrow": "Modele zaangażowania",
-    "engagementHeading": "Jak się angażujemy",
-    "engagementBody": "SDK można zastosować na dwa sposoby: w ramach audytu o ustalonej cenie, który diagnozuje konkretny problem i proponuje dalszą drogę, lub w ramach dedykowanego strumienia prac inżynieryjnych, w którym zespół wyższego szczebla jest właścicielem kompleksowego wdrożenia. Istnieją rozwiązania hybrydowe dla systemów, które wymagają zarówno diagnozy, jak i ciągłego dostarczania.",
-    "engagementModel1Title": "Audyt stałej ceny",
-    "engagementModel1Body": "Zakresowa diagnoza konkretnego problemu: przegląd architektury, ścieżka migracji, wąskie gardło wydajności lub przegląd bezpieczeństwa. Wynik to pisemny plan zawierający priorytety, ryzyko i szacunkowy wysiłek.",
-    "engagementModel2Title": "Strumień pracy inżynierskiej",
-    "engagementModel2Body": "Zespół seniorów osadzony w Twoim stosie na określony czas. Cotygodniowe dostawy, widoczny postęp i bezpośrednia komunikacja z inżynierami budującymi oprogramowanie.",
-    "engagementModel3Title": "Hybrydowy",
-    "engagementModel3Body": "Najpierw audyt, potem strumień pracy. Zespół, który zdiagnozuje problem, pozostaje przy wdrażaniu rozwiązania. Żadnego przekazania do innego zespołu obsługi klienta.",
-    "whatWeDontDoEyebrow": "Czego nie robimy",
-    "whatWeDontDoHeading": "Nie ukrywamy mechanizmu.",
-    "whatWeDontDoBody": "Brak juniorów w bazie kodu. Brak menedżera konta pomiędzy Tobą a inżynierami. Po złożeniu propozycji nie ma żadnego przekazania na morzu. Żadnego zaangażowania, które zależy od sprzedania Ci większego zakresu niż potrzebujesz."
+    "hero": {
+      "eyebrow": "Oprogramowanie · Sztuczna inteligencja · Chmura · Dane",
+      "title": "Problem definiuje zespół inżynierów.",
+      "intro": "SDK skupia specjalistów, których rzeczywiście potrzebuje system, koordynuje ich pracę i pozostaje odpowiedzialny za jakość dostaw. Zacznij od jednej decyzji technicznej lub powierz nam zdefiniowany strumień pracy.",
+      "primaryCta": "Omów projekt",
+      "secondaryCta": "Znajdź swój punkt wyjścia",
+      "signals": [
+        "Skład zespołu zorientowany na problemy",
+        "Niezależni specjaliści",
+        "Kontrola jakości LED SDK",
+        "Systemy będące własnością klienta"
+      ]
+    },
+    "navigator": {
+      "heading": "Zacznij od ciśnienia w układzie.",
+      "intro": "Przydatne zaangażowanie zaczyna się od ograniczeń, a nie od katalogu technologii.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Modernizuj",
+          "copy": "Zmniejsz ryzyko i koszty zmiany oprogramowania, które nie może już gromadzić poprawek.",
+          "href": "#modernizacja"
+        },
+        {
+          "number": "02",
+          "title": "Buduj",
+          "copy": "Projektuj i dostarczaj platformy backendowe, integracje i systemy produktów w oparciu o jasną potrzebę operacyjną.",
+          "href": "#platformy"
+        },
+        {
+          "number": "03",
+          "title": "Automatyzuj",
+          "copy": "Wprowadź sztuczną inteligencję do rzeczywistego przepływu pracy, korzystając z potrzebnych danych, ocen i kontroli operacyjnych.",
+          "href": "#AI-automatyzacja"
+        },
+        {
+          "number": "04",
+          "title": "Ustabilizuj",
+          "copy": "Znajdź przyczyny problemów z niezawodnością, wdrażaniem, wydajnością lub przepływem danych.",
+          "href": "#systemy-produkcyjne"
+        },
+        {
+          "number": "05",
+          "title": "Zdiagnozuj",
+          "copy": "Zamień niejasną sytuację techniczną w dowody, opcje i możliwą do obrony kolejną decyzję.",
+          "href": "#zaręczyny"
+        }
+      ]
+    },
+    "capabilities": {
+      "eyebrow": "Możliwości",
+      "heading": "Głębokość inżynierii zorganizowana wokół decyzji przed tobą.",
+      "intro": "Każda zdolność może działać samodzielnie lub łączyć się z innymi, gdy system przekracza granice.",
+      "labels": {
+        "investigation": "Co badamy",
+        "delivery": "Co możemy dostarczyć",
+        "evidence": "Odpowiednie systemy",
+        "firstStep": "Przydatny pierwszy ruch"
+      },
+      "items": [
+        {
+          "number": "01 / MODERNIZACJA",
+          "id": "modernizacja",
+          "title": "Zmień starzejący się system, nie tracąc tego, co wciąż działa.",
+          "situation": "System ma znaczenie dla firmy, ale aktualizacje są ryzykowne, dostawy spowalniają lub zbyt duża ilość wiedzy jest nieudokumentowana.",
+          "investigation": [
+            "Zależności, ograniczenia środowiska wykonawczego i nieobsługiwane komponenty",
+            "Przepływy danych, integracje i ukryte sprzężenia operacyjne",
+            "Zmień ryzyko, zasięg testów i granice migracji"
+          ],
+          "delivery": [
+            "Ocena stanu obecnego i priorytetowy plan modernizacji",
+            "Migracja frameworka, środowiska wykonawczego lub usługi",
+            "Wymiana przyrostowa z kontrolowanym przełączaniem"
+          ],
+          "evidence": [
+            "PHP",
+            "Laravel",
+            "Symfony",
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PostgreSQL"
+          ],
+          "firstStep": "Zaplanuj, co system robi dzisiaj, gdzie zmiana jest niebezpieczna i która granica może zostać przesunięta jako pierwsza."
+        },
+        {
+          "number": "02 / PLATFORMY",
+          "id": "platformy",
+          "title": "Zbuduj części produktu, które zawierają reguły biznesowe.",
+          "situation": "Produkt wymaga APIs, integracji, autoryzacji, pracy asynchronicznej lub zachowania w czasie rzeczywistym, które muszą pozostać zrozumiałe w miarę zmiany wymagań.",
+          "investigation": [
+            "Granice domeny, użytkownicy i zasady dostępu",
+            "Kontrakty integracyjne, tryby awarii i własność danych",
+            "Wymagania dotyczące wolumenu operacyjnego, opóźnienia i spójności"
+          ],
+          "delivery": [
+            "Usługi backendowe, APIs i warstwy integracyjne",
+            "Uwierzytelnianie, autoryzacja i izolacja najemców",
+            "Kolejki, zdarzenia i przepływy aplikacji w czasie rzeczywistym"
+          ],
+          "evidence": [
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PHP",
+            "PostgreSQL",
+            "Redis",
+            "Valkey"
+          ],
+          "firstStep": "Zdefiniuj granice biznesowe, dane, które posiada oraz warunki awarii, które projekt musi tolerować."
+        },
+        {
+          "number": "03 / AUTOMATYZACJA AI",
+          "id": "ai-automatyzacja",
+          "title": "Przenieś sztuczną inteligencję z przekonującej wersji demonstracyjnej do odpowiedzialnego przepływu pracy.",
+          "situation": "Proces ręczny jest kosztowny lub powolny, ale funkcja sztucznej inteligencji będzie użyteczna tylko wtedy, gdy kontrolowane będą jego dane wejściowe, wyjściowe, ocena i zachowanie awaryjne.",
+          "investigation": [
+            "Decyzje dotyczące przepływu pracy, które wymagają modelu i te, które tego nie wymagają",
+            "Dane źródłowe, uprawnienia i jakość pobierania",
+            "Kryteria oceny, przegląd ludzki i radzenie sobie z awariami"
+          ],
+          "delivery": [
+            "Integracje LLM, agenci i automatyzacja przepływu pracy",
+            "Systemy odzyskiwania i uziemione systemy reagowania",
+            "Kontrola oceny, obserwowalności i przeglądu"
+          ],
+          "evidence": [
+            "LLM",
+            "RAG",
+            "APIs",
+            "PostgreSQL",
+            "Elasticsearch",
+            "Pyton",
+            "Node.js"
+          ],
+          "firstStep": "Wybierz jeden przepływ pracy, zdefiniuj akceptowalny wynik i zmierz bieżący proces ludzki przed jego automatyzacją."
+        },
+        {
+          "number": "04 / SYSTEMY PRODUKCYJNE",
+          "id": "systemy-produkcyjne",
+          "title": "Uwidocznij zachowanie produkcyjne przed zmianą wydajności.",
+          "situation": "Wdrożenia są niestabilne, incydenty trudne do wyjaśnienia, koszty infrastruktury niejasne lub system zbliża się do limitu operacyjnego.",
+          "investigation": [
+            "Ścieżka wdrożenia, środowiska i procedury odzyskiwania",
+            "Dzienniki, metryki, ślady i dowody incydentów",
+            "Ograniczenia zasobów, wąskie gardła i założenia dotyczące skalowania"
+          ],
+          "delivery": [
+            "Architektura wdrożenia i przepływy pracy CI/CD",
+            "Obserwowalność, alerty i operacyjne elementy Runbook",
+            "Ulepszenia chmury, kontenera i orkiestracji"
+          ],
+          "evidence": [
+            "AWS",
+            "GCP",
+            "Azure",
+            "Kubernetes",
+            "Helm",
+            "CI/CD",
+            "Redis"
+          ],
+          "firstStep": "Ustal, co system robi pod rzeczywistym obciążeniem oraz w jaki sposób zespół aktualnie wykrywa awarie i odzyskuje je po awarii."
+        },
+        {
+          "number": "05 / DANE I INTERFEJSY",
+          "id": "interfejsy danych",
+          "title": "Połącz dane, operacje i osoby korzystające z systemu.",
+          "situation": "Produkt potrzebuje niezawodnej ścieżki danych i interfejsu, dzięki któremu złożone prace operacyjne będą łatwiejsze do zrozumienia i wykonania.",
+          "investigation": [
+            "Własność danych, cykl życia, wzorce wyszukiwania i dostępu",
+            "Zadania użytkownika, punkty decyzyjne i usuwanie błędów",
+            "Granice serwera i przeglądarki wpływające na wydajność"
+          ],
+          "delivery": [
+            "Modele danych, wyszukiwanie, pamięć podręczna i przepływy pozyskiwania",
+            "Operacyjne interfejsy sieciowe i narzędzia wewnętrzne",
+            "Dostępne i responsywne aplikacje"
+          ],
+          "evidence": [
+            "PostgreSQL",
+            "MongoDB",
+            "Elasticsearch",
+            "React",
+            "Vue",
+            "Nuxt",
+            "TypeScript"
+          ],
+          "firstStep": "Wykonaj jedno krytyczne zadanie użytkownika, od danych źródłowych do ostatecznej decyzji i zidentyfikuj miejsca utraty kontekstu."
+        }
+      ]
+    },
+    "engagements": {
+      "eyebrow": "Sposoby zaangażowania",
+      "heading": "Dopasuj zaangażowanie do tego, co już jest znane.",
+      "intro": "Niepewny system wymaga dowodów przed podjęciem zobowiązania do odpowiedzialnego wdrożenia. Zdefiniowany wynik można przenieść bezpośrednio do ukierunkowanego strumienia pracy.",
+      "labels": {
+        "bestFor": "Najlepsze dla",
+        "output": "Wyjście pierwotne",
+        "commitment": "Zaangażowanie"
+      },
+      "options": [
+        {
+          "title": "Ocena techniczna",
+          "bestFor": "Konsekwentna decyzja, w której obecny stan, ryzyko lub ścieżka wdrożenia są niejasne.",
+          "output": "Dowody, opcje, ryzyko i priorytetowe rekomendacje, z których klient może korzystać z SDK lub bez niego.",
+          "commitment": "Ograniczone dochodzenie z uzgodnionym dostępem, pytaniami i wynikami."
+        },
+        {
+          "title": "Strumień pracy inżynierskiej",
+          "bestFor": "Zdefiniowany wynik techniczny, który wymaga złożonego zespołu i jasnej odpowiedzialności za dostawę.",
+          "output": "Zmiany robocze, sprawdzone decyzje, dowody wdrożeniowe i dokumentacja w uzgodnionym zakresie.",
+          "commitment": "Skoncentrowany okres dostawy z widocznymi punktami kontrolnymi i kryteriami akceptacji."
+        },
+        {
+          "title": "Partnerstwo techniczne",
+          "bestFor": "System wymagający etapowej modernizacji lub ciągłego posiadania technicznego strumienia prac.",
+          "output": "Utrzymywany plan działania, dostarczanie przyrostowe i operacyjny zapis decyzji, ryzyka i postępu.",
+          "commitment": "Ciągłe zaangażowanie sprawdzane pod kątem uzgodnionego trybu pracy i priorytetów."
+        }
+      ]
+    },
+    "teamModel": {
+      "eyebrow": "Model SDK",
+      "heading": "Specjaliści wybrani do systemu. Jedna firma odpowiedzialna przed klientem.",
+      "body": "SDK współpracuje z niezależnymi specjalistami inżynieryjnymi. Komponujemy zespół wokół problemu, koordynujemy pracę i ustalamy ramy jakości zaangażowania. Klient nie musi rekrutować, dopasowywać i zarządzać zbiorem niepowiązanych współpracowników.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Zdefiniuj potrzebę",
+          "copy": "Przed podjęciem decyzji, kto powinien wykonać pracę, wyjaśnij system, ograniczenia, decyzje i wynik."
+        },
+        {
+          "number": "02",
+          "title": "Skomponuj zespół",
+          "copy": "Wybierz dyscypliny i doświadczenie odpowiednie dla zadania, zamiast wciskać je w nieruchomą ławkę."
+        },
+        {
+          "number": "03",
+          "title": "Kontroluj jakość",
+          "copy": "Korzystaj z widocznych decyzji, przeglądów, kryteriów akceptacji i dowodów operacyjnych podczas całej dostawy."
+        },
+        {
+          "number": "04",
+          "title": "Przenieś własność",
+          "copy": "Trzymaj kod, infrastrukturę, dokumentację i wiedzę operacyjną pod kontrolą klienta."
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Przynieś nam ograniczenie",
+      "title": "Nie musisz przyjeżdżać z gotową specyfikacją.",
+      "body": "Opisz system, wywieraną na niego presję i decyzję, którą musisz podjąć. Zaczniemy od ustalenia, czy SDK będzie przydatnym rozwiązaniem.",
+      "label": "Omów problem"
+    }
   }
 }

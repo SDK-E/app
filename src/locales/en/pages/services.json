@@ -1,19 +1,92 @@
 {
   "servicesPage": {
-    "eyebrow": "Services",
-    "body": "We build and operate software across the full stack: AI agents and automation, backend platforms, web interfaces, cloud infrastructure, data systems, and legacy modernization. One specialized problem or an entire workstream — the engineers doing the work are the ones you talk to.",
-    "cta": "Start a project",
-    "engagementEyebrow": "Engagement models",
-    "engagementHeading": "How we engage",
-    "engagementBody": "SDK enters in two ways: a fixed-price audit that diagnoses a specific problem and proposes a path forward, or a dedicated engineering workstream where a senior team owns the implementation end to end. Hybrid arrangements exist for systems that need both diagnosis and sustained delivery.",
-    "engagementModel1Title": "Fixed-price audit",
-    "engagementModel1Body": "A scoped diagnosis of a specific problem: architecture review, migration path, performance bottleneck, or security review. Output is a written plan with priorities, risks, and estimated effort.",
-    "engagementModel2Title": "Engineering workstream",
-    "engagementModel2Body": "A senior team embedded in your stack for a defined period. Weekly delivery, visible progress, and direct communication with the engineers building the software.",
-    "engagementModel3Title": "Hybrid",
-    "engagementModel3Body": "Audit first, then workstream. The team that diagnoses the problem stays to implement the solution. No hand-off to a different account team.",
-    "whatWeDontDoEyebrow": "What we don't do",
-    "whatWeDontDoHeading": "We don't hide the mechanism.",
-    "whatWeDontDoBody": "No juniors on your codebase. No account manager between you and the engineers. No offshore hand-off after the proposal. No engagement that depends on selling you a larger scope than you need."
+    "hero": {
+      "eyebrow": "Software · AI · Cloud · Data",
+      "title": "The problem defines the engineering team.",
+      "intro": "SDK brings together the specialists a system actually requires, coordinates their work and remains accountable for delivery quality. Start with one technical decision or give us a defined workstream to own.",
+      "primaryCta": "Discuss a project",
+      "secondaryCta": "Find your starting point",
+      "signals": ["Problem-led team composition", "Independent specialists", "SDK-led quality control", "Client-owned systems"]
+    },
+    "navigator": {
+      "heading": "Start with the pressure on the system.",
+      "intro": "A useful engagement starts with the constraint, not a catalogue of technologies.",
+      "items": [
+        {"number": "01", "title": "Modernize", "copy": "Reduce the risk and cost of changing software that can no longer keep accumulating patches.", "href": "#modernization"},
+        {"number": "02", "title": "Build", "copy": "Design and deliver backend platforms, integrations and product systems around a clear operating need.", "href": "#platforms"},
+        {"number": "03", "title": "Automate", "copy": "Put AI into a real workflow with the data, evaluation and operational controls it needs.", "href": "#ai-automation"},
+        {"number": "04", "title": "Stabilize", "copy": "Find the causes behind reliability, deployment, performance or data-flow problems.", "href": "#production-systems"},
+        {"number": "05", "title": "Diagnose", "copy": "Turn an unclear technical situation into evidence, options and a defensible next decision.", "href": "#engagements"}
+      ]
+    },
+    "capabilities": {
+      "eyebrow": "Capabilities",
+      "heading": "Engineering depth, organized around the decision in front of you.",
+      "intro": "Each capability can stand alone or combine with others when the system crosses boundaries.",
+      "labels": {"investigation": "What we examine", "delivery": "What we can deliver", "evidence": "Relevant systems", "firstStep": "Useful first move"},
+      "items": [
+        {
+          "number": "01 / MODERNIZATION", "id": "modernization", "title": "Change an aging system without losing what still works.",
+          "situation": "The system matters to the business, but upgrades are risky, delivery is slowing down or too much knowledge sits in undocumented behavior.",
+          "investigation": ["Dependencies, runtime constraints and unsupported components", "Data flows, integrations and hidden operational coupling", "Change risk, test coverage and migration boundaries"],
+          "delivery": ["Current-state assessment and prioritized modernization plan", "Framework, runtime or service migration", "Incremental replacement with controlled cutover"],
+          "evidence": ["PHP", "Laravel", "Symfony", "Java", "Spring Boot", "Node.js", "PostgreSQL"],
+          "firstStep": "Map what the system does today, where change is dangerous and which boundary can move first."
+        },
+        {
+          "number": "02 / PLATFORMS", "id": "platforms", "title": "Build the parts of the product that carry the business rules.",
+          "situation": "A product needs APIs, integrations, authorization, asynchronous work or realtime behavior that must remain understandable as requirements change.",
+          "investigation": ["Domain boundaries, users and access rules", "Integration contracts, failure modes and data ownership", "Operational volume, latency and consistency requirements"],
+          "delivery": ["Backend services, APIs and integration layers", "Authentication, authorization and tenant isolation", "Queues, events and realtime application flows"],
+          "evidence": ["Java", "Spring Boot", "Node.js", "PHP", "PostgreSQL", "Redis", "Valkey"],
+          "firstStep": "Define the business boundary, the data it owns and the failure conditions the design must tolerate."
+        },
+        {
+          "number": "03 / AI AUTOMATION", "id": "ai-automation", "title": "Move AI from a convincing demo into an accountable workflow.",
+          "situation": "A manual process is expensive or slow, but an AI feature will only be useful if its inputs, outputs, evaluation and fallback behavior are controlled.",
+          "investigation": ["Workflow decisions that require a model and those that do not", "Source data, permissions and retrieval quality", "Evaluation criteria, human review and failure handling"],
+          "delivery": ["LLM integrations, agents and workflow automation", "Retrieval and grounded response systems", "Evaluation, observability and review controls"],
+          "evidence": ["LLM", "RAG", "APIs", "PostgreSQL", "Elasticsearch", "Python", "Node.js"],
+          "firstStep": "Choose one workflow, define an acceptable result and measure the current human process before automating it."
+        },
+        {
+          "number": "04 / PRODUCTION SYSTEMS", "id": "production-systems", "title": "Make production behavior visible before changing capacity.",
+          "situation": "Deployments are fragile, incidents are hard to explain, infrastructure costs are unclear or the system is approaching an operational limit.",
+          "investigation": ["Deployment path, environments and recovery procedures", "Logs, metrics, traces and incident evidence", "Resource constraints, bottlenecks and scaling assumptions"],
+          "delivery": ["Deployment architecture and CI/CD workflows", "Observability, alerting and operational runbooks", "Cloud, container and orchestration improvements"],
+          "evidence": ["AWS", "GCP", "Azure", "Kubernetes", "Helm", "CI/CD", "Redis"],
+          "firstStep": "Establish what the system is doing under real load and how the team currently detects and recovers from failure."
+        },
+        {
+          "number": "05 / DATA & INTERFACES", "id": "data-interfaces", "title": "Connect data, operations and the people using the system.",
+          "situation": "The product needs a dependable data path and an interface that makes complex operational work easier to understand and complete.",
+          "investigation": ["Data ownership, lifecycle, search and access patterns", "User tasks, decision points and error recovery", "Server and browser boundaries that affect performance"],
+          "delivery": ["Data models, search, cache and ingestion flows", "Operational web interfaces and internal tooling", "Accessible, responsive application experiences"],
+          "evidence": ["PostgreSQL", "MongoDB", "Elasticsearch", "React", "Vue", "Nuxt", "TypeScript"],
+          "firstStep": "Follow one critical user task from source data to final decision and identify where context is lost."
+        }
+      ]
+    },
+    "engagements": {
+      "eyebrow": "Ways to engage", "heading": "Match the commitment to what is already known.",
+      "intro": "An uncertain system needs evidence before a responsible implementation commitment. A defined outcome can move directly into a focused workstream.",
+      "labels": {"bestFor": "Best for", "output": "Primary output", "commitment": "Commitment"},
+      "options": [
+        {"title": "Technical assessment", "bestFor": "A consequential decision where the current state, risk or implementation path is unclear.", "output": "Evidence, options, risks and a prioritized recommendation the client can use with or without SDK.", "commitment": "A bounded investigation with agreed access, questions and deliverables."},
+        {"title": "Engineering workstream", "bestFor": "A defined technical outcome that needs a composed team and clear delivery ownership.", "output": "Working changes, reviewed decisions, deployment evidence and documentation for the agreed scope.", "commitment": "A focused delivery period with visible checkpoints and acceptance criteria."},
+        {"title": "Technical partnership", "bestFor": "A system that needs staged modernization or continued ownership of a technical workstream.", "output": "A maintained roadmap, incremental delivery and an operating record of decisions, risks and progress.", "commitment": "A continuing engagement reviewed against an agreed workstream and priorities."}
+      ]
+    },
+    "teamModel": {
+      "eyebrow": "The SDK model", "heading": "Specialists selected for the system. One company accountable to the client.",
+      "body": "SDK works with independent engineering specialists. We compose the team around the problem, coordinate the work and set the quality framework for the engagement. The client does not need to recruit, align and manage a collection of unrelated contributors.",
+      "steps": [
+        {"number": "01", "title": "Define the need", "copy": "Clarify the system, constraints, decisions and outcome before deciding who should do the work."},
+        {"number": "02", "title": "Compose the team", "copy": "Select the disciplines and experience relevant to the engagement instead of forcing it into a fixed bench."},
+        {"number": "03", "title": "Control quality", "copy": "Use visible decisions, reviews, acceptance criteria and operational evidence throughout delivery."},
+        {"number": "04", "title": "Transfer ownership", "copy": "Keep code, infrastructure, documentation and operating knowledge in the client’s control."}
+      ]
+    },
+    "cta": {"eyebrow": "Bring us the constraint", "title": "You do not need to arrive with a finished specification.", "body": "Describe the system, the pressure on it and the decision you need to make. We will start by determining whether SDK is a useful fit.", "label": "Discuss the problem"}
   }
 }

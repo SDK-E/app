@@ -1,22 +1,139 @@
 {
   "workPage": {
-    "eyebrow": "Práce s SDK",
-    "body": "Poznáte, když vás něco ve vašem zásobníku stojí. Zde jsou situace, pro které je SDK stavěn.",
-    "cta": "Začněte projekt",
-    "engagementsEyebrow": "Zásnuby",
-    "engagementsHeading": "Jak obvykle začínají zásnuby",
-    "engagementsBody": "Většina setkání začíná krátkým rozhovorem nebo písemným shrnutím problému. Odtud SDK navrhuje reakci v rozsahu: audit s pevnou cenou, pracovní tok času a materiálů nebo hybridní model v závislosti na nejistotě v systému a jasnosti cíle.",
-    "lookForEyebrow": "Co hledáme",
-    "lookForHeading": "Jasný problém a tým ochotný se do toho pustit.",
-    "lookForBody": "Nejlepší zakázky začínají, když klient ví, že něco není v pořádku, ale ještě nezná celý rozsah. Hledáme týmy, které chtějí porozumět mechanismu, nejen dostávat skluzavku.",
-    "lookFor1Title": "Specifické omezení",
-    "lookFor1Body": "Výkon, spolehlivost, cena, rychlost dodání nebo dodržování předpisů. Problém nemusí být nový – musí být skutečný a měřitelný.",
-    "lookFor2Title": "Přístup do systému",
-    "lookFor2Body": "Přístup pro čtení ke kódové základně, infrastruktuře a lidem, kteří rozumí aktuálnímu stavu. Bez toho je jakékoli hodnocení jen dohady.",
-    "lookFor3Title": "Osoba s rozhodovací pravomocí",
-    "lookFor3Body": "Někdo, kdo může schválit rozsah, rozpočet a časovou osu. Ne výbor – jedna osoba s pravomocí posouvat práci kupředu.",
-    "fitEyebrow": "Fit",
-    "fitHeading": "Když SDK není správná odpověď",
-    "fitBody": "Říkáme ne častěji, než byste čekali. SDK není karosárna pro přepadové lístky a nepřijímáme zakázky, kde problém ještě není definován nebo se tým nemůže zapojit do procesu."
+    "hero": {
+      "eyebrow": "Problémy, které jsme nastaveni řešit",
+      "title": "Před předepsáním projektu se podívejte na technický problém.",
+      "intro": "Níže uvedené scénáře ukazují, jak SDK přistupuje k technicky následným situacím. Popisují schopnosti a cesty rozhodování, nikoli vymyšlené klientské případové studie nebo nepodporované výsledky.",
+      "primaryCta": "Diskutujte o situaci",
+      "secondaryCta": "Prozkoumejte scénáře",
+      "signals": [
+        "Žádné vymyšlené případové studie",
+        "Důkaz před předpisem",
+        "Definovaná rozhodnutí klienta",
+        "Hmotné dodávky"
+      ]
+    },
+    "scenarios": {
+      "eyebrow": "Scénáře zapojení",
+      "heading": "Rozpoznejte tlak. Pak najděte odpovědný první krok.",
+      "intro": "Užitečná reakce spojuje obchodní expozici s technickými důkazy a rozhodnutím, na základě kterého může organizace jednat.",
+      "labels": {
+        "signals": "Co můžete vidět",
+        "questions": "Co se potřebujeme naučit",
+        "deliverables": "Co vytváří pokrok"
+      },
+      "items": [
+        {
+          "number": "01 / MODERNIZACE",
+          "title": "Systém je příliš důležitý na to, aby jej bylo možné slepě nahradit – a příliš nákladný na to, abychom jej nechali na pokoji.",
+          "situation": "Doručování se zpomaluje, protože závislosti stárnou, znalosti se zužují a každá změna zasahuje dále, než se očekávalo.",
+          "signals": [
+            "Aktualizace opakovaně odkládány",
+            "Změny vyžadují ruční obnovení",
+            "Kritické chování není zdokumentováno"
+          ],
+          "questions": [
+            "Které hranice se mohou pohybovat nezávisle?",
+            "Kde je zakódováno obchodní chování?",
+            "Co musí zůstat k dispozici při změně?"
+          ],
+          "deliverables": [
+            "Mapa současného stavu",
+            "Rizikově hodnocené možnosti",
+            "Sekvence přírůstkové migrace"
+          ]
+        },
+        {
+          "number": "02 / SPOLEHLIVOST",
+          "title": "Platforma je pod tlakem, ale kapacita nemusí být skutečný problém.",
+          "situation": "Latence, incidenty nebo náklady na infrastrukturu se zvyšují a dostupné signály nevysvětlují proč.",
+          "signals": [
+            "Neúspěchy se obtížně reprodukují",
+            "Změny měřítka posouvají úzké místo",
+            "Uzdravení závisí na několika lidech"
+          ],
+          "questions": [
+            "Kam se hrabe čas a kapacita?",
+            "Které režimy selhání ovlivňují uživatele?",
+            "Jaké důkazy během incidentů chybí?"
+          ],
+          "deliverables": [
+            "Pozorovaná úzká místa",
+            "Registr operačních rizik",
+            "Prioritní plán stabilizace"
+          ]
+        },
+        {
+          "number": "03 / PRACOVNÍ POSTUP AI",
+          "title": "Demo AI funguje. Operační model kolem toho zatím neexistuje.",
+          "situation": "Slibná modelová interakce se musí stát řízeným workflow s důvěryhodnými daty, hodnocením a lidskou odpovědností.",
+          "signals": [
+            "Kvalita se posuzuje podle dojmu",
+            "Oprávnění zdroje jsou nejasná",
+            "Selhání nemají žádnou cestu kontroly"
+          ],
+          "questions": [
+            "Co je přijatelný výsledek?",
+            "Která rozhodnutí vyžadují lidskou kontrolu?",
+            "Jak se bude měřit kvalita v čase?"
+          ],
+          "deliverables": [
+            "Návrh pracovního postupu a ovládání",
+            "Přístup k hodnocení",
+            "Hranice realizace"
+          ]
+        },
+        {
+          "number": "04 / TECHNICKÉ VLASTNICTVÍ",
+          "title": "Produkt vyžaduje soustředěné technické vlastnictví pro kritickou fázi.",
+          "situation": "Interní tým má definovanou prioritu, ale postrádá jednu nebo více disciplín potřebných k bezpečnému provádění pracovního proudu.",
+          "signals": [
+            "Kritická položka plánu zůstává zablokována",
+            "Několik systémů se musí změnit společně",
+            "Externí přispěvatelé by potřebovali koordinaci"
+          ],
+          "questions": [
+            "Jaký výsledek může SDK vlastnit?",
+            "Jaká odbornost je skutečně vyžadována?",
+            "Kde zůstávají rozhodnutí klienta zásadní?"
+          ],
+          "deliverables": [
+            "Projektově specifický tým",
+            "Viditelný záznam o doručení",
+            "Doložený převod vlastnictví"
+          ]
+        }
+      ]
+    },
+    "principle": {
+      "eyebrow": "Proč scénáře",
+      "heading": "Portfolio je přesvědčivé pouze tehdy, když jsou důkazy skutečné.",
+      "body": "SDK zveřejní jmenované klienty, kvantifikované výsledky a posudky pouze v případě, že bude možné ověřit práci, výsledek a povolení. Do té doby tato stránka ukazuje situace, které jsme schopni prošetřit, a výstupy, které je posunou vpřed."
+    },
+    "fit": {
+      "eyebrow": "Zásnubní fit",
+      "heading": "Nejsilnější práce začíná přístupem, odpovědností a skutečným rozhodnutím.",
+      "intro": "Technická náročnost je vítána. Zakázka se stává neúčinnou, když organizace nemůže poskytnout kontext, přístup nebo vlastnictví rozhodnutí.",
+      "fitTitle": "Dobré podmínky pro SDK",
+      "notFitTitle": "Špatné podmínky pro SDK",
+      "fitItems": [
+        "Materiální omezení softwaru, dat, umělé inteligence nebo infrastruktury",
+        "Přístup k systému a lidé, kteří rozumí jeho aktuálnímu stavu",
+        "Osoba s rozhodovací pravomocí, která dokáže vyřešit rozsah a kompromisy",
+        "Ochota zkoumat důkazy, než se zaváže k řešení"
+      ],
+      "notFitItems": [
+        "Kapacita anonymního lístku bez vlastněného výsledku",
+        "Žádost o ověření předem stanovené odpovědi bez ohledu na důkazy",
+        "Žádný praktický přístup k příslušnému systému nebo zúčastněným stranám",
+        "Výběr pouze na základě nejnižší sazby za jednotlivé dny"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Přibližte nám skutečnou situaci",
+      "title": "Začněte tím, co systém stojí, zdržuje nebo ohrožuje.",
+      "body": "Před kontaktováním SDK ji nemusíte diagnostikovat. Řekněte nám, co se děje a které rozhodnutí je aktuálně blokováno.",
+      "label": "Diskutujte o situaci"
+    }
   }
 }

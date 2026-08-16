@@ -1,19 +1,259 @@
 {
   "servicesPage": {
-    "eyebrow": "Tjänster",
-    "body": "Vi bygger och driver mjukvara i hela stacken: AI-agenter och automation, backend-plattformar, webbgränssnitt, molninfrastruktur, datasystem och äldre modernisering. Ett specialiserat problem eller en hel arbetsström — ingenjörerna som utför arbetet är de du pratar med.",
-    "cta": "Starta ett projekt",
-    "engagementEyebrow": "Engagemangsmodeller",
-    "engagementHeading": "Hur vi engagerar oss",
-    "engagementBody": "SDK går in på två sätt: en fastprisrevision som diagnostiserar ett specifikt problem och föreslår en väg framåt, eller en dedikerad ingenjörsarbetsström där ett seniorteam äger implementeringen från början. Hybridarrangemang finns för system som behöver både diagnos och förlängd leverans.",
-    "engagementModel1Title": "Fastprisrevision",
-    "engagementModel1Body": "En avgränsad diagnos av ett specifikt problem: arkitekturgranskning, migreringsväg, prestandaflaskhals eller säkerhetsgranskning. Output är en skriftlig plan med prioriteringar, risker och uppskattad insats.",
-    "engagementModel2Title": "Ingenjörsarbete",
-    "engagementModel2Body": "Ett seniorlag inbäddat i din stack under en bestämd period. Veckoleverans, synliga framsteg och direkt kommunikation med ingenjörerna som bygger mjukvaran.",
-    "engagementModel3Title": "Hybrid",
-    "engagementModel3Body": "Revision först, sedan arbetsflöde. Teamet som diagnostiserar problemet stannar för att implementera lösningen. Ingen överlämnande till ett annat kontoteam.",
-    "whatWeDontDoEyebrow": "Vad vi inte gör",
-    "whatWeDontDoHeading": "Vi döljer inte mekanismen.",
-    "whatWeDontDoBody": "Inga juniorer på din kodbas. Ingen kontoansvarig mellan dig och ingenjörerna. Ingen offshore hand-off efter förslaget. Inget engagemang som beror på att sälja dig en större omfattning än du behöver."
+    "hero": {
+      "eyebrow": "Programvara · AI · Moln · Data",
+      "title": "Problemet definierar ingenjörsteamet.",
+      "intro": "SDK samlar de specialister som ett system faktiskt kräver, koordinerar deras arbete och förblir ansvariga för leveranskvalitet. Börja med ett tekniskt beslut eller ge oss en definierad arbetsström att äga.",
+      "primaryCta": "Diskutera ett projekt",
+      "secondaryCta": "Hitta din utgångspunkt",
+      "signals": [
+        "Problemledd teamsammansättning",
+        "Oberoende specialister",
+        "SDK-ledd kvalitetskontroll",
+        "Kundägda system"
+      ]
+    },
+    "navigator": {
+      "heading": "Börja med trycket på systemet.",
+      "intro": "Ett användbart engagemang börjar med begränsningen, inte en katalog över teknologier.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Modernisera",
+          "copy": "Minska risken och kostnaderna för att byta programvara som inte längre kan samla på sig patchar.",
+          "href": "#modernisering"
+        },
+        {
+          "number": "02",
+          "title": "Bygg",
+          "copy": "Designa och leverera backend-plattformar, integrationer och produktsystem kring ett tydligt driftbehov.",
+          "href": "#plattformar"
+        },
+        {
+          "number": "03",
+          "title": "Automatisera",
+          "copy": "Sätt in AI i ett verkligt arbetsflöde med de data, utvärdering och driftkontroller den behöver.",
+          "href": "#ai-automation"
+        },
+        {
+          "number": "04",
+          "title": "Stabilisera",
+          "copy": "Hitta orsakerna bakom problem med tillförlitlighet, driftsättning, prestanda eller dataflöde.",
+          "href": "#produktionssystem"
+        },
+        {
+          "number": "05",
+          "title": "Diagnostisera",
+          "copy": "Förvandla en oklar teknisk situation till bevis, alternativ och ett försvarbart nästa beslut.",
+          "href": "#förlovningar"
+        }
+      ]
+    },
+    "capabilities": {
+      "eyebrow": "Förmågor",
+      "heading": "Tekniskt djup, organiserat kring beslutet framför dig.",
+      "intro": "Varje förmåga kan stå för sig eller kombineras med andra när systemet överskrider gränser.",
+      "labels": {
+        "investigation": "Vad vi undersöker",
+        "delivery": "Vad vi kan leverera",
+        "evidence": "Relevanta system",
+        "firstStep": "Användbart första drag"
+      },
+      "items": [
+        {
+          "number": "01 / MODERNISERING",
+          "id": "modernisering",
+          "title": "Ändra ett åldrande system utan att förlora det som fortfarande fungerar.",
+          "situation": "Systemet har betydelse för verksamheten, men uppgraderingar är riskfyllda, leveransen saktar ner eller för mycket kunskap sitter i odokumenterat beteende.",
+          "investigation": [
+            "Beroenden, körtidsbegränsningar och komponenter som inte stöds",
+            "Dataflöden, integrationer och dold operativ koppling",
+            "Ändra risk, testtäckning och migrationsgränser"
+          ],
+          "delivery": [
+            "Nulägesbedömning och prioriterad moderniseringsplan",
+            "Framework, runtime eller tjänstmigrering",
+            "Inkrementell ersättning med kontrollerad cutover"
+          ],
+          "evidence": [
+            "PHP",
+            "Laravel",
+            "Symfony",
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PostgreSQL"
+          ],
+          "firstStep": "Kartlägga vad systemet gör idag, var förändring är farlig och vilken gräns som kan flyttas först."
+        },
+        {
+          "number": "02 / PLATTFORMAR",
+          "id": "plattformar",
+          "title": "Bygg de delar av produkten som bär affärsreglerna.",
+          "situation": "En produkt behöver APIs, integrationer, auktorisering, asynkront arbete eller realtidsbeteende som måste förbli förståeligt när kraven ändras.",
+          "investigation": [
+            "Domängränser, användare och åtkomstregler",
+            "Integrationskontrakt, fellägen och dataägande",
+            "Krav på operativ volym, latens och konsistens"
+          ],
+          "delivery": [
+            "Backend-tjänster, APIs och integrationslager",
+            "Autentisering, auktorisering och hyresgästisolering",
+            "Köer, händelser och applikationsflöden i realtid"
+          ],
+          "evidence": [
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PHP",
+            "PostgreSQL",
+            "Redis",
+            "Valkey"
+          ],
+          "firstStep": "Definiera affärsgränsen, den data den äger och de felförhållanden som designen måste tolerera."
+        },
+        {
+          "number": "03 / AI AUTOMATION",
+          "id": "ai-automation",
+          "title": "Flytta AI från en övertygande demo till ett ansvarsfullt arbetsflöde.",
+          "situation": "En manuell process är dyr eller långsam, men en AI-funktion kommer bara att vara användbar om dess ingångar, utgångar, utvärdering och reservbeteende är kontrollerade.",
+          "investigation": [
+            "Arbetsflödesbeslut som kräver en modell och de som inte gör det",
+            "Källdata, behörigheter och hämtningskvalitet",
+            "Utvärderingskriterier, mänsklig granskning och felhantering"
+          ],
+          "delivery": [
+            "LLM integrationer, agenter och automatisering av arbetsflöden",
+            "Hämtning och jordade svarssystem",
+            "Utvärdering, observerbarhet och granskningskontroller"
+          ],
+          "evidence": [
+            "LLM",
+            "RAG",
+            "APIs",
+            "PostgreSQL",
+            "Elasticsearch",
+            "Python",
+            "Node.js"
+          ],
+          "firstStep": "Välj ett arbetsflöde, definiera ett acceptabelt resultat och mät den aktuella mänskliga processen innan du automatiserar den."
+        },
+        {
+          "number": "04 / PRODUKTIONSSYSTEM",
+          "id": "produktionssystem",
+          "title": "Gör produktionsbeteendet synligt innan du byter kapacitet.",
+          "situation": "Utbyggnader är ömtåliga, incidenter är svåra att förklara, infrastrukturkostnader är oklara eller systemet närmar sig en driftsgräns.",
+          "investigation": [
+            "Driftsättningsväg, miljöer och återställningsprocedurer",
+            "Loggar, mätvärden, spår och incidentbevis",
+            "Resursbegränsningar, flaskhalsar och skalningsantaganden"
+          ],
+          "delivery": [
+            "Implementeringsarkitektur och CI/CD arbetsflöden",
+            "Observerbarhet, larm och driftböcker",
+            "Moln-, container- och orkestreringsförbättringar"
+          ],
+          "evidence": [
+            "AWS",
+            "GCP",
+            "Azure",
+            "Kubernetes",
+            "Helm",
+            "CI/CD",
+            "Redis"
+          ],
+          "firstStep": "Fastställ vad systemet gör under verklig belastning och hur teamet för närvarande upptäcker och återställer från fel."
+        },
+        {
+          "number": "05 / DATA & GRÄNSSNITT",
+          "id": "datagränssnitt",
+          "title": "Koppla samman data, verksamhet och personer som använder systemet.",
+          "situation": "Produkten behöver en pålitlig dataväg och ett gränssnitt som gör komplext operativt arbete lättare att förstå och slutföra.",
+          "investigation": [
+            "Dataägande, livscykel, sök- och åtkomstmönster",
+            "Användaruppgifter, beslutspunkter och felåterställning",
+            "Server- och webbläsargränser som påverkar prestanda"
+          ],
+          "delivery": [
+            "Datamodeller, sökning, cache och inmatningsflöden",
+            "Operativa webbgränssnitt och interna verktyg",
+            "Tillgängliga, lyhörda applikationsupplevelser"
+          ],
+          "evidence": [
+            "PostgreSQL",
+            "MongoDB",
+            "Elasticsearch",
+            "React",
+            "Vue",
+            "Nuxt",
+            "TypeScript"
+          ],
+          "firstStep": "Följ en kritisk användaruppgift från källdata till slutligt beslut och identifiera var sammanhanget går förlorat."
+        }
+      ]
+    },
+    "engagements": {
+      "eyebrow": "Sätt att engagera sig",
+      "heading": "Matcha engagemanget med det som redan är känt.",
+      "intro": "Ett osäkert system behöver bevis innan ett ansvarsfullt implementeringsåtagande. Ett definierat resultat kan flyttas direkt till en fokuserad arbetsström.",
+      "labels": {
+        "bestFor": "Bäst för",
+        "output": "Primär utgång",
+        "commitment": "Engagemang"
+      },
+      "options": [
+        {
+          "title": "Teknisk bedömning",
+          "bestFor": "Ett följdbeslut där nuvarande tillstånd, risk eller implementeringsväg är oklar.",
+          "output": "Bevis, alternativ, risker och en prioriterad rekommendation som klienten kan använda med eller utan SDK.",
+          "commitment": "En avgränsad utredning med överenskommen tillgång, frågor och resultat."
+        },
+        {
+          "title": "Ingenjörsarbete",
+          "bestFor": "Ett definierat tekniskt resultat som kräver ett sammansatt team och tydligt leveransägande.",
+          "output": "Arbetsförändringar, granskade beslut, insatsbevis och dokumentation för överenskommen omfattning.",
+          "commitment": "En fokuserad leveransperiod med synliga checkpoints och acceptanskriterier."
+        },
+        {
+          "title": "Tekniskt partnerskap",
+          "bestFor": "Ett system som behöver stegvis modernisering eller fortsatt ägande av en teknisk arbetsström.",
+          "output": "En underhållen färdplan, inkrementell leverans och ett operativt register över beslut, risker och framsteg.",
+          "commitment": "Ett fortsatt engagemang granskas mot en överenskommen arbetsström och prioriteringar."
+        }
+      ]
+    },
+    "teamModel": {
+      "eyebrow": "Modellen SDK",
+      "heading": "Specialister utvalda för systemet. Ett företag ansvarigt gentemot kunden.",
+      "body": "SDK arbetar med oberoende ingenjörsspecialister. Vi sammansätter teamet kring problemet, samordnar arbetet och sätter kvalitetsramarna för engagemanget. Kunden behöver inte rekrytera, anpassa och hantera en samling icke-relaterade bidragsgivare.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Definiera behovet",
+          "copy": "Förtydliga system, begränsningar, beslut och utfall innan du bestämmer vem som ska utföra arbetet."
+        },
+        {
+          "number": "02",
+          "title": "Komponera laget",
+          "copy": "Välj de discipliner och erfarenheter som är relevanta för engagemanget istället för att tvinga in det på en fast bänk."
+        },
+        {
+          "number": "03",
+          "title": "Kontrollera kvaliteten",
+          "copy": "Använd synliga beslut, recensioner, acceptanskriterier och operativa bevis under hela leveransen."
+        },
+        {
+          "number": "04",
+          "title": "Överlåta ägande",
+          "copy": "Håll kod, infrastruktur, dokumentation och driftkunskap i kundens kontroll."
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Ge oss begränsningen",
+      "title": "Du behöver inte komma med en färdig specifikation.",
+      "body": "Beskriv systemet, trycket på det och det beslut du behöver fatta. Vi börjar med att avgöra om SDK är en användbar passform.",
+      "label": "Diskutera problemet"
+    }
   }
 }

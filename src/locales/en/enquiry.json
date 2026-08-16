@@ -1,14 +1,49 @@
 {
   "enquiry": {
+    "eyebrow": "Discuss a project",
     "title": "Start a project",
-    "subtitle": "Tell us what you are trying to build, modernize, automate or fix. We will reply within 2 business days with an honest assessment of fit and what it would take.",
+    "subtitle": "Tell us what you are trying to build, modernize, automate or fix. A useful enquiry starts with the pressure on the system and the decision you need to make.",
     "body": "The form collects the minimum information needed to respond thoughtfully. Nothing is shared outside SDK Enterprises, and you can also reach us directly at hello@sdk.enterprises.",
-    "body2": "We review every enquiry ourselves. No account managers, no qualification scripts, no hand-offs.",
+    "body2": "Your technical and commercial context stays together while SDK assesses whether the work is a fit.",
+    "heroSignals": [
+      "A finished specification is not required",
+      "Technical and commercial context stays together",
+      "Context for a considered response",
+      "Direct company contact remains available"
+    ],
+    "reasonsEyebrow": "Useful starting points",
+    "reasonsHeading": "Bring the pressure on the system, not a polished procurement document.",
+    "reasonsIntro": "The form is designed to establish whether SDK can make the next technical decision easier.",
+    "reasons": [
+      {
+        "number": "01",
+        "title": "A system needs to change",
+        "copy": "Modernization, migration or integration work is blocked by uncertainty in the current state."
+      },
+      {
+        "number": "02",
+        "title": "A platform is under pressure",
+        "copy": "Reliability, delivery speed, infrastructure or data behavior has become a business constraint."
+      },
+      {
+        "number": "03",
+        "title": "An AI workflow needs engineering controls",
+        "copy": "The use case is promising, but data, evaluation, review or operation is not yet defined."
+      },
+      {
+        "number": "04",
+        "title": "A workstream needs the right specialists",
+        "copy": "The outcome is clear, but the project crosses disciplines the current team cannot cover alone."
+      }
+    ],
+    "formEyebrow": "Project context",
+    "formHeading": "Give us enough information to respond usefully.",
+    "formIntro": "Explain what is happening, why it matters and what has already been tried. Unknown budget, timing or technical details can remain marked as such.",
     "nextStepsEyebrow": "What happens next",
     "nextStepsHeading": "From enquiry to engagement",
     "nextStepsBody": "After you submit the form, we read it ourselves. If it is a fit, we will reply with a short written assessment and a proposed engagement model. If it is not a fit, we will tell you why and suggest an alternative.",
     "nextStep1Title": "Review",
-    "nextStep1Body": "We read your submission and check it against our current capacity and expertise. Usually within 2 business days.",
+    "nextStep1Body": "We review the system, constraint and requested outcome against SDK's current capacity and relevant expertise.",
     "nextStep2Title": "Assessment",
     "nextStep2Body": "A short written response: what we think the problem is, whether it is a fit, and what the first move would be.",
     "nextStep3Title": "Call or async",
@@ -64,7 +99,7 @@
     },
     "success": {
       "title": "Enquiry sent",
-      "body": "Thanks — we'll review your project and reply within 2 business days."
+      "body": "Thanks — we'll review the project context and reply with the next useful question or an assessment of fit."
     },
     "error": {
       "title": "Something went wrong",

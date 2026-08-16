@@ -1,29 +1,88 @@
 {
   "aboutPage": {
-    "eyebrow": "O SDK Enterprises",
-    "title": "Senior engineering, přímá dodávka.",
-    "intro": "Francouzská strojírenská společnost B2B. Vytváříme, modernizujeme a provozujeme software napříč zásobníky – backendové platformy, cloudová infrastruktura, automatizace AI, systémy v reálném čase a interní nástroje.",
-    "body": "Společnost SDK Enterprises byla založena v roce 2019 a současně pracuje s malým počtem klientů. Tým je pouze pro seniory: žádní junioři, žádní správci účtů, žádné předávání offshore doručování. Většina zakázek má rozsah jako audity s pevnou cenou, specializované inženýrské pracovní toky nebo průběžné modernizační sprinty.",
-    "cta": "Začněte projekt",
-    "approachEyebrow": "Náš přístup",
-    "approachHeading": "Proč udržujeme tým malý",
-    "approachBody": "Když agentura překročí bod, kdy partneři znají každého inženýra, objeví se vrstva účtu. V této vrstvě se ztrácí kontext, časové osy prokluzují a náklady se násobí. SDK je strukturován tak, aby se tomu zabránilo.",
-    "approach1Title": "Žádní správci účtů",
-    "approach1Body": "Promluvíte si s inženýrem odpovědným za práci. Žádný překlad, žádné zpoždění, žádná špatná komunikace mezi prodejem a dodáním.",
-    "approach2Title": "Žádné offshore předávání",
-    "approach2Body": "Tým, který systém navrhuje, zůstává po implementaci a předání. Znalosti zůstávají na jednom místě.",
-    "approach3Title": "Žádné juniorské zdroje",
-    "approach3Body": "Každý inženýr SDK je na vyšší úrovni. Nevyužíváme zapojení klientů k školení méně zkušených zaměstnanců.",
-    "beliefsEyebrow": "Čemu věříme",
-    "beliefsHeading": "Předpoklady za prací",
-    "beliefsBody": "Toto nejsou marketingová prohlášení. Jsou to omezení, která utvářejí každé naše rozhodnutí.",
-    "belief1Title": "Software je odpovědností, dokud mu není porozuměno",
-    "belief1Body": "Každý řádek kódu nese náklady na údržbu. Cílem není psát další kód – jde o snížení nákladů na kód, který již existuje.",
-    "belief2Title": "Diagnostika před předpisem",
-    "belief2Body": "Neprodáváme typ s pevným zapojením. Nejprve diagnostikujeme systém: architekturu, tok dat, nasazení, tým a omezení. Poté navrhneme angažmá, které se hodí.",
-    "belief3Title": "Transparentnost je vlastnost",
-    "belief3Body": "Viditelný pokrok, písemné aktualizace a přímý přístup k inženýrům. Tajemství kolem doručení je příznakem procesu, který nelze vysvětlit.",
-    "companyFacts": {
+    "hero": {
+      "eyebrow": "O SDK Enterprises",
+      "title": "Společnost postavená tak, aby vytvořila správné inženýrské schopnosti pro danou práci.",
+      "intro": "SDK zapojuje nezávislé inženýrské specialisty podle systému a zůstává odpovědný za rámec dodávek a očekávání kvality prezentovaná klientovi.",
+      "primaryCta": "Diskutujte o projektu",
+      "secondaryCta": "Pochopte model",
+      "signals": [
+        "Společnost se sídlem ve Francii",
+        "Specialisté na konkrétní projekt",
+        "Doručovací rámec vedený SDK",
+        "Přímá odpovědnost společnosti"
+      ]
+    },
+    "model": {
+      "eyebrow": "Jak společnost funguje",
+      "heading": "Dostupná lavička nerozhoduje o tom, co váš systém obdrží.",
+      "intro": "Pevný interní tým může být efektivní, když každý projekt potřebuje stejné disciplíny. Složité systémy často ne. SDK začíná problémem, určuje, která inženýrská schopnost je relevantní, a přivádí požadované nezávislé specialisty do jedné zakázky.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Vztah s jedním klientem",
+          "copy": "Klient zapojí SDK Enterprises. SDK poskytuje rámec dodávek namísto ponechání klienta, aby koordinoval jednotlivé nezávislé dodavatele."
+        },
+        {
+          "number": "02",
+          "title": "Složený tým",
+          "copy": "Zapojené disciplíny se mohou měnit s fází práce, od hodnocení a architektury až po implementaci a provoz."
+        },
+        {
+          "number": "03",
+          "title": "Sdílená očekávání kvality",
+          "copy": "Zakázka definuje postupy prověrky, důkazy o přijetí, záznamy o rozhodnutích a požadavky na předání odpovídající jejím rizikům."
+        },
+        {
+          "number": "04",
+          "title": "Klientská kontrola",
+          "copy": "Úložiště, infrastruktura, dokumentace a provozní znalosti jsou organizovány tak, aby zůstaly pod kontrolou klienta."
+        }
+      ]
+    },
+    "selection": {
+      "eyebrow": "Výběr specialisty",
+      "heading": "Relevantní zkušenosti jsou důležitější než přidání dalšího profilu do projektu.",
+      "body": "SDK před sestavením týmu zvažuje systém, fázi dodání, technická rizika a potřeby spolupráce. Bez zdokumentovaného základu si veřejná stránka nebude nárokovat velikost sítě, míru přijetí nebo univerzální standard seniority.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Relevance problému",
+          "copy": "Zkušenosti se posuzují oproti skutečným hranicím systému a technickým rozhodnutím, nikoli pouze seznam technologií."
+        },
+        {
+          "number": "02",
+          "title": "Odpovědnost za doručení",
+          "copy": "Specialisté musí pracovat v rámci viditelných rozhodnutí, přezkoumávat očekávání a prostředí vlastněná klienty."
+        },
+        {
+          "number": "03",
+          "title": "Spolupráce se hodí",
+          "copy": "Schopnost vysvětlit kompromisy a spolupracovat se zainteresovanými stranami klienta je součástí úspěšného technického dodání."
+        },
+        {
+          "number": "04",
+          "title": "Kontinuita",
+          "copy": "Zaznamenává se důležitý kontext, takže vlastnictví nezávisí na tom, zda jeden přispěvatel zůstane neomezeně dlouho."
+        }
+      ]
+    },
+    "responsibility": {
+      "eyebrow": "Za co je zodpovědný SDK",
+      "heading": "Flexibilní složení týmu by nemělo vytvářet nejednoznačnou odpovědnost.",
+      "body": "Úlohou SDK je udržovat zapojení koherentní, protože specialisté přispívají různými částmi práce.",
+      "items": [
+        "Rámování problému a rozsahu",
+        "Složení a koordinace týmu",
+        "Kontroly kvality a doklady o přijetí",
+        "Viditelnost rozhodnutí a rizika",
+        "Dokumentace a očekávání předání",
+        "Jasný vztah s klientem"
+      ]
+    },
+    "facts": {
+      "eyebrow": "Informace o společnosti",
+      "heading": "Registrovaná společnost dostupná prostřednictvím přímých obchodních kanálů.",
       "name": "Legální jméno",
       "tradingName": "Obchodní jméno",
       "siren": "SIREN",
@@ -31,6 +90,12 @@
       "address": "Sídlo společnosti",
       "email": "Email",
       "phone": "Telefon"
+    },
+    "cta": {
+      "eyebrow": "Práce s SDK",
+      "title": "Přineste systém, omezení a rozhodnutí, které vyžaduje vlastnictví.",
+      "body": "Začneme tím, že určíme, jakou odbornost práce vyžaduje a zda je SDK tou správnou společností pro její koordinaci.",
+      "label": "Diskutujte o projektu"
     }
   }
 }

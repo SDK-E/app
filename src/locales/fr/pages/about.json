@@ -1,29 +1,88 @@
 {
   "aboutPage": {
-    "eyebrow": "À propos de SDK Enterprises",
-    "title": "Ingénierie senior, livraison directe.",
-    "intro": "Société d'ingénierie B2B basée en France. Nous construisons, modernisons et exploitons des logiciels sur toute la pile : plates-formes back-end, infrastructure cloud, automatisation de l'IA, systèmes en temps réel et outils internes.",
-    "body": "Fondée en 2019, SDK Enterprises travaille avec un petit nombre de clients à la fois. L'équipe est composée uniquement de seniors : pas de juniors, pas de gestionnaires de comptes, pas de transfert vers une livraison offshore. La plupart des missions prennent la forme d'audits à prix fixe, de flux de travail d'ingénierie dédiés ou de sprints de modernisation en cours.",
-    "cta": "Démarrer un projet",
-    "approachEyebrow": "Notre approche",
-    "approachHeading": "Pourquoi nous gardons l'équipe petite",
-    "approachBody": "Lorsqu'une agence grandit au-delà du point où les partenaires connaissent chaque ingénieur, la couche compte apparaît. C’est dans cette couche que le contexte se perd, que les délais glissent et que les coûts se multiplient. SDK est structuré pour éviter cela.",
-    "approach1Title": "Aucun gestionnaire de compte",
-    "approach1Body": "Vous parlez à l'ingénieur responsable des travaux. Pas de traduction, pas de retard, pas de problème de communication entre la vente et la livraison.",
-    "approach2Title": "Pas de transfert offshore",
-    "approach2Body": "L'équipe qui conçoit le système reste en place jusqu'à la mise en œuvre et le transfert. La connaissance reste au même endroit.",
-    "approach3Title": "Pas de ressources juniors",
-    "approach3Body": "Chaque ingénieur SDK est de niveau supérieur. Nous n'utilisons pas les engagements des clients pour former du personnel moins expérimenté.",
-    "beliefsEyebrow": "Ce que nous croyons",
-    "beliefsHeading": "Les hypothèses derrière le travail",
-    "beliefsBody": "Ce ne sont pas des déclarations marketing. Ce sont les contraintes qui façonnent chaque décision que nous prenons.",
-    "belief1Title": "Le logiciel est un handicap jusqu'à ce qu'il soit compris",
-    "belief1Body": "Chaque ligne de code entraîne des frais de maintenance. Le but n’est pas d’écrire plus de code, mais de réduire le coût du code qui existe déjà.",
-    "belief2Title": "Diagnostic avant prescription",
-    "belief2Body": "Nous ne vendons pas de type d'engagement fixe. Nous diagnostiquons d'abord le système : architecture, flux de données, déploiement, équipe et contraintes. Ensuite, nous proposons l’engagement qui vous convient.",
-    "belief3Title": "La transparence est une caractéristique",
-    "belief3Body": "Progrès visibles, mises à jour écrites et accès direct aux ingénieurs. Le secret autour de la livraison est le symptôme d’un processus qui ne peut être expliqué.",
-    "companyFacts": {
+    "hero": {
+      "eyebrow": "À propos de SDK Enterprises",
+      "title": "Une entreprise conçue pour réunir les compétences d’ingénierie adaptées au travail.",
+      "intro": "SDK engage des spécialistes en ingénierie indépendants selon le système et reste responsable du cadre de livraison et des attentes de qualité présentées au client.",
+      "primaryCta": "Discuter d'un projet",
+      "secondaryCta": "Comprendre le modèle",
+      "signals": [
+        "Entreprise basée en France",
+        "Spécialistes spécifiques au projet",
+        "Cadre de livraison dirigé par SDK",
+        "Responsabilité directe de l'entreprise"
+      ]
+    },
+    "model": {
+      "eyebrow": "Comment fonctionne l'entreprise",
+      "heading": "L’équipe disponible ne doit pas dicter les compétences affectées à votre système.",
+      "intro": "Une équipe interne fixe peut être efficace lorsque chaque projet nécessite les mêmes disciplines. Ce n’est souvent pas le cas des systèmes complexes. SDK commence par le problème, détermine quelle capacité d'ingénierie est pertinente et rassemble les spécialistes indépendants requis dans un seul engagement.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Une relation client",
+          "copy": "Le client engage SDK Enterprises. SDK fournit le cadre de livraison au lieu de laisser le client coordonner des fournisseurs individuels non liés."
+        },
+        {
+          "number": "02",
+          "title": "Une équipe composée",
+          "copy": "Les disciplines impliquées peuvent évoluer selon l'étape de travail, depuis l'évaluation et l'architecture jusqu'à la mise en œuvre et l'exploitation."
+        },
+        {
+          "number": "03",
+          "title": "Des attentes de qualité partagées",
+          "copy": "La mission définit les pratiques d'examen, les preuves d'acceptation, les enregistrements de décisions et les exigences de transfert adaptées à ses risques."
+        },
+        {
+          "number": "04",
+          "title": "Contrôle client",
+          "copy": "Les référentiels, l’infrastructure, la documentation et les connaissances opérationnelles sont organisés pour rester sous le contrôle du client."
+        }
+      ]
+    },
+    "selection": {
+      "eyebrow": "Sélection de spécialistes",
+      "heading": "Une expérience pertinente compte plus que l’ajout d’un autre profil au projet.",
+      "body": "SDK prend en compte le système, l'étape de livraison, les risques techniques et les besoins de collaboration avant de composer une équipe. Le site public ne revendiquera pas une taille de réseau, un taux d'acceptation ou une norme d'ancienneté universelle sans une base documentée.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Pertinence du problème",
+          "copy": "L'expérience est considérée par rapport aux limites réelles du système et aux décisions techniques, et pas seulement par rapport à une liste de technologies."
+        },
+        {
+          "number": "02",
+          "title": "Responsabilité de livraison",
+          "copy": "Les spécialistes doivent travailler dans le cadre de décisions visibles, examiner les attentes et les environnements appartenant aux clients."
+        },
+        {
+          "number": "03",
+          "title": "Adaptation à la collaboration",
+          "copy": "La capacité à expliquer les compromis et à travailler avec les parties prenantes du client fait partie d'une prestation technique réussie."
+        },
+        {
+          "number": "04",
+          "title": "Continuité",
+          "copy": "Un contexte important est enregistré afin que la propriété ne dépende pas du fait qu'un contributeur reste indéfiniment."
+        }
+      ]
+    },
+    "responsibility": {
+      "eyebrow": "De quoi SDK est responsable",
+      "heading": "La composition flexible de l’équipe ne doit pas créer de responsabilité ambiguë.",
+      "body": "Le rôle de SDK est de maintenir la cohérence de l’engagement puisque les spécialistes contribuent à différentes parties du travail.",
+      "items": [
+        "Cadrage du problème et de la portée",
+        "Composition et coordination de l'équipe",
+        "Contrôles de qualité et preuves d’acceptation",
+        "Visibilité des décisions et des risques",
+        "Attentes en matière de documentation et de remise",
+        "Une relation client claire"
+      ]
+    },
+    "facts": {
+      "eyebrow": "Informations sur l'entreprise",
+      "heading": "Une société enregistrée, disponible via les canaux commerciaux directs.",
       "name": "Nom légal",
       "tradingName": "Nom commercial",
       "siren": "SIREN",
@@ -31,6 +90,12 @@
       "address": "Siège social",
       "email": "Courriel",
       "phone": "Téléphone"
+    },
+    "cta": {
+      "eyebrow": "Travailler avec SDK",
+      "title": "Apportez le système, la contrainte et la décision qui nécessitent une appropriation.",
+      "body": "Nous commencerons par déterminer quelle expertise nécessite le travail et si SDK est la bonne entreprise pour le coordonner.",
+      "label": "Discuter d'un projet"
     }
   }
 }

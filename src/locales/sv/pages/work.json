@@ -1,22 +1,139 @@
 {
   "workPage": {
-    "eyebrow": "Arbeta med SDK",
-    "body": "Du vet när något i din stack kostar dig. Här är situationerna SDK är byggd för.",
-    "cta": "Starta ett projekt",
-    "engagementsEyebrow": "Engagemang",
-    "engagementsHeading": "Hur engagemang brukar börja",
-    "engagementsBody": "De flesta engagemang börjar med ett kort samtal eller en skriftlig sammanfattning av problemet. Därifrån föreslår SDK ett scoped svar: en fastprisrevision, en arbetsström för tid och material eller en hybridmodell beroende på osäkerheten i systemet och klarheten i målet.",
-    "lookForEyebrow": "Vad vi letar efter",
-    "lookForHeading": "Ett tydligt problem och ett team som är villiga att engagera sig i det.",
-    "lookForBody": "De bästa engagemangen börjar när kunden vet att något är fel men ännu inte vet hela omfattningen. Vi letar efter lag som vill förstå mekanismen, inte bara ta emot ett slide deck.",
-    "lookFor1Title": "En specifik begränsning",
-    "lookFor1Body": "Prestanda, tillförlitlighet, kostnad, leveranshastighet eller efterlevnad. Problemet behöver inte vara nytt – det måste vara verkligt och mätbart.",
-    "lookFor2Title": "Tillgång till systemet",
-    "lookFor2Body": "Läsåtkomst till kodbasen, infrastrukturen och de personer som förstår det aktuella tillståndet. Utan detta är varje bedömning gissningar.",
-    "lookFor3Title": "En beslutsfattare",
-    "lookFor3Body": "Någon som kan godkänna omfattningen, budgeten och tidslinjen. Inte en kommitté – en person med befogenhet att föra arbetet framåt.",
-    "fitEyebrow": "Fit",
-    "fitHeading": "När SDK inte är rätt svar",
-    "fitBody": "Vi säger inte oftare än du kanske förväntar dig. SDK är inte en verkstad för överloppsbiljetter, och vi tar inga uppdrag där problemet ännu inte är definierat eller teamet inte kan åta sig processen."
+    "hero": {
+      "eyebrow": "Problem vi är inställda på att lösa",
+      "title": "Titta på det tekniska problemet innan du ordinerar projektet.",
+      "intro": "Scenarierna nedan visar hur SDK närmar sig tekniskt följdsituationer. De beskriver förmågor och beslutsvägar, inte påhittade kundfallsstudier eller resultat som inte stöds.",
+      "primaryCta": "Diskutera en situation",
+      "secondaryCta": "Utforska scenarierna",
+      "signals": [
+        "Inga påhittade fallstudier",
+        "Bevis före ordination",
+        "Definierade kundbeslut",
+        "Påtagliga leveranser"
+      ]
+    },
+    "scenarios": {
+      "eyebrow": "Engagemangsscenarier",
+      "heading": "Känner igen trycket. Hitta sedan det ansvariga första draget.",
+      "intro": "Ett användbart svar kopplar affärsexponering till tekniska bevis och ett beslut som organisationen kan agera på.",
+      "labels": {
+        "signals": "Vad du kan se",
+        "questions": "Vad vi behöver lära oss",
+        "deliverables": "Det som skapar framsteg"
+      },
+      "items": [
+        {
+          "number": "01 / MODERNISERING",
+          "title": "Systemet är för viktigt för att ersätta blint – och för dyrt för att lämna ifred.",
+          "situation": "Leveransen saktar ner när beroenden åldras, kunskapen minskar och varje förändring når längre än förväntat.",
+          "signals": [
+            "Uppgraderingar har skjutits upp upprepade gånger",
+            "Ändringar kräver manuell återställning",
+            "Kritiskt beteende är odokumenterat"
+          ],
+          "questions": [
+            "Vilka gränser kan röra sig självständigt?",
+            "Var är affärsbeteende kodat?",
+            "Vad måste vara tillgängligt vid förändring?"
+          ],
+          "deliverables": [
+            "Karta över nuvarande tillstånd",
+            "Riskrankade alternativ",
+            "Inkrementell migreringssekvens"
+          ]
+        },
+        {
+          "number": "02 / PÅLITLIGHET",
+          "title": "Plattformen är under press, men kapaciteten kanske inte är det verkliga problemet.",
+          "situation": "Latens, incidenter eller infrastrukturkostnader ökar och de tillgängliga signalerna förklarar inte varför.",
+          "signals": [
+            "Misslyckanden är svåra att reproducera",
+            "Skalförändringar flyttar flaskhalsen",
+            "Återhämtning beror på ett fåtal personer"
+          ],
+          "questions": [
+            "Vart tar tiden och kapaciteten vägen?",
+            "Vilka fellägen påverkar användarna?",
+            "Vilka bevis saknas under incidenter?"
+          ],
+          "deliverables": [
+            "Observerade flaskhalsar",
+            "Operativt riskregister",
+            "Prioriterad stabiliseringsplan"
+          ]
+        },
+        {
+          "number": "03 / AI-ARBETSFLÖDE",
+          "title": "AI-demon fungerar. Verksamhetsmodellen kring den finns inte ännu.",
+          "situation": "En lovande modellinteraktion måste bli ett kontrollerat arbetsflöde med tillförlitlig data, utvärdering och mänskligt ansvar.",
+          "signals": [
+            "Kvalitet bedöms efter intryck",
+            "Källbehörigheter är oklara",
+            "Fel har ingen granskningsväg"
+          ],
+          "questions": [
+            "Vad är ett acceptabelt resultat?",
+            "Vilka beslut kräver mänsklig granskning?",
+            "Hur kommer kvalitet att mätas över tid?"
+          ],
+          "deliverables": [
+            "Arbetsflöde och kontrolldesign",
+            "Utvärderingsmetod",
+            "Genomförande gräns"
+          ]
+        },
+        {
+          "number": "04 / TEKNISK ÄGANDE",
+          "title": "Produkten behöver fokuserat tekniskt ägande för en kritisk fas.",
+          "situation": "Det interna teamet har en definierad prioritet men saknar en eller flera discipliner som behövs för att föra arbetsflödet säkert.",
+          "signals": [
+            "En kritisk punkt i färdplanen förblir blockerad",
+            "Flera system måste förändras tillsammans",
+            "Externa bidragsgivare skulle behöva samordning"
+          ],
+          "questions": [
+            "Vilket resultat kan SDK äga?",
+            "Vilken expertis krävs verkligen?",
+            "Var förblir kundbeslut viktiga?"
+          ],
+          "deliverables": [
+            "Projektspecifikt team",
+            "Synlig leveranspost",
+            "Dokumenterad äganderättsövergång"
+          ]
+        }
+      ]
+    },
+    "principle": {
+      "eyebrow": "Varför scenarier",
+      "heading": "En portfölj är bara övertygande när bevisen är verkliga.",
+      "body": "SDK kommer att publicera namngivna kunder, kvantifierade resultat och vittnesmål endast när arbetet, resultatet och tillståndet kan verifieras. Tills dess visar den här sidan de situationer vi är utrustade för att undersöka och de resultat som för dem framåt."
+    },
+    "fit": {
+      "eyebrow": "Förlovningspassform",
+      "heading": "Det starkaste arbetet börjar med tillgång, ansvar och ett verkligt beslut att fatta.",
+      "intro": "Tekniska svårigheter är välkomna. Ett engagemang blir ineffektivt när organisationen inte kan tillhandahålla sammanhang, tillgång eller beslutsägande.",
+      "fitTitle": "Bra förutsättningar för SDK",
+      "notFitTitle": "Dåliga förhållanden för SDK",
+      "fitItems": [
+        "En materiell begränsning av programvara, data, AI eller infrastruktur",
+        "Tillgång till systemet och människor som förstår dess nuvarande tillstånd",
+        "En beslutsfattare som kan lösa omfattning och avvägningar",
+        "Villighet att undersöka bevis innan man förbinder sig till en lösning"
+      ],
+      "notFitItems": [
+        "Anonym biljettkapacitet utan ägt resultat",
+        "En begäran om att validera ett förutbestämt svar oavsett bevis",
+        "Ingen praktisk tillgång till relevant system eller intressenter",
+        "Urval baserat endast på det lägsta individuella dagspriset"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Ge oss den verkliga situationen",
+      "title": "Börja med vad systemet kostar, försenar eller riskerar.",
+      "body": "Du behöver inte diagnostisera det innan du kontaktar SDK. Berätta för oss vad som händer och vilket beslut som för närvarande är blockerat.",
+      "label": "Diskutera situationen"
+    }
   }
 }

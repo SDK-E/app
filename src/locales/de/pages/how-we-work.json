@@ -1,37 +1,166 @@
 {
   "howWeWorkPage": {
-    "eyebrow": "Wie wir arbeiten",
-    "body": "Jedes Engagement folgt demselben vierphasigen Weg. Das Ergebnis jeder Phase ist ein konkretes Artefakt, das das Team überprüfen, in Frage stellen oder genehmigen kann, bevor die nächste Phase beginnt.",
-    "expectEyebrow": "Jede Phase",
-    "expectHeading": "Was Sie in jeder Phase erwartet",
-    "expectIntro": "Ein in jeder Phase sichtbares Ergebnis, sodass es bei der Übergabe keine Überraschungen gibt.",
-    "understandTitle": "Verstehe",
-    "understandBody": "Geschäftsziel, Stack, Einschränkungen und Erfolgskriterien. Ergebnis: eine kurze Beschreibung und ein vorgeschlagener Umfang.",
-    "designTitle": "Design",
-    "designBody": "Architektur, Umfang, Risiken und Meilensteine. Ausgabe: ein technischer Plan mit sichtbaren Kontrollpunkten.",
-    "buildTitle": "Bauen",
-    "buildBody": "Umsetzung mit sichtbaren Fortschritten. Ausgabe: laufende Software, überprüft in kurzen Zyklen.",
-    "handoverTitle": "Übergabe",
-    "handoverBody": "Bereitstellung, Dokumentation und Eigentumsübertragung. Ausgabe: funktionierendes System, Runbooks und eine Wissenstransfersitzung.",
-    "deliverablesEyebrow": "Leistungen",
-    "deliverablesHeading": "Was Sie am Ende erhalten",
-    "deliverablesBody": "Jeder Auftrag endet mit einer Eigentumsübertragung und nicht mit der Übergabe an einen Wartungsvertrag. Das Team, das die Arbeit erhält, erhält die Software, die Dokumentation und das Wissen, um sie zu bedienen.",
-    "deliverable1Title": "Funktionierende Software",
-    "deliverable1Body": "In Ihrer Umgebung bereitgestellt, getestet und ausgeführt. Kein Prototyp, kein Pilot – produktionsreifer Code.",
-    "deliverable2Title": "Technische Dokumentation",
-    "deliverable2Body": "Architekturentscheidungen, Runbooks, Bereitstellungsschritte und Betriebshinweise für das Team, das das System wartet.",
-    "deliverable3Title": "Wissenstransfer",
-    "deliverable3Body": "Eine strukturierte Sitzung mit den Ingenieuren, die künftig Eigentümer des Systems sein werden. Fragen beantwortet, Kompromisse erklärt, nächste Schritte vereinbart.",
-    "principlesEyebrow": "Prinzipien",
-    "principlesHeading": "Wie wir auftreten",
-    "principlesBody": "Das sind keine Werte auf einem Plakat. Sie sind die Zwänge, denen wir bei jedem Engagement unterliegen.",
-    "principle1Title": "Direkte Kommunikation",
-    "principle1Body": "Sie sprechen mit dem Ingenieur, der die Arbeit ausführt. Kein Account Manager, kein Projektkoordinator, keine Übersetzungsebene.",
-    "principle2Title": "Sichtbarer Fortschritt",
-    "principle2Body": "Alle zwei Wochen sehen Sie funktionierende Software und ein schriftliches Update. Keine Black Boxes, keine Überraschungsrechnungen.",
-    "principle3Title": "Ehrlicher Umfang",
-    "principle3Body": "Wir sagen Ihnen, wenn etwas außerhalb unserer Möglichkeiten liegt. Eine Festpreisprüfung ist oft der richtige erste Schritt, wenn das Problem unklar ist.",
-    "principle4Title": "Kein Lock-in",
-    "principle4Body": "Der Code, die Infrastruktur und die Dokumentation gehören Ihnen. Wir bauen keine Abhängigkeiten von unserem kontinuierlichen Engagement auf."
+    "hero": {
+      "eyebrow": "Wie wir arbeiten",
+      "title": "Reduzieren Sie die Unsicherheit, bevor sie zum Lieferrisiko wird.",
+      "intro": "SDK macht das Problem, die Entscheidungen, die Verantwortlichkeiten und die Beweise während eines gesamten Engagements sichtbar. Der Prozess passt sich dem System an, aber der Kunde weiß immer, was entschieden wird und was als nächstes kommt.",
+      "primaryCta": "Besprechen Sie ein Projekt",
+      "secondaryCta": "Sehen Sie sich den Prozess an",
+      "signals": [
+        "Definierte Entscheidungspunkte",
+        "Sichtbarer Liefernachweis",
+        "Projektspezifische Spezialisten",
+        "Dokumentierte Übergabe"
+      ]
+    },
+    "entryPaths": {
+      "eyebrow": "Wo die Arbeit beginnt",
+      "heading": "Der erste Schritt hängt davon ab, was Sie bereits wissen.",
+      "intro": "Ein zu früher Beginn der Umsetzung macht Unsicherheit teuer. Mit einer weiteren generischen Entdeckungsübung zu beginnen ist Zeitverschwendung, wenn das Ergebnis bereits klar ist.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Das Ergebnis ist definiert",
+          "copy": "Die Systemgrenze, gewünschte Veränderung und Akzeptanzbedingungen werden verstanden. Wir validieren Annahmen, stellen das Lieferteam zusammen und planen den Arbeitsablauf.",
+          "href": "#Prozess"
+        },
+        {
+          "number": "02",
+          "title": "Das Problem ist sichtbar, der Pfad jedoch nicht",
+          "copy": "Das System verursacht Kosten, Risiken oder Verzögerungen, aber die Ursache oder die verantwortliche Reaktion ist unklar. Wir beginnen mit einer begrenzten technischen Bewertung.",
+          "href": "#Prozess"
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "Der Engagement-Pfad",
+      "heading": "Vier Phasen, die jeweils mit einer Entscheidung enden.",
+      "intro": "Fortschritt wird nicht allein an der Aktivität gemessen. Jede Phase liefert Beweise, die der Kunde überprüfen kann, bevor er weitere Verpflichtungen eingeht.",
+      "labels": {
+        "output": "Ausgabe",
+        "decision": "Entscheidung"
+      },
+      "items": [
+        {
+          "number": "01",
+          "title": "Verstehe",
+          "purpose": "Stellen Sie fest, was das Unternehmen benötigt, was das System heute tut und wo Unsicherheit herrscht.",
+          "activities": [
+            "Überprüfen Sie Ziele, Einschränkungen und Stakeholder",
+            "Überprüfen Sie das relevante System und den Betriebskontext",
+            "Definieren Sie Erfolg, Zugriff und bekannte Unbekannte"
+          ],
+          "output": "Eine prägnante Problemdefinition, eine Sicht auf den aktuellen Stand und einen vorgeschlagenen Umfang.",
+          "decision": "Gibt es genügend Beweise, um die Antwort zu entwerfen?"
+        },
+        {
+          "number": "02",
+          "title": "Design",
+          "purpose": "Wandeln Sie das Problem in technische Optionen, Liefergrenzen und explizite Kompromisse um.",
+          "activities": [
+            "Modellarchitektur und Systemgrenzen",
+            "Identifizieren Sie Risiken, Abhängigkeiten und Migrationsschritte",
+            "Stellen Sie das erforderliche Spezialistenteam zusammen"
+          ],
+          "output": "Ein technischer Ansatz, Entscheidungsprotokoll, Meilensteine und Akzeptanzkriterien.",
+          "decision": "Ist das der richtige Ansatz und das richtige Engagement?"
+        },
+        {
+          "number": "03",
+          "title": "Bauen",
+          "purpose": "Führen Sie die vereinbarte Änderung durch und behalten Sie gleichzeitig die Sichtbarkeit von Qualität, Risiko und Fortschritt bei.",
+          "activities": [
+            "Implementieren Sie es in überprüfbaren Schritten",
+            "Testen Sie Annahmen anhand funktionierender Software",
+            "Erfassen Sie Entscheidungen, Beweise und ungelöste Risiken"
+          ],
+          "output": "Arbeitsänderungen, Prüfungsnachweise und aktuelle Betriebsdokumentation.",
+          "decision": "Erfüllt das Inkrement seine Akzeptanzbedingungen?"
+        },
+        {
+          "number": "04",
+          "title": "Übergabe",
+          "purpose": "Stellen Sie das System und das zu seiner Bedienung erforderliche Wissen unter die Kontrolle des Kunden.",
+          "activities": [
+            "Überprüfen Sie die Bereitstellungs- und Wiederherstellungsverfahren",
+            "Vollständige technische und betriebliche Dokumentation",
+            "Übertragen Sie den Kontext an die Personen, die Eigentümer bleiben"
+          ],
+          "output": "Vom Kunden kontrollierter Code, Infrastruktur, Dokumentation und vereinbarte Folgemaßnahmen.",
+          "decision": "Kann der Kunde den gelieferten Umfang bedienen und weiterentwickeln?"
+        }
+      ]
+    },
+    "responsibility": {
+      "eyebrow": "Team und Verantwortung",
+      "heading": "Das Team kann sich mit der Arbeit verändern. Die Verantwortung verschwindet nicht zwischen Spezialisten.",
+      "body": "SDK wählt unabhängige Spezialisten für die Disziplinen aus, die ein Auftrag erfordert, und koordiniert sie über ein einheitliches Liefersystem. Entscheidungen, Zugriff, Dokumentation und Arbeitsstatus bleiben sichtbar, sodass das Wissen nicht bei einer Einzelperson verbleibt.",
+      "items": [
+        {
+          "number": "01",
+          "title": "SDK",
+          "copy": "Definiert den Auftragsrahmen, koordiniert die Lieferung und bleibt für die mit dem Kunden vereinbarten Qualitätskontrollen verantwortlich."
+        },
+        {
+          "number": "02",
+          "title": "Spezialisten",
+          "copy": "Bringen Sie die für das System erforderliche Erfahrung ein und arbeiten Sie an gemeinsamen Entscheidungen, Überprüfungspraktiken und Akzeptanzkriterien."
+        },
+        {
+          "number": "03",
+          "title": "Kunde",
+          "copy": "Bietet Geschäftskontext, Systemzugriff und zeitnahe Entscheidungen und behält gleichzeitig die Kontrolle über seine Repositorys, Infrastruktur und Informationen."
+        },
+        {
+          "number": "04",
+          "title": "Geteilter Datensatz",
+          "copy": "Hält Architekturentscheidungen, Risiken, Fortschritte und Betriebswissen für jeden einzelnen Mitwirkenden zugänglich."
+        }
+      ]
+    },
+    "quality": {
+      "eyebrow": "Qualitätskontrollen",
+      "heading": "Vertrauen entsteht durch Mechanismen, die Sie überprüfen können.",
+      "intro": "Wir vermeiden unqualifizierte Versprechen wie sicher, skalierbar oder produktionsbereit. Der Auftrag definiert, wie diese Eigenschaften für das betreffende System untersucht und nachgewiesen werden.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Schriftliche Entscheidungen",
+          "copy": "Materialarchitektur und Umfangsentscheidungen zeichnen den Kontext, Kompromisse und Konsequenzen auf, anstatt in Besprechungen zu verschwinden."
+        },
+        {
+          "number": "02",
+          "title": "Überprüfbare Inkremente",
+          "copy": "Die Arbeit ist in Änderungen unterteilt, die überprüft, getestet und akzeptiert werden können, bevor sich Risiken häufen."
+        },
+        {
+          "number": "03",
+          "title": "Entsprechende Verifizierung",
+          "copy": "Tests, Sicherheitsüberprüfungen, Leistungsnachweise und Einsatzkontrollen werden entsprechend dem tatsächlichen Ausfallrisiko ausgewählt."
+        },
+        {
+          "number": "04",
+          "title": "Operatives Eigentum",
+          "copy": "Dokumentation, Zugriff, Wiederherstellungsschritte und ungelöste Risiken werden als Lieferarbeiten und nicht als optionales Material nach der Einführung behandelt."
+        }
+      ]
+    },
+    "scope": {
+      "eyebrow": "Wenn die Realität den Plan ändert",
+      "heading": "Bringen Sie die Veränderung zum Vorschein. Erklären Sie die Konsequenz. Entscheiden Sie, bevor Sie fortfahren.",
+      "body": "Bestehende Systeme geben Informationen preis, wenn sie überprüft und geändert werden. Wenn eine Annahme fehlschlägt oder eine neue Abhängigkeit auftritt, zeichnet SDK die Beweise auf, erläutert deren Auswirkungen auf Umfang, Risiko und Reihenfolge und bittet um eine Entscheidung. Das Wechselgeld verschwindet nicht in einer Rechnung oder einer verspäteten Übergabe.",
+      "steps": [
+        "Notieren Sie die neuen Beweise",
+        "Erklären Sie die technischen und kommerziellen Konsequenzen",
+        "Präsentieren Sie praktikable Optionen",
+        "Stimmen Sie der Änderung zu, bevor Sie fortfahren"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Wählen Sie die erste sinnvolle Entscheidung",
+      "title": "Beginnen Sie mit der Unsicherheit, die die Arbeit blockiert.",
+      "body": "Sagen Sie uns, was bekannt ist, was unter Druck steht und welche Entscheidung Ihre Organisation als nächstes treffen muss.",
+      "label": "Besprechen Sie die Situation"
+    }
   }
 }

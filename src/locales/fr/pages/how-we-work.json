@@ -1,37 +1,166 @@
 {
   "howWeWorkPage": {
-    "eyebrow": "Comment nous travaillons",
-    "body": "Chaque engagement suit le même chemin en quatre phases. Le résultat de chaque phase est un artefact concret que l’équipe peut examiner, contester ou approuver avant le début de la suivante.",
-    "expectEyebrow": "Chaque phase",
-    "expectHeading": "À quoi s'attendre dans chaque phase",
-    "expectIntro": "Un livrable visible à chaque étape, donc pas de surprise à la remise.",
-    "understandTitle": "Comprendre",
-    "understandBody": "Objectif commercial, pile, contraintes et critères de réussite. Résultat : un bref mémoire et une proposition de portée.",
-    "designTitle": "Conception",
-    "designBody": "Architecture, portée, risques et jalons. Résultat : un plan technique avec des points de contrôle visibles.",
-    "buildTitle": "Construire",
-    "buildBody": "Mise en œuvre avec des progrès visibles. Résultat : logiciel en cours d'exécution, révisé en cycles courts.",
-    "handoverTitle": "Remise de transfert",
-    "handoverBody": "Déployer, documenter et transférer la propriété. Résultat : système de travail, runbooks et session de transfert de connaissances.",
-    "deliverablesEyebrow": "Livrables",
-    "deliverablesHeading": "Ce que vous recevez à la fin",
-    "deliverablesBody": "Chaque engagement se termine par un transfert de propriété et non par un transfert vers un contrat de maintenance. L'équipe qui reçoit le travail obtient le logiciel, la documentation et les connaissances nécessaires pour le faire fonctionner.",
-    "deliverable1Title": "Logiciel fonctionnel",
-    "deliverable1Body": "Déployé, testé et exécuté dans votre environnement. Pas un prototype, pas un pilote – du code prêt pour la production.",
-    "deliverable2Title": "Documentation technique",
-    "deliverable2Body": "Décisions d'architecture, runbooks, étapes de déploiement et notes opérationnelles rédigées pour l'équipe qui assurera la maintenance du système.",
-    "deliverable3Title": "Transfert de connaissances",
-    "deliverable3Body": "Une session structurée avec les ingénieurs qui seront désormais propriétaires du système. Questions répondues, compromis expliqués, prochaines étapes convenues.",
-    "principlesEyebrow": "Principes",
-    "principlesHeading": "Comment nous nous présentons",
-    "principlesBody": "Ce ne sont pas des valeurs sur une affiche. Ce sont les contraintes dans lesquelles nous opérons lors de chaque engagement.",
-    "principle1Title": "Communication directe",
-    "principle1Body": "Vous parlez à l'ingénieur qui effectue le travail. Pas de gestionnaire de compte, pas de coordinateur de projet, pas de couche de traduction.",
-    "principle2Title": "Des progrès visibles",
-    "principle2Body": "Toutes les deux semaines, vous voyez un logiciel fonctionnel et une mise à jour écrite. Pas de boîtes noires, pas de factures surprises.",
-    "principle3Title": "Portée honnête",
-    "principle3Body": "Nous vous dirons si quelque chose ne correspond pas à ce que nous pouvons bien livrer. Un audit au forfait constitue souvent la bonne première étape lorsque le problème n’est pas clair.",
-    "principle4Title": "Pas de verrouillage",
-    "principle4Body": "Le code, l'infrastructure et la documentation vous appartiennent. Nous ne créons pas de dépendance à l’égard de notre implication continue."
+    "hero": {
+      "eyebrow": "Comment nous travaillons",
+      "title": "Réduisez l’incertitude avant qu’elle ne mette la livraison en risque.",
+      "intro": "SDK rend le problème, les décisions, les responsabilités et les preuves visibles tout au long d'un engagement. Le processus s'adapte au système, mais le client sait toujours ce qui est décidé et ce qui va suivre.",
+      "primaryCta": "Discuter d'un projet",
+      "secondaryCta": "Voir le processus",
+      "signals": [
+        "Points de décision définis",
+        "Avancement étayé et visible",
+        "Spécialistes spécifiques au projet",
+        "Transfert documenté"
+      ]
+    },
+    "entryPaths": {
+      "eyebrow": "Où commence le travail",
+      "heading": "La première étape dépend de ce que vous savez déjà.",
+      "intro": "Commencer la mise en œuvre trop tôt rend l’incertitude coûteuse. Commencer par un autre exercice de découverte générique fait perdre du temps alors que le résultat est déjà clair.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Le résultat est défini",
+          "copy": "Les limites du système, le changement souhaité et les conditions d'acceptation sont compris. Nous validons les hypothèses, composons l’équipe de livraison et planifions le flux de travail.",
+          "href": "#processus"
+        },
+        {
+          "number": "02",
+          "title": "Le problème est visible, mais le chemin ne l'est pas",
+          "copy": "Le système crée des coûts, des risques ou des retards, mais la cause ou la réponse responsable n'est pas claire. Nous commençons par une évaluation technique limitée.",
+          "href": "#processus"
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "Le chemin de l'engagement",
+      "heading": "Quatre étapes, chacune se terminant par une décision.",
+      "intro": "Les progrès ne se mesurent pas uniquement par l’activité. Chaque étape produit des preuves que le client peut examiner avant de prendre un engagement supplémentaire.",
+      "labels": {
+        "output": "Sortie",
+        "decision": "Décision"
+      },
+      "items": [
+        {
+          "number": "01",
+          "title": "Comprendre",
+          "purpose": "Déterminez ce dont l'entreprise a besoin, ce que fait le système aujourd'hui et où se situe l'incertitude.",
+          "activities": [
+            "Examiner les objectifs, les contraintes et les parties prenantes",
+            "Inspecter le système et le contexte d’exploitation pertinents",
+            "Définir le succès, l'accès et les inconnues connues"
+          ],
+          "output": "Une définition concise du problème, une vue de l’état actuel et la portée proposée.",
+          "decision": "Existe-t-il suffisamment de preuves pour concevoir la réponse ?"
+        },
+        {
+          "number": "02",
+          "title": "Conception",
+          "purpose": "Transformez le problème en options techniques, limites de livraison et compromis explicites.",
+          "activities": [
+            "Architecture du modèle et limites du système",
+            "Identifier les risques, les dépendances et les étapes de migration",
+            "Composer l’équipe spécialisée requise"
+          ],
+          "output": "Une approche technique, un dossier de décision, des jalons et des critères d’acceptation.",
+          "decision": "Est-ce la bonne approche et le bon engagement ?"
+        },
+        {
+          "number": "03",
+          "title": "Construire",
+          "purpose": "Apportez le changement convenu tout en gardant visibles la qualité, les risques et les progrès.",
+          "activities": [
+            "Mettre en œuvre par incréments révisables",
+            "Tester les hypothèses par rapport à un logiciel fonctionnel",
+            "Enregistrer les décisions, les preuves et les risques non résolus"
+          ],
+          "output": "Effectuer les changements, examiner les preuves et la documentation opérationnelle actuelle.",
+          "decision": "L’augmentation répond-elle à ses conditions d’acceptation ?"
+        },
+        {
+          "number": "04",
+          "title": "Remise de transfert",
+          "purpose": "Placez le système et les connaissances nécessaires à son fonctionnement sous le contrôle du client.",
+          "activities": [
+            "Vérifier les procédures de déploiement et de récupération",
+            "Documentation technique et opérationnelle complète",
+            "Transférer le contexte aux personnes conservant la propriété"
+          ],
+          "output": "Code, infrastructure, documentation contrôlés par le client et actions de suivi convenues.",
+          "decision": "Le client peut-il exploiter et faire évoluer le périmètre livré ?"
+        }
+      ]
+    },
+    "responsibility": {
+      "eyebrow": "Équipe et responsabilité",
+      "heading": "L'équipe peut changer avec le travail. La responsabilité ne disparaît pas entre spécialistes.",
+      "body": "SDK sélectionne des spécialistes indépendants pour les disciplines requises par un engagement et les coordonne via un cadre de prestation unique. Les décisions, l'accès, la documentation et le statut de travail restent visibles afin que les connaissances ne restent pas la propriété d'un seul individu.",
+      "items": [
+        {
+          "number": "01",
+          "title": "SDK",
+          "copy": "Définit le cadre d'engagement, coordonne la livraison et reste responsable des contrôles de qualité convenus avec le client."
+        },
+        {
+          "number": "02",
+          "title": "Spécialistes",
+          "copy": "Apportent l’expérience requise par le système et travaillent dans le cadre de décisions partagées, de pratiques de revue et de critères d’acceptation."
+        },
+        {
+          "number": "03",
+          "title": "Client",
+          "copy": "Fournit un contexte commercial, un accès au système et des décisions rapides tout en gardant le contrôle de ses référentiels, de son infrastructure et de ses informations."
+        },
+        {
+          "number": "04",
+          "title": "Documentation partagée",
+          "copy": "Maintient les décisions d’architecture, les risques, l’avancement et les connaissances opérationnelles accessibles au-delà d’un seul intervenant."
+        }
+      ]
+    },
+    "quality": {
+      "eyebrow": "Contrôles de qualité",
+      "heading": "La confiance vient de mécanismes que vous pouvez inspecter.",
+      "intro": "Nous évitons les promesses sans réserve telles que sécurisées, évolutives ou prêtes pour la production. L'engagement définit la manière dont ces qualités seront examinées et démontrées pour le système en question.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Décisions écrites",
+          "copy": "L'architecture matérielle et les choix de portée enregistrent le contexte, les compromis et les conséquences au lieu de disparaître dans les réunions."
+        },
+        {
+          "number": "02",
+          "title": "Augmentations révisables",
+          "copy": "Le travail est divisé en changements qui peuvent être inspectés, testés et acceptés avant que les risques ne s'accumulent."
+        },
+        {
+          "number": "03",
+          "title": "Vérification appropriée",
+          "copy": "Les tests, contrôles de sécurité, preuves de performances et contrôles de déploiement sont sélectionnés en fonction du risque de défaillance réel."
+        },
+        {
+          "number": "04",
+          "title": "Propriété opérationnelle",
+          "copy": "La documentation, l'accès, les étapes de récupération et les risques non résolus sont traités comme du travail de livraison et non comme du matériel facultatif après le lancement."
+        }
+      ]
+    },
+    "scope": {
+      "eyebrow": "Quand la réalité change les plans",
+      "heading": "Faites apparaître le changement. Expliquez la conséquence. Décidez avant de continuer.",
+      "body": "Les systèmes existants révèlent des informations au fur et à mesure qu'ils sont inspectés et modifiés. Lorsqu'une hypothèse échoue ou qu'une nouvelle dépendance apparaît, SDK enregistre les preuves, explique son effet sur la portée, le risque et la séquence, et demande une décision. La monnaie ne disparaît pas dans une facture ou une remise différée.",
+      "steps": [
+        "Enregistrez les nouvelles preuves",
+        "Expliquer la conséquence technique et commerciale",
+        "Présenter des options viables",
+        "Acceptez le changement avant de continuer"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Choisissez la première décision utile",
+      "title": "A commencer par l’incertitude qui bloque le travail.",
+      "body": "Dites-nous ce qui est connu, ce qui est sous pression et quelle décision votre organisation doit prendre ensuite.",
+      "label": "Discutez de la situation"
+    }
   }
 }

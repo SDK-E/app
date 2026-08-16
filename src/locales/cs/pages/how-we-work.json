@@ -1,37 +1,166 @@
 {
   "howWeWorkPage": {
-    "eyebrow": "Jak pracujeme",
-    "body": "Každé zapojení sleduje stejnou čtyřfázovou dráhu. Výstupem každé fáze je konkrétní artefakt, který může tým zkontrolovat, vyzvat nebo schválit před začátkem další.",
-    "expectEyebrow": "Každá fáze",
-    "expectHeading": "Co očekávat v každé fázi",
-    "expectIntro": "Viditelný výstup v každé fázi, takže při předání nečekají žádná překvapení.",
-    "understandTitle": "Pochopte",
-    "understandBody": "Obchodní cíl, zásobník, omezení a kritéria úspěchu. Výstup: krátký brief a navržený rozsah.",
-    "designTitle": "Design",
-    "designBody": "Architektura, rozsah, rizika a milníky. Výstup: technický plán s viditelnými kontrolními body.",
-    "buildTitle": "Stavět",
-    "buildBody": "Realizace s viditelným pokrokem. Výstup: běžící software, kontrolovaný v krátkých cyklech.",
-    "handoverTitle": "Předání",
-    "handoverBody": "Nasadit, zdokumentovat a převést vlastnictví. Výstup: pracovní systém, runbooky a relace přenosu znalostí.",
-    "deliverablesEyebrow": "Dodávky",
-    "deliverablesHeading": "Co dostanete na konci",
-    "deliverablesBody": "Každá zakázka končí převodem vlastnictví, nikoli předáním smlouvy o údržbě. Tým, který práci obdrží, získá software, dokumentaci a znalosti pro její provoz.",
-    "deliverable1Title": "Funkční software",
-    "deliverable1Body": "Nasazeno, testováno a spuštěno ve vašem prostředí. Ne prototyp, ne pilot – kód připravený na výrobu.",
-    "deliverable2Title": "Technická dokumentace",
-    "deliverable2Body": "Rozhodnutí o architektuře, runbooky, kroky nasazení a provozní poznámky napsané pro tým, který bude systém udržovat.",
-    "deliverable3Title": "Přenos znalostí",
-    "deliverable3Body": "Strukturované sezení s inženýry, kteří budou v budoucnu vlastnit systém. Otázky zodpovězeny, kompromisy vysvětleny, dohodnuty další kroky.",
-    "principlesEyebrow": "Principy",
-    "principlesHeading": "Jak se ukážeme",
-    "principlesBody": "To nejsou hodnoty na plakátu. Jsou to omezení, v rámci kterých působíme při každé zakázce.",
-    "principle1Title": "Přímá komunikace",
-    "principle1Body": "Mluvíte s inženýrem, který dělá práci. Žádný správce účtu, žádný koordinátor projektu, žádná vrstva překladu.",
-    "principle2Title": "Viditelný pokrok",
-    "principle2Body": "Každé dva týdny vidíte funkční software a písemnou aktualizaci. Žádné černé skříňky, žádné překvapivé faktury.",
-    "principle3Title": "Poctivý rozsah",
-    "principle3Body": "Řekneme vám, pokud je něco mimo, co můžeme dobře dodat. Audit s pevnou cenou je často tím správným prvním krokem, když je problém nejasný.",
-    "principle4Title": "Žádné uzamčení",
-    "principle4Body": "Kód, infrastruktura a dokumentace patří vám. Nevytváříme si závislost na našem trvalém zapojení."
+    "hero": {
+      "eyebrow": "Jak pracujeme",
+      "title": "Snižte nejistotu dříve, než se stane rizikem doručení.",
+      "intro": "SDK zviditelní problém, rozhodnutí, odpovědnosti a důkazy v průběhu zakázky. Proces se přizpůsobí systému, ale klient vždy ví, o čem se rozhoduje a co bude následovat.",
+      "primaryCta": "Diskutujte o projektu",
+      "secondaryCta": "Podívejte se na proces",
+      "signals": [
+        "Definované rozhodovací body",
+        "Viditelný doklad o doručení",
+        "Specialisté na konkrétní projekt",
+        "Zdokumentované předání"
+      ]
+    },
+    "entryPaths": {
+      "eyebrow": "Kde začíná práce",
+      "heading": "První krok závisí na tom, co již víte.",
+      "intro": "Zahájení implementace příliš brzy prodražuje nejistotu. Začínat s dalším obecným objevovacím cvičením ztrácí čas, když je výsledek již jasný.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Výsledek je definován",
+          "copy": "Jsou chápány hranice systému, požadovaná změna a podmínky přijetí. Ověřujeme předpoklady, sestavujeme doručovací tým a plánujeme pracovní postup.",
+          "href": "#proces"
+        },
+        {
+          "number": "02",
+          "title": "Problém je vidět, ale cesta ne",
+          "copy": "Systém vytváří náklady, riziko nebo zpoždění, ale příčina nebo odpovědná reakce nejsou jasné. Začínáme s omezeným technickým posudkem.",
+          "href": "#proces"
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "Cesta zapojení",
+      "heading": "Čtyři fáze, z nichž každá končí rozhodnutím.",
+      "intro": "Pokrok se neměří samotnou aktivitou. Každá fáze poskytuje důkazy, které si klient může prohlédnout, než se přijme další závazek.",
+      "labels": {
+        "output": "Výstup",
+        "decision": "Rozhodnutí"
+      },
+      "items": [
+        {
+          "number": "01",
+          "title": "Pochopte",
+          "purpose": "Stanovte, co podnik potřebuje, co systém dnes dělá a kde je nejistota.",
+          "activities": [
+            "Zkontrolujte cíle, omezení a zainteresované strany",
+            "Zkontrolujte příslušný systém a provozní kontext",
+            "Definujte úspěch, přístup a známé neznámé"
+          ],
+          "output": "Stručná definice problému, pohled na současný stav a navrhovaný rozsah.",
+          "decision": "Existuje dostatek důkazů pro navržení odpovědi?"
+        },
+        {
+          "number": "02",
+          "title": "Design",
+          "purpose": "Proměňte problém v technické možnosti, hranice dodávek a explicitní kompromisy.",
+          "activities": [
+            "Architektura modelu a hranice systému",
+            "Identifikujte rizika, závislosti a kroky migrace",
+            "Sestavte požadovaný tým specialistů"
+          ],
+          "output": "Technický přístup, záznam rozhodnutí, milníky a kritéria přijetí.",
+          "decision": "Je to správný přístup a závazek?"
+        },
+        {
+          "number": "03",
+          "title": "Stavět",
+          "purpose": "Proveďte dohodnutou změnu a zároveň udržte kvalitu, riziko a pokrok viditelné.",
+          "activities": [
+            "Implementujte v kontrolovatelných krocích",
+            "Otestujte předpoklady proti fungujícímu softwaru",
+            "Zaznamenávejte rozhodnutí, důkazy a nevyřešená rizika"
+          ],
+          "output": "Pracovní změny, revize evidence a aktuální provozní dokumentace.",
+          "decision": "Splňuje přírůstek podmínky přijetí?"
+        },
+        {
+          "number": "04",
+          "title": "Předání",
+          "purpose": "Umístěte systém a znalosti potřebné k jeho provozu pod kontrolu klienta.",
+          "activities": [
+            "Ověřte postupy nasazení a obnovy",
+            "Kompletní technická a provozní dokumentace",
+            "Přeneste kontext na osoby, které si ponechávají vlastnictví"
+          ],
+          "output": "Klientem řízený kód, infrastruktura, dokumentace a dohodnuté následné akce.",
+          "decision": "Může klient provozovat a rozvíjet dodaný rozsah?"
+        }
+      ]
+    },
+    "responsibility": {
+      "eyebrow": "Tým a zodpovědnost",
+      "heading": "Tým se může s prací měnit. Odpovědnost mezi specialisty nemizí.",
+      "body": "SDK vybírá nezávislé specialisty pro obory, které zakázka vyžaduje, a koordinuje je prostřednictvím jednoho rámce poskytování. Rozhodnutí, přístup, dokumentace a pracovní stav jsou viditelné, takže znalosti nezůstávají u jednoho jednotlivce.",
+      "items": [
+        {
+          "number": "01",
+          "title": "SDK",
+          "copy": "Definuje rámec zakázky, koordinuje dodávku a zůstává odpovědný za kontroly kvality dohodnuté s klientem."
+        },
+        {
+          "number": "02",
+          "title": "Specialisté",
+          "copy": "Přispějte zkušenostmi požadovanými systémem a pracujte v rámci sdílených rozhodnutí, kontrolních postupů a kritérií přijetí."
+        },
+        {
+          "number": "03",
+          "title": "Klient",
+          "copy": "Poskytuje obchodní kontext, přístup k systému a včasná rozhodnutí, přičemž si zachovává kontrolu nad svými úložišti, infrastrukturou a informacemi."
+        },
+        {
+          "number": "04",
+          "title": "Sdílený záznam",
+          "copy": "Udržuje rozhodnutí o architektuře, rizicích, pokroku a provozních znalostech přístupné mimo rámec jediného přispěvatele."
+        }
+      ]
+    },
+    "quality": {
+      "eyebrow": "Kontroly kvality",
+      "heading": "Důvěra pochází z mechanismů, které můžete kontrolovat.",
+      "intro": "Vyhýbáme se nekvalifikovaným slibům, jako jsou bezpečné, škálovatelné nebo připravené na výrobu. Zakázka definuje, jak budou tyto kvality pro daný systém zkoumány a prokázány.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Písemná rozhodnutí",
+          "copy": "Materiálová architektura a volby rozsahu zaznamenávají kontext, kompromisy a důsledky místo toho, aby zmizely na schůzkách."
+        },
+        {
+          "number": "02",
+          "title": "Kontrolovatelné přírůstky",
+          "copy": "Práce je rozdělena na změny, které lze kontrolovat, testovat a akceptovat, než se nahromadí riziko."
+        },
+        {
+          "number": "03",
+          "title": "Vhodné ověření",
+          "copy": "Testy, bezpečnostní kontroly, důkazy o výkonu a kontroly nasazení jsou vybírány podle skutečného rizika selhání."
+        },
+        {
+          "number": "04",
+          "title": "Provozní vlastnictví",
+          "copy": "Dokumentace, přístup, kroky obnovy a nevyřešená rizika jsou po spuštění považovány za dodávky, nikoli za volitelný materiál."
+        }
+      ]
+    },
+    "scope": {
+      "eyebrow": "Když realita změní plán",
+      "heading": "Překryjte změnu. Vysvětlete důsledek. Než budete pokračovat, rozhodněte se.",
+      "body": "Stávající systémy odhalují informace tak, jak jsou kontrolovány a měněny. Když předpoklad selže nebo se objeví nová závislost, SDK zaznamená důkaz, vysvětlí jeho vliv na rozsah, riziko a sekvenci a požádá o rozhodnutí. Změna nezmizí ve faktuře ani opožděném předání.",
+      "steps": [
+        "Zaznamenejte nové důkazy",
+        "Vysvětlete technické a obchodní důsledky",
+        "Předložit životaschopné možnosti",
+        "Než budete pokračovat, odsouhlaste změnu"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Vyberte první užitečné rozhodnutí",
+      "title": "Začněte s nejistotou, která blokuje práci.",
+      "body": "Řekněte nám, co je známo, co je pod tlakem a jaké rozhodnutí musí vaše organizace učinit dále.",
+      "label": "Diskutujte o situaci"
+    }
   }
 }

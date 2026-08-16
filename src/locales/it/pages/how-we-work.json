@@ -1,37 +1,166 @@
 {
   "howWeWorkPage": {
-    "eyebrow": "Come lavoriamo",
-    "body": "Ogni impegno segue lo stesso percorso in quattro fasi. Il risultato di ogni fase è un artefatto concreto che il team può rivedere, contestare o approvare prima dell'inizio di quella successiva.",
-    "expectEyebrow": "Ogni fase",
-    "expectHeading": "Cosa aspettarsi in ogni fase",
-    "expectIntro": "Un risultato finale visibile in ogni fase, quindi non ci sono sorprese alla consegna.",
-    "understandTitle": "Capire",
-    "understandBody": "Obiettivo aziendale, stack, vincoli e criteri di successo. Risultato: un breve brief e un ambito proposto.",
-    "designTitle": "Progettazione",
-    "designBody": "Architettura, ambito, rischi e tappe fondamentali. Risultato: un piano tecnico con punti di controllo visibili.",
-    "buildTitle": "Costruisci",
-    "buildBody": "Attuazione con progressi visibili. Risultato: software in esecuzione, rivisto in cicli brevi.",
-    "handoverTitle": "Consegna",
-    "handoverBody": "Distribuisci, documenta e trasferisci la proprietà. Risultato: sistema funzionante, runbook e una sessione di trasferimento delle conoscenze.",
-    "deliverablesEyebrow": "Risultati finali",
-    "deliverablesHeading": "Quello che riceverai alla fine",
-    "deliverablesBody": "Ogni incarico termina con un trasferimento di proprietà, non con il passaggio a un contratto di manutenzione. Il team che riceve il lavoro riceve il software, la documentazione e le conoscenze per utilizzarlo.",
-    "deliverable1Title": "Software funzionante",
-    "deliverable1Body": "Distribuito, testato e in esecuzione nel tuo ambiente. Non un prototipo, non un progetto pilota: codice pronto per la produzione.",
-    "deliverable2Title": "Documentazione tecnica",
-    "deliverable2Body": "Decisioni sull'architettura, runbook, passaggi di distribuzione e note operative scritte per il team che manterrà il sistema.",
-    "deliverable3Title": "Trasferimento della conoscenza",
-    "deliverable3Body": "Una sessione strutturata con gli ingegneri che saranno proprietari del sistema in futuro. Risposte alle domande, spiegazioni sui compromessi, concordati i passi successivi.",
-    "principlesEyebrow": "Principi",
-    "principlesHeading": "Come ci presentiamo",
-    "principlesBody": "Questi non sono valori su un poster. Sono i vincoli entro i quali operiamo in ogni impegno.",
-    "principle1Title": "Comunicazione diretta",
-    "principle1Body": "Parli con l'ingegnere che fa il lavoro. Nessun account manager, nessun coordinatore di progetto, nessun livello di traduzione.",
-    "principle2Title": "Progresso visibile",
-    "principle2Body": "Ogni due settimane vedi il software funzionante e un aggiornamento scritto. Niente scatole nere, niente fatture a sorpresa.",
-    "principle3Title": "Ambito onesto",
-    "principle3Body": "Ti diremo se qualcosa è al di fuori di ciò che possiamo fornire bene. Una verifica del prezzo fisso è spesso il primo passo giusto quando il problema non è chiaro.",
-    "principle4Title": "Nessun blocco",
-    "principle4Body": "Il codice, l'infrastruttura e la documentazione appartengono a te. Non creiamo dipendenze dal nostro continuo coinvolgimento."
+    "hero": {
+      "eyebrow": "Come lavoriamo",
+      "title": "Riduci l’incertezza prima che diventi un rischio di consegna.",
+      "intro": "SDK rende visibili il problema, le decisioni, le responsabilità e le prove durante l'intero impegno. Il processo si adatta al sistema, ma il cliente sa sempre cosa si sta decidendo e cosa verrà dopo.",
+      "primaryCta": "Discutere un progetto",
+      "secondaryCta": "Guarda il processo",
+      "signals": [
+        "Punti decisionali definiti",
+        "Prova di consegna visibile",
+        "Specialisti specifici del progetto",
+        "Consegna documentata"
+      ]
+    },
+    "entryPaths": {
+      "eyebrow": "Dove inizia il lavoro",
+      "heading": "Il primo passo dipende da ciò che già sai.",
+      "intro": "Avviare l’attuazione troppo presto rende l’incertezza costosa. Iniziare con un altro esercizio di scoperta generico fa perdere tempo quando il risultato è già chiaro.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Il risultato è definito",
+          "copy": "Vengono compresi i confini del sistema, il cambiamento desiderato e le condizioni di accettazione. Convalidiamo le ipotesi, componiamo il team di consegna e pianifichiamo il flusso di lavoro.",
+          "href": "#processo"
+        },
+        {
+          "number": "02",
+          "title": "Il problema è visibile, ma il percorso no",
+          "copy": "Il sistema sta creando costi, rischi o ritardi, ma la causa o la risposta responsabile non sono chiare. Iniziamo con una valutazione tecnica circoscritta.",
+          "href": "#processo"
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "Il percorso di coinvolgimento",
+      "heading": "Quattro fasi, ciascuna delle quali termina con una decisione.",
+      "intro": "Il progresso non si misura solo con l’attività. Ogni fase produce prove che il cliente può esaminare prima che venga assunto un ulteriore impegno.",
+      "labels": {
+        "output": "Produzione",
+        "decision": "Decisione"
+      },
+      "items": [
+        {
+          "number": "01",
+          "title": "Capire",
+          "purpose": "Stabilire di cosa ha bisogno l’azienda, cosa fa oggi il sistema e dove si trova l’incertezza.",
+          "activities": [
+            "Esaminare obiettivi, vincoli e stakeholder",
+            "Ispezionare il sistema pertinente e il contesto operativo",
+            "Definire il successo, l'accesso e le incognite note"
+          ],
+          "output": "Una definizione concisa del problema, visione dello stato attuale e ambito proposto.",
+          "decision": "Ci sono prove sufficienti per progettare la risposta?"
+        },
+        {
+          "number": "02",
+          "title": "Progetto",
+          "purpose": "Trasformare il problema in opzioni tecniche, limiti di consegna e compromessi espliciti.",
+          "activities": [
+            "Architettura del modello e confini del sistema",
+            "Identificare rischi, dipendenze e passaggi della migrazione",
+            "Comporre il team di specialisti richiesto"
+          ],
+          "output": "Un approccio tecnico, un registro delle decisioni, tappe fondamentali e criteri di accettazione.",
+          "decision": "È questo l’approccio e l’impegno giusti?"
+        },
+        {
+          "number": "03",
+          "title": "Costruire",
+          "purpose": "Fornire il cambiamento concordato mantenendo visibili la qualità, il rischio e il progresso.",
+          "activities": [
+            "Implementare con incrementi rivedibili",
+            "Testare le ipotesi rispetto al software funzionante",
+            "Registrare decisioni, prove e rischi irrisolti"
+          ],
+          "output": "Modifiche di lavoro, revisione delle prove e della documentazione operativa corrente.",
+          "decision": "L'incremento soddisfa le condizioni di accettazione?"
+        },
+        {
+          "number": "04",
+          "title": "Devolvere",
+          "purpose": "Porre il sistema e le conoscenze necessarie per gestirlo sotto il controllo del cliente.",
+          "activities": [
+            "Verificare le procedure di distribuzione e ripristino",
+            "Documentazione tecnica e operativa completa",
+            "Trasferire il contesto alle persone che ne mantengono la proprietà"
+          ],
+          "output": "Codice, infrastruttura, documentazione e azioni di follow-up concordate controllate dal cliente.",
+          "decision": "Il cliente può gestire ed evolvere l'ambito fornito?"
+        }
+      ]
+    },
+    "responsibility": {
+      "eyebrow": "Squadra e responsabilità",
+      "heading": "La squadra può cambiare con il lavoro. La responsabilità non scompare tra gli specialisti.",
+      "body": "SDK seleziona specialisti indipendenti per le discipline richieste da un incarico e li coordina attraverso un unico quadro di consegna. Le decisioni, l'accesso, la documentazione e lo stato del lavoro sono mantenuti visibili in modo che la conoscenza non rimanga nelle mani di un solo individuo.",
+      "items": [
+        {
+          "number": "01",
+          "title": "SDK",
+          "copy": "Definisce il quadro dell'impegno, coordina la consegna e rimane responsabile dei controlli di qualità concordati con il cliente."
+        },
+        {
+          "number": "02",
+          "title": "Specialisti",
+          "copy": "Contribuire con l'esperienza richiesta dal sistema e lavorare nell'ambito di decisioni condivise, pratiche di revisione e criteri di accettazione."
+        },
+        {
+          "number": "03",
+          "title": "Cliente",
+          "copy": "Fornisce contesto aziendale, accesso al sistema e decisioni tempestive mantenendo il controllo dei propri repository, infrastruttura e informazioni."
+        },
+        {
+          "number": "04",
+          "title": "Registro condiviso",
+          "copy": "Mantiene le decisioni sull'architettura, i rischi, il progresso e la conoscenza operativa accessibili al di là di ogni singolo contributore."
+        }
+      ]
+    },
+    "quality": {
+      "eyebrow": "Controlli di qualità",
+      "heading": "La fiducia deriva da meccanismi che puoi ispezionare.",
+      "intro": "Evitiamo promesse non qualificate come sicure, scalabili o pronte per la produzione. L'incarico definisce il modo in cui tali qualità saranno esaminate e dimostrate per il sistema in questione.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Decisioni scritte",
+          "copy": "L'architettura dei materiali e le scelte di ambito registrano il contesto, i compromessi e le conseguenze invece di scomparire nelle riunioni."
+        },
+        {
+          "number": "02",
+          "title": "Incrementi rivedibili",
+          "copy": "Il lavoro è suddiviso in modifiche che possono essere ispezionate, testate e accettate prima che i rischi si accumulino."
+        },
+        {
+          "number": "03",
+          "title": "Verifica adeguata",
+          "copy": "Test, controlli di sicurezza, prove delle prestazioni e controlli di implementazione vengono selezionati in base al rischio di guasto effettivo."
+        },
+        {
+          "number": "04",
+          "title": "Proprietà operativa",
+          "copy": "La documentazione, l'accesso, le fasi di ripristino e i rischi irrisolti vengono trattati come lavoro di consegna e non come materiale facoltativo dopo il lancio."
+        }
+      ]
+    },
+    "scope": {
+      "eyebrow": "Quando la realtà cambia il piano",
+      "heading": "Fai emergere il cambiamento. Spiegare la conseguenza. Decidi prima di procedere.",
+      "body": "I sistemi esistenti rivelano le informazioni man mano che vengono ispezionate e modificate. Quando un presupposto fallisce o appare una nuova dipendenza, SDK registra le prove, ne spiega gli effetti sull'ambito, sul rischio e sulla sequenza e chiede una decisione. La modifica non scompare in una fattura o in una consegna ritardata.",
+      "steps": [
+        "Registra le nuove prove",
+        "Spiegare le conseguenze tecniche e commerciali",
+        "Presentare opzioni praticabili",
+        "Accettare la modifica prima di continuare"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Scegli la prima decisione utile",
+      "title": "A cominciare dall’incertezza che blocca il lavoro.",
+      "body": "Raccontaci cosa sappiamo, cosa è sotto pressione e quale decisione deve prendere la tua organizzazione in seguito.",
+      "label": "Discuti la situazione"
+    }
   }
 }

@@ -1,132 +1,145 @@
 {
-  "hero": {
-    "eyebrow": "B2B AI · Programvare · Cloud · Systems Engineering",
-    "heading": "Én ingeniørpartner for stabelen din bedrift trenger.",
-    "leadParagraph": "SDK Enterprises bygger, moderniserer og driver programvare på tvers av stabelen – backend-plattformer, skyinfrastruktur, AI-automatisering, sanntidssystemer og intern verktøy. Du engasjerer deg i ett spesialisert problem eller eier en bredere arbeidsstrøm; uansett, de som gjør jobben er de du snakker med.",
-    "ctaStartProject": "Start et prosjekt",
-    "ctaExploreServices": "Utforsk tjenester",
-    "trustFrance": "Frankrike-basert B2B selskap",
-    "trustSenior": "Senior ingeniørleveranse",
-    "trustAI": "AI + backend + sky",
-    "trustClients": "Europeiske og eksterne kunder"
-  },
-  "services": {
-    "eyebrow": "Tjenester",
-    "title": "Bruk hele stabelen - eller bare den delen du trenger.",
-    "intro": "SDK kan engasjere seg i ett spesialisert problem eller eie en bredere teknisk arbeidsstrøm.",
-    "items": [
-      {
-        "number": "01",
-        "category": "AI Engineering",
-        "title": "AI-agenter og automatisering",
-        "copy": "LLM-integrasjoner, agenter, RAG, arbeidsflytautomatisering, utviklerverktøy og AI-assisterte operasjoner."
-      },
-      {
-        "number": "02",
-        "category": "Backend",
-        "title": "Plattformer, APIs og SaaS",
-        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs og sanntids backend-arkitektur."
-      },
-      {
-        "number": "03",
-        "category": "Frontend",
-        "title": "Web- og applikasjonsgrensesnitt",
-        "copy": "React, Vue, Nuxt, TypeScript, Tailwind og Shadcn."
-      },
-      {
-        "number": "04",
-        "category": "Sky",
-        "title": "Sky og infrastruktur",
-        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD og distribusjonsarkitektur."
-      },
-      {
-        "number": "05",
-        "category": "Data",
-        "title": "Databaser, cache og søk",
-        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey og Elasticsearch."
-      },
-      {
-        "number": "06",
-        "category": "Modernisering",
-        "title": "Eldre modernisering",
-        "copy": "Rammeoppgraderinger, migrering, teknisk gjeldsreduksjon og ytelsesoptimalisering."
-      }
-    ]
-  },
-  "whySdk": {
-    "eyebrow": "Hvorfor SDK",
-    "title": "Senioringeniør uten unødvendige lag.",
-    "intro": "Direkte kommunikasjon, rask diagnose og pragmatisk utførelse.",
-    "items": [
-      {
-        "kicker": "FR",
-        "copy": "Et Frankrike-basert B2B-selskap for europeiske og eksterne kunder."
-      },
-      {
-        "kicker": "AI",
-        "copy": "LLM integrasjoner, agenter, automatisering og intern verktøy."
-      },
-      {
-        "kicker": "RT",
-        "copy": "Sanntid og høyt volum plattformarbeid."
-      },
-      {
-        "kicker": "DIREKTE",
-        "copy": "Du snakker med ingeniørene som gjør jobben, ikke et kontolag."
-      }
-    ]
-  },
-  "engagements": {
-    "eyebrow": "Arbeid med SDK",
-    "title": "Ta med et spesifikt problem. Få et konkret svar.",
-    "intro": "Du vet når noe i stabelen din koster deg. Her er situasjonene SDK er satt opp for.",
-    "items": [
-      {
-        "title": "Et system for gammelt til å fortsette å lappe.",
-        "copy": "Du trenger en migrasjonsplan, ikke et ønske – en revisjon av hva som kjører, hva som går i stykker og rekkefølgen for å flytte inn."
-      },
-      {
-        "title": "Volum som den nåværende stabelen din ikke er laget for.",
-        "copy": "Sanntidsinntak, backends med høy gjennomstrømning og infrastrukturen for å holde dem stabile."
-      },
-      {
-        "title": "AI du kan sette i arbeid.",
-        "copy": "LLM-integrasjoner, agenter og automatisering som endrer en intern arbeidsflyt – ikke en demo som stopper på banen."
-      },
-      {
-        "title": "Et lag som trenger seniorhender.",
-        "copy": "Direkte ingeniørlevering på kodebasen din, uten at et mellomlag bremser beslutningene."
-      }
-    ]
-  },
-  "process": {
-    "eyebrow": "Hvordan vi jobber",
-    "title": "En tydelig vei fra problem til produksjon.",
-    "intro": "Fire trinn, synlig fremgang på hvert trinn.",
-    "items": [
-      {
-        "title": "Forstå",
-        "copy": "Forretningsmål, stabel, begrensninger og suksesskriterier."
-      },
-      {
-        "title": "Design",
-        "copy": "Arkitektur, omfang, risikoer og milepæler."
-      },
-      {
-        "title": "Bygg",
-        "copy": "Implementering med synlig fremgang."
-      },
-      {
-        "title": "Overlevering",
-        "copy": "Distribuer, dokumenter og overfør eierskap."
-      }
-    ]
-  },
-  "contact": {
-    "eyebrow": "Arbeid med SDK",
-    "heading": "Gi oss problemet du trenger løst.",
-    "body": "Fortell oss hva du prøver å bygge, modernisere, automatisere eller fikse – vi forteller deg ærlig om det passer og hva som kreves.",
-    "registeredUnder": "Registrert under {company}",
-    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  "homePage": {
+    "hero": {
+      "eyebrow": "Programvare · AI · Cloud · Data · Systems Engineering",
+      "title": "Ta systemet som trenger en ansvarlig vei videre.",
+      "intro": "SDK Enterprises setter sammen ingeniørspesialistene et prosjekt faktisk krever, koordinerer arbeidet deres og forblir ansvarlig for kvalitetsrammeverket som presenteres for kunden. Vi hjelper organisasjoner med å diagnostisere, modernisere, bygge og drifte teknisk følgelig programvare.",
+      "primaryCta": "Diskuter situasjonen",
+      "secondaryCta": "Se hvor du skal begynne",
+      "signals": [
+        "Problemstyrt teamsammensetning",
+        "Uavhengige spesialister",
+        "SDK-ledet leveringsramme",
+        "Klientstyrte systemer"
+      ]
+    },
+    "opening": {
+      "eyebrow": "Utgangspunktet",
+      "heading": "En teknologiliste kan ikke fortelle deg hva prosjektet trenger.",
+      "body": "Et moderniseringsprogram, en AI-arbeidsflyt og et plattformpålitelighetsproblem kan berøre lignende teknologier mens de krever helt andre beslutninger, disipliner og leveringskontroller. SDK starter med presset på systemet og resultatet organisasjonen trenger å eie.",
+      "body2": "Det kan føre til en begrenset teknisk vurdering, en fokusert ingeniørarbeid eller et kontinuerlig teknisk partnerskap. Engasjementet bør samsvare med det som allerede er kjent – ​​ikke skjule usikkerhet i et større forslag.",
+      "principles": [
+        {
+          "number": "01",
+          "title": "Bevis før forpliktelse",
+          "copy": "Når gjeldende tilstand eller implementeringsvei er uklar, må du først fastslå bevisene som trengs for en ansvarlig beslutning."
+        },
+        {
+          "number": "02",
+          "title": "Evne rundt problemet",
+          "copy": "Velg disiplinene systemet krever i stedet for å tvinge hvert engasjement inn i det samme tilgjengelige teamet."
+        },
+        {
+          "number": "03",
+          "title": "Eierskap som overlever overlevering",
+          "copy": "Hold beslutninger, depoter, infrastruktur, dokumentasjon og driftskunnskap under klientkontroll."
+        }
+      ]
+    },
+    "system": {
+      "eyebrow": "Ett system, sammenkoblede beslutninger",
+      "heading": "Arbeidet stopper sjelden ved grensen til én teknologi.",
+      "intro": "SDK kan fokusere på ett lag eller koordinere en arbeidsstrøm som krysser flere. Kartet nedenfor viser de tekniske bekymringene som ofte må vurderes samlet.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Arbeidsflyt og grensesnitt",
+          "copy": "Brukeroppgaven, driftsbeslutningen og gjenopprettingsveien programvaren må gjøre forståelig.",
+          "systems": [
+            "React",
+            "Vue",
+            "Nuxt",
+            "TypeScript"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Forretningsplattform",
+          "copy": "Tjenestene, APIs, tillatelser og integrasjonskontrakter som bærer organisasjonens regler.",
+          "systems": [
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PHP"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "AI og automatisering",
+          "copy": "Modellassisterte beslutninger, gjenfinning, evaluering og menneskelig gjennomgang kontrollerer i en ekte arbeidsflyt.",
+          "systems": [
+            "LLM",
+            "RAG",
+            "Agenter",
+            "APIs"
+          ]
+        },
+        {
+          "number": "04",
+          "title": "Data og tilstand",
+          "copy": "Eierskap, konsistens, søk, hurtigbuffer og livssyklusregler bak systematferd.",
+          "systems": [
+            "PostgreSQL",
+            "MongoDB",
+            "Redis",
+            "Elasticsearch"
+          ]
+        },
+        {
+          "number": "05",
+          "title": "Produksjonsdrift",
+          "copy": "Utrullings-, observerbarhets-, gjenopprettings- og infrastrukturmekanismene som trengs for å betjene systemet.",
+          "systems": [
+            "AWS",
+            "GCP",
+            "Azure",
+            "Kubernetes",
+            "CI/CD"
+          ]
+        }
+      ]
+    },
+    "scenarios": {
+      "eyebrow": "Gjenkjenne situasjonen",
+      "heading": "Teknisk arbeid haster gjennom sin effekt på virksomheten.",
+      "intro": "De følgende scenariene er kapasitetseksempler, ikke oppfunne klientcasestudier. De viser hvordan SDK kobler symptomer til spørsmål og konkrete neste leveranser.",
+      "link": "Utforsk alle arbeidsscenarier"
+    },
+    "companyModel": {
+      "eyebrow": "Driftsmodellen SDK",
+      "heading": "Et prosjektspesifikt team uten å overføre koordineringsrisiko til oppdragsgiver.",
+      "intro": "SDK jobber med uavhengige ingeniørspesialister. Disiplinene kan endre seg med arbeidet, mens oppdragsgiver beholder ett firmaforhold og ett leveranserammeverk.",
+      "link": "Forstå bedriftsmodellen"
+    },
+    "engagements": {
+      "eyebrow": "Velg riktig nivå av engasjement",
+      "heading": "Ikke kjøp implementering før systemet kan støtte en implementeringsbeslutning.",
+      "intro": "Start med bevis når usikkerhet er vesentlig. Gå direkte inn i leveransen når utfall, grense og akseptbetingelser allerede er forstått.",
+      "link": "Utforsk tjenester og engasjementsmodeller"
+    },
+    "process": {
+      "eyebrow": "Fra usikkerhet til eierskap",
+      "heading": "Hvert stadium bør avsluttes med bevis og en avgjørelse.",
+      "intro": "Aktivitet alene viser ikke at et prosjekt går fremover. SDK strukturerer engasjementet slik at klienten kan gjennomgå hva som er lært, bygget og overført før neste forpliktelse.",
+      "link": "Se hele leveringsprosessen"
+    },
+    "quality": {
+      "eyebrow": "Kvalitet du kan inspisere",
+      "heading": "Tillit bør komme fra synlige mekanismer, ikke adjektiver.",
+      "intro": "Begreper som sikker, skalerbar og produksjonsklar blir først meningsfulle når engasjementet definerer hvordan de skal undersøkes for selve systemet og risikoen.",
+      "link": "Se hvordan SDK fungerer"
+    },
+    "fit": {
+      "eyebrow": "Før vi diskuterer et lag",
+      "heading": "Engasjementet trenger en reell begrensning, systemtilgang og noen som kan bestemme.",
+      "intro": "SDK er designet for egne tekniske resultater. Det er ikke en markedsplass for anonym billettkapasitet eller en måte å validere et forhåndsbestemt svar på uten å undersøke bevisene.",
+      "link": "Se gjennom engasjementpassformen"
+    },
+    "cta": {
+      "eyebrow": "Start med den virkelige situasjonen",
+      "title": "Du trenger ikke gjøre problemet til en polert spesifikasjon først.",
+      "body": "Fortell oss hva systemet gjør, hva det koster eller forsinker, og hvilken avgjørelse som for øyeblikket er blokkert. SDK vil begynne med å avgjøre om arbeidet passer og hva det første nyttige trekket skal være.",
+      "label": "Diskuter situasjonen"
+    }
   }
 }

@@ -1,132 +1,145 @@
 {
-  "hero": {
-    "eyebrow": "B2B AI · Ohjelmistot · Pilvi · Järjestelmäsuunnittelu",
-    "heading": "Yksi suunnittelukumppani yrityksesi tarvitsemaan pinoon.",
-    "leadParagraph": "SDK Enterprises rakentaa, modernisoi ja käyttää ohjelmistoja kaikkialla – taustaalustoja, pilviinfrastruktuuria, tekoälyautomaatiota, reaaliaikaisia järjestelmiä ja sisäisiä työkaluja. Otat osaa yhteen erityisongelmaan tai omistat laajemman työvirran; Joka tapauksessa työn tekevät ihmiset, joiden kanssa puhut.",
-    "ctaStartProject": "Aloita projekti",
-    "ctaExploreServices": "Tutustu palveluihin",
-    "trustFrance": "Ranskassa toimiva B2B-yritys",
-    "trustSenior": "Vanhempi insinööritoimitus",
-    "trustAI": "AI + taustajärjestelmä + pilvi",
-    "trustClients": "Eurooppalaiset ja etäasiakkaat"
-  },
-  "services": {
-    "eyebrow": "Palvelut",
-    "title": "Käytä koko pinoa – tai vain tarvitsemaasi osaa.",
-    "intro": "SDK voi puuttua yhteen erityisongelmaan tai omistaa laajemman teknisen työvirran.",
-    "items": [
-      {
-        "number": "01",
-        "category": "AI Engineering",
-        "title": "Tekoälyagentit ja automaatio",
-        "copy": "LLM-integraatiot, agentit, RAG, työnkulun automaatio, kehittäjätyökalut ja tekoälyn avustustoiminnot."
-      },
-      {
-        "number": "02",
-        "category": "Backend",
-        "title": "Alustat, APIs & SaaS",
-        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs ja reaaliaikainen taustaarkkitehtuuri."
-      },
-      {
-        "number": "03",
-        "category": "Käyttöliittymä",
-        "title": "Verkko- ja sovellusliittymät",
-        "copy": "React, Vue, Nuxt, TypeScript, Tailwind ja Shadcn."
-      },
-      {
-        "number": "04",
-        "category": "Pilvi",
-        "title": "Pilvi ja infrastruktuuri",
-        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD ja käyttöönottoarkkitehtuuri."
-      },
-      {
-        "number": "05",
-        "category": "Data",
-        "title": "Tietokannat, välimuisti ja haku",
-        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey ja Elasticsearch."
-      },
-      {
-        "number": "06",
-        "category": "Modernisointi",
-        "title": "Perinnöllinen modernisointi",
-        "copy": "Kehyspäivitykset, siirto, tekninen velan vähentäminen ja suorituskyvyn optimointi."
-      }
-    ]
-  },
-  "whySdk": {
-    "eyebrow": "Miksi SDK",
-    "title": "Vanhempaa suunnittelua ilman tarpeettomia kerroksia.",
-    "intro": "Suora viestintä, nopea diagnoosi ja pragmaattinen toteutus.",
-    "items": [
-      {
-        "kicker": "FR",
-        "copy": "Ranskassa toimiva B2B-yritys eurooppalaisille ja etäasiakkaille."
-      },
-      {
-        "kicker": "AI",
-        "copy": "LLM-integraatiot, agentit, automaatio ja sisäiset työkalut."
-      },
-      {
-        "kicker": "RT",
-        "copy": "Reaaliaikainen ja suuren volyymin alustatyö."
-      },
-      {
-        "kicker": "SUORAT",
-        "copy": "Puhut työn tekevien insinöörien kanssa, et tilikerroksen kanssa."
-      }
-    ]
-  },
-  "engagements": {
-    "eyebrow": "Työskentele SDK:n kanssa",
-    "title": "Tuo tietty ongelma. Hanki tarkka vastaus.",
-    "intro": "Tiedät, kun jokin pinossasi maksaa sinulle. Tässä ovat tilanteet, joihin SDK on määritetty.",
-    "items": [
-      {
-        "title": "Järjestelmä on liian vanha korjattavaksi.",
-        "copy": "Tarvitset siirtosuunnitelman, et toiveen – tarkastuksen siitä, mikä toimii, mikä katkeaa, ja muuttomääräyksen."
-      },
-      {
-        "title": "Volyymi, jolle nykyistä pinoasi ei ole suunniteltu.",
-        "copy": "Reaaliaikainen käsittely, korkean suorituskyvyn taustajärjestelmät ja infrastruktuuri, joka pitää ne vakaana."
-      },
-      {
-        "title": "AI voit laittaa töihin.",
-        "copy": "LLM-integraatiot, agentit ja automaatio, jotka muuttavat sisäistä työnkulkua – ei esittelyä, joka pysähtyy pitchille."
-      },
-      {
-        "title": "Joukkue, joka tarvitsee vanhempia käsiä.",
-        "copy": "Suora suunnittelutoimitus koodikantaasi ilman keskikerrosta, joka hidastaa päätöksiä."
-      }
-    ]
-  },
-  "process": {
-    "eyebrow": "Miten toimimme",
-    "title": "Selkeä tie ongelmasta tuotantoon.",
-    "intro": "Neljä askelta, näkyvä edistys joka vaiheessa.",
-    "items": [
-      {
-        "title": "Ymmärrä",
-        "copy": "Liiketoiminnan tavoite, pino, rajoitteet ja menestyskriteerit."
-      },
-      {
-        "title": "Suunnittelu",
-        "copy": "Arkkitehtuuri, laajuus, riskit ja virstanpylväät."
-      },
-      {
-        "title": "Rakenna",
-        "copy": "Toteutus näkyvällä edistyksellä."
-      },
-      {
-        "title": "Luovutus",
-        "copy": "Ota käyttöön, dokumentoi ja siirrä omistajuus."
-      }
-    ]
-  },
-  "contact": {
-    "eyebrow": "Työskentele SDK:n kanssa",
-    "heading": "Tuo meille ongelma, jonka tarvitset ratkaistavaksi.",
-    "body": "Kerro meille, mitä yrität rakentaa, modernisoida, automatisoida tai korjata – me kerromme sinulle rehellisesti, sopiiko se ja mitä se vaatisi.",
-    "registeredUnder": "Rekisteröity {company}-tunnuksella",
-    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  "homePage": {
+    "hero": {
+      "eyebrow": "Ohjelmistot · AI · Pilvi · Data · Järjestelmäsuunnittelu",
+      "title": "Vie järjestelmä, joka tarvitsee vastuullisen tien eteenpäin.",
+      "intro": "SDK Enterprises kokoaa projektissa todellisuudessa tarvitsemat suunnitteluasiantuntijat, koordinoi heidän työtään ja vastaa asiakkaalle esitettävästä laatukehyksestä. Autamme organisaatioita diagnosoimaan, modernisoimaan, rakentamaan ja käyttämään teknisesti tärkeitä ohjelmistoja.",
+      "primaryCta": "Keskustele tilanteesta",
+      "secondaryCta": "Katso mistä aloittaa",
+      "signals": [
+        "Ongelmavetoisen joukkueen kokoonpano",
+        "Riippumattomat asiantuntijat",
+        "SDK-vetoinen toimituskehys",
+        "Asiakasohjatut järjestelmät"
+      ]
+    },
+    "opening": {
+      "eyebrow": "Lähtökohta",
+      "heading": "Teknologialuettelo ei voi kertoa, mitä projekti tarvitsee.",
+      "body": "Modernisointiohjelma, tekoälytyönkulku ja alustan luotettavuusongelmat voivat koskea samankaltaisia teknologioita vaatien täysin erilaisia päätöksiä, sääntöjä ja toimitusten valvontaa. SDK alkaa järjestelmään kohdistuvasta paineesta ja tuloksesta, joka organisaation on omaksuttava.",
+      "body2": "Tämä voi johtaa rajoitettuun tekniseen arviointiin, kohdennettuun suunnittelutyövirtaan tai jatkuvaan tekniseen kumppanuuteen. Sitoumuksen tulee vastata sitä, mikä jo tiedetään – ei saa kätkeä epävarmuutta suuremman ehdotuksen sisällä.",
+      "principles": [
+        {
+          "number": "01",
+          "title": "Todisteet ennen sitoutumista",
+          "copy": "Kun nykyinen tila tai toteutuspolku on epäselvä, selvitä ensin vastuulliseen päätökseen tarvittavat todisteet."
+        },
+        {
+          "number": "02",
+          "title": "Kyky ongelman ympärille",
+          "copy": "Valitse järjestelmän vaatimat tieteenalat sen sijaan, että pakottaisit jokaisen toimeksiannon samaan käytettävissä olevaan tiimiin."
+        },
+        {
+          "number": "03",
+          "title": "Omistus, joka selviää luovutuksesta",
+          "copy": "Pidä päätökset, tietovarastot, infrastruktuuri, dokumentaatio ja käyttötiedot asiakkaan hallinnassa."
+        }
+      ]
+    },
+    "system": {
+      "eyebrow": "Yksi järjestelmä, yhdistetyt päätökset",
+      "heading": "Työ harvoin pysähtyy yhden tekniikan rajalle.",
+      "intro": "SDK voi keskittyä yhteen kerrokseen tai koordinoida työvirtaa, joka ylittää useita. Alla olevasta kartasta näet tekniset huolenaiheet, joita on usein pohdittava yhdessä.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Työnkulku ja käyttöliittymä",
+          "copy": "Ohjelmiston on tehtävä ymmärrettäväksi käyttäjän tehtävä, toimintapäätös ja palautuspolku.",
+          "systems": [
+            "React",
+            "Vue",
+            "Nuxt",
+            "TypeScript"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Liiketoiminnan alusta",
+          "copy": "Palvelut, APIs, luvat ja integraatiosopimukset, jotka sisältävät organisaation sääntöjä.",
+          "systems": [
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PHP"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "Tekoäly ja automaatio",
+          "copy": "Malli-avusteiset päätökset, haku, arviointi ja ihmisen tarkistus ohjaavat todellisen työnkulun sisällä.",
+          "systems": [
+            "LLM",
+            "RAG",
+            "Agentit",
+            "APIs"
+          ]
+        },
+        {
+          "number": "04",
+          "title": "Tiedot ja tila",
+          "copy": "Omistajuus, johdonmukaisuus, haku, välimuisti ja elinkaarisäännöt järjestelmän toiminnan takana.",
+          "systems": [
+            "PostgreSQL",
+            "MongoDB",
+            "Redis",
+            "Elasticsearch"
+          ]
+        },
+        {
+          "number": "05",
+          "title": "Tuotantotoiminta",
+          "copy": "Järjestelmän käyttöön tarvittavat käyttöönotto-, havaittavuus-, palautus- ja infrastruktuurimekanismit.",
+          "systems": [
+            "AWS",
+            "GCP",
+            "Azure",
+            "Kubernetes",
+            "CI/CD"
+          ]
+        }
+      ]
+    },
+    "scenarios": {
+      "eyebrow": "Tunnista tilanne",
+      "heading": "Tekninen työ tulee kiireellisiksi sen vaikutuksen kautta liiketoimintaan.",
+      "intro": "Seuraavat skenaariot ovat esimerkkejä ominaisuuksista, eivät keksittyjä asiakastapaustutkimuksia. Ne osoittavat, kuinka SDK yhdistää oireet kysymyksiin ja konkreettisiin seuraaviin suorituksiin.",
+      "link": "Tutustu kaikkiin työskenaarioihin"
+    },
+    "companyModel": {
+      "eyebrow": "Käyttömalli SDK",
+      "heading": "Projektikohtainen tiimi siirtämättä koordinointiriskiä asiakkaalle.",
+      "intro": "SDK työskentelee riippumattomien suunnitteluasiantuntijoiden kanssa. Alat voivat muuttua työn mukana, kun asiakas säilyttää yhden yrityssuhteen ja yhden toimituskehyksen.",
+      "link": "Ymmärrä yritysmalli"
+    },
+    "engagements": {
+      "eyebrow": "Valitse oikea sitoutumistaso",
+      "heading": "Älä osta toteutusta ennen kuin järjestelmä voi tukea toteutuspäätöstä.",
+      "intro": "Aloita todisteista, kun epävarmuus on olennaista. Siirry suoraan toimitukseen, kun lopputulos, raja- ja hyväksymisehdot on jo ymmärretty.",
+      "link": "Tutustu palveluihin ja sitouttamismalleihin"
+    },
+    "process": {
+      "eyebrow": "Epävarmuudesta omistajuuteen",
+      "heading": "Jokaisen vaiheen tulee päättyä todisteisiin ja päätökseen.",
+      "intro": "Pelkkä toiminta ei osoita, että projekti etenee. SDK jäsentää toimeksiannon siten, että asiakas voi tarkistaa, mitä on opittu, rakennettu ja siirretty ennen seuraavan sitoumuksen tekemistä.",
+      "link": "Katso koko toimitusprosessi"
+    },
+    "quality": {
+      "eyebrow": "Laatu, jonka voit tarkastaa",
+      "heading": "Luottamuksen tulee syntyä näkyvistä mekanismeista, ei adjektiiveista.",
+      "intro": "Käsitteet, kuten turvallinen, skaalautuva ja tuotantovalmius, tulevat merkityksellisiksi vasta, kun toimeksianto määrittelee, kuinka ne tutkitaan todellisen järjestelmän ja riskien osalta.",
+      "link": "Katso, kuinka SDK toimii"
+    },
+    "fit": {
+      "eyebrow": "Ennen kuin keskustelemme ryhmästä",
+      "heading": "Sitoutuminen vaatii todellisen rajoitteen, pääsyn järjestelmään ja jonkun, joka voi päättää.",
+      "intro": "SDK on suunniteltu omistamia teknisiä tuloksia varten. Se ei ole markkinapaikka anonyymille lippukapasiteetille tai tapa vahvistaa ennalta määritetty vastaus tutkimatta todisteita.",
+      "link": "Tarkista sitoutumissovitus"
+    },
+    "cta": {
+      "eyebrow": "Aloita todellisesta tilanteesta",
+      "title": "Sinun ei tarvitse muuttaa ongelmaa ensin kiillotetuksi spesifikaatioksi.",
+      "body": "Kerro meille, mitä järjestelmä tekee, mitä se maksaa tai viivästyttää ja mikä päätös on tällä hetkellä estetty. SDK aloittaa määrittämällä, sopiiko työ ja mikä on ensimmäinen hyödyllinen liike.",
+      "label": "Keskustele tilanteesta"
+    }
   }
 }

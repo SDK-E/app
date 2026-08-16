@@ -1,132 +1,145 @@
 {
-  "hero": {
-    "eyebrow": "B2B AI · Software · Cloud · Systems Engineering",
-    "heading": "Én ingeniørpartner til den stak, din virksomhed har brug for.",
-    "leadParagraph": "SDK Enterprises bygger, moderniserer og driver software på tværs af stakken - backend-platforme, cloud-infrastruktur, AI-automatisering, realtidssystemer og internt værktøj. Du engagerer dig i et specialiseret problem eller ejer en bredere arbejdsstrøm; uanset hvad, er de mennesker, der udfører arbejdet, dem, du taler med.",
-    "ctaStartProject": "Start et projekt",
-    "ctaExploreServices": "Udforsk tjenester",
-    "trustFrance": "Frankrig-baseret B2B virksomhed",
-    "trustSenior": "Senior ingeniør levering",
-    "trustAI": "AI + backend + sky",
-    "trustClients": "Europæiske og fjernkunder"
-  },
-  "services": {
-    "eyebrow": "Tjenester",
-    "title": "Brug hele stakken - eller kun den del, du har brug for.",
-    "intro": "SDK kan engagere sig i et specialiseret problem eller eje en bredere teknisk arbejdsstrøm.",
-    "items": [
-      {
-        "number": "01",
-        "category": "AI Engineering",
-        "title": "AI-agenter og automatisering",
-        "copy": "LLM-integrationer, agenter, RAG, workflowautomatisering, udviklerværktøj og AI-assisteret operationer."
-      },
-      {
-        "number": "02",
-        "category": "Backend",
-        "title": "Platforme, APIs & SaaS",
-        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs og realtime backend-arkitektur."
-      },
-      {
-        "number": "03",
-        "category": "Frontend",
-        "title": "Web- og applikationsgrænseflader",
-        "copy": "React, Vue, Nuxt, TypeScript, Tailwind og Shadcn."
-      },
-      {
-        "number": "04",
-        "category": "Sky",
-        "title": "Cloud og infrastruktur",
-        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD og implementeringsarkitektur."
-      },
-      {
-        "number": "05",
-        "category": "Data",
-        "title": "Databaser, cache og søgning",
-        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey og Elasticsearch."
-      },
-      {
-        "number": "06",
-        "category": "Modernisering",
-        "title": "Ældre modernisering",
-        "copy": "Rammeopgraderinger, migrering, teknisk gældsreduktion og præstationsoptimering."
-      }
-    ]
-  },
-  "whySdk": {
-    "eyebrow": "Hvorfor SDK",
-    "title": "Senioringeniør uden unødvendige lag.",
-    "intro": "Direkte kommunikation, hurtig diagnosticering og pragmatisk udførelse.",
-    "items": [
-      {
-        "kicker": "FR",
-        "copy": "Et Frankrig-baseret B2B-firma til europæiske og fjernkunder."
-      },
-      {
-        "kicker": "AI",
-        "copy": "LLM integrationer, agenter, automatisering og intern værktøj."
-      },
-      {
-        "kicker": "RT",
-        "copy": "Realtime og højvolumen platform arbejde."
-      },
-      {
-        "kicker": "DIREKTE",
-        "copy": "Du taler med ingeniørerne, der udfører arbejdet, ikke et kontolag."
-      }
-    ]
-  },
-  "engagements": {
-    "eyebrow": "Arbejd med SDK",
-    "title": "Medbring et specifikt problem. Få et konkret svar.",
-    "intro": "Du ved, hvornår noget i din stak koster dig. Her er de situationer, SDK er sat op til.",
-    "items": [
-      {
-        "title": "Et system for gammelt til at blive ved med at lappe.",
-        "copy": "Du har brug for en migrationsplan, ikke et ønske - en revision af, hvad der kører, hvad der går i stykker, og rækkefølgen til at flytte ind."
-      },
-      {
-        "title": "Volumen, som din nuværende stak ikke er bygget til.",
-        "copy": "Realtidsindtagelse, high-throughput backends og infrastrukturen til at holde dem stabile."
-      },
-      {
-        "title": "AI du kan sætte på arbejde.",
-        "copy": "LLM integrationer, agenter og automatisering, der ændrer en intern arbejdsgang - ikke en demo, der stopper på banen."
-      },
-      {
-        "title": "Et hold, der har brug for seniorhænder.",
-        "copy": "Direkte ingeniørlevering på din kodebase, uden et mellemlag, der bremser beslutninger."
-      }
-    ]
-  },
-  "process": {
-    "eyebrow": "Hvordan vi arbejder",
-    "title": "En klar vej fra problem til produktion.",
-    "intro": "Fire trin, synlige fremskridt på hvert trin.",
-    "items": [
-      {
-        "title": "Forstå",
-        "copy": "Forretningsmål, stak, begrænsninger og succeskriterier."
-      },
-      {
-        "title": "Design",
-        "copy": "Arkitektur, omfang, risici og milepæle."
-      },
-      {
-        "title": "Byg",
-        "copy": "Implementering med synlige fremskridt."
-      },
-      {
-        "title": "Overdragelse",
-        "copy": "Implementer, dokumenter og overfør ejerskab."
-      }
-    ]
-  },
-  "contact": {
-    "eyebrow": "Arbejd med SDK",
-    "heading": "Bring os det problem, du skal have løst.",
-    "body": "Fortæl os, hvad du prøver at bygge, modernisere, automatisere eller reparere - vi fortæller dig ærligt, om det passer, og hvad det kræver.",
-    "registeredUnder": "Registreret under {company}",
-    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  "homePage": {
+    "hero": {
+      "eyebrow": "Software · AI · Cloud · Data · Systems Engineering",
+      "title": "Bring det system, der har brug for en ansvarlig vej frem.",
+      "intro": "SDK Enterprises samler de ingeniørspecialister, et projekt faktisk kræver, koordinerer deres arbejde og forbliver ansvarlige for den kvalitetsramme, der præsenteres for kunden. Vi hjælper organisationer med at diagnosticere, modernisere, bygge og drive software, der har en teknisk konsekvens.",
+      "primaryCta": "Diskuter situationen",
+      "secondaryCta": "Se, hvor du skal begynde",
+      "signals": [
+        "Problemstyret teamsammensætning",
+        "Uafhængige specialister",
+        "SDK-ledet leveringsramme",
+        "Klientstyrede systemer"
+      ]
+    },
+    "opening": {
+      "eyebrow": "Udgangspunktet",
+      "heading": "En teknologiliste kan ikke fortælle dig, hvad projektet har brug for.",
+      "body": "Et moderniseringsprogram, en AI-arbejdsgang og et problem med platformens pålidelighed kan berøre lignende teknologier, mens det kræver helt andre beslutninger, discipliner og leveringskontroller. SDK starter med presset på systemet og det resultat, organisationen skal eje.",
+      "body2": "Det kan føre til en afgrænset teknisk vurdering, en fokuseret ingeniørarbejde eller et fortsat teknisk partnerskab. Forpligtelsen bør matche det, der allerede er kendt - ikke skjule usikkerhed inde i et større forslag.",
+      "principles": [
+        {
+          "number": "01",
+          "title": "Bevis før forpligtelse",
+          "copy": "Når den nuværende tilstand eller implementeringsvej er uklar, skal du først etablere den nødvendige dokumentation for en ansvarlig beslutning."
+        },
+        {
+          "number": "02",
+          "title": "Kapacitet omkring problemet",
+          "copy": "Vælg de discipliner, systemet kræver i stedet for at tvinge hvert engagement ind i det samme tilgængelige team."
+        },
+        {
+          "number": "03",
+          "title": "Ejerskab, der overlever overdragelse",
+          "copy": "Hold beslutninger, arkiver, infrastruktur, dokumentation og driftsviden under klientkontrol."
+        }
+      ]
+    },
+    "system": {
+      "eyebrow": "Et system, forbundne beslutninger",
+      "heading": "Arbejdet stopper sjældent ved grænsen af én teknologi.",
+      "intro": "SDK kan fokusere på et lag eller koordinere en arbejdsstrøm, der krydser flere. Kortet nedenfor viser de tekniske problemer, der ofte skal overvejes samlet.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Arbejdsgang og interface",
+          "copy": "Brugeropgaven, driftsbeslutningen og gendannelsesstien skal softwaren gøre forståelig.",
+          "systems": [
+            "React",
+            "Vue",
+            "Nuxt",
+            "TypeScript"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Forretningsplatform",
+          "copy": "Tjenesterne, APIs, tilladelser og integrationskontrakter, der bærer organisationens regler.",
+          "systems": [
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PHP"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "AI og automatisering",
+          "copy": "De modelstøttede beslutninger, genfinding, evaluering og menneskelig gennemgang kontrollerer inde i en rigtig arbejdsgang.",
+          "systems": [
+            "LLM",
+            "RAG",
+            "Agenter",
+            "APIs"
+          ]
+        },
+        {
+          "number": "04",
+          "title": "Data og tilstand",
+          "copy": "Ejerskab, konsistens, søgning, cache og livscyklusregler bag systemadfærd.",
+          "systems": [
+            "PostgreSQL",
+            "MongoDB",
+            "Redis",
+            "Elasticsearch"
+          ]
+        },
+        {
+          "number": "05",
+          "title": "Produktionsdrift",
+          "copy": "De implementerings-, observerbarheds-, gendannelses- og infrastrukturmekanismer, der er nødvendige for at betjene systemet.",
+          "systems": [
+            "AWS",
+            "GCP",
+            "Azure",
+            "Kubernetes",
+            "CI/CD"
+          ]
+        }
+      ]
+    },
+    "scenarios": {
+      "eyebrow": "Genkend situationen",
+      "heading": "Teknisk arbejde bliver presserende gennem dets indvirkning på virksomheden.",
+      "intro": "Følgende scenarier er kapacitetseksempler, ikke opfundne klientcasestudier. De viser, hvordan SDK forbinder symptomer med spørgsmål og håndgribelige næste leverancer.",
+      "link": "Udforsk alle arbejdsscenarier"
+    },
+    "companyModel": {
+      "eyebrow": "Driftsmodellen SDK",
+      "heading": "Et projektspecifikt team uden at overføre koordineringsrisiko til kunden.",
+      "intro": "SDK arbejder med uafhængige ingeniørspecialister. Disciplinerne kan ændre sig i takt med arbejdet, mens kunden bevarer én virksomhedsrelation og én leveringsramme.",
+      "link": "Forstå virksomhedens model"
+    },
+    "engagements": {
+      "eyebrow": "Vælg det rigtige niveau af engagement",
+      "heading": "Køb ikke implementering før systemet kan understøtte en implementeringsbeslutning.",
+      "intro": "Start med beviser, når usikkerheden er væsentlig. Gå direkte til levering, når resultatet, grænsen og acceptbetingelserne allerede er forstået.",
+      "link": "Udforsk tjenester og engagementsmodeller"
+    },
+    "process": {
+      "eyebrow": "Fra usikkerhed til ejerskab",
+      "heading": "Hver fase bør ende med beviser og en beslutning.",
+      "intro": "Aktivitet alene viser ikke, at et projekt skrider frem. SDK strukturerer engagementet, så klienten kan gennemgå, hvad der er blevet lært, bygget og overført, før han foretager den næste forpligtelse.",
+      "link": "Se hele leveringsprocessen"
+    },
+    "quality": {
+      "eyebrow": "Kvalitet du kan inspicere",
+      "heading": "Tillid bør komme fra synlige mekanismer, ikke adjektiver.",
+      "intro": "Begreber som sikker, skalerbar og produktionsklar bliver først meningsfulde, når engagementet definerer, hvordan de vil blive undersøgt for det faktiske system og risiko.",
+      "link": "Se, hvordan SDK virker"
+    },
+    "fit": {
+      "eyebrow": "Før vi diskuterer et hold",
+      "heading": "Engagementet kræver en reel begrænsning, systemadgang og nogen, der kan bestemme.",
+      "intro": "SDK er designet til egne tekniske resultater. Det er ikke en markedsplads for anonym billetkapacitet eller en måde at validere et forudbestemt svar på uden at undersøge beviserne.",
+      "link": "Gennemgå engagementets pasform"
+    },
+    "cta": {
+      "eyebrow": "Start med den virkelige situation",
+      "title": "Du behøver ikke gøre problemet til en poleret specifikation først.",
+      "body": "Fortæl os, hvad systemet gør, hvad det koster eller forsinker, og hvilken beslutning der i øjeblikket er blokeret. SDK vil begynde med at afgøre, om arbejdet passer, og hvad det første nyttige træk skal være.",
+      "label": "Diskuter situationen"
+    }
   }
 }

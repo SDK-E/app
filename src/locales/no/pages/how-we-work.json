@@ -1,37 +1,166 @@
 {
   "howWeWorkPage": {
-    "eyebrow": "Hvordan vi jobber",
-    "body": "Hvert engasjement følger den samme firefaseveien. Utdataene fra hver fase er en konkret artefakt som teamet kan gjennomgå, utfordre eller godkjenne før den neste starter.",
-    "expectEyebrow": "Hver fase",
-    "expectHeading": "Hva du kan forvente i hver fase",
-    "expectIntro": "En synlig leveranse i alle ledd, så det er ingen overraskelser ved overlevering.",
-    "understandTitle": "Forstå",
-    "understandBody": "Forretningsmål, stabel, begrensninger og suksesskriterier. Output: en kort oversikt og et foreslått omfang.",
-    "designTitle": "Design",
-    "designBody": "Arkitektur, omfang, risikoer og milepæler. Utgang: en teknisk plan med synlige sjekkpunkter.",
-    "buildTitle": "Bygg",
-    "buildBody": "Implementering med synlig fremgang. Utgang: kjører programvare, gjennomgått i korte sykluser.",
-    "handoverTitle": "Overlevering",
-    "handoverBody": "Distribuer, dokumenter og overfør eierskap. Utgang: arbeidssystem, runbooks og en økt med kunnskapsoverføring.",
-    "deliverablesEyebrow": "Leveranser",
-    "deliverablesHeading": "Hva du mottar på slutten",
-    "deliverablesBody": "Hvert engasjement ender med en overføring av eierskap, ikke en overlevering til en vedlikeholdskontrakt. Teamet som mottar arbeidet får programvaren, dokumentasjonen og kunnskapen til å betjene den.",
-    "deliverable1Title": "Fungerende programvare",
-    "deliverable1Body": "Distribuert, testet og kjørt i ditt miljø. Ikke en prototype, ikke en pilot - produksjonsklar kode.",
-    "deliverable2Title": "Teknisk dokumentasjon",
-    "deliverable2Body": "Arkitekturbeslutninger, runbooks, distribusjonstrinn og driftsnotater skrevet for teamet som skal vedlikeholde systemet.",
-    "deliverable3Title": "Kunnskapsoverføring",
-    "deliverable3Body": "En strukturert økt med ingeniørene som skal eie systemet fremover. Spørsmål besvart, avveininger forklart, neste trinn avtalt.",
-    "principlesEyebrow": "Prinsipper",
-    "principlesHeading": "Hvordan vi dukker opp",
-    "principlesBody": "Dette er ikke verdier på en plakat. De er begrensningene vi opererer innenfor for alle engasjementer.",
-    "principle1Title": "Direkte kommunikasjon",
-    "principle1Body": "Du snakker med ingeniøren som gjør jobben. Ingen kontoansvarlig, ingen prosjektkoordinator, ingen oversettelseslag.",
-    "principle2Title": "Synlig fremgang",
-    "principle2Body": "Annenhver uke ser du fungerende programvare og en skriftlig oppdatering. Ingen svarte bokser, ingen overraskelsesfakturaer.",
-    "principle3Title": "Ærlig omfang",
-    "principle3Body": "Vi vil fortelle deg om noe er utenfor det vi kan levere godt. En fastprisrevisjon er ofte det riktige første trinnet når problemet er uklart.",
-    "principle4Title": "Ingen innlåsing",
-    "principle4Body": "Koden, infrastrukturen og dokumentasjonen tilhører deg. Vi bygger ikke avhengigheter av vårt fortsatte engasjement."
+    "hero": {
+      "eyebrow": "Hvordan vi jobber",
+      "title": "Reduser usikkerheten før det blir leveringsrisiko.",
+      "intro": "SDK gjør problemet, beslutninger, ansvar og bevis synlig gjennom et engasjement. Prosessen tilpasser seg systemet, men klienten vet alltid hva som bestemmes og hva som kommer videre.",
+      "primaryCta": "Diskuter et prosjekt",
+      "secondaryCta": "Se prosessen",
+      "signals": [
+        "Definerte beslutningspunkter",
+        "Synlig leveringsbevis",
+        "Prosjektspesifikke spesialister",
+        "Dokumentert overlevering"
+      ]
+    },
+    "entryPaths": {
+      "eyebrow": "Hvor arbeidet begynner",
+      "heading": "Det første trinnet avhenger av hva du allerede vet.",
+      "intro": "Å starte implementeringen for tidlig gjør usikkerhet dyrt. Å starte med en annen generisk oppdagelsesøvelse kaster bort tid når resultatet allerede er klart.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Resultatet er definert",
+          "copy": "Systemgrensen, ønsket endring og akseptbetingelser er forstått. Vi validerer forutsetninger, setter sammen leveringsteamet og planlegger arbeidsstrømmen.",
+          "href": "#prosess"
+        },
+        {
+          "number": "02",
+          "title": "Problemet er synlig, men banen er det ikke",
+          "copy": "Systemet skaper kostnader, risiko eller forsinkelser, men årsaken eller ansvarlig respons er uklar. Vi begynner med en avgrenset teknisk vurdering.",
+          "href": "#prosess"
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "Engasjementsveien",
+      "heading": "Fire etapper som hver ender i en beslutning.",
+      "intro": "Fremgang måles ikke ved aktivitet alene. Hvert stadium produserer bevis som klienten kan gjennomgå før mer forpliktelse er gjort.",
+      "labels": {
+        "output": "Utgang",
+        "decision": "Beslutning"
+      },
+      "items": [
+        {
+          "number": "01",
+          "title": "Forstå",
+          "purpose": "Etablere hva virksomheten trenger, hva systemet gjør i dag og hvor usikkerheten sitter.",
+          "activities": [
+            "Gjennomgå mål, begrensninger og interessenter",
+            "Inspiser det relevante systemet og driftskonteksten",
+            "Definer suksess, tilgang og kjente ukjente"
+          ],
+          "output": "En kortfattet problemdefinisjon, nåværende syn og foreslått omfang.",
+          "decision": "Er det nok bevis til å designe svaret?"
+        },
+        {
+          "number": "02",
+          "title": "Design",
+          "purpose": "Gjør problemet til tekniske alternativer, leveringsgrenser og eksplisitte avveininger.",
+          "activities": [
+            "Modellarkitektur og systemgrenser",
+            "Identifiser risikoer, avhengigheter og migrasjonstrinn",
+            "Sett sammen det nødvendige spesialistteamet"
+          ],
+          "output": "En teknisk tilnærming, beslutningsrekord, milepæler og akseptkriterier.",
+          "decision": "Er dette riktig tilnærming og engasjement?"
+        },
+        {
+          "number": "03",
+          "title": "Bygg",
+          "purpose": "Lever den avtalte endringen samtidig som kvalitet, risiko og fremdrift er synlig.",
+          "activities": [
+            "Implementer i trinn som kan gjennomgås",
+            "Test forutsetninger mot fungerende programvare",
+            "Registrer avgjørelser, bevis og uløste risikoer"
+          ],
+          "output": "Arbeidsendringer, gjennomgang av bevis og gjeldende driftsdokumentasjon.",
+          "decision": "Oppfyller økningen akseptbetingelsene?"
+        },
+        {
+          "number": "04",
+          "title": "Overlevering",
+          "purpose": "Plasser systemet og kunnskapen som trengs for å betjene det under klientkontroll.",
+          "activities": [
+            "Bekreft distribusjon og gjenopprettingsprosedyrer",
+            "Komplett teknisk og operasjonell dokumentasjon",
+            "Overfør kontekst til personene som beholder eierskapet"
+          ],
+          "output": "Klientstyrt kode, infrastruktur, dokumentasjon og avtalte oppfølgingshandlinger.",
+          "decision": "Kan klienten betjene og utvikle det leverte omfanget?"
+        }
+      ]
+    },
+    "responsibility": {
+      "eyebrow": "Team og ansvarlighet",
+      "heading": "Teamet kan endre seg med arbeidet. Ansvar forsvinner ikke mellom spesialister.",
+      "body": "SDK velger uavhengige spesialister for fagene et engasjement krever og koordinerer dem gjennom ett leveringsrammeverk. Beslutninger, innsyn, dokumentasjon og arbeidsstatus holdes synlig slik at kunnskap ikke blir liggende hos én person.",
+      "items": [
+        {
+          "number": "01",
+          "title": "SDK",
+          "copy": "Definerer rammeverket for engasjementet, koordinerer leveransen og forblir ansvarlig for kvalitetskontrollene som er avtalt med klienten."
+        },
+        {
+          "number": "02",
+          "title": "Spesialister",
+          "copy": "Bidra med erfaringen som kreves av systemet og arbeid innenfor delte beslutninger, gjennomgangspraksis og akseptkriterier."
+        },
+        {
+          "number": "03",
+          "title": "Klient",
+          "copy": "Gir forretningskontekst, systemtilgang og rettidige beslutninger samtidig som de beholder kontrollen over depotene, infrastrukturen og informasjonen."
+        },
+        {
+          "number": "04",
+          "title": "Delt rekord",
+          "copy": "Holder arkitekturbeslutninger, risikoer, fremgang og driftskunnskap tilgjengelig utenfor en enkelt bidragsyter."
+        }
+      ]
+    },
+    "quality": {
+      "eyebrow": "Kvalitetskontroller",
+      "heading": "Tillit kommer fra mekanismer du kan inspisere.",
+      "intro": "Vi unngår ukvalifiserte løfter som sikre, skalerbare eller produksjonsklare. Oppdraget definerer hvordan disse egenskapene skal undersøkes og bevises for det aktuelle systemet.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Skriftlige vedtak",
+          "copy": "Materialarkitektur og omfangsvalg registrerer konteksten, avveininger og konsekvenser i stedet for å forsvinne inn i møter."
+        },
+        {
+          "number": "02",
+          "title": "Gjennomgåbare økninger",
+          "copy": "Arbeidet er delt inn i endringer som kan inspiseres, testes og aksepteres før risiko samler seg."
+        },
+        {
+          "number": "03",
+          "title": "Passende verifisering",
+          "copy": "Tester, sikkerhetssjekker, ytelsesbevis og distribusjonskontroller velges i henhold til den faktiske feilrisikoen."
+        },
+        {
+          "number": "04",
+          "title": "Operativt eierskap",
+          "copy": "Dokumentasjon, tilgang, gjenopprettingstrinn og uløste risikoer behandles som leveringsarbeid, ikke valgfritt materiale etter lansering."
+        }
+      ]
+    },
+    "scope": {
+      "eyebrow": "Når virkeligheten endrer planen",
+      "heading": "Overflate endringen. Forklar konsekvensen. Bestem deg før du fortsetter.",
+      "body": "Eksisterende systemer avslører informasjon etter hvert som de inspiseres og endres. Når en antagelse svikter eller en ny avhengighet dukker opp, registrerer SDK bevisene, forklarer dens effekt på omfang, risiko og rekkefølge, og ber om en avgjørelse. Endringen forsvinner ikke inn i en faktura eller en forsinket overlevering.",
+      "steps": [
+        "Registrer de nye bevisene",
+        "Forklar den tekniske og kommersielle konsekvensen",
+        "Presenter levedyktige alternativer",
+        "Godta endringen før du fortsetter"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Velg den første nyttige avgjørelsen",
+      "title": "Start med usikkerheten som blokkerer arbeidet.",
+      "body": "Fortell oss hva som er kjent, hva som er under press og hvilken beslutning din organisasjon må ta videre.",
+      "label": "Diskuter situasjonen"
+    }
   }
 }

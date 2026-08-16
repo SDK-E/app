@@ -1,14 +1,49 @@
 {
   "enquiry": {
+    "eyebrow": "Diskutujte o projektu",
     "title": "Začněte projekt",
-    "subtitle": "Řekněte nám, co se snažíte vybudovat, modernizovat, automatizovat nebo opravit. Odpovíme do 2 pracovních dnů s upřímným posouzením vhodnosti a toho, co by to vyžadovalo.",
+    "subtitle": "Řekněte nám, co se snažíte vybudovat, modernizovat, automatizovat nebo opravit. Užitečný dotaz začíná tlakem na systém a rozhodnutím, které musíte udělat.",
     "body": "Formulář shromažďuje minimum informací potřebných k promyšlené odpovědi. Mimo SDK Enterprises se nic nesdílí a můžete nás také kontaktovat přímo na adrese hello@sdk.enterprises.",
-    "body2": "Každý dotaz sami posuzujeme. Žádní správci účtů, žádné kvalifikační skripty, žádné předávání.",
+    "body2": "Váš technický a obchodní kontext zůstane pohromadě, zatímco SDK posoudí, zda je práce vhodná.",
+    "heroSignals": [
+      "Hotová specifikace není nutná",
+      "Technický a obchodní kontext zůstávají pohromadě",
+      "Kontext pro uváženou odpověď",
+      "Přímý kontakt na společnost zůstává k dispozici"
+    ],
+    "reasonsEyebrow": "Užitečné výchozí body",
+    "reasonsHeading": "Vyviňte tlak na systém, ne vyleštěný nákupní dokument.",
+    "reasonsIntro": "Formulář je navržen tak, aby zjistil, zda SDK může usnadnit další technické rozhodnutí.",
+    "reasons": [
+      {
+        "number": "01",
+        "title": "Systém se musí změnit",
+        "copy": "Modernizaci, migraci či integraci blokuje nejistota v současném stavu."
+      },
+      {
+        "number": "02",
+        "title": "Plošina je pod tlakem",
+        "copy": "Spolehlivost, rychlost dodání, infrastruktura nebo chování dat se staly obchodním omezením."
+      },
+      {
+        "number": "03",
+        "title": "Pracovní postup AI vyžaduje technické kontroly",
+        "copy": "Případ použití je slibný, ale data, hodnocení, revize nebo provoz ještě nejsou definovány."
+      },
+      {
+        "number": "04",
+        "title": "Pracovní proud potřebuje správné specialisty",
+        "copy": "Výsledek je jasný, ale projekt překračuje disciplíny, které současný tým nemůže sám pokrýt."
+      }
+    ],
+    "formEyebrow": "Kontext projektu",
+    "formHeading": "Poskytněte nám dostatek informací, abychom mohli užitečně reagovat.",
+    "formIntro": "Vysvětlete, co se děje, proč na tom záleží a co již bylo vyzkoušeno. Neznámý rozpočet, načasování nebo technické detaily mohou zůstat jako takové označeny.",
     "nextStepsEyebrow": "Co bude dál",
     "nextStepsHeading": "Od dotazu po angažmá",
     "nextStepsBody": "Po odeslání formuláře si jej sami přečteme. Pokud bude vyhovovat, odpovíme krátkým písemným hodnocením a navrženým modelem zakázky. Pokud nevyhovuje, řekneme vám proč a navrhneme alternativu.",
     "nextStep1Title": "Recenze",
-    "nextStep1Body": "Přečteme si váš příspěvek a porovnáme ho s naší aktuální kapacitou a odborností. Obvykle do 2 pracovních dnů.",
+    "nextStep1Body": "Posuzujeme systém, omezení a požadovaný výsledek s ohledem na aktuální kapacitu a příslušné odborné znalosti SDK.",
     "nextStep2Title": "Hodnocení",
     "nextStep2Body": "Krátká písemná odpověď: v čem si myslíme, že je problém, zda je to vhodné a jaký by byl první krok.",
     "nextStep3Title": "Volejte nebo asynchronně",
@@ -64,7 +99,7 @@
     },
     "success": {
       "title": "Dotaz odeslán",
-      "body": "Děkujeme – váš projekt zkontrolujeme a odpovíme do 2 pracovních dnů."
+      "body": "Děkujeme – zkontrolujeme kontext projektu a odpovíme další užitečnou otázkou nebo posouzením vhodnosti."
     },
     "error": {
       "title": "Něco se pokazilo",

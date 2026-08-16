@@ -1,19 +1,259 @@
 {
   "servicesPage": {
-    "eyebrow": "Služby",
-    "body": "Vytváříme a provozujeme software v celé řadě: agenti AI a automatizace, backendové platformy, webová rozhraní, cloudová infrastruktura, datové systémy a starší modernizace. Jeden specializovaný problém nebo celý pracovní tok – inženýři provádějící práci jsou ti, se kterými mluvíte.",
-    "cta": "Začněte projekt",
-    "engagementEyebrow": "Zásnubní modely",
-    "engagementHeading": "Jak se zapojujeme",
-    "engagementBody": "SDK vstupuje dvěma způsoby: auditem s pevnou cenou, který diagnostikuje konkrétní problém a navrhne cestu vpřed, nebo specializovaným inženýrským pracovním tokem, kdy implementaci od začátku do konce vlastní senior tým. Hybridní uspořádání existují pro systémy, které potřebují jak diagnostiku, tak trvalé dodávání.",
-    "engagementModel1Title": "Audit s pevnou cenou",
-    "engagementModel1Body": "Rozsah diagnostiky konkrétního problému: revize architektury, cesta migrace, problémové místo výkonu nebo kontrola zabezpečení. Výstupem je písemný plán s prioritami, riziky a odhadovaným úsilím.",
-    "engagementModel2Title": "Inženýrský pracovní proud",
-    "engagementModel2Body": "Senior tým vložený do vašeho stacku na definovanou dobu. Týdenní dodávka, viditelný pokrok a přímá komunikace s inženýry vytvářejícími software.",
-    "engagementModel3Title": "Hybridní",
-    "engagementModel3Body": "Nejprve audit, pak workstream. Tým, který problém diagnostikuje, zůstává na implementaci řešení. Žádné předání jinému účetnímu týmu.",
-    "whatWeDontDoEyebrow": "Co neděláme",
-    "whatWeDontDoHeading": "Mechanismus neskrýváme.",
-    "whatWeDontDoBody": "Žádní junioři na vaší kódové základně. Mezi vámi a inženýry není žádný account manager. Žádné offshore předání po návrhu. Žádné zapojení, které závisí na prodeji většího rozsahu, než potřebujete."
+    "hero": {
+      "eyebrow": "Software · AI · Cloud · Data",
+      "title": "Problém definuje inženýrský tým.",
+      "intro": "SDK spojuje specialisty, které systém skutečně vyžaduje, koordinuje jejich práci a zůstává zodpovědný za kvalitu dodávek. Začněte s jedním technickým rozhodnutím nebo nám dejte definovaný pracovní tok, který budeme vlastnit.",
+      "primaryCta": "Diskutujte o projektu",
+      "secondaryCta": "Najděte svůj výchozí bod",
+      "signals": [
+        "Problémové složení týmu",
+        "Nezávislí specialisté",
+        "Kontrola kvality řízená SDK",
+        "Systémy vlastněné klienty"
+      ]
+    },
+    "navigator": {
+      "heading": "Začněte tlakem na systém.",
+      "intro": "Užitečné zapojení začíná omezením, nikoli katalogem technologií.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Modernizovat",
+          "copy": "Snižte riziko a náklady na změnu softwaru, který již nemůže nadále hromadit opravy.",
+          "href": "#modernizace"
+        },
+        {
+          "number": "02",
+          "title": "Stavět",
+          "copy": "Navrhujte a dodávejte backendové platformy, integrace a produktové systémy podle jasných provozních potřeb.",
+          "href": "#platformy"
+        },
+        {
+          "number": "03",
+          "title": "automatizovat",
+          "copy": "Zapojte umělou inteligenci do skutečného pracovního postupu s daty, hodnocením a provozními ovládacími prvky, které potřebuje.",
+          "href": "#ai-automatizace"
+        },
+        {
+          "number": "04",
+          "title": "Stabilizovat",
+          "copy": "Najděte příčiny problémů se spolehlivostí, nasazením, výkonem nebo tokem dat.",
+          "href": "#výrobní-systémy"
+        },
+        {
+          "number": "05",
+          "title": "Diagnostikujte",
+          "copy": "Proměňte nejasnou technickou situaci v důkazy, možnosti a obhajitelné další rozhodnutí.",
+          "href": "#zásnuby"
+        }
+      ]
+    },
+    "capabilities": {
+      "eyebrow": "Schopnosti",
+      "heading": "Inženýrská hloubka organizovaná kolem rozhodnutí, které máte před sebou.",
+      "intro": "Každá schopnost může stát samostatně nebo se může kombinovat s ostatními, když systém překročí hranice.",
+      "labels": {
+        "investigation": "Co zkoumáme",
+        "delivery": "Co můžeme dodat",
+        "evidence": "Příslušné systémy",
+        "firstStep": "Užitečný první krok"
+      },
+      "items": [
+        {
+          "number": "01 / MODERNIZACE",
+          "id": "modernizace",
+          "title": "Změňte stárnoucí systém, aniž byste ztratili to, co ještě funguje.",
+          "situation": "Na systému záleží podniku, ale upgrady jsou riskantní, dodávka se zpomaluje nebo příliš mnoho znalostí spočívá v nezdokumentovaném chování.",
+          "investigation": [
+            "Závislosti, omezení běhu a nepodporované komponenty",
+            "Datové toky, integrace a skryté provozní vazby",
+            "Změňte rizika, testovací pokrytí a hranice migrace"
+          ],
+          "delivery": [
+            "Hodnocení současného stavu a prioritní plán modernizace",
+            "Migrace rámce, běhového prostředí nebo služby",
+            "Postupná výměna s řízeným odříznutím"
+          ],
+          "evidence": [
+            "PHP",
+            "Laravel",
+            "Symfony",
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PostgreSQL"
+          ],
+          "firstStep": "Zmapujte, co systém dnes dělá, kde je změna nebezpečná a která hranice se může posunout jako první."
+        },
+        {
+          "number": "02 / PLOŠINY",
+          "id": "platformy",
+          "title": "Sestavte části produktu, které nesou obchodní pravidla.",
+          "situation": "Produkt potřebuje APIs, integrace, autorizaci, asynchronní práci nebo chování v reálném čase, které musí zůstat srozumitelné při změnách požadavků.",
+          "investigation": [
+            "Hranice domény, uživatelé a pravidla přístupu",
+            "Integrační smlouvy, způsoby selhání a vlastnictví dat",
+            "Požadavky na provozní objem, latenci a konzistenci"
+          ],
+          "delivery": [
+            "Backendové služby, APIs a integrační vrstvy",
+            "Autentizace, autorizace a izolace nájemců",
+            "Fronty, události a toky aplikací v reálném čase"
+          ],
+          "evidence": [
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PHP",
+            "PostgreSQL",
+            "Redis",
+            "Valkey"
+          ],
+          "firstStep": "Definujte obchodní hranici, data, která vlastní, a podmínky selhání, které musí návrh tolerovat."
+        },
+        {
+          "number": "03 / AUTOMATIZACE AI",
+          "id": "ai-automatizace",
+          "title": "Přesuňte umělou inteligenci z přesvědčivé ukázky do odpovědného pracovního postupu.",
+          "situation": "Ruční proces je drahý nebo pomalý, ale funkce umělé inteligence bude užitečná pouze v případě, že jsou řízeny její vstupy, výstupy, vyhodnocování a nouzové chování.",
+          "investigation": [
+            "Rozhodnutí o pracovních postupech, která vyžadují model, a ta, která jej nevyžadují",
+            "Zdrojová data, oprávnění a kvalita vyhledávání",
+            "Kritéria hodnocení, kontrola člověkem a řešení selhání"
+          ],
+          "delivery": [
+            "Integrace LLM, agenti a automatizace pracovních postupů",
+            "Vyhledávací a uzemněné systémy odezvy",
+            "Kontroly hodnocení, pozorovatelnosti a přezkumu"
+          ],
+          "evidence": [
+            "LLM",
+            "RAG",
+            "APIs",
+            "PostgreSQL",
+            "Elasticsearch",
+            "Python",
+            "Node.js"
+          ],
+          "firstStep": "Vyberte si jeden pracovní postup, definujte přijatelný výsledek a změřte aktuální lidský proces před jeho automatizací."
+        },
+        {
+          "number": "04 / VÝROBNÍ SYSTÉMY",
+          "id": "produkční systémy",
+          "title": "Před změnou kapacity zviditelněte výrobní chování.",
+          "situation": "Nasazení jsou křehká, incidenty se těžko vysvětlují, náklady na infrastrukturu jsou nejasné nebo se systém blíží provoznímu limitu.",
+          "investigation": [
+            "Cesta nasazení, prostředí a postupy obnovy",
+            "Protokoly, metriky, stopy a důkazy o incidentech",
+            "Omezení zdrojů, úzká místa a škálování předpokladů"
+          ],
+          "delivery": [
+            "Architektura nasazení a pracovní postupy CI/CD",
+            "Pozorovatelnost, upozornění a provozní runbooky",
+            "Vylepšení cloudu, kontejneru a orchestrace"
+          ],
+          "evidence": [
+            "AWS",
+            "GCP",
+            "Azure",
+            "Kubernetes",
+            "Helm",
+            "CI/CD",
+            "Redis"
+          ],
+          "firstStep": "Zjistěte, co systém dělá při skutečné zátěži a jak tým aktuálně zjišťuje selhání a zotavuje se z něj."
+        },
+        {
+          "number": "05 / DATA A ROZHRANÍ",
+          "id": "datová rozhraní",
+          "title": "Propojte data, operace a lidi používající systém.",
+          "situation": "Produkt potřebuje spolehlivou datovou cestu a rozhraní, které usnadní pochopení a dokončení komplexní provozní práce.",
+          "investigation": [
+            "Vlastnictví dat, životní cyklus, vyhledávání a vzory přístupu",
+            "Uživatelské úlohy, rozhodovací body a obnova chyb",
+            "Hranice serveru a prohlížeče, které ovlivňují výkon"
+          ],
+          "delivery": [
+            "Datové modely, vyhledávání, cache a toky příjmu",
+            "Provozní webová rozhraní a interní nástroje",
+            "Přístupné a citlivé aplikační prostředí"
+          ],
+          "evidence": [
+            "PostgreSQL",
+            "MongoDB",
+            "Elasticsearch",
+            "React",
+            "Vue",
+            "Nuxt",
+            "TypeScript"
+          ],
+          "firstStep": "Sledujte jeden kritický úkol uživatele od zdrojových dat až po konečné rozhodnutí a identifikujte, kde se ztratil kontext."
+        }
+      ]
+    },
+    "engagements": {
+      "eyebrow": "Způsoby, jak zaujmout",
+      "heading": "Přizpůsobte závazek tomu, co je již známo.",
+      "intro": "Nejistý systém potřebuje důkazy před odpovědným závazkem implementace. Definovaný výsledek se může přesunout přímo do cíleného pracovního proudu.",
+      "labels": {
+        "bestFor": "Nejlepší pro",
+        "output": "Primární výstup",
+        "commitment": "Závazek"
+      },
+      "options": [
+        {
+          "title": "Technické posouzení",
+          "bestFor": "Následné rozhodnutí tam, kde není jasný současný stav, riziko nebo cesta implementace.",
+          "output": "Důkazy, možnosti, rizika a prioritní doporučení, které může klient použít s nebo bez SDK.",
+          "commitment": "Ohraničené vyšetřování s dohodnutým přístupem, otázkami a výstupy."
+        },
+        {
+          "title": "Inženýrský pracovní proud",
+          "bestFor": "Definovaný technický výsledek, který vyžaduje složený tým a jasné vlastnictví dodávky.",
+          "output": "Pracovní změny, revidovaná rozhodnutí, důkazy o nasazení a dokumentace pro dohodnutý rozsah.",
+          "commitment": "Cílená dodací lhůta s viditelnými kontrolními body a kritérii přijetí."
+        },
+        {
+          "title": "Technické partnerství",
+          "bestFor": "Systém, který vyžaduje postupnou modernizaci nebo trvalé vlastnictví technického pracovního toku.",
+          "output": "Udržovaný plán, postupné plnění a provozní záznam rozhodnutí, rizik a pokroku.",
+          "commitment": "Pokračující zakázka prověřovaná podle dohodnutého pracovního toku a priorit."
+        }
+      ]
+    },
+    "teamModel": {
+      "eyebrow": "Model SDK",
+      "heading": "Specialisté vybraní pro systém. Jedna společnost odpovědná klientovi.",
+      "body": "SDK spolupracuje s nezávislými inženýry. Skládáme tým kolem problému, koordinujeme práci a nastavujeme rámec kvality zakázky. Klient nemusí najímat, zařazovat a spravovat sbírku nesouvisejících přispěvatelů.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Definujte potřebu",
+          "copy": "Vyjasněte si systém, omezení, rozhodnutí a výsledek, než se rozhodnete, kdo by měl práci dělat."
+        },
+        {
+          "number": "02",
+          "title": "Sestavte tým",
+          "copy": "Vyberte si disciplíny a zkušenosti relevantní pro daný úkol, místo toho, abyste ho nutili do pevné lavice."
+        },
+        {
+          "number": "03",
+          "title": "Kontrola kvality",
+          "copy": "Používejte viditelná rozhodnutí, recenze, akceptační kritéria a provozní důkazy během celé dodávky."
+        },
+        {
+          "number": "04",
+          "title": "Převést vlastnictví",
+          "copy": "Udržujte kód, infrastrukturu, dokumentaci a provozní znalosti pod kontrolou klienta."
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Přineste nám omezení",
+      "title": "Nemusíte dorazit s hotovou specifikací.",
+      "body": "Popište systém, tlak na něj a rozhodnutí, které musíte udělat. Začneme určením, zda je SDK užitečná.",
+      "label": "Diskutujte o problému"
+    }
   }
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/layout/Container";
+import { localizePath } from "@/i18n";
 
 const LEGAL_LINKS = [
   { href: "/legal/mentions-legales", key: "mentionsLegales" },
@@ -29,7 +30,7 @@ export default async function SiteFooter({
             {LEGAL_LINKS.map((link) => (
               <Link
                 key={link.href}
-                href={link.href}
+                href={localizePath(locale, link.href)}
                 className="transition-opacity motion-reduce:transition-none hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fog"
               >
                 {tNav(link.key)}

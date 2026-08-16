@@ -1,19 +1,259 @@
 {
   "servicesPage": {
-    "eyebrow": "Palvelut",
-    "body": "Rakennamme ja käytämme ohjelmistoja kaikkialla: AI-agentit ja automaatio, taustaympäristöt, verkkorajapinnat, pilviinfrastruktuuri, tietojärjestelmät ja vanha modernisointi. Yksi erikoisongelma tai koko työvirta – työn tekevien insinöörien kanssa puhut.",
-    "cta": "Aloita projekti",
-    "engagementEyebrow": "Kihlautumismallit",
-    "engagementHeading": "Miten osallistumme",
-    "engagementBody": "SDK osallistuu kahdella tavalla: kiinteähintainen auditointi, joka diagnosoi tietyn ongelman ja ehdottaa tietä eteenpäin, tai omistettu suunnittelutyövirta, jossa vanhempi tiimi omistaa toteutuksen päästä päähän. Hybridijärjestelyjä on olemassa järjestelmille, jotka tarvitsevat sekä diagnoosin että jatkuvan toimituksen.",
-    "engagementModel1Title": "Kiinteähintainen auditointi",
-    "engagementModel1Body": "Tietyn ongelman rajattu diagnoosi: arkkitehtuurin tarkistus, siirtopolku, suorituskyvyn pullonkaula tai suojaustarkistus. Tuotos on kirjallinen suunnitelma, joka sisältää prioriteetit, riskit ja arvioidut panostukset.",
-    "engagementModel2Title": "Suunnittelutyövirta",
-    "engagementModel2Body": "Vanhempi tiimi upotettuna pinoosi määritetyksi ajaksi. Viikoittainen toimitus, näkyvä edistyminen ja suora yhteydenpito ohjelmistoa rakentavien insinöörien kanssa.",
-    "engagementModel3Title": "Hybridi",
-    "engagementModel3Body": "Auditointi ensin, sitten työvirta. Tiimi, joka diagnosoi ongelman, jää toteuttamaan ratkaisua. Ei luovutusta eri tilitiimille.",
-    "whatWeDontDoEyebrow": "Mitä emme tee",
-    "whatWeDontDoHeading": "Me emme piilota mekanismia.",
-    "whatWeDontDoBody": "Ei junioreita koodikannassasi. Ei tilivastaavaa sinun ja insinöörien välillä. Ei offshore-hankkeita ehdotuksen jälkeen. Ei sitoumusta, joka riippuu siitä, että myydään sinulle enemmän kuin tarvitset."
+    "hero": {
+      "eyebrow": "Ohjelmisto · AI · Pilvi · Data",
+      "title": "Ongelma määrittelee suunnittelutiimin.",
+      "intro": "SDK kokoaa yhteen järjestelmän todellisuudessa tarvitsemat asiantuntijat, koordinoi heidän työtään ja vastaa toimitusten laadusta. Aloita yhdestä teknisestä päätöksestä tai anna meille määritelty työvirta omistettavaksi.",
+      "primaryCta": "Keskustele projektista",
+      "secondaryCta": "Etsi lähtökohtasi",
+      "signals": [
+        "Ongelmavetoisen joukkueen kokoonpano",
+        "Riippumattomat asiantuntijat",
+        "SDK-johtama laadunvalvonta",
+        "Asiakkaan omistamat järjestelmät"
+      ]
+    },
+    "navigator": {
+      "heading": "Aloita järjestelmään kohdistuvasta paineesta.",
+      "intro": "Hyödyllinen sitoutuminen alkaa rajoituksista, ei teknologioiden luettelosta.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Modernisoi",
+          "copy": "Vähennä riskiä ja kustannuksia sellaisen ohjelmiston vaihtamisesta, joka ei voi enää kerätä korjaustiedostoja.",
+          "href": "#modernisointi"
+        },
+        {
+          "number": "02",
+          "title": "Rakenna",
+          "copy": "Suunnittele ja toimita taustaalustoja, integraatioita ja tuotejärjestelmiä selkeän käyttötarpeen mukaan.",
+          "href": "#alustat"
+        },
+        {
+          "number": "03",
+          "title": "Automatisoi",
+          "copy": "Laita tekoäly todelliseen työnkulkuun sen tarvitsemilla tiedoilla, arvioinnilla ja toiminnallisilla ohjauksilla.",
+          "href": "#ai-automaatio"
+        },
+        {
+          "number": "04",
+          "title": "Vakauttaa",
+          "copy": "Etsi luotettavuuden, käyttöönoton, suorituskyvyn tai tiedonkulkuongelmien syyt.",
+          "href": "#tuotantojärjestelmät"
+        },
+        {
+          "number": "05",
+          "title": "Diagnoosi",
+          "copy": "Muuta epäselvä tekninen tilanne todisteiksi, vaihtoehdoiksi ja puolustettavaksi seuraavaksi päätökseksi.",
+          "href": "#kihlaukset"
+        }
+      ]
+    },
+    "capabilities": {
+      "eyebrow": "Ominaisuudet",
+      "heading": "Suunnittelusyvyys, järjestetty edessäsi olevan päätöksen ympärille.",
+      "intro": "Jokainen ominaisuus voi olla yksinään tai yhdistää muihin, kun järjestelmä ylittää rajat.",
+      "labels": {
+        "investigation": "Mitä tutkimme",
+        "delivery": "Mitä voimme toimittaa",
+        "evidence": "Asiaankuuluvat järjestelmät",
+        "firstStep": "Hyödyllinen ensimmäinen liike"
+      },
+      "items": [
+        {
+          "number": "01 / MODERNISOINTI",
+          "id": "nykyaikaistaminen",
+          "title": "Muuta ikääntyvää järjestelmää menettämättä sitä, mikä vielä toimii.",
+          "situation": "Järjestelmällä on yritykselle merkitystä, mutta päivitykset ovat riskialttiita, toimitus hidastuu tai dokumentoimattomassa käytöksessä on liikaa tietoa.",
+          "investigation": [
+            "Riippuvuudet, ajonaikaiset rajoitukset ja komponentit, joita ei tueta",
+            "Tietovirrat, integraatiot ja piilotetut toiminnalliset kytkennät",
+            "Muuta riskiä, testauksen kattavuutta ja siirtymärajoja"
+          ],
+          "delivery": [
+            "Nykytilanteen arviointi ja priorisoitu modernisointisuunnitelma",
+            "Kehyksen, suoritusajan tai palvelun siirto",
+            "Vaihto asteittain ohjatulla katkaisulla"
+          ],
+          "evidence": [
+            "PHP",
+            "Laravel",
+            "Symfony",
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PostgreSQL"
+          ],
+          "firstStep": "Kartoita, mitä järjestelmä tekee tänään, missä muutos on vaarallista ja mikä raja voi siirtyä ensin."
+        },
+        {
+          "number": "02 / ALUSTEET",
+          "id": "alustat",
+          "title": "Rakenna tuotteen osat, jotka noudattavat liiketoimintasääntöjä.",
+          "situation": "Tuote tarvitsee APIs:tä, integraatioita, valtuutuksia, asynkronista työtä tai reaaliaikaista käyttäytymistä, jonka on pysyttävä ymmärrettävänä vaatimusten muuttuessa.",
+          "investigation": [
+            "Verkkotunnuksen rajat, käyttäjät ja käyttöoikeussäännöt",
+            "Integrointisopimukset, vikatilat ja tiedon omistajuus",
+            "Toiminnan määrä, latenssi ja johdonmukaisuusvaatimukset"
+          ],
+          "delivery": [
+            "Taustapalvelut, APIs ja integraatiokerrokset",
+            "Todennus, valtuutus ja vuokralaisen eristäminen",
+            "Jonot, tapahtumat ja reaaliaikaiset sovellusvirrat"
+          ],
+          "evidence": [
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PHP",
+            "PostgreSQL",
+            "Redis",
+            "Valkey"
+          ],
+          "firstStep": "Määrittele liiketoiminnan raja, sen omistamat tiedot ja vikaolosuhteet, jotka suunnittelun on siedettävä."
+        },
+        {
+          "number": "03 / AI AUTOMAATIO",
+          "id": "ai-automaatio",
+          "title": "Siirrä tekoäly vakuuttavasta esittelystä vastuulliseen työnkulkuun.",
+          "situation": "Manuaalinen prosessi on kallis tai hidas, mutta tekoälyominaisuus on hyödyllinen vain, jos sen syötteitä, lähtöjä, arviointia ja varakäyttäytymistä ohjataan.",
+          "investigation": [
+            "Työnkulkupäätökset, jotka vaativat mallia ja ne, jotka eivät vaadi",
+            "Lähdetiedot, käyttöoikeudet ja haun laatu",
+            "Arviointikriteerit, ihmisen tarkastelu ja vikojen käsittely"
+          ],
+          "delivery": [
+            "LLM-integraatiot, agentit ja työnkulun automaatio",
+            "Haku ja maadoitettu vastausjärjestelmät",
+            "Arvioinnin, havainnoinnin ja tarkastelun valvonta"
+          ],
+          "evidence": [
+            "LLM",
+            "RAG",
+            "APIs",
+            "PostgreSQL",
+            "Elasticsearch",
+            "Python",
+            "Node.js"
+          ],
+          "firstStep": "Valitse yksi työnkulku, määritä hyväksyttävä tulos ja mittaa nykyinen ihmisen prosessi ennen sen automatisointia."
+        },
+        {
+          "number": "04 / TUOTANTOJÄRJESTELMÄT",
+          "id": "tuotantojärjestelmät",
+          "title": "Tuo tuotantokäyttäytyminen näkyväksi ennen kapasiteetin muuttamista.",
+          "situation": "Käyttöönotot ovat hauraita, tapauksia on vaikea selittää, infrastruktuurikustannukset ovat epäselviä tai järjestelmä lähestyy toimintarajaa.",
+          "investigation": [
+            "Käyttöönottopolku, ympäristöt ja palautusmenettelyt",
+            "Lokit, mittarit, jäljet ja tapahtumatodisteet",
+            "Resurssirajoitukset, pullonkaulat ja skaalausoletukset"
+          ],
+          "delivery": [
+            "Käyttöönottoarkkitehtuuri ja CI/CD-työnkulut",
+            "Havainnointi-, hälytys- ja toimintaohjekirjat",
+            "Pilvi-, kontti- ja orkestrointiparannuksia"
+          ],
+          "evidence": [
+            "AWS",
+            "GCP",
+            "Azure",
+            "Kubernetes",
+            "Helm",
+            "CI/CD",
+            "Redis"
+          ],
+          "firstStep": "Selvitä, mitä järjestelmä tekee todellisessa kuormituksessa ja kuinka tiimi havaitsee tällä hetkellä epäonnistumisen ja toipuu siitä."
+        },
+        {
+          "number": "05 / TIEDOT JA LIITTYMÄT",
+          "id": "data-rajapinnat",
+          "title": "Yhdistä tiedot, toiminnot ja järjestelmää käyttävät ihmiset.",
+          "situation": "Tuote tarvitsee luotettavan tietopolun ja käyttöliittymän, joka helpottaa monimutkaisen operatiivisen työn ymmärtämistä ja suorittamista.",
+          "investigation": [
+            "Tietojen omistajuus, elinkaari, haku- ja käyttötavat",
+            "Käyttäjätehtävät, päätöskohdat ja virheiden palautus",
+            "Palvelimen ja selaimen rajat, jotka vaikuttavat suorituskykyyn"
+          ],
+          "delivery": [
+            "Tietomallit, haku-, välimuisti- ja tulovirrat",
+            "Toimivat verkkorajapinnat ja sisäiset työkalut",
+            "Helppokäyttöiset, reagoivat sovelluskokemukset"
+          ],
+          "evidence": [
+            "PostgreSQL",
+            "MongoDB",
+            "Elasticsearch",
+            "React",
+            "Vue",
+            "Nuxt",
+            "TypeScript"
+          ],
+          "firstStep": "Seuraa yhtä kriittistä käyttäjän tehtävää lähdetiedoista lopulliseen päätökseen ja tunnista, missä konteksti on kadonnut."
+        }
+      ]
+    },
+    "engagements": {
+      "eyebrow": "Tapa osallistua",
+      "heading": "Yhdistä sitoutuminen siihen, mikä on jo tiedossa.",
+      "intro": "Epävarma järjestelmä tarvitsee todisteita ennen vastuullista toteutussitoumusta. Määritelty tulos voi siirtyä suoraan kohdennettuun työvirtaan.",
+      "labels": {
+        "bestFor": "Parasta varten",
+        "output": "Ensisijainen lähtö",
+        "commitment": "Sitoutuminen"
+      },
+      "options": [
+        {
+          "title": "Tekninen arviointi",
+          "bestFor": "Seurauksena oleva päätös, jonka nykyinen tila, riski tai toteutuspolku on epäselvä.",
+          "output": "Todisteet, vaihtoehdot, riskit ja priorisoitu suositus, jota asiakas voi käyttää SDK:n kanssa tai ilman.",
+          "commitment": "Rajoitettu tutkimus, jossa sovittu pääsy, kysymykset ja suoritukset."
+        },
+        {
+          "title": "Suunnittelutyövirta",
+          "bestFor": "Määritelty tekninen tulos, joka vaatii koottua tiimiä ja selkeää toimitusomistusta.",
+          "output": "Toimivat muutokset, tarkistetut päätökset, käyttöönoton todisteet ja dokumentaatio sovitulle laajuudelle.",
+          "commitment": "Kohdistettu toimitusaika näkyvillä tarkistuspisteillä ja hyväksymiskriteereillä."
+        },
+        {
+          "title": "Tekninen kumppanuus",
+          "bestFor": "Järjestelmä, joka tarvitsee vaiheittaista modernisointia tai jatkuvaa teknisen työvirran omistamista.",
+          "output": "Ylläpidetty tiekartta, asteittainen toimitus ja toimintahistoria päätöksistä, riskeistä ja edistymisestä.",
+          "commitment": "Jatkuva toimeksianto tarkistetaan sovitun työvirran ja prioriteettien mukaan."
+        }
+      ]
+    },
+    "teamModel": {
+      "eyebrow": "Malli SDK",
+      "heading": "Järjestelmään valitut asiantuntijat. Yksi yritys on vastuussa asiakkaalle.",
+      "body": "SDK työskentelee riippumattomien suunnitteluasiantuntijoiden kanssa. Kokoamme tiimin ongelman ympärille, koordinoimme työtä ja asetamme toimeksiannon laatukehykset. Asiakkaan ei tarvitse rekrytoida, kohdistaa ja hallita joukkoa riippumattomia avustajia.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Määrittele tarve",
+          "copy": "Selvitä järjestelmä, rajoitukset, päätökset ja tulos ennen kuin päätät, kenen pitäisi tehdä työ."
+        },
+        {
+          "number": "02",
+          "title": "Kokoa joukkue",
+          "copy": "Valitse toimeksiannon kannalta olennaiset tieteenalat ja kokemus sen sijaan, että pakottaisit sen kiinteään penkkiin."
+        },
+        {
+          "number": "03",
+          "title": "Hallitse laatua",
+          "copy": "Käytä näkyviä päätöksiä, arvioita, hyväksymiskriteerejä ja toiminnallisia todisteita koko toimituksen ajan."
+        },
+        {
+          "number": "04",
+          "title": "Siirrä omistajuus",
+          "copy": "Pidä koodi, infrastruktuuri, dokumentaatio ja käyttötiedot asiakkaan hallinnassa."
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Tuo meille rajoitus",
+      "title": "Sinun ei tarvitse saapua valmiin eritelmän kanssa.",
+      "body": "Kuvaile järjestelmää, siihen kohdistuvaa painetta ja päätöstä, joka sinun on tehtävä. Aloitamme määrittämällä, sopiiko SDK hyödyllisesti.",
+      "label": "Keskustele ongelmasta"
+    }
   }
 }

@@ -1,19 +1,259 @@
 {
   "servicesPage": {
-    "eyebrow": "Servicii",
-    "body": "Construim și operăm software în întreaga stivă: agenți AI și automatizare, platforme backend, interfețe web, infrastructură cloud, sisteme de date și modernizare moștenită. O problemă specializată sau un întreg flux de lucru - inginerii care fac munca sunt cei cu care discutați.",
-    "cta": "Începeți un proiect",
-    "engagementEyebrow": "Modele de implicare",
-    "engagementHeading": "Cum ne angajăm",
-    "engagementBody": "SDK intră în două moduri: un audit cu preț fix care diagnostichează o problemă specifică și propune o cale de urmat, sau un flux de lucru dedicat de inginerie în care o echipă senior deține implementarea cap la cap. Există aranjamente hibride pentru sistemele care necesită atât diagnosticare, cât și livrare susținută.",
-    "engagementModel1Title": "Audit cu preț fix",
-    "engagementModel1Body": "O diagnosticare a unei anumite probleme: revizuirea arhitecturii, calea de migrare, blocaj de performanță sau evaluarea securității. Rezultatul este un plan scris cu priorități, riscuri și efort estimat.",
-    "engagementModel2Title": "Fluxul de lucru de inginerie",
-    "engagementModel2Body": "O echipă de seniori încorporată în stiva dumneavoastră pentru o perioadă definită. Livrare săptămânală, progres vizibil și comunicare directă cu inginerii care construiesc software-ul.",
-    "engagementModel3Title": "Hibrid",
-    "engagementModel3Body": "Mai întâi auditați, apoi fluxul de lucru. Echipa care diagnostichează problema rămâne să implementeze soluția. Fără transfer către o altă echipă de cont.",
-    "whatWeDontDoEyebrow": "Ceea ce nu facem",
-    "whatWeDontDoHeading": "Nu ascundem mecanismul.",
-    "whatWeDontDoBody": "Fără juniori pe baza ta de cod. Nici un manager de cont între tine și ingineri. Fără transfer offshore după propunere. Nici un angajament care depinde de vânzarea unui domeniu mai mare decât ai nevoie."
+    "hero": {
+      "eyebrow": "Software · AI · Cloud · Date",
+      "title": "Problema definește echipa de ingineri.",
+      "intro": "SDK reunește specialiștii de care are nevoie un sistem, le coordonează munca și rămâne responsabil pentru calitatea livrării. Începeți cu o decizie tehnică sau oferiți-ne un flux de lucru definit.",
+      "primaryCta": "Discutați un proiect",
+      "secondaryCta": "Găsește-ți punctul de plecare",
+      "signals": [
+        "Componența echipei conduse de probleme",
+        "Specialiști independenți",
+        "Controlul calității condus de SDK",
+        "Sisteme deținute de client"
+      ]
+    },
+    "navigator": {
+      "heading": "Începeți cu presiunea asupra sistemului.",
+      "intro": "Un angajament util începe cu constrângerea, nu cu un catalog de tehnologii.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Modernizează",
+          "copy": "Reduceți riscul și costul schimbării software-ului care nu mai poate acumula patch-uri.",
+          "href": "#modernizare"
+        },
+        {
+          "number": "02",
+          "title": "Construiește",
+          "copy": "Proiectați și furnizați platforme backend, integrări și sisteme de produse în jurul unei nevoi de operare clare.",
+          "href": "#platforme"
+        },
+        {
+          "number": "03",
+          "title": "Automatizați",
+          "copy": "Pune AI într-un flux de lucru real cu datele, evaluarea și controalele operaționale de care are nevoie.",
+          "href": "#ai-automatizare"
+        },
+        {
+          "number": "04",
+          "title": "Stabilizați",
+          "copy": "Găsiți cauzele din spatele problemelor de fiabilitate, implementare, performanță sau flux de date.",
+          "href": "#sisteme-producție"
+        },
+        {
+          "number": "05",
+          "title": "Diagnosticați",
+          "copy": "Transformă o situație tehnică neclară în dovezi, opțiuni și o următoare decizie defensabilă.",
+          "href": "#implicări"
+        }
+      ]
+    },
+    "capabilities": {
+      "eyebrow": "Capabilități",
+      "heading": "Profunzime de inginerie, organizată în jurul deciziei în fața ta.",
+      "intro": "Fiecare capacitate poate fi independentă sau combinată cu altele atunci când sistemul depășește granițele.",
+      "labels": {
+        "investigation": "Ceea ce examinăm",
+        "delivery": "Ce putem livra",
+        "evidence": "Sisteme relevante",
+        "firstStep": "Prima mișcare utilă"
+      },
+      "items": [
+        {
+          "number": "01 / MODERNIZARE",
+          "id": "modernizare",
+          "title": "Schimbați un sistem de îmbătrânire fără a pierde ceea ce încă funcționează.",
+          "situation": "Sistemul contează pentru afacere, dar upgrade-urile sunt riscante, livrarea încetinește sau prea multe cunoștințe se află într-un comportament nedocumentat.",
+          "investigation": [
+            "Dependențe, constrângeri de rulare și componente neacceptate",
+            "Fluxuri de date, integrări și cuplare operațională ascunsă",
+            "Schimbați riscul, testați acoperirea și granițele de migrare"
+          ],
+          "delivery": [
+            "Evaluarea stării curente și planul de modernizare prioritizat",
+            "Migrare cadru, runtime sau serviciu",
+            "Înlocuire incrementală cu trecere controlată"
+          ],
+          "evidence": [
+            "PHP",
+            "Laravel",
+            "Symfony",
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PostgreSQL"
+          ],
+          "firstStep": "Hartă ceea ce face sistemul astăzi, unde schimbarea este periculoasă și care graniță se poate muta prima."
+        },
+        {
+          "number": "02 / PLATFORME",
+          "id": "platforme",
+          "title": "Construiți părțile produsului care poartă regulile de afaceri.",
+          "situation": "Un produs are nevoie de APIs, integrări, autorizare, lucru asincron sau comportament în timp real care trebuie să rămână de înțeles pe măsură ce cerințele se schimbă.",
+          "investigation": [
+            "Limitele domeniului, utilizatorii și regulile de acces",
+            "Contracte de integrare, moduri de eșec și proprietatea datelor",
+            "Cerințe privind volumul operațional, latența și consistența"
+          ],
+          "delivery": [
+            "Servicii de backend, APIs și straturi de integrare",
+            "Autentificare, autorizare și izolarea chiriașului",
+            "Cozi, evenimente și fluxuri de aplicații în timp real"
+          ],
+          "evidence": [
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PHP",
+            "PostgreSQL",
+            "Redis",
+            "Valkey"
+          ],
+          "firstStep": "Definiți granița afacerii, datele pe care le deține și condițiile de eșec pe care trebuie să le tolereze proiectarea."
+        },
+        {
+          "number": "03 / AUTOMATIZAREA AI",
+          "id": "ai-automatizare",
+          "title": "Mutați AI dintr-o demonstrație convingătoare într-un flux de lucru responsabil.",
+          "situation": "Un proces manual este costisitor sau lent, dar o caracteristică AI va fi utilă numai dacă intrările, ieșirile, evaluarea și comportamentul de rezervă sunt controlate.",
+          "investigation": [
+            "Deciziile de flux de lucru care necesită un model și cele care nu",
+            "Datele sursă, permisiunile și calitatea regăsirii",
+            "Criterii de evaluare, revizuire umană și tratarea eșecului"
+          ],
+          "delivery": [
+            "LLM integrări, agenți și automatizare a fluxului de lucru",
+            "Sisteme de recuperare și răspuns la pământ",
+            "Controale de evaluare, observabilitate și revizuire"
+          ],
+          "evidence": [
+            "LLM",
+            "RAG",
+            "APIs",
+            "PostgreSQL",
+            "Elasticsearch",
+            "Python",
+            "Node.js"
+          ],
+          "firstStep": "Alegeți un flux de lucru, definiți un rezultat acceptabil și măsurați procesul uman curent înainte de a-l automatiza."
+        },
+        {
+          "number": "04 / SISTEME DE PRODUCȚIE",
+          "id": "sisteme-producție",
+          "title": "Faceți vizibil comportamentul de producție înainte de a schimba capacitatea.",
+          "situation": "Implementările sunt fragile, incidentele sunt greu de explicat, costurile de infrastructură sunt neclare sau sistemul se apropie de o limită operațională.",
+          "investigation": [
+            "Calea de implementare, mediile și procedurile de recuperare",
+            "Jurnalele, valorile, urmele și dovezile incidentelor",
+            "Constrângeri de resurse, blocaje și ipoteze de scalare"
+          ],
+          "delivery": [
+            "Arhitectură de implementare și fluxuri de lucru CI/CD",
+            "Observabilitate, alerte și runbook-uri operaționale",
+            "Îmbunătățiri în cloud, container și orchestrație"
+          ],
+          "evidence": [
+            "AWS",
+            "GCP",
+            "Azure",
+            "Kubernetes",
+            "Helm",
+            "CI/CD",
+            "Redis"
+          ],
+          "firstStep": "Stabiliți ce face sistemul sub sarcină reală și modul în care echipa detectează în prezent și se recuperează după defecțiune."
+        },
+        {
+          "number": "05 / DATE & INTERFEȚE",
+          "id": "interfețe de date",
+          "title": "Conectați datele, operațiunile și persoanele care folosesc sistemul.",
+          "situation": "Produsul are nevoie de o cale de date sigură și de o interfață care face munca operațională complexă mai ușor de înțeles și finalizat.",
+          "investigation": [
+            "Proprietatea datelor, ciclul de viață, modele de căutare și acces",
+            "Sarcini ale utilizatorului, puncte de decizie și recuperarea erorilor",
+            "Limitele serverului și browserului care afectează performanța"
+          ],
+          "delivery": [
+            "Modele de date, fluxuri de căutare, cache și asimilare",
+            "Interfețe web operaționale și instrumente interne",
+            "Experiențe de aplicații accesibile și receptive"
+          ],
+          "evidence": [
+            "PostgreSQL",
+            "MongoDB",
+            "Elasticsearch",
+            "React",
+            "Vue",
+            "Nuxt",
+            "TypeScript"
+          ],
+          "firstStep": "Urmăriți o sarcină critică a utilizatorului, de la datele sursă până la decizia finală și identificați unde se pierde contextul."
+        }
+      ]
+    },
+    "engagements": {
+      "eyebrow": "Modalități de a se angaja",
+      "heading": "Potriviți angajamentul cu ceea ce este deja cunoscut.",
+      "intro": "Un sistem incert are nevoie de dovezi înainte de un angajament de implementare responsabilă. Un rezultat definit se poate muta direct într-un flux de lucru concentrat.",
+      "labels": {
+        "bestFor": "Cel mai bun pentru",
+        "output": "Ieșire primară",
+        "commitment": "Angajamentul"
+      },
+      "options": [
+        {
+          "title": "Evaluare tehnică",
+          "bestFor": "O decizie în consecință în care starea curentă, riscul sau calea de implementare este neclară.",
+          "output": "Dovezi, opțiuni, riscuri și o recomandare prioritizată pe care clientul o poate folosi cu sau fără SDK.",
+          "commitment": "O investigație limitată, cu acces, întrebări și livrabile convenite."
+        },
+        {
+          "title": "Fluxul de lucru de inginerie",
+          "bestFor": "Un rezultat tehnic definit, care necesită o echipă compusă și o responsabilitate clară a livrării.",
+          "output": "Modificări de lucru, decizii revizuite, dovezi de implementare și documentație pentru domeniul de aplicare convenit.",
+          "commitment": "O perioadă de livrare concentrată, cu puncte de control vizibile și criterii de acceptare."
+        },
+        {
+          "title": "Parteneriat tehnic",
+          "bestFor": "Un sistem care necesită modernizare în etape sau proprietate continuă asupra unui flux de lucru tehnic.",
+          "output": "O foaie de parcurs menținută, livrare incrementală și o înregistrare operațională a deciziilor, riscurilor și progresului.",
+          "commitment": "Un angajament continuu revizuit în raport cu un flux de lucru și priorități convenite."
+        }
+      ]
+    },
+    "teamModel": {
+      "eyebrow": "Modelul SDK",
+      "heading": "Specialiști selectați pentru sistem. O companie responsabilă față de client.",
+      "body": "SDK lucrează cu specialiști independenți în inginerie. Compunem echipa în jurul problemei, coordonăm munca și stabilim cadrul de calitate pentru angajament. Clientul nu trebuie să recruteze, să alinieze și să gestioneze o colecție de colaboratori neafiliați.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Definiți nevoia",
+          "copy": "Clarificați sistemul, constrângerile, deciziile și rezultatul înainte de a decide cine ar trebui să facă munca."
+        },
+        {
+          "number": "02",
+          "title": "Compune echipa",
+          "copy": "Selectați disciplinele și experiența relevante pentru angajament în loc să o forțați într-o bancă fixă."
+        },
+        {
+          "number": "03",
+          "title": "Controlul calității",
+          "copy": "Utilizați decizii vizibile, recenzii, criterii de acceptare și dovezi operaționale pe tot parcursul livrării."
+        },
+        {
+          "number": "04",
+          "title": "Transferați proprietatea",
+          "copy": "Păstrați codul, infrastructura, documentația și cunoștințele de operare sub controlul clientului."
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Adu-ne constrângerea",
+      "title": "Nu trebuie să sosiți cu o specificație finalizată.",
+      "body": "Descrieți sistemul, presiunea asupra acestuia și decizia pe care trebuie să o luați. Vom începe prin a stabili dacă SDK este o potrivire utilă.",
+      "label": "Discutați problema"
+    }
   }
 }

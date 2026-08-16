@@ -1,29 +1,88 @@
 {
   "aboutPage": {
-    "eyebrow": "Despre SDK Enterprises",
-    "title": "Inginerie senior, livrare directă.",
-    "intro": "Companie de inginerie B2B cu sediul în Franța. Construim, modernizăm și operăm software în întreaga stivă — platforme backend, infrastructură cloud, automatizare AI, sisteme în timp real și instrumente interne.",
-    "body": "Fondată în 2019, SDK Enterprises lucrează cu un număr mic de clienți simultan. Echipa este doar pentru seniori: fără juniori, fără manageri de cont, fără transferuri către livrare offshore. Cele mai multe angajamente sunt definite ca audituri la preț fix, fluxuri de lucru dedicate de inginerie sau sprinturi de modernizare în curs.",
-    "cta": "Începeți un proiect",
-    "approachEyebrow": "Abordarea noastră",
-    "approachHeading": "De ce menținem echipa mică",
-    "approachBody": "Când o agenție depășește punctul în care partenerii cunosc fiecare inginer, apare stratul de cont. Acest strat este locul în care contextul se pierde, cronologia alunecă și costurile se înmulțesc. SDK este structurat pentru a evita acest lucru.",
-    "approach1Title": "Fără administratori de cont",
-    "approach1Body": "Vorbești cu inginerul responsabil de lucrare. Fără traducere, fără întârzieri, fără comunicare greșită între vânzări și livrare.",
-    "approach2Title": "Fără transfer offshore",
-    "approach2Body": "Echipa care proiectează sistemul rămâne prin implementare și predare. Cunoașterea rămâne într-un singur loc.",
-    "approach3Title": "Fără resurse pentru juniori",
-    "approach3Body": "Fiecare inginer SDK este de nivel superior. Nu folosim angajamentele clienților pentru a instrui personalul mai puțin experimentat.",
-    "beliefsEyebrow": "Ce credem noi",
-    "beliefsHeading": "Ipotezele din spatele lucrării",
-    "beliefsBody": "Acestea nu sunt declarații de marketing. Ele sunt constrângerile care modelează fiecare decizie pe care o luăm.",
-    "belief1Title": "Software-ul este o răspundere până când este înțeles",
-    "belief1Body": "Fiecare linie de cod implică costuri de întreținere. Scopul nu este de a scrie mai mult cod, ci de a reduce costul codului care există deja.",
-    "belief2Title": "Diagnosticul înainte de prescripție",
-    "belief2Body": "Nu vindem un tip de angajament fix. Diagnosticam mai întâi sistemul: arhitectura, fluxul de date, implementarea, echipa și constrângerile. Apoi propunem logodna care se potrivește.",
-    "belief3Title": "Transparența este o caracteristică",
-    "belief3Body": "Progres vizibil, actualizări scrise și acces direct la ingineri. Secretul în jurul livrării este un simptom al unui proces care nu poate fi explicat.",
-    "companyFacts": {
+    "hero": {
+      "eyebrow": "Despre SDK Enterprises",
+      "title": "O companie construită pentru a crea capacitatea de inginerie potrivită pentru lucrare.",
+      "intro": "SDK angajează specialiști independenți în inginerie conform sistemului și rămâne responsabil pentru cadrul de livrare și așteptările de calitate prezentate clientului.",
+      "primaryCta": "Discutați un proiect",
+      "secondaryCta": "Înțelegeți modelul",
+      "signals": [
+        "Companie cu sediul în Franța",
+        "Specialiști specifici proiectului",
+        "Cadru de livrare condus de SDK",
+        "Responsabilitatea directă a companiei"
+      ]
+    },
+    "model": {
+      "eyebrow": "Cum funcționează compania",
+      "heading": "Banca disponibilă nu decide ce primește sistemul dumneavoastră.",
+      "intro": "O echipă internă fixă poate fi eficientă atunci când fiecare proiect are nevoie de aceleași discipline. Sistemele complexe adesea nu. SDK începe cu problema, determină ce capacitate de inginerie este relevantă și aduce specialiștii independenți necesari într-un singur angajament.",
+      "items": [
+        {
+          "number": "01",
+          "title": "O relație cu clientul",
+          "copy": "Clientul angajează SDK Enterprises. SDK oferă cadrul de livrare în loc să-l lase pe client să coordoneze furnizorii individuali care nu au legătură."
+        },
+        {
+          "number": "02",
+          "title": "O echipă compusă",
+          "copy": "Disciplinele implicate se pot schimba odată cu etapa de lucru, de la evaluare și arhitectură până la implementare și exploatare."
+        },
+        {
+          "number": "03",
+          "title": "Așteptări comune de calitate",
+          "copy": "Misiunea definește practicile de revizuire, dovezile de acceptare, înregistrările deciziilor și cerințele de predare adecvate riscurilor sale."
+        },
+        {
+          "number": "04",
+          "title": "Controlul clientului",
+          "copy": "Arhivele, infrastructura, documentația și cunoștințele de operare sunt organizate pentru a rămâne sub controlul clientului."
+        }
+      ]
+    },
+    "selection": {
+      "eyebrow": "Selecția specialistului",
+      "heading": "Experiența relevantă contează mai mult decât adăugarea unui alt profil la proiect.",
+      "body": "SDK ia în considerare sistemul, etapa de livrare, riscul tehnic și nevoile de colaborare înainte de a alcătui o echipă. Site-ul public nu va pretinde o dimensiune a rețelei, o rată de acceptare sau un standard de vechime universal fără o bază documentată.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Relevanța problemei",
+          "copy": "Experiența este luată în considerare în raport cu limitele actuale ale sistemului și deciziile tehnice, nu doar o listă de tehnologii."
+        },
+        {
+          "number": "02",
+          "title": "Responsabilitatea de livrare",
+          "copy": "Specialiștii trebuie să lucreze în cadrul deciziilor vizibile, să revizuiască așteptările și mediile deținute de clienți."
+        },
+        {
+          "number": "03",
+          "title": "Potrivire de colaborare",
+          "copy": "Capacitatea de a explica compromisuri și de a lucra cu părțile interesate ale clienților face parte din livrarea tehnică de succes."
+        },
+        {
+          "number": "04",
+          "title": "Continuitate",
+          "copy": "Se înregistrează un context important, astfel încât dreptul de proprietate nu depinde de faptul că un colaborator rămâne pe termen nelimitat."
+        }
+      ]
+    },
+    "responsibility": {
+      "eyebrow": "De ce este responsabil SDK",
+      "heading": "Alcătuirea flexibilă a echipei nu ar trebui să creeze responsabilitate ambiguă.",
+      "body": "Rolul SDK este de a menține angajamentul coerent, deoarece specialiștii contribuie cu diferite părți ale muncii.",
+      "items": [
+        "Încadrarea problemei și a domeniului de aplicare",
+        "Alcătuirea și coordonarea echipei",
+        "Controale de calitate și dovezi de acceptare",
+        "Decizia și vizibilitatea riscului",
+        "Așteptări de documentare și predare",
+        "O relație clară cu clientul"
+      ]
+    },
+    "facts": {
+      "eyebrow": "Informații despre companie",
+      "heading": "O companie înregistrată, disponibilă prin canale de afaceri directe.",
       "name": "Denumirea legală",
       "tradingName": "Nume comercial",
       "siren": "SIREN",
@@ -31,6 +90,12 @@
       "address": "Sediul social",
       "email": "E-mail",
       "phone": "Telefon"
+    },
+    "cta": {
+      "eyebrow": "Lucrați cu SDK",
+      "title": "Aduceți sistemul, constrângerea și decizia care are nevoie de proprietate.",
+      "body": "Vom începe prin a stabili ce expertiză necesită munca și dacă SDK este compania potrivită pentru a o coordona.",
+      "label": "Discutați un proiect"
     }
   }
 }

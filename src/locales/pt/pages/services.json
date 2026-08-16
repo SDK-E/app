@@ -1,19 +1,259 @@
 {
   "servicesPage": {
-    "eyebrow": "Serviços",
-    "body": "Construímos e operamos software em toda a pilha: agentes e automação de IA, plataformas de back-end, interfaces web, infraestrutura em nuvem, sistemas de dados e modernização legada. Um problema especializado ou um fluxo de trabalho inteiro — os engenheiros que fazem o trabalho são aqueles com quem você conversa.",
-    "cta": "Iniciar um projeto",
-    "engagementEyebrow": "Modelos de engajamento",
-    "engagementHeading": "Como nos envolvemos",
-    "engagementBody": "SDK entra de duas maneiras: uma auditoria de preço fixo que diagnostica um problema específico e propõe um caminho a seguir, ou um fluxo de trabalho de engenharia dedicado onde uma equipe sênior controla a implementação de ponta a ponta. Existem arranjos híbridos para sistemas que necessitam tanto de diagnóstico como de entrega sustentada.",
-    "engagementModel1Title": "Auditoria de preço fixo",
-    "engagementModel1Body": "Um diagnóstico com escopo definido de um problema específico: revisão de arquitetura, caminho de migração, gargalo de desempenho ou revisão de segurança. O resultado é um plano escrito com prioridades, riscos e esforço estimado.",
-    "engagementModel2Title": "Fluxo de trabalho de engenharia",
-    "engagementModel2Body": "Uma equipe sênior incorporada à sua pilha por um período definido. Entrega semanal, progresso visível e comunicação direta com os engenheiros que estão construindo o software.",
-    "engagementModel3Title": "Híbrido",
-    "engagementModel3Body": "Audite primeiro, depois o fluxo de trabalho. A equipe que diagnostica o problema fica para implementar a solução. Nenhuma transferência para uma equipe de conta diferente.",
-    "whatWeDontDoEyebrow": "O que não fazemos",
-    "whatWeDontDoHeading": "Não escondemos o mecanismo.",
-    "whatWeDontDoBody": "Nenhum júnior em sua base de código. Nenhum gerente de conta entre você e os engenheiros. Nenhuma transferência offshore após a proposta. Nenhum envolvimento que dependa da venda de um escopo maior do que o necessário."
+    "hero": {
+      "eyebrow": "Software · IA · Nuvem · Dados",
+      "title": "O problema define a equipe de engenharia.",
+      "intro": "SDK reúne os especialistas que um sistema realmente exige, coordena seu trabalho e permanece responsável pela qualidade da entrega. Comece com uma decisão técnica ou forneça-nos um fluxo de trabalho definido.",
+      "primaryCta": "Discuta um projeto",
+      "secondaryCta": "Encontre o seu ponto de partida",
+      "signals": [
+        "Composição da equipe liderada por problemas",
+        "Especialistas independentes",
+        "Controle de qualidade conduzido por SDK",
+        "Sistemas de propriedade do cliente"
+      ]
+    },
+    "navigator": {
+      "heading": "Comece com a pressão no sistema.",
+      "intro": "Um envolvimento útil começa com a restrição e não com um catálogo de tecnologias.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Modernizar",
+          "copy": "Reduza o risco e o custo da mudança de software que não consegue mais acumular patches.",
+          "href": "#modernização"
+        },
+        {
+          "number": "02",
+          "title": "Construir",
+          "copy": "Projete e forneça plataformas de back-end, integrações e sistemas de produtos em torno de uma necessidade operacional clara.",
+          "href": "#plataformas"
+        },
+        {
+          "number": "03",
+          "title": "Automatizar",
+          "copy": "Coloque a IA em um fluxo de trabalho real com os dados, a avaliação e os controles operacionais necessários.",
+          "href": "#ai-automação"
+        },
+        {
+          "number": "04",
+          "title": "Estabilizar",
+          "copy": "Encontre as causas dos problemas de confiabilidade, implantação, desempenho ou fluxo de dados.",
+          "href": "#sistemas de produção"
+        },
+        {
+          "number": "05",
+          "title": "Diagnosticar",
+          "copy": "Transforme uma situação técnica pouco clara em evidências, opções e uma próxima decisão defensável.",
+          "href": "#engajamentos"
+        }
+      ]
+    },
+    "capabilities": {
+      "eyebrow": "Capacidades",
+      "heading": "Profundidade de engenharia, organizada em torno da decisão que está à sua frente.",
+      "intro": "Cada capacidade pode ser independente ou combinada com outras quando o sistema ultrapassa limites.",
+      "labels": {
+        "investigation": "O que examinamos",
+        "delivery": "O que podemos entregar",
+        "evidence": "Sistemas relevantes",
+        "firstStep": "Primeiro movimento útil"
+      },
+      "items": [
+        {
+          "number": "01 / MODERNIZAÇÃO",
+          "id": "modernização",
+          "title": "Mude um sistema antigo sem perder o que ainda funciona.",
+          "situation": "O sistema é importante para os negócios, mas as atualizações são arriscadas, a entrega está lenta ou há muito conhecimento em comportamento não documentado.",
+          "investigation": [
+            "Dependências, restrições de tempo de execução e componentes não suportados",
+            "Fluxos de dados, integrações e acoplamento operacional oculto",
+            "Alterar riscos, cobertura de testes e limites de migração"
+          ],
+          "delivery": [
+            "Avaliação do estado atual e plano de modernização priorizado",
+            "Migração de estrutura, tempo de execução ou serviço",
+            "Substituição incremental com corte controlado"
+          ],
+          "evidence": [
+            "PHP",
+            "Laravel",
+            "Symfony",
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PostgreSQL"
+          ],
+          "firstStep": "Mapeie o que o sistema faz hoje, onde a mudança é perigosa e qual limite pode ser movido primeiro."
+        },
+        {
+          "number": "02 / PLATAFORMAS",
+          "id": "plataformas",
+          "title": "Construa as partes do produto que atendem às regras de negócios.",
+          "situation": "Um produto precisa de APIs, integrações, autorização, trabalho assíncrono ou comportamento em tempo real que deve permanecer compreensível à medida que os requisitos mudam.",
+          "investigation": [
+            "Limites de domínio, usuários e regras de acesso",
+            "Contratos de integração, modos de falha e propriedade de dados",
+            "Requisitos de volume operacional, latência e consistência"
+          ],
+          "delivery": [
+            "Serviços de back-end, APIs e camadas de integração",
+            "Autenticação, autorização e isolamento de locatário",
+            "Filas, eventos e fluxos de aplicativos em tempo real"
+          ],
+          "evidence": [
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PHP",
+            "PostgreSQL",
+            "Redis",
+            "Valkey"
+          ],
+          "firstStep": "Defina os limites do negócio, os dados que ele possui e as condições de falha que o projeto deve tolerar."
+        },
+        {
+          "number": "03 / AUTOMAÇÃO DE IA",
+          "id": "automação de IA",
+          "title": "Transforme a IA de uma demonstração convincente em um fluxo de trabalho responsável.",
+          "situation": "Um processo manual é caro ou lento, mas um recurso de IA só será útil se suas entradas, saídas, avaliação e comportamento de fallback forem controlados.",
+          "investigation": [
+            "Decisões de fluxo de trabalho que exigem um modelo e aquelas que não exigem",
+            "Dados de origem, permissões e qualidade de recuperação",
+            "Critérios de avaliação, revisão humana e tratamento de falhas"
+          ],
+          "delivery": [
+            "Integrações LLM, agentes e automação de fluxo de trabalho",
+            "Sistemas de recuperação e resposta aterrada",
+            "Controles de avaliação, observabilidade e revisão"
+          ],
+          "evidence": [
+            "LLM",
+            "RAG",
+            "APIs",
+            "PostgreSQL",
+            "Elasticsearch",
+            "Pitão",
+            "Node.js"
+          ],
+          "firstStep": "Escolha um fluxo de trabalho, defina um resultado aceitável e meça o processo humano atual antes de automatizá-lo."
+        },
+        {
+          "number": "04 / SISTEMAS DE PRODUÇÃO",
+          "id": "sistemas de produção",
+          "title": "Torne o comportamento da produção visível antes de alterar a capacidade.",
+          "situation": "As implantações são frágeis, os incidentes são difíceis de explicar, os custos de infraestrutura não são claros ou o sistema está se aproximando do limite operacional.",
+          "investigation": [
+            "Caminho de implantação, ambientes e procedimentos de recuperação",
+            "Logs, métricas, rastreamentos e evidências de incidentes",
+            "Restrições de recursos, gargalos e suposições de dimensionamento"
+          ],
+          "delivery": [
+            "Arquitetura de implantação e fluxos de trabalho CI/CD",
+            "Observabilidade, alertas e runbooks operacionais",
+            "Melhorias na nuvem, no contêiner e na orquestração"
+          ],
+          "evidence": [
+            "AWS",
+            "GCP",
+            "Azure",
+            "Kubernetes",
+            "Helm",
+            "CI/CD",
+            "Redis"
+          ],
+          "firstStep": "Estabeleça o que o sistema está fazendo sob carga real e como a equipe atualmente detecta e se recupera de falhas."
+        },
+        {
+          "number": "05 / DADOS E INTERFACES",
+          "id": "interfaces de dados",
+          "title": "Conecte dados, operações e pessoas que usam o sistema.",
+          "situation": "O produto precisa de um caminho de dados confiável e de uma interface que facilite a compreensão e a conclusão do trabalho operacional complexo.",
+          "investigation": [
+            "Propriedade de dados, ciclo de vida, padrões de pesquisa e acesso",
+            "Tarefas do usuário, pontos de decisão e recuperação de erros",
+            "Limites de servidor e navegador que afetam o desempenho"
+          ],
+          "delivery": [
+            "Modelos de dados, fluxos de pesquisa, cache e ingestão",
+            "Interfaces web operacionais e ferramentas internas",
+            "Experiências de aplicativos acessíveis e responsivas"
+          ],
+          "evidence": [
+            "PostgreSQL",
+            "MongoDB",
+            "Elasticsearch",
+            "React",
+            "Vue",
+            "Nuxt",
+            "TypeScript"
+          ],
+          "firstStep": "Acompanhe uma tarefa crítica do usuário, desde a origem dos dados até a decisão final, e identifique onde o contexto foi perdido."
+        }
+      ]
+    },
+    "engagements": {
+      "eyebrow": "Maneiras de envolver",
+      "heading": "Combine o compromisso com o que já é conhecido.",
+      "intro": "Um sistema incerto necessita de provas antes de um compromisso de implementação responsável. Um resultado definido pode passar diretamente para um fluxo de trabalho focado.",
+      "labels": {
+        "bestFor": "Melhor para",
+        "output": "Saída primária",
+        "commitment": "Compromisso"
+      },
+      "options": [
+        {
+          "title": "Avaliação técnica",
+          "bestFor": "Uma decisão consequente onde o estado atual, o risco ou o caminho de implementação não são claros.",
+          "output": "Evidências, opções, riscos e uma recomendação priorizada que o cliente pode usar com ou sem SDK.",
+          "commitment": "Uma investigação limitada com acesso, perguntas e resultados acordados."
+        },
+        {
+          "title": "Fluxo de trabalho de engenharia",
+          "bestFor": "Um resultado técnico definido que precisa de uma equipe composta e de uma clara propriedade da entrega.",
+          "output": "Mudanças de trabalho, decisões revisadas, evidências de implantação e documentação para o escopo acordado.",
+          "commitment": "Um período de entrega focado com pontos de verificação e critérios de aceitação visíveis."
+        },
+        {
+          "title": "Parceria técnica",
+          "bestFor": "Um sistema que precisa de modernização gradual ou propriedade contínua de um fluxo de trabalho técnico.",
+          "output": "Um roteiro mantido, entrega incremental e um registro operacional de decisões, riscos e progresso.",
+          "commitment": "Um envolvimento contínuo analisado em relação a um fluxo de trabalho e prioridades acordados."
+        }
+      ]
+    },
+    "teamModel": {
+      "eyebrow": "O modelo SDK",
+      "heading": "Especialistas selecionados para o sistema. Uma empresa responsável perante o cliente.",
+      "body": "SDK trabalha com especialistas de engenharia independentes. Compomos a equipe em torno do problema, coordenamos o trabalho e definimos a estrutura de qualidade para o engajamento. O cliente não precisa recrutar, alinhar e gerenciar um conjunto de colaboradores não relacionados.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Defina a necessidade",
+          "copy": "Esclareça o sistema, as restrições, as decisões e os resultados antes de decidir quem deve fazer o trabalho."
+        },
+        {
+          "number": "02",
+          "title": "Componha a equipe",
+          "copy": "Selecione as disciplinas e a experiência relevantes para o trabalho, em vez de forçá-lo a uma bancada fixa."
+        },
+        {
+          "number": "03",
+          "title": "Controle de qualidade",
+          "copy": "Use decisões, análises, critérios de aceitação e evidências operacionais visíveis durante a entrega."
+        },
+        {
+          "number": "04",
+          "title": "Transferir propriedade",
+          "copy": "Mantenha código, infraestrutura, documentação e conhecimento operacional sob controle do cliente."
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Traga-nos a restrição",
+      "title": "Você não precisa chegar com uma especificação finalizada.",
+      "body": "Descreva o sistema, a pressão sobre ele e a decisão que você precisa tomar. Começaremos determinando se SDK é uma opção útil.",
+      "label": "Discuta o problema"
+    }
   }
 }

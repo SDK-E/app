@@ -1,37 +1,166 @@
 {
   "howWeWorkPage": {
-    "eyebrow": "Jak pracujemy",
-    "body": "Każde zaangażowanie przebiega według tej samej czterofazowej ścieżki. Wynikiem każdej fazy jest konkretny artefakt, który zespół może przejrzeć, zakwestionować lub zatwierdzić przed rozpoczęciem następnej.",
-    "expectEyebrow": "Każda faza",
-    "expectHeading": "Czego się spodziewać na każdym etapie",
-    "expectIntro": "Widoczny produkt na każdym etapie, dzięki czemu nie ma niespodzianek przy przekazaniu.",
-    "understandTitle": "Zrozum",
-    "understandBody": "Cel biznesowy, stos, ograniczenia i kryteria sukcesu. Wynik: krótki brief i proponowany zakres.",
-    "designTitle": "Projekt",
-    "designBody": "Architektura, zakres, ryzyko i kamienie milowe. Wynik: plan techniczny z widocznymi punktami kontrolnymi.",
-    "buildTitle": "Buduj",
-    "buildBody": "Realizacja z widocznym postępem. Wynik: działające oprogramowanie, sprawdzane w krótkich cyklach.",
-    "handoverTitle": "Przekazanie",
-    "handoverBody": "Wdróż, udokumentuj i przenieś własność. Wynik: działający system, elementy Runbook i sesja transferu wiedzy.",
-    "deliverablesEyebrow": "Elementy dostarczane",
-    "deliverablesHeading": "Co otrzymasz na koniec",
-    "deliverablesBody": "Każde zlecenie kończy się przeniesieniem własności, a nie przekazaniem umowy serwisowej. Zespół, który otrzymuje pracę, otrzymuje oprogramowanie, dokumentację i wiedzę niezbędną do jej obsługi.",
-    "deliverable1Title": "Działające oprogramowanie",
-    "deliverable1Body": "Wdrożone, przetestowane i działające w Twoim środowisku. Nie prototyp, nie pilotaż – kod gotowy do produkcji.",
-    "deliverable2Title": "Dokumentacja techniczna",
-    "deliverable2Body": "Decyzje dotyczące architektury, elementy Runbook, etapy wdrażania i notatki operacyjne napisane dla zespołu, który będzie konserwował system.",
-    "deliverable3Title": "Transfer wiedzy",
-    "deliverable3Body": "Ustrukturyzowana sesja z inżynierami, którzy w przyszłości będą właścicielami systemu. Udzielono odpowiedzi na pytania, wyjaśniono kompromisy, uzgodniono dalsze kroki.",
-    "principlesEyebrow": "Zasady",
-    "principlesHeading": "Jak się pojawiamy",
-    "principlesBody": "To nie są wartości na plakacie. Są to ograniczenia, w ramach których działamy podczas każdego zaangażowania.",
-    "principle1Title": "Bezpośrednia komunikacja",
-    "principle1Body": "Rozmawiasz z inżynierem wykonującym pracę. Żadnego opiekuna klienta, koordynatora projektu, żadnej warstwy tłumaczeniowej.",
-    "principle2Title": "Widoczny postęp",
-    "principle2Body": "Co dwa tygodnie widzisz działające oprogramowanie i pisemną aktualizację. Żadnych czarnych skrzynek, żadnych faktur-niespodzianek.",
-    "principle3Title": "Uczciwy zakres",
-    "principle3Body": "Powiemy Ci, jeśli coś wykracza poza to, co możemy dobrze dostarczyć. Audyt po ustalonej cenie jest często właściwym pierwszym krokiem, gdy problem jest niejasny.",
-    "principle4Title": "Brak blokady",
-    "principle4Body": "Kod, infrastruktura i dokumentacja należą do Ciebie. Nie budujemy zależności na naszym ciągłym zaangażowaniu."
+    "hero": {
+      "eyebrow": "Jak pracujemy",
+      "title": "Zmniejsz niepewność, zanim stanie się ona ryzykiem dostawy.",
+      "intro": "SDK sprawia, że problem, decyzje, obowiązki i dowody są widoczne przez cały czas trwania zlecenia. Proces dostosowuje się do systemu, ale klient zawsze wie, o czym decyduje i co będzie dalej.",
+      "primaryCta": "Omów projekt",
+      "secondaryCta": "Zobacz proces",
+      "signals": [
+        "Zdefiniowane punkty decyzyjne",
+        "Widoczny dowód dostawy",
+        "Specjaliści ds. konkretnych projektów",
+        "Udokumentowane przekazanie"
+      ]
+    },
+    "entryPaths": {
+      "eyebrow": "Gdzie zaczyna się praca",
+      "heading": "Pierwszy krok zależy od tego, co już wiesz.",
+      "intro": "Zbyt wczesne rozpoczęcie wdrażania powoduje, że niepewność jest kosztowna. Rozpoczęcie od innego ogólnego ćwiczenia odkrywania to strata czasu, gdy wynik jest już jasny.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Wynik jest określony",
+          "copy": "Rozumie się granicę systemu, pożądaną zmianę i warunki akceptacji. Weryfikujemy założenia, tworzymy zespół dostawczy i planujemy przebieg prac.",
+          "href": "#proces"
+        },
+        {
+          "number": "02",
+          "title": "Problem jest widoczny, ale ścieżka nie",
+          "copy": "System generuje koszty, ryzyko lub opóźnienia, ale przyczyna lub odpowiedzialna reakcja są niejasne. Zaczynamy od ograniczonej oceny technicznej.",
+          "href": "#proces"
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "Ścieżka zaangażowania",
+      "heading": "Cztery etapy, każdy kończący się decyzją.",
+      "intro": "Postępu nie mierzy się samą aktywnością. Na każdym etapie powstają dowody, które klient może przejrzeć przed podjęciem dalszych zobowiązań.",
+      "labels": {
+        "output": "Wyjście",
+        "decision": "Decyzja"
+      },
+      "items": [
+        {
+          "number": "01",
+          "title": "Zrozum",
+          "purpose": "Ustal, czego potrzebuje biznes, co system robi dzisiaj i gdzie kryje się niepewność.",
+          "activities": [
+            "Przejrzyj cele, ograniczenia i interesariuszy",
+            "Sprawdź odpowiedni system i kontekst operacyjny",
+            "Zdefiniuj sukces, dostęp i znane niewiadome"
+          ],
+          "output": "Zwięzła definicja problemu, pogląd na stan obecny i proponowany zakres.",
+          "decision": "Czy istnieją wystarczające dowody, aby zaprojektować reakcję?"
+        },
+        {
+          "number": "02",
+          "title": "Projekt",
+          "purpose": "Zamień problem na opcje techniczne, granice dostaw i wyraźne kompromisy.",
+          "activities": [
+            "Architektura modelu i granice systemu",
+            "Identyfikuj ryzyko, zależności i etapy migracji",
+            "Skomponuj wymagany zespół specjalistów"
+          ],
+          "output": "Podejście techniczne, zapis decyzji, kamienie milowe i kryteria akceptacji.",
+          "decision": "Czy to właściwe podejście i zaangażowanie?"
+        },
+        {
+          "number": "03",
+          "title": "Buduj",
+          "purpose": "Dostarcz uzgodnioną zmianę, zachowując widoczność jakości, ryzyka i postępu.",
+          "activities": [
+            "Wdrażaj w możliwych do sprawdzenia krokach",
+            "Testuj założenia względem działającego oprogramowania",
+            "Rejestruj decyzje, dowody i nierozwiązane ryzyka"
+          ],
+          "output": "Zmiany robocze, przegląd dowodów i aktualna dokumentacja operacyjna.",
+          "decision": "Czy porost spełnia warunki akceptacji?"
+        },
+        {
+          "number": "04",
+          "title": "Przekazanie",
+          "purpose": "Umieść system i wiedzę niezbędną do jego obsługi pod kontrolą klienta.",
+          "activities": [
+            "Sprawdź procedury wdrażania i odzyskiwania",
+            "Kompletna dokumentacja techniczno-ruchowa",
+            "Przenieś kontekst na osoby zachowujące własność"
+          ],
+          "output": "Kod kontrolowany przez klienta, infrastruktura, dokumentacja i uzgodnione działania następcze.",
+          "decision": "Czy klient może obsługiwać i rozwijać dostarczony zakres?"
+        }
+      ]
+    },
+    "responsibility": {
+      "eyebrow": "Zespół i odpowiedzialność",
+      "heading": "Zespół może zmieniać się wraz z pracą. Odpowiedzialność nie znika pomiędzy specjalistami.",
+      "body": "SDK wybiera niezależnych specjalistów w dziedzinach wymaganych przez dane zlecenie i koordynuje ich w ramach jednego schematu realizacji. Decyzje, dostęp, dokumentacja i status prac są widoczne, dzięki czemu wiedza nie pozostaje w rękach jednej osoby.",
+      "items": [
+        {
+          "number": "01",
+          "title": "SDK",
+          "copy": "Definiuje ramy zaangażowania, koordynuje realizację i pozostaje odpowiedzialny za kontrolę jakości uzgodnioną z klientem."
+        },
+        {
+          "number": "02",
+          "title": "Specjaliści",
+          "copy": "Wnieś doświadczenie wymagane przez system i pracuj w ramach wspólnych decyzji, praktyk przeglądu i kryteriów akceptacji."
+        },
+        {
+          "number": "03",
+          "title": "Klient",
+          "copy": "Zapewnia kontekst biznesowy, dostęp do systemu i podejmowanie decyzji w odpowiednim czasie, zachowując jednocześnie kontrolę nad swoimi repozytoriami, infrastrukturą i informacjami."
+        },
+        {
+          "number": "04",
+          "title": "Udostępniony zapis",
+          "copy": "Zapewnia dostęp do decyzji dotyczących architektury, ryzyka, postępu i wiedzy operacyjnej poza zasięgiem pojedynczego współautora."
+        }
+      ]
+    },
+    "quality": {
+      "eyebrow": "Kontrole jakości",
+      "heading": "Pewność wynika z mechanizmów, które możesz sprawdzić.",
+      "intro": "Unikamy obietnic bez zastrzeżeń, takich jak bezpieczeństwo, skalowalność lub gotowość do produkcji. W ramach zlecenia określa się, w jaki sposób te cechy zostaną zbadane i udokumentowane w odniesieniu do danego systemu.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Decyzje pisemne",
+          "copy": "Architektura materialna i wybór zakresu rejestrują kontekst, kompromisy i konsekwencje, zamiast znikać w spotkaniach."
+        },
+        {
+          "number": "02",
+          "title": "Przyrosty podlegające przeglądowi",
+          "copy": "Praca jest podzielona na zmiany, które można sprawdzić, przetestować i zaakceptować, zanim narosnie ryzyko."
+        },
+        {
+          "number": "03",
+          "title": "Odpowiednia weryfikacja",
+          "copy": "Testy, kontrole bezpieczeństwa, dowody wydajności i kontrole wdrażania są wybierane zgodnie z rzeczywistym ryzykiem awarii."
+        },
+        {
+          "number": "04",
+          "title": "Własność operacyjna",
+          "copy": "Dokumentacja, dostęp, etapy odzyskiwania i nierozwiązane ryzyko są traktowane jako prace związane z dostawą, a nie jako materiały opcjonalne po uruchomieniu."
+        }
+      ]
+    },
+    "scope": {
+      "eyebrow": "Kiedy rzeczywistość zmienia plan",
+      "heading": "Wyraź zmianę. Wyjaśnij konsekwencję. Zdecyduj przed kontynuowaniem.",
+      "body": "Istniejące systemy ujawniają informacje w trakcie ich kontroli i zmian. Kiedy założenie się nie powiedzie lub pojawi się nowa zależność, SDK rejestruje dowody, wyjaśnia ich wpływ na zakres, ryzyko i kolejność oraz prosi o decyzję. Zmiana nie znika w postaci faktury lub opóźnionego przekazania.",
+      "steps": [
+        "Zapisz nowy dowód",
+        "Wyjaśnij konsekwencje techniczne i handlowe",
+        "Przedstaw realne opcje",
+        "Zaakceptuj zmianę przed kontynuowaniem"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Wybierz pierwszą użyteczną decyzję",
+      "title": "Zacznij od niepewności, która blokuje pracę.",
+      "body": "Powiedz nam, co wiadomo, co jest pod presją i jaką decyzję musi podjąć Twoja organizacja w następnej kolejności.",
+      "label": "Omów sytuację"
+    }
   }
 }

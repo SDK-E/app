@@ -1,14 +1,49 @@
 {
   "enquiry": {
+    "eyebrow": "Discuter d'un projet",
     "title": "Démarrer un projet",
-    "subtitle": "Dites-nous ce que vous essayez de créer, de moderniser, d'automatiser ou de réparer. Nous vous répondrons dans les 2 jours ouvrables avec une évaluation honnête de l'ajustement et de ce qu'il faudrait.",
+    "subtitle": "Dites-nous ce que vous cherchez à créer, moderniser, automatiser ou corriger. Une demande utile commence par la contrainte qui pèse sur le système et la décision que vous devez prendre.",
     "body": "Le formulaire collecte le minimum d’informations nécessaires pour répondre de manière réfléchie. Rien n'est partagé en dehors de SDK Enterprises, et vous pouvez également nous joindre directement à hello@sdk.enterprises.",
-    "body2": "Nous examinons nous-mêmes chaque demande. Pas de gestionnaire de comptes, pas de scripts de qualification, pas de transfert.",
+    "body2": "Votre contexte technique et commercial reste ensemble tandis que SDK évalue si le travail est adapté.",
+    "heroSignals": [
+      "Une spécification terminée n’est pas requise",
+      "Le contexte technique et commercial reste lié",
+      "Assez de contexte pour une réponse réfléchie",
+      "Le contact direct de l’entreprise reste disponible"
+    ],
+    "reasonsEyebrow": "Points de départ utiles",
+    "reasonsHeading": "Décrivez la contrainte qui pèse sur le système, pas un cahier des charges parfaitement abouti.",
+    "reasonsIntro": "Le formulaire est conçu pour déterminer si SDK peut faciliter la prochaine décision technique.",
+    "reasons": [
+      {
+        "number": "01",
+        "title": "Un système doit changer",
+        "copy": "Les travaux de modernisation, de migration ou d’intégration sont bloqués par l’incertitude de la situation actuelle."
+      },
+      {
+        "number": "02",
+        "title": "Une plateforme sous pression",
+        "copy": "La fiabilité, la rapidité de livraison, le comportement des infrastructures ou des données sont devenus une contrainte métier."
+      },
+      {
+        "number": "03",
+        "title": "Un flux de travail d'IA nécessite des contrôles techniques",
+        "copy": "Le cas d’utilisation est prometteur, mais les données, l’évaluation, la revue ou l’exploitation ne sont pas encore définies."
+      },
+      {
+        "number": "04",
+        "title": "Un domaine de travail a besoin des bons spécialistes",
+        "copy": "Le résultat est clair, mais le projet traverse des disciplines que l’équipe actuelle ne peut couvrir seule."
+      }
+    ],
+    "formEyebrow": "Contexte du projet",
+    "formHeading": "Donnez-nous suffisamment d'informations pour répondre utilement.",
+    "formIntro": "Expliquez ce qui se passe, pourquoi c'est important et ce qui a déjà été essayé. Un budget, un calendrier ou des détails techniques inconnus peuvent rester marqués comme tels.",
     "nextStepsEyebrow": "Que se passe-t-il ensuite",
-    "nextStepsHeading": "De l'enquête à l'engagement",
+    "nextStepsHeading": "De la demande à la mission",
     "nextStepsBody": "Après avoir soumis le formulaire, nous le lisons nous-mêmes. Si cela vous convient, nous vous répondrons avec une brève évaluation écrite et une proposition de modèle d'engagement. Si cela ne vous convient pas, nous vous expliquerons pourquoi et vous proposerons une alternative.",
     "nextStep1Title": "Examen",
-    "nextStep1Body": "Nous lisons votre soumission et la vérifions par rapport à notre capacité et notre expertise actuelles. Généralement dans les 2 jours ouvrables.",
+    "nextStep1Body": "Nous examinons le système, les contraintes et les résultats demandés par rapport à la capacité actuelle de SDK et à son expertise pertinente.",
     "nextStep2Title": "Évaluation",
     "nextStep2Body": "Une brève réponse écrite : quel est, selon nous, le problème, s'il est approprié et quelle serait la première mesure à prendre.",
     "nextStep3Title": "Appeler ou asynchrone",
@@ -64,7 +99,7 @@
     },
     "success": {
       "title": "Demande envoyée",
-      "body": "Merci, nous examinerons votre projet et vous répondrons dans les 2 jours ouvrables."
+      "body": "Merci : nous examinerons le contexte du projet et répondrons avec la prochaine question utile ou une évaluation de l'adéquation."
     },
     "error": {
       "title": "Quelque chose s'est mal passé",

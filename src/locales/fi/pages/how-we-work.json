@@ -1,37 +1,166 @@
 {
   "howWeWorkPage": {
-    "eyebrow": "Miten toimimme",
-    "body": "Jokainen osallistuminen seuraa samaa nelivaiheista reittiä. Kunkin vaiheen tulos on konkreettinen artefakti, jonka tiimi voi tarkistaa, haastaa tai hyväksyä ennen kuin seuraava alkaa.",
-    "expectEyebrow": "Jokainen vaihe",
-    "expectHeading": "Mitä odottaa kussakin vaiheessa",
-    "expectIntro": "Näkyvä tulos joka vaiheessa, joten luovutuksessa ei tule yllätyksiä.",
-    "understandTitle": "Ymmärrä",
-    "understandBody": "Liiketoiminnan tavoite, pino, rajoitteet ja menestyskriteerit. Tulos: lyhyt esittely ja ehdotettu laajuus.",
-    "designTitle": "Suunnittelu",
-    "designBody": "Arkkitehtuuri, laajuus, riskit ja virstanpylväät. Tulos: tekninen suunnitelma näkyvillä tarkistuspisteillä.",
-    "buildTitle": "Rakenna",
-    "buildBody": "Toteutus näkyvällä edistyksellä. Tulos: käynnissä oleva ohjelmisto, tarkistetaan lyhyissä jaksoissa.",
-    "handoverTitle": "Luovutus",
-    "handoverBody": "Ota käyttöön, dokumentoi ja siirrä omistajuus. Tulos: toimiva järjestelmä, runbookit ja tiedonsiirtoistunto.",
-    "deliverablesEyebrow": "Toimitettavat tuotteet",
-    "deliverablesHeading": "Mitä saat lopussa",
-    "deliverablesBody": "Jokainen toimeksianto päättyy omistusoikeuden siirtoon, ei huoltosopimukseen. Työn vastaanottava tiimi saa käyttöönsä ohjelmiston, dokumentaation ja tiedon.",
-    "deliverable1Title": "Toimiva ohjelmisto",
-    "deliverable1Body": "Otettu käyttöön, testattu ja käynnissä ympäristössäsi. Ei prototyyppi, ei pilotti – tuotantovalmis koodi.",
-    "deliverable2Title": "Tekninen dokumentaatio",
-    "deliverable2Body": "Arkkitehtuuripäätökset, runbookit, käyttöönottovaiheet ja toiminnalliset huomautukset, jotka on kirjoitettu järjestelmää ylläpitävälle tiimille.",
-    "deliverable3Title": "Tiedon siirto",
-    "deliverable3Body": "Jäsennelty istunto insinöörien kanssa, jotka omistavat järjestelmän jatkossa. Kysymyksiin vastattu, kompromissit selitetty, seuraavista vaiheista sovittu.",
-    "principlesEyebrow": "periaatteet",
-    "principlesHeading": "Kuinka näytämme",
-    "principlesBody": "Nämä eivät ole arvoja julisteessa. Ne ovat rajoituksia, joiden puitteissa toimimme jokaisessa toimeksiannossa.",
-    "principle1Title": "Suoraa viestintää",
-    "principle1Body": "Puhut työn tekevän insinöörin kanssa. Ei tilivastaavaa, ei projektikoordinaattoria, ei käännöstasoa.",
-    "principle2Title": "Näkyvää edistystä",
-    "principle2Body": "Kahden viikon välein näet toimivan ohjelmiston ja kirjallisen päivityksen. Ei mustia laatikoita, ei yllätyslaskuja.",
-    "principle3Title": "Rehellinen ulottuvuus",
-    "principle3Body": "Kerromme sinulle, jos jokin on sen ulkopuolella, mitä voimme toimittaa hyvin. Kiinteähintainen auditointi on usein oikea ensimmäinen askel, kun ongelma on epäselvä.",
-    "principle4Title": "Ei lukitusta",
-    "principle4Body": "Koodi, infrastruktuuri ja dokumentaatio kuuluvat sinulle. Emme rakenna riippuvuutta jatkuvasta osallistumisestamme."
+    "hero": {
+      "eyebrow": "Miten toimimme",
+      "title": "Vähennä epävarmuutta ennen kuin siitä tulee toimitusriski.",
+      "intro": "SDK tekee ongelman, päätökset, vastuut ja todisteet näkyvästi läpi toimeksiannon. Prosessi mukautuu järjestelmään, mutta asiakas tietää aina, mitä päätetään ja mitä seuraavaksi tapahtuu.",
+      "primaryCta": "Keskustele projektista",
+      "secondaryCta": "Katso prosessi",
+      "signals": [
+        "Määritellyt päätöskohdat",
+        "Näkyvä toimitustodistus",
+        "Projektikohtaiset asiantuntijat",
+        "Dokumentoitu luovutus"
+      ]
+    },
+    "entryPaths": {
+      "eyebrow": "Mistä työ alkaa",
+      "heading": "Ensimmäinen askel riippuu siitä, mitä tiedät jo.",
+      "intro": "Liian aikaisin toteutuksen aloittaminen tekee epävarmuudesta kallista. Toisella yleisellä löytöharjoituksella aloittaminen hukkaa aikaa, kun tulos on jo selvä.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Tulos on määritelty",
+          "copy": "Järjestelmän raja, haluttu muutos ja hyväksymisehdot ymmärretään. Vahvistamme oletukset, kokoamme toimitusryhmän ja suunnittelemme työvirran.",
+          "href": "#prosessi"
+        },
+        {
+          "number": "02",
+          "title": "Ongelma on näkyvissä, mutta polku ei",
+          "copy": "Järjestelmä aiheuttaa kustannuksia, riskejä tai viiveitä, mutta syy tai vastuullinen vastaus on epäselvä. Aloitamme rajoitetulla teknisellä arvioinnilla.",
+          "href": "#prosessi"
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "Sitoutumispolku",
+      "heading": "Neljä vaihetta, joista jokainen päättyy päätökseen.",
+      "intro": "Edistystä ei mitata pelkästään aktiivisuudella. Jokainen vaihe tuottaa todisteita, joita asiakas voi tarkistaa ennen kuin sitoutuu lisää.",
+      "labels": {
+        "output": "Lähtö",
+        "decision": "Päätös"
+      },
+      "items": [
+        {
+          "number": "01",
+          "title": "Ymmärrä",
+          "purpose": "Selvitä, mitä yritys tarvitsee, mitä järjestelmä tekee tänään ja missä on epävarmuus.",
+          "activities": [
+            "Tarkista tavoitteet, rajoitteet ja sidosryhmät",
+            "Tarkista asianmukainen järjestelmä ja käyttöympäristö",
+            "Määrittele menestys, pääsy ja tunnetut tuntemattomat"
+          ],
+          "output": "Lyhyt ongelman määritelmä, nykytilanne ja ehdotettu laajuus.",
+          "decision": "Onko tarpeeksi näyttöä vastauksen suunnitteluun?"
+        },
+        {
+          "number": "02",
+          "title": "Suunnittelu",
+          "purpose": "Käännä ongelma teknisiksi vaihtoehdoiksi, toimitusrajoiksi ja selkeiksi kompromissiksi.",
+          "activities": [
+            "Mallin arkkitehtuuri ja järjestelmän rajat",
+            "Tunnista riskit, riippuvuudet ja siirtymävaiheet",
+            "Kokoa tarvittava asiantuntijatiimi"
+          ],
+          "output": "Tekninen lähestymistapa, päätöstiedot, virstanpylväät ja hyväksymiskriteerit.",
+          "decision": "Onko tämä oikea lähestymistapa ja sitoutuminen?"
+        },
+        {
+          "number": "03",
+          "title": "Rakenna",
+          "purpose": "Toteuta sovittu muutos ja pidä laatu, riski ja edistyminen näkyvissä.",
+          "activities": [
+            "Toteuta tarkistettavissa osissa",
+            "Testaa oletuksia toimivaa ohjelmistoa vastaan",
+            "Kirjaa päätökset, todisteet ja ratkaisemattomat riskit"
+          ],
+          "output": "Toimivia muutoksia, tarkista todisteet ja nykyiset toiminnalliset asiakirjat.",
+          "decision": "Täyttääkö lisäys hyväksymisehdot?"
+        },
+        {
+          "number": "04",
+          "title": "Luovutus",
+          "purpose": "Aseta järjestelmä ja sen käyttämiseen tarvittava tieto asiakkaan hallintaan.",
+          "activities": [
+            "Tarkista käyttöönotto- ja palautusmenettelyt",
+            "Täydellinen tekninen ja toiminnallinen dokumentaatio",
+            "Siirrä konteksti ihmisille, jotka säilyttävät omistajuuden"
+          ],
+          "output": "Asiakkaan ohjaama koodi, infrastruktuuri, dokumentaatio ja sovitut jatkotoimenpiteet.",
+          "decision": "Voiko asiakas käyttää ja kehittää toimitettua laajuutta?"
+        }
+      ]
+    },
+    "responsibility": {
+      "eyebrow": "Joukkue ja vastuullisuus",
+      "heading": "Työryhmä voi muuttua työn myötä. Vastuu ei katoa asiantuntijoiden välille.",
+      "body": "SDK valitsee itsenäiset asiantuntijat toimeksiannon edellyttämille aloille ja koordinoi heidät yhden toimituskehyksen kautta. Päätökset, pääsy, dokumentaatio ja työn tila pidetään näkyvillä, jotta tieto ei jää yhdelle henkilölle.",
+      "items": [
+        {
+          "number": "01",
+          "title": "SDK",
+          "copy": "Määrittää toimeksiannon puitteet, koordinoi toimitusta ja on vastuussa asiakkaan kanssa sovituista laadunvalvonnasta."
+        },
+        {
+          "number": "02",
+          "title": "Asiantuntijat",
+          "copy": "Osallistu järjestelmän vaatimaan kokemukseen ja työskentele yhteisten päätösten, käytäntöjen ja hyväksymiskriteerien puitteissa."
+        },
+        {
+          "number": "03",
+          "title": "Asiakas",
+          "copy": "Tarjoaa liiketoimintakontekstin, pääsyn järjestelmään ja oikea-aikaiset päätökset säilyttäen samalla arkiston, infrastruktuurin ja tiedon hallinnan."
+        },
+        {
+          "number": "04",
+          "title": "Jaettu ennätys",
+          "copy": "Pitää arkkitehtuuripäätökset, riskit, edistymisen ja käyttötiedot kaikkien yksittäisten osallistujien ulottuvilla."
+        }
+      ]
+    },
+    "quality": {
+      "eyebrow": "Laadunvalvonta",
+      "heading": "Luottamus tulee mekanismeista, joita voit tarkastaa.",
+      "intro": "Vältämme tarpeettomia lupauksia, kuten turvallisia, skaalautuvia tai tuotantovalmiita lupauksia. Toimeksianto määrittelee, kuinka kyseiset ominaisuudet tutkitaan ja osoitetaan kyseisessä järjestelmässä.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Kirjalliset päätökset",
+          "copy": "Materiaaliarkkitehtuuri ja laajuusvalinnat tallentavat kontekstin, kompromissit ja seuraukset sen sijaan, että ne katoaisivat kokouksiin."
+        },
+        {
+          "number": "02",
+          "title": "Tarkasteltavat lisäykset",
+          "copy": "Työ on jaettu muutoksiin, jotka voidaan tarkastaa, testata ja hyväksyä ennen riskin kertymistä."
+        },
+        {
+          "number": "03",
+          "title": "Asianmukainen vahvistus",
+          "copy": "Testit, turvatarkastukset, suoritustodisteet ja käyttöönoton hallintalaitteet valitaan todellisen vikariskin mukaan."
+        },
+        {
+          "number": "04",
+          "title": "Operatiivinen omistus",
+          "copy": "Dokumentaatiota, pääsyä, palautusvaiheita ja ratkaisemattomia riskejä käsitellään toimitustyönä, ei valinnaisena materiaalina julkaisun jälkeen."
+        }
+      ]
+    },
+    "scope": {
+      "eyebrow": "Kun todellisuus muuttaa suunnitelmaa",
+      "heading": "Nosta muutos pintaan. Selitä seuraus. Päätä ennen kuin jatkat.",
+      "body": "Olemassa olevat järjestelmät paljastavat tietoja, kun niitä tarkastetaan ja muutetaan. Kun olettamus epäonnistuu tai uusi riippuvuus ilmaantuu, SDK tallentaa todisteet, selittää sen vaikutuksen laajuuteen, riskiin ja järjestykseen ja pyytää päätöstä. Muutos ei katoa laskuun tai viivästyneeseen luovutukseen.",
+      "steps": [
+        "Kirjaa ylös uudet todisteet",
+        "Selitä tekniset ja kaupalliset seuraukset",
+        "Esitä toteuttamiskelpoisia vaihtoehtoja",
+        "Hyväksy muutos ennen kuin jatkat"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Valitse ensimmäinen hyödyllinen päätös",
+      "title": "Aloita epävarmuudesta, joka estää työn.",
+      "body": "Kerro meille, mitä tiedetään, mikä on paineen alla ja minkä päätöksen organisaatiosi tarvitsee seuraavaksi.",
+      "label": "Keskustele tilanteesta"
+    }
   }
 }

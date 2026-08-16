@@ -87,6 +87,30 @@ documented, so the outcome descriptions must stay at the capability level.
 | Testimonials, awards, partnerships, company history | Never | — |
 | Compliance/legal claims | Never unless real | see `docs/content/legal-pages.md` |
 
+## 4.1 Owner-confirmed operating model
+
+The owner confirmed the following company model for public positioning:
+
+- SDK Enterprises is the company engaged for project delivery.
+- SDK hires independent specialists for projects, including project-specific
+  freelance engineers.
+- SDK vouches for the quality of the specialists it brings into an engagement.
+
+Allowed public framing: SDK composes a specialist team around the work,
+coordinates that team and defines the quality framework presented to the
+client. Do not describe independent specialists as employees or imply a fixed
+permanent team.
+
+The following details are **not yet documented** and must not be quantified or
+claimed as formal guarantees until an operating standard exists:
+
+- network size or availability;
+- acceptance or vetting rate;
+- universal seniority;
+- background, reference or certification checks;
+- replacement time if a specialist becomes unavailable;
+- a specific review, testing or security process on every engagement.
+
 ## 5. Confirmation-before-launch list
 
 The following copy exists in `docs/content/marketing-architecture.md` and may be
@@ -97,6 +121,9 @@ project owner before the site is shown to clients:
 2. "Senior engineering delivery."
 3. "Realtime and high-volume platform work."
 4. "You talk to the engineers doing the work, not an account layer."
+
+The operating-model statements in §4.1 are separately owner-confirmed. They do
+not confirm any of the four claims above.
 
 These are positioning claims, not statistics. If the owner cannot confirm one,
 remove it from the page. Do not soften it into a different claim without

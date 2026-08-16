@@ -68,14 +68,6 @@ export function websiteJsonLd(): Record<string, unknown> {
     url: getSiteUrl(),
     description: "",
     inLanguage: ["en", "fr"],
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${getSiteUrl()}/search?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 }
 

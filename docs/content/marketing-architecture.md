@@ -6,7 +6,10 @@ Section map and **first-pass (DRAFT)** copy for the public website. Written to
 much of the specific copy; where the reference fabricates proof points, this
 document replaces them with honest positioning claims.
 
-> **Status: DRAFT.** This is a first pass. It must pass the copy review gate
+> **Status: BEING REVISED.** The homepage map below remains the current
+> foundation. Dedicated Services, Work, How we work, About and Start a project
+> pages are being redesigned around the owner-confirmed operating model in
+> `claims-and-evidence.md` §4.1 and must pass the copy review gate
 > (voice-and-standards.md §6) before any page implementation treats it as
 > final. Claim rules: `docs/content/claims-and-evidence.md`. Page inventory and
 > current state: `docs/content/site-map.md`. The homepage sections below are
@@ -168,3 +171,19 @@ implementation:
 - [ ] Every heading communicates an idea
 - [ ] Every section answers its declared purpose question
 - [ ] Tone, terms and capitalization consistent
+
+## Dedicated-page positioning (2026 redesign)
+
+The dedicated pages use a more specific commercial narrative than the compact
+homepage sections:
+
+1. The client brings a technically consequential system, constraint or
+   decision.
+2. SDK determines which engineering capability the work requires.
+3. SDK composes and coordinates independent specialists around that need.
+4. Decisions, risks, progress and quality controls remain visible.
+5. Code, infrastructure, documentation and operating knowledge remain under
+   client control where the engagement scope permits.
+
+This is company positioning, not permission to invent a permanent team,
+formal vetting statistics, clients, outcomes or universal delivery guarantees.

@@ -1,29 +1,88 @@
 {
   "aboutPage": {
-    "eyebrow": "Om SDK Enterprises",
-    "title": "Senioringeniør, direkte levering.",
-    "intro": "Frankrig-baseret B2B ingeniørvirksomhed. Vi bygger, moderniserer og driver software på tværs af stakken - backend-platforme, cloud-infrastruktur, AI-automatisering, realtidssystemer og internt værktøj.",
-    "body": "SDK Enterprises blev grundlagt i 2019 og arbejder med et lille antal kunder ad gangen. Holdet er kun for seniorer: ingen juniorer, ingen account managers, ingen overdragelser til offshore levering. De fleste engagementer er omfattet af fastprisrevisioner, dedikerede tekniske arbejdsstrømme eller igangværende moderniseringssprints.",
-    "cta": "Start et projekt",
-    "approachEyebrow": "Vores tilgang",
-    "approachHeading": "Hvorfor vi holder holdet lille",
-    "approachBody": "Når et bureau vokser forbi det punkt, hvor partnerne kender hver ingeniør, vises kontolaget. Dette lag er, hvor kontekst går tabt, tidslinjer glider og omkostninger multipliceres. SDK er struktureret til at undgå det.",
-    "approach1Title": "Ingen kontoadministratorer",
-    "approach1Body": "Du taler med den ingeniør, der er ansvarlig for arbejdet. Ingen oversættelse, ingen forsinkelser, ingen fejlkommunikation mellem salg og levering.",
-    "approach2Title": "Ingen offshore-aflevering",
-    "approach2Body": "Teamet, der designer systemet, bliver ved implementering og overdragelse. Viden forbliver ét sted.",
-    "approach3Title": "Ingen juniorressourcer",
-    "approach3Body": "Hver SDK ingeniør er senior-niveau. Vi bruger ikke klientengagementer til at uddanne mindre erfarne medarbejdere.",
-    "beliefsEyebrow": "Hvad vi tror på",
-    "beliefsHeading": "Antagelserne bag arbejdet",
-    "beliefsBody": "Disse er ikke markedsføringserklæringer. De er de begrænsninger, der former enhver beslutning, vi træffer.",
-    "belief1Title": "Software er et ansvar, indtil det er forstået",
-    "belief1Body": "Hver linje kode bærer vedligeholdelsesomkostninger. Målet er ikke at skrive mere kode - det er at reducere omkostningerne ved den kode, der allerede eksisterer.",
-    "belief2Title": "Diagnose før recept",
-    "belief2Body": "Vi sælger ikke en fast engagementstype. Vi diagnosticerer først systemet: arkitektur, dataflow, implementering, team og begrænsninger. Så foreslår vi det engagement, der passer.",
-    "belief3Title": "Gennemsigtighed er en funktion",
-    "belief3Body": "Synlige fremskridt, skriftlige opdateringer og direkte adgang til ingeniørerne. Hemmeligholdelse omkring levering er et symptom på en proces, der ikke kan forklares.",
-    "companyFacts": {
+    "hero": {
+      "eyebrow": "Om SDK Enterprises",
+      "title": "En virksomhed bygget til at sammensætte den rigtige ingeniørevne til arbejdet.",
+      "intro": "SDK engagerer uafhængige ingeniørspecialister i henhold til systemet og er fortsat ansvarlig for leveringsrammen og kvalitetsforventningerne, der præsenteres for kunden.",
+      "primaryCta": "Diskuter et projekt",
+      "secondaryCta": "Forstå modellen",
+      "signals": [
+        "Frankrig-baseret virksomhed",
+        "Projektspecifikke specialister",
+        "SDK-ledet leveringsramme",
+        "Direkte virksomhedsansvar"
+      ]
+    },
+    "model": {
+      "eyebrow": "Hvordan virksomheden fungerer",
+      "heading": "Den tilgængelige bænk afgør ikke, hvad dit system modtager.",
+      "intro": "Et fast internt team kan være effektivt, når hvert projekt har brug for de samme discipliner. Det gør komplekse systemer ofte ikke. SDK starter med problemet, bestemmer, hvilken ingeniørevne der er relevant og bringer de nødvendige uafhængige specialister i ét engagement.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Ét kundeforhold",
+          "copy": "Klienten engagerer SDK Enterprises. SDK giver leveringsrammen i stedet for at overlade kunden til at koordinere ikke-relaterede individuelle leverandører."
+        },
+        {
+          "number": "02",
+          "title": "Et sammensat hold",
+          "copy": "De involverede discipliner kan ændre sig med arbejdsstadiet, fra vurdering og arkitektur til implementering og drift."
+        },
+        {
+          "number": "03",
+          "title": "Fælles kvalitetsforventninger",
+          "copy": "Opgaven definerer gennemgangspraksis, acceptbeviser, beslutningsregistreringer og overdragelseskrav, der er passende i forhold til dets risici."
+        },
+        {
+          "number": "04",
+          "title": "Klientkontrol",
+          "copy": "Lagre, infrastruktur, dokumentation og driftsviden er organiseret for at forblive under kundens kontrol."
+        }
+      ]
+    },
+    "selection": {
+      "eyebrow": "Specialistudvalg",
+      "heading": "Relevant erfaring betyder mere end at tilføje endnu en profil til projektet.",
+      "body": "SDK overvejer systemet, leveringsstadiet, tekniske risici og samarbejdsbehov, før de sammensætter et team. Det offentlige websted vil ikke gøre krav på en netværksstørrelse, acceptrate eller universel anciennitetsstandard uden et dokumenteret grundlag.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Problemets relevans",
+          "copy": "Erfaring ses i forhold til den faktiske systemgrænse og tekniske beslutninger, ikke kun en liste over teknologier."
+        },
+        {
+          "number": "02",
+          "title": "Leveringsansvar",
+          "copy": "Specialister skal arbejde inden for synlige beslutninger, gennemgå forventninger og kundeejede miljøer."
+        },
+        {
+          "number": "03",
+          "title": "Samarbejde passer",
+          "copy": "Evnen til at forklare afvejninger og arbejde med kundens interessenter er en del af succesfuld teknisk levering."
+        },
+        {
+          "number": "04",
+          "title": "Kontinuitet",
+          "copy": "Vigtig kontekst registreres, så ejerskabet afhænger ikke af, at én bidragyder forbliver på ubestemt tid."
+        }
+      ]
+    },
+    "responsibility": {
+      "eyebrow": "Hvad SDK er ansvarlig for",
+      "heading": "Fleksibel teamsammensætning bør ikke skabe tvetydig ansvarlighed.",
+      "body": "SDK’s rolle er at holde engagementet sammenhængende, da specialister bidrager med forskellige dele af arbejdet.",
+      "items": [
+        "Indramning af problem og omfang",
+        "Teamsammensætning og koordinering",
+        "Kvalitetskontrol og acceptbevis",
+        "Beslutnings- og risikosynlighed",
+        "Dokumentation og afleveringsforventninger",
+        "Et klart kundeforhold"
+      ]
+    },
+    "facts": {
+      "eyebrow": "Virksomhedsoplysninger",
+      "heading": "En registreret virksomhed, tilgængelig gennem direkte forretningskanaler.",
       "name": "Juridisk navn",
       "tradingName": "Handelsnavn",
       "siren": "SIREN",
@@ -31,6 +90,12 @@
       "address": "Registreret hjemsted",
       "email": "E-mail",
       "phone": "Telefon"
+    },
+    "cta": {
+      "eyebrow": "Arbejd med SDK",
+      "title": "Medbring systemet, begrænsningen og beslutningen, der kræver ejerskab.",
+      "body": "Vi vil begynde med at afgøre, hvilken ekspertise arbejdet kræver, og om SDK er den rigtige virksomhed til at koordinere det.",
+      "label": "Diskuter et projekt"
     }
   }
 }

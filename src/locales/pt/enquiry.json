@@ -1,14 +1,49 @@
 {
   "enquiry": {
+    "eyebrow": "Discuta um projeto",
     "title": "Iniciar um projeto",
-    "subtitle": "Conte-nos o que você está tentando construir, modernizar, automatizar ou consertar. Responderemos dentro de 2 dias úteis com uma avaliação honesta da adequação e do que seria necessário.",
+    "subtitle": "Conte-nos o que você está tentando construir, modernizar, automatizar ou consertar. Uma investigação útil começa com a pressão sobre o sistema e a decisão que você precisa tomar.",
     "body": "O formulário coleta as informações mínimas necessárias para responder com atenção. Nada é compartilhado fora do SDK Enterprises, e você também pode entrar em contato conosco diretamente em hello@sdk.enterprises.",
-    "body2": "Nós mesmos revisamos todas as consultas. Sem gerentes de contas, sem scripts de qualificação, sem transferências.",
+    "body2": "Seu contexto técnico e comercial permanece unido enquanto o SDK avalia se o trabalho é adequado.",
+    "heroSignals": [
+      "Uma especificação finalizada não é necessária",
+      "O contexto técnico e comercial permanece unido",
+      "Contexto para uma resposta considerada",
+      "O contato direto da empresa permanece disponível"
+    ],
+    "reasonsEyebrow": "Pontos de partida úteis",
+    "reasonsHeading": "Coloque pressão sobre o sistema, não sobre um documento de aquisição sofisticado.",
+    "reasonsIntro": "O formulário foi desenvolvido para estabelecer se o SDK pode facilitar a próxima decisão técnica.",
+    "reasons": [
+      {
+        "number": "01",
+        "title": "Um sistema precisa mudar",
+        "copy": "Os trabalhos de modernização, migração ou integração são bloqueados pela incerteza do estado atual."
+      },
+      {
+        "number": "02",
+        "title": "Uma plataforma está sob pressão",
+        "copy": "A confiabilidade, a velocidade de entrega, a infraestrutura ou o comportamento dos dados tornaram-se uma restrição aos negócios."
+      },
+      {
+        "number": "03",
+        "title": "Um fluxo de trabalho de IA precisa de controles de engenharia",
+        "copy": "O caso de uso é promissor, mas dados, avaliação, revisão ou operação ainda não estão definidos."
+      },
+      {
+        "number": "04",
+        "title": "Um fluxo de trabalho precisa dos especialistas certos",
+        "copy": "O resultado é claro, mas o projeto atravessa disciplinas que a equipe atual não consegue cobrir sozinha."
+      }
+    ],
+    "formEyebrow": "Contexto do projeto",
+    "formHeading": "Dê-nos informações suficientes para responder de forma útil.",
+    "formIntro": "Explique o que está acontecendo, por que é importante e o que já foi tentado. Orçamento, prazo ou detalhes técnicos desconhecidos podem permanecer marcados como tal.",
     "nextStepsEyebrow": "O que acontece a seguir",
     "nextStepsHeading": "Da consulta ao envolvimento",
     "nextStepsBody": "Depois de enviar o formulário, nós mesmos o lemos. Se for adequado, responderemos com uma breve avaliação por escrito e uma proposta de modelo de engajamento. Se não for adequado, diremos o porquê e sugeriremos uma alternativa.",
     "nextStep1Title": "Revisão",
-    "nextStep1Body": "Lemos sua submissão e a comparamos com nossa capacidade e experiência atuais. Geralmente dentro de 2 dias úteis.",
+    "nextStep1Body": "Revisamos o sistema, a restrição e o resultado solicitado em relação à capacidade atual e experiência relevante do SDK.",
     "nextStep2Title": "Avaliação",
     "nextStep2Body": "Uma breve resposta por escrito: o que achamos que é o problema, se é adequado e qual seria o primeiro passo.",
     "nextStep3Title": "Chamada ou assíncrona",
@@ -64,7 +99,7 @@
     },
     "success": {
       "title": "Consulta enviada",
-      "body": "Obrigado. Analisaremos seu projeto e responderemos em até dois dias úteis."
+      "body": "Obrigado — revisaremos o contexto do projeto e responderemos com a próxima pergunta útil ou uma avaliação de adequação."
     },
     "error": {
       "title": "Algo deu errado",

@@ -1,29 +1,88 @@
 {
   "aboutPage": {
-    "eyebrow": "Tietoja SDK Enterprises:stä",
-    "title": "Vanhempi suunnittelu, suora toimitus.",
-    "intro": "Ranskalainen B2B-insinööritoimisto. Rakennamme, modernisoimme ja käytämme ohjelmistoja kaikkialla – taustaalustoja, pilviinfrastruktuuria, tekoälyautomaatiota, reaaliaikaisia ​​järjestelmiä ja sisäisiä työkaluja.",
-    "body": "Vuonna 2019 perustettu SDK Enterprises toimii pienen määrän asiakkaita kanssa kerrallaan. Tiimi on vain senioreille: ei junioreita, ei asiakaspäälliköitä, ei vaihtoja offshore-toimituksiin. Useimmat toimeksiannot jakautuvat kiinteähintaisiin auditointeihin, erityisiin suunnittelutyöskentelyihin tai meneillään oleviin modernisointitoimiin.",
-    "cta": "Aloita projekti",
-    "approachEyebrow": "Meidän lähestymistapamme",
-    "approachHeading": "Miksi pidämme joukkueen pienenä",
-    "approachBody": "Kun toimisto kasvaa yli pisteen, jossa kumppanit tuntevat jokaisen insinöörin, tilikerros tulee näkyviin. Tämä kerros on paikka, jossa konteksti katoaa, aikajanat lipsuvat ja kustannukset moninkertaistuvat. SDK on suunniteltu välttämään tämä.",
-    "approach1Title": "Ei tilivastaavia",
-    "approach1Body": "Keskustelet työstä vastaavan insinöörin kanssa. Ei käännöstä, ei viiveitä, ei vääriä kommunikaatioita myynnin ja toimituksen välillä.",
-    "approach2Title": "Ei offshore-vaihtoa",
-    "approach2Body": "Järjestelmän suunnitteleva tiimi pysyy toteutuksen ja luovutuksen läpi. Tieto pysyy yhdessä paikassa.",
-    "approach3Title": "Ei junioriresursseja",
-    "approach3Body": "Jokainen SDK-insinööri on korkeatasoinen. Emme käytä asiakassitoumusta vähemmän kokeneen henkilöstön kouluttamiseen.",
-    "beliefsEyebrow": "Mitä uskomme",
-    "beliefsHeading": "Oletukset työn takana",
-    "beliefsBody": "Nämä eivät ole markkinointilausuntoja. Ne ovat rajoitteita, jotka muokkaavat jokaista tekemäämme päätöstä.",
-    "belief1Title": "Ohjelmisto on vastuussa, kunnes se on ymmärretty",
-    "belief1Body": "Jokaisella koodirivillä on ylläpitokustannukset. Tavoitteena ei ole kirjoittaa lisää koodia - se on vähentää jo olemassa olevan koodin kustannuksia.",
-    "belief2Title": "Diagnoosi ennen reseptiä",
-    "belief2Body": "Emme myy kiinteää sitoutumistyyppiä. Diagnosoimme järjestelmän ensin: arkkitehtuuri, tietovirta, käyttöönotto, tiimi ja rajoitukset. Sitten ehdotamme sopivaa kihlausta.",
-    "belief3Title": "Läpinäkyvyys on ominaisuus",
-    "belief3Body": "Näkyvä edistys, kirjalliset päivitykset ja suora yhteys insinööreihin. Toimituksen salailu on oire prosessista, jota ei voida selittää.",
-    "companyFacts": {
+    "hero": {
+      "eyebrow": "Tietoja SDK Enterprises:stä",
+      "title": "Yritys, joka on rakennettu kokoamaan työhön oikean suunnittelukyvyn.",
+      "intro": "SDK palkkaa riippumattomia suunnitteluasiantuntijoita järjestelmän mukaisesti ja vastaa edelleen asiakkaalle esitetystä toimituskehyksestä ja laatuodotuksista.",
+      "primaryCta": "Keskustele projektista",
+      "secondaryCta": "Ymmärrä malli",
+      "signals": [
+        "Ranskassa sijaitseva yritys",
+        "Projektikohtaiset asiantuntijat",
+        "SDK-vetoinen toimituskehys",
+        "Suora yritysvastuu"
+      ]
+    },
+    "model": {
+      "eyebrow": "Miten yritys toimii",
+      "heading": "Käytettävissä oleva penkki ei päätä, mitä järjestelmäsi vastaanottaa.",
+      "intro": "Kiinteä sisäinen tiimi voi olla tehokas, kun jokainen projekti tarvitsee samoja tieteenaloja. Monimutkaiset järjestelmät eivät useinkaan tee sitä. SDK aloittaa ongelman, määrittää, mikä suunnittelukyky on olennainen, ja kokoaa tarvittavat riippumattomat asiantuntijat yhteen toimeen.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Yksi asiakassuhde",
+          "copy": "Asiakas ottaa yhteyden SDK Enterprises:ään. SDK tarjoaa toimituskehyksen sen sijaan, että asiakas voisi koordinoida riippumattomia yksittäisiä toimittajia."
+        },
+        {
+          "number": "02",
+          "title": "Kokoonpantu joukkue",
+          "copy": "Mukana olevat tieteenalat voivat muuttua työvaiheen mukaan arvioinnista ja arkkitehtuurista toteutukseen ja toimintaan."
+        },
+        {
+          "number": "03",
+          "title": "Yhteiset laatuodotukset",
+          "copy": "Toimeksianto määrittelee tarkastuskäytännöt, hyväksyntätodisteet, päätösasiakirjat ja luovutusvaatimukset sen riskeillä."
+        },
+        {
+          "number": "04",
+          "title": "Asiakashallinta",
+          "copy": "Tietovarastot, infrastruktuuri, dokumentaatio ja käyttötieto on järjestetty pysymään asiakkaan hallinnassa."
+        }
+      ]
+    },
+    "selection": {
+      "eyebrow": "Asiantuntijan valinta",
+      "heading": "Asiaankuuluva kokemus on tärkeämpää kuin uuden profiilin lisääminen projektiin.",
+      "body": "SDK ottaa huomioon järjestelmän, toimitusvaiheen, tekniset riskit ja yhteistyötarpeet ennen tiimin muodostamista. Julkinen sivusto ei vaadi verkon kokoa, hyväksymisastetta tai yleistä vanhemmuusstandardia ilman dokumentoitua perustetta.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Ongelman merkitys",
+          "copy": "Kokemusta verrataan todellisiin järjestelmän rajoihin ja teknisiin päätöksiin, ei pelkästään teknologioiden luetteloon."
+        },
+        {
+          "number": "02",
+          "title": "Toimitusvastuu",
+          "copy": "Asiantuntijoiden tulee työskennellä näkyvien päätösten puitteissa, arvioida odotuksia ja asiakkaan omistamia ympäristöjä."
+        },
+        {
+          "number": "03",
+          "title": "Yhteistyö sopii",
+          "copy": "Kyky selittää kompromisseja ja työskennellä asiakkaan sidosryhmien kanssa on osa onnistunutta teknistä toimitusta."
+        },
+        {
+          "number": "04",
+          "title": "Jatkuvuus",
+          "copy": "Tärkeä konteksti tallennetaan, jotta omistajuus ei riipu siitä, onko yksi kirjoittaja jäänyt loputtomiin."
+        }
+      ]
+    },
+    "responsibility": {
+      "eyebrow": "Mistä SDK on vastuussa",
+      "heading": "Joustava tiimin kokoonpano ei saa luoda epäselvää vastuullisuutta.",
+      "body": "SDK:n tehtävänä on pitää sitoutuminen johdonmukaisena, kun asiantuntijat osallistuvat työn eri osiin.",
+      "items": [
+        "Ongelma ja laajuus kehystys",
+        "Joukkueen kokoonpano ja koordinointi",
+        "Laadunvalvonta ja hyväksyntätodistus",
+        "Päätösten ja riskien näkyvyys",
+        "Dokumentaatio ja luovutusodotukset",
+        "Selkeä asiakassuhde"
+      ]
+    },
+    "facts": {
+      "eyebrow": "Yrityksen tiedot",
+      "heading": "Rekisteröity yritys, saatavilla suorien liiketoimintakanavien kautta.",
       "name": "Virallinen nimi",
       "tradingName": "Kaupan nimi",
       "siren": "SIREN",
@@ -31,6 +90,12 @@
       "address": "Rekisteröity toimipaikka",
       "email": "Sähköposti",
       "phone": "Puhelin"
+    },
+    "cta": {
+      "eyebrow": "Työskentele SDK:n kanssa",
+      "title": "Tuo järjestelmä, rajoitus ja päätös, joka tarvitsee omistajuutta.",
+      "body": "Aloitamme selvittämällä, mitä asiantuntemusta työ vaatii ja onko SDK oikea yritys koordinoimaan sitä.",
+      "label": "Keskustele projektista"
     }
   }
 }

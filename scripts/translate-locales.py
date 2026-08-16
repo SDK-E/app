@@ -163,9 +163,25 @@ def translate_strings(texts: list[str], locale: str) -> dict[str, str]:
                 last_error = error
                 time.sleep(0.5 * (attempt + 1))
         if last_error is not None:
-            raise RuntimeError(
-                f"{locale}: translation failed at batch {offset}: {last_error}"
-            ) from last_error
+            # Some target languages cause Google Translate to rewrite or drop
+            # the batch delimiter. Retain batching as the fast path, then
+            # translate the affected batch one string at a time so catalog
+            # reconciliation remains reliable.
+            for source in batch:
+                single_error: Exception | None = None
+                for attempt in range(3):
+                    try:
+                        result = translate_batch([protect(source)], locale)
+                        translations[source] = unprotect(result[0])
+                        single_error = None
+                        break
+                    except Exception as error:
+                        single_error = error
+                        time.sleep(0.5 * (attempt + 1))
+                if single_error is not None:
+                    raise RuntimeError(
+                        f"{locale}: translation failed at batch {offset}: {single_error}"
+                    ) from single_error
         time.sleep(0.05)
     return translations
 

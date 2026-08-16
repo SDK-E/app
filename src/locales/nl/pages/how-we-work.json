@@ -1,37 +1,166 @@
 {
   "howWeWorkPage": {
-    "eyebrow": "Hoe wij werken",
-    "body": "Elke opdracht volgt hetzelfde vierfasenpad. De output van elke fase is een concreet artefact dat het team kan beoordelen, uitdagen of goedkeuren voordat de volgende begint.",
-    "expectEyebrow": "Elke fase",
-    "expectHeading": "Wat u in elke fase kunt verwachten",
-    "expectIntro": "In elke fase een zichtbare deliverable, zodat u bij de overdracht niet voor verrassingen komt te staan.",
-    "understandTitle": "Begrijp het",
-    "understandBody": "Bedrijfsdoel, stapel, beperkingen en succescriteria. Output: een korte briefing en een voorgestelde reikwijdte.",
-    "designTitle": "Ontwerp",
-    "designBody": "Architectuur, reikwijdte, risico's en mijlpalen. Output: een technisch plan met zichtbare controlepunten.",
-    "buildTitle": "Bouw",
-    "buildBody": "Implementatie met zichtbare voortgang. Output: draaiende software, beoordeeld in korte cycli.",
-    "handoverTitle": "Overdracht",
-    "handoverBody": "Implementeren, documenteren en eigendom overdragen. Output: werkend systeem, runbooks en een kennisoverdrachtsessie.",
-    "deliverablesEyebrow": "Leveringen",
-    "deliverablesHeading": "Wat je uiteindelijk ontvangt",
-    "deliverablesBody": "Elke opdracht eindigt met een eigendomsoverdracht, niet met een overdracht aan een onderhoudscontract. Het team dat het werk ontvangt, krijgt de software, de documentatie en de kennis om ermee te werken.",
-    "deliverable1Title": "Werkende software",
-    "deliverable1Body": "Geïmplementeerd, getest en actief in uw omgeving. Geen prototype, geen pilot – productieklare code.",
-    "deliverable2Title": "Technische documentatie",
-    "deliverable2Body": "Architectuurbeslissingen, runbooks, implementatiestappen en operationele aantekeningen geschreven voor het team dat het systeem gaat onderhouden.",
-    "deliverable3Title": "Kennisoverdracht",
-    "deliverable3Body": "Een gestructureerde sessie met de ingenieurs die in de toekomst eigenaar zullen worden van het systeem. Vragen beantwoord, afwegingen uitgelegd, volgende stappen afgesproken.",
-    "principlesEyebrow": "Principes",
-    "principlesHeading": "Hoe wij verschijnen",
-    "principlesBody": "Dit zijn geen waarden op een poster. Het zijn de beperkingen waarbinnen wij bij elke opdracht moeten opereren.",
-    "principle1Title": "Directe communicatie",
-    "principle1Body": "Je spreekt met de machinist die de werkzaamheden uitvoert. Geen accountmanager, geen projectcoördinator, geen vertaallaag.",
-    "principle2Title": "Zichtbare vooruitgang",
-    "principle2Body": "Elke twee weken zie je werkende software en een schriftelijke update. Geen zwarte dozen, geen verrassingsfacturen.",
-    "principle3Title": "Eerlijk bereik",
-    "principle3Body": "Wij vertellen het u als er iets buiten wat wij goed kunnen leveren valt. Een audit tegen een vaste prijs is vaak de juiste eerste stap als het probleem onduidelijk is.",
-    "principle4Title": "Geen lock-in",
-    "principle4Body": "De code, de infrastructuur en de documentatie zijn van jou. Wij bouwen geen afhankelijkheden op door onze voortdurende betrokkenheid."
+    "hero": {
+      "eyebrow": "Hoe wij werken",
+      "title": "Verminder de onzekerheid voordat het een leveringsrisico wordt.",
+      "intro": "SDK maakt het probleem, de beslissingen, de verantwoordelijkheden en het bewijsmateriaal zichtbaar tijdens een opdracht. Het proces past zich aan het systeem aan, maar de klant weet altijd wat er wordt besloten en wat er daarna komt.",
+      "primaryCta": "Bespreek een project",
+      "secondaryCta": "Bekijk het proces",
+      "signals": [
+        "Gedefinieerde beslispunten",
+        "Zichtbaar leveringsbewijs",
+        "Projectspecifieke specialisten",
+        "Gedocumenteerde overdracht"
+      ]
+    },
+    "entryPaths": {
+      "eyebrow": "Waar het werk begint",
+      "heading": "De eerste stap hangt af van wat je al weet.",
+      "intro": "Te vroeg beginnen met de implementatie maakt onzekerheid kostbaar. Beginnen met nog een generieke ontdekkingsoefening verspilt tijd als de uitkomst al duidelijk is.",
+      "items": [
+        {
+          "number": "01",
+          "title": "De uitkomst is gedefinieerd",
+          "copy": "De systeemgrens, gewenste verandering en acceptatievoorwaarden zijn inzichtelijk. We valideren aannames, stellen het opleveringsteam samen en plannen de werkstroom.",
+          "href": "#proces"
+        },
+        {
+          "number": "02",
+          "title": "Het probleem is zichtbaar, maar het pad niet",
+          "copy": "Het systeem creëert kosten, risico's of vertraging, maar de oorzaak of verantwoordelijke reactie is onduidelijk. We beginnen met een begrensde technische beoordeling.",
+          "href": "#proces"
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "Het engagementpad",
+      "heading": "Vier fasen, die elk eindigen in een beslissing.",
+      "intro": "Vooruitgang wordt niet alleen gemeten aan de hand van activiteit. Elke fase levert bewijsmateriaal op dat de cliënt kan beoordelen voordat er verdere toezeggingen worden gedaan.",
+      "labels": {
+        "output": "Uitvoer",
+        "decision": "Beslissing"
+      },
+      "items": [
+        {
+          "number": "01",
+          "title": "Begrijpen",
+          "purpose": "Stel vast wat het bedrijf nodig heeft, wat het systeem vandaag de dag doet en waar de onzekerheid zit.",
+          "activities": [
+            "Beoordeel de doelstellingen, beperkingen en belanghebbenden",
+            "Inspecteer het relevante systeem en de operationele context",
+            "Definieer succes, toegang en bekende onbekenden"
+          ],
+          "output": "Een beknopte probleemdefinitie, huidige stand van zaken en voorgestelde reikwijdte.",
+          "decision": "Is er voldoende bewijs om de reactie te ontwerpen?"
+        },
+        {
+          "number": "02",
+          "title": "Ontwerp",
+          "purpose": "Zet het probleem om in technische opties, leveringsgrenzen en expliciete afwegingen.",
+          "activities": [
+            "Modelarchitectuur en systeemgrenzen",
+            "Identificeer risico's, afhankelijkheden en migratiestappen",
+            "Stel het benodigde specialistenteam samen"
+          ],
+          "output": "Een technische aanpak, besluitvorming, mijlpalen en acceptatiecriteria.",
+          "decision": "Is dit de juiste aanpak en inzet?"
+        },
+        {
+          "number": "03",
+          "title": "Bouwen",
+          "purpose": "Lever de afgesproken verandering, terwijl kwaliteit, risico en voortgang zichtbaar blijven.",
+          "activities": [
+            "Implementeer in bezienbare stappen",
+            "Test aannames met werkende software",
+            "Leg beslissingen, bewijsmateriaal en onopgeloste risico's vast"
+          ],
+          "output": "Werkwijzigingen, bewijsmateriaal en huidige operationele documentatie beoordelen.",
+          "decision": "Voldoet de verhoging aan de acceptatievoorwaarden?"
+        },
+        {
+          "number": "04",
+          "title": "Overdracht",
+          "purpose": "Plaats het systeem en de kennis die nodig is om het te bedienen onder controle van de klant.",
+          "activities": [
+            "Implementatie- en herstelprocedures verifiëren",
+            "Volledige technische en operationele documentatie",
+            "Breng de context over naar de mensen die het eigendom behouden"
+          ],
+          "output": "Klantgestuurde code, infrastructuur, documentatie en afgesproken vervolgacties.",
+          "decision": "Kan de klant de geleverde scope exploiteren en evolueren?"
+        }
+      ]
+    },
+    "responsibility": {
+      "eyebrow": "Team en verantwoordelijkheid",
+      "heading": "Het team kan veranderen met het werk. Verantwoordelijkheid verdwijnt niet tussen specialisten.",
+      "body": "SDK selecteert onafhankelijke specialisten voor de disciplines die een opdracht vereist en coördineert deze via één leveringskader. Beslissingen, toegang, documentatie en werkstatus worden zichtbaar gehouden, zodat kennis niet bij één persoon blijft.",
+      "items": [
+        {
+          "number": "01",
+          "title": "SDK",
+          "copy": "Definieert het opdrachtkader, coördineert de uitvoering en blijft verantwoordelijk voor de met de opdrachtgever overeengekomen kwaliteitscontroles."
+        },
+        {
+          "number": "02",
+          "title": "Specialisten",
+          "copy": "Draag de ervaring bij die het systeem vereist en werk binnen gedeelde beslissingen, beoordeel praktijken en acceptatiecriteria."
+        },
+        {
+          "number": "03",
+          "title": "Cliënt",
+          "copy": "Biedt zakelijke context, systeemtoegang en tijdige beslissingen, terwijl de controle over de opslagplaatsen, infrastructuur en informatie behouden blijft."
+        },
+        {
+          "number": "04",
+          "title": "Gedeeld record",
+          "copy": "Houdt architectuurbeslissingen, risico's, voortgang en operationele kennis toegankelijk voor elke afzonderlijke bijdrager."
+        }
+      ]
+    },
+    "quality": {
+      "eyebrow": "Kwaliteitscontroles",
+      "heading": "Vertrouwen komt voort uit mechanismen die u kunt inspecteren.",
+      "intro": "We vermijden ongekwalificeerde beloftes zoals veilig, schaalbaar of productieklaar. In de opdracht wordt vastgelegd hoe deze kwaliteiten voor het betreffende systeem worden onderzocht en bewezen.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Schriftelijke besluiten",
+          "copy": "Materiaalarchitectuur en reikwijdtekeuzes leggen de context, afwegingen en consequenties vast in plaats van te verdwijnen in vergaderingen."
+        },
+        {
+          "number": "02",
+          "title": "Beoordeelbare verhogingen",
+          "copy": "Het werk is opgedeeld in veranderingen die kunnen worden geïnspecteerd, getest en geaccepteerd voordat het risico zich opstapelt."
+        },
+        {
+          "number": "03",
+          "title": "Passende verificatie",
+          "copy": "Tests, veiligheidscontroles, prestatiebewijs en implementatiecontroles worden geselecteerd op basis van het werkelijke faalrisico."
+        },
+        {
+          "number": "04",
+          "title": "Operationeel eigendom",
+          "copy": "Documentatie, toegang, herstelstappen en onopgeloste risico's worden na de lancering behandeld als opleveringswerk en niet als optioneel materiaal."
+        }
+      ]
+    },
+    "scope": {
+      "eyebrow": "Wanneer de realiteit het plan verandert",
+      "heading": "Breng de verandering aan het licht. Leg het gevolg uit. Beslis voordat u verdergaat.",
+      "body": "Bestaande systemen onthullen informatie terwijl ze worden geïnspecteerd en gewijzigd. Wanneer een aanname faalt of er een nieuwe afhankelijkheid ontstaat, legt SDK het bewijsmateriaal vast, legt het effect ervan uit op de omvang, het risico en de volgorde, en vraagt ​​om een ​​beslissing. De wijziging verdwijnt niet in een factuur of een vertraagde overdracht.",
+      "steps": [
+        "Noteer het nieuwe bewijsmateriaal",
+        "Leg de technische en commerciële gevolgen uit",
+        "Presenteer haalbare opties",
+        "Ga akkoord met de wijziging voordat u doorgaat"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Kies de eerste nuttige beslissing",
+      "title": "Begin met de onzekerheid die het werk blokkeert.",
+      "body": "Vertel ons wat er bekend is, wat er onder druk staat en welke beslissing uw organisatie vervolgens moet nemen.",
+      "label": "Bespreek de situatie"
+    }
   }
 }

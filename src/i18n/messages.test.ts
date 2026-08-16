@@ -54,7 +54,7 @@ describe("message shards", () => {
       expect.arrayContaining([
         "meta",
         "nav",
-        "hero",
+        "homePage",
         "legal",
         "servicesPage",
         "enquiry",

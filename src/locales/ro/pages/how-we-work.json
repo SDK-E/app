@@ -1,37 +1,166 @@
 {
   "howWeWorkPage": {
-    "eyebrow": "Cum lucrăm",
-    "body": "Fiecare angajament urmează aceeași cale în patru faze. Rezultatul fiecărei etape este un artefact concret pe care echipa îl poate revizui, contesta sau aproba înainte de a începe următoarea.",
-    "expectEyebrow": "Fiecare fază",
-    "expectHeading": "La ce să vă așteptați în fiecare fază",
-    "expectIntro": "Un livrabil vizibil în fiecare etapă, deci nu există surprize la predare.",
-    "understandTitle": "Înțelege",
-    "understandBody": "Scopul afacerii, stiva, constrângerile și criteriile de succes. Rezultat: un scurt scurt și un domeniu de aplicare propus.",
-    "designTitle": "Design",
-    "designBody": "Arhitectură, domeniul de aplicare, riscuri și repere. Rezultat: un plan tehnic cu puncte de control vizibile.",
-    "buildTitle": "Construiește",
-    "buildBody": "Implementare cu progres vizibil. Ieșire: software care rulează, revizuit în cicluri scurte.",
-    "handoverTitle": "Predarea",
-    "handoverBody": "Implementați, documentați și transferați proprietatea. Ieșire: sistem de lucru, runbook-uri și o sesiune de transfer de cunoștințe.",
-    "deliverablesEyebrow": "Produse livrate",
-    "deliverablesHeading": "Ce primești la sfârșit",
-    "deliverablesBody": "Fiecare angajament se încheie cu un transfer de proprietate, nu cu o transferare la un contract de întreținere. Echipa care primește munca primește software-ul, documentația și cunoștințele necesare pentru a o opera.",
-    "deliverable1Title": "Software de lucru",
-    "deliverable1Body": "Implementat, testat și rulat în mediul dvs. Nu un prototip, nu un pilot - cod gata de producție.",
-    "deliverable2Title": "Documentatie tehnica",
-    "deliverable2Body": "Decizii de arhitectură, runbook-uri, pași de implementare și note operaționale scrise pentru echipa care va întreține sistemul.",
-    "deliverable3Title": "Transferul de cunoștințe",
-    "deliverable3Body": "O sesiune structurată cu inginerii care vor deține sistemul în continuare. S-au răspuns la întrebări, s-au explicat compromisuri, s-au convenit pașii următori.",
-    "principlesEyebrow": "Principii",
-    "principlesHeading": "Cum ne arătăm",
-    "principlesBody": "Acestea nu sunt valori pe un afiș. Ele sunt constrângerile în care operăm pentru fiecare angajament.",
-    "principle1Title": "Comunicare directă",
-    "principle1Body": "Vorbești cu inginerul care face treaba. Nici un manager de cont, nici un coordonator de proiect, nici un nivel de traducere.",
-    "principle2Title": "Progres vizibil",
-    "principle2Body": "La fiecare două săptămâni vedeți un software funcțional și o actualizare scrisă. Fără cutii negre, fără facturi surpriză.",
-    "principle3Title": "Domeniul de aplicare cinstit",
-    "principle3Body": "Vă vom spune dacă ceva este în afara ceea ce putem livra bine. Un audit cu preț fix este adesea primul pas corect atunci când problema este neclară.",
-    "principle4Title": "Fără blocare",
-    "principle4Body": "Codul, infrastructura și documentația vă aparțin. Nu construim dependențe de implicarea noastră continuă."
+    "hero": {
+      "eyebrow": "Cum lucrăm",
+      "title": "Reduceți incertitudinea înainte ca aceasta să devină risc de livrare.",
+      "intro": "SDK face ca problema, deciziile, responsabilitățile și dovezile să fie vizibile pe parcursul unei misiuni. Procesul se adaptează la sistem, dar clientul știe mereu ce se decide și ce urmează.",
+      "primaryCta": "Discutați un proiect",
+      "secondaryCta": "Vezi procesul",
+      "signals": [
+        "Puncte de decizie definite",
+        "Dovezi vizibile de livrare",
+        "Specialiști specifici proiectului",
+        "Predare documentată"
+      ]
+    },
+    "entryPaths": {
+      "eyebrow": "Unde începe munca",
+      "heading": "Primul pas depinde de ceea ce știi deja.",
+      "intro": "Începerea implementării prea devreme face incertitudinea costisitoare. Începerea cu un alt exercițiu generic de descoperire pierde timp când rezultatul este deja clar.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Rezultatul este definit",
+          "copy": "Limita sistemului, schimbarea dorită și condițiile de acceptare sunt înțelese. Validăm ipotezele, compunem echipa de livrare și planificăm fluxul de lucru.",
+          "href": "#proces"
+        },
+        {
+          "number": "02",
+          "title": "Problema este vizibilă, dar calea nu este",
+          "copy": "Sistemul creează costuri, riscuri sau întârzieri, dar cauza sau răspunsul responsabil este neclar. Începem cu o evaluare tehnică limitată.",
+          "href": "#proces"
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "Calea logodnei",
+      "heading": "Patru etape, fiecare se termină cu o decizie.",
+      "intro": "Progresul nu este măsurat doar prin activitate. Fiecare etapă produce dovezi pe care clientul le poate revizui înainte de a se angaja mai mult.",
+      "labels": {
+        "output": "Ieșire",
+        "decision": "Decizie"
+      },
+      "items": [
+        {
+          "number": "01",
+          "title": "Înțelege",
+          "purpose": "Stabiliți de ce are nevoie afacerea, ce face sistemul astăzi și unde se află incertitudinea.",
+          "activities": [
+            "Examinați obiectivele, constrângerile și părțile interesate",
+            "Inspectați sistemul relevant și contextul de operare",
+            "Definiți succesul, accesul și necunoscutele cunoscute"
+          ],
+          "output": "O definiție concisă a problemei, viziunea actuală și domeniul de aplicare propus.",
+          "decision": "Există suficiente dovezi pentru a proiecta răspunsul?"
+        },
+        {
+          "number": "02",
+          "title": "Design",
+          "purpose": "Transformați problema în opțiuni tehnice, limite de livrare și compromisuri explicite.",
+          "activities": [
+            "Arhitectura modelului și limitele sistemului",
+            "Identificați riscurile, dependențele și pașii de migrare",
+            "Formați echipa de specialiști necesară"
+          ],
+          "output": "O abordare tehnică, înregistrare a deciziilor, etape și criterii de acceptare.",
+          "decision": "Este aceasta abordarea și angajamentul corect?"
+        },
+        {
+          "number": "03",
+          "title": "Construiește",
+          "purpose": "Furnizați schimbarea convenită, păstrând în același timp vizibile calitatea, riscul și progresul.",
+          "activities": [
+            "Implementați în trepte care pot fi revizuite",
+            "Testați ipotezele față de software-ul funcțional",
+            "Înregistrați deciziile, dovezile și riscurile nerezolvate"
+          ],
+          "output": "Schimbări de lucru, dovezi de revizuire și documentație operațională actuală.",
+          "decision": "Creșterea îndeplinește condițiile de acceptare?"
+        },
+        {
+          "number": "04",
+          "title": "Predarea",
+          "purpose": "Plasați sistemul și cunoștințele necesare pentru a-l opera sub controlul clientului.",
+          "activities": [
+            "Verificați procedurile de implementare și recuperare",
+            "Documentatie tehnica si operationala completa",
+            "Transferați contextul persoanelor care își păstrează proprietatea"
+          ],
+          "output": "Cod controlat de client, infrastructură, documentație și acțiuni de urmărire convenite.",
+          "decision": "Poate clientul să opereze și să evolueze domeniul livrat?"
+        }
+      ]
+    },
+    "responsibility": {
+      "eyebrow": "Echipa și responsabilitate",
+      "heading": "Echipa se poate schimba cu munca. Responsabilitatea nu dispare între specialiști.",
+      "body": "SDK selectează specialiști independenți pentru disciplinele pe care le necesită un angajament și îi coordonează printr-un singur cadru de livrare. Deciziile, accesul, documentația și starea muncii sunt păstrate vizibile, astfel încât cunoștințele să nu rămână la o singură persoană.",
+      "items": [
+        {
+          "number": "01",
+          "title": "SDK",
+          "copy": "Definește cadrul de angajament, coordonează livrarea și rămâne responsabil pentru controalele de calitate convenite cu clientul."
+        },
+        {
+          "number": "02",
+          "title": "Specialiști",
+          "copy": "Contribuiți cu experiența cerută de sistem și lucrați în cadrul unor decizii comune, practici de revizuire și criterii de acceptare."
+        },
+        {
+          "number": "03",
+          "title": "Client",
+          "copy": "Oferă context de afaceri, acces la sistem și decizii în timp util, păstrând în același timp controlul asupra depozitelor, infrastructurii și informațiilor sale."
+        },
+        {
+          "number": "04",
+          "title": "Înregistrare partajată",
+          "copy": "Păstrează deciziile de arhitectură, riscurile, progresul și cunoștințele de operare accesibile dincolo de orice contributor unic."
+        }
+      ]
+    },
+    "quality": {
+      "eyebrow": "Controale de calitate",
+      "heading": "Încrederea vine din mecanismele pe care le poți inspecta.",
+      "intro": "Evităm promisiunile necalificate, cum ar fi sigure, scalabile sau pregătite pentru producție. Angajamentul definește modul în care aceste calități vor fi examinate și evidențiate pentru sistemul în cauză.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Deciziile scrise",
+          "copy": "Arhitectura materială și alegerile de domeniu înregistrează contextul, compromisurile și consecințele în loc să dispară în întâlniri."
+        },
+        {
+          "number": "02",
+          "title": "Creștere revizuibile",
+          "copy": "Munca este împărțită în modificări care pot fi inspectate, testate și acceptate înainte ca riscul să se acumuleze."
+        },
+        {
+          "number": "03",
+          "title": "Verificare corespunzătoare",
+          "copy": "Testele, controalele de securitate, dovezile de performanță și controalele de implementare sunt selectate în funcție de riscul de eșec real."
+        },
+        {
+          "number": "04",
+          "title": "Proprietate operațională",
+          "copy": "Documentația, accesul, pașii de recuperare și riscurile nerezolvate sunt tratate ca lucrări de livrare, nu materiale opționale după lansare."
+        }
+      ]
+    },
+    "scope": {
+      "eyebrow": "Când realitatea schimbă planul",
+      "heading": "Evidențiați schimbarea. Explicați consecința. Decideți înainte de a continua.",
+      "body": "Sistemele existente dezvăluie informații pe măsură ce sunt inspectate și modificate. Când o ipoteză eșuează sau apare o nouă dependență, SDK înregistrează dovezile, explică efectul acesteia asupra domeniului, riscului și secvenței și solicită o decizie. Modificarea nu dispare într-o factură sau într-o predare întârziată.",
+      "steps": [
+        "Înregistrați noile dovezi",
+        "Explicați consecințele tehnice și comerciale",
+        "Prezentați opțiuni viabile",
+        "Acceptați modificarea înainte de a continua"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Alege prima decizie utilă",
+      "title": "Începeți cu incertitudinea care blochează munca.",
+      "body": "Spune-ne ce se știe, ce este sub presiune și ce decizie trebuie să ia organizația ta în continuare.",
+      "label": "Discutați situația"
+    }
   }
 }

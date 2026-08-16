@@ -1,37 +1,166 @@
 {
   "howWeWorkPage": {
-    "eyebrow": "Hogyan dolgozunk",
-    "body": "Minden elköteleződés ugyanazt a négyfázisú utat követi. Az egyes fázisok eredménye egy konkrét műalkotás, amelyet a csapat áttekinthet, megkérdőjelezhet vagy jóváhagyhat a következő megkezdése előtt.",
-    "expectEyebrow": "Minden fázis",
-    "expectHeading": "Mi várható az egyes fázisokban",
-    "expectIntro": "Minden szakaszban látható leszállítás, így nincs meglepetés az átadáskor.",
-    "understandTitle": "Értsd",
-    "understandBody": "Üzleti cél, verem, korlátok és sikerkritériumok. Kimenet: egy rövid ismertető és egy javasolt terjedelem.",
-    "designTitle": "Tervezés",
-    "designBody": "Építészet, terjedelem, kockázatok és mérföldkövek. Kimenet: műszaki terv látható ellenőrző pontokkal.",
-    "buildTitle": "Építsd meg",
-    "buildBody": "Megvalósítás látható előrehaladással. Kimenet: futó szoftver, rövid ciklusokban áttekintve.",
-    "handoverTitle": "Átadás",
-    "handoverBody": "Telepítse, dokumentálja és adja át a tulajdonjogot. Kimenet: működő rendszer, runbookok és tudástranszfer munkamenet.",
-    "deliverablesEyebrow": "Szállítandó termékek",
-    "deliverablesHeading": "Amit a végén kapsz",
-    "deliverablesBody": "Minden megbízás a tulajdonjog átadásával ér véget, nem pedig a karbantartási szerződés átadásával. A munkát átvevő csapat megkapja a szoftvert, a dokumentációt és a működtetéshez szükséges ismereteket.",
-    "deliverable1Title": "Működő szoftver",
-    "deliverable1Body": "Telepítve, tesztelve és futtatva a környezetében. Nem prototípus, nem pilot – gyártásra kész kód.",
-    "deliverable2Title": "Műszaki dokumentáció",
-    "deliverable2Body": "A rendszert karbantartó csapat számára írt architektúra-döntések, runbookok, telepítési lépések és működési megjegyzések.",
-    "deliverable3Title": "Tudástranszfer",
-    "deliverable3Body": "Strukturált munkamenet a mérnökökkel, akik a jövőben a rendszer tulajdonosai lesznek. A kérdések megválaszolva, a kompromisszumok magyarázata, a következő lépések megegyeztek.",
-    "principlesEyebrow": "Alapelvek",
-    "principlesHeading": "Hogyan jelenünk meg",
-    "principlesBody": "Ezek nem értékek egy plakáton. Ezek azok a korlátok, amelyeken belül dolgozunk minden megbízásnál.",
-    "principle1Title": "Közvetlen kommunikáció",
-    "principle1Body": "Beszéljen a munkát végző mérnökkel. Nincs fiókkezelő, nincs projektkoordinátor, nincs fordítási réteg.",
-    "principle2Title": "Látható haladás",
-    "principle2Body": "Kéthetente megjelenik egy működő szoftver és egy írásos frissítés. Nincsenek fekete dobozok, nincsenek meglepetés számlák.",
-    "principle3Title": "Őszinte terjedelem",
-    "principle3Body": "Megmondjuk, ha valami kívül esik azon, amit jól tudunk szállítani. A fix árú audit gyakran a megfelelő első lépés, ha a probléma nem egyértelmű.",
-    "principle4Title": "Nincs bezárás",
-    "principle4Body": "A kód, az infrastruktúra és a dokumentáció az Öné. Nem építünk függőséget folyamatos szerepvállalásunkból."
+    "hero": {
+      "eyebrow": "Hogyan dolgozunk",
+      "title": "Csökkentse a bizonytalanságot, mielőtt az szállítási kockázattá válna.",
+      "intro": "A SDK láthatóvá teszi a problémát, a döntéseket, a felelősségeket és a bizonyítékokat a megbízás során. A folyamat alkalmazkodik a rendszerhez, de a kliens mindig tudja, hogy miről döntenek, és mi következik.",
+      "primaryCta": "Egy projekt megbeszélése",
+      "secondaryCta": "Lásd a folyamatot",
+      "signals": [
+        "Meghatározott döntési pontok",
+        "Látható kézbesítési bizonyíték",
+        "Projektspecifikus szakemberek",
+        "Dokumentált átadás"
+      ]
+    },
+    "entryPaths": {
+      "eyebrow": "Ahol a munka kezdődik",
+      "heading": "Az első lépés attól függ, hogy mit tud már.",
+      "intro": "A megvalósítás túl korai megkezdése megdrágítja a bizonytalanságot. Ha egy másik általános felfedezési gyakorlattal kezdünk, időt veszítünk, amikor az eredmény már világos.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Az eredmény meghatározott",
+          "copy": "A rendszerhatár, a kívánt változtatás és az elfogadási feltételek tisztában vannak. Érvényesítjük a feltételezéseket, összeállítjuk a szállítócsoportot és megtervezzük a munkafolyamatot.",
+          "href": "#folyamat"
+        },
+        {
+          "number": "02",
+          "title": "A probléma látható, de az út nem",
+          "copy": "A rendszer költséget, kockázatot vagy késést okoz, de az ok vagy a felelős válasz nem világos. Korlátozott műszaki felméréssel kezdjük.",
+          "href": "#folyamat"
+        }
+      ]
+    },
+    "process": {
+      "eyebrow": "Az elköteleződés útja",
+      "heading": "Négy szakasz, mindegyik döntéssel végződik.",
+      "intro": "A fejlődést nem csak az aktivitás méri. Minden egyes szakasz bizonyítékot szolgáltat az ügyfél számára, amelyet áttekinthet, mielőtt további kötelezettséget vállalna.",
+      "labels": {
+        "output": "Kimenet",
+        "decision": "határozat"
+      },
+      "items": [
+        {
+          "number": "01",
+          "title": "Értsd",
+          "purpose": "Határozza meg, mire van szüksége a vállalkozásnak, mit csinál ma a rendszer, és hol van a bizonytalanság.",
+          "activities": [
+            "Tekintse át a célokat, a korlátokat és az érintetteket",
+            "Vizsgálja meg a megfelelő rendszert és működési környezetet",
+            "Határozza meg a sikert, a hozzáférést és az ismert ismeretleneket"
+          ],
+          "output": "Tömör problémameghatározás, jelenlegi állapotnézet és javasolt hatókör.",
+          "decision": "Van elég bizonyíték a válasz megtervezéséhez?"
+        },
+        {
+          "number": "02",
+          "title": "Tervezés",
+          "purpose": "Változtassa a problémát technikai lehetőségekké, szállítási határokká és kifejezett kompromisszumokká.",
+          "activities": [
+            "Modell architektúra és rendszerhatárok",
+            "Azonosítsa a kockázatokat, a függőségeket és az átállási lépéseket",
+            "Állítsa össze a szükséges szakembergárdát"
+          ],
+          "output": "Technikai megközelítés, döntési rekord, mérföldkövek és elfogadási kritériumok.",
+          "decision": "Ez a helyes megközelítés és elkötelezettség?"
+        },
+        {
+          "number": "03",
+          "title": "Építsd meg",
+          "purpose": "Végezze el a megállapodás szerinti változtatást, miközben a minőség, a kockázat és a fejlődés látható marad.",
+          "activities": [
+            "Végezze el felülvizsgálható lépésekben",
+            "Tesztelje a feltételezéseket működő szoftverrel",
+            "Döntések, bizonyítékok és megoldatlan kockázatok rögzítése"
+          ],
+          "output": "Működő változtatások, bizonyítékok és aktuális működési dokumentáció áttekintése.",
+          "decision": "Megfelel-e a növekmény az elfogadási feltételeknek?"
+        },
+        {
+          "number": "04",
+          "title": "Átadás",
+          "purpose": "Helyezze a rendszert és a működtetéséhez szükséges ismereteket ügyfél felügyelete alá.",
+          "activities": [
+            "Ellenőrizze a telepítési és helyreállítási eljárásokat",
+            "Teljes műszaki és üzemeltetési dokumentáció",
+            "Adja át a kontextust a tulajdonjogot megőrző embereknek"
+          ],
+          "output": "Ügyfél által vezérelt kód, infrastruktúra, dokumentáció és egyeztetett nyomon követési intézkedések.",
+          "decision": "Működtetheti és fejlesztheti-e az ügyfél a szállított hatókört?"
+        }
+      ]
+    },
+    "responsibility": {
+      "eyebrow": "Csapat és felelősség",
+      "heading": "A csapat a munkával változhat. A felelősség nem tűnik el a szakemberek között.",
+      "body": "A SDK független szakembereket választ ki azokhoz a szakterületekhez, amelyekre a megbízás megköveteli, és egyetlen szállítási keretrendszeren keresztül koordinálja őket. A döntések, a hozzáférés, a dokumentáció és a munka állapota látható marad, így a tudás nem marad egy személynél.",
+      "items": [
+        {
+          "number": "01",
+          "title": "SDK",
+          "copy": "Meghatározza a megbízás keretét, koordinálja a teljesítést, és továbbra is felelős az ügyféllel egyeztetett minőségellenőrzésekért."
+        },
+        {
+          "number": "02",
+          "title": "Szakemberek",
+          "copy": "Hozzájáruljon a rendszer által megkívánt tapasztalatokhoz, és közös döntéseken, gyakorlatok áttekintésén és elfogadási kritériumokon belül dolgozzon."
+        },
+        {
+          "number": "03",
+          "title": "Ügyfél",
+          "copy": "Üzleti környezetet, rendszer-hozzáférést és időszerű döntéseket biztosít, miközben megőrzi az irányítást a tárolók, az infrastruktúra és az információk felett."
+        },
+        {
+          "number": "04",
+          "title": "Megosztott rekord",
+          "copy": "Az építészeti döntéseket, kockázatokat, előrehaladást és működési ismereteket egyetlen közreműködőn kívül is elérhetővé teszi."
+        }
+      ]
+    },
+    "quality": {
+      "eyebrow": "Minőségellenőrzések",
+      "heading": "A bizalom olyan mechanizmusokból származik, amelyeket ellenőrizhet.",
+      "intro": "Kerüljük az olyan minősíthetetlen ígéreteket, mint a biztonságos, méretezhető vagy gyártásra kész. A megbízás meghatározza, hogy ezeket a tulajdonságokat hogyan vizsgálják és igazolják a kérdéses rendszerben.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Írásbeli döntések",
+          "copy": "Az anyagarchitektúra és a hatókör választásai rögzítik a kontextust, a kompromisszumokat és a következményeket, ahelyett, hogy eltűnnének a találkozókon."
+        },
+        {
+          "number": "02",
+          "title": "Ellenőrizhető lépések",
+          "copy": "A munka olyan változtatásokra oszlik, amelyeket a kockázat felhalmozódása előtt ellenőrizni, tesztelni és elfogadni lehet."
+        },
+        {
+          "number": "03",
+          "title": "Megfelelő ellenőrzés",
+          "copy": "A teszteket, a biztonsági ellenőrzéseket, a teljesítmény-bizonyítékokat és a telepítési ellenőrzéseket a tényleges meghibásodási kockázatnak megfelelően választják ki."
+        },
+        {
+          "number": "04",
+          "title": "Működési tulajdonjog",
+          "copy": "A dokumentációt, a hozzáférést, a helyreállítási lépéseket és a megoldatlan kockázatokat szállítási munkaként kezeljük, nem pedig választható anyagként az indítás után."
+        }
+      ]
+    },
+    "scope": {
+      "eyebrow": "Amikor a valóság megváltoztatja a tervet",
+      "heading": "Tedd felszínre a változást. Magyarázza meg a következményt. A folytatás előtt döntsön.",
+      "body": "A meglévő rendszerek ellenőrzésük és módosításuk során felfedik az információkat. Ha egy feltételezés kudarcot vall, vagy új függőség jelenik meg, a SDK rögzíti a bizonyítékot, elmagyarázza annak hatását a terjedelemre, kockázatra és sorrendre, és döntést kér. A változás nem tűnik el a számlában vagy a késleltetett átadás-átvételben.",
+      "steps": [
+        "Jegyezze fel az új bizonyítékokat",
+        "Ismertesse a műszaki és kereskedelmi következményt",
+        "Mutasson be életképes lehetőségeket",
+        "A folytatás előtt fogadja el a változtatást"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Válassza ki az első hasznos döntést",
+      "title": "Kezdje a bizonytalansággal, amely akadályozza a munkát.",
+      "body": "Mondja el, mi ismert, mi nehezedik nyomás alá, és milyen döntést kell hoznia a következő lépésben.",
+      "label": "Beszéljétek meg a helyzetet"
+    }
   }
 }

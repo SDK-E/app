@@ -1,14 +1,49 @@
 {
   "enquiry": {
+    "eyebrow": "Discutere un progetto",
     "title": "Avvia un progetto",
-    "subtitle": "Raccontaci cosa stai cercando di costruire, modernizzare, automatizzare o correggere. Risponderemo entro 2 giorni lavorativi con una valutazione onesta dell'idoneità e di ciò che sarebbe necessario.",
+    "subtitle": "Raccontaci cosa stai cercando di costruire, modernizzare, automatizzare o correggere. Un'indagine utile inizia con la pressione sul sistema e la decisione che devi prendere.",
     "body": "Il modulo raccoglie le informazioni minime necessarie per rispondere in modo ponderato. Nulla viene condiviso al di fuori di SDK Enterprises e puoi anche contattarci direttamente all'indirizzo hello@sdk.enterprises.",
-    "body2": "Esaminiamo noi stessi ogni richiesta. Nessun account manager, nessuno script di qualificazione, nessun passaggio di consegne.",
+    "body2": "Il tuo contesto tecnico e commerciale rimangono insieme mentre SDK valuta se il lavoro è adatto.",
+    "heroSignals": [
+      "Non è richiesta una specifica finita",
+      "Il contesto tecnico e quello commerciale restano uniti",
+      "Contesto per una risposta ponderata",
+      "Resta disponibile il contatto diretto con l'azienda"
+    ],
+    "reasonsEyebrow": "Punti di partenza utili",
+    "reasonsHeading": "Portare la pressione sul sistema, non un documento di appalto raffinato.",
+    "reasonsIntro": "Il modulo è progettato per stabilire se SDK può facilitare la successiva decisione tecnica.",
+    "reasons": [
+      {
+        "number": "01",
+        "title": "Un sistema deve cambiare",
+        "copy": "I lavori di modernizzazione, migrazione o integrazione sono bloccati dall’incertezza dello stato attuale."
+      },
+      {
+        "number": "02",
+        "title": "Una piattaforma è sotto pressione",
+        "copy": "L'affidabilità, la velocità di consegna, l'infrastruttura o il comportamento dei dati sono diventati un vincolo aziendale."
+      },
+      {
+        "number": "03",
+        "title": "Un flusso di lavoro basato sull'intelligenza artificiale necessita di controlli ingegneristici",
+        "copy": "Il caso d'uso è promettente, ma i dati, la valutazione, la revisione o il funzionamento non sono ancora definiti."
+      },
+      {
+        "number": "04",
+        "title": "Un flusso di lavoro ha bisogno degli specialisti giusti",
+        "copy": "Il risultato è chiaro, ma il progetto attraversa discipline che il team attuale non può coprire da solo."
+      }
+    ],
+    "formEyebrow": "Contesto del progetto",
+    "formHeading": "Forniscici informazioni sufficienti per rispondere in modo utile.",
+    "formIntro": "Spiegare cosa sta succedendo, perché è importante e cosa è già stato provato. Budget, tempistiche o dettagli tecnici sconosciuti possono rimanere contrassegnati come tali.",
     "nextStepsEyebrow": "Cosa succede dopo",
     "nextStepsHeading": "Dalla richiesta al coinvolgimento",
     "nextStepsBody": "Dopo aver inviato il modulo, lo leggiamo noi stessi. Se è idoneo, risponderemo con una breve valutazione scritta e un modello di coinvolgimento proposto. Se non è adatto, ti spiegheremo il motivo e suggeriremo un'alternativa.",
     "nextStep1Title": "Recensione",
-    "nextStep1Body": "Leggiamo la tua richiesta e la confrontiamo con le nostre attuali capacità e competenze. Di solito entro 2 giorni lavorativi.",
+    "nextStep1Body": "Esaminiamo il sistema, il vincolo e il risultato richiesto rispetto alla capacità attuale di SDK e alle competenze pertinenti.",
     "nextStep2Title": "Valutazione",
     "nextStep2Body": "Una breve risposta scritta: quale pensiamo sia il problema, se è adatto e quale sarebbe la prima mossa.",
     "nextStep3Title": "Chiama o asincrono",
@@ -64,7 +99,7 @@
     },
     "success": {
       "title": "Richiesta inviata",
-      "body": "Grazie: esamineremo il tuo progetto e ti risponderemo entro 2 giorni lavorativi."
+      "body": "Grazie: esamineremo il contesto del progetto e risponderemo con la prossima domanda utile o una valutazione di idoneità."
     },
     "error": {
       "title": "Qualcosa è andato storto",

@@ -1,132 +1,119 @@
 {
-  "hero": {
-    "eyebrow": "B2B AI · Software · Cloud · Systems Engineering",
-    "heading": "One engineering partner for the stack your company needs.",
-    "leadParagraph": "SDK Enterprises builds, modernizes and operates software across the stack — backend platforms, cloud infrastructure, AI automation, realtime systems and internal tooling. You engage on one specialized problem or own a broader workstream; either way, the people doing the work are the people you talk to.",
-    "ctaStartProject": "Start a project",
-    "ctaExploreServices": "Explore services",
-    "trustFrance": "France-based B2B company",
-    "trustSenior": "Senior engineering delivery",
-    "trustAI": "AI + backend + cloud",
-    "trustClients": "European & remote clients"
-  },
-  "services": {
-    "eyebrow": "Services",
-    "title": "Use all of the stack — or only the part you need.",
-    "intro": "SDK can engage on one specialized problem or own a broader technical workstream.",
-    "items": [
-      {
-        "number": "01",
-        "category": "AI Engineering",
-        "title": "AI agents & automation",
-        "copy": "LLM integrations, agents, RAG, workflow automation, developer tooling and AI-assisted operations."
-      },
-      {
-        "number": "02",
-        "category": "Backend",
-        "title": "Platforms, APIs & SaaS",
-        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs and realtime backend architecture."
-      },
-      {
-        "number": "03",
-        "category": "Frontend",
-        "title": "Web & application interfaces",
-        "copy": "React, Vue, Nuxt, TypeScript, Tailwind and Shadcn."
-      },
-      {
-        "number": "04",
-        "category": "Cloud",
-        "title": "Cloud & infrastructure",
-        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD and deployment architecture."
-      },
-      {
-        "number": "05",
-        "category": "Data",
-        "title": "Databases, cache & search",
-        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey and Elasticsearch."
-      },
-      {
-        "number": "06",
-        "category": "Modernization",
-        "title": "Legacy modernization",
-        "copy": "Framework upgrades, migration, technical debt reduction and performance optimization."
-      }
-    ]
-  },
-  "whySdk": {
-    "eyebrow": "Why SDK",
-    "title": "Senior engineering without unnecessary layers.",
-    "intro": "Direct communication, fast diagnosis and pragmatic execution.",
-    "items": [
-      {
-        "kicker": "FR",
-        "copy": "A France-based B2B company for European and remote clients."
-      },
-      {
-        "kicker": "AI",
-        "copy": "LLM integrations, agents, automation and internal tooling."
-      },
-      {
-        "kicker": "RT",
-        "copy": "Realtime and high-volume platform work."
-      },
-      {
-        "kicker": "DIRECT",
-        "copy": "You talk to the engineers doing the work, not an account layer."
-      }
-    ]
-  },
-  "engagements": {
-    "eyebrow": "Work with SDK",
-    "title": "Bring a specific problem. Get a specific answer.",
-    "intro": "You know when something in your stack is costing you. Here are the situations SDK is set up for.",
-    "items": [
-      {
-        "title": "A system too old to keep patching.",
-        "copy": "You need a migration plan, not a wish — an audit of what runs, what breaks, and the order to move in."
-      },
-      {
-        "title": "Volume your current stack wasn't built for.",
-        "copy": "Realtime ingestion, high-throughput backends and the infrastructure to keep them stable."
-      },
-      {
-        "title": "AI you can put to work.",
-        "copy": "LLM integrations, agents and automation that change an internal workflow — not a demo that stops at the pitch."
-      },
-      {
-        "title": "A team that needs senior hands.",
-        "copy": "Direct engineering delivery on your codebase, without a middle layer slowing decisions."
-      }
-    ]
-  },
-  "process": {
-    "eyebrow": "How we work",
-    "title": "A clear path from problem to production.",
-    "intro": "Four steps, visible progress at every stage.",
-    "items": [
-      {
-        "title": "Understand",
-        "copy": "Business goal, stack, constraints and success criteria."
-      },
-      {
-        "title": "Design",
-        "copy": "Architecture, scope, risks and milestones."
-      },
-      {
-        "title": "Build",
-        "copy": "Implementation with visible progress."
-      },
-      {
-        "title": "Handover",
-        "copy": "Deploy, document and transfer ownership."
-      }
-    ]
-  },
-  "contact": {
-    "eyebrow": "Work with SDK",
-    "heading": "Bring us the problem you need solved.",
-    "body": "Tell us what you're trying to build, modernize, automate or fix — we'll tell you honestly whether it's a fit and what it would take.",
-    "registeredUnder": "Registered under {company}",
-    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  "homePage": {
+    "hero": {
+      "eyebrow": "Software · AI · Cloud · Data · Systems Engineering",
+      "title": "Bring the system that needs a responsible way forward.",
+      "intro": "SDK Enterprises assembles the engineering specialists a project actually requires, coordinates their work and remains accountable for the quality framework presented to the client. We help organizations diagnose, modernize, build and operate technically consequential software.",
+      "primaryCta": "Discuss the situation",
+      "secondaryCta": "See where to begin",
+      "signals": [
+        "Problem-led team composition",
+        "Independent specialists",
+        "SDK-led delivery framework",
+        "Client-controlled systems"
+      ]
+    },
+    "opening": {
+      "eyebrow": "The starting point",
+      "heading": "A technology list cannot tell you what the project needs.",
+      "body": "A modernization programme, an AI workflow and a platform reliability problem may touch similar technologies while requiring completely different decisions, disciplines and delivery controls. SDK starts with the pressure on the system and the outcome the organization needs to own.",
+      "body2": "That may lead to a bounded technical assessment, a focused engineering workstream or a continuing technical partnership. The commitment should match what is already known—not conceal uncertainty inside a larger proposal.",
+      "principles": [
+        {
+          "number": "01",
+          "title": "Evidence before commitment",
+          "copy": "When the current state or implementation path is unclear, establish the evidence needed for a responsible decision first."
+        },
+        {
+          "number": "02",
+          "title": "Capability around the problem",
+          "copy": "Select the disciplines the system requires instead of forcing every engagement into the same available team."
+        },
+        {
+          "number": "03",
+          "title": "Ownership that survives handover",
+          "copy": "Keep decisions, repositories, infrastructure, documentation and operating knowledge under client control."
+        }
+      ]
+    },
+    "system": {
+      "eyebrow": "One system, connected decisions",
+      "heading": "The work rarely stops at the boundary of one technology.",
+      "intro": "SDK can focus on one layer or coordinate a workstream that crosses several. The map below shows the engineering concerns that often need to be considered together.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Workflow and interface",
+          "copy": "The user task, operational decision and recovery path the software must make understandable.",
+          "systems": ["React", "Vue", "Nuxt", "TypeScript"]
+        },
+        {
+          "number": "02",
+          "title": "Business platform",
+          "copy": "The services, APIs, permissions and integration contracts that carry the organization’s rules.",
+          "systems": ["Java", "Spring Boot", "Node.js", "PHP"]
+        },
+        {
+          "number": "03",
+          "title": "AI and automation",
+          "copy": "The model-assisted decisions, retrieval, evaluation and human review controls inside a real workflow.",
+          "systems": ["LLM", "RAG", "Agents", "APIs"]
+        },
+        {
+          "number": "04",
+          "title": "Data and state",
+          "copy": "The ownership, consistency, search, cache and lifecycle rules behind system behavior.",
+          "systems": ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch"]
+        },
+        {
+          "number": "05",
+          "title": "Production operation",
+          "copy": "The deployment, observability, recovery and infrastructure mechanisms needed to operate the system.",
+          "systems": ["AWS", "GCP", "Azure", "Kubernetes", "CI/CD"]
+        }
+      ]
+    },
+    "scenarios": {
+      "eyebrow": "Recognize the situation",
+      "heading": "Technical work becomes urgent through its effect on the business.",
+      "intro": "The following scenarios are capability examples, not invented client case studies. They show how SDK connects symptoms to questions and tangible next deliverables.",
+      "link": "Explore all work scenarios"
+    },
+    "companyModel": {
+      "eyebrow": "The SDK operating model",
+      "heading": "A project-specific team without transferring coordination risk to the client.",
+      "intro": "SDK works with independent engineering specialists. The disciplines can change with the work, while the client retains one company relationship and one delivery framework.",
+      "link": "Understand the company model"
+    },
+    "engagements": {
+      "eyebrow": "Choose the right level of commitment",
+      "heading": "Do not buy implementation before the system can support an implementation decision.",
+      "intro": "Start with evidence when uncertainty is material. Move directly into delivery when the outcome, boundary and acceptance conditions are already understood.",
+      "link": "Explore services and engagement models"
+    },
+    "process": {
+      "eyebrow": "From uncertainty to ownership",
+      "heading": "Every stage should end with evidence and a decision.",
+      "intro": "Activity alone does not show that a project is progressing. SDK structures the engagement so the client can review what has been learned, built and transferred before making the next commitment.",
+      "link": "See the full delivery process"
+    },
+    "quality": {
+      "eyebrow": "Quality you can inspect",
+      "heading": "Confidence should come from visible mechanisms, not adjectives.",
+      "intro": "Terms such as secure, scalable and production-ready only become meaningful when the engagement defines how they will be examined for the actual system and risk.",
+      "link": "See how SDK works"
+    },
+    "fit": {
+      "eyebrow": "Before we discuss a team",
+      "heading": "The engagement needs a real constraint, system access and someone able to decide.",
+      "intro": "SDK is designed for owned technical outcomes. It is not a marketplace for anonymous ticket capacity or a way to validate a predetermined answer without examining the evidence.",
+      "link": "Review engagement fit"
+    },
+    "cta": {
+      "eyebrow": "Start with the real situation",
+      "title": "You do not need to turn the problem into a polished specification first.",
+      "body": "Tell us what the system is doing, what it is costing or delaying, and which decision is currently blocked. SDK will begin by determining whether the work is a fit and what the first useful move should be.",
+      "label": "Discuss the situation"
+    }
   }
 }

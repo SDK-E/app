@@ -1,19 +1,259 @@
 {
   "servicesPage": {
-    "eyebrow": "Szolgáltatások",
-    "body": "Szoftvereket építünk és üzemeltetünk a teljes készletben: AI-ügynökök és automatizálás, háttérplatformok, webes felületek, felhő-infrastruktúra, adatrendszerek és örökölt modernizáció. Egy speciális probléma vagy egy teljes munkafolyamat – a munkát végző mérnökök azok, akikkel beszél.",
-    "cta": "Indítson el egy projektet",
-    "engagementEyebrow": "Eljegyzési modellek",
-    "engagementHeading": "Hogyan foglalkozunk",
-    "engagementBody": "A SDK kétféleképpen lép be: egy fix árú audit, amely egy adott problémát diagnosztizál, és javaslatot tesz a továbblépésre, vagy egy dedikált mérnöki munkafolyamat, ahol egy vezető csapat birtokolja a megvalósítást a végétől a végéig. Hibrid megállapodások léteznek olyan rendszerek számára, amelyeknek diagnosztizálásra és tartós szállításra van szükségük.",
-    "engagementModel1Title": "Fix árú audit",
-    "engagementModel1Body": "Egy adott probléma kiterjedt diagnózisa: architektúra áttekintése, áttelepítési útvonal, teljesítmény szűk keresztmetszet vagy biztonsági felülvizsgálat. Az output egy írásos terv prioritásokkal, kockázatokkal és becsült erőfeszítéssel.",
-    "engagementModel2Title": "Mérnöki munkafolyamat",
-    "engagementModel2Body": "A verembe egy meghatározott ideig beágyazott idősebb csapat. Heti szállítás, látható haladás és közvetlen kommunikáció a szoftvert építő mérnökökkel.",
-    "engagementModel3Title": "Hibrid",
-    "engagementModel3Body": "Először audit, majd munkafolyamat. A problémát diagnosztizáló csapat marad a megoldás megvalósításában. Nincs átadás egy másik fiókhoz tartozó csapatnak.",
-    "whatWeDontDoEyebrow": "Amit nem csinálunk",
-    "whatWeDontDoHeading": "Nem titkoljuk a mechanizmust.",
-    "whatWeDontDoBody": "Nincsenek juniorok a kódbázisodban. Nincs fiókkezelő közted és a mérnökök között. Nincs offshore átadás a javaslat után. Nincs olyan elköteleződés, amely a szükségesnél nagyobb hatókör eladásán múlik."
+    "hero": {
+      "eyebrow": "Szoftver · AI · Felhő · Adatok",
+      "title": "A probléma meghatározza a mérnöki csapatot.",
+      "intro": "A SDK összehozza azokat a szakembereket, akikre egy rendszernek ténylegesen szüksége van, koordinálja munkájukat, és továbbra is felelős a szállítási minőségért. Kezdje egyetlen műszaki döntéssel, vagy adjon nekünk egy meghatározott munkafolyamatot, amelyet birtokolhatunk.",
+      "primaryCta": "Egy projekt megbeszélése",
+      "secondaryCta": "Találd meg a kiindulási pontot",
+      "signals": [
+        "Problémavezérelt csapat összetétel",
+        "Független szakemberek",
+        "SDK-vezérelt minőségellenőrzés",
+        "Ügyfél tulajdonában lévő rendszerek"
+      ]
+    },
+    "navigator": {
+      "heading": "Kezdje a rendszerre nehezedő nyomással.",
+      "intro": "A hasznos elköteleződés a korlátozással kezdődik, nem pedig a technológiák katalógusával.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Modernizálni",
+          "copy": "Csökkentse a szoftverek cseréjének kockázatát és költségeit, amelyek már nem képesek felhalmozódni a javításokra.",
+          "href": "#modernizáció"
+        },
+        {
+          "number": "02",
+          "title": "Építsd meg",
+          "copy": "Tervezzen és szállítson háttérplatformokat, integrációkat és termékrendszereket egy egyértelmű működési igény szerint.",
+          "href": "#platformok"
+        },
+        {
+          "number": "03",
+          "title": "Automatizálni",
+          "copy": "Állítsa be az AI-t egy valódi munkafolyamatba a szükséges adatokkal, értékeléssel és működési vezérlőkkel.",
+          "href": "#ai-automatizálás"
+        },
+        {
+          "number": "04",
+          "title": "Stabilizálni",
+          "copy": "Keresse meg a megbízhatósági, üzembe helyezési, teljesítmény- vagy adatáramlási problémák mögött meghúzódó okokat.",
+          "href": "#termelési rendszerek"
+        },
+        {
+          "number": "05",
+          "title": "Diagnózis",
+          "copy": "A tisztázatlan technikai helyzetet alakítsa bizonyítékokká, opciókká és védhető következő döntésekké.",
+          "href": "#eljegyzések"
+        }
+      ]
+    },
+    "capabilities": {
+      "eyebrow": "Képességek",
+      "heading": "Mérnöki mélység, az Ön előtt álló döntés köré szervezve.",
+      "intro": "Minden képesség önállóan vagy másokkal kombinálható, ha a rendszer átlépi a határokat.",
+      "labels": {
+        "investigation": "Amit megvizsgálunk",
+        "delivery": "Amit szállítani tudunk",
+        "evidence": "Releváns rendszerek",
+        "firstStep": "Hasznos első lépés"
+      },
+      "items": [
+        {
+          "number": "01 / MODERNIZÁCIÓ",
+          "id": "modernizáció",
+          "title": "Változtasson meg egy öregedő rendszert anélkül, hogy elveszítené azt, ami még működik.",
+          "situation": "A rendszer fontos a vállalkozás számára, de a frissítések kockázatosak, a szállítás lelassul, vagy túl sok tudás rejtőzik a nem dokumentált viselkedésben.",
+          "investigation": [
+            "Függőségek, futásidejű megszorítások és nem támogatott összetevők",
+            "Adatfolyamok, integrációk és rejtett működési csatolás",
+            "Változtassa meg a kockázatot, a tesztlefedettséget és a migrációs határokat"
+          ],
+          "delivery": [
+            "Jelenlegi állapotfelmérés és kiemelt korszerűsítési terv",
+            "Keretrendszer, futásidejű vagy szolgáltatás migráció",
+            "Növekményes csere szabályozott átkapcsolással"
+          ],
+          "evidence": [
+            "PHP",
+            "Laravel",
+            "Symfony",
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PostgreSQL"
+          ],
+          "firstStep": "Térképezze fel, mit csinál ma a rendszer, hol veszélyes a változás, és melyik határ mozdulhat el először."
+        },
+        {
+          "number": "02 / PLATFORMOK",
+          "id": "platformok",
+          "title": "Építse fel a termék azon részeit, amelyek az üzleti szabályokat hordozzák.",
+          "situation": "Egy terméknek APIs-re, integrációra, engedélyezésre, aszinkron munkára vagy valós idejű viselkedésre van szüksége, aminek érthetőnek kell maradnia a követelmények változásával.",
+          "investigation": [
+            "Domainhatárok, felhasználók és hozzáférési szabályok",
+            "Integrációs szerződések, hibamódok és adatok tulajdonjoga",
+            "Működési mennyiség, késleltetés és konzisztencia követelmények"
+          ],
+          "delivery": [
+            "Háttérszolgáltatások, APIs és integrációs rétegek",
+            "Hitelesítés, engedélyezés és bérlői elkülönítés",
+            "Várólisták, események és valós idejű alkalmazásfolyamok"
+          ],
+          "evidence": [
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PHP",
+            "PostgreSQL",
+            "Redis",
+            "Valkey"
+          ],
+          "firstStep": "Határozza meg az üzleti határt, a birtokában lévő adatokat és azokat a meghibásodási feltételeket, amelyeket a tervezésnek el kell viselnie."
+        },
+        {
+          "number": "03 / AI AUTOMATIZÁLÁS",
+          "id": "ai-automatizálás",
+          "title": "Állítsa át az AI-t a meggyőző bemutatóból egy elszámoltatható munkafolyamattá.",
+          "situation": "A manuális folyamat drága vagy lassú, de egy mesterséges intelligencia funkció csak akkor lesz hasznos, ha bemenetei, kimenetei, kiértékelése és visszaállítási viselkedése szabályozva van.",
+          "investigation": [
+            "Munkafolyamat-döntések, amelyekhez modell szükséges, és amelyekhez nem",
+            "Forrásadatok, engedélyek és visszakeresési minőség",
+            "Értékelési kritériumok, emberi felülvizsgálat és hibakezelés"
+          ],
+          "delivery": [
+            "LLM integrációk, ügynökök és munkafolyamat-automatizálás",
+            "Visszakereső és földelt válaszrendszerek",
+            "Értékelés, megfigyelhetőség és áttekintés ellenőrzések"
+          ],
+          "evidence": [
+            "LLM",
+            "RAG",
+            "APIs",
+            "PostgreSQL",
+            "Elasticsearch",
+            "Python",
+            "Node.js"
+          ],
+          "firstStep": "Válasszon ki egy munkafolyamatot, határozzon meg egy elfogadható eredményt, és mérje meg az aktuális emberi folyamatot, mielőtt automatizálná."
+        },
+        {
+          "number": "04 / GYÁRTÁSI RENDSZEREK",
+          "id": "termelési rendszerek",
+          "title": "Tegye láthatóvá a termelési viselkedést a kapacitás megváltoztatása előtt.",
+          "situation": "A telepítések törékenyek, az incidenseket nehéz megmagyarázni, az infrastruktúra költségei nem tisztázottak, vagy a rendszer működési korlátjához közeledik.",
+          "investigation": [
+            "Telepítési útvonal, környezetek és helyreállítási eljárások",
+            "Naplók, mérőszámok, nyomok és események bizonyítékai",
+            "Erőforrás-korlátok, szűk keresztmetszetek és skálázási feltételezések"
+          ],
+          "delivery": [
+            "Telepítési architektúra és CI/CD munkafolyamatok",
+            "Megfigyelhetőségi, riasztási és működési runbookok",
+            "Felhő, konténer és hangszerelés fejlesztések"
+          ],
+          "evidence": [
+            "AWS",
+            "GCP",
+            "Azure",
+            "Kubernetes",
+            "Helm",
+            "CI/CD",
+            "Redis"
+          ],
+          "firstStep": "Határozza meg, mit csinál a rendszer valós terhelés alatt, és hogyan észleli a csapat jelenleg, és hogyan tér vissza a hibákból."
+        },
+        {
+          "number": "05 / ADATOK ÉS INTERFÉSZEK",
+          "id": "adat-interfészek",
+          "title": "Csatlakoztassa az adatokat, a műveleteket és a rendszert használó személyeket.",
+          "situation": "A termékhez megbízható adatútra és egy olyan interfészre van szüksége, amely megkönnyíti a bonyolult működési munka megértését és befejezését.",
+          "investigation": [
+            "Adattulajdonlás, életciklus, keresési és hozzáférési minták",
+            "Felhasználói feladatok, döntési pontok és hibaelhárítás",
+            "A teljesítményt befolyásoló szerver és böngésző határok"
+          ],
+          "delivery": [
+            "Adatmodellek, keresés, gyorsítótár és feldolgozás folyamatok",
+            "Működési webes felületek és belső eszközök",
+            "Hozzáférhető, reszponzív alkalmazási tapasztalatok"
+          ],
+          "evidence": [
+            "PostgreSQL",
+            "MongoDB",
+            "Elasticsearch",
+            "React",
+            "Vue",
+            "Nuxt",
+            "TypeScript"
+          ],
+          "firstStep": "Kövesse egy kritikus felhasználói feladatot a forrásadatoktól a végső döntésig, és azonosítsa, hol veszett el a kontextus."
+        }
+      ]
+    },
+    "engagements": {
+      "eyebrow": "Az elköteleződés módjai",
+      "heading": "Párosítsa az elkötelezettséget a már ismerthez.",
+      "intro": "Egy bizonytalan rendszernek bizonyítékra van szüksége a felelős végrehajtási kötelezettségvállalás előtt. Egy meghatározott eredmény közvetlenül egy fókuszált munkafolyamatba kerülhet.",
+      "labels": {
+        "bestFor": "A legjobb",
+        "output": "Elsődleges kimenet",
+        "commitment": "Elkötelezettség"
+      },
+      "options": [
+        {
+          "title": "Műszaki értékelés",
+          "bestFor": "Következményes döntés, ahol a jelenlegi állapot, kockázat vagy megvalósítási út nem világos.",
+          "output": "Bizonyítékok, opciók, kockázatok és kiemelt ajánlások, amelyeket az ügyfél használhat a SDK-vel vagy anélkül.",
+          "commitment": "Korlátozott vizsgálat egyeztetett hozzáféréssel, kérdésekkel és eredményekkel."
+        },
+        {
+          "title": "Mérnöki munkafolyamat",
+          "bestFor": "Meghatározott technikai eredmény, amelyhez összetett csapatra és egyértelmű szállítási felelősségre van szükség.",
+          "output": "Működő változások, felülvizsgált döntések, telepítési bizonyítékok és dokumentáció a megállapodás szerinti hatókörhöz.",
+          "commitment": "Koncentrált szállítási időszak látható ellenőrző pontokkal és elfogadási kritériumokkal."
+        },
+        {
+          "title": "Műszaki partnerség",
+          "bestFor": "Olyan rendszer, amely fokozatos korszerűsítést vagy egy műszaki munkafolyamat folyamatos tulajdonjogát igényli.",
+          "output": "Karbantartott ütemterv, fokozatos szállítás, valamint a döntések, a kockázatok és a haladás működési nyilvántartása.",
+          "commitment": "Folyamatos megbízás, amelyet egy egyeztetett munkafolyamat és prioritások alapján vizsgálnak."
+        }
+      ]
+    },
+    "teamModel": {
+      "eyebrow": "A SDK modell",
+      "heading": "A rendszerhez kiválasztott szakemberek. Egy cég tartozik felelősséggel az ügyfél felé.",
+      "body": "A SDK független mérnöki szakemberekkel dolgozik. A probléma köré állítjuk össze a csapatot, koordináljuk a munkát és meghatározzuk a megbízás minőségi kereteit. Az ügyfélnek nem kell független közreműködők gyűjteményét toboroznia, összehangolnia és kezelnie.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Határozza meg a szükségességet",
+          "copy": "Tisztázza a rendszert, a korlátokat, a döntéseket és az eredményeket, mielőtt eldönti, ki végezze el a munkát."
+        },
+        {
+          "number": "02",
+          "title": "Állítsd össze a csapatot",
+          "copy": "Válassza ki az elfoglaltság szempontjából releváns szakterületeket és tapasztalatokat, ahelyett, hogy egy fix padra kényszerítené azt."
+        },
+        {
+          "number": "03",
+          "title": "A minőség ellenőrzése",
+          "copy": "Használjon látható döntéseket, felülvizsgálatokat, elfogadási kritériumokat és működési bizonyítékokat a szállítás során."
+        },
+        {
+          "number": "04",
+          "title": "Tulajdonjog átadása",
+          "copy": "Tartsa a kódot, az infrastruktúrát, a dokumentációt és az üzemeltetési ismereteket az ügyfél kezében."
+        }
+      ]
+    },
+    "cta": {
+      "eyebrow": "Hozd el nekünk a kényszert",
+      "title": "Nem kell kész specifikációval érkeznie.",
+      "body": "Ismertesse a rendszert, a rá nehezedő nyomást és a meghozandó döntést. Kezdjük azzal, hogy meghatározzuk, hogy a SDK hasznos-e.",
+      "label": "Beszéljétek meg a problémát"
+    }
   }
 }

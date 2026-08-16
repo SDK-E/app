@@ -4,8 +4,11 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Container } from "./Container";
+
 import { Button } from "@/components/ui/Button";
+import { localizePath } from "@/i18n";
+
+import { Container } from "./Container";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export type HeaderLink = { label: string; href: string };
@@ -44,7 +47,7 @@ export function Header({
       <Container>
         <div className="flex h-[78px] items-center justify-between">
           <Link
-            href="/"
+            href={locale ? `/${locale}/` : "/"}
             aria-label={ariaHome ?? t("home")}
             className="block leading-none"
           >
@@ -62,7 +65,7 @@ export function Header({
 
           <nav aria-label={ariaMain ?? t("main")} className="hidden items-center gap-[26px] md:flex">
             {links.map((link) => (
-              <Link key={link.href} href={link.href} className={navLinkClass(link.label)}>
+              <Link key={link.href} href={locale ? localizePath(locale, link.href) : link.href} className={navLinkClass(link.label)}>
                 {link.label}
               </Link>
             ))}
@@ -72,12 +75,12 @@ export function Header({
             {secondaryCta || cta ? (
               <>
                 {secondaryCta ? (
-                  <Button href={secondaryCta.href} variant="outline">
+                  <Button href={locale ? localizePath(locale, secondaryCta.href) : secondaryCta.href} variant="outline">
                     {secondaryCta.label}
                   </Button>
                 ) : null}
                 {cta ? (
-                  <Button href={cta.href} variant="dark">
+                  <Button href={locale ? localizePath(locale, cta.href) : cta.href} variant="dark">
                     {cta.label} →
                   </Button>
                 ) : null}
@@ -127,7 +130,7 @@ export function Header({
               {links.map((link) => (
                 <Link
                   key={link.href}
-                  href={link.href}
+                  href={locale ? localizePath(locale, link.href) : link.href}
                   className={navLinkClass(link.label)}
                   onClick={() => setOpen(false)}
                 >
@@ -141,7 +144,7 @@ export function Header({
               )}
               {secondaryCta ? (
                 <Button
-                  href={secondaryCta.href}
+                  href={locale ? localizePath(locale, secondaryCta.href) : secondaryCta.href}
                   variant="outline"
                   className="mt-2"
                 >
@@ -149,7 +152,7 @@ export function Header({
                 </Button>
               ) : null}
               {cta ? (
-                <Button href={cta.href} variant="dark" className="mt-2">
+                <Button href={locale ? localizePath(locale, cta.href) : cta.href} variant="dark" className="mt-2">
                   {cta.label} →
                 </Button>
               ) : null}

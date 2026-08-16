@@ -1,22 +1,139 @@
 {
   "workPage": {
-    "eyebrow": "Trabajar con SDK",
-    "body": "Sabes cuando algo en tu pila te está costando. Estas son las situaciones para las que está diseñado el SDK.",
-    "cta": "iniciar un proyecto",
-    "engagementsEyebrow": "Compromisos",
-    "engagementsHeading": "Cómo suelen empezar los compromisos",
-    "engagementsBody": "La mayoría de los compromisos comienzan con una breve conversación o un resumen escrito del problema. A partir de ahí, SDK propone una respuesta con alcance: una auditoría de precio fijo, un flujo de trabajo de tiempo y materiales o un modelo híbrido dependiendo de la incertidumbre en el sistema y la claridad del objetivo.",
-    "lookForEyebrow": "lo que buscamos",
-    "lookForHeading": "Un problema claro y un equipo dispuesto a abordarlo.",
-    "lookForBody": "Los mejores compromisos comienzan cuando el cliente sabe que algo anda mal pero aún no conoce el alcance total. Buscamos equipos que quieran comprender el mecanismo, no solo recibir una presentación de diapositivas.",
-    "lookFor1Title": "Una restricción específica",
-    "lookFor1Body": "Rendimiento, confiabilidad, costo, velocidad de entrega o cumplimiento. No es necesario que el problema sea novedoso: debe ser real y mensurable.",
-    "lookFor2Title": "Acceso al sistema",
-    "lookFor2Body": "Acceso de lectura al código base, la infraestructura y las personas que comprenden el estado actual. Sin esto, cualquier evaluación es una conjetura.",
-    "lookFor3Title": "Un tomador de decisiones",
-    "lookFor3Body": "Alguien que pueda aprobar el alcance, el presupuesto y el cronograma. No es un comité, sino una persona con autoridad para hacer avanzar el trabajo.",
-    "fitEyebrow": "Encajar",
-    "fitHeading": "Cuando SDK no es la respuesta correcta",
-    "fitBody": "Decimos no más a menudo de lo que cabría esperar. SDK no es un taller de carrocería para tickets de desbordamiento y no aceptamos compromisos donde el problema aún no está definido o el equipo no puede comprometerse con el proceso."
+    "hero": {
+      "eyebrow": "Problemas que estamos preparados para resolver",
+      "title": "Mire el problema de ingeniería antes de prescribir el proyecto.",
+      "intro": "Los siguientes escenarios muestran cómo el SDK aborda situaciones técnicamente importantes. Describen capacidades y caminos de decisión, no estudios de casos de clientes inventados ni resultados sin respaldo.",
+      "primaryCta": "Discutir una situación",
+      "secondaryCta": "Explora los escenarios",
+      "signals": [
+        "Sin estudios de casos fabricados",
+        "Prueba antes de la prescripción",
+        "Decisiones definidas del cliente.",
+        "Entregables tangibles"
+      ]
+    },
+    "scenarios": {
+      "eyebrow": "Escenarios de participación",
+      "heading": "Reconoce la presión. Luego encuentre el primer paso responsable.",
+      "intro": "Una respuesta útil conecta la exposición empresarial a la evidencia técnica y una decisión sobre la cual la organización puede actuar.",
+      "labels": {
+        "signals": "Lo que puedes ver",
+        "questions": "Lo que necesitamos aprender",
+        "deliverables": "¿Qué crea el progreso?"
+      },
+      "items": [
+        {
+          "number": "01 / MODERNIZACIÓN",
+          "title": "El sistema es demasiado importante para reemplazarlo a ciegas y demasiado costoso para dejarlo como está.",
+          "situation": "La entrega se ralentiza a medida que las dependencias envejecen, el conocimiento se reduce y cada cambio llega más lejos de lo esperado.",
+          "signals": [
+            "Actualizaciones pospuestas repetidamente",
+            "Los cambios requieren recuperación manual",
+            "El comportamiento crítico no está documentado"
+          ],
+          "questions": [
+            "¿Qué límites pueden moverse de forma independiente?",
+            "¿Dónde se codifica el comportamiento empresarial?",
+            "¿Qué debe permanecer disponible durante el cambio?"
+          ],
+          "deliverables": [
+            "Mapa del estado actual",
+            "Opciones clasificadas por riesgo",
+            "Secuencia de migración incremental"
+          ]
+        },
+        {
+          "number": "02 / CONFIABILIDAD",
+          "title": "La plataforma está bajo presión, pero la capacidad puede no ser el verdadero problema.",
+          "situation": "La latencia, las incidencias o el coste de las infraestructuras están aumentando y las señales disponibles no explican por qué.",
+          "signals": [
+            "Los fallos son difíciles de reproducir",
+            "Los cambios de escala mueven el cuello de botella",
+            "La recuperación depende de unas pocas personas."
+          ],
+          "questions": [
+            "¿A dónde va el tiempo y la capacidad?",
+            "¿Qué modos de falla afectan a los usuarios?",
+            "¿Qué pruebas faltan durante los incidentes?"
+          ],
+          "deliverables": [
+            "Cuellos de botella observados",
+            "Registro de riesgo operacional",
+            "Plan de estabilización priorizado"
+          ]
+        },
+        {
+          "number": "03 / FLUJO DE TRABAJO DE IA",
+          "title": "La demostración de IA funciona. El modelo operativo que lo rodea aún no existe.",
+          "situation": "Una interacción modelo prometedora debe convertirse en un flujo de trabajo controlado con datos confiables, evaluación y responsabilidad humana.",
+          "signals": [
+            "La calidad se juzga por la impresión.",
+            "Los permisos de origen no están claros",
+            "Las fallas no tienen ruta de revisión"
+          ],
+          "questions": [
+            "¿Qué es un resultado aceptable?",
+            "¿Qué decisiones requieren revisión humana?",
+            "¿Cómo se medirá la calidad a lo largo del tiempo?"
+          ],
+          "deliverables": [
+            "Diseño de flujo de trabajo y control.",
+            "Enfoque de evaluación",
+            "Límite de implementación"
+          ]
+        },
+        {
+          "number": "04 / PROPIEDAD TÉCNICA",
+          "title": "El producto necesita propiedad de ingeniería enfocada para una fase crítica.",
+          "situation": "El equipo interno tiene una prioridad definida pero carece de una o más disciplinas necesarias para llevar el flujo de trabajo de forma segura.",
+          "signals": [
+            "Un elemento crítico de la hoja de ruta permanece bloqueado",
+            "Varios sistemas deben cambiar juntos",
+            "Los contribuyentes externos necesitarían coordinación"
+          ],
+          "questions": [
+            "¿Qué resultado puede tener SDK?",
+            "¿Qué experiencia se necesita realmente?",
+            "¿Dónde siguen siendo esenciales las decisiones de los clientes?"
+          ],
+          "deliverables": [
+            "Equipo específico del proyecto",
+            "Registro de entrega visible",
+            "Transferencia de propiedad documentada"
+          ]
+        }
+      ]
+    },
+    "principle": {
+      "eyebrow": "Por qué escenarios",
+      "heading": "Un portafolio sólo es persuasivo cuando la evidencia es real.",
+      "body": "SDK publicará clientes nombrados, resultados cuantificados y testimonios solo cuando se pueda verificar el trabajo, el resultado y el permiso. Hasta entonces, esta página muestra las situaciones que estamos preparados para investigar y los resultados que las hacen avanzar."
+    },
+    "fit": {
+      "eyebrow": "Ajuste de compromiso",
+      "heading": "El trabajo más fuerte comienza con el acceso, la responsabilidad y una decisión real que tomar.",
+      "intro": "La dificultad técnica es bienvenida. Un compromiso se vuelve ineficaz cuando la organización no puede proporcionar contexto, acceso o propiedad de las decisiones.",
+      "fitTitle": "Buenas condiciones para SDK",
+      "notFitTitle": "Malas condiciones para SDK",
+      "fitItems": [
+        "Una limitación material de software, datos, IA o infraestructura.",
+        "Acceso al sistema y personas que entienden su estado actual.",
+        "Un tomador de decisiones que puede resolver el alcance y las compensaciones",
+        "Voluntad de examinar la evidencia antes de comprometerse con una solución."
+      ],
+      "notFitItems": [
+        "Capacidad de tickets anónimos sin resultado propio",
+        "Una solicitud para validar una respuesta predeterminada independientemente de la evidencia.",
+        "No hay acceso práctico al sistema relevante o a las partes interesadas.",
+        "Selección basada únicamente en la tarifa diaria individual más baja"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Cuéntanos la situación real.",
+      "title": "Comience con lo que el sistema está costando, retrasando o poniendo en riesgo.",
+      "body": "No es necesario diagnosticarlo antes de comunicarse con SDK. Cuéntanos qué está pasando y qué decisión está actualmente bloqueada.",
+      "label": "Discutir la situación"
+    }
   }
 }

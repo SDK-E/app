@@ -1,14 +1,49 @@
 {
   "enquiry": {
+    "eyebrow": "Keskustele projektista",
     "title": "Aloita projekti",
-    "subtitle": "Kerro meille, mitä yrität rakentaa, modernisoida, automatisoida tai korjata. Vastaamme 2 arkipäivän kuluessa ja teemme rehellisen arvion sopivuudesta ja siitä, mitä se vaatii.",
+    "subtitle": "Kerro meille, mitä yrität rakentaa, modernisoida, automatisoida tai korjata. Hyödyllinen kysely alkaa järjestelmään kohdistuvasta paineesta ja päätöksestä, joka sinun on tehtävä.",
     "body": "Lomake kerää vähimmäistiedot, joita tarvitaan harkittuun vastaamiseen. Mitään ei jaeta SDK Enterprises:n ulkopuolelle, ja voit myös ottaa meihin yhteyttä suoraan osoitteessa hello@sdk.enterprises.",
-    "body2": "Tarkistamme jokaisen kyselyn itse. Ei tilivastaavia, ei hyväksymisskriptejä, ei vaihtoja.",
+    "body2": "Tekninen ja kaupallinen kontekstisi pysyvät yhdessä, kun taas SDK arvioi, sopiiko työ.",
+    "heroSignals": [
+      "Valmiita eritelmiä ei vaadita",
+      "Tekninen ja kaupallinen konteksti pysyvät yhdessä",
+      "Konteksti harkittuun vastaukseen",
+      "Yrityksen suora yhteys on edelleen saatavilla"
+    ],
+    "reasonsEyebrow": "Hyödyllisiä lähtökohtia",
+    "reasonsHeading": "Tuo paine järjestelmään, älä hiottua hankintaasiakirjaa.",
+    "reasonsIntro": "Lomake on suunniteltu selvittämään, voiko SDK tehdä seuraavan teknisen päätöksen helpommaksi.",
+    "reasons": [
+      {
+        "number": "01",
+        "title": "Järjestelmää on muutettava",
+        "copy": "Modernisointi-, siirto- tai integraatiotyötä estää nykytilan epävarmuus."
+      },
+      {
+        "number": "02",
+        "title": "Alusta on paineen alla",
+        "copy": "Luotettavuudesta, toimitusnopeudesta, infrastruktuurista tai datakäyttäytymisestä on tullut liiketoiminnan rajoituksia."
+      },
+      {
+        "number": "03",
+        "title": "Tekoälytyönkulku vaatii teknisiä ohjauksia",
+        "copy": "Käyttötapaus on lupaava, mutta dataa, arviointia, katsausta tai toimintaa ei ole vielä määritelty."
+      },
+      {
+        "number": "04",
+        "title": "Työvirta tarvitsee oikeat asiantuntijat",
+        "copy": "Lopputulos on selvä, mutta projekti ylittää tieteenaloja, joita nykyinen tiimi ei voi kattaa yksin."
+      }
+    ],
+    "formEyebrow": "Projektin konteksti",
+    "formHeading": "Anna meille tarpeeksi tietoa, jotta voimme vastata hyödyllisesti.",
+    "formIntro": "Selitä mitä tapahtuu, miksi sillä on merkitystä ja mitä on jo kokeiltu. Tuntematon budjetti, ajoitus tai tekniset tiedot voidaan merkitä sellaisiksi.",
     "nextStepsEyebrow": "Mitä tapahtuu seuraavaksi",
     "nextStepsHeading": "Kyselystä sitoutumiseen",
     "nextStepsBody": "Kun olet lähettänyt lomakkeen, luemme sen itse. Jos se sopii, vastaamme lyhyellä kirjallisella arvioinnilla ja ehdotuksella sitoutumismallilla. Jos se ei sovi, kerromme sinulle miksi ja ehdotamme vaihtoehtoa.",
     "nextStep1Title": "Tarkista",
-    "nextStep1Body": "Luemme hakemuksesi ja tarkistamme sen nykyisen kapasiteettimme ja asiantuntemuksemme mukaan. Yleensä 2 arkipäivän sisällä.",
+    "nextStep1Body": "Arvioimme järjestelmän, rajoituksen ja pyydetyn tuloksen SDK:n nykyisen kapasiteetin ja asiaankuuluvan asiantuntemuksen perusteella.",
     "nextStep2Title": "Arviointi",
     "nextStep2Body": "Lyhyt kirjallinen vastaus: mikä mielestämme on ongelma, sopiiko se ja mikä olisi ensimmäinen askel.",
     "nextStep3Title": "Soita tai asynkronoi",
@@ -64,7 +99,7 @@
     },
     "success": {
       "title": "Kysely lähetetty",
-      "body": "Kiitos – tarkistamme projektisi ja vastaamme 2 arkipäivän kuluessa."
+      "body": "Kiitos – käymme läpi projektin kontekstin ja vastaamme seuraavaan hyödylliseen kysymykseen tai sopivuusarvioon."
     },
     "error": {
       "title": "Jotain meni pieleen",

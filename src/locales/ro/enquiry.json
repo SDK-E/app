@@ -1,14 +1,49 @@
 {
   "enquiry": {
+    "eyebrow": "Discutați un proiect",
     "title": "Începeți un proiect",
-    "subtitle": "Spuneți-ne ce încercați să construiți, să modernizați, să automatizați sau să reparați. Vă vom răspunde în termen de 2 zile lucrătoare cu o evaluare sinceră a potrivirii și a ceea ce ar fi nevoie.",
+    "subtitle": "Spuneți-ne ce încercați să construiți, să modernizați, să automatizați sau să reparați. O anchetă utilă începe cu presiunea asupra sistemului și decizia pe care trebuie să o luați.",
     "body": "Formularul colectează informațiile minime necesare pentru a răspunde atent. Nimic nu este distribuit în afara SDK Enterprises și ne puteți contacta direct la hello@sdk.enterprises.",
-    "body2": "Analizăm fiecare întrebare singuri. Fără manageri de cont, fără scripturi de calificare, fără transferuri.",
+    "body2": "Contextul dumneavoastră tehnic și comercial rămâne împreună, în timp ce SDK evaluează dacă lucrarea este potrivită.",
+    "heroSignals": [
+      "Nu este necesară o specificație finalizată",
+      "Contextul tehnic și comercial rămân împreună",
+      "Context pentru un răspuns luat în considerare",
+      "Contactul direct al companiei rămâne disponibil"
+    ],
+    "reasonsEyebrow": "Puncte de plecare utile",
+    "reasonsHeading": "Aduceți presiune asupra sistemului, nu un document de achiziție lustruit.",
+    "reasonsIntro": "Formularul este conceput pentru a stabili dacă SDK poate facilita următoarea decizie tehnică.",
+    "reasons": [
+      {
+        "number": "01",
+        "title": "Un sistem trebuie schimbat",
+        "copy": "Munca de modernizare, migrare sau integrare este blocată de incertitudinea în starea actuală."
+      },
+      {
+        "number": "02",
+        "title": "O platformă este sub presiune",
+        "copy": "Fiabilitatea, viteza de livrare, infrastructura sau comportamentul datelor au devenit o constrângere a afacerii."
+      },
+      {
+        "number": "03",
+        "title": "Un flux de lucru AI necesită controale de inginerie",
+        "copy": "Cazul de utilizare este promițător, dar datele, evaluarea, revizuirea sau funcționarea nu sunt încă definite."
+      },
+      {
+        "number": "04",
+        "title": "Un flux de lucru are nevoie de specialiștii potriviți",
+        "copy": "Rezultatul este clar, dar proiectul traversează discipline pe care echipa actuală nu le poate acoperi singură."
+      }
+    ],
+    "formEyebrow": "Contextul proiectului",
+    "formHeading": "Dați-ne suficiente informații pentru a răspunde util.",
+    "formIntro": "Explicați ce se întâmplă, de ce contează și ce a fost deja încercat. Bugetul, calendarul sau detaliile tehnice necunoscute pot rămâne marcate ca atare.",
     "nextStepsEyebrow": "Ce se întâmplă în continuare",
     "nextStepsHeading": "De la anchetă la logodnă",
     "nextStepsBody": "După ce trimiteți formularul, îl citim noi înșine. Dacă este potrivit, vom răspunde cu o scurtă evaluare scrisă și un model de angajament propus. Dacă nu este potrivit, vă vom spune de ce și vă vom sugera o alternativă.",
     "nextStep1Title": "Revizuire",
-    "nextStep1Body": "Citim depunerea dvs. și o verificăm în raport cu capacitatea și expertiza noastră actuală. De obicei, în 2 zile lucrătoare.",
+    "nextStep1Body": "Analizăm sistemul, constrângerile și rezultatul solicitat în raport cu capacitatea actuală și expertiza relevantă a SDK.",
     "nextStep2Title": "Evaluare",
     "nextStep2Body": "Un scurt răspuns scris: care credem că este problema, dacă este o potrivire și care ar fi prima mișcare.",
     "nextStep3Title": "Apelați sau asincron",
@@ -64,7 +99,7 @@
     },
     "success": {
       "title": "Cerere trimisă",
-      "body": "Vă mulțumim — vă vom examina proiectul și vă vom răspunde în termen de 2 zile lucrătoare."
+      "body": "Mulțumesc — vom analiza contextul proiectului și vom răspunde cu următoarea întrebare utilă sau cu o evaluare a potrivirii."
     },
     "error": {
       "title": "Ceva a mers prost",

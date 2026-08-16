@@ -1,29 +1,88 @@
 {
   "aboutPage": {
-    "eyebrow": "Sobre SDK Enterprises",
-    "title": "Engenharia sênior, entrega direta.",
-    "intro": "Empresa de engenharia B2B com sede na França. Construímos, modernizamos e operamos software em toda a pilha – plataformas de back-end, infraestrutura em nuvem, automação de IA, sistemas em tempo real e ferramentas internas.",
-    "body": "Fundada em 2019, a SDK Enterprises atende um pequeno número de clientes por vez. A equipe é composta apenas por seniores: sem juniores, sem gerentes de contas, sem transferências para entregas offshore. A maioria dos compromissos tem como escopo auditorias de preço fixo, fluxos de trabalho de engenharia dedicados ou sprints de modernização contínua.",
-    "cta": "Iniciar um projeto",
-    "approachEyebrow": "Nossa abordagem",
-    "approachHeading": "Por que mantemos a equipe pequena",
-    "approachBody": "Quando uma agência ultrapassa o ponto em que os parceiros conhecem todos os engenheiros, aparece a camada de conta. Essa camada é onde o contexto é perdido, os prazos diminuem e os custos se multiplicam. SDK está estruturado para evitar isso.",
-    "approach1Title": "Nenhum gerente de conta",
-    "approach1Body": "Você conversa com o engenheiro responsável pela obra. Sem tradução, sem atrasos, sem falhas de comunicação entre vendas e entrega.",
-    "approach2Title": "Sem transferência offshore",
-    "approach2Body": "A equipe que projeta o sistema permanece durante a implementação e entrega. O conhecimento permanece em um só lugar.",
-    "approach3Title": "Sem recursos juniores",
-    "approach3Body": "Cada engenheiro SDK é de nível sênior. Não utilizamos compromissos com clientes para treinar funcionários menos experientes.",
-    "beliefsEyebrow": "O que acreditamos",
-    "beliefsHeading": "As suposições por trás do trabalho",
-    "beliefsBody": "Estas não são declarações de marketing. São as restrições que moldam cada decisão que tomamos.",
-    "belief1Title": "O software é uma responsabilidade até que seja compreendido",
-    "belief1Body": "Cada linha de código acarreta custos de manutenção. O objetivo não é escrever mais código – é reduzir o custo do código que já existe.",
-    "belief2Title": "Diagnóstico antes da prescrição",
-    "belief2Body": "Não vendemos um tipo de engajamento fixo. Diagnosticamos primeiro o sistema: arquitetura, fluxo de dados, implantação, equipe e restrições. Depois propomos o engajamento que cabe.",
-    "belief3Title": "A transparência é uma característica",
-    "belief3Body": "Progresso visível, atualizações por escrito e acesso direto aos engenheiros. O sigilo em torno da entrega é sintoma de um processo que não pode ser explicado.",
-    "companyFacts": {
+    "hero": {
+      "eyebrow": "Sobre SDK Enterprises",
+      "title": "Uma empresa construída para compor a capacidade de engenharia certa para a obra.",
+      "intro": "SDK contrata especialistas de engenharia independentes de acordo com o sistema e permanece responsável pela estrutura de entrega e pelas expectativas de qualidade apresentadas ao cliente.",
+      "primaryCta": "Discuta um projeto",
+      "secondaryCta": "Entenda o modelo",
+      "signals": [
+        "Empresa sediada em França",
+        "Especialistas específicos do projeto",
+        "Estrutura de entrega liderada por SDK",
+        "Responsabilidade direta da empresa"
+      ]
+    },
+    "model": {
+      "eyebrow": "Como a empresa funciona",
+      "heading": "A bancada disponível não decide o que seu sistema recebe.",
+      "intro": "Uma equipe interna fixa pode ser eficiente quando todos os projetos necessitam das mesmas disciplinas. Sistemas complexos muitas vezes não. SDK começa com o problema, determina qual capacidade de engenharia é relevante e reúne os especialistas independentes necessários em um único trabalho.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Um relacionamento com o cliente",
+          "copy": "O cliente envolve SDK Enterprises. SDK fornece a estrutura de entrega em vez de deixar que o cliente coordene fornecedores individuais não relacionados."
+        },
+        {
+          "number": "02",
+          "title": "Uma equipe composta",
+          "copy": "As disciplinas envolvidas podem mudar com o estágio do trabalho, desde avaliação e arquitetura até implementação e operação."
+        },
+        {
+          "number": "03",
+          "title": "Expectativas de qualidade compartilhadas",
+          "copy": "O trabalho define práticas de revisão, evidências de aceitação, registros de decisão e requisitos de transferência adequados aos seus riscos."
+        },
+        {
+          "number": "04",
+          "title": "Controle do cliente",
+          "copy": "Repositórios, infraestrutura, documentação e conhecimento operacional são organizados para permanecerem sob controle do cliente."
+        }
+      ]
+    },
+    "selection": {
+      "eyebrow": "Seleção de especialistas",
+      "heading": "A experiência relevante é mais importante do que adicionar outro perfil ao projeto.",
+      "body": "SDK considera o sistema, estágio de entrega, risco técnico e necessidades de colaboração antes de formar uma equipe. O site público não reivindicará tamanho de rede, taxa de aceitação ou padrão universal de antiguidade sem uma base documentada.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Relevância do problema",
+          "copy": "A experiência é considerada em relação aos limites reais do sistema e às decisões técnicas, não apenas em relação a uma lista de tecnologias."
+        },
+        {
+          "number": "02",
+          "title": "Responsabilidade de entrega",
+          "copy": "Os especialistas precisam trabalhar com decisões visíveis, revisar as expectativas e os ambientes de propriedade do cliente."
+        },
+        {
+          "number": "03",
+          "title": "Ajuste de colaboração",
+          "copy": "A capacidade de explicar as compensações e trabalhar com as partes interessadas do cliente faz parte de uma entrega técnica bem-sucedida."
+        },
+        {
+          "number": "04",
+          "title": "Continuidade",
+          "copy": "O contexto importante é registrado para que a propriedade não dependa da permanência de um colaborador indefinidamente."
+        }
+      ]
+    },
+    "responsibility": {
+      "eyebrow": "Pelo que SDK é responsável",
+      "heading": "A composição flexível da equipa não deve criar responsabilidades ambíguas.",
+      "body": "O papel do SDK é manter o envolvimento coerente à medida que os especialistas contribuem com diferentes partes do trabalho.",
+      "items": [
+        "Enquadramento do problema e do escopo",
+        "Composição e coordenação da equipe",
+        "Controles de qualidade e evidências de aceitação",
+        "Visibilidade de decisões e riscos",
+        "Expectativas de documentação e entrega",
+        "Um relacionamento claro com o cliente"
+      ]
+    },
+    "facts": {
+      "eyebrow": "Informações da empresa",
+      "heading": "Uma empresa registrada, disponível através de canais comerciais diretos.",
       "name": "Nome legal",
       "tradingName": "Nome comercial",
       "siren": "SIREN",
@@ -31,6 +90,12 @@
       "address": "Sede registrada",
       "email": "E-mail",
       "phone": "Telefone"
+    },
+    "cta": {
+      "eyebrow": "Trabalhe com SDK",
+      "title": "Traga o sistema, a restrição e a decisão que precisa de propriedade.",
+      "body": "Começaremos determinando quais conhecimentos o trabalho requer e se a SDK é a empresa certa para coordená-lo.",
+      "label": "Discuta um projeto"
     }
   }
 }

@@ -1,14 +1,49 @@
 {
   "enquiry": {
+    "eyebrow": "Discutir un proyecto",
     "title": "iniciar un proyecto",
-    "subtitle": "Cuéntanos qué estás intentando construir, modernizar, automatizar o arreglar. Le responderemos dentro de 2 días hábiles con una evaluación honesta de la idoneidad y lo que se necesitaría.",
+    "subtitle": "Cuéntanos qué estás intentando construir, modernizar, automatizar o arreglar. Una consulta útil comienza con la presión sobre el sistema y la decisión que debe tomar.",
     "body": "El formulario recopila la información mínima necesaria para responder pensativamente. No se comparte nada fuera de SDK Enterprises y también puede comunicarse con nosotros directamente en hello@sdk.enterprises.",
-    "body2": "Revisamos cada consulta nosotros mismos. Sin administradores de cuentas, sin guiones de calificación, sin traspasos.",
+    "body2": "Su contexto técnico y comercial permanece unido mientras SDK evalúa si el trabajo encaja.",
+    "heroSignals": [
+      "No se requiere una especificación terminada",
+      "El contexto técnico y comercial se mantienen unidos",
+      "Contexto para una respuesta considerada",
+      "El contacto directo con la empresa sigue estando disponible."
+    ],
+    "reasonsEyebrow": "Puntos de partida útiles",
+    "reasonsHeading": "Ejerza presión sobre el sistema, no un documento de adquisiciones pulido.",
+    "reasonsIntro": "El formulario está diseñado para establecer si SDK puede facilitar la siguiente decisión técnica.",
+    "reasons": [
+      {
+        "number": "01",
+        "title": "Un sistema necesita cambiar",
+        "copy": "Los trabajos de modernización, migración o integración están bloqueados por la incertidumbre del estado actual."
+      },
+      {
+        "number": "02",
+        "title": "Una plataforma está bajo presión.",
+        "copy": "La confiabilidad, la velocidad de entrega, la infraestructura o el comportamiento de los datos se han convertido en una limitación comercial."
+      },
+      {
+        "number": "03",
+        "title": "Un flujo de trabajo de IA necesita controles de ingeniería",
+        "copy": "El caso de uso es prometedor, pero los datos, la evaluación, la revisión o el funcionamiento aún no están definidos."
+      },
+      {
+        "number": "04",
+        "title": "Un flujo de trabajo necesita los especialistas adecuados",
+        "copy": "El resultado es claro, pero el proyecto abarca disciplinas que el equipo actual no puede cubrir por sí solo."
+      }
+    ],
+    "formEyebrow": "Contexto del proyecto",
+    "formHeading": "Danos suficiente información para responder de manera útil.",
+    "formIntro": "Explique qué está sucediendo, por qué es importante y qué ya se ha intentado. El presupuesto, el calendario o los detalles técnicos desconocidos pueden permanecer marcados como tales.",
     "nextStepsEyebrow": "¿Qué pasa después?",
     "nextStepsHeading": "De la investigación al compromiso",
     "nextStepsBody": "Después de enviar el formulario, lo leemos nosotros mismos. Si encaja, responderemos con una breve evaluación escrita y un modelo de participación propuesto. Si no es adecuado, le diremos por qué y le sugeriremos una alternativa.",
     "nextStep1Title": "Revisión",
-    "nextStep1Body": "Leemos su envío y lo comparamos con nuestra capacidad y experiencia actuales. Generalmente dentro de 2 días hábiles.",
+    "nextStep1Body": "Revisamos el sistema, la restricción y el resultado solicitado comparándolos con la capacidad actual y la experiencia relevante de SDK.",
     "nextStep2Title": "Evaluación",
     "nextStep2Body": "Una breve respuesta por escrito: cuál creemos que es el problema, si encaja y cuál sería el primer paso.",
     "nextStep3Title": "Llamada o asíncrona",
@@ -64,7 +99,7 @@
     },
     "success": {
       "title": "Consulta enviada",
-      "body": "Gracias. Revisaremos su proyecto y responderemos dentro de 2 días hábiles."
+      "body": "Gracias. Revisaremos el contexto del proyecto y responderemos con la siguiente pregunta útil o una evaluación de idoneidad."
     },
     "error": {
       "title": "algo salió mal",

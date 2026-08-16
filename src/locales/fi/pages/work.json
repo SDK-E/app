@@ -1,22 +1,139 @@
 {
   "workPage": {
-    "eyebrow": "Työskentele SDK:n kanssa",
-    "body": "Tiedät, kun jokin pinossasi maksaa sinulle. Tässä ovat tilanteet, joihin SDK on rakennettu.",
-    "cta": "Aloita projekti",
-    "engagementsEyebrow": "Kihlaukset",
-    "engagementsHeading": "Miten sitoutuminen yleensä alkaa",
-    "engagementsBody": "Useimmat sitoutumiset alkavat lyhyellä keskustelulla tai kirjallisella yhteenvedolla ongelmasta. Sieltä SDK ehdottaa laajennettua vastausta: kiinteähintaista auditointia, aika- ja materiaalityövirtaa tai hybridimallia riippuen järjestelmän epävarmuudesta ja tavoitteen selkeydestä.",
-    "lookForEyebrow": "Mitä etsimme",
-    "lookForHeading": "Selkeä ongelma ja tiimi, joka haluaa puuttua siihen.",
-    "lookForBody": "Parhaat sitoutumiset alkavat, kun asiakas tietää, että jokin on vialla, mutta ei vielä tiedä koko laajuutta. Etsimme tiimejä, jotka haluavat ymmärtää mekanismin, eivät vain saada liukukannetta.",
-    "lookFor1Title": "Erityinen rajoitus",
-    "lookFor1Body": "Suorituskyky, luotettavuus, hinta, toimitusnopeus tai vaatimustenmukaisuus. Ongelman ei tarvitse olla uusi – sen on oltava todellinen ja mitattavissa.",
-    "lookFor2Title": "Pääsy järjestelmään",
-    "lookFor2Body": "Lue koodikanta, infrastruktuuri ja ihmiset, jotka ymmärtävät tämänhetkisen tilan. Ilman tätä kaikki arvioinnit ovat arvauksia.",
-    "lookFor3Title": "Päätöksentekijä",
-    "lookFor3Body": "Joku, joka voi hyväksyä laajuuden, budjetin ja aikajanan. Ei komitea – yksi henkilö, jolla on valtuudet viedä työtä eteenpäin.",
-    "fitEyebrow": "Sopiva",
-    "fitHeading": "Kun SDK ei ole oikea vastaus",
-    "fitBody": "Emme sano useammin kuin saatat odottaa. SDK ei ole ylivuotolippujen koripaja, emmekä ota toimeksiantoja, joissa ongelmaa ei ole vielä määritelty tai tiimi ei voi sitoutua prosessiin."
+    "hero": {
+      "eyebrow": "Ongelmat, jotka on asetettu ratkaisemaan",
+      "title": "Katso tekninen ongelma ennen projektin määräämistä.",
+      "intro": "Alla olevat skenaariot osoittavat, kuinka SDK lähestyy teknisesti seurannaistilanteita. Ne kuvaavat valmiuksia ja päätöspolkuja, eivät keksittyjä asiakastapaustutkimuksia tai tukemattomia tuloksia.",
+      "primaryCta": "Keskustele tilanteesta",
+      "secondaryCta": "Tutustu skenaarioihin",
+      "signals": [
+        "Ei keksittyjä tapaustutkimuksia",
+        "Todisteet ennen reseptiä",
+        "Asiakkaan määritellyt päätökset",
+        "Konkreettisia suorituksia"
+      ]
+    },
+    "scenarios": {
+      "eyebrow": "Kihlaskenaariot",
+      "heading": "Tunnista paine. Etsi sitten vastuullinen ensimmäinen askel.",
+      "intro": "Hyödyllinen vastaus yhdistää liiketoiminnan altistumisen tekniseen näyttöön ja päätökseen, jonka mukaan organisaatio voi toimia.",
+      "labels": {
+        "signals": "Mitä saatat nähdä",
+        "questions": "Mitä meidän on opittava",
+        "deliverables": "Mikä saa aikaan edistystä"
+      },
+      "items": [
+        {
+          "number": "01 / MODERNISOINTI",
+          "title": "Järjestelmä on liian tärkeä korvattavaksi sokeasti – ja liian kallis jätettäväksi yksin.",
+          "situation": "Toimitus hidastuu riippuvuuksien ikääntyessä, tiedon kapeneessa ja jokainen muutos ulottuu odotettua pidemmälle.",
+          "signals": [
+            "Päivityksiä lykätty toistuvasti",
+            "Muutokset vaativat manuaalisen palautuksen",
+            "Kriittinen käyttäytyminen on dokumentoimatonta"
+          ],
+          "questions": [
+            "Mitkä rajat voivat liikkua itsenäisesti?",
+            "Mihin liiketoimintakäyttäytyminen on koodattu?",
+            "Mitä pitää olla saatavilla muutoksen aikana?"
+          ],
+          "deliverables": [
+            "Nykytilan kartta",
+            "Riskiluokan vaihtoehdot",
+            "Inkrementaalinen siirtymäjärjestys"
+          ]
+        },
+        {
+          "number": "02 / LUOTETTAVUUS",
+          "title": "Alustalla on painetta, mutta kapasiteetti ei välttämättä ole todellinen ongelma.",
+          "situation": "Latenssi, tapahtumat tai infrastruktuurikustannukset kasvavat, eivätkä käytettävissä olevat signaalit selitä miksi.",
+          "signals": [
+            "Epäonnistumisia on vaikea toistaa",
+            "Skaalausmuutokset siirtävät pullonkaulaa",
+            "Toipuminen riippuu muutamasta ihmisestä"
+          ],
+          "questions": [
+            "Mihin aika ja kapasiteetti katoavat?",
+            "Mitkä vikatilat vaikuttavat käyttäjiin?",
+            "Mitä todisteita tapauksista puuttuu?"
+          ],
+          "deliverables": [
+            "Havaittuja pullonkauloja",
+            "Operatiivisten riskien rekisteri",
+            "Priorisoitu vakautussuunnitelma"
+          ]
+        },
+        {
+          "number": "03 / AI WORKFLOW",
+          "title": "AI-demo toimii. Toimintamallia sen ympärillä ei ole vielä olemassa.",
+          "situation": "Lupaavasta mallivuorovaikutuksesta on tultava hallittu työnkulku, jossa on luotettavaa dataa, arviointia ja ihmisen vastuuta.",
+          "signals": [
+            "Laatu arvioidaan vaikutelman perusteella",
+            "Lähteen käyttöoikeudet ovat epäselviä",
+            "Epäonnistumisilla ei ole tarkistuspolkua"
+          ],
+          "questions": [
+            "Mikä on hyväksyttävä tulos?",
+            "Mitkä päätökset vaativat ihmisen tarkastuksen?",
+            "Miten laatua mitataan ajan myötä?"
+          ],
+          "deliverables": [
+            "Työnkulun ja ohjauksen suunnittelu",
+            "Arviointimenetelmä",
+            "Toteutusraja"
+          ]
+        },
+        {
+          "number": "04 / TEKNINEN OMISTUS",
+          "title": "Tuote tarvitsee keskittyneen suunnittelun omistuksen kriittistä vaihetta varten.",
+          "situation": "Sisäisellä tiimillä on määritelty prioriteetti, mutta siltä puuttuu yksi tai useampi tieteenala, jota tarvitaan työnkulun turvalliseen suorittamiseen.",
+          "signals": [
+            "Kriittinen etenemissuunnitelman kohde on edelleen estetty",
+            "Useiden järjestelmien on vaihdettava yhdessä",
+            "Ulkopuoliset rahoittajat tarvitsevat koordinointia"
+          ],
+          "questions": [
+            "Minkä tuloksen SDK voi saavuttaa?",
+            "Millaista asiantuntemusta todella tarvitaan?",
+            "Missä asiakkaiden päätökset ovat tärkeitä?"
+          ],
+          "deliverables": [
+            "Projektikohtainen tiimi",
+            "Näkyvä toimitustietue",
+            "Dokumentoitu omistusoikeuden siirto"
+          ]
+        }
+      ]
+    },
+    "principle": {
+      "eyebrow": "Miksi skenaariot",
+      "heading": "Portfolio on vakuuttava vain, kun todisteet ovat todellisia.",
+      "body": "SDK julkaisee nimetyt asiakkaat, määrälliset tulokset ja suosittelut vain, kun työ, tulos ja lupa voidaan varmistaa. Siihen asti tämä sivu näyttää tilanteet, joita olemme valmiita tutkimaan, ja toimitukset, jotka vievät niitä eteenpäin."
+    },
+    "fit": {
+      "eyebrow": "Kihlaistuvuus",
+      "heading": "Vahvin työ alkaa pääsystä, vastuusta ja todellisesta päätöksestä.",
+      "intro": "Tekniset vaikeudet ovat tervetulleita. Sitouttamisesta tulee tehoton, kun organisaatio ei voi tarjota kontekstia, pääsyä tai päätösten omistajuutta.",
+      "fitTitle": "Hyvät olosuhteet SDK:lle",
+      "notFitTitle": "Huonot olosuhteet mallille SDK",
+      "fitItems": [
+        "Olennainen ohjelmisto-, data-, tekoäly- tai infrastruktuurirajoitus",
+        "Pääsy järjestelmään ja ihmiset, jotka ymmärtävät sen nykyisen tilan",
+        "Päättäjä, joka pystyy ratkaisemaan laajuuden ja kompromisseja",
+        "Halukkuus tutkia todisteita ennen ratkaisuun sitoutumista"
+      ],
+      "notFitItems": [
+        "Anonyymi lippukapasiteetti ilman omistettua tulosta",
+        "Pyyntö vahvistaa ennalta määrätty vastaus todisteista riippumatta",
+        "Ei käytännön pääsyä asiaankuuluvaan järjestelmään tai sidosryhmiin",
+        "Valinta perustuu vain alhaisimpaan yksittäiseen päivähintaan"
+      ]
+    },
+    "cta": {
+      "eyebrow": "Tuo meille todellinen tilanne",
+      "title": "Aloita siitä, mitä järjestelmä maksaa, viivästyttää tai vaarantaa.",
+      "body": "Sinun ei tarvitse diagnosoida sitä ennen kuin otat yhteyttä SDK:hen. Kerro meille, mitä tapahtuu ja mikä päätös on tällä hetkellä estetty.",
+      "label": "Keskustele tilanteesta"
+    }
   }
 }

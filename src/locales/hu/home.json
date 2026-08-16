@@ -1,132 +1,145 @@
 {
-  "hero": {
-    "eyebrow": "B2B AI · Szoftver · Felhő · Rendszermérnökség",
-    "heading": "Egyetlen mérnöki partner a vállalatának szükséges köteghez.",
-    "leadParagraph": "A SDK Enterprises szoftvereket épít, modernizál és üzemeltet a teljes veremben – háttérplatformok, felhő infrastruktúra, mesterséges intelligencia automatizálás, valós idejű rendszerek és belső eszközök. Ön egy speciális problémával foglalkozik, vagy szélesebb munkafolyamattal rendelkezik; Akárhogy is, azok az emberek végzik a munkát, akikkel beszélsz.",
-    "ctaStartProject": "Indítson el egy projektet",
-    "ctaExploreServices": "Fedezze fel a szolgáltatásokat",
-    "trustFrance": "Franciaországban székelő B2B cég",
-    "trustSenior": "Vezetőmérnöki szállítás",
-    "trustAI": "AI + háttérprogram + felhő",
-    "trustClients": "Európai és távoli ügyfelek"
-  },
-  "services": {
-    "eyebrow": "Szolgáltatások",
-    "title": "Használja az összes köteget – vagy csak a szükséges részt.",
-    "intro": "A SDK egyetlen speciális problémával foglalkozhat, vagy szélesebb műszaki munkafolyamattal rendelkezik.",
-    "items": [
-      {
-        "number": "01",
-        "category": "AI Engineering",
-        "title": "AI ügynökök és automatizálás",
-        "copy": "LLM integrációk, ügynökök, RAG, munkafolyamat automatizálás, fejlesztői szerszámok és mesterséges intelligencia által támogatott műveletek."
-      },
-      {
-        "number": "02",
-        "category": "Háttérrendszer",
-        "title": "Platformok, APIs és SaaS",
-        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs és valós idejű háttérarchitektúra."
-      },
-      {
-        "number": "03",
-        "category": "Frontend",
-        "title": "Webes és alkalmazási felületek",
-        "copy": "React, Vue, Nuxt, TypeScript, Tailwind és Shadcn."
-      },
-      {
-        "number": "04",
-        "category": "Felhő",
-        "title": "Felhő és infrastruktúra",
-        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD és telepítési architektúra."
-      },
-      {
-        "number": "05",
-        "category": "Adatok",
-        "title": "Adatbázisok, gyorsítótár és keresés",
-        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey és Elasticsearch."
-      },
-      {
-        "number": "06",
-        "category": "Modernizáció",
-        "title": "Örökség modernizálása",
-        "copy": "Framework frissítések, migráció, technikai adósságcsökkentés és teljesítményoptimalizálás."
-      }
-    ]
-  },
-  "whySdk": {
-    "eyebrow": "Miért a SDK?",
-    "title": "Magas szintű mérnöki munka felesleges rétegek nélkül.",
-    "intro": "Közvetlen kommunikáció, gyors diagnózis és pragmatikus végrehajtás.",
-    "items": [
-      {
-        "kicker": "FR",
-        "copy": "Egy francia székhelyű B2B cég európai és távoli ügyfelek számára."
-      },
-      {
-        "kicker": "AI",
-        "copy": "LLM integrációk, ügynökök, automatizálás és belső szerszámok."
-      },
-      {
-        "kicker": "RT",
-        "copy": "Valós idejű és nagy volumenű platformmunka."
-      },
-      {
-        "kicker": "KÖZVETLEN",
-        "copy": "A munkát végző mérnökökkel beszél, nem egy fiókréteggel."
-      }
-    ]
-  },
-  "engagements": {
-    "eyebrow": "Dolgozzon a SDK-vel",
-    "title": "Hozz egy konkrét problémát. Kapjon konkrét választ.",
-    "intro": "Tudod, ha valami a stackedben kerül neked. Itt vannak azok a helyzetek, amelyekre a SDK be van állítva.",
-    "items": [
-      {
-        "title": "Egy rendszer túl régi a javításhoz.",
-        "copy": "Átállási tervre van szüksége, nem kívánságra – annak ellenőrzésére, hogy mi fut, mi törik, és a beköltözés sorrendje."
-      },
-      {
-        "title": "Az a kötet, amelyre a jelenlegi verem nem készült.",
-        "copy": "Valós idejű feldolgozás, nagy áteresztőképességű háttérrendszerek és az infrastruktúra a stabilitás érdekében."
-      },
-      {
-        "title": "Az AI munkába állhat.",
-        "copy": "LLM integrációk, ügynökök és automatizálás, amelyek megváltoztatják a belső munkafolyamatot – nem egy bemutató, amely a pályán áll meg."
-      },
-      {
-        "title": "Egy csapat, amelynek magas rangú kezekre van szüksége.",
-        "copy": "Közvetlen mérnöki kézbesítés a kódbázison, a döntéseket lassító középső réteg nélkül."
-      }
-    ]
-  },
-  "process": {
-    "eyebrow": "Hogyan dolgozunk",
-    "title": "Világos út a problémától a termelésig.",
-    "intro": "Négy lépés, látható haladás minden szakaszban.",
-    "items": [
-      {
-        "title": "Értsd",
-        "copy": "Üzleti cél, verem, korlátok és sikerkritériumok."
-      },
-      {
-        "title": "Tervezés",
-        "copy": "Építészet, terjedelem, kockázatok és mérföldkövek."
-      },
-      {
-        "title": "Építsd meg",
-        "copy": "Megvalósítás látható előrehaladással."
-      },
-      {
-        "title": "Átadás",
-        "copy": "Telepítse, dokumentálja és adja át a tulajdonjogot."
-      }
-    ]
-  },
-  "contact": {
-    "eyebrow": "Dolgozzon a SDK-vel",
-    "heading": "Adja meg nekünk a megoldandó problémát.",
-    "body": "Mondja el, mit próbál építeni, modernizálni, automatizálni vagy javítani – mi őszintén megmondjuk, hogy megfelelő-e, és mire lenne szükség.",
-    "registeredUnder": "{company} alatt regisztrálva",
-    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  "homePage": {
+    "hero": {
+      "eyebrow": "Szoftver · AI · Felhő · Adat · Rendszermérnöki",
+      "title": "Hozza előre azt a rendszert, amelynek felelősségteljes útra van szüksége.",
+      "intro": "A SDK Enterprises összeszereli azokat a mérnöki szakembereket, akiket egy projekt ténylegesen igényel, koordinálja munkájukat, és továbbra is elszámoltatja az ügyfélnek bemutatott minőségi keretrendszert. Segítünk a szervezeteknek a műszakilag szükséges szoftverek diagnosztizálásában, korszerűsítésében, felépítésében és üzemeltetésében.",
+      "primaryCta": "Beszéljétek meg a helyzetet",
+      "secondaryCta": "Nézze meg, hol kezdje",
+      "signals": [
+        "Problémavezérelt csapat összetétel",
+        "Független szakemberek",
+        "SDK által vezetett szállítási keret",
+        "Ügyfél által vezérelt rendszerek"
+      ]
+    },
+    "opening": {
+      "eyebrow": "A kiindulópont",
+      "heading": "A technológiai lista nem tudja megmondani, mire van szüksége a projektnek.",
+      "body": "Egy modernizációs program, egy mesterséges intelligencia munkafolyamat és egy platform megbízhatósági problémája hasonló technológiákat érinthet, miközben teljesen eltérő döntéseket, szabályokat és szállítási ellenőrzéseket igényel. A SDK a rendszerre nehezedő nyomással és azzal az eredménnyel kezdődik, amelyet a szervezetnek birtokolnia kell.",
+      "body2": "Ez korlátozott műszaki értékeléshez, fókuszált mérnöki munkafolyamathoz vagy folyamatos műszaki partnerséghez vezethet. Az elkötelezettségnek meg kell felelnie a már ismertnek – nem szabad elrejteni a bizonytalanságot egy nagyobb javaslatban.",
+      "principles": [
+        {
+          "number": "01",
+          "title": "Bizonyíték az elkötelezettség előtt",
+          "copy": "Ha a jelenlegi állapot vagy megvalósítási út nem világos, először állítsa be a felelős döntéshez szükséges bizonyítékokat."
+        },
+        {
+          "number": "02",
+          "title": "Képesség a probléma körül",
+          "copy": "Válassza ki azokat a szakterületeket, amelyeket a rendszer megkövetel, ahelyett, hogy minden feladatot ugyanarra a rendelkezésre álló csapatra kényszerítene."
+        },
+        {
+          "number": "03",
+          "title": "Az átadást túlélő tulajdonjog",
+          "copy": "Tartsa a döntéseket, adattárakat, infrastruktúrát, dokumentációt és üzemeltetési ismereteket az ügyfél ellenőrzése alatt."
+        }
+      ]
+    },
+    "system": {
+      "eyebrow": "Egy rendszer, összefüggő döntések",
+      "heading": "A munka ritkán áll meg egy technológia határán.",
+      "intro": "A SDK képes egy rétegre fókuszálni, vagy több réteget keresztező munkafolyamatot koordinálni. Az alábbi térkép azokat a mérnöki szempontokat mutatja, amelyeket gyakran együtt kell mérlegelni.",
+      "items": [
+        {
+          "number": "01",
+          "title": "Munkafolyamat és interfész",
+          "copy": "A felhasználói feladatot, a működési döntést és a helyreállítási utat a szoftvernek érthetővé kell tennie.",
+          "systems": [
+            "React",
+            "Vue",
+            "Nuxt",
+            "TypeScript"
+          ]
+        },
+        {
+          "number": "02",
+          "title": "Üzleti platform",
+          "copy": "A szolgáltatások, a APIs, az engedélyek és az integrációs szerződések, amelyek a szervezet szabályait hordozzák.",
+          "systems": [
+            "Java",
+            "Spring Boot",
+            "Node.js",
+            "PHP"
+          ]
+        },
+        {
+          "number": "03",
+          "title": "AI és automatizálás",
+          "copy": "A modell által támogatott döntések, a visszakeresés, az értékelés és az emberi felülvizsgálat egy valós munkafolyamatban vezérli.",
+          "systems": [
+            "LLM",
+            "RAG",
+            "Ügynökök",
+            "APIs"
+          ]
+        },
+        {
+          "number": "04",
+          "title": "Adatok és állapot",
+          "copy": "A rendszer viselkedése mögötti tulajdonjog, konzisztencia, keresés, gyorsítótár és életciklus szabályai.",
+          "systems": [
+            "PostgreSQL",
+            "MongoDB",
+            "Redis",
+            "Elasticsearch"
+          ]
+        },
+        {
+          "number": "05",
+          "title": "Gyártási művelet",
+          "copy": "A rendszer működtetéséhez szükséges telepítési, megfigyelhetőségi, helyreállítási és infrastrukturális mechanizmusok.",
+          "systems": [
+            "AWS",
+            "GCP",
+            "Azure",
+            "Kubernetes",
+            "CI/CD"
+          ]
+        }
+      ]
+    },
+    "scenarios": {
+      "eyebrow": "Ismerje fel a helyzetet",
+      "heading": "A műszaki munka az üzletre gyakorolt hatása révén válik sürgetővé.",
+      "intro": "A következő forgatókönyvek képességpéldák, nem kitalált ügyfél esettanulmányok. Megmutatják, hogy a SDK hogyan kapcsolja össze a tüneteket a kérdésekkel és a kézzelfogható következő teljesítménnyel.",
+      "link": "Fedezze fel az összes munkaforgatókönyvet"
+    },
+    "companyModel": {
+      "eyebrow": "A SDK működési modell",
+      "heading": "Projektspecifikus csapat anélkül, hogy a koordinációs kockázatot áthárítanák az ügyfélre.",
+      "intro": "A SDK független mérnöki szakemberekkel dolgozik. A diszciplínák a munkával együtt változhatnak, miközben a megrendelő egy céges kapcsolatot és egy szállítási keretet tart meg.",
+      "link": "Ismerje meg a vállalati modellt"
+    },
+    "engagements": {
+      "eyebrow": "Válassza ki az elkötelezettség megfelelő szintjét",
+      "heading": "Ne vásároljon implementációt, mielőtt a rendszer támogatni tudja a végrehajtási döntést.",
+      "intro": "Kezdje bizonyítékokkal, ha a bizonytalanság lényeges. Lépjen közvetlenül a szállításba, amikor az eredmény, a határ és az elfogadási feltételek már ismertek.",
+      "link": "Fedezze fel a szolgáltatásokat és az elköteleződési modelleket"
+    },
+    "process": {
+      "eyebrow": "A bizonytalanságtól a tulajdonjogig",
+      "heading": "Minden szakasznak bizonyítékkal és döntéssel kell végződnie.",
+      "intro": "A tevékenység önmagában nem mutatja, hogy egy projekt előrehalad. A SDK úgy strukturálja a megbízást, hogy az ügyfél a következő kötelezettségvállalás előtt áttekinthesse a tanultakat, felépített és átadott dolgokat.",
+      "link": "Tekintse meg a teljes szállítási folyamatot"
+    },
+    "quality": {
+      "eyebrow": "Megvizsgálható minőség",
+      "heading": "A bizalomnak látható mechanizmusokból kell származnia, nem pedig jelzőkből.",
+      "intro": "Az olyan kifejezések, mint például a biztonságos, méretezhető és gyártásra kész, csak akkor válnak értelmessé, ha a megbízás meghatározza, hogyan kell őket megvizsgálni a tényleges rendszer és kockázat szempontjából.",
+      "link": "Nézze meg, hogyan működik a SDK"
+    },
+    "fit": {
+      "eyebrow": "Mielőtt megbeszélnénk a csapatot",
+      "heading": "Az elköteleződéshez valódi korlátok, rendszer-hozzáférés és valaki dönteni tudó kell.",
+      "intro": "A SDK saját műszaki eredményekhez készült. Ez nem az anonim jegykapacitás piactere, vagy egy módja annak, hogy egy előre meghatározott választ érvényesítsünk a bizonyítékok vizsgálata nélkül.",
+      "link": "Tekintse át az eljegyzési illeszkedést"
+    },
+    "cta": {
+      "eyebrow": "Kezdje a valós helyzettel",
+      "title": "Nem kell először a problémát csiszolt specifikációvá alakítania.",
+      "body": "Mondja el nekünk, mit csinál a rendszer, mibe kerül vagy késik, és melyik döntést blokkolják jelenleg. A SDK azzal kezdődik, hogy meghatározza, hogy a munka megfelelő-e, és mi legyen az első hasznos lépés.",
+      "label": "Beszéljétek meg a helyzetet"
+    }
   }
 }
