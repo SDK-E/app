@@ -75,15 +75,7 @@
             "Migrare cadru, runtime sau serviciu",
             "Înlocuire incrementală cu trecere controlată"
           ],
-          "evidence": [
-            "PHP",
-            "Laravel",
-            "Symfony",
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PostgreSQL"
-          ],
+          "evidence": ["PHP", "Laravel", "Symfony", "Java", "Spring Boot", "Node.js", "PostgreSQL"],
           "firstStep": "Hartă ceea ce face sistemul astăzi, unde schimbarea este periculoasă și care graniță se poate muta prima."
         },
         {
@@ -101,15 +93,7 @@
             "Autentificare, autorizare și izolarea chiriașului",
             "Cozi, evenimente și fluxuri de aplicații în timp real"
           ],
-          "evidence": [
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PHP",
-            "PostgreSQL",
-            "Redis",
-            "Valkey"
-          ],
+          "evidence": ["Java", "Spring Boot", "Node.js", "PHP", "PostgreSQL", "Redis", "Valkey"],
           "firstStep": "Definiți granița afacerii, datele pe care le deține și condițiile de eșec pe care trebuie să le tolereze proiectarea."
         },
         {
@@ -127,15 +111,7 @@
             "Sisteme de recuperare și răspuns la pământ",
             "Controale de evaluare, observabilitate și revizuire"
           ],
-          "evidence": [
-            "LLM",
-            "RAG",
-            "APIs",
-            "PostgreSQL",
-            "Elasticsearch",
-            "Python",
-            "Node.js"
-          ],
+          "evidence": ["LLM", "RAG", "APIs", "PostgreSQL", "Elasticsearch", "Python", "Node.js"],
           "firstStep": "Alegeți un flux de lucru, definiți un rezultat acceptabil și măsurați procesul uman curent înainte de a-l automatiza."
         },
         {
@@ -153,15 +129,7 @@
             "Observabilitate, alerte și runbook-uri operaționale",
             "Îmbunătățiri în cloud, container și orchestrație"
           ],
-          "evidence": [
-            "AWS",
-            "GCP",
-            "Azure",
-            "Kubernetes",
-            "Helm",
-            "CI/CD",
-            "Redis"
-          ],
+          "evidence": ["AWS", "GCP", "Azure", "Kubernetes", "Helm", "CI/CD", "Redis"],
           "firstStep": "Stabiliți ce face sistemul sub sarcină reală și modul în care echipa detectează în prezent și se recuperează după defecțiune."
         },
         {

@@ -17,7 +17,10 @@ export function ProcessTimeline({
   return (
     <ol className="border-t-2 border-light">
       {items.map((item) => (
-        <li key={item.number} className="grid gap-6 border-b border-[#2d4b28] py-8 lg:grid-cols-[80px_0.6fr_1fr_0.85fr] lg:gap-8">
+        <li
+          key={item.number}
+          className="grid gap-6 border-b border-[#2d4b28] py-8 lg:grid-cols-[80px_0.6fr_1fr_0.85fr] lg:gap-8"
+        >
           <p className="text-label font-bold text-brand">{item.number}</p>
           <div>
             <h3 className="text-h3">{item.title}</h3>
@@ -26,7 +29,9 @@ export function ProcessTimeline({
           <ul className="space-y-3">
             {item.activities.map((activity) => (
               <li key={activity} className="flex gap-3 text-body text-fog">
-                <span className="text-brand" aria-hidden>—</span>
+                <span className="text-brand" aria-hidden>
+                  —
+                </span>
                 {activity}
               </li>
             ))}

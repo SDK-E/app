@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/marketing/LegalPage";
-import {
-  LegalH2,
-  LegalIntro,
-  LegalParagraph,
-  LegalTitle,
-} from "@/components/marketing/LegalText";
+import { LegalH2, LegalIntro, LegalParagraph, LegalTitle } from "@/components/marketing/LegalText";
 import { siteConfig } from "@/lib/siteConfig";
 import { getTranslations } from "next-intl/server";
 import { breadcrumbListJsonLd } from "@/lib/seo";
@@ -56,11 +51,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function TermsPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function TermsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "legal.terms" });
 
@@ -70,14 +61,10 @@ export default async function TermsPage({
       <LegalIntro>{t("intro")}</LegalIntro>
 
       <LegalH2>{t("purposeTitle")}</LegalH2>
-      <LegalParagraph>
-        {t("purpose", { name: siteConfig.name })}
-      </LegalParagraph>
+      <LegalParagraph>{t("purpose", { name: siteConfig.name })}</LegalParagraph>
 
       <LegalH2>{t("servicesTitle")}</LegalH2>
-      <LegalParagraph>
-        {t("services", { name: siteConfig.name })}
-      </LegalParagraph>
+      <LegalParagraph>{t("services", { name: siteConfig.name })}</LegalParagraph>
 
       <LegalH2>{t("enquiriesTitle")}</LegalH2>
       <LegalParagraph>{t("enquiries")}</LegalParagraph>

@@ -25,17 +25,17 @@ for authenticated client companies, so a separate public model is needed.
 
 ## 3. Form fields
 
-| Field | Type | Required | Validation |
-|---|---|---|---|
-| Company | text | yes | 2–255 chars |
-| Professional email | email | yes | valid email |
-| Company website | URL | no | valid absolute URL if present |
-| Capability needed | select (single) | yes | one of: AI Engineering, Software Engineering, Frontend & Product, Cloud & Infrastructure, Data / Cache / Search, Modernization, Other |
-| Problem / project description | textarea | yes | 50–4000 chars |
-| Existing environment | textarea | no | max 4000 chars |
-| Timeline | select (single) | no | ASAP, 1–3 months, 3–6 months, 6+ months, Not sure |
-| Budget range | select (single) | no | < €10k, €10k–25k, €25k–50k, €50k+, Not sure |
-| Supporting context | textarea | no | max 4000 chars |
+| Field                         | Type            | Required | Validation                                                                                                                            |
+| ----------------------------- | --------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Company                       | text            | yes      | 2–255 chars                                                                                                                           |
+| Professional email            | email           | yes      | valid email                                                                                                                           |
+| Company website               | URL             | no       | valid absolute URL if present                                                                                                         |
+| Capability needed             | select (single) | yes      | one of: AI Engineering, Software Engineering, Frontend & Product, Cloud & Infrastructure, Data / Cache / Search, Modernization, Other |
+| Problem / project description | textarea        | yes      | 50–4000 chars                                                                                                                         |
+| Existing environment          | textarea        | no       | max 4000 chars                                                                                                                        |
+| Timeline                      | select (single) | no       | ASAP, 1–3 months, 3–6 months, 6+ months, Not sure                                                                                     |
+| Budget range                  | select (single) | no       | < €10k, €10k–25k, €25k–50k, €50k+, Not sure                                                                                           |
+| Supporting context            | textarea        | no       | max 4000 chars                                                                                                                        |
 
 Opening copy: **"Tell us what you're trying to build, modernize, automate or fix."**
 Follows `docs/content/voice-and-standards.md` (heading communicates an idea,

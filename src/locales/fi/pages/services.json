@@ -75,15 +75,7 @@
             "Kehyksen, suoritusajan tai palvelun siirto",
             "Vaihto asteittain ohjatulla katkaisulla"
           ],
-          "evidence": [
-            "PHP",
-            "Laravel",
-            "Symfony",
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PostgreSQL"
-          ],
+          "evidence": ["PHP", "Laravel", "Symfony", "Java", "Spring Boot", "Node.js", "PostgreSQL"],
           "firstStep": "Kartoita, mitä järjestelmä tekee tänään, missä muutos on vaarallista ja mikä raja voi siirtyä ensin."
         },
         {
@@ -101,15 +93,7 @@
             "Todennus, valtuutus ja vuokralaisen eristäminen",
             "Jonot, tapahtumat ja reaaliaikaiset sovellusvirrat"
           ],
-          "evidence": [
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PHP",
-            "PostgreSQL",
-            "Redis",
-            "Valkey"
-          ],
+          "evidence": ["Java", "Spring Boot", "Node.js", "PHP", "PostgreSQL", "Redis", "Valkey"],
           "firstStep": "Määrittele liiketoiminnan raja, sen omistamat tiedot ja vikaolosuhteet, jotka suunnittelun on siedettävä."
         },
         {
@@ -127,15 +111,7 @@
             "Haku ja maadoitettu vastausjärjestelmät",
             "Arvioinnin, havainnoinnin ja tarkastelun valvonta"
           ],
-          "evidence": [
-            "LLM",
-            "RAG",
-            "APIs",
-            "PostgreSQL",
-            "Elasticsearch",
-            "Python",
-            "Node.js"
-          ],
+          "evidence": ["LLM", "RAG", "APIs", "PostgreSQL", "Elasticsearch", "Python", "Node.js"],
           "firstStep": "Valitse yksi työnkulku, määritä hyväksyttävä tulos ja mittaa nykyinen ihmisen prosessi ennen sen automatisointia."
         },
         {
@@ -153,15 +129,7 @@
             "Havainnointi-, hälytys- ja toimintaohjekirjat",
             "Pilvi-, kontti- ja orkestrointiparannuksia"
           ],
-          "evidence": [
-            "AWS",
-            "GCP",
-            "Azure",
-            "Kubernetes",
-            "Helm",
-            "CI/CD",
-            "Redis"
-          ],
+          "evidence": ["AWS", "GCP", "Azure", "Kubernetes", "Helm", "CI/CD", "Redis"],
           "firstStep": "Selvitä, mitä järjestelmä tekee todellisessa kuormituksessa ja kuinka tiimi havaitsee tällä hetkellä epäonnistumisen ja toipuu siitä."
         },
         {

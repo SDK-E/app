@@ -57,11 +57,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function PrivacyPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "legal.privacy" });
   const processors = t.raw("processors") as Array<{ name: string; role: string }>;
@@ -107,9 +103,7 @@ export default async function PrivacyPage({
 
       <LegalH2>{t("rightsTitle")}</LegalH2>
       <LegalParagraph>{t("rightsNote")}</LegalParagraph>
-      <LegalParagraph>
-        {t("rightsContact", { email: siteConfig.contact.email })}
-      </LegalParagraph>
+      <LegalParagraph>{t("rightsContact", { email: siteConfig.contact.email })}</LegalParagraph>
 
       <LegalH2>{t("childrenTitle")}</LegalH2>
       <LegalParagraph>{t("children")}</LegalParagraph>

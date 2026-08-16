@@ -45,57 +45,31 @@
           "number": "01",
           "title": "Työnkulku ja käyttöliittymä",
           "copy": "Ohjelmiston on tehtävä ymmärrettäväksi käyttäjän tehtävä, toimintapäätös ja palautuspolku.",
-          "systems": [
-            "React",
-            "Vue",
-            "Nuxt",
-            "TypeScript"
-          ]
+          "systems": ["React", "Vue", "Nuxt", "TypeScript"]
         },
         {
           "number": "02",
           "title": "Liiketoiminnan alusta",
           "copy": "Palvelut, APIs, luvat ja integraatiosopimukset, jotka sisältävät organisaation sääntöjä.",
-          "systems": [
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PHP"
-          ]
+          "systems": ["Java", "Spring Boot", "Node.js", "PHP"]
         },
         {
           "number": "03",
           "title": "Tekoäly ja automaatio",
           "copy": "Malli-avusteiset päätökset, haku, arviointi ja ihmisen tarkistus ohjaavat todellisen työnkulun sisällä.",
-          "systems": [
-            "LLM",
-            "RAG",
-            "Agentit",
-            "APIs"
-          ]
+          "systems": ["LLM", "RAG", "Agentit", "APIs"]
         },
         {
           "number": "04",
           "title": "Tiedot ja tila",
           "copy": "Omistajuus, johdonmukaisuus, haku, välimuisti ja elinkaarisäännöt järjestelmän toiminnan takana.",
-          "systems": [
-            "PostgreSQL",
-            "MongoDB",
-            "Redis",
-            "Elasticsearch"
-          ]
+          "systems": ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch"]
         },
         {
           "number": "05",
           "title": "Tuotantotoiminta",
           "copy": "Järjestelmän käyttöön tarvittavat käyttöönotto-, havaittavuus-, palautus- ja infrastruktuurimekanismit.",
-          "systems": [
-            "AWS",
-            "GCP",
-            "Azure",
-            "Kubernetes",
-            "CI/CD"
-          ]
+          "systems": ["AWS", "GCP", "Azure", "Kubernetes", "CI/CD"]
         }
       ]
     },

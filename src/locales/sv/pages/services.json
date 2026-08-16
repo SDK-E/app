@@ -75,15 +75,7 @@
             "Framework, runtime eller tjänstmigrering",
             "Inkrementell ersättning med kontrollerad cutover"
           ],
-          "evidence": [
-            "PHP",
-            "Laravel",
-            "Symfony",
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PostgreSQL"
-          ],
+          "evidence": ["PHP", "Laravel", "Symfony", "Java", "Spring Boot", "Node.js", "PostgreSQL"],
           "firstStep": "Kartlägga vad systemet gör idag, var förändring är farlig och vilken gräns som kan flyttas först."
         },
         {
@@ -101,15 +93,7 @@
             "Autentisering, auktorisering och hyresgästisolering",
             "Köer, händelser och applikationsflöden i realtid"
           ],
-          "evidence": [
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PHP",
-            "PostgreSQL",
-            "Redis",
-            "Valkey"
-          ],
+          "evidence": ["Java", "Spring Boot", "Node.js", "PHP", "PostgreSQL", "Redis", "Valkey"],
           "firstStep": "Definiera affärsgränsen, den data den äger och de felförhållanden som designen måste tolerera."
         },
         {
@@ -127,15 +111,7 @@
             "Hämtning och jordade svarssystem",
             "Utvärdering, observerbarhet och granskningskontroller"
           ],
-          "evidence": [
-            "LLM",
-            "RAG",
-            "APIs",
-            "PostgreSQL",
-            "Elasticsearch",
-            "Python",
-            "Node.js"
-          ],
+          "evidence": ["LLM", "RAG", "APIs", "PostgreSQL", "Elasticsearch", "Python", "Node.js"],
           "firstStep": "Välj ett arbetsflöde, definiera ett acceptabelt resultat och mät den aktuella mänskliga processen innan du automatiserar den."
         },
         {
@@ -153,15 +129,7 @@
             "Observerbarhet, larm och driftböcker",
             "Moln-, container- och orkestreringsförbättringar"
           ],
-          "evidence": [
-            "AWS",
-            "GCP",
-            "Azure",
-            "Kubernetes",
-            "Helm",
-            "CI/CD",
-            "Redis"
-          ],
+          "evidence": ["AWS", "GCP", "Azure", "Kubernetes", "Helm", "CI/CD", "Redis"],
           "firstStep": "Fastställ vad systemet gör under verklig belastning och hur teamet för närvarande upptäcker och återställer från fel."
         },
         {

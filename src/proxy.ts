@@ -29,7 +29,10 @@ const i18nMiddleware = createMiddleware(routing);
 
 function stripLocale(pathname: string): string {
   const segments = pathname.split("/");
-  if (segments.length > 1 && routing.locales.includes(segments[1] as (typeof routing.locales)[number])) {
+  if (
+    segments.length > 1 &&
+    routing.locales.includes(segments[1] as (typeof routing.locales)[number])
+  ) {
     return "/" + segments.slice(2).join("/");
   }
   return pathname;

@@ -75,15 +75,7 @@
             "Framework-, runtime- of servicemigratie",
             "Incrementele vervanging met gecontroleerde cutover"
           ],
-          "evidence": [
-            "PHP",
-            "Laravel",
-            "Symfony",
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PostgreSQL"
-          ],
+          "evidence": ["PHP", "Laravel", "Symfony", "Java", "Spring Boot", "Node.js", "PostgreSQL"],
           "firstStep": "Breng in kaart wat het systeem vandaag de dag doet, waar verandering gevaarlijk is en welke grens het eerst kan worden verlegd."
         },
         {
@@ -101,15 +93,7 @@
             "Authenticatie, autorisatie en huurderisolatie",
             "Wachtrijen, gebeurtenissen en realtime applicatiestromen"
           ],
-          "evidence": [
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PHP",
-            "PostgreSQL",
-            "Redis",
-            "Valkey"
-          ],
+          "evidence": ["Java", "Spring Boot", "Node.js", "PHP", "PostgreSQL", "Redis", "Valkey"],
           "firstStep": "Definieer de bedrijfsgrens, de gegevens die het bezit en de faalomstandigheden die het ontwerp moet tolereren."
         },
         {
@@ -127,15 +111,7 @@
             "Ophaal- en geaarde responssystemen",
             "Evaluatie-, waarneembaarheids- en beoordelingscontroles"
           ],
-          "evidence": [
-            "LLM",
-            "RAG",
-            "APIs",
-            "PostgreSQL",
-            "Elasticsearch",
-            "Python",
-            "Node.js"
-          ],
+          "evidence": ["LLM", "RAG", "APIs", "PostgreSQL", "Elasticsearch", "Python", "Node.js"],
           "firstStep": "Kies één workflow, definieer een acceptabel resultaat en meet het huidige menselijke proces voordat u het automatiseert."
         },
         {
@@ -153,15 +129,7 @@
             "Waarneembaarheid, waarschuwingen en operationele runbooks",
             "Verbeteringen in de cloud, containers en orkestratie"
           ],
-          "evidence": [
-            "AWS",
-            "GCP",
-            "Azure",
-            "Kubernetes",
-            "Helm",
-            "CI/CD",
-            "Redis"
-          ],
+          "evidence": ["AWS", "GCP", "Azure", "Kubernetes", "Helm", "CI/CD", "Redis"],
           "firstStep": "Stel vast wat het systeem doet onder echte belasting en hoe het team momenteel storingen detecteert en hiervan herstelt."
         },
         {

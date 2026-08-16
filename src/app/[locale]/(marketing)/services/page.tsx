@@ -15,10 +15,7 @@ import {
 } from "@/components/marketing/ProblemNavigator";
 import { ProjectCta } from "@/components/marketing/ProjectCta";
 import { QualityFramework } from "@/components/marketing/QualityFramework";
-import {
-  ServiceChapter,
-  type ServiceChapterItem,
-} from "@/components/marketing/ServiceChapter";
+import { ServiceChapter, type ServiceChapterItem } from "@/components/marketing/ServiceChapter";
 import SiteFooter from "@/components/marketing/SiteFooter";
 import { localizePath } from "@/i18n";
 import { buildMetadata } from "@/lib/seo";
@@ -45,11 +42,7 @@ export async function generateMetadata({
   });
 }
 
-export default async function ServicesPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function ServicesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const [t, tNav] = await Promise.all([
     getTranslations({ locale, namespace: "servicesPage" }),
@@ -64,7 +57,7 @@ export default async function ServicesPage({
     "#engagements",
   ];
   const navigatorItems = (t.raw("navigator.items") as ProblemNavigatorItem[]).map(
-    (item, index) => ({ ...item, href: serviceAnchors[index] }),
+    (item, index) => ({ ...item, href: serviceAnchors[index] })
   );
   const capabilityAnchors = [
     "modernization",
@@ -73,9 +66,10 @@ export default async function ServicesPage({
     "production-systems",
     "data-interfaces",
   ];
-  const capabilities = (t.raw("capabilities.items") as ServiceChapterItem[]).map(
-    (item, index) => ({ ...item, id: capabilityAnchors[index] }),
-  );
+  const capabilities = (t.raw("capabilities.items") as ServiceChapterItem[]).map((item, index) => ({
+    ...item,
+    id: capabilityAnchors[index],
+  }));
   const engagementOptions = t.raw("engagements.options") as EngagementOption[];
   const teamSteps = t.raw("teamModel.steps") as TeamModelItem[];
 
@@ -99,7 +93,10 @@ export default async function ServicesPage({
           eyebrow={t("hero.eyebrow")}
           title={t("hero.title")}
           intro={t("hero.intro")}
-          primaryCta={{ label: t("hero.primaryCta"), href: localizePath(locale, "/start-a-project") }}
+          primaryCta={{
+            label: t("hero.primaryCta"),
+            href: localizePath(locale, "/start-a-project"),
+          }}
           secondaryCta={{ label: t("hero.secondaryCta"), href: "#starting-points" }}
           signals={t.raw("hero.signals") as string[]}
         />

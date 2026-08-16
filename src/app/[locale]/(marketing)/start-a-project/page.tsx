@@ -14,13 +14,26 @@ import SiteFooter from "@/components/marketing/SiteFooter";
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/siteConfig";
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  return buildMetadata({ title: t("startAProjectTitle"), description: t("startAProjectDescription"), path: "/start-a-project", locale });
+  return buildMetadata({
+    title: t("startAProjectTitle"),
+    description: t("startAProjectDescription"),
+    path: "/start-a-project",
+    locale,
+  });
 }
 
-export default async function StartAProjectPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function StartAProjectPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
   const [t, tNav] = await Promise.all([
     getTranslations({ locale, namespace: "enquiry" }),
@@ -58,24 +71,38 @@ export default async function StartAProjectPage({ params }: { params: Promise<{ 
         />
 
         <Section>
-          <SectionHeader eyebrow={t("reasonsEyebrow")} title={t("reasonsHeading")} intro={t("reasonsIntro")} />
+          <SectionHeader
+            eyebrow={t("reasonsEyebrow")}
+            title={t("reasonsHeading")}
+            intro={t("reasonsIntro")}
+          />
           <QualityFramework items={reasons} />
         </Section>
 
         <Section id="project-form" tone="dark">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-[70px]">
             <div>
-              <p className="text-label font-bold uppercase tracking-eyebrow text-brand">{t("formEyebrow")}</p>
-              <h2 className="mt-4 max-w-[15ch] text-[36px] font-extrabold tracking-title md:text-title">{t("formHeading")}</h2>
+              <p className="text-label font-bold uppercase tracking-eyebrow text-brand">
+                {t("formEyebrow")}
+              </p>
+              <h2 className="mt-4 max-w-[15ch] text-[36px] font-extrabold tracking-title md:text-title">
+                {t("formHeading")}
+              </h2>
               <p className="mt-5 max-w-[52ch] text-body text-fog">{t("formIntro")}</p>
               <div className="mt-8 border-t border-[#2d4b28] pt-6 text-body text-fog">
                 <p>{t("body")}</p>
                 <p className="mt-4">
-                  <a className="font-bold text-light underline underline-offset-4" href={`mailto:${siteConfig.contact.email}`}>
+                  <a
+                    className="font-bold text-light underline underline-offset-4"
+                    href={`mailto:${siteConfig.contact.email}`}
+                  >
                     {siteConfig.contact.email}
                   </a>
                   <br />
-                  <a className="font-bold text-light underline underline-offset-4" href={`tel:${siteConfig.contact.phone.replaceAll(" ", "")}`}>
+                  <a
+                    className="font-bold text-light underline underline-offset-4"
+                    href={`tel:${siteConfig.contact.phone.replaceAll(" ", "")}`}
+                  >
                     {siteConfig.contact.phone}
                   </a>
                 </p>
@@ -88,7 +115,11 @@ export default async function StartAProjectPage({ params }: { params: Promise<{ 
         </Section>
 
         <Section>
-          <SectionHeader eyebrow={t("nextStepsEyebrow")} title={t("nextStepsHeading")} intro={t("nextStepsBody")} />
+          <SectionHeader
+            eyebrow={t("nextStepsEyebrow")}
+            title={t("nextStepsHeading")}
+            intro={t("nextStepsBody")}
+          />
           <QualityFramework items={nextSteps} />
         </Section>
       </main>

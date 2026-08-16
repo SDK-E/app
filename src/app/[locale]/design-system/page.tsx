@@ -148,16 +148,21 @@ export default async function DesignSystemPage({
             <div className="grid gap-3 lg:grid-cols-3">
               <Card className="flex min-h-40 flex-col justify-between">
                 <div>
-                  <p className="text-micro font-bold uppercase tracking-label text-muted-foreground">01 / Card</p>
+                  <p className="text-micro font-bold uppercase tracking-label text-muted-foreground">
+                    01 / Card
+                  </p>
                   <h3 className="mt-8 text-h3">Platforms, APIs & SaaS</h3>
                 </div>
                 <p className="mt-4 text-body text-muted-foreground">
-                  PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs and realtime backend architecture.
+                  PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs and realtime backend
+                  architecture.
                 </p>
               </Card>
               <Card className="flex min-h-40 flex-col justify-between">
                 <div>
-                  <p className="text-micro font-bold uppercase tracking-label text-muted-foreground">02 / Card</p>
+                  <p className="text-micro font-bold uppercase tracking-label text-muted-foreground">
+                    02 / Card
+                  </p>
                   <h3 className="mt-8 text-h3">Cloud & infrastructure</h3>
                 </div>
                 <p className="mt-4 text-body text-muted-foreground">
@@ -187,7 +192,9 @@ export default async function DesignSystemPage({
                 ["Pending actions", "02"],
               ].map(([label, value]) => (
                 <Card key={label} className="p-4">
-                  <p className="text-micro font-bold uppercase tracking-label text-muted-foreground">{label}</p>
+                  <p className="text-micro font-bold uppercase tracking-label text-muted-foreground">
+                    {label}
+                  </p>
                   <p className="mt-4 text-h1 tracking-h1">{value}</p>
                 </Card>
               ))}

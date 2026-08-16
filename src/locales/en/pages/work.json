@@ -1,57 +1,139 @@
 {
   "workPage": {
     "hero": {
-      "eyebrow": "Problems we are set up to solve", "title": "Look at the engineering problem before prescribing the project.",
+      "eyebrow": "Problems we are set up to solve",
+      "title": "Look at the engineering problem before prescribing the project.",
       "intro": "The scenarios below show how SDK approaches technically consequential situations. They describe capabilities and decision paths, not invented client case studies or unsupported results.",
-      "primaryCta": "Discuss a situation", "secondaryCta": "Explore the scenarios",
-      "signals": ["No fabricated case studies", "Evidence before prescription", "Defined client decisions", "Tangible deliverables"]
+      "primaryCta": "Discuss a situation",
+      "secondaryCta": "Explore the scenarios",
+      "signals": [
+        "No fabricated case studies",
+        "Evidence before prescription",
+        "Defined client decisions",
+        "Tangible deliverables"
+      ]
     },
     "scenarios": {
-      "eyebrow": "Engagement scenarios", "heading": "Recognize the pressure. Then find the responsible first move.",
+      "eyebrow": "Engagement scenarios",
+      "heading": "Recognize the pressure. Then find the responsible first move.",
       "intro": "A useful response connects business exposure to technical evidence and a decision the organization can act on.",
-      "labels": {"signals": "What you may see", "questions": "What we need to learn", "deliverables": "What creates progress"},
+      "labels": {
+        "signals": "What you may see",
+        "questions": "What we need to learn",
+        "deliverables": "What creates progress"
+      },
       "items": [
         {
-          "number": "01 / MODERNIZATION", "title": "The system is too important to replace blindly—and too costly to leave alone.",
+          "number": "01 / MODERNIZATION",
+          "title": "The system is too important to replace blindly—and too costly to leave alone.",
           "situation": "Delivery slows as dependencies age, knowledge narrows and every change reaches further than expected.",
-          "signals": ["Upgrades repeatedly postponed", "Changes require manual recovery", "Critical behavior is undocumented"],
-          "questions": ["Which boundaries can move independently?", "Where is business behavior encoded?", "What must remain available during change?"],
-          "deliverables": ["Current-state map", "Risk-ranked options", "Incremental migration sequence"]
+          "signals": [
+            "Upgrades repeatedly postponed",
+            "Changes require manual recovery",
+            "Critical behavior is undocumented"
+          ],
+          "questions": [
+            "Which boundaries can move independently?",
+            "Where is business behavior encoded?",
+            "What must remain available during change?"
+          ],
+          "deliverables": [
+            "Current-state map",
+            "Risk-ranked options",
+            "Incremental migration sequence"
+          ]
         },
         {
-          "number": "02 / RELIABILITY", "title": "The platform is under pressure, but capacity may not be the real problem.",
+          "number": "02 / RELIABILITY",
+          "title": "The platform is under pressure, but capacity may not be the real problem.",
           "situation": "Latency, incidents or infrastructure cost are increasing and the available signals do not explain why.",
-          "signals": ["Failures are difficult to reproduce", "Scaling changes move the bottleneck", "Recovery depends on a few people"],
-          "questions": ["Where does time and capacity go?", "Which failure modes affect users?", "What evidence is missing during incidents?"],
-          "deliverables": ["Observed bottlenecks", "Operational risk register", "Prioritized stabilization plan"]
+          "signals": [
+            "Failures are difficult to reproduce",
+            "Scaling changes move the bottleneck",
+            "Recovery depends on a few people"
+          ],
+          "questions": [
+            "Where does time and capacity go?",
+            "Which failure modes affect users?",
+            "What evidence is missing during incidents?"
+          ],
+          "deliverables": [
+            "Observed bottlenecks",
+            "Operational risk register",
+            "Prioritized stabilization plan"
+          ]
         },
         {
-          "number": "03 / AI WORKFLOW", "title": "The AI demo works. The operating model around it does not exist yet.",
+          "number": "03 / AI WORKFLOW",
+          "title": "The AI demo works. The operating model around it does not exist yet.",
           "situation": "A promising model interaction must become a controlled workflow with trusted data, evaluation and human responsibility.",
-          "signals": ["Quality is judged by impression", "Source permissions are unclear", "Failures have no review path"],
-          "questions": ["What is an acceptable result?", "Which decisions require human review?", "How will quality be measured over time?"],
-          "deliverables": ["Workflow and control design", "Evaluation approach", "Implementation boundary"]
+          "signals": [
+            "Quality is judged by impression",
+            "Source permissions are unclear",
+            "Failures have no review path"
+          ],
+          "questions": [
+            "What is an acceptable result?",
+            "Which decisions require human review?",
+            "How will quality be measured over time?"
+          ],
+          "deliverables": [
+            "Workflow and control design",
+            "Evaluation approach",
+            "Implementation boundary"
+          ]
         },
         {
-          "number": "04 / TECHNICAL OWNERSHIP", "title": "The product needs focused engineering ownership for a critical phase.",
+          "number": "04 / TECHNICAL OWNERSHIP",
+          "title": "The product needs focused engineering ownership for a critical phase.",
           "situation": "The internal team has a defined priority but lacks one or more disciplines needed to carry the workstream safely.",
-          "signals": ["A critical roadmap item remains blocked", "Several systems must change together", "External contributors would need coordination"],
-          "questions": ["What outcome can SDK own?", "Which expertise is genuinely required?", "Where do client decisions remain essential?"],
-          "deliverables": ["Project-specific team", "Visible delivery record", "Documented transfer of ownership"]
+          "signals": [
+            "A critical roadmap item remains blocked",
+            "Several systems must change together",
+            "External contributors would need coordination"
+          ],
+          "questions": [
+            "What outcome can SDK own?",
+            "Which expertise is genuinely required?",
+            "Where do client decisions remain essential?"
+          ],
+          "deliverables": [
+            "Project-specific team",
+            "Visible delivery record",
+            "Documented transfer of ownership"
+          ]
         }
       ]
     },
     "principle": {
-      "eyebrow": "Why scenarios", "heading": "A portfolio is only persuasive when the evidence is real.",
+      "eyebrow": "Why scenarios",
+      "heading": "A portfolio is only persuasive when the evidence is real.",
       "body": "SDK will publish named clients, quantified outcomes and testimonials only when the work, result and permission can be verified. Until then, this page shows the situations we are equipped to investigate and the deliverables that move them forward."
     },
     "fit": {
-      "eyebrow": "Engagement fit", "heading": "The strongest work starts with access, responsibility and a real decision to make.",
+      "eyebrow": "Engagement fit",
+      "heading": "The strongest work starts with access, responsibility and a real decision to make.",
       "intro": "Technical difficulty is welcome. An engagement becomes ineffective when the organization cannot provide context, access or decision ownership.",
-      "fitTitle": "Good conditions for SDK", "notFitTitle": "Poor conditions for SDK",
-      "fitItems": ["A material software, data, AI or infrastructure constraint", "Access to the system and people who understand its current state", "A decision-maker who can resolve scope and trade-offs", "Willingness to examine evidence before committing to a solution"],
-      "notFitItems": ["Anonymous ticket capacity with no owned outcome", "A request to validate a predetermined answer regardless of evidence", "No practical access to the relevant system or stakeholders", "Selection based only on the lowest individual day rate"]
+      "fitTitle": "Good conditions for SDK",
+      "notFitTitle": "Poor conditions for SDK",
+      "fitItems": [
+        "A material software, data, AI or infrastructure constraint",
+        "Access to the system and people who understand its current state",
+        "A decision-maker who can resolve scope and trade-offs",
+        "Willingness to examine evidence before committing to a solution"
+      ],
+      "notFitItems": [
+        "Anonymous ticket capacity with no owned outcome",
+        "A request to validate a predetermined answer regardless of evidence",
+        "No practical access to the relevant system or stakeholders",
+        "Selection based only on the lowest individual day rate"
+      ]
     },
-    "cta": {"eyebrow": "Bring us the real situation", "title": "Start with what the system is costing, delaying or putting at risk.", "body": "You do not need to diagnose it before contacting SDK. Tell us what is happening and which decision is currently blocked.", "label": "Discuss the situation"}
+    "cta": {
+      "eyebrow": "Bring us the real situation",
+      "title": "Start with what the system is costing, delaying or putting at risk.",
+      "body": "You do not need to diagnose it before contacting SDK. Tell us what is happening and which decision is currently blocked.",
+      "label": "Discuss the situation"
+    }
   }
 }

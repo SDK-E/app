@@ -45,7 +45,13 @@ export function EnquiryForm() {
           <label htmlFor="companyName" className="text-label font-bold uppercase tracking-eyebrow">
             {t("form.companyName")} <span className="text-dark">*</span>
           </label>
-          <input id="companyName" name="companyName" type="text" className={fieldClass("companyName")} required />
+          <input
+            id="companyName"
+            name="companyName"
+            type="text"
+            className={fieldClass("companyName")}
+            required
+          />
           {result && !result.success && result.errors.companyName && (
             <p className="text-body text-dark">{result.errors.companyName}</p>
           )}
@@ -66,7 +72,13 @@ export function EnquiryForm() {
         <label htmlFor="website" className="text-label font-bold uppercase tracking-eyebrow">
           {t("form.website")}
         </label>
-        <input id="website" name="website" type="url" placeholder="https://" className={fieldClass("website")} />
+        <input
+          id="website"
+          name="website"
+          type="url"
+          placeholder="https://"
+          className={fieldClass("website")}
+        />
         {result && !result.success && result.errors.website && (
           <p className="text-body text-dark">{result.errors.website}</p>
         )}
@@ -111,7 +123,12 @@ export function EnquiryForm() {
         <label htmlFor="environment" className="text-label font-bold uppercase tracking-eyebrow">
           {t("form.environment")}
         </label>
-        <textarea id="environment" name="environment" rows={4} className={fieldClass("environment")} />
+        <textarea
+          id="environment"
+          name="environment"
+          rows={4}
+          className={fieldClass("environment")}
+        />
         {result && !result.success && result.errors.environment && (
           <p className="text-body text-dark">{result.errors.environment}</p>
         )}

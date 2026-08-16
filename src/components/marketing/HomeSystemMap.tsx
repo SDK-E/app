@@ -15,13 +15,9 @@ export function HomeSystemMap({ items }: { items: HomeSystemMapItem[] }) {
             index > 0 ? "border-t border-line" : ""
           }`}
         >
-          <span className="text-label font-bold text-muted-foreground">
-            {item.number}
-          </span>
+          <span className="text-label font-bold text-muted-foreground">{item.number}</span>
           <h3 className="max-w-[18ch] text-h3">{item.title}</h3>
-          <p className="max-w-[54ch] text-body text-muted-foreground">
-            {item.copy}
-          </p>
+          <p className="max-w-[54ch] text-body text-muted-foreground">{item.copy}</p>
           <p className="text-micro font-bold uppercase leading-relaxed tracking-eyebrow text-dark">
             {item.systems.join(" · ")}
           </p>

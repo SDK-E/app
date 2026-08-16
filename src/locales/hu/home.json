@@ -45,57 +45,31 @@
           "number": "01",
           "title": "Munkafolyamat és interfész",
           "copy": "A felhasználói feladatot, a működési döntést és a helyreállítási utat a szoftvernek érthetővé kell tennie.",
-          "systems": [
-            "React",
-            "Vue",
-            "Nuxt",
-            "TypeScript"
-          ]
+          "systems": ["React", "Vue", "Nuxt", "TypeScript"]
         },
         {
           "number": "02",
           "title": "Üzleti platform",
           "copy": "A szolgáltatások, a APIs, az engedélyek és az integrációs szerződések, amelyek a szervezet szabályait hordozzák.",
-          "systems": [
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PHP"
-          ]
+          "systems": ["Java", "Spring Boot", "Node.js", "PHP"]
         },
         {
           "number": "03",
           "title": "AI és automatizálás",
           "copy": "A modell által támogatott döntések, a visszakeresés, az értékelés és az emberi felülvizsgálat egy valós munkafolyamatban vezérli.",
-          "systems": [
-            "LLM",
-            "RAG",
-            "Ügynökök",
-            "APIs"
-          ]
+          "systems": ["LLM", "RAG", "Ügynökök", "APIs"]
         },
         {
           "number": "04",
           "title": "Adatok és állapot",
           "copy": "A rendszer viselkedése mögötti tulajdonjog, konzisztencia, keresés, gyorsítótár és életciklus szabályai.",
-          "systems": [
-            "PostgreSQL",
-            "MongoDB",
-            "Redis",
-            "Elasticsearch"
-          ]
+          "systems": ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch"]
         },
         {
           "number": "05",
           "title": "Gyártási művelet",
           "copy": "A rendszer működtetéséhez szükséges telepítési, megfigyelhetőségi, helyreállítási és infrastrukturális mechanizmusok.",
-          "systems": [
-            "AWS",
-            "GCP",
-            "Azure",
-            "Kubernetes",
-            "CI/CD"
-          ]
+          "systems": ["AWS", "GCP", "Azure", "Kubernetes", "CI/CD"]
         }
       ]
     },

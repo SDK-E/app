@@ -6,12 +6,12 @@ mentions légales). The company is a French legal entity, so French law applies.
 
 ## 1. Required pages
 
-| Page | Why it is required | Suggested route |
-|---|---|---|
-| Mentions légales | Legally required for any website operated from France (LCEN, art. 6-III) | `/legal/mentions-legales` |
-| Privacy policy (RGPD) | Required by GDPR arts. 12–14 whenever personal data is processed — the enquiry form collects personal data | `/privacy` |
-| Cookie policy + consent | Required only if tracking/storage cookies are set | `/cookies` |
-| Terms of use | Not legally mandatory for this site type, but recommended for B2B | `/terms` |
+| Page                    | Why it is required                                                                                         | Suggested route           |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------- |
+| Mentions légales        | Legally required for any website operated from France (LCEN, art. 6-III)                                   | `/legal/mentions-legales` |
+| Privacy policy (RGPD)   | Required by GDPR arts. 12–14 whenever personal data is processed — the enquiry form collects personal data | `/privacy`                |
+| Cookie policy + consent | Required only if tracking/storage cookies are set                                                          | `/cookies`                |
+| Terms of use            | Not legally mandatory for this site type, but recommended for B2B                                          | `/terms`                  |
 
 Use `kebab-case` route directories per `docs/conventions/structure.md`.
 
@@ -98,12 +98,12 @@ Implemented under `src/app/(marketing)/` with a shared shell
 (`src/components/marketing/LegalPage.tsx`) and typographic primitives
 (`src/components/marketing/LegalText.tsx`):
 
-| Page | Route | Notes |
-|---|---|---|
-| Mentions légales | `/legal/mentions-legales` | Publisher identity, LCEN art. 6-III. |
-| Privacy policy (RGPD) | `/privacy` | Controller, data from the enquiry form, bases, processors, rights. |
-| Cookie policy | `/cookies` | No cookies set; banner not required (owner decision above). |
-| Terms of use | `/terms` | B2B terms, French law. |
+| Page                  | Route                     | Notes                                                              |
+| --------------------- | ------------------------- | ------------------------------------------------------------------ |
+| Mentions légales      | `/legal/mentions-legales` | Publisher identity, LCEN art. 6-III.                               |
+| Privacy policy (RGPD) | `/privacy`                | Controller, data from the enquiry form, bases, processors, rights. |
+| Cookie policy         | `/cookies`                | No cookies set; banner not required (owner decision above).        |
+| Terms of use          | `/terms`                  | B2B terms, French law.                                             |
 
 All four are added to `PUBLIC_ROUTES` in `src/proxy.ts` and linked in the site
 footer (`src/components/marketing/SiteFooter.tsx`). Every page carries a
@@ -123,25 +123,25 @@ vercel.com/legal/terms).
 Everything considered while drafting. Each item shows status and where it is
 covered. Keep this list in sync when the site changes.
 
-| Requirement | Status | Where covered |
-|---|---|---|
-| Mentions légales (LCEN art. 6-III) | Draft on page | `/legal/mentions-legales` |
-| Publisher identity (name, SIREN/SIRET, address, contact) | Done | siteConfig → mentions légales |
-| RCS number + legal form + share capital | **RCS done** (Paris, derived from SIREN, flagged to confirm); **form + capital owner-only** | mentions légales |
-| Publication director | **Placeholder** — owner must provide | mentions légales |
-| Host identity (Vercel) + registered address | **Done** — 440 N Barranca Ave #4133, Covina, CA 91723, US (vercel.com/legal/terms) | mentions légales |
-| Privacy policy (RGPD arts. 12–14: controller, data, bases, recipients, rights) | Draft on page | `/privacy` |
-| Retention period for enquiry data | **12 months** from last contact (owner-approved 2026-08-15) | `/privacy` |
-| Data-subject rights (arts. 15–22) incl. CNIL complaint | Covered | `/privacy` |
-| Lawful bases (6.1.b pre-contractual, 6.1.f legitimate interest, 6.1.c legal) | Covered | `/privacy` |
-| Register of processing activities (art. 30) | Owner task — internal, not a page | stated on `/privacy` |
-| Cookie consent (ePrivacy art. 5.3 + CNIL guidance) | N/A — no tracking cookies; no banner (owner decision) | `/cookies` |
-| Data-breach notification (arts. 33–34, CNIL 72h) | Owner task — internal procedure | not published |
-| International transfers (arts. 44–49, SCCs) | Covered + owner confirmation flagged | `/privacy` |
-| Children (art. 8) | Covered | `/privacy` |
-| DPO designation (arts. 37–39) | Not required at this scale; contact email used | `/privacy` |
-| No automated decision-making / profiling | Covered | `/privacy` |
-| CNIL declaration number | None claimed, none invented | `/privacy` |
-| Terms of use (optional, recommended B2B) | Approved draft on page | `/terms` |
-| Legal language | Bilingual FR/EN (owner decision) | all pages |
-| Review gate | **Done** — owner-approved 2026-08-15; professional review still recommended before public launch | §5 |
+| Requirement                                                                    | Status                                                                                           | Where covered                 |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ----------------------------- |
+| Mentions légales (LCEN art. 6-III)                                             | Draft on page                                                                                    | `/legal/mentions-legales`     |
+| Publisher identity (name, SIREN/SIRET, address, contact)                       | Done                                                                                             | siteConfig → mentions légales |
+| RCS number + legal form + share capital                                        | **RCS done** (Paris, derived from SIREN, flagged to confirm); **form + capital owner-only**      | mentions légales              |
+| Publication director                                                           | **Placeholder** — owner must provide                                                             | mentions légales              |
+| Host identity (Vercel) + registered address                                    | **Done** — 440 N Barranca Ave #4133, Covina, CA 91723, US (vercel.com/legal/terms)               | mentions légales              |
+| Privacy policy (RGPD arts. 12–14: controller, data, bases, recipients, rights) | Draft on page                                                                                    | `/privacy`                    |
+| Retention period for enquiry data                                              | **12 months** from last contact (owner-approved 2026-08-15)                                      | `/privacy`                    |
+| Data-subject rights (arts. 15–22) incl. CNIL complaint                         | Covered                                                                                          | `/privacy`                    |
+| Lawful bases (6.1.b pre-contractual, 6.1.f legitimate interest, 6.1.c legal)   | Covered                                                                                          | `/privacy`                    |
+| Register of processing activities (art. 30)                                    | Owner task — internal, not a page                                                                | stated on `/privacy`          |
+| Cookie consent (ePrivacy art. 5.3 + CNIL guidance)                             | N/A — no tracking cookies; no banner (owner decision)                                            | `/cookies`                    |
+| Data-breach notification (arts. 33–34, CNIL 72h)                               | Owner task — internal procedure                                                                  | not published                 |
+| International transfers (arts. 44–49, SCCs)                                    | Covered + owner confirmation flagged                                                             | `/privacy`                    |
+| Children (art. 8)                                                              | Covered                                                                                          | `/privacy`                    |
+| DPO designation (arts. 37–39)                                                  | Not required at this scale; contact email used                                                   | `/privacy`                    |
+| No automated decision-making / profiling                                       | Covered                                                                                          | `/privacy`                    |
+| CNIL declaration number                                                        | None claimed, none invented                                                                      | `/privacy`                    |
+| Terms of use (optional, recommended B2B)                                       | Approved draft on page                                                                           | `/terms`                      |
+| Legal language                                                                 | Bilingual FR/EN (owner decision)                                                                 | all pages                     |
+| Review gate                                                                    | **Done** — owner-approved 2026-08-15; professional review still recommended before public launch | §5                            |

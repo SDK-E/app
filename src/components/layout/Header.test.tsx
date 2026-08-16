@@ -6,9 +6,8 @@ const mocks = vi.hoisted(() => ({ useUser: vi.fn() }));
 vi.mock("@auth0/nextjs-auth0/client", () => ({ useUser: mocks.useUser }));
 vi.mock("next-intl", () => ({
   useTranslations: () => (key: string) =>
-    ({ home: "Home", main: "Main", toggleMenu: "Toggle menu", openPortal: "Open portal" })[
-      key
-    ] ?? key,
+    ({ home: "Home", main: "Main", toggleMenu: "Toggle menu", openPortal: "Open portal" })[key] ??
+    key,
 }));
 vi.mock("@/components/layout/LanguageSwitcher", () => ({
   LanguageSwitcher: () => <span>Language switcher</span>,

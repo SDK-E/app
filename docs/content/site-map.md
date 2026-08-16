@@ -19,36 +19,36 @@ replace or casually restructure it.
 
 ## 2. Current routes
 
-| Route | File | Status |
-|---|---|---|
-| `/` | `src/app/(marketing)/page.tsx` | **Exists** — landing page assembling the marketing sections below (hero, services, why, engagements, process, contact, footer) |
-| `/services`, `/work`, `/how-we-work`, `/about`, `/start-a-project` | `src/app/(marketing)/*` | Exists — marketing pages composed from the shared sections; copy from `marketing-architecture.md` |
-| `/design-system` | `src/app/design-system/page.tsx` | Exists — renders every token/primitive/state |
-| `/legal/*`, `/privacy`, `/terms`, `/cookies` | `src/app/(marketing)/legal*` | Exists — legal pages per `docs/content/legal-pages.md` |
-| `/login`, `/logout` | `src/app/(app)/login`, `src/app/(app)/logout` | Exists — `/login` forwards `screen_hint`, `email` (→ `login_hint`) and `returnTo` to the Auth0 provider |
-| `/auth/*` | Auth0 SDK | Exists |
-| `/invite/[token]` | `src/app/[locale]/invite/[token]/page.tsx` | Exists — public invitation card. Anonymous: sign-up / sign-in CTAs prefilled with the invited email. Signed in: accept (matching email) or mismatch message + sign-out back to the invite |
-| `/app/*` | `src/app/[locale]/(app)/app/*` | Exists — client portal (dashboard, service requests, operations, users, profile). Unassigned users see `AccessPending` (create a company, or request access with a company access code). `/app/users` shows the company access code (owner/SDK admin regenerate) and an Access requests section for owner/administrator/SDK-admin approval |
+| Route                                                              | File                                          | Status                                                                                                                                                                                                                                                                                                                                     |
+| ------------------------------------------------------------------ | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `/`                                                                | `src/app/(marketing)/page.tsx`                | **Exists** — landing page assembling the marketing sections below (hero, services, why, engagements, process, contact, footer)                                                                                                                                                                                                             |
+| `/services`, `/work`, `/how-we-work`, `/about`, `/start-a-project` | `src/app/(marketing)/*`                       | Exists — marketing pages composed from the shared sections; copy from `marketing-architecture.md`                                                                                                                                                                                                                                          |
+| `/design-system`                                                   | `src/app/design-system/page.tsx`              | Exists — renders every token/primitive/state                                                                                                                                                                                                                                                                                               |
+| `/legal/*`, `/privacy`, `/terms`, `/cookies`                       | `src/app/(marketing)/legal*`                  | Exists — legal pages per `docs/content/legal-pages.md`                                                                                                                                                                                                                                                                                     |
+| `/login`, `/logout`                                                | `src/app/(app)/login`, `src/app/(app)/logout` | Exists — `/login` forwards `screen_hint`, `email` (→ `login_hint`) and `returnTo` to the Auth0 provider                                                                                                                                                                                                                                    |
+| `/auth/*`                                                          | Auth0 SDK                                     | Exists                                                                                                                                                                                                                                                                                                                                     |
+| `/invite/[token]`                                                  | `src/app/[locale]/invite/[token]/page.tsx`    | Exists — public invitation card. Anonymous: sign-up / sign-in CTAs prefilled with the invited email. Signed in: accept (matching email) or mismatch message + sign-out back to the invite                                                                                                                                                  |
+| `/app/*`                                                           | `src/app/[locale]/(app)/app/*`                | Exists — client portal (dashboard, service requests, operations, users, profile). Unassigned users see `AccessPending` (create a company, or request access with a company access code). `/app/users` shows the company access code (owner/SDK admin regenerate) and an Access requests section for owner/administrator/SDK-admin approval |
 
 `src/proxy.ts` `PUBLIC_ROUTES = ["/", "/services", "/work", "/how-we-work", "/about", "/start-a-project", "/login", "/invite/*", "/auth/*", "/favicon.ico", "/design-system", "/legal/*", "/privacy", "/terms", "/cookies", "/robots.txt", "/sitemap.xml", "/llms.txt"]`.
 Any new public page must be added there.
 
 ## 3. Component inventory (reuse these; do not rewrite)
 
-| Component | File |
-|---|---|
-| `Button` | `src/components/ui/Button.tsx` |
-| `Badge` | `src/components/ui/Badge.tsx` |
-| `Card` | `src/components/ui/Card.tsx` |
-| `ArrowLink` | `src/components/ui/ArrowLink.tsx` |
-| `Skeleton` | `src/components/ui/Skeleton.tsx` |
-| `EmptyState` | `src/components/ui/EmptyState.tsx` |
-| `ErrorState` | `src/components/ui/ErrorState.tsx` |
-| `Container` / `Section` / `SectionHeader` | `src/components/layout/{Container,Section,SectionHeader}.tsx` |
-| `Header` | `src/components/layout/Header.tsx` (approved logo, 11px uppercase nav, mobile menu) |
-| `Hero`, `ServicesSection`, `WhySdkSection`, `EngagementsSection`, `ProcessSection`, `ContactSection`, `SiteFooter` | `src/components/marketing/*` |
-| `AppShell`, `AccountMenu`, `LanguageSwitcher`, `AccessPending` | `src/components/layout/*` (portal shell; `AccessPending` is the unassigned-user workspace screen with company creation + access-request form) |
-| `UserActionForm`, `CompanyCreationForm`, `AccessRequestForm`, `InvitationAcceptForm`, `ActionForm`, `RequestForm` | `src/components/portal/*` (server-action forms with pending/error/success state) |
+| Component                                                                                                          | File                                                                                                                                          |
+| ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Button`                                                                                                           | `src/components/ui/Button.tsx`                                                                                                                |
+| `Badge`                                                                                                            | `src/components/ui/Badge.tsx`                                                                                                                 |
+| `Card`                                                                                                             | `src/components/ui/Card.tsx`                                                                                                                  |
+| `ArrowLink`                                                                                                        | `src/components/ui/ArrowLink.tsx`                                                                                                             |
+| `Skeleton`                                                                                                         | `src/components/ui/Skeleton.tsx`                                                                                                              |
+| `EmptyState`                                                                                                       | `src/components/ui/EmptyState.tsx`                                                                                                            |
+| `ErrorState`                                                                                                       | `src/components/ui/ErrorState.tsx`                                                                                                            |
+| `Container` / `Section` / `SectionHeader`                                                                          | `src/components/layout/{Container,Section,SectionHeader}.tsx`                                                                                 |
+| `Header`                                                                                                           | `src/components/layout/Header.tsx` (approved logo, 11px uppercase nav, mobile menu)                                                           |
+| `Hero`, `ServicesSection`, `WhySdkSection`, `EngagementsSection`, `ProcessSection`, `ContactSection`, `SiteFooter` | `src/components/marketing/*`                                                                                                                  |
+| `AppShell`, `AccountMenu`, `LanguageSwitcher`, `AccessPending`                                                     | `src/components/layout/*` (portal shell; `AccessPending` is the unassigned-user workspace screen with company creation + access-request form) |
+| `UserActionForm`, `CompanyCreationForm`, `AccessRequestForm`, `InvitationAcceptForm`, `ActionForm`, `RequestForm`  | `src/components/portal/*` (server-action forms with pending/error/success state)                                                              |
 
 Rules:
 
@@ -61,15 +61,15 @@ Rules:
 
 ## 4. Target public pages for this batch
 
-| Page | Route | Build guidance |
-|---|---|---|
-| Homepage | `/` | Already exists — keep and evolve it. Do not rebuild. Convert anchor nav to real links when dedicated pages land. |
-| Services | `/services` | Reuse `ServicesSection`; add deeper service experiences per the brief §5. Copy from `marketing-architecture.md` §3; pass the copy-review gate. |
-| Work / case studies | `/work` (or `/case-studies`) | Use the scenario/engagement framing. **No fabricated clients/outcomes** — `docs/content/claims-and-evidence.md` §3. |
-| How we work | `/how-we-work` | `marketing-architecture.md` §6 process; brief §7 engagement model. |
-| About | `/about` | Company-focused, not a founder résumé (brief §7). `marketing-architecture.md` contact/company facts. |
-| Start a project | `/start-a-project` | `docs/content/start-a-project.md` — approved form + delivery spec. Add to `PUBLIC_ROUTES`. |
-| Legal | `/legal/mentions-legales`, `/privacy`, `/terms`, `/cookies` | `docs/content/legal-pages.md`. |
+| Page                | Route                                                       | Build guidance                                                                                                                                 |
+| ------------------- | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Homepage            | `/`                                                         | Already exists — keep and evolve it. Do not rebuild. Convert anchor nav to real links when dedicated pages land.                               |
+| Services            | `/services`                                                 | Reuse `ServicesSection`; add deeper service experiences per the brief §5. Copy from `marketing-architecture.md` §3; pass the copy-review gate. |
+| Work / case studies | `/work` (or `/case-studies`)                                | Use the scenario/engagement framing. **No fabricated clients/outcomes** — `docs/content/claims-and-evidence.md` §3.                            |
+| How we work         | `/how-we-work`                                              | `marketing-architecture.md` §6 process; brief §7 engagement model.                                                                             |
+| About               | `/about`                                                    | Company-focused, not a founder résumé (brief §7). `marketing-architecture.md` contact/company facts.                                           |
+| Start a project     | `/start-a-project`                                          | `docs/content/start-a-project.md` — approved form + delivery spec. Add to `PUBLIC_ROUTES`.                                                     |
+| Legal               | `/legal/mentions-legales`, `/privacy`, `/terms`, `/cookies` | `docs/content/legal-pages.md`.                                                                                                                 |
 
 Copy for all pages comes from `docs/content/marketing-architecture.md` (still
 DRAFT) and must pass the review gate in `docs/content/voice-and-standards.md`

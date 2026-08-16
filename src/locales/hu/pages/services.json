@@ -75,15 +75,7 @@
             "Keretrendszer, futásidejű vagy szolgáltatás migráció",
             "Növekményes csere szabályozott átkapcsolással"
           ],
-          "evidence": [
-            "PHP",
-            "Laravel",
-            "Symfony",
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PostgreSQL"
-          ],
+          "evidence": ["PHP", "Laravel", "Symfony", "Java", "Spring Boot", "Node.js", "PostgreSQL"],
           "firstStep": "Térképezze fel, mit csinál ma a rendszer, hol veszélyes a változás, és melyik határ mozdulhat el először."
         },
         {
@@ -101,15 +93,7 @@
             "Hitelesítés, engedélyezés és bérlői elkülönítés",
             "Várólisták, események és valós idejű alkalmazásfolyamok"
           ],
-          "evidence": [
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PHP",
-            "PostgreSQL",
-            "Redis",
-            "Valkey"
-          ],
+          "evidence": ["Java", "Spring Boot", "Node.js", "PHP", "PostgreSQL", "Redis", "Valkey"],
           "firstStep": "Határozza meg az üzleti határt, a birtokában lévő adatokat és azokat a meghibásodási feltételeket, amelyeket a tervezésnek el kell viselnie."
         },
         {
@@ -127,15 +111,7 @@
             "Visszakereső és földelt válaszrendszerek",
             "Értékelés, megfigyelhetőség és áttekintés ellenőrzések"
           ],
-          "evidence": [
-            "LLM",
-            "RAG",
-            "APIs",
-            "PostgreSQL",
-            "Elasticsearch",
-            "Python",
-            "Node.js"
-          ],
+          "evidence": ["LLM", "RAG", "APIs", "PostgreSQL", "Elasticsearch", "Python", "Node.js"],
           "firstStep": "Válasszon ki egy munkafolyamatot, határozzon meg egy elfogadható eredményt, és mérje meg az aktuális emberi folyamatot, mielőtt automatizálná."
         },
         {
@@ -153,15 +129,7 @@
             "Megfigyelhetőségi, riasztási és működési runbookok",
             "Felhő, konténer és hangszerelés fejlesztések"
           ],
-          "evidence": [
-            "AWS",
-            "GCP",
-            "Azure",
-            "Kubernetes",
-            "Helm",
-            "CI/CD",
-            "Redis"
-          ],
+          "evidence": ["AWS", "GCP", "Azure", "Kubernetes", "Helm", "CI/CD", "Redis"],
           "firstStep": "Határozza meg, mit csinál a rendszer valós terhelés alatt, és hogyan észleli a csapat jelenleg, és hogyan tér vissza a hibákból."
         },
         {

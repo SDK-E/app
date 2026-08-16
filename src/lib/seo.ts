@@ -116,16 +116,14 @@ export function buildMetadata(params: {
       title,
       description,
       url: absoluteUrl(canonicalPath),
-      ...alternates?.canonical && { url: absoluteUrl(canonicalPath) },
+      ...(alternates?.canonical && { url: absoluteUrl(canonicalPath) }),
     },
     twitter: {
       ...defaultTwitter,
       title,
       description,
     },
-    robots: noIndex
-      ? { index: false, follow: false }
-      : robots || defaultRobots,
+    robots: noIndex ? { index: false, follow: false } : robots || defaultRobots,
   };
 
   return metadata;

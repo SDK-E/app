@@ -75,15 +75,7 @@
             "Migration de framework, d'exécution ou de service",
             "Remplacement incrémentiel avec basculement contrôlé"
           ],
-          "evidence": [
-            "PHP",
-            "Laravel",
-            "Symfony",
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PostgreSQL"
-          ],
+          "evidence": ["PHP", "Laravel", "Symfony", "Java", "Spring Boot", "Node.js", "PostgreSQL"],
           "firstStep": "Cartographiez ce que fait le système aujourd'hui, où le changement est dangereux et quelle frontière peut bouger en premier."
         },
         {
@@ -101,15 +93,7 @@
             "Authentification, autorisation et isolation des locataires",
             "Files d'attente, événements et flux d'applications en temps réel"
           ],
-          "evidence": [
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PHP",
-            "PostgreSQL",
-            "Redis",
-            "Valkey"
-          ],
+          "evidence": ["Java", "Spring Boot", "Node.js", "PHP", "PostgreSQL", "Redis", "Valkey"],
           "firstStep": "Définissez les limites de l'entreprise, les données qu'elle possède et les conditions de défaillance que la conception doit tolérer."
         },
         {
@@ -127,15 +111,7 @@
             "Systèmes de récupération et de réponse au sol",
             "Contrôles d’évaluation, d’observabilité et d’examen"
           ],
-          "evidence": [
-            "LLM",
-            "RAG",
-            "APIs",
-            "PostgreSQL",
-            "Elasticsearch",
-            "Python",
-            "Node.js"
-          ],
+          "evidence": ["LLM", "RAG", "APIs", "PostgreSQL", "Elasticsearch", "Python", "Node.js"],
           "firstStep": "Choisissez un flux de travail, définissez un résultat acceptable et mesurez le processus humain actuel avant de l'automatiser."
         },
         {
@@ -153,15 +129,7 @@
             "Observabilité, alertes et runbooks opérationnels",
             "Améliorations du cloud, des conteneurs et de l'orchestration"
           ],
-          "evidence": [
-            "AWS",
-            "GCP",
-            "Azure",
-            "Kubernetes",
-            "Helm",
-            "CI/CD",
-            "Redis"
-          ],
+          "evidence": ["AWS", "GCP", "Azure", "Kubernetes", "Helm", "CI/CD", "Redis"],
           "firstStep": "Déterminez ce que fait le système sous une charge réelle et comment l'équipe détecte et récupère actuellement en cas de panne."
         },
         {

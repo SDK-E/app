@@ -45,57 +45,31 @@
           "number": "01",
           "title": "Arbeidsflyt og grensesnitt",
           "copy": "Brukeroppgaven, driftsbeslutningen og gjenopprettingsveien programvaren må gjøre forståelig.",
-          "systems": [
-            "React",
-            "Vue",
-            "Nuxt",
-            "TypeScript"
-          ]
+          "systems": ["React", "Vue", "Nuxt", "TypeScript"]
         },
         {
           "number": "02",
           "title": "Forretningsplattform",
           "copy": "Tjenestene, APIs, tillatelser og integrasjonskontrakter som bærer organisasjonens regler.",
-          "systems": [
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PHP"
-          ]
+          "systems": ["Java", "Spring Boot", "Node.js", "PHP"]
         },
         {
           "number": "03",
           "title": "AI og automatisering",
           "copy": "Modellassisterte beslutninger, gjenfinning, evaluering og menneskelig gjennomgang kontrollerer i en ekte arbeidsflyt.",
-          "systems": [
-            "LLM",
-            "RAG",
-            "Agenter",
-            "APIs"
-          ]
+          "systems": ["LLM", "RAG", "Agenter", "APIs"]
         },
         {
           "number": "04",
           "title": "Data og tilstand",
           "copy": "Eierskap, konsistens, søk, hurtigbuffer og livssyklusregler bak systematferd.",
-          "systems": [
-            "PostgreSQL",
-            "MongoDB",
-            "Redis",
-            "Elasticsearch"
-          ]
+          "systems": ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch"]
         },
         {
           "number": "05",
           "title": "Produksjonsdrift",
           "copy": "Utrullings-, observerbarhets-, gjenopprettings- og infrastrukturmekanismene som trengs for å betjene systemet.",
-          "systems": [
-            "AWS",
-            "GCP",
-            "Azure",
-            "Kubernetes",
-            "CI/CD"
-          ]
+          "systems": ["AWS", "GCP", "Azure", "Kubernetes", "CI/CD"]
         }
       ]
     },

@@ -13,16 +13,16 @@ form and legal pages.
 These are the only facts about the company that are real and verified. Use them
 verbatim where company identity is needed.
 
-| Fact | Value | Source of truth |
-|---|---|---|
-| Legal company name | `SADDEK Entreprises` | `src/lib/siteConfig.ts` |
-| Trading name | SDK Enterprises | `src/lib/siteConfig.ts` |
-| SIREN | `850 513 912` | `src/lib/siteConfig.ts` |
-| SIRET | `850 513 912 00020` | `src/lib/siteConfig.ts` |
+| Fact               | Value                                  | Source of truth         |
+| ------------------ | -------------------------------------- | ----------------------- |
+| Legal company name | `SADDEK Entreprises`                   | `src/lib/siteConfig.ts` |
+| Trading name       | SDK Enterprises                        | `src/lib/siteConfig.ts` |
+| SIREN              | `850 513 912`                          | `src/lib/siteConfig.ts` |
+| SIRET              | `850 513 912 00020`                    | `src/lib/siteConfig.ts` |
 | Registered address | `44 Rue Pasquier, 75008 Paris, France` | `src/lib/siteConfig.ts` |
-| Contact email | `hello@sdk.enterprises` | `src/lib/siteConfig.ts` |
-| Phone | `+33 6 11 29 92 21` | `src/lib/siteConfig.ts` |
-| Domain | `sdk.enterprises` | `src/lib/siteConfig.ts` |
+| Contact email      | `hello@sdk.enterprises`                | `src/lib/siteConfig.ts` |
+| Phone              | `+33 6 11 29 92 21`                    | `src/lib/siteConfig.ts` |
+| Domain             | `sdk.enterprises`                      | `src/lib/siteConfig.ts` |
 
 Rules:
 
@@ -38,12 +38,12 @@ The approved Canva design references in `docs/templates/*.html` are **visual
 reference only**. They contain fabricated proof points and personas that do not
 represent real SDK work. They must never appear in any copy, in any form:
 
-| Fabricated content | Where it lives |
-|---|---|
-| "600+ applications involved in enterprise cloud migration work" | `docs/templates/landing-page-template.html` |
-| Banking case study: "Large-scale migration of internal applications" / "Cloud modernization work across hundreds of banking applications" | `docs/templates/landing-page-template.html` |
-| Telecom case study: "High-volume 5G monitoring platform" | `docs/templates/landing-page-template.html` |
-| Dashboard metrics, personas and amounts (e.g. Marie Dupont, ACME SAS, invoice figures) | `docs/templates/client-dashboard-example.html` |
+| Fabricated content                                                                                                                        | Where it lives                                 |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
+| "600+ applications involved in enterprise cloud migration work"                                                                           | `docs/templates/landing-page-template.html`    |
+| Banking case study: "Large-scale migration of internal applications" / "Cloud modernization work across hundreds of banking applications" | `docs/templates/landing-page-template.html`    |
+| Telecom case study: "High-volume 5G monitoring platform"                                                                                  | `docs/templates/landing-page-template.html`    |
+| Dashboard metrics, personas and amounts (e.g. Marie Dupont, ACME SAS, invoice figures)                                                    | `docs/templates/client-dashboard-example.html` |
 
 If a GasTown bead appears to use any of these, remove it — do not reword it.
 
@@ -76,16 +76,16 @@ documented, so the outcome descriptions must stay at the capability level.
 
 ## 4. Claim hierarchy
 
-| Claim type | Allowed? | Examples |
-|---|---|---|
-| Company facts (§1) | Always | name, SIREN, address, contact |
-| Capability claims | Allowed | "we build, modernize and operate software across the stack", service descriptions, technologies used |
-| Engagement model | Allowed | the 01–04 process in `marketing-architecture.md` §6 |
-| Positioning claims | Allowed but must be confirmed true by the owner before launch | the "Why SDK" proofs (FR / AI / RT / DIRECT) — see §5 |
-| Named clients | Never | — |
-| Quantified outcomes | Never | — |
-| Testimonials, awards, partnerships, company history | Never | — |
-| Compliance/legal claims | Never unless real | see `docs/content/legal-pages.md` |
+| Claim type                                          | Allowed?                                                      | Examples                                                                                             |
+| --------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Company facts (§1)                                  | Always                                                        | name, SIREN, address, contact                                                                        |
+| Capability claims                                   | Allowed                                                       | "we build, modernize and operate software across the stack", service descriptions, technologies used |
+| Engagement model                                    | Allowed                                                       | the 01–04 process in `marketing-architecture.md` §6                                                  |
+| Positioning claims                                  | Allowed but must be confirmed true by the owner before launch | the "Why SDK" proofs (FR / AI / RT / DIRECT) — see §5                                                |
+| Named clients                                       | Never                                                         | —                                                                                                    |
+| Quantified outcomes                                 | Never                                                         | —                                                                                                    |
+| Testimonials, awards, partnerships, company history | Never                                                         | —                                                                                                    |
+| Compliance/legal claims                             | Never unless real                                             | see `docs/content/legal-pages.md`                                                                    |
 
 ## 4.1 Owner-confirmed operating model
 

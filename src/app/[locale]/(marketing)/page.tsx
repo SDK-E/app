@@ -10,35 +10,22 @@ import {
   type EngagementOption,
 } from "@/components/marketing/EngagementComparison";
 import { FitMatrix } from "@/components/marketing/FitMatrix";
-import {
-  HomeSystemMap,
-  type HomeSystemMapItem,
-} from "@/components/marketing/HomeSystemMap";
+import { HomeSystemMap, type HomeSystemMapItem } from "@/components/marketing/HomeSystemMap";
 import { PageHero } from "@/components/marketing/PageHero";
 import {
   ProblemNavigator,
   type ProblemNavigatorItem,
 } from "@/components/marketing/ProblemNavigator";
-import {
-  ProcessTimeline,
-  type ProcessTimelineItem,
-} from "@/components/marketing/ProcessTimeline";
+import { ProcessTimeline, type ProcessTimelineItem } from "@/components/marketing/ProcessTimeline";
 import { ProjectCta } from "@/components/marketing/ProjectCta";
 import {
   QualityFramework,
   type QualityFrameworkItem,
 } from "@/components/marketing/QualityFramework";
-import {
-  ScenarioStudy,
-  type ScenarioStudyItem,
-} from "@/components/marketing/ScenarioStudy";
+import { ScenarioStudy, type ScenarioStudyItem } from "@/components/marketing/ScenarioStudy";
 import SiteFooter from "@/components/marketing/SiteFooter";
 import { localizePath } from "@/i18n";
-import {
-  buildMetadata,
-  organizationJsonLd,
-  websiteJsonLd,
-} from "@/lib/seo";
+import { buildMetadata, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -62,11 +49,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function LandingPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function LandingPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const [t, tNav, tServices, tWork, tProcess, tAbout] = await Promise.all([
     getTranslations({ locale, namespace: "homePage" }),
@@ -84,16 +67,14 @@ export default async function LandingPage({
     "/services#production-systems",
     "/services#engagements",
   ].map((path) => localizePath(locale, path));
-  const startingPoints = (
-    tServices.raw("navigator.items") as ProblemNavigatorItem[]
-  ).map((item, index) => ({ ...item, href: serviceAnchors[index] }));
+  const startingPoints = (tServices.raw("navigator.items") as ProblemNavigatorItem[]).map(
+    (item, index) => ({ ...item, href: serviceAnchors[index] })
+  );
   const openingPrinciples = t.raw("opening.principles") as QualityFrameworkItem[];
   const systemItems = t.raw("system.items") as HomeSystemMapItem[];
   const scenarios = tWork.raw("scenarios.items") as ScenarioStudyItem[];
   const companyModel = tAbout.raw("model.items") as QualityFrameworkItem[];
-  const engagementOptions = tServices.raw(
-    "engagements.options",
-  ) as EngagementOption[];
+  const engagementOptions = tServices.raw("engagements.options") as EngagementOption[];
   const processItems = tProcess.raw("process.items") as ProcessTimelineItem[];
   const qualityItems = tProcess.raw("quality.items") as QualityFrameworkItem[];
 
@@ -116,7 +97,10 @@ export default async function LandingPage({
           eyebrow={t("hero.eyebrow")}
           title={t("hero.title")}
           intro={t("hero.intro")}
-          primaryCta={{ label: t("hero.primaryCta"), href: localizePath(locale, "/start-a-project") }}
+          primaryCta={{
+            label: t("hero.primaryCta"),
+            href: localizePath(locale, "/start-a-project"),
+          }}
           secondaryCta={{ label: t("hero.secondaryCta"), href: "#starting-points" }}
           signals={t.raw("hero.signals") as string[]}
         />
@@ -140,12 +124,8 @@ export default async function LandingPage({
               </h2>
             </div>
             <div>
-              <p className="max-w-[65ch] text-body text-fog md:text-lead">
-                {t("opening.body")}
-              </p>
-              <p className="mt-5 max-w-[65ch] text-body text-fog">
-                {t("opening.body2")}
-              </p>
+              <p className="max-w-[65ch] text-body text-fog md:text-lead">{t("opening.body")}</p>
+              <p className="mt-5 max-w-[65ch] text-body text-fog">{t("opening.body2")}</p>
             </div>
           </div>
           <div className="mt-12">
@@ -161,7 +141,9 @@ export default async function LandingPage({
           />
           <HomeSystemMap items={systemItems} />
           <div className="mt-8">
-            <ArrowLink href={localizePath(locale, "/services")}>{tServices("hero.secondaryCta")}</ArrowLink>
+            <ArrowLink href={localizePath(locale, "/services")}>
+              {tServices("hero.secondaryCta")}
+            </ArrowLink>
           </div>
         </Section>
 

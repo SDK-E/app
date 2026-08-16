@@ -19,9 +19,7 @@ export const messageShardPaths = [
   "legal/cookies.json",
 ] as const;
 
-const messageShardLoaders: ReadonlyArray<
-  (locale: Locale) => Promise<MessageModule>
-> = [
+const messageShardLoaders: ReadonlyArray<(locale: Locale) => Promise<MessageModule>> = [
   (locale) => import(`../locales/${locale}/shared.json`),
   (locale) => import(`../locales/${locale}/home.json`),
   (locale) => import(`../locales/${locale}/enquiry.json`),
@@ -50,10 +48,7 @@ export function mergeMessages(target: Messages, source: Messages): Messages {
       typeof targetValue === "object" &&
       !Array.isArray(targetValue)
     ) {
-      result[key] = mergeMessages(
-        targetValue as Messages,
-        sourceValue as Messages,
-      );
+      result[key] = mergeMessages(targetValue as Messages, sourceValue as Messages);
     } else if (sourceValue !== undefined) {
       result[key] = sourceValue;
     }
@@ -63,12 +58,7 @@ export function mergeMessages(target: Messages, source: Messages): Messages {
 }
 
 export async function loadMessages(locale: Locale): Promise<Messages> {
-  const shards = await Promise.all(
-    messageShardLoaders.map((loadShard) => loadShard(locale)),
-  );
+  const shards = await Promise.all(messageShardLoaders.map((loadShard) => loadShard(locale)));
 
-  return shards.reduce(
-    (messages, shard) => mergeMessages(messages, shard.default),
-    {},
-  );
+  return shards.reduce((messages, shard) => mergeMessages(messages, shard.default), {});
 }

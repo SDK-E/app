@@ -19,16 +19,16 @@ document replaces them with honest positioning claims.
 
 ## Section map
 
-| # | Section | Answers | Surface |
-|---|---|---|---|
-| 1 | Header / nav | What SDK does at a glance | light |
-| 2 | Hero | What does SDK do? What's in it for me? | light |
-| 3 | Services | What problems does SDK solve? | light |
-| 4 | Why SDK | Why should they trust SDK? | dark |
-| 5 | Engagements | When would someone hire SDK? | light |
-| 6 | Process | What happens next? How does it work? | light |
-| 7 | Contact | What happens next? | brand |
-| 8 | Footer | Legals + one-line identity | dark |
+| #   | Section      | Answers                                | Surface |
+| --- | ------------ | -------------------------------------- | ------- |
+| 1   | Header / nav | What SDK does at a glance              | light   |
+| 2   | Hero         | What does SDK do? What's in it for me? | light   |
+| 3   | Services     | What problems does SDK solve?          | light   |
+| 4   | Why SDK      | Why should they trust SDK?             | dark    |
+| 5   | Engagements  | When would someone hire SDK?           | light   |
+| 6   | Process      | What happens next? How does it work?   | light   |
+| 7   | Contact      | What happens next?                     | brand   |
+| 8   | Footer       | Legals + one-line identity             | dark    |
 
 ## 1. Header / nav
 
@@ -36,8 +36,8 @@ document replaces them with honest positioning claims.
 - Nav: Services · Work · Process · About
 - CTA: **Discuss a project →** (dark button)
 
-*Notes: "About" currently has no dedicated section; map it to the contact/company
-band in the reference. Revisit when the site is assembled.*
+_Notes: "About" currently has no dedicated section; map it to the contact/company
+band in the reference. Revisit when the site is assembled._
 
 ## 2. Hero
 
@@ -55,8 +55,8 @@ band in the reference. Revisit when the site is assembled.*
 - Trust row: France-based B2B company · Senior engineering delivery · AI +
   backend + cloud · European & remote clients
 
-*Notes: reference copy retained — it is specific and passes the paste test.
-Lead slightly expanded with the "same people you talk to" positioning.*
+_Notes: reference copy retained — it is specific and passes the paste test.
+Lead slightly expanded with the "same people you talk to" positioning._
 
 ## 3. Services
 
@@ -69,17 +69,17 @@ Lead slightly expanded with the "same people you talk to" positioning.*
 
 Cards (six):
 
-| # | Service | Copy |
-|---|---|---|
-| 01 | AI engineering | AI agents & automation — LLM integrations, agents, RAG, workflow automation, developer tooling and AI-assisted operations. |
-| 02 | Backend | Platforms, APIs & SaaS — PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs and realtime backend architecture. |
-| 03 | Frontend | Web & application interfaces — React, Vue, Nuxt, TypeScript, Tailwind and Shadcn. |
-| 04 | Cloud | Cloud & infrastructure — AWS, GCP, Azure, Kubernetes, Helm, CI/CD and deployment architecture. |
-| 05 | Data | Databases, cache & search — PostgreSQL, MySQL, MongoDB, Redis, Valkey and Elasticsearch. |
-| 06 | Modernization | Legacy modernization — framework upgrades, migration, technical debt reduction and performance optimization. |
+| #   | Service        | Copy                                                                                                                       |
+| --- | -------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| 01  | AI engineering | AI agents & automation — LLM integrations, agents, RAG, workflow automation, developer tooling and AI-assisted operations. |
+| 02  | Backend        | Platforms, APIs & SaaS — PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs and realtime backend architecture.        |
+| 03  | Frontend       | Web & application interfaces — React, Vue, Nuxt, TypeScript, Tailwind and Shadcn.                                          |
+| 04  | Cloud          | Cloud & infrastructure — AWS, GCP, Azure, Kubernetes, Helm, CI/CD and deployment architecture.                             |
+| 05  | Data           | Databases, cache & search — PostgreSQL, MySQL, MongoDB, Redis, Valkey and Elasticsearch.                                   |
+| 06  | Modernization  | Legacy modernization — framework upgrades, migration, technical debt reduction and performance optimization.               |
 
-*Notes: technologies are listed as evidence after the capability. Reference
-copy is specific and retained.*
+_Notes: technologies are listed as evidence after the capability. Reference
+copy is specific and retained._
 
 ## 4. Why SDK
 
@@ -97,8 +97,8 @@ claims with honest positioning claims):
 - **RT** — Realtime and high-volume platform work.
 - **DIRECT** — You talk to the engineers doing the work, not an account layer.
 
-*Notes: all four are capability/positioning claims — no invented statistics.
-Each must be confirmed as true before launch (voice-and-standards §5).*
+_Notes: all four are capability/positioning claims — no invented statistics.
+Each must be confirmed as true before launch (voice-and-standards §5)._
 
 ## 5. Engagements
 
@@ -112,15 +112,15 @@ Each must be confirmed as true before launch (voice-and-standards §5).*
 
 Scenarios (four):
 
-| # | Scenario |
-|---|---|
-| 01 | **A system too old to keep patching.** You need a migration plan, not a wish — an audit of what runs, what breaks, and the order to move in. |
-| 02 | **Volume your current stack wasn't built for.** Realtime ingestion, high-throughput backends and the infrastructure to keep them stable. |
-| 03 | **AI you can put to work.** LLM integrations, agents and automation that change an internal workflow — not a demo that stops at the pitch. |
-| 04 | **A team that needs senior hands.** Direct engineering delivery on your codebase, without a middle layer slowing decisions. |
+| #   | Scenario                                                                                                                                     |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| 01  | **A system too old to keep patching.** You need a migration plan, not a wish — an audit of what runs, what breaks, and the order to move in. |
+| 02  | **Volume your current stack wasn't built for.** Realtime ingestion, high-throughput backends and the infrastructure to keep them stable.     |
+| 03  | **AI you can put to work.** LLM integrations, agents and automation that change an internal workflow — not a demo that stops at the pitch.   |
+| 04  | **A team that needs senior hands.** Direct engineering delivery on your codebase, without a middle layer slowing decisions.                  |
 
-*Notes: scenario-based, no invented customers or outcomes. Keep the section
-only if the four scenarios hold up in review.*
+_Notes: scenario-based, no invented customers or outcomes. Keep the section
+only if the four scenarios hold up in review._
 
 ## 6. Process
 
@@ -132,14 +132,14 @@ only if the four scenarios hold up in review.*
 
 Steps:
 
-| # | Step |
-|---|---|
-| 01 | Understand — business goal, stack, constraints and success criteria. |
-| 02 | Design — architecture, scope, risks and milestones. |
-| 03 | Build — implementation with visible progress. |
-| 04 | Handover — deploy, document and transfer ownership. |
+| #   | Step                                                                 |
+| --- | -------------------------------------------------------------------- |
+| 01  | Understand — business goal, stack, constraints and success criteria. |
+| 02  | Design — architecture, scope, risks and milestones.                  |
+| 03  | Build — implementation with visible progress.                        |
+| 04  | Handover — deploy, document and transfer ownership.                  |
 
-*Notes: reference copy retained.*
+_Notes: reference copy retained._
 
 ## 7. Contact
 
@@ -153,8 +153,8 @@ Steps:
   SIREN 850 513 912 · SIRET 850 513 912 00020 · hello@sdk.enterprises ·
   +33 6 11 29 92 21 · 44 Rue Pasquier, 75008 Paris, France · sdk.enterprises
 
-*Notes: company details are real and verified. Reference copy retained and
-extended with the "tell us what you're trying to build" line.*
+_Notes: company details are real and verified. Reference copy retained and
+extended with the "tell us what you're trying to build" line._
 
 ## 8. Footer
 

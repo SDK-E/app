@@ -75,15 +75,7 @@
             "Migración de framework, tiempo de ejecución o servicio",
             "Reemplazo incremental con transición controlada"
           ],
-          "evidence": [
-            "PHP",
-            "Laravel",
-            "Symfony",
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PostgreSQL"
-          ],
+          "evidence": ["PHP", "Laravel", "Symfony", "Java", "Spring Boot", "Node.js", "PostgreSQL"],
           "firstStep": "Mapee lo que hace el sistema hoy, dónde el cambio es peligroso y qué límite puede moverse primero."
         },
         {
@@ -101,15 +93,7 @@
             "Autenticación, autorización y aislamiento de inquilinos",
             "Colas, eventos y flujos de aplicaciones en tiempo real"
           ],
-          "evidence": [
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PHP",
-            "PostgreSQL",
-            "Redis",
-            "Valkey"
-          ],
+          "evidence": ["Java", "Spring Boot", "Node.js", "PHP", "PostgreSQL", "Redis", "Valkey"],
           "firstStep": "Defina los límites del negocio, los datos que posee y las condiciones de falla que debe tolerar el diseño."
         },
         {
@@ -127,15 +111,7 @@
             "Sistemas de recuperación y respuesta a tierra.",
             "Controles de evaluación, observabilidad y revisión."
           ],
-          "evidence": [
-            "LLM",
-            "RAG",
-            "APIs",
-            "PostgreSQL",
-            "Elasticsearch",
-            "Pitón",
-            "Node.js"
-          ],
+          "evidence": ["LLM", "RAG", "APIs", "PostgreSQL", "Elasticsearch", "Pitón", "Node.js"],
           "firstStep": "Elija un flujo de trabajo, defina un resultado aceptable y mida el proceso humano actual antes de automatizarlo."
         },
         {
@@ -153,15 +129,7 @@
             "Runbooks operativos, de observabilidad y alertas",
             "Mejoras en la nube, los contenedores y la orquestación"
           ],
-          "evidence": [
-            "AWS",
-            "GCP",
-            "Azure",
-            "Kubernetes",
-            "Helm",
-            "CI/CD",
-            "Redis"
-          ],
+          "evidence": ["AWS", "GCP", "Azure", "Kubernetes", "Helm", "CI/CD", "Redis"],
           "firstStep": "Establezca qué está haciendo el sistema bajo carga real y cómo el equipo detecta y se recupera actualmente de las fallas."
         },
         {

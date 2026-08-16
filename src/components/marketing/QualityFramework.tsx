@@ -13,9 +13,7 @@ export function QualityFramework({ items }: { items: QualityFrameworkItem[] }) {
             <h3 className="max-w-[18ch] text-h3">{item.title}</h3>
             <span className="text-label font-bold text-muted-foreground">{item.number}</span>
           </div>
-          <p className="mt-6 max-w-[52ch] text-body text-muted-foreground">
-            {item.copy}
-          </p>
+          <p className="mt-6 max-w-[52ch] text-body text-muted-foreground">{item.copy}</p>
         </li>
       ))}
     </ol>

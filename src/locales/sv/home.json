@@ -45,57 +45,31 @@
           "number": "01",
           "title": "Arbetsflöde och gränssnitt",
           "copy": "Användaruppgiften, operativa beslut och återställningsväg som programvaran måste göra förståelig.",
-          "systems": [
-            "React",
-            "Vue",
-            "Nuxt",
-            "TypeScript"
-          ]
+          "systems": ["React", "Vue", "Nuxt", "TypeScript"]
         },
         {
           "number": "02",
           "title": "Affärsplattform",
           "copy": "Tjänsterna, APIs, behörigheter och integrationskontrakt som bär organisationens regler.",
-          "systems": [
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PHP"
-          ]
+          "systems": ["Java", "Spring Boot", "Node.js", "PHP"]
         },
         {
           "number": "03",
           "title": "AI och automation",
           "copy": "De modellstödda besluten, hämtning, utvärdering och mänsklig granskning kontrollerar i ett verkligt arbetsflöde.",
-          "systems": [
-            "LLM",
-            "RAG",
-            "Agenter",
-            "APIs"
-          ]
+          "systems": ["LLM", "RAG", "Agenter", "APIs"]
         },
         {
           "number": "04",
           "title": "Data och tillstånd",
           "copy": "Reglerna för ägande, konsistens, sökning, cache och livscykel bakom systemets beteende.",
-          "systems": [
-            "PostgreSQL",
-            "MongoDB",
-            "Redis",
-            "Elasticsearch"
-          ]
+          "systems": ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch"]
         },
         {
           "number": "05",
           "title": "Produktionsdrift",
           "copy": "De utplacerings-, observerbarhets-, återställnings- och infrastrukturmekanismer som behövs för att driva systemet.",
-          "systems": [
-            "AWS",
-            "GCP",
-            "Azure",
-            "Kubernetes",
-            "CI/CD"
-          ]
+          "systems": ["AWS", "GCP", "Azure", "Kubernetes", "CI/CD"]
         }
       ]
     },

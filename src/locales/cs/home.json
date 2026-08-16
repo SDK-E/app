@@ -45,57 +45,31 @@
           "number": "01",
           "title": "Pracovní postup a rozhraní",
           "copy": "Uživatelská úloha, provozní rozhodnutí a cesta obnovy musí být srozumitelné.",
-          "systems": [
-            "React",
-            "Vue",
-            "Nuxt",
-            "TypeScript"
-          ]
+          "systems": ["React", "Vue", "Nuxt", "TypeScript"]
         },
         {
           "number": "02",
           "title": "Obchodní platforma",
           "copy": "Služby, APIs, oprávnění a integrační smlouvy, které nesou pravidla organizace.",
-          "systems": [
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PHP"
-          ]
+          "systems": ["Java", "Spring Boot", "Node.js", "PHP"]
         },
         {
           "number": "03",
           "title": "AI a automatizace",
           "copy": "Modelem podporovaná rozhodnutí, vyhledávání, hodnocení a kontrola člověkem v rámci skutečného pracovního postupu.",
-          "systems": [
-            "LLM",
-            "RAG",
-            "Agenti",
-            "APIs"
-          ]
+          "systems": ["LLM", "RAG", "Agenti", "APIs"]
         },
         {
           "number": "04",
           "title": "Data a stav",
           "copy": "Vlastnictví, konzistence, vyhledávání, mezipaměť a pravidla životního cyklu za chováním systému.",
-          "systems": [
-            "PostgreSQL",
-            "MongoDB",
-            "Redis",
-            "Elasticsearch"
-          ]
+          "systems": ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch"]
         },
         {
           "number": "05",
           "title": "Výrobní provoz",
           "copy": "Rozmístění, pozorovatelnost, obnova a mechanismy infrastruktury potřebné k provozu systému.",
-          "systems": [
-            "AWS",
-            "GCP",
-            "Azure",
-            "Kubernetes",
-            "CI/CD"
-          ]
+          "systems": ["AWS", "GCP", "Azure", "Kubernetes", "CI/CD"]
         }
       ]
     },

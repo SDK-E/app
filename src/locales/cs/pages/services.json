@@ -75,15 +75,7 @@
             "Migrace rámce, běhového prostředí nebo služby",
             "Postupná výměna s řízeným odříznutím"
           ],
-          "evidence": [
-            "PHP",
-            "Laravel",
-            "Symfony",
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PostgreSQL"
-          ],
+          "evidence": ["PHP", "Laravel", "Symfony", "Java", "Spring Boot", "Node.js", "PostgreSQL"],
           "firstStep": "Zmapujte, co systém dnes dělá, kde je změna nebezpečná a která hranice se může posunout jako první."
         },
         {
@@ -101,15 +93,7 @@
             "Autentizace, autorizace a izolace nájemců",
             "Fronty, události a toky aplikací v reálném čase"
           ],
-          "evidence": [
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PHP",
-            "PostgreSQL",
-            "Redis",
-            "Valkey"
-          ],
+          "evidence": ["Java", "Spring Boot", "Node.js", "PHP", "PostgreSQL", "Redis", "Valkey"],
           "firstStep": "Definujte obchodní hranici, data, která vlastní, a podmínky selhání, které musí návrh tolerovat."
         },
         {
@@ -127,15 +111,7 @@
             "Vyhledávací a uzemněné systémy odezvy",
             "Kontroly hodnocení, pozorovatelnosti a přezkumu"
           ],
-          "evidence": [
-            "LLM",
-            "RAG",
-            "APIs",
-            "PostgreSQL",
-            "Elasticsearch",
-            "Python",
-            "Node.js"
-          ],
+          "evidence": ["LLM", "RAG", "APIs", "PostgreSQL", "Elasticsearch", "Python", "Node.js"],
           "firstStep": "Vyberte si jeden pracovní postup, definujte přijatelný výsledek a změřte aktuální lidský proces před jeho automatizací."
         },
         {
@@ -153,15 +129,7 @@
             "Pozorovatelnost, upozornění a provozní runbooky",
             "Vylepšení cloudu, kontejneru a orchestrace"
           ],
-          "evidence": [
-            "AWS",
-            "GCP",
-            "Azure",
-            "Kubernetes",
-            "Helm",
-            "CI/CD",
-            "Redis"
-          ],
+          "evidence": ["AWS", "GCP", "Azure", "Kubernetes", "Helm", "CI/CD", "Redis"],
           "firstStep": "Zjistěte, co systém dělá při skutečné zátěži a jak tým aktuálně zjišťuje selhání a zotavuje se z něj."
         },
         {

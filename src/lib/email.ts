@@ -49,7 +49,7 @@ function renderEnquiryHtml(enquiry: EnquiryNotification): string {
   const body = rows
     .map(
       ([label, value]) =>
-        `<p><strong>${escapeHtml(label)}</strong><br>${escapeHtml(value).replace(/\n/g, "<br>")}</p>`,
+        `<p><strong>${escapeHtml(label)}</strong><br>${escapeHtml(value).replace(/\n/g, "<br>")}</p>`
     )
     .join("\n");
 
@@ -70,7 +70,7 @@ async function sendViaResend(enquiry: EnquiryNotification): Promise<boolean> {
   const apiKey = getServerEnv().RESEND_API_KEY;
   if (!apiKey) {
     console.error(
-      "enquiry email: RESEND_API_KEY not set — enquiry stored without email notification",
+      "enquiry email: RESEND_API_KEY not set — enquiry stored without email notification"
     );
     return false;
   }
@@ -106,7 +106,7 @@ async function sendViaLocalSmtp(enquiry: EnquiryNotification): Promise<boolean> 
   } catch (err) {
     console.error(
       "enquiry email: local mail sink unreachable — it auto-starts with `npm run dev` (or run `npm run mail`)",
-      err instanceof Error ? err.message : err,
+      err instanceof Error ? err.message : err
     );
     return false;
   } finally {
@@ -114,9 +114,7 @@ async function sendViaLocalSmtp(enquiry: EnquiryNotification): Promise<boolean> 
   }
 }
 
-export async function sendEnquiryNotification(
-  enquiry: EnquiryNotification,
-): Promise<boolean> {
+export async function sendEnquiryNotification(enquiry: EnquiryNotification): Promise<boolean> {
   if (getServerEnv().NODE_ENV === "production") {
     return sendViaResend(enquiry);
   }
@@ -134,7 +132,9 @@ function renderInvitationHtml(invitation: InvitationNotification): string {
   ].join("\n");
 }
 
-export async function sendInvitationNotification(invitation: InvitationNotification): Promise<boolean> {
+export async function sendInvitationNotification(
+  invitation: InvitationNotification
+): Promise<boolean> {
   const message = {
     from: `SDK Enterprises <no-reply@${siteConfig.contact.domain}>`,
     to: invitation.email,
@@ -149,7 +149,10 @@ export async function sendInvitationNotification(invitation: InvitationNotificat
       await transport.sendMail(message);
       return true;
     } catch (error) {
-      console.error("invitation email: local mail sink unreachable", error instanceof Error ? error.message : "unknown error");
+      console.error(
+        "invitation email: local mail sink unreachable",
+        error instanceof Error ? error.message : "unknown error"
+      );
       return false;
     } finally {
       transport.close();
@@ -186,7 +189,10 @@ export interface AccessRequestResolvedNotification {
   role?: string;
 }
 
-async function sendAccessMessage(message: { from: string; to: string; subject: string; html: string }, label: string): Promise<boolean> {
+async function sendAccessMessage(
+  message: { from: string; to: string; subject: string; html: string },
+  label: string
+): Promise<boolean> {
   if (getServerEnv().NODE_ENV !== "production") {
     const smtpUrl = getServerEnv().MAIL_SMTP_URL ?? "smtp://localhost:1025";
     const { createTransport } = await import("nodemailer");
@@ -195,7 +201,10 @@ async function sendAccessMessage(message: { from: string; to: string; subject: s
       await transport.sendMail(message);
       return true;
     } catch (error) {
-      console.error(`${label}: local mail sink unreachable`, error instanceof Error ? error.message : "unknown error");
+      console.error(
+        `${label}: local mail sink unreachable`,
+        error instanceof Error ? error.message : "unknown error"
+      );
       return false;
     } finally {
       transport.close();
@@ -216,7 +225,9 @@ async function sendAccessMessage(message: { from: string; to: string; subject: s
   return true;
 }
 
-export async function sendAccessRequestCreatedNotification(notification: AccessRequestCreatedNotification): Promise<boolean> {
+export async function sendAccessRequestCreatedNotification(
+  notification: AccessRequestCreatedNotification
+): Promise<boolean> {
   const html = [
     '<div style="font-family: sans-serif; line-height: 1.5; color: #111;">',
     `<h2>Access request for ${escapeHtml(notification.companyName)}</h2>`,
@@ -224,28 +235,37 @@ export async function sendAccessRequestCreatedNotification(notification: AccessR
     "<p>Review the request and approve or decline it in the SDK portal.</p>",
     "</div>",
   ].join("\n");
-  return sendAccessMessage({
-    from: `SDK Enterprises <no-reply@${siteConfig.contact.domain}>`,
-    to: notification.to,
-    subject: `Access request for ${notification.companyName}`,
-    html,
-  }, "access request email");
+  return sendAccessMessage(
+    {
+      from: `SDK Enterprises <no-reply@${siteConfig.contact.domain}>`,
+      to: notification.to,
+      subject: `Access request for ${notification.companyName}`,
+      html,
+    },
+    "access request email"
+  );
 }
 
-export async function sendAccessRequestResolvedNotification(notification: AccessRequestResolvedNotification): Promise<boolean> {
-  const outcome = notification.outcome === "APPROVED"
-    ? `Your access request to ${escapeHtml(notification.companyName)} was approved. You now have ${escapeHtml(notification.role ?? "viewer")} access.`
-    : `Your access request to ${escapeHtml(notification.companyName)} was declined.`;
+export async function sendAccessRequestResolvedNotification(
+  notification: AccessRequestResolvedNotification
+): Promise<boolean> {
+  const outcome =
+    notification.outcome === "APPROVED"
+      ? `Your access request to ${escapeHtml(notification.companyName)} was approved. You now have ${escapeHtml(notification.role ?? "viewer")} access.`
+      : `Your access request to ${escapeHtml(notification.companyName)} was declined.`;
   const html = [
     '<div style="font-family: sans-serif; line-height: 1.5; color: #111;">',
     `<h2>Access request ${notification.outcome === "APPROVED" ? "approved" : "declined"}</h2>`,
     `<p>${outcome}</p>`,
     "</div>",
   ].join("\n");
-  return sendAccessMessage({
-    from: `SDK Enterprises <no-reply@${siteConfig.contact.domain}>`,
-    to: notification.to,
-    subject: `Access request ${notification.outcome === "APPROVED" ? "approved" : "declined"} for ${notification.companyName}`,
-    html,
-  }, "access request email");
+  return sendAccessMessage(
+    {
+      from: `SDK Enterprises <no-reply@${siteConfig.contact.domain}>`,
+      to: notification.to,
+      subject: `Access request ${notification.outcome === "APPROVED" ? "approved" : "declined"} for ${notification.companyName}`,
+      html,
+    },
+    "access request email"
+  );
 }

@@ -10,17 +10,13 @@ export function LegalTitle({ id, children }: { id?: string; children: ReactNode 
 
 export function LegalIntro({ children }: { children: ReactNode }) {
   return (
-    <p className="mt-4 max-w-[70ch] text-body leading-[1.7] text-muted-foreground">
-      {children}
-    </p>
+    <p className="mt-4 max-w-[70ch] text-body leading-[1.7] text-muted-foreground">{children}</p>
   );
 }
 
 export function LegalH2({ children }: { children: ReactNode }) {
   return (
-    <h2 className="mt-12 text-label font-bold uppercase tracking-eyebrow text-dark">
-      {children}
-    </h2>
+    <h2 className="mt-12 text-label font-bold uppercase tracking-eyebrow text-dark">{children}</h2>
   );
 }
 

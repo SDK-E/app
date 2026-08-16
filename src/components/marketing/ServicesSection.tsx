@@ -17,10 +17,7 @@ export default async function ServicesSection({ locale }: { locale: string }) {
       <SectionHeader eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
-          <Card
-            key={service.title}
-            className="flex min-h-[250px] flex-col justify-between"
-          >
+          <Card key={service.title} className="flex min-h-[250px] flex-col justify-between">
             <p className="text-micro font-bold uppercase tracking-label text-muted-foreground">
               {service.number} / {service.category.toUpperCase()}
             </p>

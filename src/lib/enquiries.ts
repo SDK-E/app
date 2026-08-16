@@ -5,8 +5,7 @@ import { sendEnquiryNotification } from "@/lib/email";
 import { getPrisma } from "@/lib/db";
 
 export type EnquiryResult =
-  | { success: true }
-  | { success: false; errors: Record<string, string>; formError?: string };
+  { success: true } | { success: false; errors: Record<string, string>; formError?: string };
 
 export async function submitEnquiry(input: EnquiryInput): Promise<EnquiryResult> {
   const parsed = enquirySchema.safeParse(input);

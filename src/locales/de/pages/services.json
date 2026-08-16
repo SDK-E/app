@@ -75,15 +75,7 @@
             "Framework-, Laufzeit- oder Servicemigration",
             "Inkrementeller Ersatz mit kontrollierter Umstellung"
           ],
-          "evidence": [
-            "PHP",
-            "Laravel",
-            "Symfony",
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PostgreSQL"
-          ],
+          "evidence": ["PHP", "Laravel", "Symfony", "Java", "Spring Boot", "Node.js", "PostgreSQL"],
           "firstStep": "Stellen Sie dar, was das System heute tut, wo Veränderungen gefährlich sind und welche Grenzen sich zuerst verschieben können."
         },
         {
@@ -101,15 +93,7 @@
             "Authentifizierung, Autorisierung und Mandantenisolierung",
             "Warteschlangen, Ereignisse und Echtzeit-Anwendungsflüsse"
           ],
-          "evidence": [
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PHP",
-            "PostgreSQL",
-            "Redis",
-            "Valkey"
-          ],
+          "evidence": ["Java", "Spring Boot", "Node.js", "PHP", "PostgreSQL", "Redis", "Valkey"],
           "firstStep": "Definieren Sie die Geschäftsgrenzen, die Daten, die das Unternehmen besitzt, und die Fehlerbedingungen, die das Design tolerieren muss."
         },
         {
@@ -127,15 +111,7 @@
             "Retrieval- und Grounded-Response-Systeme",
             "Bewertung, Beobachtbarkeit und Überprüfungskontrollen"
           ],
-          "evidence": [
-            "LLM",
-            "RAG",
-            "APIs",
-            "PostgreSQL",
-            "Elasticsearch",
-            "Python",
-            "Node.js"
-          ],
+          "evidence": ["LLM", "RAG", "APIs", "PostgreSQL", "Elasticsearch", "Python", "Node.js"],
           "firstStep": "Wählen Sie einen Arbeitsablauf, definieren Sie ein akzeptables Ergebnis und messen Sie den aktuellen menschlichen Prozess, bevor Sie ihn automatisieren."
         },
         {
@@ -153,15 +129,7 @@
             "Beobachtbarkeit, Alarmierung und betriebliche Runbooks",
             "Verbesserungen bei Cloud, Container und Orchestrierung"
           ],
-          "evidence": [
-            "AWS",
-            "GCP",
-            "Azure",
-            "Kubernetes",
-            "Helm",
-            "CI/CD",
-            "Redis"
-          ],
+          "evidence": ["AWS", "GCP", "Azure", "Kubernetes", "Helm", "CI/CD", "Redis"],
           "firstStep": "Stellen Sie fest, was das System unter realer Last tut und wie das Team derzeit Fehler erkennt und behebt."
         },
         {

@@ -1,40 +1,101 @@
 {
   "aboutPage": {
     "hero": {
-      "eyebrow": "About SDK Enterprises", "title": "A company built to compose the right engineering capability for the work.",
+      "eyebrow": "About SDK Enterprises",
+      "title": "A company built to compose the right engineering capability for the work.",
       "intro": "SDK engages independent engineering specialists according to the system and remains responsible for the delivery framework and quality expectations presented to the client.",
-      "primaryCta": "Discuss a project", "secondaryCta": "Understand the model",
-      "signals": ["France-based company", "Project-specific specialists", "SDK-led delivery framework", "Direct company accountability"]
+      "primaryCta": "Discuss a project",
+      "secondaryCta": "Understand the model",
+      "signals": [
+        "France-based company",
+        "Project-specific specialists",
+        "SDK-led delivery framework",
+        "Direct company accountability"
+      ]
     },
     "model": {
-      "eyebrow": "How the company works", "heading": "The available bench does not decide what your system receives.",
+      "eyebrow": "How the company works",
+      "heading": "The available bench does not decide what your system receives.",
       "intro": "A fixed internal team can be efficient when every project needs the same disciplines. Complex systems often do not. SDK starts with the problem, determines which engineering capability is relevant and brings the required independent specialists into one engagement.",
       "items": [
-        {"number": "01", "title": "One client relationship", "copy": "The client engages SDK Enterprises. SDK provides the delivery framework instead of leaving the client to coordinate unrelated individual suppliers."},
-        {"number": "02", "title": "A composed team", "copy": "The disciplines involved can change with the stage of work, from assessment and architecture to implementation and operation."},
-        {"number": "03", "title": "Shared quality expectations", "copy": "The engagement defines review practices, acceptance evidence, decision records and handover requirements appropriate to its risks."},
-        {"number": "04", "title": "Client control", "copy": "Repositories, infrastructure, documentation and operating knowledge are organized to remain under the client’s control."}
+        {
+          "number": "01",
+          "title": "One client relationship",
+          "copy": "The client engages SDK Enterprises. SDK provides the delivery framework instead of leaving the client to coordinate unrelated individual suppliers."
+        },
+        {
+          "number": "02",
+          "title": "A composed team",
+          "copy": "The disciplines involved can change with the stage of work, from assessment and architecture to implementation and operation."
+        },
+        {
+          "number": "03",
+          "title": "Shared quality expectations",
+          "copy": "The engagement defines review practices, acceptance evidence, decision records and handover requirements appropriate to its risks."
+        },
+        {
+          "number": "04",
+          "title": "Client control",
+          "copy": "Repositories, infrastructure, documentation and operating knowledge are organized to remain under the client’s control."
+        }
       ]
     },
     "selection": {
-      "eyebrow": "Specialist selection", "heading": "Relevant experience matters more than adding another profile to the project.",
+      "eyebrow": "Specialist selection",
+      "heading": "Relevant experience matters more than adding another profile to the project.",
       "body": "SDK considers the system, delivery stage, technical risk and collaboration needs before composing a team. The public site will not claim a network size, acceptance rate or universal seniority standard without a documented basis.",
       "items": [
-        {"number": "01", "title": "Problem relevance", "copy": "Experience is considered against the actual system boundary and technical decisions, not only a list of technologies."},
-        {"number": "02", "title": "Delivery responsibility", "copy": "Specialists need to work within visible decisions, review expectations and client-owned environments."},
-        {"number": "03", "title": "Collaboration fit", "copy": "The ability to explain trade-offs and work with client stakeholders is part of successful technical delivery."},
-        {"number": "04", "title": "Continuity", "copy": "Important context is recorded so ownership does not depend on one contributor remaining indefinitely."}
+        {
+          "number": "01",
+          "title": "Problem relevance",
+          "copy": "Experience is considered against the actual system boundary and technical decisions, not only a list of technologies."
+        },
+        {
+          "number": "02",
+          "title": "Delivery responsibility",
+          "copy": "Specialists need to work within visible decisions, review expectations and client-owned environments."
+        },
+        {
+          "number": "03",
+          "title": "Collaboration fit",
+          "copy": "The ability to explain trade-offs and work with client stakeholders is part of successful technical delivery."
+        },
+        {
+          "number": "04",
+          "title": "Continuity",
+          "copy": "Important context is recorded so ownership does not depend on one contributor remaining indefinitely."
+        }
       ]
     },
     "responsibility": {
-      "eyebrow": "What SDK is responsible for", "heading": "Flexible team composition should not create ambiguous accountability.",
+      "eyebrow": "What SDK is responsible for",
+      "heading": "Flexible team composition should not create ambiguous accountability.",
       "body": "SDK’s role is to keep the engagement coherent as specialists contribute different parts of the work.",
-      "items": ["Problem and scope framing", "Team composition and coordination", "Quality controls and acceptance evidence", "Decision and risk visibility", "Documentation and handover expectations", "A clear client relationship"]
+      "items": [
+        "Problem and scope framing",
+        "Team composition and coordination",
+        "Quality controls and acceptance evidence",
+        "Decision and risk visibility",
+        "Documentation and handover expectations",
+        "A clear client relationship"
+      ]
     },
     "facts": {
-      "eyebrow": "Company information", "heading": "A registered company, available through direct business channels.",
-      "name": "Legal name", "tradingName": "Trading name", "siren": "SIREN", "siret": "SIRET", "address": "Registered office", "email": "Email", "phone": "Phone"
+      "eyebrow": "Company information",
+      "heading": "A registered company, available through direct business channels.",
+      "name": "Legal name",
+      "tradingName": "Trading name",
+      "siren": "SIREN",
+      "siret": "SIRET",
+      "address": "Registered office",
+      "email": "Email",
+      "phone": "Phone"
     },
-    "cta": {"eyebrow": "Work with SDK", "title": "Bring the system, the constraint and the decision that needs ownership.", "body": "We will begin by determining what expertise the work requires and whether SDK is the right company to coordinate it.", "label": "Discuss a project"}
+    "cta": {
+      "eyebrow": "Work with SDK",
+      "title": "Bring the system, the constraint and the decision that needs ownership.",
+      "body": "We will begin by determining what expertise the work requires and whether SDK is the right company to coordinate it.",
+      "label": "Discuss a project"
+    }
   }
 }

@@ -75,15 +75,7 @@
             "Migracja frameworka, środowiska wykonawczego lub usługi",
             "Wymiana przyrostowa z kontrolowanym przełączaniem"
           ],
-          "evidence": [
-            "PHP",
-            "Laravel",
-            "Symfony",
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PostgreSQL"
-          ],
+          "evidence": ["PHP", "Laravel", "Symfony", "Java", "Spring Boot", "Node.js", "PostgreSQL"],
           "firstStep": "Zaplanuj, co system robi dzisiaj, gdzie zmiana jest niebezpieczna i która granica może zostać przesunięta jako pierwsza."
         },
         {
@@ -101,15 +93,7 @@
             "Uwierzytelnianie, autoryzacja i izolacja najemców",
             "Kolejki, zdarzenia i przepływy aplikacji w czasie rzeczywistym"
           ],
-          "evidence": [
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PHP",
-            "PostgreSQL",
-            "Redis",
-            "Valkey"
-          ],
+          "evidence": ["Java", "Spring Boot", "Node.js", "PHP", "PostgreSQL", "Redis", "Valkey"],
           "firstStep": "Zdefiniuj granice biznesowe, dane, które posiada oraz warunki awarii, które projekt musi tolerować."
         },
         {
@@ -127,15 +111,7 @@
             "Systemy odzyskiwania i uziemione systemy reagowania",
             "Kontrola oceny, obserwowalności i przeglądu"
           ],
-          "evidence": [
-            "LLM",
-            "RAG",
-            "APIs",
-            "PostgreSQL",
-            "Elasticsearch",
-            "Pyton",
-            "Node.js"
-          ],
+          "evidence": ["LLM", "RAG", "APIs", "PostgreSQL", "Elasticsearch", "Pyton", "Node.js"],
           "firstStep": "Wybierz jeden przepływ pracy, zdefiniuj akceptowalny wynik i zmierz bieżący proces ludzki przed jego automatyzacją."
         },
         {
@@ -153,15 +129,7 @@
             "Obserwowalność, alerty i operacyjne elementy Runbook",
             "Ulepszenia chmury, kontenera i orkiestracji"
           ],
-          "evidence": [
-            "AWS",
-            "GCP",
-            "Azure",
-            "Kubernetes",
-            "Helm",
-            "CI/CD",
-            "Redis"
-          ],
+          "evidence": ["AWS", "GCP", "Azure", "Kubernetes", "Helm", "CI/CD", "Redis"],
           "firstStep": "Ustal, co system robi pod rzeczywistym obciążeniem oraz w jaki sposób zespół aktualnie wykrywa awarie i odzyskuje je po awarii."
         },
         {

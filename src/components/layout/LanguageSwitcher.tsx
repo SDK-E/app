@@ -31,7 +31,11 @@ function getFlagEmoji(countryCode: string): string {
   return String.fromCodePoint(...codePoints);
 }
 
-export function LanguageSwitcher({ updateLocale }: { updateLocale?: (locale: string) => Promise<{ ok: boolean }> }) {
+export function LanguageSwitcher({
+  updateLocale,
+}: {
+  updateLocale?: (locale: string) => Promise<{ ok: boolean }>;
+}) {
   const pathname = usePathname();
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -108,9 +112,7 @@ export function LanguageSwitcher({ updateLocale }: { updateLocale?: (locale: str
               type="button"
               onClick={() => void switchLocale(loc.code)}
               className={`flex w-full items-center gap-2.5 px-3 py-1.5 text-left text-micro transition-colors motion-reduce:transition-none ${
-                loc.code === locale
-                  ? "bg-dark text-light"
-                  : "text-dark hover:bg-line/40"
+                loc.code === locale ? "bg-dark text-light" : "text-dark hover:bg-line/40"
               }`}
               role="option"
               aria-selected={loc.code === locale}

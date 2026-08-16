@@ -75,15 +75,7 @@
             "Migração de estrutura, tempo de execução ou serviço",
             "Substituição incremental com corte controlado"
           ],
-          "evidence": [
-            "PHP",
-            "Laravel",
-            "Symfony",
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PostgreSQL"
-          ],
+          "evidence": ["PHP", "Laravel", "Symfony", "Java", "Spring Boot", "Node.js", "PostgreSQL"],
           "firstStep": "Mapeie o que o sistema faz hoje, onde a mudança é perigosa e qual limite pode ser movido primeiro."
         },
         {
@@ -101,15 +93,7 @@
             "Autenticação, autorização e isolamento de locatário",
             "Filas, eventos e fluxos de aplicativos em tempo real"
           ],
-          "evidence": [
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PHP",
-            "PostgreSQL",
-            "Redis",
-            "Valkey"
-          ],
+          "evidence": ["Java", "Spring Boot", "Node.js", "PHP", "PostgreSQL", "Redis", "Valkey"],
           "firstStep": "Defina os limites do negócio, os dados que ele possui e as condições de falha que o projeto deve tolerar."
         },
         {
@@ -127,15 +111,7 @@
             "Sistemas de recuperação e resposta aterrada",
             "Controles de avaliação, observabilidade e revisão"
           ],
-          "evidence": [
-            "LLM",
-            "RAG",
-            "APIs",
-            "PostgreSQL",
-            "Elasticsearch",
-            "Pitão",
-            "Node.js"
-          ],
+          "evidence": ["LLM", "RAG", "APIs", "PostgreSQL", "Elasticsearch", "Pitão", "Node.js"],
           "firstStep": "Escolha um fluxo de trabalho, defina um resultado aceitável e meça o processo humano atual antes de automatizá-lo."
         },
         {
@@ -153,15 +129,7 @@
             "Observabilidade, alertas e runbooks operacionais",
             "Melhorias na nuvem, no contêiner e na orquestração"
           ],
-          "evidence": [
-            "AWS",
-            "GCP",
-            "Azure",
-            "Kubernetes",
-            "Helm",
-            "CI/CD",
-            "Redis"
-          ],
+          "evidence": ["AWS", "GCP", "Azure", "Kubernetes", "Helm", "CI/CD", "Redis"],
           "firstStep": "Estabeleça o que o sistema está fazendo sob carga real e como a equipe atualmente detecta e se recupera de falhas."
         },
         {

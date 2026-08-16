@@ -9,10 +9,7 @@ import {
   ProblemNavigator,
   type ProblemNavigatorItem,
 } from "@/components/marketing/ProblemNavigator";
-import {
-  ProcessTimeline,
-  type ProcessTimelineItem,
-} from "@/components/marketing/ProcessTimeline";
+import { ProcessTimeline, type ProcessTimelineItem } from "@/components/marketing/ProcessTimeline";
 import { ProjectCta } from "@/components/marketing/ProjectCta";
 import {
   QualityFramework,
@@ -38,20 +35,17 @@ export async function generateMetadata({
   });
 }
 
-export default async function HowWeWorkPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function HowWeWorkPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const [t, tNav] = await Promise.all([
     getTranslations({ locale, namespace: "howWeWorkPage" }),
     getTranslations({ locale, namespace: "nav" }),
   ]);
 
-  const entryPaths = (t.raw("entryPaths.items") as ProblemNavigatorItem[]).map(
-    (item) => ({ ...item, href: "#process" }),
-  );
+  const entryPaths = (t.raw("entryPaths.items") as ProblemNavigatorItem[]).map((item) => ({
+    ...item,
+    href: "#process",
+  }));
   const process = t.raw("process.items") as ProcessTimelineItem[];
   const responsibility = t.raw("responsibility.items") as QualityFrameworkItem[];
   const quality = t.raw("quality.items") as QualityFrameworkItem[];
@@ -77,7 +71,10 @@ export default async function HowWeWorkPage({
           eyebrow={t("hero.eyebrow")}
           title={t("hero.title")}
           intro={t("hero.intro")}
-          primaryCta={{ label: t("hero.primaryCta"), href: localizePath(locale, "/start-a-project") }}
+          primaryCta={{
+            label: t("hero.primaryCta"),
+            href: localizePath(locale, "/start-a-project"),
+          }}
           secondaryCta={{ label: t("hero.secondaryCta"), href: "#process" }}
           signals={t.raw("hero.signals") as string[]}
         />
@@ -131,13 +128,14 @@ export default async function HowWeWorkPage({
               <h2 className="mt-4 max-w-[17ch] text-[36px] font-extrabold tracking-title md:text-title">
                 {t("scope.heading")}
               </h2>
-              <p className="mt-5 max-w-[58ch] text-body text-muted-foreground">
-                {t("scope.body")}
-              </p>
+              <p className="mt-5 max-w-[58ch] text-body text-muted-foreground">{t("scope.body")}</p>
             </div>
             <ol className="border-t-2 border-dark">
               {scopeSteps.map((step, index) => (
-                <li key={step} className="grid grid-cols-[48px_1fr] border-b border-line py-5 text-body">
+                <li
+                  key={step}
+                  className="grid grid-cols-[48px_1fr] border-b border-line py-5 text-body"
+                >
                   <span className="text-label font-bold text-muted-foreground">0{index + 1}</span>
                   <span className="font-bold">{step}</span>
                 </li>

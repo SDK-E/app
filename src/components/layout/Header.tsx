@@ -38,9 +38,7 @@ export function Header({
   const t = useTranslations(translationsNamespace);
   const { user } = useUser();
   const [open, setOpen] = useState(false);
-  const resolvedSecondaryCta = user
-    ? { label: t("openPortal"), href: "/app" }
-    : secondaryCta;
+  const resolvedSecondaryCta = user ? { label: t("openPortal"), href: "/app" } : secondaryCta;
 
   const navLinkClass = (label: string) =>
     `text-label font-bold uppercase tracking-eyebrow transition-opacity motion-reduce:transition-none hover:opacity-70 ${
@@ -68,9 +66,16 @@ export function Header({
             />
           </Link>
 
-          <nav aria-label={ariaMain ?? t("main")} className="hidden items-center gap-[26px] md:flex">
+          <nav
+            aria-label={ariaMain ?? t("main")}
+            className="hidden items-center gap-[26px] md:flex"
+          >
             {links.map((link) => (
-              <Link key={link.href} href={locale ? localizePath(locale, link.href) : link.href} className={navLinkClass(link.label)}>
+              <Link
+                key={link.href}
+                href={locale ? localizePath(locale, link.href) : link.href}
+                className={navLinkClass(link.label)}
+              >
                 {link.label}
               </Link>
             ))}
@@ -80,7 +85,14 @@ export function Header({
             {resolvedSecondaryCta || cta ? (
               <>
                 {resolvedSecondaryCta ? (
-                  <Button href={locale ? localizePath(locale, resolvedSecondaryCta.href) : resolvedSecondaryCta.href} variant="outline">
+                  <Button
+                    href={
+                      locale
+                        ? localizePath(locale, resolvedSecondaryCta.href)
+                        : resolvedSecondaryCta.href
+                    }
+                    variant="outline"
+                  >
                     {resolvedSecondaryCta.label}
                   </Button>
                 ) : null}
@@ -101,13 +113,7 @@ export function Header({
             onClick={() => setOpen((value) => !value)}
             className="rounded-nav p-2 text-dark transition-colors motion-reduce:transition-none hover:bg-line/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark md:hidden"
           >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              aria-hidden
-            >
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
               {open ? (
                 <path
                   d="M5 5l10 10M15 5L5 15"
@@ -149,7 +155,11 @@ export function Header({
               )}
               {resolvedSecondaryCta ? (
                 <Button
-                  href={locale ? localizePath(locale, resolvedSecondaryCta.href) : resolvedSecondaryCta.href}
+                  href={
+                    locale
+                      ? localizePath(locale, resolvedSecondaryCta.href)
+                      : resolvedSecondaryCta.href
+                  }
                   variant="outline"
                   className="mt-2"
                 >
@@ -157,7 +167,11 @@ export function Header({
                 </Button>
               ) : null}
               {cta ? (
-                <Button href={locale ? localizePath(locale, cta.href) : cta.href} variant="dark" className="mt-2">
+                <Button
+                  href={locale ? localizePath(locale, cta.href) : cta.href}
+                  variant="dark"
+                  className="mt-2"
+                >
                   {cta.label} →
                 </Button>
               ) : null}

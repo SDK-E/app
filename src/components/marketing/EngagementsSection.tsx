@@ -12,10 +12,7 @@ export default async function EngagementsSection({ locale }: { locale: string })
       <SectionHeader eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
       <div className="grid gap-3 lg:grid-cols-2">
         {scenarios.map((scenario, index) => (
-          <Card
-            key={scenario.title}
-            className="flex min-h-[200px] flex-col justify-between"
-          >
+          <Card key={scenario.title} className="flex min-h-[200px] flex-col justify-between">
             <div>
               <p className="text-micro font-bold uppercase tracking-label text-muted-foreground">
                 0{index + 1}

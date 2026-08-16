@@ -77,9 +77,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} className={jetbrainsMono.variable}>
       <body className="antialiased">
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
         <SpeedInsights />
         <Analytics />
       </body>

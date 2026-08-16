@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/marketing/LegalPage";
-import {
-  LegalH2,
-  LegalIntro,
-  LegalParagraph,
-  LegalTitle,
-} from "@/components/marketing/LegalText";
+import { LegalH2, LegalIntro, LegalParagraph, LegalTitle } from "@/components/marketing/LegalText";
 import { getTranslations } from "next-intl/server";
 import { siteConfig } from "@/lib/siteConfig";
 import { breadcrumbListJsonLd } from "@/lib/seo";
@@ -56,11 +51,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function CookiesPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function CookiesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "legal.cookies" });
 

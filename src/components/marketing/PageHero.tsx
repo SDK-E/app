@@ -29,9 +29,7 @@ export function PageHero({
             </h1>
           </div>
           <div className="flex flex-col justify-end">
-            <p className="max-w-[58ch] text-body text-muted-foreground md:text-lead">
-              {intro}
-            </p>
+            <p className="max-w-[58ch] text-body text-muted-foreground md:text-lead">{intro}</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Button href={primaryCta.href}>{primaryCta.label} →</Button>
               {secondaryCta ? (

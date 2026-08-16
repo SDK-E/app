@@ -10,13 +10,7 @@ const NAV_LINKS = [
   { labelKey: "about", href: "/about" },
 ];
 
-export async function LegalPage({
-  locale,
-  children,
-}: {
-  locale: string;
-  children: ReactNode;
-}) {
+export async function LegalPage({ locale, children }: { locale: string; children: ReactNode }) {
   const t = await getTranslations({ locale, namespace: "nav" });
 
   return (

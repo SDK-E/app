@@ -10,7 +10,11 @@ export const requestCapabilities = [
 ] as const;
 
 const optionalText = (maximum: number) =>
-  z.string().trim().max(maximum).transform((value) => value || null);
+  z
+    .string()
+    .trim()
+    .max(maximum)
+    .transform((value) => value || null);
 
 export const requestDraftSchema = z.object({
   title: z.string().trim().min(1).max(255),
@@ -53,4 +57,3 @@ export const projectConversionSchema = z.object({
 
 export type RequestDraftInput = z.infer<typeof requestDraftSchema>;
 export type SdkRequestDecision = z.infer<typeof sdkRequestDecisionSchema>;
-

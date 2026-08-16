@@ -24,9 +24,7 @@ export function ScenarioStudy({
           <h3 className="mt-4 max-w-[18ch] text-[30px] font-extrabold tracking-title md:text-[38px]">
             {item.title}
           </h3>
-          <p className="mt-5 max-w-[48ch] text-body text-muted-foreground">
-            {item.situation}
-          </p>
+          <p className="mt-5 max-w-[48ch] text-body text-muted-foreground">{item.situation}</p>
         </div>
         <div className="grid gap-3 sm:grid-cols-3">
           {[
@@ -40,12 +38,17 @@ export function ScenarioStudy({
                 index === 2 ? "border-dark bg-dark text-light" : "border-line bg-paper text-dark"
               }`}
             >
-              <p className={`text-micro font-bold uppercase tracking-eyebrow ${index === 2 ? "text-brand" : "text-muted-foreground"}`}>
+              <p
+                className={`text-micro font-bold uppercase tracking-eyebrow ${index === 2 ? "text-brand" : "text-muted-foreground"}`}
+              >
                 {group.label}
               </p>
               <ul className="mt-5 space-y-4">
                 {group.values.map((value) => (
-                  <li key={value} className={`text-body ${index === 2 ? "text-fog" : "text-muted-foreground"}`}>
+                  <li
+                    key={value}
+                    className={`text-body ${index === 2 ? "text-fog" : "text-muted-foreground"}`}
+                  >
                     {value}
                   </li>
                 ))}

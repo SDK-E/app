@@ -45,57 +45,31 @@
           "number": "01",
           "title": "Workflow und Schnittstelle",
           "copy": "Die Benutzeraufgabe, die betriebliche Entscheidung und der Wiederherstellungspfad müssen durch die Software verständlich gemacht werden.",
-          "systems": [
-            "React",
-            "Vue",
-            "Nuxt",
-            "TypeScript"
-          ]
+          "systems": ["React", "Vue", "Nuxt", "TypeScript"]
         },
         {
           "number": "02",
           "title": "Geschäftsplattform",
           "copy": "Die Dienste, APIs, Berechtigungen und Integrationsverträge, die den Regeln der Organisation unterliegen.",
-          "systems": [
-            "Java",
-            "Spring Boot",
-            "Node.js",
-            "PHP"
-          ]
+          "systems": ["Java", "Spring Boot", "Node.js", "PHP"]
         },
         {
           "number": "03",
           "title": "KI und Automatisierung",
           "copy": "Die modellgestützten Entscheidungen, Abrufe, Auswertungen und menschlichen Überprüfungskontrollen innerhalb eines realen Arbeitsablaufs.",
-          "systems": [
-            "LLM",
-            "RAG",
-            "Agenten",
-            "APIs"
-          ]
+          "systems": ["LLM", "RAG", "Agenten", "APIs"]
         },
         {
           "number": "04",
           "title": "Daten und Status",
           "copy": "Die Eigentums-, Konsistenz-, Such-, Cache- und Lebenszyklusregeln, die dem Systemverhalten zugrunde liegen.",
-          "systems": [
-            "PostgreSQL",
-            "MongoDB",
-            "Redis",
-            "Elasticsearch"
-          ]
+          "systems": ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch"]
         },
         {
           "number": "05",
           "title": "Produktionsbetrieb",
           "copy": "Die für den Betrieb des Systems erforderlichen Bereitstellungs-, Beobachtbarkeits-, Wiederherstellungs- und Infrastrukturmechanismen.",
-          "systems": [
-            "AWS",
-            "GCP",
-            "Azure",
-            "Kubernetes",
-            "CI/CD"
-          ]
+          "systems": ["AWS", "GCP", "Azure", "Kubernetes", "CI/CD"]
         }
       ]
     },
