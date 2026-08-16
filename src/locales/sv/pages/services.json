@@ -1,0 +1,19 @@
+{
+  "servicesPage": {
+    "eyebrow": "Tjänster",
+    "body": "Vi bygger och driver mjukvara i hela stacken: AI-agenter och automation, backend-plattformar, webbgränssnitt, molninfrastruktur, datasystem och äldre modernisering. Ett specialiserat problem eller en hel arbetsström — ingenjörerna som utför arbetet är de du pratar med.",
+    "cta": "Starta ett projekt",
+    "engagementEyebrow": "Engagemangsmodeller",
+    "engagementHeading": "Hur vi engagerar oss",
+    "engagementBody": "SDK går in på två sätt: en fastprisrevision som diagnostiserar ett specifikt problem och föreslår en väg framåt, eller en dedikerad ingenjörsarbetsström där ett seniorteam äger implementeringen från början. Hybridarrangemang finns för system som behöver både diagnos och förlängd leverans.",
+    "engagementModel1Title": "Fastprisrevision",
+    "engagementModel1Body": "En avgränsad diagnos av ett specifikt problem: arkitekturgranskning, migreringsväg, prestandaflaskhals eller säkerhetsgranskning. Output är en skriftlig plan med prioriteringar, risker och uppskattad insats.",
+    "engagementModel2Title": "Ingenjörsarbete",
+    "engagementModel2Body": "Ett seniorlag inbäddat i din stack under en bestämd period. Veckoleverans, synliga framsteg och direkt kommunikation med ingenjörerna som bygger mjukvaran.",
+    "engagementModel3Title": "Hybrid",
+    "engagementModel3Body": "Revision först, sedan arbetsflöde. Teamet som diagnostiserar problemet stannar för att implementera lösningen. Ingen överlämnande till ett annat kontoteam.",
+    "whatWeDontDoEyebrow": "Vad vi inte gör",
+    "whatWeDontDoHeading": "Vi döljer inte mekanismen.",
+    "whatWeDontDoBody": "Inga juniorer på din kodbas. Ingen kontoansvarig mellan dig och ingenjörerna. Ingen offshore hand-off efter förslaget. Inget engagemang som beror på att sälja dig en större omfattning än du behöver."
+  }
+}

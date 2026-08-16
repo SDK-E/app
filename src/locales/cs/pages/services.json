@@ -1,0 +1,19 @@
+{
+  "servicesPage": {
+    "eyebrow": "Služby",
+    "body": "Vytváříme a provozujeme software v celé řadě: agenti AI a automatizace, backendové platformy, webová rozhraní, cloudová infrastruktura, datové systémy a starší modernizace. Jeden specializovaný problém nebo celý pracovní tok – inženýři provádějící práci jsou ti, se kterými mluvíte.",
+    "cta": "Začněte projekt",
+    "engagementEyebrow": "Zásnubní modely",
+    "engagementHeading": "Jak se zapojujeme",
+    "engagementBody": "SDK vstupuje dvěma způsoby: auditem s pevnou cenou, který diagnostikuje konkrétní problém a navrhne cestu vpřed, nebo specializovaným inženýrským pracovním tokem, kdy implementaci od začátku do konce vlastní senior tým. Hybridní uspořádání existují pro systémy, které potřebují jak diagnostiku, tak trvalé dodávání.",
+    "engagementModel1Title": "Audit s pevnou cenou",
+    "engagementModel1Body": "Rozsah diagnostiky konkrétního problému: revize architektury, cesta migrace, problémové místo výkonu nebo kontrola zabezpečení. Výstupem je písemný plán s prioritami, riziky a odhadovaným úsilím.",
+    "engagementModel2Title": "Inženýrský pracovní proud",
+    "engagementModel2Body": "Senior tým vložený do vašeho stacku na definovanou dobu. Týdenní dodávka, viditelný pokrok a přímá komunikace s inženýry vytvářejícími software.",
+    "engagementModel3Title": "Hybridní",
+    "engagementModel3Body": "Nejprve audit, pak workstream. Tým, který problém diagnostikuje, zůstává na implementaci řešení. Žádné předání jinému účetnímu týmu.",
+    "whatWeDontDoEyebrow": "Co neděláme",
+    "whatWeDontDoHeading": "Mechanismus neskrýváme.",
+    "whatWeDontDoBody": "Žádní junioři na vaší kódové základně. Mezi vámi a inženýry není žádný account manager. Žádné offshore předání po návrhu. Žádné zapojení, které závisí na prodeji většího rozsahu, než potřebujete."
+  }
+}

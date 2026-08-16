@@ -1,0 +1,25 @@
+{
+  "legal": {
+    "mentionsLegales": {
+      "title": "Mentions légales",
+      "intro": "Legal notices for the SDK Enterprises website.",
+      "publisherTitle": "Förläggare",
+      "publisherWebsite": "Webbplatsen som är tillgänglig på {domain} publiceras av {company}, som handlas som {name}.",
+      "siren": "SIREN: {siren}",
+      "siret": "SIRET: {siret}",
+      "registeredOffice": "Registrerat säte: {address}",
+      "legalForm": "Rättslig form och aktiekapital: Auto-entrepreneur (enskild näringsidkare, mikroföretag), inget aktiekapital",
+      "registration": "Företagsregistrering: RCS Paris {siren}",
+      "directorTitle": "Publikationsdirektör",
+      "director": "Publikationschef: Hicham SADDEK.",
+      "hostingTitle": "Värdskap",
+      "hosting": "Webbplatsen drivs av Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA.",
+      "contactTitle": "Kontakta",
+      "contact": "Frågor om webbplatsen kan skickas till {email} eller per telefon på {phone}.",
+      "intellectualPropertyTitle": "Immateriella rättigheter",
+      "intellectualProperty": "Strukturen, texterna, logotypen och innehållet på webbplatsen tillhör SDK Enterprises. All reproduktion eller representation, helt eller delvis, utan föregående tillstånd är förbjuden, förutom vad som är tillåtet enligt tillämplig lag.",
+      "legalFrameworkTitle": "Rättslig ram",
+      "legalFramework": "Dessa meddelanden regleras av fransk lag och är upprättade i enlighet med artikel 6-III i den franska lagen nr 2004-575 av den 21 juni 2004 om förtroende för den digitala ekonomin (LCEN)."
+    }
+  }
+}

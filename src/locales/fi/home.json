@@ -1,0 +1,132 @@
+{
+  "hero": {
+    "eyebrow": "B2B AI · Ohjelmistot · Pilvi · Järjestelmäsuunnittelu",
+    "heading": "Yksi suunnittelukumppani yrityksesi tarvitsemaan pinoon.",
+    "leadParagraph": "SDK Enterprises rakentaa, modernisoi ja käyttää ohjelmistoja kaikkialla – taustaalustoja, pilviinfrastruktuuria, tekoälyautomaatiota, reaaliaikaisia järjestelmiä ja sisäisiä työkaluja. Otat osaa yhteen erityisongelmaan tai omistat laajemman työvirran; Joka tapauksessa työn tekevät ihmiset, joiden kanssa puhut.",
+    "ctaStartProject": "Aloita projekti",
+    "ctaExploreServices": "Tutustu palveluihin",
+    "trustFrance": "Ranskassa toimiva B2B-yritys",
+    "trustSenior": "Vanhempi insinööritoimitus",
+    "trustAI": "AI + taustajärjestelmä + pilvi",
+    "trustClients": "Eurooppalaiset ja etäasiakkaat"
+  },
+  "services": {
+    "eyebrow": "Palvelut",
+    "title": "Käytä koko pinoa – tai vain tarvitsemaasi osaa.",
+    "intro": "SDK voi puuttua yhteen erityisongelmaan tai omistaa laajemman teknisen työvirran.",
+    "items": [
+      {
+        "number": "01",
+        "category": "AI Engineering",
+        "title": "Tekoälyagentit ja automaatio",
+        "copy": "LLM-integraatiot, agentit, RAG, työnkulun automaatio, kehittäjätyökalut ja tekoälyn avustustoiminnot."
+      },
+      {
+        "number": "02",
+        "category": "Backend",
+        "title": "Alustat, APIs & SaaS",
+        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs ja reaaliaikainen taustaarkkitehtuuri."
+      },
+      {
+        "number": "03",
+        "category": "Käyttöliittymä",
+        "title": "Verkko- ja sovellusliittymät",
+        "copy": "React, Vue, Nuxt, TypeScript, Tailwind ja Shadcn."
+      },
+      {
+        "number": "04",
+        "category": "Pilvi",
+        "title": "Pilvi ja infrastruktuuri",
+        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD ja käyttöönottoarkkitehtuuri."
+      },
+      {
+        "number": "05",
+        "category": "Data",
+        "title": "Tietokannat, välimuisti ja haku",
+        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey ja Elasticsearch."
+      },
+      {
+        "number": "06",
+        "category": "Modernisointi",
+        "title": "Perinnöllinen modernisointi",
+        "copy": "Kehyspäivitykset, siirto, tekninen velan vähentäminen ja suorituskyvyn optimointi."
+      }
+    ]
+  },
+  "whySdk": {
+    "eyebrow": "Miksi SDK",
+    "title": "Vanhempaa suunnittelua ilman tarpeettomia kerroksia.",
+    "intro": "Suora viestintä, nopea diagnoosi ja pragmaattinen toteutus.",
+    "items": [
+      {
+        "kicker": "FR",
+        "copy": "Ranskassa toimiva B2B-yritys eurooppalaisille ja etäasiakkaille."
+      },
+      {
+        "kicker": "AI",
+        "copy": "LLM-integraatiot, agentit, automaatio ja sisäiset työkalut."
+      },
+      {
+        "kicker": "RT",
+        "copy": "Reaaliaikainen ja suuren volyymin alustatyö."
+      },
+      {
+        "kicker": "SUORAT",
+        "copy": "Puhut työn tekevien insinöörien kanssa, et tilikerroksen kanssa."
+      }
+    ]
+  },
+  "engagements": {
+    "eyebrow": "Työskentele SDK:n kanssa",
+    "title": "Tuo tietty ongelma. Hanki tarkka vastaus.",
+    "intro": "Tiedät, kun jokin pinossasi maksaa sinulle. Tässä ovat tilanteet, joihin SDK on määritetty.",
+    "items": [
+      {
+        "title": "Järjestelmä on liian vanha korjattavaksi.",
+        "copy": "Tarvitset siirtosuunnitelman, et toiveen – tarkastuksen siitä, mikä toimii, mikä katkeaa, ja muuttomääräyksen."
+      },
+      {
+        "title": "Volyymi, jolle nykyistä pinoasi ei ole suunniteltu.",
+        "copy": "Reaaliaikainen käsittely, korkean suorituskyvyn taustajärjestelmät ja infrastruktuuri, joka pitää ne vakaana."
+      },
+      {
+        "title": "AI voit laittaa töihin.",
+        "copy": "LLM-integraatiot, agentit ja automaatio, jotka muuttavat sisäistä työnkulkua – ei esittelyä, joka pysähtyy pitchille."
+      },
+      {
+        "title": "Joukkue, joka tarvitsee vanhempia käsiä.",
+        "copy": "Suora suunnittelutoimitus koodikantaasi ilman keskikerrosta, joka hidastaa päätöksiä."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Miten toimimme",
+    "title": "Selkeä tie ongelmasta tuotantoon.",
+    "intro": "Neljä askelta, näkyvä edistys joka vaiheessa.",
+    "items": [
+      {
+        "title": "Ymmärrä",
+        "copy": "Liiketoiminnan tavoite, pino, rajoitteet ja menestyskriteerit."
+      },
+      {
+        "title": "Suunnittelu",
+        "copy": "Arkkitehtuuri, laajuus, riskit ja virstanpylväät."
+      },
+      {
+        "title": "Rakenna",
+        "copy": "Toteutus näkyvällä edistyksellä."
+      },
+      {
+        "title": "Luovutus",
+        "copy": "Ota käyttöön, dokumentoi ja siirrä omistajuus."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Työskentele SDK:n kanssa",
+    "heading": "Tuo meille ongelma, jonka tarvitset ratkaistavaksi.",
+    "body": "Kerro meille, mitä yrität rakentaa, modernisoida, automatisoida tai korjata – me kerromme sinulle rehellisesti, sopiiko se ja mitä se vaatisi.",
+    "registeredUnder": "Rekisteröity {company}-tunnuksella",
+    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  }
+}

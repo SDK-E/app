@@ -1,0 +1,74 @@
+{
+  "enquiry": {
+    "title": "iniciar un proyecto",
+    "subtitle": "Cuéntanos qué estás intentando construir, modernizar, automatizar o arreglar. Le responderemos dentro de 2 días hábiles con una evaluación honesta de la idoneidad y lo que se necesitaría.",
+    "body": "El formulario recopila la información mínima necesaria para responder pensativamente. No se comparte nada fuera de SDK Enterprises y también puede comunicarse con nosotros directamente en hello@sdk.enterprises.",
+    "body2": "Revisamos cada consulta nosotros mismos. Sin administradores de cuentas, sin guiones de calificación, sin traspasos.",
+    "nextStepsEyebrow": "¿Qué pasa después?",
+    "nextStepsHeading": "De la investigación al compromiso",
+    "nextStepsBody": "Después de enviar el formulario, lo leemos nosotros mismos. Si encaja, responderemos con una breve evaluación escrita y un modelo de participación propuesto. Si no es adecuado, le diremos por qué y le sugeriremos una alternativa.",
+    "nextStep1Title": "Revisión",
+    "nextStep1Body": "Leemos su envío y lo comparamos con nuestra capacidad y experiencia actuales. Generalmente dentro de 2 días hábiles.",
+    "nextStep2Title": "Evaluación",
+    "nextStep2Body": "Una breve respuesta por escrito: cuál creemos que es el problema, si encaja y cuál sería el primer paso.",
+    "nextStep3Title": "Llamada o asíncrona",
+    "nextStep3Body": "Una llamada de 30 minutos o un intercambio asíncrono para aclarar el alcance, las limitaciones y el cronograma. No hay plataforma de presentación a menos que quieras una.",
+    "nextStep4Title": "Propuesta",
+    "nextStep4Body": "Una propuesta escrita con alcance, precio o tarifa fija, cronograma e hitos. Tú firmas y nosotros empezamos.",
+    "form": {
+      "companyName": "Empresa",
+      "email": "correo electrónico profesional",
+      "website": "Sitio web de la empresa",
+      "capability": "Capacidad necesaria",
+      "description": "Descripción del problema/proyecto",
+      "environment": "Entorno existente",
+      "timeline": "Línea de tiempo",
+      "budgetRange": "Rango de presupuesto",
+      "context": "Contexto de apoyo",
+      "submit": "Enviar consulta"
+    },
+    "capabilities": {
+      "aiEngineering": "Ingeniería de IA",
+      "softwareEngineering": "Ingeniería de software",
+      "frontendProduct": "Interfaz y producto",
+      "cloudInfrastructure": "Nube e infraestructura",
+      "dataCacheSearch": "Datos / Caché / Búsqueda",
+      "modernization": "Modernización",
+      "other": "Otro"
+    },
+    "timelines": {
+      "asap": "lo antes posible",
+      "oneToThreeMonths": "1 a 3 meses",
+      "threeToSixMonths": "3 a 6 meses",
+      "sixPlusMonths": "6+ meses",
+      "notSure": "No estoy seguro"
+    },
+    "budgets": {
+      "under10k": "< 10.000 €",
+      "tenToTwentyFiveK": "10.000 a 25.000 euros",
+      "twentyFiveToFiftyK": "25.000 a 50.000 euros",
+      "fiftyPlusK": "50.000€+",
+      "notSure": "No estoy seguro"
+    },
+    "validation": {
+      "companyNameRequired": "El nombre de la empresa es obligatorio.",
+      "emailRequired": "Se requiere correo electrónico profesional",
+      "emailInvalid": "Introduzca una dirección de correo electrónico válida",
+      "websiteInvalid": "Introduce una URL válida",
+      "capabilityRequired": "Seleccione una capacidad",
+      "descriptionRequired": "Describe el proyecto o problema.",
+      "descriptionTooShort": "La descripción debe tener al menos 50 caracteres.",
+      "descriptionTooLong": "La descripción debe tener menos de 4000 caracteres.",
+      "environmentTooLong": "El entorno debe tener menos de 4000 caracteres.",
+      "contextTooLong": "El contexto de soporte debe tener menos de 4000 caracteres."
+    },
+    "success": {
+      "title": "Consulta enviada",
+      "body": "Gracias. Revisaremos su proyecto y responderemos dentro de 2 días hábiles."
+    },
+    "error": {
+      "title": "algo salió mal",
+      "body": "No pudimos enviar su consulta. Inténtelo de nuevo o envíenos un correo electrónico directamente."
+    }
+  }
+}

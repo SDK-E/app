@@ -1,0 +1,22 @@
+{
+  "workPage": {
+    "eyebrow": "Arbejd med SDK",
+    "body": "Du ved, hvornår noget i din stak koster dig. Her er de situationer, SDK er bygget til.",
+    "cta": "Start et projekt",
+    "engagementsEyebrow": "Forlovelser",
+    "engagementsHeading": "Sådan starter engagementer normalt",
+    "engagementsBody": "De fleste engagementer begynder med en kort samtale eller et skriftligt resumé af problemet. Derfra foreslår SDK et scoped svar: en fastprisrevision, en tids- og materialearbejdsstrøm eller en hybrid model afhængigt af usikkerheden i systemet og klarheden af ​​målet.",
+    "lookForEyebrow": "Hvad vi leder efter",
+    "lookForHeading": "Et klart problem og et team, der er villige til at engagere sig i det.",
+    "lookForBody": "De bedste engagementer starter, når klienten ved, at noget er galt, men endnu ikke kender det fulde omfang. Vi leder efter hold, der ønsker at forstå mekanismen, ikke bare modtage et slide deck.",
+    "lookFor1Title": "En specifik begrænsning",
+    "lookFor1Body": "Ydeevne, pålidelighed, omkostninger, leveringshastighed eller overholdelse. Problemet behøver ikke at være nyt – det skal være reelt og målbart.",
+    "lookFor2Title": "Adgang til systemet",
+    "lookFor2Body": "Læseadgang til kodebasen, infrastrukturen og de mennesker, der forstår den aktuelle tilstand. Uden dette er enhver vurdering gætværk.",
+    "lookFor3Title": "En beslutningstager",
+    "lookFor3Body": "En person, der kan godkende omfanget, budgettet og tidslinjen. Ikke et udvalg - én person med bemyndigelse til at fremme arbejdet.",
+    "fitEyebrow": "Tilpas",
+    "fitHeading": "Når SDK ikke er det rigtige svar",
+    "fitBody": "Vi siger ikke oftere, end du måske forventer. SDK er ikke et værksted for overløbsbilletter, og vi tager ikke engagementer, hvor problemet endnu ikke er defineret, eller teamet ikke kan forpligte sig til processen."
+  }
+}

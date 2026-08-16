@@ -1,0 +1,22 @@
+{
+  "workPage": {
+    "eyebrow": "Werken met SDK",
+    "body": "Je weet wanneer iets in je stapel je iets kost. Dit zijn de situaties waarvoor de SDK is gebouwd.",
+    "cta": "Start een project",
+    "engagementsEyebrow": "Verlovingen",
+    "engagementsHeading": "Hoe engagementen gewoonlijk beginnen",
+    "engagementsBody": "De meeste opdrachten beginnen met een kort gesprek of een schriftelijke samenvatting van het probleem. Van daaruit stelt SDK een uitgebreid antwoord voor: een audit met een vaste prijs, een werkstroom met tijd en materialen, of een hybride model, afhankelijk van de onzekerheid in het systeem en de duidelijkheid van het doel.",
+    "lookForEyebrow": "Waar we naar op zoek zijn",
+    "lookForHeading": "Een duidelijk probleem en een team dat zich ermee wil bezighouden.",
+    "lookForBody": "De beste opdrachten beginnen wanneer de klant weet dat er iets mis is, maar nog niet de volledige omvang ervan kent. We zoeken naar teams die het mechanisme willen begrijpen en niet alleen maar een slidedeck willen ontvangen.",
+    "lookFor1Title": "Een specifieke beperking",
+    "lookFor1Body": "Prestaties, betrouwbaarheid, kosten, snelheid van levering of compliance. Het probleem hoeft niet nieuw te zijn; het moet reëel en meetbaar zijn.",
+    "lookFor2Title": "Toegang tot het systeem",
+    "lookFor2Body": "Leestoegang tot de codebase, infrastructuur en de mensen die de huidige status begrijpen. Zonder dit is elke beoordeling giswerk.",
+    "lookFor3Title": "Een beslisser",
+    "lookFor3Body": "Iemand die de scope, het budget en de tijdlijn kan goedkeuren. Geen commissie – één persoon met de autoriteit om het werk vooruit te helpen.",
+    "fitEyebrow": "Pasvorm",
+    "fitHeading": "Wanneer SDK niet het juiste antwoord is",
+    "fitBody": "Wij zeggen vaker nee dan je zou verwachten. SDK is geen schadeherstelbedrijf voor overflowtickets en we gaan geen opdrachten aan waarbij het probleem nog niet is gedefinieerd of het team zich niet aan het proces kan binden."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "legal": {
+    "mentionsLegales": {
+      "title": "Mentions légales",
+      "intro": "Mentions légales du site SDK Enterprises.",
+      "publisherTitle": "Éditeur",
+      "publisherWebsite": "Le site Web accessible sur {domain} est édité par {company}, exerçant son activité sous le nom de {name}.",
+      "siren": "SIREN : {siren}",
+      "siret": "SIRET : {siret}",
+      "registeredOffice": "Siège social : {address}",
+      "legalForm": "Forme juridique et capital social : Auto-entrepreneur (entrepreneur individuel, micro-entreprise), pas de capital social",
+      "registration": "Enregistrement de la société : RCS Paris {siren}",
+      "directorTitle": "Directeur de publication",
+      "director": "Directeur de publication : Hicham SADDEK.",
+      "hostingTitle": "Hébergement",
+      "hosting": "Le site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis.",
+      "contactTitle": "Contacter",
+      "contact": "Les questions sur le site peuvent être envoyées à {email} ou par téléphone à {phone}.",
+      "intellectualPropertyTitle": "Propriété intellectuelle",
+      "intellectualProperty": "La structure, les textes, le logo et le contenu du site sont la propriété de SDK Enterprises. Toute reproduction ou représentation, intégrale ou partielle, sans autorisation préalable est interdite, sauf dans les cas permis par la loi applicable.",
+      "legalFrameworkTitle": "Cadre juridique",
+      "legalFramework": "Ces mentions sont régies par la loi française et sont établies conformément à l'article 6-III de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique (LCEN)."
+    }
+  }
+}

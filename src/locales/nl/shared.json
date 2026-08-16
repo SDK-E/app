@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "siteDescription": "Frans ingenieursbureau B2B. We bouwen, moderniseren en exploiteren software voor de hele stack: backendplatforms, cloudinfrastructuur, AI-automatisering, realtime systemen en interne tooling.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Diensten",
+    "servicesDescription": "SDK Enterprises bouwt, moderniseert en exploiteert software over de hele stack: AI-agents, backendplatforms, webinterfaces, cloudinfrastructuur, datasystemen en verouderde modernisering.",
+    "workTitle": "Werk",
+    "workDescription": "De situaties waarvoor SDK Enterprises is opgezet: migratie, platforms voor grote volumes, AI-automatisering en levering van senior engineering.",
+    "howWeWorkTitle": "Hoe wij werken",
+    "howWeWorkDescription": "Een duidelijk pad van probleem naar productie. Vier stappen, zichtbare vooruitgang in elke fase.",
+    "aboutTitle": "Over",
+    "aboutDescription": "In Frankrijk gevestigd ingenieursbedrijf B2B. Senior levering, directe communicatie, geen accountlaag.",
+    "startAProjectTitle": "Start een project",
+    "startAProjectDescription": "Vertel ons wat u probeert te bouwen, moderniseren, automatiseren of repareren. Wij vertellen je eerlijk of het past en wat ervoor nodig is."
+  },
+  "nav": {
+    "toggleMenu": "Schakelmenu",
+    "home": "SDK Enterprises thuis",
+    "main": "Belangrijkste",
+    "services": "Diensten",
+    "work": "Werk",
+    "process": "Proces",
+    "about": "Over",
+    "discussProject": "Bespreek een project",
+    "signIn": "Log in",
+    "legal": "Legaal",
+    "mentionsLegales": "Vermeldt juridische zaken",
+    "privacy": "Privacy",
+    "terms": "Voorwaarden",
+    "cookies": "Koekjes"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "AI · Software · Cloud · Systeemtechniek"
+  },
+  "auth": {
+    "loginRedirecting": "Omleiden naar inloggen...",
+    "logoutRedirecting": "Omleiden naar uitloggen..."
+  },
+  "errors": {
+    "pageNotFound": "Deze pagina bestaat niet of is verplaatst.",
+    "backToHome": "Terug naar huis",
+    "somethingWentWrong": "Er is iets misgegaan",
+    "tryAgain": "Probeer het opnieuw",
+    "contactSupport": "Als het probleem zich blijft voordoen, neem dan contact op met de ondersteuning."
+  }
+}

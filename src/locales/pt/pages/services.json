@@ -1,0 +1,19 @@
+{
+  "servicesPage": {
+    "eyebrow": "Serviços",
+    "body": "Construímos e operamos software em toda a pilha: agentes e automação de IA, plataformas de back-end, interfaces web, infraestrutura em nuvem, sistemas de dados e modernização legada. Um problema especializado ou um fluxo de trabalho inteiro — os engenheiros que fazem o trabalho são aqueles com quem você conversa.",
+    "cta": "Iniciar um projeto",
+    "engagementEyebrow": "Modelos de engajamento",
+    "engagementHeading": "Como nos envolvemos",
+    "engagementBody": "SDK entra de duas maneiras: uma auditoria de preço fixo que diagnostica um problema específico e propõe um caminho a seguir, ou um fluxo de trabalho de engenharia dedicado onde uma equipe sênior controla a implementação de ponta a ponta. Existem arranjos híbridos para sistemas que necessitam tanto de diagnóstico como de entrega sustentada.",
+    "engagementModel1Title": "Auditoria de preço fixo",
+    "engagementModel1Body": "Um diagnóstico com escopo definido de um problema específico: revisão de arquitetura, caminho de migração, gargalo de desempenho ou revisão de segurança. O resultado é um plano escrito com prioridades, riscos e esforço estimado.",
+    "engagementModel2Title": "Fluxo de trabalho de engenharia",
+    "engagementModel2Body": "Uma equipe sênior incorporada à sua pilha por um período definido. Entrega semanal, progresso visível e comunicação direta com os engenheiros que estão construindo o software.",
+    "engagementModel3Title": "Híbrido",
+    "engagementModel3Body": "Audite primeiro, depois o fluxo de trabalho. A equipe que diagnostica o problema fica para implementar a solução. Nenhuma transferência para uma equipe de conta diferente.",
+    "whatWeDontDoEyebrow": "O que não fazemos",
+    "whatWeDontDoHeading": "Não escondemos o mecanismo.",
+    "whatWeDontDoBody": "Nenhum júnior em sua base de código. Nenhum gerente de conta entre você e os engenheiros. Nenhuma transferência offshore após a proposta. Nenhum envolvimento que dependa da venda de um escopo maior do que o necessário."
+  }
+}

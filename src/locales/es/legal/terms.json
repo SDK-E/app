@@ -1,0 +1,26 @@
+{
+  "legal": {
+    "terms": {
+      "title": "Condiciones de uso",
+      "intro": "Las reglas de uso de este sitio web.",
+      "purposeTitle": "Propósito",
+      "purpose": "Estos términos rigen su uso del sitio web {name}. Al acceder al sitio, usted acepta estos términos.",
+      "servicesTitle": "Presentación de servicios",
+      "services": "El sitio presenta los servicios de {name} y le permite enviar una consulta de proyecto. Este contenido se proporciona únicamente con fines informativos y no es una oferta contractual ni un compromiso de prestación de servicios.",
+      "enquiriesTitle": "Consultas sobre proyectos",
+      "enquiries": "La información enviada a través del formulario \"Iniciar un proyecto\" se maneja de acuerdo con la política de privacidad. Recibir una consulta no implica ninguna obligación de aceptarla.",
+      "intellectualPropertyTitle": "Propiedad intelectual",
+      "intellectualProperty": "Los textos, el logotipo, las imágenes y el contenido del sitio son propiedad de SDK Enterprises y no pueden reutilizarse sin autorización previa.",
+      "availabilityTitle": "Disponibilidad del sitio",
+      "availability": "El sitio se proporciona \"tal cual\". SDK Enterprises hace esfuerzos razonables para mantenerlo accesible pero no garantiza una disponibilidad ininterrumpida o libre de errores.",
+      "liabilityTitle": "Responsabilidad",
+      "liability": "En la medida permitida por la ley, la responsabilidad de SDK Enterprises se limita a los daños directos y no se extiende a los daños indirectos. Los enlaces a sitios de terceros son responsabilidad exclusiva de sus editores.",
+      "changesTitle": "Cambios",
+      "changes": "SDK Enterprises puede modificar estos términos en cualquier momento. La versión aplicable es la publicada en esta página.",
+      "lawTitle": "Ley aplicable",
+      "law": "Estos términos se rigen por la ley francesa. En caso de litigio, los tribunales franceses son competentes.",
+      "contactTitle": "Contacto",
+      "contact": "Para cualquier consulta, póngase en contacto con {company} en {email}."
+    }
+  }
+}

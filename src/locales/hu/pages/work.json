@@ -1,0 +1,22 @@
+{
+  "workPage": {
+    "eyebrow": "Dolgozzon a SDK-vel",
+    "body": "Tudod, ha valami a stackedben kerül neked. Itt vannak azok a helyzetek, amelyekre a SDK készült.",
+    "cta": "Indítson el egy projektet",
+    "engagementsEyebrow": "Eljegyzések",
+    "engagementsHeading": "Általában hogyan kezdődnek az eljegyzések",
+    "engagementsBody": "A legtöbb eljegyzés egy rövid beszélgetéssel vagy a probléma írásos összefoglalásával kezdődik. Innentől kezdve a SDK hatókörű választ javasol: fix árú auditot, időt és anyagokat használó munkafolyamatot vagy hibrid modellt a rendszer bizonytalanságától és a cél egyértelműségétől függően.",
+    "lookForEyebrow": "Amit keresünk",
+    "lookForHeading": "Egyértelmű probléma, és egy csapat hajlandó foglalkozni vele.",
+    "lookForBody": "A legjobb elköteleződés akkor kezdődik, amikor az ügyfél tudja, hogy valami nincs rendben, de még nem tudja a teljes terjedelmét. Olyan csapatokat keresünk, akik meg akarják érteni a mechanizmust, nem csak egy csúszdát kapnak.",
+    "lookFor1Title": "Egy konkrét megkötés",
+    "lookFor1Body": "Teljesítmény, megbízhatóság, költség, szállítási sebesség vagy megfelelőség. A problémának nem kell újszerűnek lennie – valósnak és mérhetőnek kell lennie.",
+    "lookFor2Title": "Hozzáférés a rendszerhez",
+    "lookFor2Body": "Olvasási hozzáférés a kódbázishoz, az infrastruktúrához és azokhoz az emberekhez, akik megértik a jelenlegi állapotot. E nélkül minden értékelés csak találgatás.",
+    "lookFor3Title": "Döntéshozó",
+    "lookFor3Body": "Valaki, aki jóváhagyhatja a hatókört, a költségvetést és az idővonalat. Nem egy bizottság – egy személy, akinek felhatalmazása van a munka előremozdítására.",
+    "fitEyebrow": "Fit",
+    "fitHeading": "Amikor a SDK nem a megfelelő válasz",
+    "fitBody": "Nem mondjuk gyakrabban, mint gondolnád. A SDK nem a túlcsordulási jegyek karosszériája, és nem vállalunk olyan megbízásokat, ahol a probléma még nincs meghatározva, vagy a csapat nem tud elköteleződni a folyamat mellett."
+  }
+}

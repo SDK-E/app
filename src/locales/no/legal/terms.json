@@ -1,0 +1,26 @@
+{
+  "legal": {
+    "terms": {
+      "title": "Terms of use",
+      "intro": "The rules for using this website.",
+      "purposeTitle": "Formål",
+      "purpose": "Disse vilkårene regulerer din bruk av {name}-nettstedet. Ved å gå inn på siden godtar du disse vilkårene.",
+      "servicesTitle": "Presentasjon av tjenester",
+      "services": "Nettstedet presenterer tjenestene til {name} og lar deg sende inn en prosjektforespørsel. Dette innholdet er kun gitt for informasjon og er verken et kontraktsmessig tilbud eller en forpliktelse til å levere tjenester.",
+      "enquiriesTitle": "Prosjekthenvendelser",
+      "enquiries": "Informasjon som sendes inn gjennom skjemaet \"Start et prosjekt\" håndteres i henhold til personvernreglene. Å motta en henvendelse innebærer ingen forpliktelse til å akseptere den.",
+      "intellectualPropertyTitle": "Immaterielle rettigheter",
+      "intellectualProperty": "Tekstene, logoen, bildene og innholdet på nettstedet tilhører SDK Enterprises og kan ikke gjenbrukes uten forhåndsgodkjenning.",
+      "availabilityTitle": "Nettstedets tilgjengelighet",
+      "availability": "Siden leveres \"som den er\". SDK Enterprises gjør rimelige anstrengelser for å holde den tilgjengelig, men garanterer ikke uavbrutt eller feilfri tilgjengelighet.",
+      "liabilityTitle": "Ansvar",
+      "liability": "I den grad loven tillater det, er SDK Enterprises' ansvar begrenset til direkte skader og omfatter ikke indirekte skader. Linker til tredjeparts nettsteder er utelukkende ansvaret til deres utgivere.",
+      "changesTitle": "Endringer",
+      "changes": "SDK Enterprises kan endre disse vilkårene når som helst. Den gjeldende versjonen er den som er publisert på denne siden.",
+      "lawTitle": "Gjeldende lov",
+      "law": "Disse vilkårene er underlagt fransk lov. I tilfelle en tvist har de franske domstolene jurisdiksjon.",
+      "contactTitle": "Kontakt",
+      "contact": "For spørsmål, kontakt {company} på {email}."
+    }
+  }
+}

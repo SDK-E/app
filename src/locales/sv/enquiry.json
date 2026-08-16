@@ -1,0 +1,74 @@
+{
+  "enquiry": {
+    "title": "Starta ett projekt",
+    "subtitle": "Berätta för oss vad du försöker bygga, modernisera, automatisera eller fixa. Vi kommer att svara inom 2 arbetsdagar med en ärlig bedömning av passform och vad som krävs.",
+    "body": "Formuläret samlar in den minsta information som behövs för att svara eftertänksamt. Ingenting delas utanför SDK Enterprises, och du kan också nå oss direkt på hello@sdk.enterprises.",
+    "body2": "Vi granskar varje förfrågan själva. Inga kontoansvariga, inga kvalifikationsmanus, inga hand-offs.",
+    "nextStepsEyebrow": "Vad händer härnäst",
+    "nextStepsHeading": "Från förfrågan till engagemang",
+    "nextStepsBody": "När du har skickat in formuläret läser vi det själva. Om det passar kommer vi att svara med en kort skriftlig bedömning och en föreslagen engagemangsmodell. Om det inte passar kommer vi att berätta varför och föreslå ett alternativ.",
+    "nextStep1Title": "Granska",
+    "nextStep1Body": "Vi läser ditt bidrag och kontrollerar det mot vår nuvarande kapacitet och expertis. Vanligtvis inom 2 arbetsdagar.",
+    "nextStep2Title": "Bedömning",
+    "nextStep2Body": "Ett kort skriftligt svar: vad vi tror att problemet är, om det passar och vad det första steget skulle vara.",
+    "nextStep3Title": "Ring eller asynkronisera",
+    "nextStep3Body": "Ett 30-minuterssamtal eller en asynkron växel för att klargöra omfattning, begränsningar och tidslinje. Inget pitchdäck om du inte vill ha ett.",
+    "nextStep4Title": "Förslag",
+    "nextStep4Body": "Ett skriftligt förslag med omfattning, fast pris eller kurs, tidslinje och milstolpar. Du skriver under, vi börjar.",
+    "form": {
+      "companyName": "Företag",
+      "email": "Professionell e-post",
+      "website": "Företagets hemsida",
+      "capability": "Förmåga behövs",
+      "description": "Problem/projektbeskrivning",
+      "environment": "Befintlig miljö",
+      "timeline": "Tidslinje",
+      "budgetRange": "Budgetintervall",
+      "context": "Stödjande sammanhang",
+      "submit": "Skicka förfrågan"
+    },
+    "capabilities": {
+      "aiEngineering": "AI Engineering",
+      "softwareEngineering": "Programvaruteknik",
+      "frontendProduct": "Frontend & produkt",
+      "cloudInfrastructure": "Moln och infrastruktur",
+      "dataCacheSearch": "Data / Cache / Sök",
+      "modernization": "Modernisering",
+      "other": "Annat"
+    },
+    "timelines": {
+      "asap": "ASAP",
+      "oneToThreeMonths": "1–3 månader",
+      "threeToSixMonths": "3–6 månader",
+      "sixPlusMonths": "6+ månader",
+      "notSure": "Inte säker"
+    },
+    "budgets": {
+      "under10k": "< €10k",
+      "tenToTwentyFiveK": "€10 000–25 000",
+      "twentyFiveToFiftyK": "€25 000–50 000",
+      "fiftyPlusK": "€50k+",
+      "notSure": "Inte säker"
+    },
+    "validation": {
+      "companyNameRequired": "Företagsnamn krävs",
+      "emailRequired": "Professionell e-post krävs",
+      "emailInvalid": "Ange en giltig e-postadress",
+      "websiteInvalid": "Ange en giltig URL",
+      "capabilityRequired": "Välj en förmåga",
+      "descriptionRequired": "Beskriv projektet eller problemet",
+      "descriptionTooShort": "Beskrivningen måste bestå av minst 50 tecken",
+      "descriptionTooLong": "Beskrivningen måste vara mindre än 4 000 tecken",
+      "environmentTooLong": "Miljön måste vara mindre än 4000 tecken",
+      "contextTooLong": "Stödkontext måste vara mindre än 4000 tecken"
+    },
+    "success": {
+      "title": "Förfrågan skickad",
+      "body": "Tack – vi granskar ditt projekt och svarar inom två arbetsdagar."
+    },
+    "error": {
+      "title": "Något gick fel",
+      "body": "Vi kunde inte skicka din förfrågan. Försök igen eller maila oss direkt."
+    }
+  }
+}

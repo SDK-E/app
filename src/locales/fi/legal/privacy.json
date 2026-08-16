@@ -1,0 +1,65 @@
+{
+  "legal": {
+    "privacy": {
+      "title": "Privacy policy",
+      "intro": "How SDK Enterprises handles personal data, in accordance with the GDPR (RGPD).",
+      "processors": [
+        {
+          "name": "Vercel",
+          "role": "Website hosting and cookieless analytics"
+        },
+        {
+          "name": "Auth0 (Okta)",
+          "role": "Authentication for the client portal"
+        },
+        {
+          "name": "Resend",
+          "role": "Transactional email for project enquiries"
+        },
+        {
+          "name": "Prisma Postgres",
+          "role": "Managed PostgreSQL database"
+        }
+      ],
+      "controllerTitle": "Rekisterinpitäjä",
+      "controller": "Rekisterinpitäjä on {company}, kauppanimi {name}, rekisteröity kotipaikka {address}. Jos sinulla on kysyttävää henkilökohtaisista tiedoistasi, ota meihin yhteyttä osoitteeseen {email}.",
+      "collectedDataTitle": "Kerätyt tiedot",
+      "collectedData": "Ainoa tiedonkeruulomake tällä sivustolla on julkinen \"Aloita projekti\" -lomake. Pyydetyt tiedot on tiukasti rajoitettu:",
+      "collectedDataItems": [
+        "Yrityksen nimi (pakollinen)",
+        "Ammattimainen sähköpostiosoite (pakollinen)",
+        "Yrityksen verkkosivusto (valinnainen)",
+        "Tarvitaan valmiuksia (pakollinen)",
+        "Projektin tai ongelman kuvaus (pakollinen)",
+        "Nykyinen ympäristö (valinnainen)",
+        "Aikajana (valinnainen)",
+        "Budjettiväli (valinnainen)",
+        "Tukikonteksti (valinnainen)"
+      ],
+      "purposesTitle": "Tarkoitukset ja oikeusperustat",
+      "purposesNote": "Tietojasi käsitellään:",
+      "purposeItems": [
+        "vastata projektikyselyyn – sopimusta edeltävät toimenpiteet (Art. 6(1)(b) GDPR) ja oikeutettu etu (Art. 6(1)(f));",
+        "käyttää, suojata ja parantaa sivustoa — oikeutettu etu (Art. 6(1)(f));",
+        "noudattaa kaikkia sovellettavia lakisääteisiä velvoitteita (Art. 6(1)(c))."
+      ],
+      "recipientsTitle": "Vastaanottajat",
+      "recipientsNote": "Tietosi ovat vain SDK Enterprises:n valtuutettujen henkilöiden käytettävissä. Seuraavat prosessorit voivat käsitellä sitä tiukasti palveluidensa tarpeisiin:",
+      "transfersTitle": "Siirrot EU:n ulkopuolelle",
+      "transfers": "Jotkut käsittelijät voivat käsitellä tietoja Euroopan talousalueen ulkopuolella (erityisesti Yhdysvalloissa). Jos näin tapahtuu, käytetään asianmukaisia ​​suojatoimia, kuten Euroopan komission vakiosopimuslausekkeita.",
+      "retentionTitle": "Säilytys",
+      "retention": "Lomakkeella kerättyjä tietoja säilytetään 12 kuukautta viimeisestä yhteydenotosta, ellei laki edellytä pidempää säilytystä. Tämän ajanjakson jälkeen se poistetaan tai anonymisoidaan.",
+      "rightsTitle": "Sinun oikeutesi",
+      "rightsNote": "Articles 15 to 22 GDPR:n mukaisesti sinulla on oikeus käyttää, korjata, poistaa, rajoittaa, siirtää ja vastustaa. Voit myös peruuttaa suostumuksesi milloin tahansa.",
+      "rightsContact": "Voit käyttää näitä oikeuksia kirjoittamalla meille osoitteeseen {email}. Vastaamme kuukauden kuluessa. Voit myös tehdä valituksen CNIL:lle (www.cnil.fr).",
+      "childrenTitle": "Lapset",
+      "children": "Sivusto on suunnattu ammattilaisille, eikä sitä ole tarkoitettu alaikäisille. Kyselylomaketta ei ole tarkoitettu alle 16-vuotiaille.",
+      "automatedTitle": "Automaattinen päätöksenteko",
+      "automated": "Tietoihisi ei tehdä automaattista päätöksentekoa tai profilointia.",
+      "securityTitle": "Turvallisuus",
+      "security": "Tietojesi suojaamiseksi on käytössä kohtuulliset tekniset ja organisatoriset toimenpiteet (salatut yhteydet, pääsynvalvonta). Ehdotonta takuuta ei voida antaa.",
+      "registerTitle": "Rekisteröinti ja ilmoitus",
+      "register": "SDK Enterprises ylläpitää sisäistä rekisteriä käsittelytoimista (Art. 30 GDPR). CNIL-ilmoitusnumeroa ei ole vaadittu tai keksitty."
+    }
+  }
+}

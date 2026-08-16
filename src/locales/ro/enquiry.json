@@ -1,0 +1,74 @@
+{
+  "enquiry": {
+    "title": "Începeți un proiect",
+    "subtitle": "Spuneți-ne ce încercați să construiți, să modernizați, să automatizați sau să reparați. Vă vom răspunde în termen de 2 zile lucrătoare cu o evaluare sinceră a potrivirii și a ceea ce ar fi nevoie.",
+    "body": "Formularul colectează informațiile minime necesare pentru a răspunde atent. Nimic nu este distribuit în afara SDK Enterprises și ne puteți contacta direct la hello@sdk.enterprises.",
+    "body2": "Analizăm fiecare întrebare singuri. Fără manageri de cont, fără scripturi de calificare, fără transferuri.",
+    "nextStepsEyebrow": "Ce se întâmplă în continuare",
+    "nextStepsHeading": "De la anchetă la logodnă",
+    "nextStepsBody": "După ce trimiteți formularul, îl citim noi înșine. Dacă este potrivit, vom răspunde cu o scurtă evaluare scrisă și un model de angajament propus. Dacă nu este potrivit, vă vom spune de ce și vă vom sugera o alternativă.",
+    "nextStep1Title": "Revizuire",
+    "nextStep1Body": "Citim depunerea dvs. și o verificăm în raport cu capacitatea și expertiza noastră actuală. De obicei, în 2 zile lucrătoare.",
+    "nextStep2Title": "Evaluare",
+    "nextStep2Body": "Un scurt răspuns scris: care credem că este problema, dacă este o potrivire și care ar fi prima mișcare.",
+    "nextStep3Title": "Apelați sau asincron",
+    "nextStep3Body": "Un apel de 30 de minute sau un schimb asincron pentru a clarifica domeniul de aplicare, constrângerile și cronologia. Fără pitch deck decât dacă vrei unul.",
+    "nextStep4Title": "Propunere",
+    "nextStep4Body": "O propunere scrisă cu domeniul de aplicare, preț sau tarif fix, calendar și etape. Tu semnezi, începem.",
+    "form": {
+      "companyName": "Compania",
+      "email": "E-mail profesional",
+      "website": "Site-ul companiei",
+      "capability": "Capacitatea necesară",
+      "description": "Descrierea problemei/proiectului",
+      "environment": "Mediul existent",
+      "timeline": "Cronologie",
+      "budgetRange": "Gama de buget",
+      "context": "Context de sprijin",
+      "submit": "Trimiteți întrebarea"
+    },
+    "capabilities": {
+      "aiEngineering": "Inginerie AI",
+      "softwareEngineering": "Inginerie software",
+      "frontendProduct": "Frontend și produs",
+      "cloudInfrastructure": "Cloud și infrastructură",
+      "dataCacheSearch": "Date / Cache / Căutare",
+      "modernization": "Modernizare",
+      "other": "Altele"
+    },
+    "timelines": {
+      "asap": "cât mai curând posibil",
+      "oneToThreeMonths": "1–3 luni",
+      "threeToSixMonths": "3–6 luni",
+      "sixPlusMonths": "6+ luni",
+      "notSure": "Nu sunt sigur"
+    },
+    "budgets": {
+      "under10k": "< 10.000 €",
+      "tenToTwentyFiveK": "10.000 – 25.000 EUR",
+      "twentyFiveToFiftyK": "25.000 – 50.000 EUR",
+      "fiftyPlusK": "50.000 €+",
+      "notSure": "Nu sunt sigur"
+    },
+    "validation": {
+      "companyNameRequired": "Numele companiei este obligatoriu",
+      "emailRequired": "Este necesar un e-mail profesional",
+      "emailInvalid": "Introduceți o adresă de e-mail validă",
+      "websiteInvalid": "Introduceți o adresă URL validă",
+      "capabilityRequired": "Selectați o capacitate",
+      "descriptionRequired": "Descrie proiectul sau problema",
+      "descriptionTooShort": "Descrierea trebuie să aibă cel puțin 50 de caractere",
+      "descriptionTooLong": "Descrierea trebuie să aibă mai puțin de 4000 de caractere",
+      "environmentTooLong": "Mediul trebuie să aibă sub 4000 de caractere",
+      "contextTooLong": "Contextul suport trebuie să aibă sub 4000 de caractere"
+    },
+    "success": {
+      "title": "Cerere trimisă",
+      "body": "Vă mulțumim — vă vom examina proiectul și vă vom răspunde în termen de 2 zile lucrătoare."
+    },
+    "error": {
+      "title": "Ceva a mers prost",
+      "body": "Nu am putut trimite întrebarea dvs. Vă rugăm să încercați din nou sau să ne trimiteți un e-mail direct."
+    }
+  }
+}

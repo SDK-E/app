@@ -1,0 +1,19 @@
+{
+  "servicesPage": {
+    "eyebrow": "Servicios",
+    "body": "Construimos y operamos software en toda su gama: agentes de IA y automatización, plataformas backend, interfaces web, infraestructura en la nube, sistemas de datos y modernización heredada. Un problema especializado o un flujo de trabajo completo: los ingenieros que realizan el trabajo son con quienes usted habla.",
+    "cta": "iniciar un proyecto",
+    "engagementEyebrow": "Modelos de compromiso",
+    "engagementHeading": "Cómo nos involucramos",
+    "engagementBody": "SDK ingresa de dos maneras: una auditoría de precio fijo que diagnostica un problema específico y propone un camino a seguir, o un flujo de trabajo de ingeniería dedicado donde un equipo senior es dueño de la implementación de principio a fin. Existen acuerdos híbridos para sistemas que necesitan tanto diagnóstico como entrega sostenida.",
+    "engagementModel1Title": "Auditoría de precio fijo",
+    "engagementModel1Body": "Un diagnóstico de alcance de un problema específico: revisión de arquitectura, ruta de migración, cuello de botella de rendimiento o revisión de seguridad. El resultado es un plan escrito con prioridades, riesgos y esfuerzo estimado.",
+    "engagementModel2Title": "Flujo de trabajo de ingeniería",
+    "engagementModel2Body": "Un equipo senior integrado en su pila durante un período definido. Entrega semanal, progreso visible y comunicación directa con los ingenieros que crean el software.",
+    "engagementModel3Title": "Híbrido",
+    "engagementModel3Body": "Primero la auditoría y luego el flujo de trabajo. El equipo que diagnostica el problema se queda para implementar la solución. Sin traspaso a un equipo de cuenta diferente.",
+    "whatWeDontDoEyebrow": "lo que no hacemos",
+    "whatWeDontDoHeading": "No ocultamos el mecanismo.",
+    "whatWeDontDoBody": "No hay juniors en tu código base. No hay administrador de cuentas entre usted y los ingenieros. No habrá transferencia offshore después de la propuesta. Ningún compromiso que dependa de venderle un alcance mayor del que necesita."
+  }
+}

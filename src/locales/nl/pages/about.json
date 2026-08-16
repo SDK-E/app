@@ -1,0 +1,36 @@
+{
+  "aboutPage": {
+    "eyebrow": "Over SDK Enterprises",
+    "title": "Senior techniek, directe levering.",
+    "intro": "In Frankrijk gevestigd ingenieursbedrijf B2B. We bouwen, moderniseren en exploiteren software voor de hele stack: backendplatforms, cloudinfrastructuur, AI-automatisering, realtime systemen en interne tooling.",
+    "body": "SDK Enterprises, opgericht in 2019, werkt met een klein aantal klanten tegelijk. Het team bestaat alleen uit senioren: geen junioren, geen accountmanagers, geen overdracht naar offshore delivery. De meeste opdrachten omvatten audits tegen een vaste prijs, specifieke technische werkstromen of voortdurende moderniseringssprints.",
+    "cta": "Start een project",
+    "approachEyebrow": "Onze aanpak",
+    "approachHeading": "Waarom we het team klein houden",
+    "approachBody": "Wanneer een bureau voorbij het punt groeit waarop de partners elke ingenieur kennen, verschijnt de accountlaag. Die laag is waar context verloren gaat, tijdlijnen verschuiven en de kosten zich vermenigvuldigen. SDK is zo gestructureerd dat dit wordt voorkomen.",
+    "approach1Title": "Geen accountmanagers",
+    "approach1Body": "Je spreekt met de ingenieur die verantwoordelijk is voor de werkzaamheden. Geen vertaling, geen vertragingen, geen miscommunicatie tussen verkoop en levering.",
+    "approach2Title": "Geen offshore-overdracht",
+    "approach2Body": "Het team dat het systeem ontwerpt, blijft gedurende de implementatie en overdracht. Kennis blijft op één plek.",
+    "approach3Title": "Geen junior middelen",
+    "approach3Body": "Elke SDK-ingenieur is van senior niveau. Wij maken geen gebruik van klantbetrokkenheid om minder ervaren personeel op te leiden.",
+    "beliefsEyebrow": "Wat wij geloven",
+    "beliefsHeading": "De aannames achter het werk",
+    "beliefsBody": "Dit zijn geen marketinguitingen. Het zijn de beperkingen die elke beslissing die we nemen bepalen.",
+    "belief1Title": "Software is een verplichting totdat deze wordt begrepen",
+    "belief1Body": "Elke regel code brengt onderhoudskosten met zich mee. Het doel is niet om meer code te schrijven, maar om de kosten van de code die al bestaat te verlagen.",
+    "belief2Title": "Diagnose vóór het voorschrijven",
+    "belief2Body": "Wij verkopen geen vast engagementtype. We diagnosticeren eerst het systeem: architectuur, gegevensstroom, implementatie, team en beperkingen. Dan stellen wij de verloving voor die past.",
+    "belief3Title": "Transparantie is een kenmerk",
+    "belief3Body": "Zichtbare voortgang, schriftelijke updates en directe toegang tot de engineers. Geheimhouding rond de bevalling is een symptoom van een proces dat niet kan worden verklaard.",
+    "companyFacts": {
+      "name": "Wettelijke naam",
+      "tradingName": "Handelsnaam",
+      "siren": "SIREN",
+      "siret": "SIRET",
+      "address": "Geregistreerd kantoor",
+      "email": "E-mail",
+      "phone": "Telefoon"
+    }
+  }
+}

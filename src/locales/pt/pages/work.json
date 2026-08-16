@@ -1,0 +1,22 @@
+{
+  "workPage": {
+    "eyebrow": "Trabalhe com SDK",
+    "body": "Você sabe quando algo em sua pilha está custando caro. Aqui estão as situações para as quais o SDK foi criado.",
+    "cta": "Iniciar um projeto",
+    "engagementsEyebrow": "Compromissos",
+    "engagementsHeading": "Como os compromissos geralmente começam",
+    "engagementsBody": "A maioria dos compromissos começa com uma breve conversa ou um resumo escrito do problema. A partir daí, SDK propõe uma resposta com escopo: uma auditoria de preço fixo, um fluxo de trabalho de tempo e materiais ou um modelo híbrido dependendo da incerteza no sistema e da clareza do objetivo.",
+    "lookForEyebrow": "O que procuramos",
+    "lookForHeading": "Um problema claro e uma equipe disposta a se envolver com ele.",
+    "lookForBody": "Os melhores compromissos começam quando o cliente sabe que algo está errado, mas ainda não sabe a extensão total. Procuramos equipes que queiram entender o mecanismo, e não apenas receber uma apresentação de slides.",
+    "lookFor1Title": "Uma restrição específica",
+    "lookFor1Body": "Desempenho, confiabilidade, custo, velocidade de entrega ou conformidade. O problema não precisa ser novo – precisa ser real e mensurável.",
+    "lookFor2Title": "Acesso ao sistema",
+    "lookFor2Body": "Leia o acesso à base de código, à infraestrutura e às pessoas que entendem o estado atual. Sem isso, qualquer avaliação é uma adivinhação.",
+    "lookFor3Title": "Um tomador de decisão",
+    "lookFor3Body": "Alguém que possa aprovar o escopo, o orçamento e o cronograma. Não é um comitê – uma pessoa com autoridade para levar o trabalho adiante.",
+    "fitEyebrow": "Ajustar",
+    "fitHeading": "Quando SDK não é a resposta certa",
+    "fitBody": "Dizemos não com mais frequência do que você imagina. SDK não é uma oficina para tickets de estouro e não realizamos trabalhos onde o problema ainda não esteja definido ou a equipe não possa se comprometer com o processo."
+  }
+}

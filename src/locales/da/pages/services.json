@@ -1,0 +1,19 @@
+{
+  "servicesPage": {
+    "eyebrow": "Tjenester",
+    "body": "Vi bygger og driver software på tværs af hele stakken: AI-agenter og automatisering, backend-platforme, webgrænseflader, cloud-infrastruktur, datasystemer og ældre modernisering. Et specialiseret problem eller en hel arbejdsstrøm - ingeniørerne, der udfører arbejdet, er dem, du taler med.",
+    "cta": "Start et projekt",
+    "engagementEyebrow": "Engagement modeller",
+    "engagementHeading": "Hvordan vi engagerer os",
+    "engagementBody": "SDK går ind på to måder: en fastprisrevision, der diagnosticerer et specifikt problem og foreslår en vej frem, eller en dedikeret ingeniørarbejdsstrøm, hvor et seniorteam ejer implementeringen fra ende til anden. Hybride arrangementer findes for systemer, der både har behov for diagnose og vedvarende levering.",
+    "engagementModel1Title": "Fastprisrevision",
+    "engagementModel1Body": "En scoped diagnose af et specifikt problem: arkitekturgennemgang, migreringssti, ydeevneflaskehals eller sikkerhedsgennemgang. Output er en skriftlig plan med prioriteter, risici og estimeret indsats.",
+    "engagementModel2Title": "Engineering arbejdsstrøm",
+    "engagementModel2Body": "Et seniorhold indlejret i din stak i en bestemt periode. Ugentlig levering, synlige fremskridt og direkte kommunikation med ingeniørerne, der bygger softwaren.",
+    "engagementModel3Title": "Hybrid",
+    "engagementModel3Body": "Revision først, derefter workstream. Det team, der diagnosticerer problemet, bliver for at implementere løsningen. Ingen overdragelse til et andet kontoteam.",
+    "whatWeDontDoEyebrow": "Hvad vi ikke gør",
+    "whatWeDontDoHeading": "Vi skjuler ikke mekanismen.",
+    "whatWeDontDoBody": "Ingen juniorer på din kodebase. Ingen account manager mellem dig og ingeniørerne. Ingen offshore-aflevering efter forslaget. Intet engagement, der afhænger af at sælge dig et større omfang, end du har brug for."
+  }
+}

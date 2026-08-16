@@ -1,0 +1,25 @@
+{
+  "legal": {
+    "mentionsLegales": {
+      "title": "Mentions légales",
+      "intro": "Legal notices for the SDK Enterprises website.",
+      "publisherTitle": "Kiadó",
+      "publisherWebsite": "A {domain} címen elérhető webhelyet a {company} teszi közzé, amely {name} néven kereskedik.",
+      "siren": "SIREN: {siren}",
+      "siret": "SIRET: {siret}",
+      "registeredOffice": "Székhely: {address}",
+      "legalForm": "Jogi forma és törzstőke: önálló vállalkozó (egyéni vállalkozó, mikrovállalkozás), alaptőke nélkül",
+      "registration": "Cégjegyzékszám: RCS Paris {siren}",
+      "directorTitle": "Kiadási igazgató",
+      "director": "Kiadványvezető: Hicham SADDEK.",
+      "hostingTitle": "Tárhely",
+      "hosting": "A webhely házigazdája a Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, Egyesült Államok.",
+      "contactTitle": "Kapcsolatfelvétel",
+      "contact": "Az oldallal kapcsolatos kérdéseket a {email} címre vagy a {phone} telefonszámon lehet küldeni.",
+      "intellectualPropertyTitle": "Szellemi tulajdon",
+      "intellectualProperty": "Az oldal szerkezete, szövegei, logója és tartalma a SDK Enterprises tulajdonát képezi. Bármilyen reprodukálás vagy ábrázolás, részben vagy egészben, előzetes engedély nélkül tilos, kivéve a vonatkozó törvények által megengedett eseteket.",
+      "legalFrameworkTitle": "Jogi keretek",
+      "legalFramework": "Ezekre a közleményekre a francia jog az irányadó, és a digitális gazdaságba vetett bizalomról szóló, 2004. június 21-i 2004-575. sz. francia törvény (LCEN) 6-III."
+    }
+  }
+}

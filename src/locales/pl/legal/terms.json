@@ -1,0 +1,26 @@
+{
+  "legal": {
+    "terms": {
+      "title": "Terms of use",
+      "intro": "The rules for using this website.",
+      "purposeTitle": "Cel",
+      "purpose": "Niniejsze warunki regulują korzystanie z witryny {name}. Wchodząc na stronę wyrażasz zgodę na te warunki.",
+      "servicesTitle": "Prezentacja usług",
+      "services": "Strona prezentuje usługi {name} oraz umożliwia złożenie zapytania projektowego. Treści te mają charakter wyłącznie informacyjny i nie stanowią oferty umownej ani zobowiązania do świadczenia usług.",
+      "enquiriesTitle": "Zapytania projektowe",
+      "enquiries": "Informacje przesłane za pośrednictwem formularza „Rozpocznij projekt” traktowane są zgodnie z polityką prywatności. Otrzymanie zapytania nie oznacza obowiązku jego przyjęcia.",
+      "intellectualPropertyTitle": "Własność intelektualna",
+      "intellectualProperty": "Teksty, logo, elementy wizualne i zawartość witryny są własnością SDK Enterprises i nie mogą być ponownie wykorzystywane bez uprzedniej zgody.",
+      "availabilityTitle": "Dostępność witryny",
+      "availability": "Strona jest dostarczana „tak jak jest”. SDK Enterprises dokłada wszelkich starań, aby zapewnić jego dostępność, ale nie gwarantuje nieprzerwanej i wolnej od błędów dostępności.",
+      "liabilityTitle": "Odpowiedzialność",
+      "liability": "W zakresie dozwolonym przez prawo odpowiedzialność SDK Enterprises ogranicza się do szkód bezpośrednich i nie rozciąga się na szkody pośrednie. Za łącza do witryn stron trzecich wyłączną odpowiedzialność ponoszą ich wydawcy.",
+      "changesTitle": "Zmiany",
+      "changes": "SDK Enterprises może zmienić niniejsze warunki w dowolnym momencie. Obowiązującą wersją jest ta opublikowana na tej stronie.",
+      "lawTitle": "Obowiązujące prawo",
+      "law": "Warunki te podlegają prawu francuskiemu. W przypadku sporu jurysdykcję sprawują sądy francuskie.",
+      "contactTitle": "Kontakt",
+      "contact": "W przypadku jakichkolwiek pytań skontaktuj się z {company} pod adresem {email}."
+    }
+  }
+}

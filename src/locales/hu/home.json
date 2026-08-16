@@ -1,0 +1,132 @@
+{
+  "hero": {
+    "eyebrow": "B2B AI · Szoftver · Felhő · Rendszermérnökség",
+    "heading": "Egyetlen mérnöki partner a vállalatának szükséges köteghez.",
+    "leadParagraph": "A SDK Enterprises szoftvereket épít, modernizál és üzemeltet a teljes veremben – háttérplatformok, felhő infrastruktúra, mesterséges intelligencia automatizálás, valós idejű rendszerek és belső eszközök. Ön egy speciális problémával foglalkozik, vagy szélesebb munkafolyamattal rendelkezik; Akárhogy is, azok az emberek végzik a munkát, akikkel beszélsz.",
+    "ctaStartProject": "Indítson el egy projektet",
+    "ctaExploreServices": "Fedezze fel a szolgáltatásokat",
+    "trustFrance": "Franciaországban székelő B2B cég",
+    "trustSenior": "Vezetőmérnöki szállítás",
+    "trustAI": "AI + háttérprogram + felhő",
+    "trustClients": "Európai és távoli ügyfelek"
+  },
+  "services": {
+    "eyebrow": "Szolgáltatások",
+    "title": "Használja az összes köteget – vagy csak a szükséges részt.",
+    "intro": "A SDK egyetlen speciális problémával foglalkozhat, vagy szélesebb műszaki munkafolyamattal rendelkezik.",
+    "items": [
+      {
+        "number": "01",
+        "category": "AI Engineering",
+        "title": "AI ügynökök és automatizálás",
+        "copy": "LLM integrációk, ügynökök, RAG, munkafolyamat automatizálás, fejlesztői szerszámok és mesterséges intelligencia által támogatott műveletek."
+      },
+      {
+        "number": "02",
+        "category": "Háttérrendszer",
+        "title": "Platformok, APIs és SaaS",
+        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs és valós idejű háttérarchitektúra."
+      },
+      {
+        "number": "03",
+        "category": "Frontend",
+        "title": "Webes és alkalmazási felületek",
+        "copy": "React, Vue, Nuxt, TypeScript, Tailwind és Shadcn."
+      },
+      {
+        "number": "04",
+        "category": "Felhő",
+        "title": "Felhő és infrastruktúra",
+        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD és telepítési architektúra."
+      },
+      {
+        "number": "05",
+        "category": "Adatok",
+        "title": "Adatbázisok, gyorsítótár és keresés",
+        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey és Elasticsearch."
+      },
+      {
+        "number": "06",
+        "category": "Modernizáció",
+        "title": "Örökség modernizálása",
+        "copy": "Framework frissítések, migráció, technikai adósságcsökkentés és teljesítményoptimalizálás."
+      }
+    ]
+  },
+  "whySdk": {
+    "eyebrow": "Miért a SDK?",
+    "title": "Magas szintű mérnöki munka felesleges rétegek nélkül.",
+    "intro": "Közvetlen kommunikáció, gyors diagnózis és pragmatikus végrehajtás.",
+    "items": [
+      {
+        "kicker": "FR",
+        "copy": "Egy francia székhelyű B2B cég európai és távoli ügyfelek számára."
+      },
+      {
+        "kicker": "AI",
+        "copy": "LLM integrációk, ügynökök, automatizálás és belső szerszámok."
+      },
+      {
+        "kicker": "RT",
+        "copy": "Valós idejű és nagy volumenű platformmunka."
+      },
+      {
+        "kicker": "KÖZVETLEN",
+        "copy": "A munkát végző mérnökökkel beszél, nem egy fiókréteggel."
+      }
+    ]
+  },
+  "engagements": {
+    "eyebrow": "Dolgozzon a SDK-vel",
+    "title": "Hozz egy konkrét problémát. Kapjon konkrét választ.",
+    "intro": "Tudod, ha valami a stackedben kerül neked. Itt vannak azok a helyzetek, amelyekre a SDK be van állítva.",
+    "items": [
+      {
+        "title": "Egy rendszer túl régi a javításhoz.",
+        "copy": "Átállási tervre van szüksége, nem kívánságra – annak ellenőrzésére, hogy mi fut, mi törik, és a beköltözés sorrendje."
+      },
+      {
+        "title": "Az a kötet, amelyre a jelenlegi verem nem készült.",
+        "copy": "Valós idejű feldolgozás, nagy áteresztőképességű háttérrendszerek és az infrastruktúra a stabilitás érdekében."
+      },
+      {
+        "title": "Az AI munkába állhat.",
+        "copy": "LLM integrációk, ügynökök és automatizálás, amelyek megváltoztatják a belső munkafolyamatot – nem egy bemutató, amely a pályán áll meg."
+      },
+      {
+        "title": "Egy csapat, amelynek magas rangú kezekre van szüksége.",
+        "copy": "Közvetlen mérnöki kézbesítés a kódbázison, a döntéseket lassító középső réteg nélkül."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Hogyan dolgozunk",
+    "title": "Világos út a problémától a termelésig.",
+    "intro": "Négy lépés, látható haladás minden szakaszban.",
+    "items": [
+      {
+        "title": "Értsd",
+        "copy": "Üzleti cél, verem, korlátok és sikerkritériumok."
+      },
+      {
+        "title": "Tervezés",
+        "copy": "Építészet, terjedelem, kockázatok és mérföldkövek."
+      },
+      {
+        "title": "Építsd meg",
+        "copy": "Megvalósítás látható előrehaladással."
+      },
+      {
+        "title": "Átadás",
+        "copy": "Telepítse, dokumentálja és adja át a tulajdonjogot."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Dolgozzon a SDK-vel",
+    "heading": "Adja meg nekünk a megoldandó problémát.",
+    "body": "Mondja el, mit próbál építeni, modernizálni, automatizálni vagy javítani – mi őszintén megmondjuk, hogy megfelelő-e, és mire lenne szükség.",
+    "registeredUnder": "{company} alatt regisztrálva",
+    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  }
+}

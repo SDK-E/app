@@ -1,0 +1,65 @@
+{
+  "legal": {
+    "privacy": {
+      "title": "Privacy policy",
+      "intro": "How SDK Enterprises handles personal data, in accordance with the GDPR (RGPD).",
+      "processors": [
+        {
+          "name": "Vercel",
+          "role": "Website hosting and cookieless analytics"
+        },
+        {
+          "name": "Auth0 (Okta)",
+          "role": "Authentication for the client portal"
+        },
+        {
+          "name": "Resend",
+          "role": "Transactional email for project enquiries"
+        },
+        {
+          "name": "Prisma Postgres",
+          "role": "Managed PostgreSQL database"
+        }
+      ],
+      "controllerTitle": "Adatkezelő",
+      "controller": "Az adatkezelő a {company}, kereskedelmi néven {name}, székhelye: {address}. Ha bármilyen kérdése van a személyes adataival kapcsolatban, lépjen kapcsolatba velünk a {email} címen.",
+      "collectedDataTitle": "Gyűjtött adatok",
+      "collectedData": "Az egyetlen adatgyűjtési űrlap ezen az oldalon a nyilvános \"Projekt indítása\" űrlap. A kért adatok szigorúan a következőkre korlátozódnak:",
+      "collectedDataItems": [
+        "Cégnév (kötelező)",
+        "Professzionális e-mail cím (kötelező)",
+        "Vállalat webhelye (nem kötelező)",
+        "Szükséges képesség (szükséges)",
+        "Projekt vagy probléma leírása (kötelező)",
+        "Meglévő környezet (opcionális)",
+        "Idővonal (opcionális)",
+        "Költségkeret-tartomány (opcionális)",
+        "Támogató kontextus (opcionális)"
+      ],
+      "purposesTitle": "Célok és jogalapok",
+      "purposesNote": "Az Ön adatait a következő célokra dolgozzuk fel:",
+      "purposeItems": [
+        "válaszoljon projektkérdésére – szerződéskötést megelőző intézkedések (Art. 6(1)(b) GDPR) és jogos érdek (Art. 6(1)(f));",
+        "az oldal működtetése, biztosítása és fejlesztése – jogos érdek (Art. 6(1)(f));",
+        "be kell tartania a vonatkozó jogi kötelezettségeket (Art. 6(1)(c))."
+      ],
+      "recipientsTitle": "Címzettek",
+      "recipientsNote": "Az Ön adataihoz csak a SDK Enterprises-en belül jogosult személyek férhetnek hozzá. A következő feldolgozók dolgozhatják fel, szigorúan szolgáltatásaik igényei szerint:",
+      "transfersTitle": "Átutalás az EU-n kívülre",
+      "transfers": "Egyes adatfeldolgozók az Európai Gazdasági Térségen kívül (nevezetesen az Egyesült Államokban) dolgozhatnak fel adatokat. Ahol ez megtörténik, megfelelő biztosítékokat alkalmaznak, például az Európai Bizottság általános szerződési záradékait.",
+      "retentionTitle": "Megtartás",
+      "retention": "Az űrlapon gyűjtött adatokat az utolsó kapcsolatfelvételtől számított 12 hónapig megőrizzük, kivéve, ha hosszabb megőrzést jogszabály ír elő. Ezen időszak letelte után a rendszer törli vagy anonimizálja.",
+      "rightsTitle": "Az Ön jogai",
+      "rightsNote": "A Articles 15 to 22 GDPR értelmében Önnek joga van a hozzáféréshez, a helyesbítéshez, a törléshez, a korlátozáshoz, a hordozhatósághoz és a tiltakozáshoz. Hozzájárulását bármikor visszavonhatja.",
+      "rightsContact": "E jogok gyakorlásához írjon nekünk a {email} címre. Egy hónapon belül válaszolunk. Panaszt is nyújthat be a CNIL (www.cnil.fr) készülékkel.",
+      "childrenTitle": "Gyerekek",
+      "children": "Az oldal szakembereknek szól, és nem kiskorúaknak szól. A kérdőív nem 16 éven aluli személyek számára készült.",
+      "automatedTitle": "Automatizált döntéshozatal",
+      "automated": "Az Ön adataival kapcsolatban nem történik automatizált döntéshozatal vagy profilalkotás.",
+      "securityTitle": "Biztonság",
+      "security": "Ésszerű technikai és szervezési intézkedések vannak érvényben az adatok védelmére (titkosított kapcsolatok, hozzáférés-szabályozás). Abszolút garancia nem vállalható.",
+      "registerTitle": "Nyilvántartás és nyilatkozat",
+      "register": "A SDK Enterprises belső nyilvántartást vezet a feldolgozási tevékenységekről (Art. 30 GDPR). A CNIL nyilatkozatszámot nem igényelték vagy találták ki."
+    }
+  }
+}

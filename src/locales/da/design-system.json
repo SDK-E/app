@@ -1,0 +1,59 @@
+{
+  "designSystem": {
+    "eyebrow": "SDK Enterprises · Designsystem",
+    "title": "Det fælles visuelle grundlag for hjemmesiden og kundeportalen.",
+    "intro": "Denne side gengiver alle tokens, primitive og tilstande defineret i docs/design/design-system.md og docs/design/patterns.md. Det er referencen under udviklingen. Det er med vilje ikke forbundet fra produktionsnavigation.",
+    "primaryAction": "Primær handling",
+    "colors": {
+      "eyebrow": "01 · Palette",
+      "title": "En lille palet, brugt med overlæg.",
+      "intro": "Brand green er kun til handlinger og meningsfulde højdepunkter - aldrig dekoration. Grønne baggrunde bærer altid mørk tekst; grøn tekst vises kun på mørke overflader."
+    },
+    "type": {
+      "eyebrow": "02 · Typografi",
+      "title": "JetBrains Mono, indstillet som et redaktionelt system.",
+      "intro": "Overskrifter sat stramt og stort; etiketter sæt små, store bogstaver og sporede. Brødtekst bliver aldrig under 14px."
+    },
+    "components": {
+      "eyebrow": "03 · Komponenter",
+      "title": "Beherskede primitiver, tilpasset referencen.",
+      "intro": "Knapper, badges, kort og links. Én radiusfamilie, 1px kanter og ingen dekoration ud over, hvad de godkendte designs bruger.",
+      "buttons": "Knapper",
+      "badges": "Badges",
+      "cardsLinks": "Kort og links",
+      "inProgress": "I gang",
+      "review": "Gennemgå",
+      "pending": "Afventer",
+      "currentProjects": "Aktuelle projekter",
+      "viewAll": "Se alle",
+      "metricsGrid": "Metric-gitter (responsiv: 4 → 2 → 1)",
+      "activeProjects": "Aktive projekter",
+      "openRequests": "Åbne anmodninger",
+      "outstanding": "Udestående",
+      "pendingActions": "Afventende handlinger"
+    },
+    "states": {
+      "eyebrow": "04 · Stater",
+      "title": "Indlæsning, tom og fejl - konsistente overflader.",
+      "intro": "Ingen farveopfindelser. Skeleton bruger linjetonen, tom angiver en stiplet kant, fejl forbliver på papirets overflade med stærk mørk betoning.",
+      "loading": "Indlæsning, tom og fejl - konsistente overflader.",
+      "noRequestsYet": "Ingen anmodninger endnu",
+      "whenProjectExists": "Når et projekt eller en anmodning eksisterer, vises det her.",
+      "somethingFailed": "Noget kunne ikke indlæses",
+      "tryAgain": "Prøv igen, eller kontakt support, hvis problemet fortsætter.",
+      "requestService": "Anmod om en service",
+      "retry": "Prøv igen"
+    },
+    "darkSurface": {
+      "eyebrow": "05 · Mørk overflade",
+      "title": "Mørke sektioner bærer det samme system.",
+      "intro": "Primær tekst bliver lys, sekundær bliver tåge, og grøn bruges til højlys. Kantlinjen bliver mørkere for at holde kompositionen stille."
+    },
+    "brandSurface": {
+      "eyebrow": "06 · Mærkeoverflade",
+      "title": "Højst ét ​​mærkesektion pr. side.",
+      "intro": "Grønne baggrunde bærer mørk tekst. Brug dette sparsomt - det er den kraftigste overflade i systemet.",
+      "bringUsProblem": "Bring os problemet"
+    }
+  }
+}

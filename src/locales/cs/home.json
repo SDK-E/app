@@ -1,0 +1,132 @@
+{
+  "hero": {
+    "eyebrow": "B2B AI · Software · Cloud · Systémové inženýrství",
+    "heading": "Jeden technický partner pro zásobník, který vaše společnost potřebuje.",
+    "leadParagraph": "SDK Enterprises vytváří, modernizuje a provozuje software napříč zásobníky – backendové platformy, cloudová infrastruktura, automatizace AI, systémy v reálném čase a interní nástroje. Zabýváte se jedním specializovaným problémem nebo vlastníte širší pracovní proud; v každém případě lidé, kteří tu práci dělají, jsou lidé, se kterými mluvíte.",
+    "ctaStartProject": "Začněte projekt",
+    "ctaExploreServices": "Prozkoumat služby",
+    "trustFrance": "Francouzská společnost B2B",
+    "trustSenior": "Senior inženýrská dodávka",
+    "trustAI": "AI + backend + cloud",
+    "trustClients": "Evropští a vzdálení klienti"
+  },
+  "services": {
+    "eyebrow": "Služby",
+    "title": "Použijte celý stoh – nebo jen část, kterou potřebujete.",
+    "intro": "SDK se může zabývat jedním specializovaným problémem nebo vlastnit širší technický pracovní tok.",
+    "items": [
+      {
+        "number": "01",
+        "category": "AI inženýrství",
+        "title": "Agenti AI a automatizace",
+        "copy": "Integrace LLM, agenti, RAG, automatizace pracovních postupů, vývojářské nástroje a operace za pomoci AI."
+      },
+      {
+        "number": "02",
+        "category": "Backend",
+        "title": "Platformy, APIs & SaaS",
+        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs a architektura backendu v reálném čase."
+      },
+      {
+        "number": "03",
+        "category": "Frontend",
+        "title": "Webová a aplikační rozhraní",
+        "copy": "React, Vue, Nuxt, TypeScript, Tailwind a Shadcn."
+      },
+      {
+        "number": "04",
+        "category": "Cloud",
+        "title": "Cloud a infrastruktura",
+        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD a architektura nasazení."
+      },
+      {
+        "number": "05",
+        "category": "Data",
+        "title": "Databáze, cache a vyhledávání",
+        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey a Elasticsearch."
+      },
+      {
+        "number": "06",
+        "category": "Modernizace",
+        "title": "Starší modernizace",
+        "copy": "Upgrady rámce, migrace, snížení technického dluhu a optimalizace výkonu."
+      }
+    ]
+  },
+  "whySdk": {
+    "eyebrow": "Proč SDK",
+    "title": "Senior engineering bez zbytečných vrstev.",
+    "intro": "Přímá komunikace, rychlá diagnostika a pragmatické provedení.",
+    "items": [
+      {
+        "kicker": "FR",
+        "copy": "Francouzská společnost B2B pro evropské a vzdálené klienty."
+      },
+      {
+        "kicker": "AI",
+        "copy": "LLM integrace, agenti, automatizace a interní nástroje."
+      },
+      {
+        "kicker": "RT",
+        "copy": "Práce na platformě v reálném čase a ve velkém objemu."
+      },
+      {
+        "kicker": "PŘÍMÝ",
+        "copy": "Mluvíte s inženýry, kteří dělají práci, ne s vrstvou účtu."
+      }
+    ]
+  },
+  "engagements": {
+    "eyebrow": "Práce s SDK",
+    "title": "Uveďte konkrétní problém. Získejte konkrétní odpověď.",
+    "intro": "Poznáte, když vás něco ve vašem zásobníku stojí. Zde jsou situace, pro které je SDK nastaven.",
+    "items": [
+      {
+        "title": "Systém je příliš starý na to, aby pokračoval v opravách.",
+        "copy": "Potřebujete plán migrace, ne přání – audit toho, co běží, co se porouchá a příkaz k nastěhování."
+      },
+      {
+        "title": "Objem, pro který nebyl váš aktuální zásobník vytvořen.",
+        "copy": "Příjem v reálném čase, vysokovýkonné backendy a infrastruktura, aby byly stabilní."
+      },
+      {
+        "title": "AI můžete uvést do práce.",
+        "copy": "Integrace LLM, agenti a automatizace, které mění interní pracovní tok – nikoli ukázka, která končí na hřišti."
+      },
+      {
+        "title": "Tým, který potřebuje starší ruce.",
+        "copy": "Přímé technické dodání na vaší kódové základně, bez střední vrstvy zpomalující rozhodování."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Jak pracujeme",
+    "title": "Jasná cesta od problému k výrobě.",
+    "intro": "Čtyři kroky, viditelný pokrok v každé fázi.",
+    "items": [
+      {
+        "title": "Pochopte",
+        "copy": "Obchodní cíl, zásobník, omezení a kritéria úspěchu."
+      },
+      {
+        "title": "Design",
+        "copy": "Architektura, rozsah, rizika a milníky."
+      },
+      {
+        "title": "Stavět",
+        "copy": "Realizace s viditelným pokrokem."
+      },
+      {
+        "title": "Předání",
+        "copy": "Nasadit, zdokumentovat a převést vlastnictví."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Práce s SDK",
+    "heading": "Přineste nám problém, který potřebujete vyřešit.",
+    "body": "Řekněte nám, co se snažíte postavit, modernizovat, automatizovat nebo opravit – upřímně vám řekneme, zda se to hodí a co by to vyžadovalo.",
+    "registeredUnder": "Registrováno pod {company}",
+    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "enquiry": {
+    "title": "Začněte projekt",
+    "subtitle": "Řekněte nám, co se snažíte vybudovat, modernizovat, automatizovat nebo opravit. Odpovíme do 2 pracovních dnů s upřímným posouzením vhodnosti a toho, co by to vyžadovalo.",
+    "body": "Formulář shromažďuje minimum informací potřebných k promyšlené odpovědi. Mimo SDK Enterprises se nic nesdílí a můžete nás také kontaktovat přímo na adrese hello@sdk.enterprises.",
+    "body2": "Každý dotaz sami posuzujeme. Žádní správci účtů, žádné kvalifikační skripty, žádné předávání.",
+    "nextStepsEyebrow": "Co bude dál",
+    "nextStepsHeading": "Od dotazu po angažmá",
+    "nextStepsBody": "Po odeslání formuláře si jej sami přečteme. Pokud bude vyhovovat, odpovíme krátkým písemným hodnocením a navrženým modelem zakázky. Pokud nevyhovuje, řekneme vám proč a navrhneme alternativu.",
+    "nextStep1Title": "Recenze",
+    "nextStep1Body": "Přečteme si váš příspěvek a porovnáme ho s naší aktuální kapacitou a odborností. Obvykle do 2 pracovních dnů.",
+    "nextStep2Title": "Hodnocení",
+    "nextStep2Body": "Krátká písemná odpověď: v čem si myslíme, že je problém, zda je to vhodné a jaký by byl první krok.",
+    "nextStep3Title": "Volejte nebo asynchronně",
+    "nextStep3Body": "30minutový hovor nebo asynchronní výměna informací k objasnění rozsahu, omezení a časové osy. Žádný pitch deck, pokud ho nechcete.",
+    "nextStep4Title": "Návrh",
+    "nextStep4Body": "Písemný návrh s rozsahem, pevnou cenou nebo sazbou, časovou osou a milníky. Podepište, začínáme.",
+    "form": {
+      "companyName": "Společnost",
+      "email": "Profesionální email",
+      "website": "Web společnosti",
+      "capability": "Potřebná schopnost",
+      "description": "Popis problému / projektu",
+      "environment": "Stávající prostředí",
+      "timeline": "Časová osa",
+      "budgetRange": "Rozsah rozpočtu",
+      "context": "Podpůrný kontext",
+      "submit": "Odeslat dotaz"
+    },
+    "capabilities": {
+      "aiEngineering": "AI inženýrství",
+      "softwareEngineering": "Softwarové inženýrství",
+      "frontendProduct": "Frontend a produkt",
+      "cloudInfrastructure": "Cloud a infrastruktura",
+      "dataCacheSearch": "Data / Mezipaměť / Vyhledávání",
+      "modernization": "Modernizace",
+      "other": "Jiné"
+    },
+    "timelines": {
+      "asap": "ASAP",
+      "oneToThreeMonths": "1–3 měsíce",
+      "threeToSixMonths": "3–6 měsíců",
+      "sixPlusMonths": "6+ měsíců",
+      "notSure": "Nejsem si jistý"
+    },
+    "budgets": {
+      "under10k": "< 10 000 EUR",
+      "tenToTwentyFiveK": "10 000–25 000 EUR",
+      "twentyFiveToFiftyK": "25 tisíc až 50 tisíc eur",
+      "fiftyPlusK": "50 000 €+",
+      "notSure": "Nejsem si jistý"
+    },
+    "validation": {
+      "companyNameRequired": "Název společnosti je povinný",
+      "emailRequired": "Je vyžadován profesionální e-mail",
+      "emailInvalid": "Zadejte platnou e-mailovou adresu",
+      "websiteInvalid": "Zadejte platnou adresu URL",
+      "capabilityRequired": "Vyberte schopnost",
+      "descriptionRequired": "Popište projekt nebo problém",
+      "descriptionTooShort": "Popis musí mít alespoň 50 znaků",
+      "descriptionTooLong": "Popis musí mít méně než 4000 znaků",
+      "environmentTooLong": "Prostředí musí mít méně než 4000 znaků",
+      "contextTooLong": "Podpůrný kontext musí mít méně než 4000 znaků"
+    },
+    "success": {
+      "title": "Dotaz odeslán",
+      "body": "Děkujeme – váš projekt zkontrolujeme a odpovíme do 2 pracovních dnů."
+    },
+    "error": {
+      "title": "Něco se pokazilo",
+      "body": "Nepodařilo se nám odeslat váš dotaz. Zkuste to znovu nebo nám napište přímo."
+    }
+  }
+}

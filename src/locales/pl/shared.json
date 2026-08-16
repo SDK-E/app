@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "siteDescription": "Francuska firma inżynieryjna B2B. Budujemy, modernizujemy i obsługujemy oprogramowanie w ramach całego stosu — platform backendowych, infrastruktury chmurowej, automatyzacji sztucznej inteligencji, systemów czasu rzeczywistego i narzędzi wewnętrznych.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Usługi",
+    "servicesDescription": "SDK Enterprises buduje, modernizuje i obsługuje oprogramowanie w ramach całego stosu — agentów AI, platform backendowych, interfejsów internetowych, infrastruktury chmurowej, systemów danych i modernizacji starszych rozwiązań.",
+    "workTitle": "Praca",
+    "workDescription": "Sytuacje, do których przystosowany jest SDK Enterprises — migracja, platformy masowe, automatyzacja sztucznej inteligencji i dostarczanie starszych inżynierów.",
+    "howWeWorkTitle": "Jak pracujemy",
+    "howWeWorkDescription": "Jasna droga od problemu do produkcji. Cztery kroki, widoczny postęp na każdym etapie.",
+    "aboutTitle": "O",
+    "aboutDescription": "Francuska firma inżynieryjna B2B. Dostawa dla seniorów, bezpośrednia komunikacja, brak warstwy konta.",
+    "startAProjectTitle": "Rozpocznij projekt",
+    "startAProjectDescription": "Powiedz nam, co chcesz zbudować, zmodernizować, zautomatyzować lub naprawić. Powiemy Ci szczerze, czy to pasuje i czego by to wymagało."
+  },
+  "nav": {
+    "toggleMenu": "Przełącz menu",
+    "home": "Dom SDK Enterprises",
+    "main": "Główny",
+    "services": "Usługi",
+    "work": "Praca",
+    "process": "Proces",
+    "about": "O",
+    "discussProject": "Omów projekt",
+    "signIn": "Zaloguj się",
+    "legal": "Legalne",
+    "mentionsLegales": "Wspomina o legalesach",
+    "privacy": "Prywatność",
+    "terms": "Warunki",
+    "cookies": "Pliki cookie"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "AI · Oprogramowanie · Chmura · Inżynieria systemów"
+  },
+  "auth": {
+    "loginRedirecting": "Przekierowywanie do logowania...",
+    "logoutRedirecting": "Przekierowanie do wylogowania..."
+  },
+  "errors": {
+    "pageNotFound": "Ta strona nie istnieje lub została przeniesiona.",
+    "backToHome": "Powrót do domu",
+    "somethingWentWrong": "Coś poszło nie tak",
+    "tryAgain": "Spróbuj ponownie",
+    "contactSupport": "Jeśli problem będzie się powtarzał, skontaktuj się z pomocą techniczną."
+  }
+}

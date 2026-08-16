@@ -1,0 +1,19 @@
+{
+  "servicesPage": {
+    "eyebrow": "Dienstleistungen",
+    "body": "Wir entwickeln und betreiben Software für den gesamten Stack: KI-Agenten und -Automatisierung, Backend-Plattformen, Webschnittstellen, Cloud-Infrastruktur, Datensysteme und Legacy-Modernisierung. Ein spezielles Problem oder ein ganzer Arbeitsablauf – die Ingenieure, die die Arbeit erledigen, sind diejenigen, mit denen Sie sprechen.",
+    "cta": "Starten Sie ein Projekt",
+    "engagementEyebrow": "Engagement-Modelle",
+    "engagementHeading": "Wie wir uns engagieren",
+    "engagementBody": "SDK beteiligt sich auf zwei Arten: als Festpreisprüfung, die ein spezifisches Problem diagnostiziert und einen Weg nach vorne vorschlägt, oder als dedizierter Engineering-Workstream, bei dem ein leitendes Team die gesamte Implementierung übernimmt. Für Systeme, die sowohl eine Diagnose als auch eine kontinuierliche Bereitstellung benötigen, gibt es Hybridvereinbarungen.",
+    "engagementModel1Title": "Audit zum Festpreis",
+    "engagementModel1Body": "Eine umfassende Diagnose eines bestimmten Problems: Architekturüberprüfung, Migrationspfad, Leistungsengpass oder Sicherheitsüberprüfung. Das Ergebnis ist ein schriftlicher Plan mit Prioritäten, Risiken und geschätztem Aufwand.",
+    "engagementModel2Title": "Engineering-Workstream",
+    "engagementModel2Body": "Ein hochrangiges Team, das für einen definierten Zeitraum in Ihren Stack eingebettet ist. Wöchentliche Lieferung, sichtbarer Fortschritt und direkte Kommunikation mit den Ingenieuren, die die Software entwickeln.",
+    "engagementModel3Title": "Hybrid",
+    "engagementModel3Body": "Zuerst Audit, dann Workstream. Das Team, das das Problem diagnostiziert, bleibt an der Umsetzung der Lösung. Keine Übergabe an ein anderes Account-Team.",
+    "whatWeDontDoEyebrow": "Was wir nicht tun",
+    "whatWeDontDoHeading": "Wir verstecken den Mechanismus nicht.",
+    "whatWeDontDoBody": "Keine Junioren in Ihrer Codebasis. Kein Account Manager zwischen Ihnen und den Ingenieuren. Keine Offshore-Übergabe nach dem Vorschlag. Kein Engagement, bei dem es darum geht, Ihnen einen größeren Umfang zu verkaufen, als Sie benötigen."
+  }
+}

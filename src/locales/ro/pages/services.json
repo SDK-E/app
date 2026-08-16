@@ -1,0 +1,19 @@
+{
+  "servicesPage": {
+    "eyebrow": "Servicii",
+    "body": "Construim și operăm software în întreaga stivă: agenți AI și automatizare, platforme backend, interfețe web, infrastructură cloud, sisteme de date și modernizare moștenită. O problemă specializată sau un întreg flux de lucru - inginerii care fac munca sunt cei cu care discutați.",
+    "cta": "Începeți un proiect",
+    "engagementEyebrow": "Modele de implicare",
+    "engagementHeading": "Cum ne angajăm",
+    "engagementBody": "SDK intră în două moduri: un audit cu preț fix care diagnostichează o problemă specifică și propune o cale de urmat, sau un flux de lucru dedicat de inginerie în care o echipă senior deține implementarea cap la cap. Există aranjamente hibride pentru sistemele care necesită atât diagnosticare, cât și livrare susținută.",
+    "engagementModel1Title": "Audit cu preț fix",
+    "engagementModel1Body": "O diagnosticare a unei anumite probleme: revizuirea arhitecturii, calea de migrare, blocaj de performanță sau evaluarea securității. Rezultatul este un plan scris cu priorități, riscuri și efort estimat.",
+    "engagementModel2Title": "Fluxul de lucru de inginerie",
+    "engagementModel2Body": "O echipă de seniori încorporată în stiva dumneavoastră pentru o perioadă definită. Livrare săptămânală, progres vizibil și comunicare directă cu inginerii care construiesc software-ul.",
+    "engagementModel3Title": "Hibrid",
+    "engagementModel3Body": "Mai întâi auditați, apoi fluxul de lucru. Echipa care diagnostichează problema rămâne să implementeze soluția. Fără transfer către o altă echipă de cont.",
+    "whatWeDontDoEyebrow": "Ceea ce nu facem",
+    "whatWeDontDoHeading": "Nu ascundem mecanismul.",
+    "whatWeDontDoBody": "Fără juniori pe baza ta de cod. Nici un manager de cont între tine și ingineri. Fără transfer offshore după propunere. Nici un angajament care depinde de vânzarea unui domeniu mai mare decât ai nevoie."
+  }
+}

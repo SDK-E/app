@@ -1,0 +1,26 @@
+{
+  "legal": {
+    "terms": {
+      "title": "Terms of use",
+      "intro": "The rules for using this website.",
+      "purposeTitle": "Syfte",
+      "purpose": "Dessa villkor reglerar din användning av webbplatsen {name}. Genom att gå in på webbplatsen godkänner du dessa villkor.",
+      "servicesTitle": "Presentation av tjänster",
+      "services": "Webbplatsen presenterar tjänsterna från {name} och låter dig skicka in en projektförfrågan. Detta innehåll tillhandahålls endast för information och är varken ett avtalserbjudande eller ett åtagande att tillhandahålla tjänster.",
+      "enquiriesTitle": "Projektförfrågningar",
+      "enquiries": "Information som lämnas via formuläret \"Starta ett projekt\" hanteras i enlighet med integritetspolicyn. Att ta emot en förfrågan innebär inte någon skyldighet att acceptera den.",
+      "intellectualPropertyTitle": "Immateriella rättigheter",
+      "intellectualProperty": "Webbplatsens texter, logotyp, bilder och innehåll tillhör SDK Enterprises och får inte återanvändas utan föregående tillstånd.",
+      "availabilityTitle": "Webbplatsens tillgänglighet",
+      "availability": "Webbplatsen tillhandahålls \"i befintligt skick\". SDK Enterprises gör rimliga ansträngningar för att hålla den tillgänglig men garanterar inte oavbruten eller felfri tillgänglighet.",
+      "liabilityTitle": "Ansvar",
+      "liability": "I den utsträckning lagen tillåter är SDK Enterprises ansvar begränsat till direkta skador och sträcker sig inte till indirekta skador. Länkar till tredje parts webbplatser är deras utgivares ensamma ansvar.",
+      "changesTitle": "Ändringar",
+      "changes": "SDK Enterprises kan ändra dessa villkor när som helst. Den tillämpliga versionen är den som publiceras på denna sida.",
+      "lawTitle": "Gällande lag",
+      "law": "Dessa villkor regleras av fransk lag. I händelse av en tvist har de franska domstolarna jurisdiktion.",
+      "contactTitle": "Kontakta",
+      "contact": "För alla frågor, kontakta {company} på {email}."
+    }
+  }
+}

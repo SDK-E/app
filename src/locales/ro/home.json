@@ -1,0 +1,132 @@
+{
+  "hero": {
+    "eyebrow": "B2B AI · Software · Cloud · Ingineria sistemelor",
+    "heading": "Un partener de inginerie pentru stiva de care compania dumneavoastră are nevoie.",
+    "leadParagraph": "SDK Enterprises construiește, modernizează și operează software în întreaga stivă — platforme backend, infrastructură cloud, automatizare AI, sisteme în timp real și instrumente interne. Te implici într-o problemă specializată sau deții un flux de lucru mai larg; oricum, oamenii care lucrează sunt cei cu care vorbești.",
+    "ctaStartProject": "Începeți un proiect",
+    "ctaExploreServices": "Explorați serviciile",
+    "trustFrance": "Companie B2B cu sediul în Franța",
+    "trustSenior": "Livrare de inginerie senior",
+    "trustAI": "AI + backend + cloud",
+    "trustClients": "Clienți europeni și la distanță"
+  },
+  "services": {
+    "eyebrow": "Servicii",
+    "title": "Folosiți toată stiva - sau doar partea de care aveți nevoie.",
+    "intro": "SDK se poate implica într-o problemă specializată sau poate deține un flux de lucru tehnic mai larg.",
+    "items": [
+      {
+        "number": "01",
+        "category": "Inginerie AI",
+        "title": "Agenți AI și automatizare",
+        "copy": "LLM integrări, agenți, RAG, automatizare a fluxului de lucru, instrumente pentru dezvoltatori și operațiuni asistate de AI."
+      },
+      {
+        "number": "02",
+        "category": "Backend",
+        "title": "Platforme, APIs și SaaS",
+        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs și arhitectură backend în timp real."
+      },
+      {
+        "number": "03",
+        "category": "Frontend",
+        "title": "Interfețe web și aplicații",
+        "copy": "React, Vue, Nuxt, TypeScript, Tailwind și Shadcn."
+      },
+      {
+        "number": "04",
+        "category": "nor",
+        "title": "Cloud și infrastructură",
+        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD și arhitectura de implementare."
+      },
+      {
+        "number": "05",
+        "category": "Date",
+        "title": "Baze de date, cache și căutare",
+        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey și Elasticsearch."
+      },
+      {
+        "number": "06",
+        "category": "Modernizare",
+        "title": "Modernizare moștenire",
+        "copy": "Actualizări de cadru, migrare, reducerea datoriilor tehnice și optimizarea performanței."
+      }
+    ]
+  },
+  "whySdk": {
+    "eyebrow": "De ce SDK",
+    "title": "Inginerie superioară fără straturi inutile.",
+    "intro": "Comunicare directa, diagnosticare rapida si executie pragmatica.",
+    "items": [
+      {
+        "kicker": "FR",
+        "copy": "O companie B2B cu sediul în Franța pentru clienți europeni și la distanță."
+      },
+      {
+        "kicker": "AI",
+        "copy": "LLM integrări, agenți, automatizare și instrumente interne."
+      },
+      {
+        "kicker": "RT",
+        "copy": "Lucru pe platformă în timp real și cu volum mare."
+      },
+      {
+        "kicker": "DIRECT",
+        "copy": "Vorbești cu inginerii care fac munca, nu cu un strat de cont."
+      }
+    ]
+  },
+  "engagements": {
+    "eyebrow": "Lucrați cu SDK",
+    "title": "Aduceți o problemă specifică. Obțineți un răspuns specific.",
+    "intro": "Știi când ceva din teancul tău te costă. Iată situațiile pentru care este configurat SDK.",
+    "items": [
+      {
+        "title": "Un sistem prea vechi pentru a continua corecțiile.",
+        "copy": "Aveți nevoie de un plan de migrare, nu de o dorință - un audit al ceea ce rulează, ce se întrerupe și ordinea de mutare."
+      },
+      {
+        "title": "Volumul pentru care stiva dvs. actuală nu a fost creată.",
+        "copy": "Asimilare în timp real, backend-uri de mare debit și infrastructura pentru a le menține stabile."
+      },
+      {
+        "title": "AI pe care o poți pune la treabă.",
+        "copy": "LLM integrări, agenți și automatizări care schimbă un flux de lucru intern - nu o demonstrație care se oprește la teren."
+      },
+      {
+        "title": "O echipă care are nevoie de mâini seniori.",
+        "copy": "Livrare directă de inginerie pe baza de cod, fără ca un strat mijlociu să încetinească deciziile."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Cum lucrăm",
+    "title": "O cale clară de la problemă la producție.",
+    "intro": "Patru pași, progres vizibil în fiecare etapă.",
+    "items": [
+      {
+        "title": "Înțelege",
+        "copy": "Scopul afacerii, stiva, constrângerile și criteriile de succes."
+      },
+      {
+        "title": "Design",
+        "copy": "Arhitectură, domeniul de aplicare, riscuri și repere."
+      },
+      {
+        "title": "Construiește",
+        "copy": "Implementare cu progres vizibil."
+      },
+      {
+        "title": "Predarea",
+        "copy": "Implementați, documentați și transferați proprietatea."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Lucrați cu SDK",
+    "heading": "Adu-ne problema de care ai nevoie să o rezolvi.",
+    "body": "Spuneți-ne ce încercați să construiți, să modernizați, să automatizați sau să remediați — vă vom spune sincer dacă este potrivit și ce ar fi nevoie.",
+    "registeredUnder": "Înregistrat sub {company}",
+    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  }
+}

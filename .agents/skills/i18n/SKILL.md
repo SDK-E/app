@@ -19,12 +19,13 @@ pt, it, nl, sv, no, da, fi, pl, cs, hu, ro, bg, el`.
 
 - `src/i18n.ts` — locale list, default locale (`en`), prefixes (`as-needed`).
 - `src/middleware.ts` — `createMiddleware` with auth exclusion.
-- `src/locales/*.json` — translation catalogs.
+- `src/locales/{locale}/**/*.json` — feature-oriented translation catalogs.
 - `docs/conventions/structure.md` — directory layout and route conventions.
 
 ## Adding a new translation key
 
-1. Add the key to `src/locales/en.json` (English is the source of truth).
+1. Add the key to the appropriate file under `src/locales/en/` (English file
+   paths, keys, nesting, and key order are the source of truth).
 2. Run `npm run i18n:translate`. The incremental translator updates only
    strings whose English source was added or changed, across all 16 targets.
 3. Review the generated copy in context. Machine translation is a first pass,
@@ -45,8 +46,25 @@ npm run i18n:check                     # offline validation, no writes
 ```
 
 The script is `scripts/translate-locales.py`; its per-locale English baseline is
-`src/locales/.translation-state.json`. Commit both the updated catalogs and
-baseline after review. Never hand-write `[TRANSLATE:...]` placeholders.
+`src/locales/.translation-state.json`. It recursively mirrors English files,
+adds missing target files and keys, orders nested keys like English, and removes
+target files or keys that no longer exist in English. Commit both the updated
+catalogs and baseline after review. Never hand-write `[TRANSLATE:...]`
+placeholders.
+
+## Catalog layout
+
+- `shared.json` — `meta`, `nav`, `footer`, `auth`, `errors`.
+- `home.json` — homepage namespaces: `hero`, `services`, `whySdk`,
+  `engagements`, `process`, `contact`.
+- `enquiry.json` — `enquiry`.
+- `design-system.json` — `designSystem`.
+- `pages/{route}.json` — one public page namespace per file.
+- `legal/{document}.json` — one legal document per file.
+
+Every shard retains its full next-intl namespace wrapper. Components continue
+to use namespaces such as `servicesPage`, `enquiry`, and `legal.privacy`; file
+boundaries never become part of a translation key.
 
 The translator protects next-intl `{variables}`, SDK Enterprises, processor
 names, legal identifiers, URLs, and technology/product names. If new copy adds
@@ -64,7 +82,7 @@ protected terms before translating.
 
 ## Legal content rules
 
-- French text in `fr.json` is authoritative for legal pages.
+- French text under `src/locales/fr/legal/` is authoritative for legal pages.
 - English text in `en.json` is the source for other locales.
 - No bilingual sections on legal pages.
 - Processors must be listed verbatim: Vercel, Auth0 (Okta), Resend, Prisma Postgres.

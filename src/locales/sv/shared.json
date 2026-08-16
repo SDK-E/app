@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "siteDescription": "Franskt B2B ingenjörsföretag. Vi bygger, moderniserar och driver programvara över hela stacken - backend-plattformar, molninfrastruktur, AI-automation, realtidssystem och interna verktyg.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Tjänster",
+    "servicesDescription": "SDK Enterprises bygger, moderniserar och driver programvara över hela stacken - AI-agenter, backend-plattformar, webbgränssnitt, molninfrastruktur, datasystem och äldre modernisering.",
+    "workTitle": "Arbete",
+    "workDescription": "Situationerna SDK Enterprises är inställd för – migrering, plattformar med stora volymer, AI-automation och leverans av senior ingenjörer.",
+    "howWeWorkTitle": "Hur vi arbetar",
+    "howWeWorkDescription": "En tydlig väg från problem till produktion. Fyra steg, synliga framsteg i varje steg.",
+    "aboutTitle": "Om",
+    "aboutDescription": "Frankrike-baserat B2B ingenjörsföretag. Senior leverans, direkt kommunikation, inget kontolager.",
+    "startAProjectTitle": "Starta ett projekt",
+    "startAProjectDescription": "Berätta för oss vad du försöker bygga, modernisera, automatisera eller fixa. Vi berättar ärligt om det passar och vad som krävs."
+  },
+  "nav": {
+    "toggleMenu": "Växla meny",
+    "home": "SDK Enterprises hem",
+    "main": "Main",
+    "services": "Tjänster",
+    "work": "Arbete",
+    "process": "Process",
+    "about": "Om",
+    "discussProject": "Diskutera ett projekt",
+    "signIn": "Logga in",
+    "legal": "Lagligt",
+    "mentionsLegales": "Nämner legales",
+    "privacy": "Sekretess",
+    "terms": "Villkor",
+    "cookies": "Cookies"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "AI · Programvara · Moln · Systemteknik"
+  },
+  "auth": {
+    "loginRedirecting": "Omdirigerar till inloggning...",
+    "logoutRedirecting": "Omdirigerar till utloggning..."
+  },
+  "errors": {
+    "pageNotFound": "Den här sidan finns inte eller har flyttats.",
+    "backToHome": "Tillbaka till hemmet",
+    "somethingWentWrong": "Något gick fel",
+    "tryAgain": "Försök igen",
+    "contactSupport": "Kontakta supporten om problemet kvarstår."
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "aboutPage": {
+    "eyebrow": "Tietoja SDK Enterprises:stä",
+    "title": "Vanhempi suunnittelu, suora toimitus.",
+    "intro": "Ranskalainen B2B-insinööritoimisto. Rakennamme, modernisoimme ja käytämme ohjelmistoja kaikkialla – taustaalustoja, pilviinfrastruktuuria, tekoälyautomaatiota, reaaliaikaisia ​​järjestelmiä ja sisäisiä työkaluja.",
+    "body": "Vuonna 2019 perustettu SDK Enterprises toimii pienen määrän asiakkaita kanssa kerrallaan. Tiimi on vain senioreille: ei junioreita, ei asiakaspäälliköitä, ei vaihtoja offshore-toimituksiin. Useimmat toimeksiannot jakautuvat kiinteähintaisiin auditointeihin, erityisiin suunnittelutyöskentelyihin tai meneillään oleviin modernisointitoimiin.",
+    "cta": "Aloita projekti",
+    "approachEyebrow": "Meidän lähestymistapamme",
+    "approachHeading": "Miksi pidämme joukkueen pienenä",
+    "approachBody": "Kun toimisto kasvaa yli pisteen, jossa kumppanit tuntevat jokaisen insinöörin, tilikerros tulee näkyviin. Tämä kerros on paikka, jossa konteksti katoaa, aikajanat lipsuvat ja kustannukset moninkertaistuvat. SDK on suunniteltu välttämään tämä.",
+    "approach1Title": "Ei tilivastaavia",
+    "approach1Body": "Keskustelet työstä vastaavan insinöörin kanssa. Ei käännöstä, ei viiveitä, ei vääriä kommunikaatioita myynnin ja toimituksen välillä.",
+    "approach2Title": "Ei offshore-vaihtoa",
+    "approach2Body": "Järjestelmän suunnitteleva tiimi pysyy toteutuksen ja luovutuksen läpi. Tieto pysyy yhdessä paikassa.",
+    "approach3Title": "Ei junioriresursseja",
+    "approach3Body": "Jokainen SDK-insinööri on korkeatasoinen. Emme käytä asiakassitoumusta vähemmän kokeneen henkilöstön kouluttamiseen.",
+    "beliefsEyebrow": "Mitä uskomme",
+    "beliefsHeading": "Oletukset työn takana",
+    "beliefsBody": "Nämä eivät ole markkinointilausuntoja. Ne ovat rajoitteita, jotka muokkaavat jokaista tekemäämme päätöstä.",
+    "belief1Title": "Ohjelmisto on vastuussa, kunnes se on ymmärretty",
+    "belief1Body": "Jokaisella koodirivillä on ylläpitokustannukset. Tavoitteena ei ole kirjoittaa lisää koodia - se on vähentää jo olemassa olevan koodin kustannuksia.",
+    "belief2Title": "Diagnoosi ennen reseptiä",
+    "belief2Body": "Emme myy kiinteää sitoutumistyyppiä. Diagnosoimme järjestelmän ensin: arkkitehtuuri, tietovirta, käyttöönotto, tiimi ja rajoitukset. Sitten ehdotamme sopivaa kihlausta.",
+    "belief3Title": "Läpinäkyvyys on ominaisuus",
+    "belief3Body": "Näkyvä edistys, kirjalliset päivitykset ja suora yhteys insinööreihin. Toimituksen salailu on oire prosessista, jota ei voida selittää.",
+    "companyFacts": {
+      "name": "Virallinen nimi",
+      "tradingName": "Kaupan nimi",
+      "siren": "SIREN",
+      "siret": "SIRET",
+      "address": "Rekisteröity toimipaikka",
+      "email": "Sähköposti",
+      "phone": "Puhelin"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "aboutPage": {
+    "eyebrow": "À propos de SDK Enterprises",
+    "title": "Ingénierie senior, livraison directe.",
+    "intro": "Société d'ingénierie B2B basée en France. Nous construisons, modernisons et exploitons des logiciels sur toute la pile : plates-formes back-end, infrastructure cloud, automatisation de l'IA, systèmes en temps réel et outils internes.",
+    "body": "Fondée en 2019, SDK Enterprises travaille avec un petit nombre de clients à la fois. L'équipe est composée uniquement de seniors : pas de juniors, pas de gestionnaires de comptes, pas de transfert vers une livraison offshore. La plupart des missions prennent la forme d'audits à prix fixe, de flux de travail d'ingénierie dédiés ou de sprints de modernisation en cours.",
+    "cta": "Démarrer un projet",
+    "approachEyebrow": "Notre approche",
+    "approachHeading": "Pourquoi nous gardons l'équipe petite",
+    "approachBody": "Lorsqu'une agence grandit au-delà du point où les partenaires connaissent chaque ingénieur, la couche compte apparaît. C’est dans cette couche que le contexte se perd, que les délais glissent et que les coûts se multiplient. SDK est structuré pour éviter cela.",
+    "approach1Title": "Aucun gestionnaire de compte",
+    "approach1Body": "Vous parlez à l'ingénieur responsable des travaux. Pas de traduction, pas de retard, pas de problème de communication entre la vente et la livraison.",
+    "approach2Title": "Pas de transfert offshore",
+    "approach2Body": "L'équipe qui conçoit le système reste en place jusqu'à la mise en œuvre et le transfert. La connaissance reste au même endroit.",
+    "approach3Title": "Pas de ressources juniors",
+    "approach3Body": "Chaque ingénieur SDK est de niveau supérieur. Nous n'utilisons pas les engagements des clients pour former du personnel moins expérimenté.",
+    "beliefsEyebrow": "Ce que nous croyons",
+    "beliefsHeading": "Les hypothèses derrière le travail",
+    "beliefsBody": "Ce ne sont pas des déclarations marketing. Ce sont les contraintes qui façonnent chaque décision que nous prenons.",
+    "belief1Title": "Le logiciel est un handicap jusqu'à ce qu'il soit compris",
+    "belief1Body": "Chaque ligne de code entraîne des frais de maintenance. Le but n’est pas d’écrire plus de code, mais de réduire le coût du code qui existe déjà.",
+    "belief2Title": "Diagnostic avant prescription",
+    "belief2Body": "Nous ne vendons pas de type d'engagement fixe. Nous diagnostiquons d'abord le système : architecture, flux de données, déploiement, équipe et contraintes. Ensuite, nous proposons l’engagement qui vous convient.",
+    "belief3Title": "La transparence est une caractéristique",
+    "belief3Body": "Progrès visibles, mises à jour écrites et accès direct aux ingénieurs. Le secret autour de la livraison est le symptôme d’un processus qui ne peut être expliqué.",
+    "companyFacts": {
+      "name": "Nom légal",
+      "tradingName": "Nom commercial",
+      "siren": "SIREN",
+      "siret": "SIRET",
+      "address": "Siège social",
+      "email": "Courriel",
+      "phone": "Téléphone"
+    }
+  }
+}

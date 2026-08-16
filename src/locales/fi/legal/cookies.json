@@ -1,0 +1,16 @@
+{
+  "legal": {
+    "cookies": {
+      "title": "Cookie policy",
+      "intro": "What cookies are and whether this site uses them.",
+      "whatIsTitle": "Mikä on eväste?",
+      "whatIs": "Eväste on pieni tekstitiedosto, joka asetetaan laitteellesi, kun vierailet verkkosivustolla. Sen avulla sivusto tunnistaa selaimesi ja muistaa tiedot.",
+      "thisSiteTitle": "Tämän sivuston asettamat evästeet",
+      "thisSite": "Tämä sivusto ei aseta analytiikka-, mainonta- tai seurantaevästeitä. Käytössä oleva analytiikkaratkaisu (Vercel Analytics) on evästeetön. Selaustasi ei siksi seurata.",
+      "consentBannerTitle": "Suostumusbanneri",
+      "consentBanner": "Suostumusbanneria ei näytetä, koska evästeitä ei ole asetettu. Jos evästeiden asetusskripti lisättäisiin, vaadittaisiin suostumusbanneri ja tämä sivu päivitettäisiin.",
+      "browserSettingsTitle": "Evästeiden hallinta selaimessasi",
+      "browserSettings": "Voit määrittää selaimesi kieltäytymään tai poistamaan evästeet milloin tahansa. Ohjeet riippuvat selaimesta (Chrome, Firefox, Safari, Edge). Oppaat ovat saatavilla osoitteessa www.cnil.fr."
+    }
+  }
+}

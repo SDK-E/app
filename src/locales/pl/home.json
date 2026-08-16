@@ -1,0 +1,132 @@
+{
+  "hero": {
+    "eyebrow": "B2B AI · Oprogramowanie · Chmura · Inżynieria systemów",
+    "heading": "Jeden partner inżynieryjny dla stosu, jakiego potrzebuje Twoja firma.",
+    "leadParagraph": "SDK Enterprises buduje, modernizuje i obsługuje oprogramowanie w ramach całego stosu — platform zaplecza, infrastruktury chmurowej, automatyzacji sztucznej inteligencji, systemów czasu rzeczywistego i narzędzi wewnętrznych. Angażujesz się w jeden wyspecjalizowany problem lub posiadasz szerszy strumień pracy; tak czy inaczej, ludzie wykonujący tę pracę to ludzie, z którymi rozmawiasz.",
+    "ctaStartProject": "Rozpocznij projekt",
+    "ctaExploreServices": "Przeglądaj usługi",
+    "trustFrance": "Francuska firma B2B",
+    "trustSenior": "Dostawa starszych inżynierów",
+    "trustAI": "AI + backend + chmura",
+    "trustClients": "Klienci europejscy i zdalni"
+  },
+  "services": {
+    "eyebrow": "Usługi",
+    "title": "Wykorzystaj cały stos — lub tylko tę część, której potrzebujesz.",
+    "intro": "SDK może zająć się jednym specjalistycznym problemem lub posiadać szerszy techniczny strumień prac.",
+    "items": [
+      {
+        "number": "01",
+        "category": "Inżynieria AI",
+        "title": "Agenci AI i automatyzacja",
+        "copy": "Integracje LLM, agenci, RAG, automatyzacja przepływu pracy, narzędzia programistyczne i operacje wspomagane sztuczną inteligencją."
+      },
+      {
+        "number": "02",
+        "category": "Zaplecze",
+        "title": "Platformy, APIs i SaaS",
+        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs i architektura backendu czasu rzeczywistego."
+      },
+      {
+        "number": "03",
+        "category": "Frontend",
+        "title": "Interfejsy sieciowe i aplikacyjne",
+        "copy": "React, Vue, Nuxt, TypeScript, Tailwind i Shadcn."
+      },
+      {
+        "number": "04",
+        "category": "Chmura",
+        "title": "Chmura i infrastruktura",
+        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD i architektura wdrażania."
+      },
+      {
+        "number": "05",
+        "category": "Dane",
+        "title": "Bazy danych, pamięć podręczna i wyszukiwanie",
+        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey i Elasticsearch."
+      },
+      {
+        "number": "06",
+        "category": "Modernizacja",
+        "title": "Modernizacja starszego typu",
+        "copy": "Aktualizacje frameworków, migracja, redukcja długu technicznego i optymalizacja wydajności."
+      }
+    ]
+  },
+  "whySdk": {
+    "eyebrow": "Dlaczego SDK",
+    "title": "Starsza inżynieria bez zbędnych warstw.",
+    "intro": "Bezpośrednia komunikacja, szybka diagnoza i pragmatyczna realizacja.",
+    "items": [
+      {
+        "kicker": "FR",
+        "copy": "Francuska firma B2B dla klientów europejskich i zdalnych."
+      },
+      {
+        "kicker": "sztuczna inteligencja",
+        "copy": "Integracje LLM, agenci, automatyzacja i narzędzia wewnętrzne."
+      },
+      {
+        "kicker": "CZ",
+        "copy": "Praca na platformie w czasie rzeczywistym i przy dużej objętości."
+      },
+      {
+        "kicker": "BEZPOŚREDNIO",
+        "copy": "Rozmawiasz z inżynierami wykonującymi pracę, a nie z warstwą konta."
+      }
+    ]
+  },
+  "engagements": {
+    "eyebrow": "Pracuj z SDK",
+    "title": "Przynieś konkretny problem. Uzyskaj konkretną odpowiedź.",
+    "intro": "Wiesz, kiedy coś na Twoim stosie Cię kosztuje. Oto sytuacje, do których przeznaczony jest SDK.",
+    "items": [
+      {
+        "title": "System jest zbyt stary, aby go ciągle instalować.",
+        "copy": "Potrzebujesz planu migracji, a nie życzeń – audytu tego, co działa, co się psuje i kolejności przeprowadzki."
+      },
+      {
+        "title": "Objętość, dla której nie został zbudowany Twój obecny stos.",
+        "copy": "Pozyskiwanie w czasie rzeczywistym, backendy o dużej przepustowości i infrastruktura zapewniająca ich stabilność."
+      },
+      {
+        "title": "AI, którą możesz wykorzystać.",
+        "copy": "Integracje, agenci i automatyzacja LLM, które zmieniają wewnętrzny przepływ pracy — a nie demonstracja, która zatrzymuje się na boisku."
+      },
+      {
+        "title": "Zespół, który potrzebuje starszych rąk.",
+        "copy": "Bezpośrednie dostarczanie inżynierii w bazie kodu, bez warstwy środkowej spowalniającej decyzje."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Jak pracujemy",
+    "title": "Jasna droga od problemu do produkcji.",
+    "intro": "Cztery kroki, widoczny postęp na każdym etapie.",
+    "items": [
+      {
+        "title": "Zrozum",
+        "copy": "Cel biznesowy, stos, ograniczenia i kryteria sukcesu."
+      },
+      {
+        "title": "Projekt",
+        "copy": "Architektura, zakres, ryzyko i kamienie milowe."
+      },
+      {
+        "title": "Buduj",
+        "copy": "Realizacja z widocznym postępem."
+      },
+      {
+        "title": "Przekazanie",
+        "copy": "Wdróż, udokumentuj i przenieś własność."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Pracuj z SDK",
+    "heading": "Przynieś nam problem, który chcesz rozwiązać.",
+    "body": "Powiedz nam, co chcesz zbudować, zmodernizować, zautomatyzować lub naprawić — szczerze powiemy Ci, czy się to sprawdzi i ile będzie wymagało.",
+    "registeredUnder": "Zarejestrowano pod {company}",
+    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  }
+}

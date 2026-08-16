@@ -1,0 +1,36 @@
+{
+  "aboutPage": {
+    "eyebrow": "Om SDK Enterprises",
+    "title": "Senioringeniør, direkte levering.",
+    "intro": "Frankrike-basert B2B ingeniørselskap. Vi bygger, moderniserer og driver programvare på tvers av stabelen – backend-plattformer, skyinfrastruktur, AI-automatisering, sanntidssystemer og intern verktøy.",
+    "body": "SDK Enterprises ble grunnlagt i 2019 og jobber med et lite antall kunder om gangen. Teamet er kun for seniorer: ingen juniorer, ingen kontoansvarlige, ingen overleveringer til offshore-levering. De fleste engasjementer omfatter revisjoner til faste priser, dedikerte tekniske arbeidsstrømmer eller pågående moderniseringssprints.",
+    "cta": "Start et prosjekt",
+    "approachEyebrow": "Vår tilnærming",
+    "approachHeading": "Hvorfor vi holder laget lite",
+    "approachBody": "Når et byrå vokser forbi punktet der partnerne kjenner hver ingeniør, vises kontolaget. Dette laget er der konteksten går tapt, tidslinjene glipper og kostnadene multipliseres. SDK er strukturert for å unngå det.",
+    "approach1Title": "Ingen kontoadministratorer",
+    "approach1Body": "Du snakker med ingeniøren som er ansvarlig for arbeidet. Ingen oversettelse, ingen forsinkelser, ingen feilkommunikasjon mellom salg og levering.",
+    "approach2Title": "Ingen offshore-overlevering",
+    "approach2Body": "Teamet som designer systemet blir gjennom implementering og overlevering. Kunnskap forblir på ett sted.",
+    "approach3Title": "Ingen juniorressurser",
+    "approach3Body": "Hver SDK-ingeniør er seniornivå. Vi bruker ikke klientengasjementer for å lære opp mindre erfarne ansatte.",
+    "beliefsEyebrow": "Hva vi tror",
+    "beliefsHeading": "Forutsetningene bak arbeidet",
+    "beliefsBody": "Dette er ikke markedsføringserklæringer. De er begrensningene som former enhver beslutning vi tar.",
+    "belief1Title": "Programvare er et ansvar inntil det blir forstått",
+    "belief1Body": "Hver linje med kode har vedlikeholdskostnader. Målet er ikke å skrive mer kode - det er å redusere kostnadene for koden som allerede eksisterer.",
+    "belief2Title": "Diagnose før resept",
+    "belief2Body": "Vi selger ikke en fast engasjementstype. Vi diagnostiserer systemet først: arkitektur, dataflyt, distribusjon, team og begrensninger. Da foreslår vi det engasjementet som passer.",
+    "belief3Title": "Åpenhet er en funksjon",
+    "belief3Body": "Synlig fremgang, skriftlige oppdateringer og direkte tilgang til ingeniørene. Hemmelighold rundt levering er et symptom på en prosess som ikke kan forklares.",
+    "companyFacts": {
+      "name": "Juridisk navn",
+      "tradingName": "Handelsnavn",
+      "siren": "SIREN",
+      "siret": "SIRET",
+      "address": "Registrert kontor",
+      "email": "E-post",
+      "phone": "Telefon"
+    }
+  }
+}

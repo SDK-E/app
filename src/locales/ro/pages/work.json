@@ -1,0 +1,22 @@
+{
+  "workPage": {
+    "eyebrow": "Lucrați cu SDK",
+    "body": "Știi când ceva din teancul tău te costă. Iată situațiile pentru care este construit SDK.",
+    "cta": "Începeți un proiect",
+    "engagementsEyebrow": "Angajamente",
+    "engagementsHeading": "Cum încep de obicei angajamentele",
+    "engagementsBody": "Majoritatea angajamentelor încep cu o scurtă conversație sau un rezumat scris al problemei. De acolo, SDK propune un răspuns definit: un audit cu preț fix, un flux de lucru cu timp și materiale sau un model hibrid, în funcție de incertitudinea din sistem și de claritatea obiectivului.",
+    "lookForEyebrow": "Ceea ce căutăm",
+    "lookForHeading": "O problemă clară și o echipă dispusă să se implice în ea.",
+    "lookForBody": "Cele mai bune angajamente încep atunci când clientul știe că ceva nu este în regulă, dar nu știe încă întreaga amploare. Căutăm echipe care doresc să înțeleagă mecanismul, nu doar să primească un slide deck.",
+    "lookFor1Title": "O constrângere specifică",
+    "lookFor1Body": "Performanță, fiabilitate, cost, viteza de livrare sau conformitate. Problema nu trebuie să fie nouă, ci trebuie să fie reală și măsurabilă.",
+    "lookFor2Title": "Acces la sistem",
+    "lookFor2Body": "Acces de citire la baza de cod, infrastructură și oamenii care înțeleg starea actuală. Fără aceasta, orice evaluare este o presupunere.",
+    "lookFor3Title": "Un factor de decizie",
+    "lookFor3Body": "Cineva care poate aproba domeniul de aplicare, bugetul și calendarul. Nu un comitet, ci o persoană cu autoritatea de a avansa munca.",
+    "fitEyebrow": "Fit",
+    "fitHeading": "Când SDK nu este răspunsul corect",
+    "fitBody": "Nu spunem mai des decât v-ați aștepta. SDK nu este un atelier de caroserie pentru bilete de preaplin și nu luăm angajamente în care problema nu este încă definită sau echipa nu se poate angaja în acest proces."
+  }
+}

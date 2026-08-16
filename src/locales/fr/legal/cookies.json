@@ -1,0 +1,16 @@
+{
+  "legal": {
+    "cookies": {
+      "title": "Politique de cookies",
+      "intro": "Que sont les cookies et si ce site les utilise.",
+      "whatIsTitle": "Qu'est-ce qu'un cookie ?",
+      "whatIs": "Un cookie est un petit fichier texte déposé sur votre appareil lorsque vous visitez un site Internet. Il permet au site de reconnaître votre navigateur et de mémoriser des informations.",
+      "thisSiteTitle": "Cookies définis par ce site",
+      "thisSite": "Aucun cookie d'analyse, de publicité ou de suivi n'est défini par ce site. La solution d'analyse utilisée (Vercel Analytics) est sans cookie. Votre navigation n'est donc pas tracée.",
+      "consentBannerTitle": "Bannière de consentement",
+      "consentBanner": "Aucune bannière de consentement ne s'affiche car aucun cookie n'est défini. Si un script de paramétrage des cookies était ajouté, une bannière de consentement deviendrait requise et cette page serait mise à jour.",
+      "browserSettingsTitle": "Gestion des cookies dans votre navigateur",
+      "browserSettings": "Vous pouvez configurer votre navigateur pour refuser ou supprimer les cookies à tout moment. Les instructions dépendent de votre navigateur (Chrome, Firefox, Safari, Edge). Les guides sont disponibles chez www.cnil.fr."
+    }
+  }
+}

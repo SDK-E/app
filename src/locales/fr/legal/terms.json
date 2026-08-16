@@ -1,0 +1,26 @@
+{
+  "legal": {
+    "terms": {
+      "title": "Conditions d'utilisation",
+      "intro": "Les règles d'utilisation de ce site Internet.",
+      "purposeTitle": "Objectif",
+      "purpose": "Ces conditions régissent votre utilisation du site Web {name}. En accédant au site, vous acceptez ces conditions.",
+      "servicesTitle": "Présentation des prestations",
+      "services": "Le site présente les services de {name} et vous permet de déposer une demande de projet. Ce contenu est fourni à titre indicatif et ne constitue ni une offre contractuelle ni un engagement de prestation de services.",
+      "enquiriesTitle": "Demandes de projets",
+      "enquiries": "Les informations soumises via le formulaire « Démarrer un projet » sont traitées conformément à la politique de confidentialité. Recevoir une demande n’implique aucune obligation de l’accepter.",
+      "intellectualPropertyTitle": "Propriété intellectuelle",
+      "intellectualProperty": "Les textes, logo, visuels et contenus du site sont la propriété de SDK Enterprises et ne peuvent être réutilisés sans autorisation préalable.",
+      "availabilityTitle": "Disponibilité des sites",
+      "availability": "Le site est fourni « tel quel ». SDK Enterprises fait des efforts raisonnables pour le maintenir accessible mais ne garantit pas une disponibilité ininterrompue ou sans erreur.",
+      "liabilityTitle": "Responsabilité",
+      "liability": "Dans la mesure permise par la loi, la responsabilité de SDK Enterprises est limitée aux dommages directs et ne s'étend pas aux dommages indirects. Les liens vers des sites tiers relèvent de la seule responsabilité de leurs éditeurs.",
+      "changesTitle": "Changements",
+      "changes": "SDK Enterprises peut modifier ces conditions à tout moment. La version applicable est celle publiée sur cette page.",
+      "lawTitle": "Loi applicable",
+      "law": "Les présentes conditions sont régies par la loi française. En cas de litige, les tribunaux français sont compétents.",
+      "contactTitle": "Contacter",
+      "contact": "Pour toute question, contactez {company} à {email}."
+    }
+  }
+}

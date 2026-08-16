@@ -1,0 +1,132 @@
+{
+  "hero": {
+    "eyebrow": "B2B IA · Logiciels · Cloud · Ingénierie des systèmes",
+    "heading": "Un partenaire d'ingénierie pour la pile dont votre entreprise a besoin.",
+    "leadParagraph": "SDK Enterprises crée, modernise et exploite des logiciels sur toute la pile : plates-formes back-end, infrastructure cloud, automatisation de l'IA, systèmes en temps réel et outils internes. Vous vous engagez sur un problème spécialisé ou possédez un flux de travail plus large ; de toute façon, les personnes qui font le travail sont celles à qui vous parlez.",
+    "ctaStartProject": "Démarrer un projet",
+    "ctaExploreServices": "Explorer les services",
+    "trustFrance": "Société B2B basée en France",
+    "trustSenior": "Prestation d'ingénierie senior",
+    "trustAI": "IA + backend + cloud",
+    "trustClients": "Clients européens et distants"
+  },
+  "services": {
+    "eyebrow": "Prestations",
+    "title": "Utilisez toute la pile – ou seulement la partie dont vous avez besoin.",
+    "intro": "SDK peut s'attaquer à un problème spécialisé ou posséder un flux de travail technique plus large.",
+    "items": [
+      {
+        "number": "01",
+        "category": "Ingénierie de l'IA",
+        "title": "Agents IA et automatisation",
+        "copy": "Intégrations LLM, agents, RAG, automatisation des flux de travail, outils de développement et opérations assistées par l'IA."
+      },
+      {
+        "number": "02",
+        "category": "Back-end",
+        "title": "Plateformes, APIs et SaaS",
+        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs et architecture backend en temps réel."
+      },
+      {
+        "number": "03",
+        "category": "Front-end",
+        "title": "Interfaces Web et applicatives",
+        "copy": "React, Vue, Nuxt, TypeScript, Tailwind et Shadcn."
+      },
+      {
+        "number": "04",
+        "category": "Nuage",
+        "title": "Nuage et infrastructures",
+        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD et architecture de déploiement."
+      },
+      {
+        "number": "05",
+        "category": "Données",
+        "title": "Bases de données, cache et recherche",
+        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey et Elasticsearch."
+      },
+      {
+        "number": "06",
+        "category": "Modernisation",
+        "title": "Modernisation héritée",
+        "copy": "Mises à niveau du framework, migration, réduction de la dette technique et optimisation des performances."
+      }
+    ]
+  },
+  "whySdk": {
+    "eyebrow": "Pourquoi SDK",
+    "title": "Ingénierie senior sans couches inutiles.",
+    "intro": "Communication directe, diagnostic rapide et exécution pragmatique.",
+    "items": [
+      {
+        "kicker": "FR",
+        "copy": "Une société B2B basée en France pour les clients européens et éloignés."
+      },
+      {
+        "kicker": "IA",
+        "copy": "Intégrations LLM, agents, automatisation et outils internes."
+      },
+      {
+        "kicker": "RT",
+        "copy": "Travail de plateforme en temps réel et à grand volume."
+      },
+      {
+        "kicker": "DIRECTEMENT",
+        "copy": "Vous parlez aux ingénieurs qui effectuent le travail, pas à un responsable de compte."
+      }
+    ]
+  },
+  "engagements": {
+    "eyebrow": "Travailler avec SDK",
+    "title": "Apportez un problème spécifique. Obtenez une réponse précise.",
+    "intro": "Vous savez quand quelque chose dans votre pile vous coûte cher. Voici les situations pour lesquelles le SDK est configuré.",
+    "items": [
+      {
+        "title": "Un système trop vieux pour continuer à appliquer des correctifs.",
+        "copy": "Vous avez besoin d'un plan de migration, pas d'un souhait : un audit de ce qui fonctionne, de ce qui ne fonctionne pas et de l'ordre d'emménagement."
+      },
+      {
+        "title": "Volume pour lequel votre pile actuelle n'a pas été conçue.",
+        "copy": "Ingestion en temps réel, backends à haut débit et infrastructure pour les maintenir stables."
+      },
+      {
+        "title": "Une IA que vous pouvez mettre à profit.",
+        "copy": "Des intégrations, des agents et des automatisations LLM qui modifient un flux de travail interne – pas une démonstration qui s'arrête au pitch."
+      },
+      {
+        "title": "Une équipe qui a besoin de mains expérimentées.",
+        "copy": "Livraison d'ingénierie directe sur votre base de code, sans couche intermédiaire ralentissant les décisions."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Comment nous travaillons",
+    "title": "Un chemin clair du problème à la production.",
+    "intro": "Quatre étapes, des progrès visibles à chaque étape.",
+    "items": [
+      {
+        "title": "Comprendre",
+        "copy": "Objectif commercial, pile, contraintes et critères de réussite."
+      },
+      {
+        "title": "Conception",
+        "copy": "Architecture, portée, risques et jalons."
+      },
+      {
+        "title": "Construire",
+        "copy": "Mise en œuvre avec des progrès visibles."
+      },
+      {
+        "title": "Remise de transfert",
+        "copy": "Déployer, documenter et transférer la propriété."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Travailler avec SDK",
+    "heading": "Apportez-nous le problème dont vous avez besoin pour être résolu.",
+    "body": "Dites-nous ce que vous essayez de créer, de moderniser, d'automatiser ou de réparer. Nous vous dirons honnêtement si cela convient et ce que cela nécessiterait.",
+    "registeredUnder": "Enregistré sous {company}",
+    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  }
+}

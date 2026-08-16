@@ -1,0 +1,26 @@
+{
+  "legal": {
+    "terms": {
+      "title": "Terms of use",
+      "intro": "The rules for using this website.",
+      "purposeTitle": "Purpose",
+      "purpose": "These terms govern your use of the {name} website. By accessing the site, you agree to these terms.",
+      "servicesTitle": "Presentation of services",
+      "services": "The site presents the services of {name} and allows you to submit a project enquiry. This content is provided for information only and is neither a contractual offer nor a commitment to provide services.",
+      "enquiriesTitle": "Project enquiries",
+      "enquiries": "Information submitted through the \"Start a project\" form is handled in accordance with the privacy policy. Receiving an enquiry does not imply any obligation to accept it.",
+      "intellectualPropertyTitle": "Intellectual property",
+      "intellectualProperty": "The texts, logo, visuals and content of the site are the property of SDK Enterprises and may not be reused without prior authorisation.",
+      "availabilityTitle": "Site availability",
+      "availability": "The site is provided \"as is\". SDK Enterprises makes reasonable efforts to keep it accessible but does not guarantee uninterrupted or error-free availability.",
+      "liabilityTitle": "Liability",
+      "liability": "To the extent permitted by law, SDK Enterprises' liability is limited to direct damages and does not extend to indirect damages. Links to third-party sites are the sole responsibility of their publishers.",
+      "changesTitle": "Changes",
+      "changes": "SDK Enterprises may amend these terms at any time. The applicable version is the one published on this page.",
+      "lawTitle": "Governing law",
+      "law": "These terms are governed by French law. In the event of a dispute, the French courts have jurisdiction.",
+      "contactTitle": "Contact",
+      "contact": "For any question, contact {company} at {email}."
+    }
+  }
+}

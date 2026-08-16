@@ -1,0 +1,59 @@
+{
+  "designSystem": {
+    "eyebrow": "SDK Enterprises · Sistema di progettazione",
+    "title": "La base visiva condivisa per il sito Web e il portale clienti.",
+    "intro": "Questa pagina esegue il rendering di ogni token, primitivo e stato definito in docs/design/design-system.md e docs/design/patterns.md. È il riferimento durante lo sviluppo. Non è intenzionalmente collegato dalla navigazione di produzione.",
+    "primaryAction": "Azione primaria",
+    "colors": {
+      "eyebrow": "01 · Tavolozza",
+      "title": "Una tavolozza piccola, usata con intento.",
+      "intro": "Il verde del marchio è riservato solo ad azioni e punti salienti significativi, mai a decorazioni. Gli sfondi verdi riportano sempre testo scuro; il testo verde appare solo su superfici scure."
+    },
+    "type": {
+      "eyebrow": "02 · Tipografia",
+      "title": "JetBrains Mono, sintonizzato come un sistema di tipo editoriale.",
+      "intro": "I titoli sono fitti e ampi; le etichette sono impostate piccole, maiuscole e tracciate. Il testo del corpo non scende mai sotto i 14px."
+    },
+    "components": {
+      "eyebrow": "03 · Componenti",
+      "title": "Primitive vincolate, allineate al riferimento.",
+      "intro": "Pulsanti, badge, carte e collegamenti. Una famiglia di raggi, bordi di 1 px e nessuna decorazione oltre a quella utilizzata dai progetti approvati.",
+      "buttons": "Pulsanti",
+      "badges": "Distintivi",
+      "cardsLinks": "Carte e collegamenti",
+      "inProgress": "In corso",
+      "review": "Recensione",
+      "pending": "In sospeso",
+      "currentProjects": "Progetti attuali",
+      "viewAll": "Visualizza tutto",
+      "metricsGrid": "Griglia metrica (responsive: 4 → 2 → 1)",
+      "activeProjects": "Progetti attivi",
+      "openRequests": "Richieste aperte",
+      "outstanding": "Eccezionale",
+      "pendingActions": "Azioni in sospeso"
+    },
+    "states": {
+      "eyebrow": "04 · Stati",
+      "title": "Caricamento, vuoto ed errore: superfici coerenti.",
+      "intro": "Nessuna invenzione del colore. Scheletro utilizza il tono della linea, gli stati vuoti un bordo tratteggiato, gli errori rimangono sulla superficie della carta con una forte enfasi scura.",
+      "loading": "Caricamento, vuoto ed errore: superfici coerenti.",
+      "noRequestsYet": "Nessuna richiesta ancora",
+      "whenProjectExists": "Quando esiste un progetto o una richiesta, verrà visualizzato qui.",
+      "somethingFailed": "Impossibile caricare qualcosa",
+      "tryAgain": "Riprova o contatta l'assistenza se il problema persiste.",
+      "requestService": "Richiedi un servizio",
+      "retry": "Riprova"
+    },
+    "darkSurface": {
+      "eyebrow": "05 · Superficie scura",
+      "title": "Le sezioni scure portano lo stesso sistema.",
+      "intro": "Il testo principale diventa chiaro, il testo secondario diventa nebbioso e il verde viene utilizzato per le luci. La linea del bordo si scurisce per mantenere la composizione silenziosa."
+    },
+    "brandSurface": {
+      "eyebrow": "06 · Superficie del marchio",
+      "title": "Al massimo una sezione del brand per pagina.",
+      "intro": "Gli sfondi verdi riportano testo scuro. Usalo con parsimonia: è la superficie più rumorosa del sistema.",
+      "bringUsProblem": "Portaci il problema"
+    }
+  }
+}

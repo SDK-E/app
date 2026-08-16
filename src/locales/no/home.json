@@ -1,0 +1,132 @@
+{
+  "hero": {
+    "eyebrow": "B2B AI · Programvare · Cloud · Systems Engineering",
+    "heading": "Én ingeniørpartner for stabelen din bedrift trenger.",
+    "leadParagraph": "SDK Enterprises bygger, moderniserer og driver programvare på tvers av stabelen – backend-plattformer, skyinfrastruktur, AI-automatisering, sanntidssystemer og intern verktøy. Du engasjerer deg i ett spesialisert problem eller eier en bredere arbeidsstrøm; uansett, de som gjør jobben er de du snakker med.",
+    "ctaStartProject": "Start et prosjekt",
+    "ctaExploreServices": "Utforsk tjenester",
+    "trustFrance": "Frankrike-basert B2B selskap",
+    "trustSenior": "Senior ingeniørleveranse",
+    "trustAI": "AI + backend + sky",
+    "trustClients": "Europeiske og eksterne kunder"
+  },
+  "services": {
+    "eyebrow": "Tjenester",
+    "title": "Bruk hele stabelen - eller bare den delen du trenger.",
+    "intro": "SDK kan engasjere seg i ett spesialisert problem eller eie en bredere teknisk arbeidsstrøm.",
+    "items": [
+      {
+        "number": "01",
+        "category": "AI Engineering",
+        "title": "AI-agenter og automatisering",
+        "copy": "LLM-integrasjoner, agenter, RAG, arbeidsflytautomatisering, utviklerverktøy og AI-assisterte operasjoner."
+      },
+      {
+        "number": "02",
+        "category": "Backend",
+        "title": "Plattformer, APIs og SaaS",
+        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs og sanntids backend-arkitektur."
+      },
+      {
+        "number": "03",
+        "category": "Frontend",
+        "title": "Web- og applikasjonsgrensesnitt",
+        "copy": "React, Vue, Nuxt, TypeScript, Tailwind og Shadcn."
+      },
+      {
+        "number": "04",
+        "category": "Sky",
+        "title": "Sky og infrastruktur",
+        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD og distribusjonsarkitektur."
+      },
+      {
+        "number": "05",
+        "category": "Data",
+        "title": "Databaser, cache og søk",
+        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey og Elasticsearch."
+      },
+      {
+        "number": "06",
+        "category": "Modernisering",
+        "title": "Eldre modernisering",
+        "copy": "Rammeoppgraderinger, migrering, teknisk gjeldsreduksjon og ytelsesoptimalisering."
+      }
+    ]
+  },
+  "whySdk": {
+    "eyebrow": "Hvorfor SDK",
+    "title": "Senioringeniør uten unødvendige lag.",
+    "intro": "Direkte kommunikasjon, rask diagnose og pragmatisk utførelse.",
+    "items": [
+      {
+        "kicker": "FR",
+        "copy": "Et Frankrike-basert B2B-selskap for europeiske og eksterne kunder."
+      },
+      {
+        "kicker": "AI",
+        "copy": "LLM integrasjoner, agenter, automatisering og intern verktøy."
+      },
+      {
+        "kicker": "RT",
+        "copy": "Sanntid og høyt volum plattformarbeid."
+      },
+      {
+        "kicker": "DIREKTE",
+        "copy": "Du snakker med ingeniørene som gjør jobben, ikke et kontolag."
+      }
+    ]
+  },
+  "engagements": {
+    "eyebrow": "Arbeid med SDK",
+    "title": "Ta med et spesifikt problem. Få et konkret svar.",
+    "intro": "Du vet når noe i stabelen din koster deg. Her er situasjonene SDK er satt opp for.",
+    "items": [
+      {
+        "title": "Et system for gammelt til å fortsette å lappe.",
+        "copy": "Du trenger en migrasjonsplan, ikke et ønske – en revisjon av hva som kjører, hva som går i stykker og rekkefølgen for å flytte inn."
+      },
+      {
+        "title": "Volum som den nåværende stabelen din ikke er laget for.",
+        "copy": "Sanntidsinntak, backends med høy gjennomstrømning og infrastrukturen for å holde dem stabile."
+      },
+      {
+        "title": "AI du kan sette i arbeid.",
+        "copy": "LLM-integrasjoner, agenter og automatisering som endrer en intern arbeidsflyt – ikke en demo som stopper på banen."
+      },
+      {
+        "title": "Et lag som trenger seniorhender.",
+        "copy": "Direkte ingeniørlevering på kodebasen din, uten at et mellomlag bremser beslutningene."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Hvordan vi jobber",
+    "title": "En tydelig vei fra problem til produksjon.",
+    "intro": "Fire trinn, synlig fremgang på hvert trinn.",
+    "items": [
+      {
+        "title": "Forstå",
+        "copy": "Forretningsmål, stabel, begrensninger og suksesskriterier."
+      },
+      {
+        "title": "Design",
+        "copy": "Arkitektur, omfang, risikoer og milepæler."
+      },
+      {
+        "title": "Bygg",
+        "copy": "Implementering med synlig fremgang."
+      },
+      {
+        "title": "Overlevering",
+        "copy": "Distribuer, dokumenter og overfør eierskap."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Arbeid med SDK",
+    "heading": "Gi oss problemet du trenger løst.",
+    "body": "Fortell oss hva du prøver å bygge, modernisere, automatisere eller fikse – vi forteller deg ærlig om det passer og hva som kreves.",
+    "registeredUnder": "Registrert under {company}",
+    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  }
+}

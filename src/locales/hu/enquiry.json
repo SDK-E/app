@@ -1,0 +1,74 @@
+{
+  "enquiry": {
+    "title": "Indítson el egy projektet",
+    "subtitle": "Mondja el, mit próbál építeni, modernizálni, automatizálni vagy javítani. 2 munkanapon belül válaszolunk az alkalmasság őszinte értékelésével és a szükséges lépésekkel.",
+    "body": "Az űrlap összegyűjti az átgondolt válaszadáshoz szükséges minimális információkat. Semmit sem osztanak meg a SDK Enterprises-n kívül, és közvetlenül is elérhet minket a hello@sdk.enterprises címen.",
+    "body2": "Minden megkeresést mi magunk vizsgálunk meg. Nincsenek fiókkezelők, nincsenek minősítési szkriptek, nincsenek átadások.",
+    "nextStepsEyebrow": "Mi történik ezután",
+    "nextStepsHeading": "A megkereséstől az eljegyzésig",
+    "nextStepsBody": "Miután elküldte az űrlapot, mi magunk olvassuk el. Ha megfelelő, rövid írásbeli értékeléssel és javasolt elköteleződési modellel válaszolunk. Ha nem megfelelő, elmondjuk, miért, és alternatívát javasolunk.",
+    "nextStep1Title": "Tekintse át",
+    "nextStep1Body": "Elolvastuk beadványát, és összevetjük jelenlegi kapacitásunkkal és szakértelmünkkel. Általában 2 munkanapon belül.",
+    "nextStep2Title": "Értékelés",
+    "nextStep2Body": "Egy rövid írásbeli válasz: szerintünk mi a probléma, megfelel-e, és mi lenne az első lépés.",
+    "nextStep3Title": "Hívás vagy aszinkron",
+    "nextStep3Body": "30 perces hívás vagy aszinkron csere a hatókör, a korlátozások és az idővonal tisztázása érdekében. Nincs pitch deck, hacsak nem akarsz egyet.",
+    "nextStep4Title": "Javaslat",
+    "nextStep4Body": "Írásbeli ajánlat hatókörrel, fix árral vagy árfolyammal, idővonallal és mérföldkövekkel. Ön aláírja, kezdjük.",
+    "form": {
+      "companyName": "Társaság",
+      "email": "Professzionális email",
+      "website": "Cég honlapja",
+      "capability": "Képesség szükséges",
+      "description": "Probléma/projekt leírása",
+      "environment": "Meglévő környezet",
+      "timeline": "Idővonal",
+      "budgetRange": "Költségvetési tartomány",
+      "context": "Támogató kontextus",
+      "submit": "Kérdés küldése"
+    },
+    "capabilities": {
+      "aiEngineering": "AI Engineering",
+      "softwareEngineering": "Szoftverfejlesztés",
+      "frontendProduct": "Előtér és termék",
+      "cloudInfrastructure": "Felhő és infrastruktúra",
+      "dataCacheSearch": "Adatok / Gyorsítótár / Keresés",
+      "modernization": "Modernizáció",
+      "other": "Egyéb"
+    },
+    "timelines": {
+      "asap": "ASAP",
+      "oneToThreeMonths": "1-3 hónap",
+      "threeToSixMonths": "3-6 hónap",
+      "sixPlusMonths": "6+ hónap",
+      "notSure": "Nem biztos"
+    },
+    "budgets": {
+      "under10k": "< 10 ezer €",
+      "tenToTwentyFiveK": "10-25 ezer euró",
+      "twentyFiveToFiftyK": "25-50 ezer euró",
+      "fiftyPlusK": "50 000 €+",
+      "notSure": "Nem biztos"
+    },
+    "validation": {
+      "companyNameRequired": "A cégnév megadása kötelező",
+      "emailRequired": "Szakmai e-mail szükséges",
+      "emailInvalid": "Adjon meg egy érvényes e-mail címet",
+      "websiteInvalid": "Adjon meg egy érvényes URL-t",
+      "capabilityRequired": "Válasszon ki egy képességet",
+      "descriptionRequired": "Ismertesse a projektet vagy problémát",
+      "descriptionTooShort": "A leírásnak legalább 50 karakterből kell állnia",
+      "descriptionTooLong": "A leírásnak 4000 karakternél rövidebbnek kell lennie",
+      "environmentTooLong": "A környezetnek 4000 karakternél rövidebbnek kell lennie",
+      "contextTooLong": "A támogató kontextusnak 4000 karakternél rövidebbnek kell lennie"
+    },
+    "success": {
+      "title": "Megkeresés elküldve",
+      "body": "Köszönjük – felülvizsgáljuk projektjét, és 2 munkanapon belül válaszolunk."
+    },
+    "error": {
+      "title": "Valami elromlott",
+      "body": "Nem tudtuk elküldeni a megkeresését. Kérjük, próbálja újra, vagy írjon nekünk közvetlenül."
+    }
+  }
+}

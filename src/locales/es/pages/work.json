@@ -1,0 +1,22 @@
+{
+  "workPage": {
+    "eyebrow": "Trabajar con SDK",
+    "body": "Sabes cuando algo en tu pila te está costando. Estas son las situaciones para las que está diseñado el SDK.",
+    "cta": "iniciar un proyecto",
+    "engagementsEyebrow": "Compromisos",
+    "engagementsHeading": "Cómo suelen empezar los compromisos",
+    "engagementsBody": "La mayoría de los compromisos comienzan con una breve conversación o un resumen escrito del problema. A partir de ahí, SDK propone una respuesta con alcance: una auditoría de precio fijo, un flujo de trabajo de tiempo y materiales o un modelo híbrido dependiendo de la incertidumbre en el sistema y la claridad del objetivo.",
+    "lookForEyebrow": "lo que buscamos",
+    "lookForHeading": "Un problema claro y un equipo dispuesto a abordarlo.",
+    "lookForBody": "Los mejores compromisos comienzan cuando el cliente sabe que algo anda mal pero aún no conoce el alcance total. Buscamos equipos que quieran comprender el mecanismo, no solo recibir una presentación de diapositivas.",
+    "lookFor1Title": "Una restricción específica",
+    "lookFor1Body": "Rendimiento, confiabilidad, costo, velocidad de entrega o cumplimiento. No es necesario que el problema sea novedoso: debe ser real y mensurable.",
+    "lookFor2Title": "Acceso al sistema",
+    "lookFor2Body": "Acceso de lectura al código base, la infraestructura y las personas que comprenden el estado actual. Sin esto, cualquier evaluación es una conjetura.",
+    "lookFor3Title": "Un tomador de decisiones",
+    "lookFor3Body": "Alguien que pueda aprobar el alcance, el presupuesto y el cronograma. No es un comité, sino una persona con autoridad para hacer avanzar el trabajo.",
+    "fitEyebrow": "Encajar",
+    "fitHeading": "Cuando SDK no es la respuesta correcta",
+    "fitBody": "Decimos no más a menudo de lo que cabría esperar. SDK no es un taller de carrocería para tickets de desbordamiento y no aceptamos compromisos donde el problema aún no está definido o el equipo no puede comprometerse con el proceso."
+  }
+}

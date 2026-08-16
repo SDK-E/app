@@ -1,0 +1,65 @@
+{
+  "legal": {
+    "privacy": {
+      "title": "Privacy policy",
+      "intro": "How SDK Enterprises handles personal data, in accordance with the GDPR (RGPD).",
+      "processors": [
+        {
+          "name": "Vercel",
+          "role": "Website hosting and cookieless analytics"
+        },
+        {
+          "name": "Auth0 (Okta)",
+          "role": "Authentication for the client portal"
+        },
+        {
+          "name": "Resend",
+          "role": "Transactional email for project enquiries"
+        },
+        {
+          "name": "Prisma Postgres",
+          "role": "Managed PostgreSQL database"
+        }
+      ],
+      "controllerTitle": "Gegevensbeheerder",
+      "controller": "De verwerkingsverantwoordelijke is {company}, handelend onder de naam {name}, met maatschappelijke zetel te {address}. Voor vragen over uw persoonsgegevens kunt u contact met ons opnemen via {email}.",
+      "collectedDataTitle": "Gegevens verzameld",
+      "collectedData": "Het enige formulier voor gegevensverzameling op deze site is het openbare formulier 'Start een project'. De gevraagde gegevens zijn strikt beperkt tot:",
+      "collectedDataItems": [
+        "Bedrijfsnaam (verplicht)",
+        "Professioneel e-mailadres (verplicht)",
+        "Bedrijfswebsite (optioneel)",
+        "Mogelijkheid vereist (vereist)",
+        "Project- of probleembeschrijving (verplicht)",
+        "Bestaande omgeving (optioneel)",
+        "Tijdlijn (optioneel)",
+        "Budgetbereik (optioneel)",
+        "Ondersteunende context (optioneel)"
+      ],
+      "purposesTitle": "Doeleinden en rechtsgrondslagen",
+      "purposesNote": "Uw gegevens worden verwerkt om:",
+      "purposeItems": [
+        "reageren op uw projectaanvraag — precontractuele maatregelen (Art. 6(1)(b) GDPR) en legitiem belang (Art. 6(1)(f));",
+        "de site beheren, beveiligen en verbeteren – legitiem belang (Art. 6(1)(f));",
+        "voldoen aan alle toepasselijke wettelijke verplichtingen (Art. 6(1)(c))."
+      ],
+      "recipientsTitle": "Ontvangers",
+      "recipientsNote": "Uw gegevens zijn alleen toegankelijk voor geautoriseerde personen binnen SDK Enterprises. Het kan worden verwerkt door de volgende verwerkers, uitsluitend voor de behoeften van hun diensten:",
+      "transfersTitle": "Overdrachten buiten de EU",
+      "transfers": "Sommige verwerkers kunnen gegevens verwerken buiten de Europese Economische Ruimte (met name in de Verenigde Staten). Wanneer dit gebeurt, worden passende waarborgen gebruikt, zoals de standaardcontractbepalingen van de Europese Commissie.",
+      "retentionTitle": "Retentie",
+      "retention": "Gegevens verzameld via het formulier worden bewaard gedurende 12 maanden vanaf het laatste contact, tenzij een langere bewaring wettelijk vereist is. Na deze periode wordt het verwijderd of geanonimiseerd.",
+      "rightsTitle": "Jouw rechten",
+      "rightsNote": "In overeenstemming met Articles 15 to 22 GDPR heeft u recht op toegang, rectificatie, verwijdering, beperking, overdraagbaarheid en bezwaar. U kunt uw toestemming ook op elk gewenst moment intrekken.",
+      "rightsContact": "Om deze rechten uit te oefenen, kunt u ons schrijven op {email}. Wij reageren binnen een maand. U kunt ook een klacht indienen bij de CNIL (www.cnil.fr).",
+      "childrenTitle": "Kinderen",
+      "children": "De site is gericht op professionals en niet bedoeld voor minderjarigen. Het vragenformulier is niet bedoeld voor personen jonger dan 16 jaar.",
+      "automatedTitle": "Geautomatiseerde besluitvorming",
+      "automated": "Er vindt geen geautomatiseerde besluitvorming of profilering plaats op uw gegevens.",
+      "securityTitle": "Beveiliging",
+      "security": "Er zijn redelijke technische en organisatorische maatregelen getroffen om uw gegevens te beschermen (gecodeerde verbindingen, toegangscontroles). Er kan geen absolute garantie worden geboden.",
+      "registerTitle": "Registreren en declareren",
+      "register": "SDK Enterprises houdt een intern register van verwerkingsactiviteiten bij (Art. 30 GDPR). Er wordt geen CNIL-aangiftenummer geclaimd of verzonnen."
+    }
+  }
+}

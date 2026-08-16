@@ -1,0 +1,65 @@
+{
+  "legal": {
+    "privacy": {
+      "title": "Privacy policy",
+      "intro": "How SDK Enterprises handles personal data, in accordance with the GDPR (RGPD).",
+      "processors": [
+        {
+          "name": "Vercel",
+          "role": "Website hosting and cookieless analytics"
+        },
+        {
+          "name": "Auth0 (Okta)",
+          "role": "Authentication for the client portal"
+        },
+        {
+          "name": "Resend",
+          "role": "Transactional email for project enquiries"
+        },
+        {
+          "name": "Prisma Postgres",
+          "role": "Managed PostgreSQL database"
+        }
+      ],
+      "controllerTitle": "Data controller",
+      "controller": "The data controller is {company}, trading as {name}, registered office at {address}. For any question about your personal data, contact us at {email}.",
+      "collectedDataTitle": "Data collected",
+      "collectedData": "The only data-collection form on this site is the public \"Start a project\" form. The data requested is strictly limited to:",
+      "collectedDataItems": [
+        "Company name (required)",
+        "Professional email address (required)",
+        "Company website (optional)",
+        "Capability needed (required)",
+        "Project or problem description (required)",
+        "Existing environment (optional)",
+        "Timeline (optional)",
+        "Budget range (optional)",
+        "Supporting context (optional)"
+      ],
+      "purposesTitle": "Purposes and legal bases",
+      "purposesNote": "Your data is processed to:",
+      "purposeItems": [
+        "respond to your project enquiry — pre-contractual measures (Art. 6(1)(b) GDPR) and legitimate interest (Art. 6(1)(f));",
+        "operate, secure and improve the site — legitimate interest (Art. 6(1)(f));",
+        "comply with any applicable legal obligations (Art. 6(1)(c))."
+      ],
+      "recipientsTitle": "Recipients",
+      "recipientsNote": "Your data is accessible only to authorised people within SDK Enterprises. It may be processed by the following processors, strictly for the needs of their services:",
+      "transfersTitle": "Transfers outside the EU",
+      "transfers": "Some processors may process data outside the European Economic Area (notably in the United States). Where this occurs, appropriate safeguards are used, such as the European Commission's standard contractual clauses.",
+      "retentionTitle": "Retention",
+      "retention": "Data collected through the form is kept for 12 months from the last contact, unless a longer retention is required by law. After this period, it is deleted or anonymised.",
+      "rightsTitle": "Your rights",
+      "rightsNote": "In accordance with Articles 15 to 22 GDPR, you have the right to access, rectification, erasure, restriction, portability and objection. You may also withdraw your consent at any time.",
+      "rightsContact": "To exercise these rights, write to us at {email}. We respond within one month. You may also lodge a complaint with the CNIL (www.cnil.fr).",
+      "childrenTitle": "Children",
+      "children": "The site is aimed at professionals and is not intended for minors. The enquiry form is not intended for individuals under 16.",
+      "automatedTitle": "Automated decision-making",
+      "automated": "No automated decision-making or profiling is carried out on your data.",
+      "securityTitle": "Security",
+      "security": "Reasonable technical and organisational measures are in place to protect your data (encrypted connections, access controls). No absolute guarantee can be offered.",
+      "registerTitle": "Register and declaration",
+      "register": "SDK Enterprises maintains an internal register of processing activities (Art. 30 GDPR). No CNIL declaration number is claimed or invented."
+    }
+  }
+}

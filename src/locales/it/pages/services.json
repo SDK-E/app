@@ -1,0 +1,19 @@
+{
+  "servicesPage": {
+    "eyebrow": "Servizi",
+    "body": "Costruiamo e gestiamo software nell'intero stack: agenti e automazione AI, piattaforme backend, interfacce web, infrastruttura cloud, sistemi di dati e modernizzazione legacy. Un problema specializzato o un intero flusso di lavoro: gli ingegneri che svolgono il lavoro sono quelli con cui parli.",
+    "cta": "Avvia un progetto",
+    "engagementEyebrow": "Modelli di coinvolgimento",
+    "engagementHeading": "Come ci impegniamo",
+    "engagementBody": "SDK entra in due modi: un audit a prezzo fisso che diagnostica un problema specifico e propone un percorso da seguire, o un flusso di lavoro ingegneristico dedicato in cui un team senior possiede l'implementazione end-to-end. Esistono accordi ibridi per i sistemi che necessitano sia di diagnosi che di somministrazione sostenuta.",
+    "engagementModel1Title": "Audit a prezzo fisso",
+    "engagementModel1Body": "Una diagnosi mirata di un problema specifico: revisione dell'architettura, percorso di migrazione, collo di bottiglia delle prestazioni o revisione della sicurezza. L'output è un piano scritto con priorità, rischi e impegno stimato.",
+    "engagementModel2Title": "Flusso di lavoro di ingegneria",
+    "engagementModel2Body": "Un team senior integrato nel tuo stack per un periodo definito. Consegna settimanale, progressi visibili e comunicazione diretta con gli ingegneri che realizzano il software.",
+    "engagementModel3Title": "Ibrido",
+    "engagementModel3Body": "Prima l'audit, poi il flusso di lavoro. Il team che diagnostica il problema resta per implementare la soluzione. Nessun trasferimento a un team account diverso.",
+    "whatWeDontDoEyebrow": "Cosa non facciamo",
+    "whatWeDontDoHeading": "Non nascondiamo il meccanismo.",
+    "whatWeDontDoBody": "Nessun junior nel tuo codebase. Nessun account manager tra te e gli ingegneri. Nessun trasferimento offshore dopo la proposta. Nessun impegno che dipende dalla vendita di un ambito più ampio del necessario."
+  }
+}

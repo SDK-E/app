@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "siteDescription": "Empresa francesa de engenharia B2B. Construímos, modernizamos e operamos software em toda a pilha – plataformas de back-end, infraestrutura em nuvem, automação de IA, sistemas em tempo real e ferramentas internas.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Serviços",
+    "servicesDescription": "SDK Enterprises cria, moderniza e opera software em toda a pilha – agentes de IA, plataformas de back-end, interfaces web, infraestrutura em nuvem, sistemas de dados e modernização legada.",
+    "workTitle": "Trabalho",
+    "workDescription": "As situações para as quais o SDK Enterprises está preparado – migração, plataformas de alto volume, automação de IA e entrega de engenharia sênior.",
+    "howWeWorkTitle": "Como trabalhamos",
+    "howWeWorkDescription": "Um caminho claro do problema à produção. Quatro etapas, progresso visível em todas as fases.",
+    "aboutTitle": "Sobre",
+    "aboutDescription": "Empresa de engenharia B2B com sede na França. Entrega sênior, comunicação direta, sem camada de conta.",
+    "startAProjectTitle": "Iniciar um projeto",
+    "startAProjectDescription": "Conte-nos o que você está tentando construir, modernizar, automatizar ou consertar. Diremos honestamente se é adequado e o que seria necessário."
+  },
+  "nav": {
+    "toggleMenu": "Alternar menu",
+    "home": "SDK Enterprises página inicial",
+    "main": "Principal",
+    "services": "Serviços",
+    "work": "Trabalho",
+    "process": "Processo",
+    "about": "Sobre",
+    "discussProject": "Discuta um projeto",
+    "signIn": "Faça login",
+    "legal": "Jurídico",
+    "mentionsLegales": "Menções legais",
+    "privacy": "Privacidade",
+    "terms": "Termos",
+    "cookies": "Biscoitos"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "IA · Software · Nuvem · Engenharia de Sistemas"
+  },
+  "auth": {
+    "loginRedirecting": "Redirecionando para login...",
+    "logoutRedirecting": "Redirecionando para sair..."
+  },
+  "errors": {
+    "pageNotFound": "Esta página não existe ou foi movida.",
+    "backToHome": "De volta para casa",
+    "somethingWentWrong": "Algo deu errado",
+    "tryAgain": "Tente novamente",
+    "contactSupport": "Se o problema persistir, entre em contato com o suporte."
+  }
+}

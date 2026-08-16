@@ -1,42 +1,16 @@
 import { getRequestConfig } from "next-intl/server";
-import { locales, defaultLocale } from "../i18n";
 
-function mergeMessages(
-  target: Record<string, unknown>,
-  source: Record<string, unknown>,
-): Record<string, unknown> {
-  const result = { ...target };
-  for (const key in source) {
-    if (Object.prototype.hasOwnProperty.call(source, key)) {
-      const sourceValue = source[key];
-      const targetValue = result[key];
-      if (
-        sourceValue &&
-        typeof sourceValue === "object" &&
-        !Array.isArray(sourceValue) &&
-        targetValue &&
-        typeof targetValue === "object" &&
-        !Array.isArray(targetValue)
-      ) {
-        result[key] = mergeMessages(
-          targetValue as Record<string, unknown>,
-          sourceValue as Record<string, unknown>,
-        );
-      } else if (sourceValue !== undefined) {
-        result[key] = sourceValue;
-      }
-    }
-  }
-  return result;
-}
+import { defaultLocale, locales, type Locale } from "@/i18n";
+import { loadMessages, mergeMessages } from "@/i18n/messages";
 
 export default getRequestConfig(async ({ locale }) => {
-  const resolved: string = locales.includes(locale as (typeof locales)[number])
-    ? (locale as string)
+  const resolved: Locale = locales.includes(locale as Locale)
+    ? (locale as Locale)
     : defaultLocale;
 
-  const messages = (await import(`../locales/${resolved}.json`)).default;
-  const fallback = (await import(`../locales/${defaultLocale}.json`)).default;
+  const messages = await loadMessages(resolved);
+  const fallback =
+    resolved === defaultLocale ? messages : await loadMessages(defaultLocale);
 
   return {
     locale: resolved,

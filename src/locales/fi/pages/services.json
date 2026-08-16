@@ -1,0 +1,19 @@
+{
+  "servicesPage": {
+    "eyebrow": "Palvelut",
+    "body": "Rakennamme ja käytämme ohjelmistoja kaikkialla: AI-agentit ja automaatio, taustaympäristöt, verkkorajapinnat, pilviinfrastruktuuri, tietojärjestelmät ja vanha modernisointi. Yksi erikoisongelma tai koko työvirta – työn tekevien insinöörien kanssa puhut.",
+    "cta": "Aloita projekti",
+    "engagementEyebrow": "Kihlautumismallit",
+    "engagementHeading": "Miten osallistumme",
+    "engagementBody": "SDK osallistuu kahdella tavalla: kiinteähintainen auditointi, joka diagnosoi tietyn ongelman ja ehdottaa tietä eteenpäin, tai omistettu suunnittelutyövirta, jossa vanhempi tiimi omistaa toteutuksen päästä päähän. Hybridijärjestelyjä on olemassa järjestelmille, jotka tarvitsevat sekä diagnoosin että jatkuvan toimituksen.",
+    "engagementModel1Title": "Kiinteähintainen auditointi",
+    "engagementModel1Body": "Tietyn ongelman rajattu diagnoosi: arkkitehtuurin tarkistus, siirtopolku, suorituskyvyn pullonkaula tai suojaustarkistus. Tuotos on kirjallinen suunnitelma, joka sisältää prioriteetit, riskit ja arvioidut panostukset.",
+    "engagementModel2Title": "Suunnittelutyövirta",
+    "engagementModel2Body": "Vanhempi tiimi upotettuna pinoosi määritetyksi ajaksi. Viikoittainen toimitus, näkyvä edistyminen ja suora yhteydenpito ohjelmistoa rakentavien insinöörien kanssa.",
+    "engagementModel3Title": "Hybridi",
+    "engagementModel3Body": "Auditointi ensin, sitten työvirta. Tiimi, joka diagnosoi ongelman, jää toteuttamaan ratkaisua. Ei luovutusta eri tilitiimille.",
+    "whatWeDontDoEyebrow": "Mitä emme tee",
+    "whatWeDontDoHeading": "Me emme piilota mekanismia.",
+    "whatWeDontDoBody": "Ei junioreita koodikannassasi. Ei tilivastaavaa sinun ja insinöörien välillä. Ei offshore-hankkeita ehdotuksen jälkeen. Ei sitoumusta, joka riippuu siitä, että myydään sinulle enemmän kuin tarvitset."
+  }
+}

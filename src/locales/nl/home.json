@@ -1,0 +1,132 @@
+{
+  "hero": {
+    "eyebrow": "B2B AI · Software · Cloud · Systeemtechniek",
+    "heading": "Eén engineeringpartner voor de stack die uw bedrijf nodig heeft.",
+    "leadParagraph": "SDK Enterprises bouwt, moderniseert en exploiteert software over de gehele stack: backendplatforms, cloudinfrastructuur, AI-automatisering, realtime systemen en interne tooling. Je houdt je bezig met één gespecialiseerd probleem of bezit een bredere werkstroom; Hoe dan ook, de mensen die het werk doen, zijn de mensen met wie je praat.",
+    "ctaStartProject": "Start een project",
+    "ctaExploreServices": "Ontdek diensten",
+    "trustFrance": "Het in Frankrijk gevestigde bedrijf B2B",
+    "trustSenior": "Senior technische levering",
+    "trustAI": "AI + backend + cloud",
+    "trustClients": "Europese en externe klanten"
+  },
+  "services": {
+    "eyebrow": "Diensten",
+    "title": "Gebruik de hele stapel, of alleen het deel dat je nodig hebt.",
+    "intro": "SDK kan zich bezighouden met één gespecialiseerd probleem of eigenaar zijn van een bredere technische werkstroom.",
+    "items": [
+      {
+        "number": "01",
+        "category": "AI-techniek",
+        "title": "AI-agenten en automatisering",
+        "copy": "LLM-integraties, agenten, RAG, workflowautomatisering, ontwikkelaarstools en AI-ondersteunde bewerkingen."
+      },
+      {
+        "number": "02",
+        "category": "Achterkant",
+        "title": "Platformen, APIs en SaaS",
+        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs en realtime backend-architectuur."
+      },
+      {
+        "number": "03",
+        "category": "Frontend",
+        "title": "Web- en applicatie-interfaces",
+        "copy": "React, Vue, Nuxt, TypeScript, Tailwind en Shadcn."
+      },
+      {
+        "number": "04",
+        "category": "Wolk",
+        "title": "Cloud & infrastructuur",
+        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD en implementatiearchitectuur."
+      },
+      {
+        "number": "05",
+        "category": "Gegevens",
+        "title": "Databases, cache en zoeken",
+        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey en Elasticsearch."
+      },
+      {
+        "number": "06",
+        "category": "Modernisering",
+        "title": "Modernisering van de erfenis",
+        "copy": "Framework-upgrades, migratie, reductie van technische schulden en prestatie-optimalisatie."
+      }
+    ]
+  },
+  "whySdk": {
+    "eyebrow": "Waarom SDK",
+    "title": "Senior engineering zonder onnodige lagen.",
+    "intro": "Directe communicatie, snelle diagnose en pragmatische uitvoering.",
+    "items": [
+      {
+        "kicker": "FR",
+        "copy": "Een in Frankrijk gevestigd B2B-bedrijf voor Europese en externe klanten."
+      },
+      {
+        "kicker": "AI",
+        "copy": "LLM-integraties, agenten, automatisering en interne tooling."
+      },
+      {
+        "kicker": "RT",
+        "copy": "Realtime platformwerk met grote volumes."
+      },
+      {
+        "kicker": "DIRECT",
+        "copy": "Je praat met de engineers die het werk doen, niet met een accountlaag."
+      }
+    ]
+  },
+  "engagements": {
+    "eyebrow": "Werken met SDK",
+    "title": "Breng een specifiek probleem mee. Krijg een specifiek antwoord.",
+    "intro": "Je weet wanneer iets in je stapel je iets kost. Dit zijn de situaties waarvoor de SDK is ingesteld.",
+    "items": [
+      {
+        "title": "Een systeem dat te oud is om te blijven patchen.",
+        "copy": "Je hebt een migratieplan nodig, geen wens: een audit van wat loopt, wat kapot gaat en de volgorde om er in te trekken."
+      },
+      {
+        "title": "Volume waarvoor uw huidige stapel niet is gebouwd.",
+        "copy": "Realtime opname, backends met hoge doorvoer en de infrastructuur om ze stabiel te houden."
+      },
+      {
+        "title": "AI die u aan het werk kunt zetten.",
+        "copy": "LLM-integraties, agenten en automatisering die een interne workflow veranderen – geen demo die stopt op het veld."
+      },
+      {
+        "title": "Een team dat senioren nodig heeft.",
+        "copy": "Directe engineeringlevering op uw codebase, zonder dat een middenlaag beslissingen vertraagt."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Hoe wij werken",
+    "title": "Een duidelijk pad van probleem naar productie.",
+    "intro": "Vier stappen, zichtbare vooruitgang in elke fase.",
+    "items": [
+      {
+        "title": "Begrijp het",
+        "copy": "Bedrijfsdoel, stapel, beperkingen en succescriteria."
+      },
+      {
+        "title": "Ontwerp",
+        "copy": "Architectuur, reikwijdte, risico's en mijlpalen."
+      },
+      {
+        "title": "Bouw",
+        "copy": "Implementatie met zichtbare voortgang."
+      },
+      {
+        "title": "Overdracht",
+        "copy": "Implementeren, documenteren en eigendom overdragen."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Werken met SDK",
+    "heading": "Breng ons het probleem dat u opgelost wilt hebben.",
+    "body": "Vertel ons wat u probeert te bouwen, moderniseren, automatiseren of repareren. Wij vertellen u eerlijk of het past en wat daarvoor nodig is.",
+    "registeredUnder": "Geregistreerd onder {company}",
+    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  }
+}

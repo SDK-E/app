@@ -1,0 +1,59 @@
+{
+  "designSystem": {
+    "eyebrow": "SDK Enterprises · Système de conception",
+    "title": "La base visuelle partagée du site Web et du portail client.",
+    "intro": "Cette page restitue chaque jeton, primitive et état défini dans docs/design/design-system.md et docs/design/patterns.md. C'est la référence lors du développement. Il n'est intentionnellement pas lié à la navigation de production.",
+    "primaryAction": "Action primaire",
+    "colors": {
+      "eyebrow": "01 · Palettes",
+      "title": "Une petite palette, utilisée avec intention.",
+      "intro": "Le vert de la marque est uniquement destiné aux actions et aux points forts significatifs – jamais à la décoration. Les arrière-plans verts comportent toujours du texte sombre ; le texte vert n'apparaît que sur les surfaces sombres."
+    },
+    "type": {
+      "eyebrow": "02 · Typographie",
+      "title": "JetBrains Mono, réglé comme un système de type éditorial.",
+      "intro": "Les gros titres sont serrés et larges ; les étiquettes sont petites, majuscules et suivies. Le corps du texte ne descend jamais en dessous de 14 px."
+    },
+    "components": {
+      "eyebrow": "03 · Composants",
+      "title": "Primitives sobres, alignées sur la référence.",
+      "intro": "Boutons, badges, cartes et liens. Une famille de rayon, des bordures de 1 px et aucune décoration au-delà de ce que les conceptions approuvées utilisent.",
+      "buttons": "Boutons",
+      "badges": "Insignes",
+      "cardsLinks": "Cartes et liens",
+      "inProgress": "En cours",
+      "review": "Examen",
+      "pending": "En attente",
+      "currentProjects": "Projets en cours",
+      "viewAll": "Voir tout",
+      "metricsGrid": "Grille de métriques (responsive : 4 → 2 → 1)",
+      "activeProjects": "Projets actifs",
+      "openRequests": "Demandes ouvertes",
+      "outstanding": "Exceptionnel",
+      "pendingActions": "Actions en attente"
+    },
+    "states": {
+      "eyebrow": "04 · États",
+      "title": "Chargement, vide et erreur — surfaces cohérentes.",
+      "intro": "Aucune invention de couleur. Skeleton utilise le ton de la ligne, les états vides sont une bordure en pointillés, les erreurs restent sur la surface du papier avec une forte accentuation sombre.",
+      "loading": "Chargement, vide et erreur — surfaces cohérentes.",
+      "noRequestsYet": "Aucune demande pour l'instant",
+      "whenProjectExists": "Lorsqu'un projet ou une demande existe, il apparaîtra ici.",
+      "somethingFailed": "Quelque chose n'a pas pu être chargé",
+      "tryAgain": "Réessayez ou contactez l'assistance si le problème persiste.",
+      "requestService": "Demander une prestation",
+      "retry": "Réessayer"
+    },
+    "darkSurface": {
+      "eyebrow": "05 · Surface sombre",
+      "title": "Les sections sombres portent le même système.",
+      "intro": "Le texte principal devient clair, le secondaire devient brumeux et le vert est utilisé pour les surbrillances. La ligne de bordure s'assombrit pour garder la composition silencieuse."
+    },
+    "brandSurface": {
+      "eyebrow": "06 · Surface de la marque",
+      "title": "Une section de marque par page, au maximum.",
+      "intro": "Les arrière-plans verts portent du texte sombre. Utilisez-le avec parcimonie – c’est la surface la plus bruyante du système.",
+      "bringUsProblem": "Apportez-nous le problème"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "aboutPage": {
+    "eyebrow": "Acerca de SDK Enterprises",
+    "title": "Ingeniería senior, entrega directa.",
+    "intro": "Empresa de ingeniería B2B con sede en Francia. Construimos, modernizamos y operamos software en toda la pila: plataformas backend, infraestructura en la nube, automatización de IA, sistemas en tiempo real y herramientas internas.",
+    "body": "Fundada en 2019, SDK Enterprises trabaja con una pequeña cantidad de clientes a la vez. El equipo está formado únicamente por personas de alto nivel: no hay juniors, ni gerentes de cuentas, ni traspasos a entregas en el extranjero. La mayoría de los compromisos tienen el alcance de auditorías de precio fijo, flujos de trabajo de ingeniería dedicados o sprints de modernización continuos.",
+    "cta": "iniciar un proyecto",
+    "approachEyebrow": "Nuestro enfoque",
+    "approachHeading": "Por qué mantenemos el equipo pequeño",
+    "approachBody": "Cuando una agencia crece más allá del punto en el que los socios conocen a todos los ingenieros, aparece la capa de cuenta. Esa capa es donde se pierde el contexto, los plazos se retrasan y los costos se multiplican. SDK está estructurado para evitar eso.",
+    "approach1Title": "Sin administradores de cuentas",
+    "approach1Body": "Hablas con el ingeniero responsable del trabajo. Sin traducción, sin retrasos, sin problemas de comunicación entre ventas y entrega.",
+    "approach2Title": "Sin traspaso al extranjero",
+    "approach2Body": "El equipo que diseña el sistema permanece durante la implementación y la entrega. El conocimiento permanece en un solo lugar.",
+    "approach3Title": "Sin recursos junior",
+    "approach3Body": "Cada ingeniero de SDK es de nivel superior. No utilizamos compromisos con los clientes para capacitar al personal menos experimentado.",
+    "beliefsEyebrow": "lo que creemos",
+    "beliefsHeading": "Las suposiciones detrás del trabajo.",
+    "beliefsBody": "Estas no son declaraciones de marketing. Son las limitaciones que dan forma a cada decisión que tomamos.",
+    "belief1Title": "El software es una responsabilidad hasta que se comprenda.",
+    "belief1Body": "Cada línea de código conlleva un coste de mantenimiento. El objetivo no es escribir más código, sino reducir el costo del código que ya existe.",
+    "belief2Title": "Diagnóstico antes de la prescripción.",
+    "belief2Body": "No vendemos un tipo de compromiso fijo. Primero diagnosticamos el sistema: arquitectura, flujo de datos, implementación, equipo y limitaciones. Luego te proponemos el compromiso que más te convenga.",
+    "belief3Title": "La transparencia es una característica.",
+    "belief3Body": "Progreso visible, actualizaciones escritas y acceso directo a los ingenieros. El secretismo en torno al parto es síntoma de un proceso que no se puede explicar.",
+    "companyFacts": {
+      "name": "Nombre legal",
+      "tradingName": "Nombre comercial",
+      "siren": "SIREN",
+      "siret": "SIRET",
+      "address": "domicilio social",
+      "email": "Correo electrónico",
+      "phone": "Teléfono"
+    }
+  }
+}

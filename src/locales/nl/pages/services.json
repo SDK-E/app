@@ -1,0 +1,19 @@
+{
+  "servicesPage": {
+    "eyebrow": "Diensten",
+    "body": "We bouwen en exploiteren software voor de volledige stack: AI-agents en automatisering, backendplatforms, webinterfaces, cloudinfrastructuur, datasystemen en verouderde modernisering. Eén gespecialiseerd probleem of een hele werkstroom: de ingenieurs die het werk doen, zijn degenen met wie u praat.",
+    "cta": "Start een project",
+    "engagementEyebrow": "Betrokkenheidsmodellen",
+    "engagementHeading": "Hoe wij betrokken zijn",
+    "engagementBody": "SDK komt op twee manieren binnen: een audit tegen een vaste prijs die een specifiek probleem diagnosticeert en een pad voorwaarts voorstelt, of een speciale technische werkstroom waarbij een senior team de implementatie van begin tot eind in handen heeft. Er bestaan ​​hybride arrangementen voor systemen die zowel diagnose als langdurige levering nodig hebben.",
+    "engagementModel1Title": "Audit tegen een vaste prijs",
+    "engagementModel1Body": "Een uitgebreide diagnose van een specifiek probleem: architectuurbeoordeling, migratiepad, prestatieknelpunt of beveiligingsbeoordeling. Output is een schriftelijk plan met prioriteiten, risico's en geschatte inspanningen.",
+    "engagementModel2Title": "Technische werkstroom",
+    "engagementModel2Body": "Een seniorenteam ingebed in uw stack voor een bepaalde periode. Wekelijkse oplevering, zichtbare voortgang en directe communicatie met de engineers die de software bouwen.",
+    "engagementModel3Title": "Hybride",
+    "engagementModel3Body": "Eerst audit, daarna werkstroom. Het team dat het probleem diagnosticeert, blijft om de oplossing te implementeren. Geen overdracht naar een ander accountteam.",
+    "whatWeDontDoEyebrow": "Wat wij niet doen",
+    "whatWeDontDoHeading": "We verbergen het mechanisme niet.",
+    "whatWeDontDoBody": "Geen junioren op uw codebase. Geen accountmanager tussen jou en de engineers. Geen offshore-overdracht na het voorstel. Geen betrokkenheid die afhankelijk is van de verkoop van een groter bereik dan u nodig heeft."
+  }
+}

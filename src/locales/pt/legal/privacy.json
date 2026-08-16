@@ -1,0 +1,65 @@
+{
+  "legal": {
+    "privacy": {
+      "title": "Privacy policy",
+      "intro": "How SDK Enterprises handles personal data, in accordance with the GDPR (RGPD).",
+      "processors": [
+        {
+          "name": "Vercel",
+          "role": "Website hosting and cookieless analytics"
+        },
+        {
+          "name": "Auth0 (Okta)",
+          "role": "Authentication for the client portal"
+        },
+        {
+          "name": "Resend",
+          "role": "Transactional email for project enquiries"
+        },
+        {
+          "name": "Prisma Postgres",
+          "role": "Managed PostgreSQL database"
+        }
+      ],
+      "controllerTitle": "Controlador de dados",
+      "controller": "O controlador de dados é {company}, negociando como {name}, com sede em {address}. Para qualquer questão sobre os seus dados pessoais, contacte-nos em {email}.",
+      "collectedDataTitle": "Dados coletados",
+      "collectedData": "O único formulário de coleta de dados neste site é o formulário público “Iniciar um projeto”. Os dados solicitados limitam-se estritamente a:",
+      "collectedDataItems": [
+        "Nome da empresa (obrigatório)",
+        "Endereço de e-mail profissional (obrigatório)",
+        "Site da empresa (opcional)",
+        "Capacidade necessária (obrigatório)",
+        "Descrição do projeto ou problema (obrigatório)",
+        "Ambiente existente (opcional)",
+        "Linha do tempo (opcional)",
+        "Faixa de orçamento (opcional)",
+        "Contexto de apoio (opcional)"
+      ],
+      "purposesTitle": "Finalidades e bases legais",
+      "purposesNote": "Os seus dados são tratados para:",
+      "purposeItems": [
+        "responder à consulta do seu projeto — medidas pré-contratuais (Art. 6(1)(b) GDPR) e interesse legítimo (Art. 6(1)(f));",
+        "operar, proteger e melhorar o site — interesse legítimo (Art. 6(1)(f));",
+        "cumprir quaisquer obrigações legais aplicáveis (Art. 6(1)(c))."
+      ],
+      "recipientsTitle": "Destinatários",
+      "recipientsNote": "Seus dados são acessíveis apenas a pessoas autorizadas em SDK Enterprises. Podem ser processados pelos seguintes processadores, estritamente para as necessidades dos seus serviços:",
+      "transfersTitle": "Transferências fora da UE",
+      "transfers": "Alguns processadores podem processar dados fora do Espaço Económico Europeu (nomeadamente nos Estados Unidos). Quando isto ocorre, são utilizadas salvaguardas adequadas, tais como as cláusulas contratuais padrão da Comissão Europeia.",
+      "retentionTitle": "Retenção",
+      "retention": "Os dados recolhidos através do formulário são conservados durante 12 meses a partir do último contacto, salvo se uma conservação mais prolongada for exigida por lei. Após este período, é eliminado ou anonimizado.",
+      "rightsTitle": "Seus direitos",
+      "rightsNote": "De acordo com Articles 15 to 22 GDPR, você tem direito de acesso, retificação, apagamento, restrição, portabilidade e oposição. Você também pode retirar seu consentimento a qualquer momento.",
+      "rightsContact": "Para exercer esses direitos, escreva-nos para {email}. Respondemos dentro de um mês. Você também pode registrar uma reclamação junto ao CNIL (www.cnil.fr).",
+      "childrenTitle": "Crianças",
+      "children": "O site é destinado a profissionais e não a menores. O formulário de consulta não se destina a menores de 16 anos.",
+      "automatedTitle": "Tomada de decisão automatizada",
+      "automated": "Nenhuma tomada de decisão automatizada ou criação de perfil é realizada com base nos seus dados.",
+      "securityTitle": "Segurança",
+      "security": "Estão em vigor medidas técnicas e organizacionais razoáveis para proteger os seus dados (conexões criptografadas, controles de acesso). Nenhuma garantia absoluta pode ser oferecida.",
+      "registerTitle": "Cadastro e declaração",
+      "register": "SDK Enterprises mantém um registro interno de atividades de processamento (Art. 30 GDPR). Nenhum número de declaração CNIL é reivindicado ou inventado."
+    }
+  }
+}

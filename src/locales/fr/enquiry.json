@@ -1,0 +1,74 @@
+{
+  "enquiry": {
+    "title": "Démarrer un projet",
+    "subtitle": "Dites-nous ce que vous essayez de créer, de moderniser, d'automatiser ou de réparer. Nous vous répondrons dans les 2 jours ouvrables avec une évaluation honnête de l'ajustement et de ce qu'il faudrait.",
+    "body": "Le formulaire collecte le minimum d’informations nécessaires pour répondre de manière réfléchie. Rien n'est partagé en dehors de SDK Enterprises, et vous pouvez également nous joindre directement à hello@sdk.enterprises.",
+    "body2": "Nous examinons nous-mêmes chaque demande. Pas de gestionnaire de comptes, pas de scripts de qualification, pas de transfert.",
+    "nextStepsEyebrow": "Que se passe-t-il ensuite",
+    "nextStepsHeading": "De l'enquête à l'engagement",
+    "nextStepsBody": "Après avoir soumis le formulaire, nous le lisons nous-mêmes. Si cela vous convient, nous vous répondrons avec une brève évaluation écrite et une proposition de modèle d'engagement. Si cela ne vous convient pas, nous vous expliquerons pourquoi et vous proposerons une alternative.",
+    "nextStep1Title": "Examen",
+    "nextStep1Body": "Nous lisons votre soumission et la vérifions par rapport à notre capacité et notre expertise actuelles. Généralement dans les 2 jours ouvrables.",
+    "nextStep2Title": "Évaluation",
+    "nextStep2Body": "Une brève réponse écrite : quel est, selon nous, le problème, s'il est approprié et quelle serait la première mesure à prendre.",
+    "nextStep3Title": "Appeler ou asynchrone",
+    "nextStep3Body": "Un appel de 30 minutes ou un échange asynchrone pour clarifier la portée, les contraintes et le calendrier. Pas de pitch deck sauf si vous en voulez un.",
+    "nextStep4Title": "Proposition",
+    "nextStep4Body": "Une proposition écrite avec la portée, le prix ou le taux fixe, le calendrier et les étapes. Vous signez, nous commençons.",
+    "form": {
+      "companyName": "Entreprise",
+      "email": "E-mail professionnel",
+      "website": "Site Internet de l'entreprise",
+      "capability": "Capacité nécessaire",
+      "description": "Description du problème/du projet",
+      "environment": "Environnement existant",
+      "timeline": "Chronologie",
+      "budgetRange": "Gamme budgétaire",
+      "context": "Contexte favorable",
+      "submit": "Envoyer une demande"
+    },
+    "capabilities": {
+      "aiEngineering": "Ingénierie de l'IA",
+      "softwareEngineering": "Génie logiciel",
+      "frontendProduct": "Frontend et produit",
+      "cloudInfrastructure": "Nuage et infrastructures",
+      "dataCacheSearch": "Données / Cache / Recherche",
+      "modernization": "Modernisation",
+      "other": "Autre"
+    },
+    "timelines": {
+      "asap": "DÈS QUE POSSIBLE",
+      "oneToThreeMonths": "1 à 3 mois",
+      "threeToSixMonths": "3 à 6 mois",
+      "sixPlusMonths": "6+ mois",
+      "notSure": "Je ne suis pas sûr"
+    },
+    "budgets": {
+      "under10k": "< 10k€",
+      "tenToTwentyFiveK": "10 000 à 25 000 €",
+      "twentyFiveToFiftyK": "25 000 à 50 000 €",
+      "fiftyPlusK": "50 000 €+",
+      "notSure": "Je ne suis pas sûr"
+    },
+    "validation": {
+      "companyNameRequired": "Le nom de l'entreprise est requis",
+      "emailRequired": "Un e-mail professionnel est requis",
+      "emailInvalid": "Entrez une adresse e-mail valide",
+      "websiteInvalid": "Entrez une URL valide",
+      "capabilityRequired": "Sélectionnez une capacité",
+      "descriptionRequired": "Décrire le projet ou le problème",
+      "descriptionTooShort": "La description doit comporter au moins 50 caractères",
+      "descriptionTooLong": "La description doit comporter moins de 4 000 caractères",
+      "environmentTooLong": "L'environnement doit contenir moins de 4 000 caractères",
+      "contextTooLong": "Le contexte de support doit contenir moins de 4 000 caractères."
+    },
+    "success": {
+      "title": "Demande envoyée",
+      "body": "Merci, nous examinerons votre projet et vous répondrons dans les 2 jours ouvrables."
+    },
+    "error": {
+      "title": "Quelque chose s'est mal passé",
+      "body": "Nous n'avons pas pu envoyer votre demande. Veuillez réessayer ou envoyez-nous un e-mail directement."
+    }
+  }
+}

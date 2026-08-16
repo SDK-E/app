@@ -1,0 +1,22 @@
+{
+  "workPage": {
+    "eyebrow": "Työskentele SDK:n kanssa",
+    "body": "Tiedät, kun jokin pinossasi maksaa sinulle. Tässä ovat tilanteet, joihin SDK on rakennettu.",
+    "cta": "Aloita projekti",
+    "engagementsEyebrow": "Kihlaukset",
+    "engagementsHeading": "Miten sitoutuminen yleensä alkaa",
+    "engagementsBody": "Useimmat sitoutumiset alkavat lyhyellä keskustelulla tai kirjallisella yhteenvedolla ongelmasta. Sieltä SDK ehdottaa laajennettua vastausta: kiinteähintaista auditointia, aika- ja materiaalityövirtaa tai hybridimallia riippuen järjestelmän epävarmuudesta ja tavoitteen selkeydestä.",
+    "lookForEyebrow": "Mitä etsimme",
+    "lookForHeading": "Selkeä ongelma ja tiimi, joka haluaa puuttua siihen.",
+    "lookForBody": "Parhaat sitoutumiset alkavat, kun asiakas tietää, että jokin on vialla, mutta ei vielä tiedä koko laajuutta. Etsimme tiimejä, jotka haluavat ymmärtää mekanismin, eivät vain saada liukukannetta.",
+    "lookFor1Title": "Erityinen rajoitus",
+    "lookFor1Body": "Suorituskyky, luotettavuus, hinta, toimitusnopeus tai vaatimustenmukaisuus. Ongelman ei tarvitse olla uusi – sen on oltava todellinen ja mitattavissa.",
+    "lookFor2Title": "Pääsy järjestelmään",
+    "lookFor2Body": "Lue koodikanta, infrastruktuuri ja ihmiset, jotka ymmärtävät tämänhetkisen tilan. Ilman tätä kaikki arvioinnit ovat arvauksia.",
+    "lookFor3Title": "Päätöksentekijä",
+    "lookFor3Body": "Joku, joka voi hyväksyä laajuuden, budjetin ja aikajanan. Ei komitea – yksi henkilö, jolla on valtuudet viedä työtä eteenpäin.",
+    "fitEyebrow": "Sopiva",
+    "fitHeading": "Kun SDK ei ole oikea vastaus",
+    "fitBody": "Emme sano useammin kuin saatat odottaa. SDK ei ole ylivuotolippujen koripaja, emmekä ota toimeksiantoja, joissa ongelmaa ei ole vielä määritelty tai tiimi ei voi sitoutua prosessiin."
+  }
+}

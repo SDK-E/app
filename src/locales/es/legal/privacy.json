@@ -1,0 +1,65 @@
+{
+  "legal": {
+    "privacy": {
+      "title": "Política de privacidad",
+      "intro": "Cómo maneja SDK Enterprises los datos personales, de acuerdo con el GDPR (RGPD).",
+      "processors": [
+        {
+          "name": "Vercel",
+          "role": "Alojamiento de sitios web y análisis sin cookies"
+        },
+        {
+          "name": "Auth0 (Okta)",
+          "role": "Autenticación para el portal del cliente."
+        },
+        {
+          "name": "Resend",
+          "role": "Correo electrónico transaccional para consultas sobre proyectos"
+        },
+        {
+          "name": "Prisma Postgres",
+          "role": "Base de datos administrada PostgreSQL"
+        }
+      ],
+      "controllerTitle": "Responsable del tratamiento",
+      "controller": "El responsable del tratamiento de datos es {company}, que comercializa bajo el nombre de {name}, con domicilio social en {address}. Para cualquier consulta sobre sus datos personales, contáctenos en {email}.",
+      "collectedDataTitle": "Datos recopilados",
+      "collectedData": "El único formulario de recopilación de datos en este sitio es el formulario público \"Iniciar un proyecto\". Los datos solicitados se limitan estrictamente a:",
+      "collectedDataItems": [
+        "Nombre de la empresa (requerido)",
+        "Dirección de correo electrónico profesional (requerido)",
+        "Sitio web de la empresa (opcional)",
+        "Capacidad necesaria (requerida)",
+        "Descripción del proyecto o problema (requerido)",
+        "Entorno existente (opcional)",
+        "Línea de tiempo (opcional)",
+        "Rango de presupuesto (opcional)",
+        "Contexto de apoyo (opcional)"
+      ],
+      "purposesTitle": "Finalidades y bases legales",
+      "purposesNote": "Tus datos son tratados para:",
+      "purposeItems": [
+        "responder a su consulta sobre el proyecto: medidas precontractuales (Art. 6(1)(b) GDPR) e interés legítimo (Art. 6(1)(f));",
+        "operar, asegurar y mejorar el sitio: interés legítimo (Art. 6(1)(f));",
+        "cumplir con cualquier obligación legal aplicable (Art. 6(1)(c))."
+      ],
+      "recipientsTitle": "Destinatarios",
+      "recipientsNote": "Sus datos solo son accesibles para personas autorizadas dentro de SDK Enterprises. Podrá ser tratado por los siguientes encargados, estrictamente para las necesidades de sus servicios:",
+      "transfersTitle": "Transferencias fuera de la UE",
+      "transfers": "Algunos procesadores pueden procesar datos fuera del Espacio Económico Europeo (especialmente en los Estados Unidos). Cuando esto ocurre, se utilizan salvaguardias adecuadas, como las cláusulas contractuales tipo de la Comisión Europea.",
+      "retentionTitle": "Retención",
+      "retention": "Los datos recopilados a través del formulario se conservan durante 12 meses desde el último contacto, a menos que la ley exija una conservación más prolongada. Después de este período, se elimina o se anonimiza.",
+      "rightsTitle": "Tus derechos",
+      "rightsNote": "De acuerdo con Articles 15 to 22 GDPR, usted tiene derecho de acceso, rectificación, supresión, limitación, portabilidad y oposición. También podrá retirar su consentimiento en cualquier momento.",
+      "rightsContact": "Para ejercer estos derechos, escríbanos a {email}. Respondemos en el plazo de un mes. También puede presentar una queja ante el CNIL (www.cnil.fr).",
+      "childrenTitle": "niños",
+      "children": "El sitio está dirigido a profesionales y no está destinado a menores. El formulario de consulta no está destinado a personas menores de 16 años.",
+      "automatedTitle": "Toma de decisiones automatizada",
+      "automated": "No se realiza ninguna toma de decisiones automatizada ni elaboración de perfiles sobre sus datos.",
+      "securityTitle": "Seguridad",
+      "security": "Se han adoptado medidas técnicas y organizativas razonables para proteger sus datos (conexiones cifradas, controles de acceso). No se puede ofrecer ninguna garantía absoluta.",
+      "registerTitle": "Registro y declaración",
+      "register": "SDK Enterprises mantiene un registro interno de actividades de procesamiento (Art. 30 GDPR). No se reivindica ni se inventa ningún número de declaración CNIL."
+    }
+  }
+}

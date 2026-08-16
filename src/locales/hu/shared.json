@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "siteDescription": "Francia B2B mérnöki cég. Szoftvereket építünk, korszerűsítünk és üzemeltetünk a teljes veremben – háttérplatformok, felhő infrastruktúra, mesterséges intelligencia automatizálás, valós idejű rendszerek és belső eszközök.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Szolgáltatások",
+    "servicesDescription": "A SDK Enterprises szoftvereket épít, modernizál és üzemeltet a teljes veremben – AI-ügynökök, háttérplatformok, webes felületek, felhő-infrastruktúra, adatrendszerek és örökölt modernizáció.",
+    "workTitle": "Munka",
+    "workDescription": "Azokra a helyzetekre, amelyekre a SDK Enterprises be van állítva – migráció, nagy volumenű platformok, mesterséges intelligencia automatizálás és vezető mérnöki szállítás.",
+    "howWeWorkTitle": "Hogyan dolgozunk",
+    "howWeWorkDescription": "Világos út a problémától a termelésig. Négy lépés, látható haladás minden szakaszban.",
+    "aboutTitle": "Körülbelül",
+    "aboutDescription": "Franciaországi székhelyű B2B mérnöki cég. Senior kézbesítés, közvetlen kommunikáció, nincs számlaréteg.",
+    "startAProjectTitle": "Indítson el egy projektet",
+    "startAProjectDescription": "Mondja el, mit próbál építeni, modernizálni, automatizálni vagy javítani. Megmondjuk őszintén, hogy megfelelő-e, és mi kell hozzá."
+  },
+  "nav": {
+    "toggleMenu": "Váltó menü",
+    "home": "SDK Enterprises otthon",
+    "main": "Fő",
+    "services": "Szolgáltatások",
+    "work": "Munka",
+    "process": "Folyamat",
+    "about": "Körülbelül",
+    "discussProject": "Egy projekt megbeszélése",
+    "signIn": "Jelentkezzen be",
+    "legal": "Jogi",
+    "mentionsLegales": "Legales-t említi",
+    "privacy": "Adatvédelem",
+    "terms": "Feltételek",
+    "cookies": "Cookie-k"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "AI · Szoftver · Felhő · Rendszermérnökség"
+  },
+  "auth": {
+    "loginRedirecting": "Átirányítás a bejelentkezéshez...",
+    "logoutRedirecting": "Átirányítás a kijelentkezéshez..."
+  },
+  "errors": {
+    "pageNotFound": "Ez az oldal nem létezik, vagy át lett helyezve.",
+    "backToHome": "Vissza haza",
+    "somethingWentWrong": "Valami elromlott",
+    "tryAgain": "Próbáld újra",
+    "contactSupport": "Ha a probléma továbbra is fennáll, forduljon az ügyfélszolgálathoz."
+  }
+}

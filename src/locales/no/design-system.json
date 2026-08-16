@@ -1,0 +1,59 @@
+{
+  "designSystem": {
+    "eyebrow": "SDK Enterprises · Designsystem",
+    "title": "Det delte visuelle grunnlaget for nettsiden og klientportalen.",
+    "intro": "Denne siden gjengir hver token, primitiv og tilstand definert i docs/design/design-system.md og docs/design/patterns.md. Det er referansen under utviklingen. Det er med vilje ikke koblet fra produksjonsnavigasjon.",
+    "primaryAction": "Primær handling",
+    "colors": {
+      "eyebrow": "01 · Palett",
+      "title": "En liten palett, brukt med hensikt.",
+      "intro": "Merkegrønn er kun for handlinger og meningsfulle høydepunkter - aldri dekorasjon. Grønn bakgrunn har alltid mørk tekst; grønn tekst vises kun på mørke flater."
+    },
+    "type": {
+      "eyebrow": "02 · Typografi",
+      "title": "JetBrains Mono, innstilt som et redaksjonelt system.",
+      "intro": "Overskrifter satt stramt og stort; etiketter satt små, store og sporede. Brødtekst blir aldri under 14 piksler."
+    },
+    "components": {
+      "eyebrow": "03 · Komponenter",
+      "title": "Behersket primitiver, på linje med referansen.",
+      "intro": "Knapper, merker, kort og lenker. Én radiusfamilie, 1px-kanter og ingen dekorasjon utover det de godkjente designene bruker.",
+      "buttons": "Knapper",
+      "badges": "Merker",
+      "cardsLinks": "Kort og lenker",
+      "inProgress": "Pågår",
+      "review": "Gjennomgå",
+      "pending": "Venter",
+      "currentProjects": "Aktuelle prosjekter",
+      "viewAll": "Se alle",
+      "metricsGrid": "Metrikkrutenett (responsivt: 4 → 2 → 1)",
+      "activeProjects": "Aktive prosjekter",
+      "openRequests": "Åpne forespørsler",
+      "outstanding": "Enestående",
+      "pendingActions": "Ventende handlinger"
+    },
+    "states": {
+      "eyebrow": "04 · Stater",
+      "title": "Lasting, tom og feil – konsistente overflater.",
+      "intro": "Ingen fargeoppfinnelser. Skjelett bruker linjetonen, tom angir en stiplet kantlinje, feil forblir på papiroverflaten med sterk mørk betoning.",
+      "loading": "Lasting, tom og feil – konsistente overflater.",
+      "noRequestsYet": "Ingen forespørsler ennå",
+      "whenProjectExists": "Når et prosjekt eller forespørsel eksisterer, vil det vises her.",
+      "somethingFailed": "Noe kunne ikke lastes inn",
+      "tryAgain": "Prøv igjen, eller kontakt kundestøtte hvis problemet vedvarer.",
+      "requestService": "Be om en tjeneste",
+      "retry": "Prøv på nytt"
+    },
+    "darkSurface": {
+      "eyebrow": "05 · Mørk overflate",
+      "title": "Mørke partier bærer det samme systemet.",
+      "intro": "Primærtekst blir lys, sekundær blir tåke og grønn brukes til høydepunkter. Kantlinjen blir mørkere for å holde komposisjonen stille."
+    },
+    "brandSurface": {
+      "eyebrow": "06 · Merkeoverflate",
+      "title": "Høyst én merkeseksjon per side.",
+      "intro": "Grønn bakgrunn har mørk tekst. Bruk dette med måte - det er den høyeste overflaten i systemet.",
+      "bringUsProblem": "Gi oss problemet"
+    }
+  }
+}

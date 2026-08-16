@@ -1,0 +1,36 @@
+{
+  "aboutPage": {
+    "eyebrow": "Despre SDK Enterprises",
+    "title": "Inginerie senior, livrare directă.",
+    "intro": "Companie de inginerie B2B cu sediul în Franța. Construim, modernizăm și operăm software în întreaga stivă — platforme backend, infrastructură cloud, automatizare AI, sisteme în timp real și instrumente interne.",
+    "body": "Fondată în 2019, SDK Enterprises lucrează cu un număr mic de clienți simultan. Echipa este doar pentru seniori: fără juniori, fără manageri de cont, fără transferuri către livrare offshore. Cele mai multe angajamente sunt definite ca audituri la preț fix, fluxuri de lucru dedicate de inginerie sau sprinturi de modernizare în curs.",
+    "cta": "Începeți un proiect",
+    "approachEyebrow": "Abordarea noastră",
+    "approachHeading": "De ce menținem echipa mică",
+    "approachBody": "Când o agenție depășește punctul în care partenerii cunosc fiecare inginer, apare stratul de cont. Acest strat este locul în care contextul se pierde, cronologia alunecă și costurile se înmulțesc. SDK este structurat pentru a evita acest lucru.",
+    "approach1Title": "Fără administratori de cont",
+    "approach1Body": "Vorbești cu inginerul responsabil de lucrare. Fără traducere, fără întârzieri, fără comunicare greșită între vânzări și livrare.",
+    "approach2Title": "Fără transfer offshore",
+    "approach2Body": "Echipa care proiectează sistemul rămâne prin implementare și predare. Cunoașterea rămâne într-un singur loc.",
+    "approach3Title": "Fără resurse pentru juniori",
+    "approach3Body": "Fiecare inginer SDK este de nivel superior. Nu folosim angajamentele clienților pentru a instrui personalul mai puțin experimentat.",
+    "beliefsEyebrow": "Ce credem noi",
+    "beliefsHeading": "Ipotezele din spatele lucrării",
+    "beliefsBody": "Acestea nu sunt declarații de marketing. Ele sunt constrângerile care modelează fiecare decizie pe care o luăm.",
+    "belief1Title": "Software-ul este o răspundere până când este înțeles",
+    "belief1Body": "Fiecare linie de cod implică costuri de întreținere. Scopul nu este de a scrie mai mult cod, ci de a reduce costul codului care există deja.",
+    "belief2Title": "Diagnosticul înainte de prescripție",
+    "belief2Body": "Nu vindem un tip de angajament fix. Diagnosticam mai întâi sistemul: arhitectura, fluxul de date, implementarea, echipa și constrângerile. Apoi propunem logodna care se potrivește.",
+    "belief3Title": "Transparența este o caracteristică",
+    "belief3Body": "Progres vizibil, actualizări scrise și acces direct la ingineri. Secretul în jurul livrării este un simptom al unui proces care nu poate fi explicat.",
+    "companyFacts": {
+      "name": "Denumirea legală",
+      "tradingName": "Nume comercial",
+      "siren": "SIREN",
+      "siret": "SIRET",
+      "address": "Sediul social",
+      "email": "E-mail",
+      "phone": "Telefon"
+    }
+  }
+}

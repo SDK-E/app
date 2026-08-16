@@ -1,0 +1,26 @@
+{
+  "legal": {
+    "terms": {
+      "title": "Terms of use",
+      "intro": "The rules for using this website.",
+      "purposeTitle": "Doel",
+      "purpose": "Deze voorwaarden zijn van toepassing op uw gebruik van de {name}-website. Door de site te bezoeken, gaat u akkoord met deze voorwaarden.",
+      "servicesTitle": "Presentatie van diensten",
+      "services": "De site presenteert de diensten van {name} en biedt u de mogelijkheid een projectaanvraag in te dienen. Deze inhoud wordt uitsluitend ter informatie verstrekt en vormt geen contractueel aanbod, noch een verplichting om diensten te verlenen.",
+      "enquiriesTitle": "Projectaanvragen",
+      "enquiries": "Informatie ingediend via het formulier \"Start een project\" wordt behandeld in overeenstemming met het privacybeleid. Het ontvangen van een aanvraag houdt geen verplichting in om deze te aanvaarden.",
+      "intellectualPropertyTitle": "Intellectueel eigendom",
+      "intellectualProperty": "De teksten, het logo, beeldmateriaal en de inhoud van de site zijn eigendom van SDK Enterprises en mogen zonder voorafgaande toestemming niet hergebruikt worden.",
+      "availabilityTitle": "Beschikbaarheid van de locatie",
+      "availability": "De site wordt aangeboden \"zoals hij is\". SDK Enterprises levert redelijke inspanningen om deze toegankelijk te houden, maar garandeert geen ononderbroken of foutloze beschikbaarheid.",
+      "liabilityTitle": "Aansprakelijkheid",
+      "liability": "Voor zover wettelijk toegestaan, is de aansprakelijkheid van SDK Enterprises beperkt tot directe schade en strekt zich niet uit tot indirecte schade. Links naar sites van derden vallen uitsluitend onder de verantwoordelijkheid van hun uitgevers.",
+      "changesTitle": "Veranderingen",
+      "changes": "SDK Enterprises kan deze voorwaarden op elk moment wijzigen. De toepasselijke versie is de versie die op deze pagina is gepubliceerd.",
+      "lawTitle": "Toepasselijk recht",
+      "law": "Op deze voorwaarden is het Franse recht van toepassing. In geval van een geschil zijn de Franse rechtbanken bevoegd.",
+      "contactTitle": "Contacteer",
+      "contact": "Neem voor vragen contact op met {company} op {email}."
+    }
+  }
+}

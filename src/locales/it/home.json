@@ -1,0 +1,132 @@
+{
+  "hero": {
+    "eyebrow": "B2B AI · Software · Cloud · Ingegneria dei sistemi",
+    "heading": "Un partner tecnico per lo stack di cui la tua azienda ha bisogno.",
+    "leadParagraph": "SDK Enterprises costruisce, modernizza e gestisce software su tutto lo stack: piattaforme backend, infrastruttura cloud, automazione AI, sistemi in tempo reale e strumenti interni. Ti impegni su un problema specializzato o possiedi un flusso di lavoro più ampio; in ogni caso, le persone che svolgono il lavoro sono le persone con cui parli.",
+    "ctaStartProject": "Avvia un progetto",
+    "ctaExploreServices": "Esplora i servizi",
+    "trustFrance": "Azienda B2B con sede in Francia",
+    "trustSenior": "Consegna di ingegneria senior",
+    "trustAI": "IA + back-end + cloud",
+    "trustClients": "Clienti europei e remoti"
+  },
+  "services": {
+    "eyebrow": "Servizi",
+    "title": "Usa tutto lo stack o solo la parte che ti serve.",
+    "intro": "SDK può impegnarsi su un problema specializzato o possedere un flusso di lavoro tecnico più ampio.",
+    "items": [
+      {
+        "number": "01",
+        "category": "Ingegneria dell'intelligenza artificiale",
+        "title": "Agenti IA e automazione",
+        "copy": "Integrazioni LLM, agenti, RAG, automazione del flusso di lavoro, strumenti per sviluppatori e operazioni assistite dall'intelligenza artificiale."
+      },
+      {
+        "number": "02",
+        "category": "Backend",
+        "title": "Piattaforme, APIs e SaaS",
+        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs e architettura backend in tempo reale."
+      },
+      {
+        "number": "03",
+        "category": "Frontend",
+        "title": "Interfacce web e applicative",
+        "copy": "React, Vue, Nuxt, TypeScript, Tailwind e Shadcn."
+      },
+      {
+        "number": "04",
+        "category": "Nuvola",
+        "title": "Cloud e infrastruttura",
+        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD e architettura di distribuzione."
+      },
+      {
+        "number": "05",
+        "category": "Dati",
+        "title": "Database, cache e ricerca",
+        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey e Elasticsearch."
+      },
+      {
+        "number": "06",
+        "category": "Modernizzazione",
+        "title": "Modernizzazione dell'eredità",
+        "copy": "Aggiornamenti del framework, migrazione, riduzione del debito tecnico e ottimizzazione delle prestazioni."
+      }
+    ]
+  },
+  "whySdk": {
+    "eyebrow": "Perché SDK",
+    "title": "Ingegneria senior senza strati inutili.",
+    "intro": "Comunicazione diretta, diagnosi rapida ed esecuzione pragmatica.",
+    "items": [
+      {
+        "kicker": "FR",
+        "copy": "Una società B2B con sede in Francia per clienti europei e remoti."
+      },
+      {
+        "kicker": "AI",
+        "copy": "Integrazioni LLM, agenti, automazione e strumenti interni."
+      },
+      {
+        "kicker": "RT",
+        "copy": "Lavoro su piattaforma in tempo reale e ad alto volume."
+      },
+      {
+        "kicker": "DIRETTO",
+        "copy": "Parli con gli ingegneri che svolgono il lavoro, non con il livello dell'account."
+      }
+    ]
+  },
+  "engagements": {
+    "eyebrow": "Funziona con SDK",
+    "title": "Porta un problema specifico. Ottieni una risposta specifica.",
+    "intro": "Sai quando qualcosa nel tuo stack ti sta costando. Ecco le situazioni per le quali è configurato SDK.",
+    "items": [
+      {
+        "title": "Un sistema troppo vecchio per continuare ad aggiornare.",
+        "copy": "Hai bisogno di un piano di migrazione, non di un desiderio: un controllo di ciò che funziona, di ciò che si interrompe e dell'ordine in cui trasferirti."
+      },
+      {
+        "title": "Volume per il quale il tuo stack attuale non è stato creato.",
+        "copy": "Ingestione in tempo reale, backend ad alto rendimento e infrastruttura per mantenerli stabili."
+      },
+      {
+        "title": "L'intelligenza artificiale che puoi mettere al lavoro.",
+        "copy": "Integrazioni, agenti e automazione LLM che modificano un flusso di lavoro interno, non una demo che si ferma in campo."
+      },
+      {
+        "title": "Una squadra che ha bisogno di mani senior.",
+        "copy": "Distribuzione diretta della progettazione sulla codebase, senza che uno strato intermedio rallenti le decisioni."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Come lavoriamo",
+    "title": "Un percorso chiaro dal problema alla produzione.",
+    "intro": "Quattro passi, progressi visibili in ogni fase.",
+    "items": [
+      {
+        "title": "Capire",
+        "copy": "Obiettivo aziendale, stack, vincoli e criteri di successo."
+      },
+      {
+        "title": "Progettazione",
+        "copy": "Architettura, ambito, rischi e tappe fondamentali."
+      },
+      {
+        "title": "Costruisci",
+        "copy": "Attuazione con progressi visibili."
+      },
+      {
+        "title": "Consegna",
+        "copy": "Distribuisci, documenta e trasferisci la proprietà."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Funziona con SDK",
+    "heading": "Portaci il problema che desideri risolvere.",
+    "body": "Raccontaci cosa stai cercando di costruire, modernizzare, automatizzare o correggere: ti diremo onestamente se è adatto e cosa sarebbe necessario.",
+    "registeredUnder": "Registrato sotto {company}",
+    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  }
+}

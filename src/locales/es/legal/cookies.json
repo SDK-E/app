@@ -1,0 +1,16 @@
+{
+  "legal": {
+    "cookies": {
+      "title": "Política de cookies",
+      "intro": "Qué son las cookies y si este sitio las utiliza.",
+      "whatIsTitle": "¿Qué es una galleta?",
+      "whatIs": "Una cookie es un pequeño archivo de texto que se coloca en su dispositivo cuando visita un sitio web. Permite que el sitio reconozca su navegador y recuerde información.",
+      "thisSiteTitle": "Cookies establecidas por este sitio",
+      "thisSite": "Este sitio no establece cookies de análisis, publicidad o seguimiento. La solución de análisis utilizada (Vercel Analytics) no utiliza cookies. Por lo tanto, no se realiza un seguimiento de su navegación.",
+      "consentBannerTitle": "Banner de consentimiento",
+      "consentBanner": "No se muestra ningún banner de consentimiento porque no se establecen cookies. Si se agregara un script de configuración de cookies, se requeriría un banner de consentimiento y esta página se actualizaría.",
+      "browserSettingsTitle": "Gestión de cookies en su navegador",
+      "browserSettings": "Puede configurar su navegador para rechazar o eliminar cookies en cualquier momento. Las instrucciones dependen de su navegador (Chrome, Firefox, Safari, Edge). Las guías están disponibles en www.cnil.fr."
+    }
+  }
+}

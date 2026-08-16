@@ -1,0 +1,59 @@
+{
+  "designSystem": {
+    "eyebrow": "SDK Enterprises · Sistem de proiectare",
+    "title": "Fundația vizuală comună pentru site-ul web și portalul clienților.",
+    "intro": "Această pagină redă fiecare token, primitiv și stare definit în docs/design/design-system.md și docs/design/patterns.md. Este referința în timpul dezvoltării. Nu este conectat în mod intenționat de la navigarea de producție.",
+    "primaryAction": "Acțiune primară",
+    "colors": {
+      "eyebrow": "01 · Paleta",
+      "title": "O paletă mică, folosită cu intenție.",
+      "intro": "Verdele de marcă este doar pentru acțiuni și evidențieri semnificative - niciodată decorațiuni. Fundalurile verzi poartă întotdeauna text întunecat; textul verde apare numai pe suprafețele întunecate."
+    },
+    "type": {
+      "eyebrow": "02 · Tipografie",
+      "title": "JetBrains Mono, reglat ca un sistem de tip editorial.",
+      "intro": "Titlurile sunt strânse și mari; etichete setate mici, majuscule și urmărite. Copia corpului nu scade niciodată sub 14 px."
+    },
+    "components": {
+      "eyebrow": "03 · Componente",
+      "title": "Primitive restrânse, aliniate la referință.",
+      "intro": "Butoane, insigne, carduri și link-uri. O singură familie de rază, chenare de 1 px și nicio decorare în afara ceea ce folosesc modelele aprobate.",
+      "buttons": "Butoane",
+      "badges": "Ecusoane",
+      "cardsLinks": "Carduri și link-uri",
+      "inProgress": "În curs",
+      "review": "Revizuire",
+      "pending": "În așteptare",
+      "currentProjects": "Proiecte curente",
+      "viewAll": "Vezi toate",
+      "metricsGrid": "Grilă de valori (responsive: 4 → 2 → 1)",
+      "activeProjects": "Proiecte active",
+      "openRequests": "Cereri deschise",
+      "outstanding": "Remarcabil",
+      "pendingActions": "Acțiuni în așteptare"
+    },
+    "states": {
+      "eyebrow": "04 · State",
+      "title": "Încărcare, gol și eroare — suprafețe consistente.",
+      "intro": "Fără invenții de culoare. Skeleton folosește tonul liniei, golul afirmă o chenar întreruptă, erorile rămân pe suprafața hârtiei cu un accent puternic întunecat.",
+      "loading": "Încărcare, gol și eroare — suprafețe consistente.",
+      "noRequestsYet": "Nicio solicitare încă",
+      "whenProjectExists": "Când există un proiect sau o cerere, acesta va apărea aici.",
+      "somethingFailed": "Ceva nu s-a încărcat",
+      "tryAgain": "Încercați din nou sau contactați asistența dacă problema persistă.",
+      "requestService": "Solicitați un serviciu",
+      "retry": "Reîncercați"
+    },
+    "darkSurface": {
+      "eyebrow": "05 · Suprafață întunecată",
+      "title": "Secțiunile întunecate poartă același sistem.",
+      "intro": "Textul primar devine luminos, secundar se transformă în ceață, iar verdele este folosit pentru evidențieri. Linia de margine se întunecă pentru a menține compoziția liniștită."
+    },
+    "brandSurface": {
+      "eyebrow": "06 · Suprafața mărcii",
+      "title": "Cel mult o secțiune de marcă pe pagină.",
+      "intro": "Fundalurile verzi au text întunecat. Utilizați acest lucru cu moderație - este cea mai tare suprafață din sistem.",
+      "bringUsProblem": "Adu-ne problema"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "designSystem": {
+    "eyebrow": "SDK Enterprises · Sistema de diseño",
+    "title": "La base visual compartida para el sitio web y el portal del cliente.",
+    "intro": "Esta página representa cada token, primitivo y estado definido en docs/design/design-system.md y docs/design/patterns.md. Es la referencia durante el desarrollo. Intencionalmente no está vinculado desde la navegación de producción.",
+    "primaryAction": "acción primaria",
+    "colors": {
+      "eyebrow": "01 · Paleta",
+      "title": "Una paleta pequeña, utilizada con intención.",
+      "intro": "El verde de marca es solo para acciones y aspectos destacados significativos, nunca para decoración. Los fondos verdes siempre llevan texto oscuro; El texto verde solo aparece en superficies oscuras."
+    },
+    "type": {
+      "eyebrow": "02 · Tipografía",
+      "title": "JetBrains Mono, sintonizado como un sistema de tipo editorial.",
+      "intro": "Los titulares son amplios y ajustados; las etiquetas se establecen en tamaño pequeño, en mayúsculas y con seguimiento. El texto del cuerpo nunca baja de 14 px."
+    },
+    "components": {
+      "eyebrow": "03 · Componentes",
+      "title": "Primitivas restringidas, alineadas con la referencia.",
+      "intro": "Botones, insignias, tarjetas y enlaces. Una familia de radios, bordes de 1 px y sin decoración más allá de la que utilizan los diseños aprobados.",
+      "buttons": "Botones",
+      "badges": "Insignias",
+      "cardsLinks": "Tarjetas y enlaces",
+      "inProgress": "En progreso",
+      "review": "Revisión",
+      "pending": "Pendiente",
+      "currentProjects": "Proyectos actuales",
+      "viewAll": "Ver todo",
+      "metricsGrid": "Cuadrícula de métricas (responsiva: 4 → 2 → 1)",
+      "activeProjects": "Proyectos activos",
+      "openRequests": "Solicitudes abiertas",
+      "outstanding": "Sobresaliente",
+      "pendingActions": "Acciones pendientes"
+    },
+    "states": {
+      "eyebrow": "04 · Estados",
+      "title": "Carga, vacío y error: superficies consistentes.",
+      "intro": "Nada de inventos de color. El esqueleto usa el tono de línea, el vacío indica un borde discontinuo, los errores permanecen en la superficie del papel con un fuerte énfasis oscuro.",
+      "loading": "Carga, vacío y error: superficies consistentes.",
+      "noRequestsYet": "Aún no hay solicitudes",
+      "whenProjectExists": "Cuando exista un proyecto o solicitud, aparecerá aquí.",
+      "somethingFailed": "Algo no se pudo cargar",
+      "tryAgain": "Inténtelo de nuevo o comuníquese con el soporte técnico si el problema persiste.",
+      "requestService": "Solicitar un servicio",
+      "retry": "Reintentar"
+    },
+    "darkSurface": {
+      "eyebrow": "05 · Superficie oscura",
+      "title": "Las secciones oscuras llevan el mismo sistema.",
+      "intro": "El texto principal se vuelve claro, el secundario se vuelve niebla y el verde se usa para resaltar. La línea del borde se oscurece para mantener la composición tranquila."
+    },
+    "brandSurface": {
+      "eyebrow": "06 · Superficie de marca",
+      "title": "Una sección de marca por página, como máximo.",
+      "intro": "Los fondos verdes llevan texto oscuro. Úselo con moderación: es la superficie más ruidosa del sistema.",
+      "bringUsProblem": "Tráenos el problema"
+    }
+  }
+}

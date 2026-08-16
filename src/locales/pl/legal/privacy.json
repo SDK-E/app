@@ -1,0 +1,65 @@
+{
+  "legal": {
+    "privacy": {
+      "title": "Privacy policy",
+      "intro": "How SDK Enterprises handles personal data, in accordance with the GDPR (RGPD).",
+      "processors": [
+        {
+          "name": "Vercel",
+          "role": "Website hosting and cookieless analytics"
+        },
+        {
+          "name": "Auth0 (Okta)",
+          "role": "Authentication for the client portal"
+        },
+        {
+          "name": "Resend",
+          "role": "Transactional email for project enquiries"
+        },
+        {
+          "name": "Prisma Postgres",
+          "role": "Managed PostgreSQL database"
+        }
+      ],
+      "controllerTitle": "Administrator danych",
+      "controller": "Administratorem danych jest {company}, działająca pod firmą {name} z siedzibą pod adresem {address}. W przypadku jakichkolwiek pytań dotyczących Twoich danych osobowych, skontaktuj się z nami pod adresem {email}.",
+      "collectedDataTitle": "Zebrane dane",
+      "collectedData": "Jedynym formularzem gromadzenia danych na tej stronie jest publiczny formularz „Rozpocznij projekt”. Żądane dane są ściśle ograniczone do:",
+      "collectedDataItems": [
+        "Nazwa firmy (wymagane)",
+        "Profesjonalny adres e-mail (wymagany)",
+        "Strona firmowa (opcjonalnie)",
+        "Wymagana zdolność (wymagana)",
+        "Opis projektu lub problemu (wymagane)",
+        "Istniejące środowisko (opcjonalnie)",
+        "Oś czasu (opcjonalnie)",
+        "Zakres budżetu (opcjonalnie)",
+        "Kontekst pomocniczy (opcjonalnie)"
+      ],
+      "purposesTitle": "Cele i podstawy prawne",
+      "purposesNote": "Twoje dane przetwarzane są w celu:",
+      "purposeItems": [
+        "odpowiedzieć na Twoje zapytanie projektowe — działania przedumowne (Art. 6(1)(b) GDPR) i uzasadniony interes (Art. 6(1)(f));",
+        "obsługiwać, zabezpieczać i ulepszać witrynę — uzasadniony interes (Art. 6(1)(f));",
+        "przestrzegać wszelkich mających zastosowanie obowiązków prawnych (Art. 6(1)(c))."
+      ],
+      "recipientsTitle": "Odbiorcy",
+      "recipientsNote": "Dostęp do Twoich danych mają wyłącznie upoważnione osoby w ramach SDK Enterprises. Mogą być przetwarzane przez następujących procesorów, wyłącznie na potrzeby świadczonych przez nich usług:",
+      "transfersTitle": "Transfery poza UE",
+      "transfers": "Niektórzy przetwarzający mogą przetwarzać dane poza Europejskim Obszarem Gospodarczym (w szczególności w Stanach Zjednoczonych). W takim przypadku stosuje się odpowiednie zabezpieczenia, takie jak standardowe klauzule umowne Komisji Europejskiej.",
+      "retentionTitle": "Zatrzymanie",
+      "retention": "Dane zebrane za pośrednictwem formularza przechowywane są przez 12 miesięcy od ostatniego kontaktu, chyba że przepisy prawa wymagają dłuższego przechowywania. Po tym okresie są one usuwane lub anonimizowane.",
+      "rightsTitle": "Twoje prawa",
+      "rightsNote": "Zgodnie z Articles 15 to 22 GDPR masz prawo dostępu, poprawiania, usuwania, ograniczania, przenoszenia i sprzeciwu. Możesz także wycofać swoją zgodę w dowolnym momencie.",
+      "rightsContact": "Aby skorzystać z tych praw, napisz do nas na adres {email}. Odpowiadamy w ciągu miesiąca. Możesz także złożyć skargę do CNIL (www.cnil.fr).",
+      "childrenTitle": "Dzieci",
+      "children": "Strona skierowana jest do profesjonalistów i nie jest przeznaczona dla osób nieletnich. Formularz zapytania nie jest przeznaczony dla osób poniżej 16 roku życia.",
+      "automatedTitle": "Zautomatyzowane podejmowanie decyzji",
+      "automated": "Na Twoich danych nie jest dokonywane zautomatyzowane podejmowanie decyzji ani profilowanie.",
+      "securityTitle": "Bezpieczeństwo",
+      "security": "Stosowane są rozsądne środki techniczne i organizacyjne w celu ochrony Twoich danych (połączenia szyfrowane, kontrola dostępu). Nie można udzielić żadnej absolutnej gwarancji.",
+      "registerTitle": "Rejestracja i deklaracja",
+      "register": "SDK Enterprises prowadzi wewnętrzny rejestr czynności przetwarzania (Art. 30 GDPR). Żaden numer deklaracji CNIL nie jest zastrzeżony ani wymyślony."
+    }
+  }
+}

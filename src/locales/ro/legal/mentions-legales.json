@@ -1,0 +1,25 @@
+{
+  "legal": {
+    "mentionsLegales": {
+      "title": "Mentions légales",
+      "intro": "Legal notices for the SDK Enterprises website.",
+      "publisherTitle": "Editor",
+      "publisherWebsite": "Site-ul web accesibil la {domain} este publicat de {company}, tranzacționând ca {name}.",
+      "siren": "SIREN: {siren}",
+      "siret": "SIRET: {siret}",
+      "registeredOffice": "Sediul social: {address}",
+      "legalForm": "Forma juridică și capital social: Auto-antreprenor (comerciant unic, microîntreprindere), fără capital social",
+      "registration": "Înregistrare companie: RCS Paris {siren}",
+      "directorTitle": "Director de publicație",
+      "director": "Director de publicație: Hicham SADDEK.",
+      "hostingTitle": "Gazduire",
+      "hosting": "Site-ul este găzduit de Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, Statele Unite.",
+      "contactTitle": "Contact",
+      "contact": "Întrebările despre site pot fi trimise la {email} sau prin telefon la {phone}.",
+      "intellectualPropertyTitle": "Proprietatea intelectuală",
+      "intellectualProperty": "Structura, textele, logo-ul și conținutul site-ului sunt proprietatea SDK Enterprises. Orice reproducere sau reprezentare, integrală sau parțială, fără autorizație prealabilă este interzisă, cu excepția cazurilor permise de legea aplicabilă.",
+      "legalFrameworkTitle": "Cadrul legal",
+      "legalFramework": "Aceste notificări sunt guvernate de legea franceză și sunt stabilite în conformitate cu articolul 6-III din Legea franceză nr. 2004-575 din 21 iunie 2004 privind încrederea în economia digitală (LCEN)."
+    }
+  }
+}

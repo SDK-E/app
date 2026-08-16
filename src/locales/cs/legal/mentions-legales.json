@@ -1,0 +1,25 @@
+{
+  "legal": {
+    "mentionsLegales": {
+      "title": "Mentions légales",
+      "intro": "Legal notices for the SDK Enterprises website.",
+      "publisherTitle": "Vydavatel",
+      "publisherWebsite": "Webovou stránku přístupnou na {domain} vydává {company} obchodující pod názvem {name}.",
+      "siren": "SIREN: {siren}",
+      "siret": "SIRET: {siret}",
+      "registeredOffice": "Sídlo: {address}",
+      "legalForm": "Právní forma a základní kapitál: Živnostník (živnostník, mikropodnik), bez základního kapitálu",
+      "registration": "Registrace společnosti: RCS Paris {siren}",
+      "directorTitle": "Ředitel publikace",
+      "director": "Ředitel publikace: Hicham SADDEK.",
+      "hostingTitle": "Hosting",
+      "hosting": "Web je hostitelem Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, Spojené státy americké.",
+      "contactTitle": "Kontakt",
+      "contact": "Dotazy ohledně stránek můžete zasílat na {email} nebo telefonicky na {phone}.",
+      "intellectualPropertyTitle": "Duševní vlastnictví",
+      "intellectualProperty": "Struktura, texty, logo a obsah stránek jsou majetkem SDK Enterprises. Jakákoli reprodukce nebo znázornění, vcelku nebo po částech, bez předchozího souhlasu je zakázáno, s výjimkou případů povolených platnými zákony.",
+      "legalFrameworkTitle": "Právní rámec",
+      "legalFramework": "Tato oznámení se řídí francouzským právem a jsou vytvořena v souladu s článkem 6-III francouzského zákona č. 2004-575 ze dne 21. června 2004 o důvěře v digitální ekonomiku (LCEN)."
+    }
+  }
+}

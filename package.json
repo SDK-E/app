@@ -18,7 +18,7 @@
     "test": "vitest",
     "test:run": "vitest run",
     "i18n:translate": "python3 scripts/translate-locales.py",
-    "i18n:check": "python3 scripts/translate-locales.py --check"
+    "i18n:check": "python3 scripts/translate-locales-test.py && python3 scripts/translate-locales.py --check"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^4.26.0",

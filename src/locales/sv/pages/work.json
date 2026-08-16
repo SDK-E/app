@@ -1,0 +1,22 @@
+{
+  "workPage": {
+    "eyebrow": "Arbeta med SDK",
+    "body": "Du vet när något i din stack kostar dig. Här är situationerna SDK är byggd för.",
+    "cta": "Starta ett projekt",
+    "engagementsEyebrow": "Engagemang",
+    "engagementsHeading": "Hur engagemang brukar börja",
+    "engagementsBody": "De flesta engagemang börjar med ett kort samtal eller en skriftlig sammanfattning av problemet. Därifrån föreslår SDK ett scoped svar: en fastprisrevision, en arbetsström för tid och material eller en hybridmodell beroende på osäkerheten i systemet och klarheten i målet.",
+    "lookForEyebrow": "Vad vi letar efter",
+    "lookForHeading": "Ett tydligt problem och ett team som är villiga att engagera sig i det.",
+    "lookForBody": "De bästa engagemangen börjar när kunden vet att något är fel men ännu inte vet hela omfattningen. Vi letar efter lag som vill förstå mekanismen, inte bara ta emot ett slide deck.",
+    "lookFor1Title": "En specifik begränsning",
+    "lookFor1Body": "Prestanda, tillförlitlighet, kostnad, leveranshastighet eller efterlevnad. Problemet behöver inte vara nytt – det måste vara verkligt och mätbart.",
+    "lookFor2Title": "Tillgång till systemet",
+    "lookFor2Body": "Läsåtkomst till kodbasen, infrastrukturen och de personer som förstår det aktuella tillståndet. Utan detta är varje bedömning gissningar.",
+    "lookFor3Title": "En beslutsfattare",
+    "lookFor3Body": "Någon som kan godkänna omfattningen, budgeten och tidslinjen. Inte en kommitté – en person med befogenhet att föra arbetet framåt.",
+    "fitEyebrow": "Fit",
+    "fitHeading": "När SDK inte är rätt svar",
+    "fitBody": "Vi säger inte oftare än du kanske förväntar dig. SDK är inte en verkstad för överloppsbiljetter, och vi tar inga uppdrag där problemet ännu inte är definierat eller teamet inte kan åta sig processen."
+  }
+}

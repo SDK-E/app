@@ -1,0 +1,19 @@
+{
+  "servicesPage": {
+    "eyebrow": "Services",
+    "body": "We build and operate software across the full stack: AI agents and automation, backend platforms, web interfaces, cloud infrastructure, data systems, and legacy modernization. One specialized problem or an entire workstream — the engineers doing the work are the ones you talk to.",
+    "cta": "Start a project",
+    "engagementEyebrow": "Engagement models",
+    "engagementHeading": "How we engage",
+    "engagementBody": "SDK enters in two ways: a fixed-price audit that diagnoses a specific problem and proposes a path forward, or a dedicated engineering workstream where a senior team owns the implementation end to end. Hybrid arrangements exist for systems that need both diagnosis and sustained delivery.",
+    "engagementModel1Title": "Fixed-price audit",
+    "engagementModel1Body": "A scoped diagnosis of a specific problem: architecture review, migration path, performance bottleneck, or security review. Output is a written plan with priorities, risks, and estimated effort.",
+    "engagementModel2Title": "Engineering workstream",
+    "engagementModel2Body": "A senior team embedded in your stack for a defined period. Weekly delivery, visible progress, and direct communication with the engineers building the software.",
+    "engagementModel3Title": "Hybrid",
+    "engagementModel3Body": "Audit first, then workstream. The team that diagnoses the problem stays to implement the solution. No hand-off to a different account team.",
+    "whatWeDontDoEyebrow": "What we don't do",
+    "whatWeDontDoHeading": "We don't hide the mechanism.",
+    "whatWeDontDoBody": "No juniors on your codebase. No account manager between you and the engineers. No offshore hand-off after the proposal. No engagement that depends on selling you a larger scope than you need."
+  }
+}

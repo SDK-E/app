@@ -1,0 +1,36 @@
+{
+  "aboutPage": {
+    "eyebrow": "O SDK Enterprises",
+    "title": "Senior engineering, přímá dodávka.",
+    "intro": "Francouzská strojírenská společnost B2B. Vytváříme, modernizujeme a provozujeme software napříč zásobníky – backendové platformy, cloudová infrastruktura, automatizace AI, systémy v reálném čase a interní nástroje.",
+    "body": "Společnost SDK Enterprises byla založena v roce 2019 a současně pracuje s malým počtem klientů. Tým je pouze pro seniory: žádní junioři, žádní správci účtů, žádné předávání offshore doručování. Většina zakázek má rozsah jako audity s pevnou cenou, specializované inženýrské pracovní toky nebo průběžné modernizační sprinty.",
+    "cta": "Začněte projekt",
+    "approachEyebrow": "Náš přístup",
+    "approachHeading": "Proč udržujeme tým malý",
+    "approachBody": "Když agentura překročí bod, kdy partneři znají každého inženýra, objeví se vrstva účtu. V této vrstvě se ztrácí kontext, časové osy prokluzují a náklady se násobí. SDK je strukturován tak, aby se tomu zabránilo.",
+    "approach1Title": "Žádní správci účtů",
+    "approach1Body": "Promluvíte si s inženýrem odpovědným za práci. Žádný překlad, žádné zpoždění, žádná špatná komunikace mezi prodejem a dodáním.",
+    "approach2Title": "Žádné offshore předávání",
+    "approach2Body": "Tým, který systém navrhuje, zůstává po implementaci a předání. Znalosti zůstávají na jednom místě.",
+    "approach3Title": "Žádné juniorské zdroje",
+    "approach3Body": "Každý inženýr SDK je na vyšší úrovni. Nevyužíváme zapojení klientů k školení méně zkušených zaměstnanců.",
+    "beliefsEyebrow": "Čemu věříme",
+    "beliefsHeading": "Předpoklady za prací",
+    "beliefsBody": "Toto nejsou marketingová prohlášení. Jsou to omezení, která utvářejí každé naše rozhodnutí.",
+    "belief1Title": "Software je odpovědností, dokud mu není porozuměno",
+    "belief1Body": "Každý řádek kódu nese náklady na údržbu. Cílem není psát další kód – jde o snížení nákladů na kód, který již existuje.",
+    "belief2Title": "Diagnostika před předpisem",
+    "belief2Body": "Neprodáváme typ s pevným zapojením. Nejprve diagnostikujeme systém: architekturu, tok dat, nasazení, tým a omezení. Poté navrhneme angažmá, které se hodí.",
+    "belief3Title": "Transparentnost je vlastnost",
+    "belief3Body": "Viditelný pokrok, písemné aktualizace a přímý přístup k inženýrům. Tajemství kolem doručení je příznakem procesu, který nelze vysvětlit.",
+    "companyFacts": {
+      "name": "Legální jméno",
+      "tradingName": "Obchodní jméno",
+      "siren": "SIREN",
+      "siret": "SIRET",
+      "address": "Sídlo společnosti",
+      "email": "Email",
+      "phone": "Telefon"
+    }
+  }
+}

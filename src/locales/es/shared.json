@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "siteDescription": "Empresa de ingeniería francesa B2B. Construimos, modernizamos y operamos software en toda la pila: plataformas backend, infraestructura en la nube, automatización de IA, sistemas en tiempo real y herramientas internas.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Servicios",
+    "servicesDescription": "SDK Enterprises crea, moderniza y opera software en toda la pila: agentes de inteligencia artificial, plataformas backend, interfaces web, infraestructura en la nube, sistemas de datos y modernización heredada.",
+    "workTitle": "trabajo",
+    "workDescription": "Las situaciones para las que está preparado SDK Enterprises: migración, plataformas de gran volumen, automatización de IA y entrega de ingeniería senior.",
+    "howWeWorkTitle": "como trabajamos",
+    "howWeWorkDescription": "Un camino claro del problema a la producción. Cuatro pasos, progreso visible en cada etapa.",
+    "aboutTitle": "Acerca de",
+    "aboutDescription": "Empresa de ingeniería B2B con sede en Francia. Entrega senior, comunicación directa, sin capa de cuenta.",
+    "startAProjectTitle": "iniciar un proyecto",
+    "startAProjectDescription": "Cuéntanos qué estás intentando construir, modernizar, automatizar o arreglar. Le diremos honestamente si es adecuado y qué se necesitaría."
+  },
+  "nav": {
+    "toggleMenu": "Alternar menú",
+    "home": "Inicio SDK Enterprises",
+    "main": "principal",
+    "services": "Servicios",
+    "work": "trabajo",
+    "process": "Proceso",
+    "about": "Acerca de",
+    "discussProject": "Discutir un proyecto",
+    "signIn": "Iniciar sesión",
+    "legal": "Legales",
+    "mentionsLegales": "Menciones legales",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "cookies": "galletas"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "IA · Software · Nube · Ingeniería de Sistemas"
+  },
+  "auth": {
+    "loginRedirecting": "Redirigiendo para iniciar sesión...",
+    "logoutRedirecting": "Redireccionando para cerrar sesión..."
+  },
+  "errors": {
+    "pageNotFound": "Esta página no existe o ha sido movida.",
+    "backToHome": "De vuelta a casa",
+    "somethingWentWrong": "algo salió mal",
+    "tryAgain": "Inténtalo de nuevo",
+    "contactSupport": "Si el problema persiste, comuníquese con el soporte."
+  }
+}

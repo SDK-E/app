@@ -1,0 +1,16 @@
+{
+  "legal": {
+    "cookies": {
+      "title": "Cookie policy",
+      "intro": "What cookies are and whether this site uses them.",
+      "whatIsTitle": "Mi az a süti?",
+      "whatIs": "A süti egy kis szöveges fájl, amely akkor kerül az Ön készülékére, amikor meglátogat egy webhelyet. Lehetővé teszi a webhely számára, hogy felismerje böngészőjét, és megjegyezze az információkat.",
+      "thisSiteTitle": "Az oldal által beállított cookie-k",
+      "thisSite": "Ez az oldal nem állít be analitikai, hirdetési vagy nyomkövető cookie-kat. A használt analitikai megoldás (Vercel Analytics) cookie-mentes. Ezért a böngészést nem követi nyomon.",
+      "consentBannerTitle": "Hozzájárulás banner",
+      "consentBanner": "Nem jelenik meg beleegyező szalaghirdetés, mert nincsenek beállítva cookie-k. Ha egy cookie-beállító szkriptet adnának hozzá, akkor szükség lesz egy hozzájárulási szalaghirdetésre, és ez az oldal frissülne.",
+      "browserSettingsTitle": "Cookie-k kezelése a böngészőben",
+      "browserSettings": "Böngészőjét bármikor beállíthatja úgy, hogy megtagadja vagy törölje a cookie-kat. Az utasítások a böngészőtől függenek (Chrome, Firefox, Safari, Edge). Az útmutatók a www.cnil.fr címen érhetők el."
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "legal": {
+    "privacy": {
+      "title": "Privacy policy",
+      "intro": "How SDK Enterprises handles personal data, in accordance with the GDPR (RGPD).",
+      "processors": [
+        {
+          "name": "Vercel",
+          "role": "Website hosting and cookieless analytics"
+        },
+        {
+          "name": "Auth0 (Okta)",
+          "role": "Authentication for the client portal"
+        },
+        {
+          "name": "Resend",
+          "role": "Transactional email for project enquiries"
+        },
+        {
+          "name": "Prisma Postgres",
+          "role": "Managed PostgreSQL database"
+        }
+      ],
+      "controllerTitle": "Titolare del trattamento",
+      "controller": "Il titolare del trattamento è {company}, operante come {name}, con sede legale presso {address}. Per qualsiasi domanda sui tuoi dati personali, contattaci all'indirizzo {email}.",
+      "collectedDataTitle": "Dati raccolti",
+      "collectedData": "L'unico modulo di raccolta dati su questo sito è il modulo pubblico \"Avvia un progetto\". I dati richiesti sono strettamente limitati a:",
+      "collectedDataItems": [
+        "Nome azienda (richiesto)",
+        "Indirizzo email professionale (richiesto)",
+        "Sito web aziendale (facoltativo)",
+        "Capacità necessaria (richiesto)",
+        "Descrizione del progetto o del problema (richiesto)",
+        "Ambiente esistente (facoltativo)",
+        "Cronologia (opzionale)",
+        "Intervallo di budget (facoltativo)",
+        "Contesto di supporto (facoltativo)"
+      ],
+      "purposesTitle": "Finalità e basi giuridiche",
+      "purposesNote": "I tuoi dati vengono trattati per:",
+      "purposeItems": [
+        "rispondere alla tua richiesta di progetto — misure precontrattuali (Art. 6(1)(b) GDPR) e interesse legittimo (Art. 6(1)(f));",
+        "gestire, proteggere e migliorare il sito – interesse legittimo (Art. 6(1)(f));",
+        "rispettare eventuali obblighi di legge applicabili (Art. 6(1)(c))."
+      ],
+      "recipientsTitle": "Destinatari",
+      "recipientsNote": "I tuoi dati sono accessibili solo alle persone autorizzate all'interno di SDK Enterprises. I dati potranno essere trattati dai seguenti responsabili del trattamento, strettamente per esigenze dei loro servizi:",
+      "transfersTitle": "Trasferimenti extra UE",
+      "transfers": "Alcuni responsabili del trattamento possono elaborare dati al di fuori dello Spazio Economico Europeo (in particolare negli Stati Uniti). Laddove ciò si verifichi, vengono utilizzate garanzie adeguate, come le clausole contrattuali standard della Commissione Europea.",
+      "retentionTitle": "Conservazione",
+      "retention": "I dati raccolti tramite il form vengono conservati per 12 mesi dall'ultimo contatto, a meno che una conservazione più lunga non sia richiesta dalla legge. Trascorso tale periodo vengono cancellati o anonimizzati.",
+      "rightsTitle": "I tuoi diritti",
+      "rightsNote": "Ai sensi del Articles 15 to 22 GDPR, hai il diritto di accesso, rettifica, cancellazione, limitazione, portabilità e opposizione. Puoi anche revocare il tuo consenso in qualsiasi momento.",
+      "rightsContact": "Per esercitare questi diritti, scrivici a {email}. Rispondiamo entro un mese. Puoi anche presentare un reclamo allo CNIL (www.cnil.fr).",
+      "childrenTitle": "Bambini",
+      "children": "Il sito è rivolto ai professionisti e non è destinato ai minori. Il modulo di richiesta non è destinato a persone di età inferiore a 16 anni.",
+      "automatedTitle": "Processo decisionale automatizzato",
+      "automated": "Sui tuoi dati non viene effettuato alcun processo decisionale automatizzato né profilazione.",
+      "securityTitle": "Sicurezza",
+      "security": "Sono in atto misure tecniche e organizzative ragionevoli per proteggere i vostri dati (connessioni crittografate, controlli di accesso). Non è possibile offrire alcuna garanzia assoluta.",
+      "registerTitle": "Registro e dichiarazione",
+      "register": "SDK Enterprises mantiene un registro interno delle attività di trattamento (Art. 30 GDPR). Nessun numero di dichiarazione CNIL è rivendicato o inventato."
+    }
+  }
+}

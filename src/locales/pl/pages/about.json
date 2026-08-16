@@ -1,0 +1,36 @@
+{
+  "aboutPage": {
+    "eyebrow": "Informacje o SDK Enterprises",
+    "title": "Starszy inżynier, bezpośrednia dostawa.",
+    "intro": "Francuska firma inżynieryjna B2B. Budujemy, modernizujemy i obsługujemy oprogramowanie w ramach całego stosu — platform backendowych, infrastruktury chmurowej, automatyzacji sztucznej inteligencji, systemów czasu rzeczywistego i narzędzi wewnętrznych.",
+    "body": "Założona w 2019 roku firma SDK Enterprises współpracuje z niewielką liczbą klientów jednocześnie. Zespół składa się wyłącznie z seniorów: nie ma juniorów, nie ma menedżerów ds. kont, nie ma osób przekazujących dostawy na morzu. Większość zleceń obejmuje audyty o ustalonej cenie, dedykowane procesy inżynieryjne lub ciągłe sprinty modernizacyjne.",
+    "cta": "Rozpocznij projekt",
+    "approachEyebrow": "Nasze podejście",
+    "approachHeading": "Dlaczego utrzymujemy mały zespół",
+    "approachBody": "Kiedy agencja rozrośnie się do punktu, w którym partnerzy znają każdego inżyniera, pojawia się warstwa konta. W tej warstwie traci się kontekst, przesuwają się terminy i mnożą się koszty. Konstrukcja SDK pozwala tego uniknąć.",
+    "approach1Title": "Brak menedżerów kont",
+    "approach1Body": "Rozmawiasz z inżynierem odpowiedzialnym za pracę. Żadnych tłumaczeń, żadnych opóźnień, żadnych nieporozumień pomiędzy sprzedażą a dostawą.",
+    "approach2Title": "Żadnego przekazania na morzu",
+    "approach2Body": "Zespół, który projektuje system, pozostaje przez wdrożenie i przekazanie. Wiedza pozostaje w jednym miejscu.",
+    "approach3Title": "Brak zasobów juniorów",
+    "approach3Body": "Każdy inżynier SDK to inżynier wyższego szczebla. Nie wykorzystujemy zleceń klientów do szkolenia mniej doświadczonego personelu.",
+    "beliefsEyebrow": "W co wierzymy",
+    "beliefsHeading": "Założenia pracy",
+    "beliefsBody": "Nie są to stwierdzenia marketingowe. Są to ograniczenia, które kształtują każdą podejmowaną przez nas decyzję.",
+    "belief1Title": "Oprogramowanie stanowi odpowiedzialność, dopóki nie zostanie zrozumiane",
+    "belief1Body": "Każda linia kodu wiąże się z kosztami utrzymania. Celem nie jest napisanie większej ilości kodu — chodzi o zmniejszenie kosztu kodu, który już istnieje.",
+    "belief2Title": "Diagnoza przed receptą",
+    "belief2Body": "Nie sprzedajemy stałego typu zaręczyn. Najpierw diagnozujemy system: architekturę, przepływ danych, wdrożenie, zespół i ograniczenia. Następnie proponujemy zaręczyny, które pasują.",
+    "belief3Title": "Przejrzystość jest cechą",
+    "belief3Body": "Widoczny postęp, pisemne aktualizacje i bezpośredni dostęp do inżynierów. Tajemnica dostawy jest symptomem procesu, którego nie da się wyjaśnić.",
+    "companyFacts": {
+      "name": "Nazwa prawna",
+      "tradingName": "Nazwa handlowa",
+      "siren": "SIREN",
+      "siret": "SIRET",
+      "address": "Zarejestrowane biuro",
+      "email": "E-mail",
+      "phone": "Telefon"
+    }
+  }
+}

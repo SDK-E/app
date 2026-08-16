@@ -1,0 +1,22 @@
+{
+  "workPage": {
+    "eyebrow": "Práce s SDK",
+    "body": "Poznáte, když vás něco ve vašem zásobníku stojí. Zde jsou situace, pro které je SDK stavěn.",
+    "cta": "Začněte projekt",
+    "engagementsEyebrow": "Zásnuby",
+    "engagementsHeading": "Jak obvykle začínají zásnuby",
+    "engagementsBody": "Většina setkání začíná krátkým rozhovorem nebo písemným shrnutím problému. Odtud SDK navrhuje reakci v rozsahu: audit s pevnou cenou, pracovní tok času a materiálů nebo hybridní model v závislosti na nejistotě v systému a jasnosti cíle.",
+    "lookForEyebrow": "Co hledáme",
+    "lookForHeading": "Jasný problém a tým ochotný se do toho pustit.",
+    "lookForBody": "Nejlepší zakázky začínají, když klient ví, že něco není v pořádku, ale ještě nezná celý rozsah. Hledáme týmy, které chtějí porozumět mechanismu, nejen dostávat skluzavku.",
+    "lookFor1Title": "Specifické omezení",
+    "lookFor1Body": "Výkon, spolehlivost, cena, rychlost dodání nebo dodržování předpisů. Problém nemusí být nový – musí být skutečný a měřitelný.",
+    "lookFor2Title": "Přístup do systému",
+    "lookFor2Body": "Přístup pro čtení ke kódové základně, infrastruktuře a lidem, kteří rozumí aktuálnímu stavu. Bez toho je jakékoli hodnocení jen dohady.",
+    "lookFor3Title": "Osoba s rozhodovací pravomocí",
+    "lookFor3Body": "Někdo, kdo může schválit rozsah, rozpočet a časovou osu. Ne výbor – jedna osoba s pravomocí posouvat práci kupředu.",
+    "fitEyebrow": "Fit",
+    "fitHeading": "Když SDK není správná odpověď",
+    "fitBody": "Říkáme ne častěji, než byste čekali. SDK není karosárna pro přepadové lístky a nepřijímáme zakázky, kde problém ještě není definován nebo se tým nemůže zapojit do procesu."
+  }
+}

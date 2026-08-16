@@ -1,0 +1,26 @@
+{
+  "legal": {
+    "terms": {
+      "title": "Terms of use",
+      "intro": "The rules for using this website.",
+      "purposeTitle": "Tarkoitus",
+      "purpose": "Nämä ehdot koskevat {name}-verkkosivuston käyttöä. Avaamalla sivuston hyväksyt nämä ehdot.",
+      "servicesTitle": "Palveluiden esittely",
+      "services": "Sivusto esittelee {name}:n palvelut ja antaa sinun lähettää projektikyselyn. Tämä sisältö on tarkoitettu vain tiedoksi, eikä se ole sopimustarjous tai sitoumus tarjota palveluja.",
+      "enquiriesTitle": "Projektikyselyt",
+      "enquiries": "\"Aloita projekti\" -lomakkeella lähetettyjä tietoja käsitellään tietosuojaselosteen mukaisesti. Tiedustelun vastaanottaminen ei tarkoita velvollisuutta hyväksyä se.",
+      "intellectualPropertyTitle": "Henkinen omaisuus",
+      "intellectualProperty": "Sivuston tekstit, logo, visuaalit ja sisältö ovat SDK Enterprises:n omaisuutta, eikä niitä saa käyttää uudelleen ilman ennakkolupaa.",
+      "availabilityTitle": "Sivuston saatavuus",
+      "availability": "Sivusto tarjotaan \"sellaisenaan\". SDK Enterprises pyrkii kohtuullisesti pitämään sen saatavilla, mutta ei takaa keskeytymätöntä tai virheetöntä saatavuutta.",
+      "liabilityTitle": "Vastuu",
+      "liability": "Lain sallimissa rajoissa SDK Enterprises:n vastuu rajoittuu välittömiin vahingoihin, eikä se ulotu välillisiin vahinkoihin. Linkit kolmansien osapuolien sivustoille ovat yksinomaan niiden julkaisijoiden vastuulla.",
+      "changesTitle": "Muutokset",
+      "changes": "SDK Enterprises voi muuttaa näitä ehtoja milloin tahansa. Sovellettava versio on tällä sivulla julkaistu versio.",
+      "lawTitle": "Hallitseva laki",
+      "law": "Näitä ehtoja säätelee Ranskan laki. Riitatapauksissa toimivalta on ranskalaisilla tuomioistuimilla.",
+      "contactTitle": "Ota yhteyttä",
+      "contact": "Jos sinulla on kysyttävää, ota yhteyttä {company}:ään osoitteessa {email}."
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "workPage": {
+    "eyebrow": "Pracuj z SDK",
+    "body": "Wiesz, kiedy coś na Twoim stosie Cię kosztuje. Oto sytuacje, do których stworzono SDK.",
+    "cta": "Rozpocznij projekt",
+    "engagementsEyebrow": "Zaręczyny",
+    "engagementsHeading": "Jak zwykle zaczynają się zaręczyny",
+    "engagementsBody": "Większość spotkań rozpoczyna się od krótkiej rozmowy lub pisemnego podsumowania problemu. Na tej podstawie SDK proponuje reakcję o szerokim zakresie: audyt ze stałą ceną, strumień pracy uwzględniający czas i materiały lub model hybrydowy, w zależności od niepewności w systemie i jasności celu.",
+    "lookForEyebrow": "Czego szukamy",
+    "lookForHeading": "Jasny problem i zespół chętny do zajęcia się nim.",
+    "lookForBody": "Najlepsza współpraca zaczyna się, gdy klient wie, że coś jest nie tak, ale nie wie jeszcze w pełnym zakresie. Poszukujemy zespołów, które chcą zrozumieć mechanizm, a nie tylko otrzymać prezentację.",
+    "lookFor1Title": "Konkretne ograniczenie",
+    "lookFor1Body": "Wydajność, niezawodność, koszt, szybkość dostawy lub zgodność. Problem nie musi być nowatorski – musi być realny i mierzalny.",
+    "lookFor2Title": "Dostęp do systemu",
+    "lookFor2Body": "Dostęp do odczytu bazy kodu, infrastruktury i ludzi, którzy rozumieją bieżący stan. Bez tego jakakolwiek ocena jest domysłem.",
+    "lookFor3Title": "Osoba podejmująca decyzje",
+    "lookFor3Body": "Ktoś, kto może zatwierdzić zakres, budżet i harmonogram. Nie komitet – jedna osoba posiadająca uprawnienia do posunięcia prac do przodu.",
+    "fitEyebrow": "Dopasuj",
+    "fitHeading": "Kiedy SDK nie jest właściwą odpowiedzią",
+    "fitBody": "Mówimy nie częściej, niż można by się spodziewać. SDK nie jest warsztatem zajmującym się mandatami za przepełnienie i nie podejmujemy się zleceń, w których problem nie jest jeszcze zdefiniowany lub zespół nie może zaangażować się w proces."
+  }
+}

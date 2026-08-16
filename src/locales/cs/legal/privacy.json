@@ -1,0 +1,65 @@
+{
+  "legal": {
+    "privacy": {
+      "title": "Privacy policy",
+      "intro": "How SDK Enterprises handles personal data, in accordance with the GDPR (RGPD).",
+      "processors": [
+        {
+          "name": "Vercel",
+          "role": "Website hosting and cookieless analytics"
+        },
+        {
+          "name": "Auth0 (Okta)",
+          "role": "Authentication for the client portal"
+        },
+        {
+          "name": "Resend",
+          "role": "Transactional email for project enquiries"
+        },
+        {
+          "name": "Prisma Postgres",
+          "role": "Managed PostgreSQL database"
+        }
+      ],
+      "controllerTitle": "Správce údajů",
+      "controller": "Správcem údajů je {company}, obchodující jako {name}, se sídlem {address}. V případě jakýchkoli dotazů ohledně vašich osobních údajů nás kontaktujte na {email}.",
+      "collectedDataTitle": "Shromážděná data",
+      "collectedData": "Jediným formulářem pro sběr dat na této stránce je veřejný formulář „Zahájit projekt“. Požadované údaje jsou přísně omezeny na:",
+      "collectedDataItems": [
+        "Název společnosti (povinné)",
+        "Profesionální e-mailová adresa (vyžadováno)",
+        "Web společnosti (volitelné)",
+        "Potřebná schopnost (vyžadováno)",
+        "Popis projektu nebo problému (vyžadováno)",
+        "Stávající prostředí (volitelné)",
+        "Časová osa (volitelné)",
+        "Rozsah rozpočtu (volitelné)",
+        "Podpůrný kontext (volitelné)"
+      ],
+      "purposesTitle": "Účely a právní základy",
+      "purposesNote": "Vaše údaje jsou zpracovávány:",
+      "purposeItems": [
+        "reagovat na váš projektový dotaz — předsmluvní opatření (Art. 6(1)(b) GDPR) a oprávněný zájem (Art. 6(1)(f));",
+        "provozovat, zabezpečovat a zlepšovat stránky — oprávněný zájem (Art. 6(1)(f));",
+        "dodržovat všechny příslušné zákonné povinnosti (Art. 6(1)(c))."
+      ],
+      "recipientsTitle": "Příjemci",
+      "recipientsNote": "Vaše data jsou přístupná pouze oprávněným osobám v rámci SDK Enterprises. Mohou být zpracovány následujícími zpracovateli, výhradně pro potřeby jejich služeb:",
+      "transfersTitle": "Převody mimo EU",
+      "transfers": "Někteří zpracovatelé mohou zpracovávat data mimo Evropský hospodářský prostor (zejména ve Spojených státech amerických). Pokud k tomu dojde, použijí se vhodná ochranná opatření, jako jsou standardní smluvní doložky Evropské komise.",
+      "retentionTitle": "Udržení",
+      "retention": "Údaje shromážděné prostřednictvím formuláře jsou uchovávány po dobu 12 měsíců od posledního kontaktu, pokud zákon nevyžaduje delší uchování. Po uplynutí této doby je smazán nebo anonymizován.",
+      "rightsTitle": "Vaše práva",
+      "rightsNote": "V souladu se Articles 15 to 22 GDPR máte právo na přístup, opravu, vymazání, omezení, přenositelnost a námitku. Svůj souhlas můžete také kdykoli odvolat.",
+      "rightsContact": "Pro uplatnění těchto práv nám napište na {email}. Odpovídáme do jednoho měsíce. Můžete také podat stížnost u CNIL (www.cnil.fr).",
+      "childrenTitle": "Děti",
+      "children": "Stránka je zaměřena na profesionály a není určena nezletilým. Dotazový formulář není určen pro osoby mladší 16 let.",
+      "automatedTitle": "Automatizované rozhodování",
+      "automated": "O vašich údajích není prováděno žádné automatizované rozhodování ani profilování.",
+      "securityTitle": "Bezpečnost",
+      "security": "Pro ochranu vašich dat jsou zavedena přiměřená technická a organizační opatření (šifrovaná připojení, řízení přístupu). Nelze nabídnout žádnou absolutní záruku.",
+      "registerTitle": "Registrace a prohlášení",
+      "register": "SDK Enterprises vede interní registr činností zpracování (Art. 30 GDPR). Žádné číslo prohlášení CNIL není nárokováno ani vynalezeno."
+    }
+  }
+}

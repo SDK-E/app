@@ -1,0 +1,16 @@
+{
+  "legal": {
+    "cookies": {
+      "title": "Cookie-Richtlinie",
+      "intro": "Was Cookies sind und ob diese Website sie verwendet.",
+      "whatIsTitle": "Was ist ein Cookie?",
+      "whatIs": "Ein Cookie ist eine kleine Textdatei, die auf Ihrem Gerät abgelegt wird, wenn Sie eine Website besuchen. Dadurch kann die Website Ihren Browser erkennen und sich Informationen merken.",
+      "thisSiteTitle": "Von dieser Website gesetzte Cookies",
+      "thisSite": "Auf dieser Website werden keine Analyse-, Werbe- oder Tracking-Cookies gesetzt. Die verwendete Analyselösung (Vercel Analytics) ist cookielos. Ihr Surfverhalten wird daher nicht nachverfolgt.",
+      "consentBannerTitle": "Einwilligungsbanner",
+      "consentBanner": "Es wird kein Einwilligungsbanner angezeigt, da keine Cookies gesetzt sind. Wenn ein Cookie-Setzskript hinzugefügt würde, wäre ein Einwilligungsbanner erforderlich und diese Seite würde aktualisiert.",
+      "browserSettingsTitle": "Verwalten von Cookies in Ihrem Browser",
+      "browserSettings": "Sie können Ihren Browser jederzeit so konfigurieren, dass Cookies abgelehnt oder gelöscht werden. Die Anweisungen hängen von Ihrem Browser ab (Chrome, Firefox, Safari, Edge). Anleitungen sind unter www.cnil.fr erhältlich."
+    }
+  }
+}

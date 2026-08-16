@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "siteDescription": "French B2B engineering company. We build, modernize and operate software across the stack — backend platforms, cloud infrastructure, AI automation, realtime systems and internal tooling.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Services",
+    "servicesDescription": "SDK Enterprises builds, modernizes and operates software across the stack — AI agents, backend platforms, web interfaces, cloud infrastructure, data systems and legacy modernization.",
+    "workTitle": "Work",
+    "workDescription": "The situations SDK Enterprises is set up for — migration, high-volume platforms, AI automation and senior engineering delivery.",
+    "howWeWorkTitle": "How we work",
+    "howWeWorkDescription": "A clear path from problem to production. Four steps, visible progress at every stage.",
+    "aboutTitle": "About",
+    "aboutDescription": "France-based B2B engineering company. Senior delivery, direct communication, no account layer.",
+    "startAProjectTitle": "Start a project",
+    "startAProjectDescription": "Tell us what you're trying to build, modernize, automate or fix. We'll tell you honestly whether it's a fit and what it would take."
+  },
+  "nav": {
+    "toggleMenu": "Toggle menu",
+    "home": "SDK Enterprises home",
+    "main": "Main",
+    "services": "Services",
+    "work": "Work",
+    "process": "Process",
+    "about": "About",
+    "discussProject": "Discuss a project",
+    "signIn": "Sign in",
+    "legal": "Legal",
+    "mentionsLegales": "Mentions légales",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "AI · Software · Cloud · Systems Engineering"
+  },
+  "auth": {
+    "loginRedirecting": "Redirecting to login...",
+    "logoutRedirecting": "Redirecting to logout..."
+  },
+  "errors": {
+    "pageNotFound": "This page does not exist or has been moved.",
+    "backToHome": "Back to home",
+    "somethingWentWrong": "Something went wrong",
+    "tryAgain": "Try again",
+    "contactSupport": "If the problem persists, please contact support."
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "aboutPage": {
+    "eyebrow": "Om SDK Enterprises",
+    "title": "Senior ingenjör, direktleverans.",
+    "intro": "Frankrike-baserat B2B ingenjörsföretag. Vi bygger, moderniserar och driver programvara över hela stacken - backend-plattformar, molninfrastruktur, AI-automation, realtidssystem och interna verktyg.",
+    "body": "SDK Enterprises grundades 2019 och arbetar med ett litet antal kunder åt gången. Teamet är endast för seniorer: inga juniorer, inga kontoansvariga, inga överlåtelser till offshoreleveranser. De flesta uppdragen omfattar revisioner till fasta priser, dedikerade tekniska arbetsflöden eller pågående moderniseringssprintar.",
+    "cta": "Starta ett projekt",
+    "approachEyebrow": "Vårt förhållningssätt",
+    "approachHeading": "Varför vi håller laget litet",
+    "approachBody": "När en byrå växer förbi den punkt där partnerna känner varje ingenjör, visas kontolagret. Det är där sammanhanget går förlorat, tidslinjerna glider och kostnaden multipliceras. SDK är strukturerad för att undvika det.",
+    "approach1Title": "Inga kontoansvariga",
+    "approach1Body": "Du pratar med den ingenjör som ansvarar för arbetet. Ingen översättning, inga förseningar, inga felkommunikationer mellan försäljning och leverans.",
+    "approach2Title": "Ingen offshore hand-off",
+    "approach2Body": "Teamet som designar systemet stannar genom implementering och överlämning. Kunskapen stannar på ett ställe.",
+    "approach3Title": "Inga juniorresurser",
+    "approach3Body": "Varje SDK-ingenjör är seniornivå. Vi använder inte kunduppdrag för att utbilda mindre erfaren personal.",
+    "beliefsEyebrow": "Vad vi tror",
+    "beliefsHeading": "Antagandena bakom arbetet",
+    "beliefsBody": "Dessa är inte marknadsföringsutlåtanden. De är begränsningarna som formar varje beslut vi fattar.",
+    "belief1Title": "Programvara är ett ansvar tills det förstås",
+    "belief1Body": "Varje rad kod bär underhållskostnader. Målet är inte att skriva mer kod – det är att minska kostnaden för den kod som redan finns.",
+    "belief2Title": "Diagnos före ordination",
+    "belief2Body": "Vi säljer inte en fast förlovningstyp. Vi diagnostiserar systemet först: arkitektur, dataflöde, driftsättning, team och begränsningar. Sedan föreslår vi det engagemang som passar.",
+    "belief3Title": "Transparens är en funktion",
+    "belief3Body": "Synliga framsteg, skriftliga uppdateringar och direkt tillgång till ingenjörerna. Sekretess kring leverans är ett symptom på en process som inte kan förklaras.",
+    "companyFacts": {
+      "name": "Lagligt namn",
+      "tradingName": "Handelsnamn",
+      "siren": "SIREN",
+      "siret": "SIRET",
+      "address": "Registrerat kontor",
+      "email": "E-post",
+      "phone": "Telefon"
+    }
+  }
+}

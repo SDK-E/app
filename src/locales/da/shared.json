@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "siteDescription": "Fransk B2B ingeniørfirma. Vi bygger, moderniserer og driver software på tværs af stakken - backend-platforme, cloud-infrastruktur, AI-automatisering, realtidssystemer og internt værktøj.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Tjenester",
+    "servicesDescription": "SDK Enterprises bygger, moderniserer og driver software på tværs af stakken - AI-agenter, backend-platforme, webgrænseflader, cloud-infrastruktur, datasystemer og ældre modernisering.",
+    "workTitle": "Arbejde",
+    "workDescription": "De situationer, SDK Enterprises er sat op til - migration, platforme med høj volumen, AI-automatisering og levering af senioringeniører.",
+    "howWeWorkTitle": "Hvordan vi arbejder",
+    "howWeWorkDescription": "En klar vej fra problem til produktion. Fire trin, synlige fremskridt på hvert trin.",
+    "aboutTitle": "Om",
+    "aboutDescription": "Frankrig-baseret B2B ingeniørvirksomhed. Seniorlevering, direkte kommunikation, intet kontolag.",
+    "startAProjectTitle": "Start et projekt",
+    "startAProjectDescription": "Fortæl os, hvad du prøver at bygge, modernisere, automatisere eller reparere. Vi fortæller dig ærligt, om det passer, og hvad det kræver."
+  },
+  "nav": {
+    "toggleMenu": "Skift menu",
+    "home": "SDK Enterprises hjem",
+    "main": "Hoved",
+    "services": "Tjenester",
+    "work": "Arbejde",
+    "process": "Proces",
+    "about": "Om",
+    "discussProject": "Diskuter et projekt",
+    "signIn": "Log ind",
+    "legal": "Juridisk",
+    "mentionsLegales": "Omtaler legales",
+    "privacy": "Privatliv",
+    "terms": "Vilkår",
+    "cookies": "Cookies"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "AI · Software · Cloud · Systems Engineering"
+  },
+  "auth": {
+    "loginRedirecting": "Omdirigerer til login...",
+    "logoutRedirecting": "Omdirigerer til at logge ud..."
+  },
+  "errors": {
+    "pageNotFound": "Denne side findes ikke eller er blevet flyttet.",
+    "backToHome": "Tilbage til hjemmet",
+    "somethingWentWrong": "Noget gik galt",
+    "tryAgain": "Prøv igen",
+    "contactSupport": "Kontakt support, hvis problemet fortsætter."
+  }
+}

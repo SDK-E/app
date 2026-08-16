@@ -1,0 +1,16 @@
+{
+  "legal": {
+    "cookies": {
+      "title": "Cookie policy",
+      "intro": "What cookies are and whether this site uses them.",
+      "whatIsTitle": "Hva er en informasjonskapsel?",
+      "whatIs": "En informasjonskapsel er en liten tekstfil som plasseres på enheten din når du besøker et nettsted. Det lar nettstedet gjenkjenne nettleseren din og huske informasjon.",
+      "thisSiteTitle": "Informasjonskapsler satt av dette nettstedet",
+      "thisSite": "Ingen analyse-, reklame- eller sporingsinformasjonskapsler er satt av dette nettstedet. Analyseløsningen som er i bruk (Vercel Analytics) er uten informasjonskapsler. Nettlesingen din blir derfor ikke sporet.",
+      "consentBannerTitle": "Samtykkebanner",
+      "consentBanner": "Ingen samtykkebanner vises fordi det ikke er satt inn informasjonskapsler. Hvis et skript for innstilling av informasjonskapsler ble lagt til, ville et samtykkebanner bli nødvendig og denne siden vil bli oppdatert.",
+      "browserSettingsTitle": "Administrere informasjonskapsler i nettleseren din",
+      "browserSettings": "Du kan konfigurere nettleseren din til å nekte eller slette informasjonskapsler når som helst. Instruksjonene avhenger av nettleseren din (Chrome, Firefox, Safari, Edge). Guider er tilgjengelige på www.cnil.fr."
+    }
+  }
+}

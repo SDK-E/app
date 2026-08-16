@@ -1,0 +1,22 @@
+{
+  "workPage": {
+    "eyebrow": "Funziona con SDK",
+    "body": "Sai quando qualcosa nel tuo stack ti sta costando. Ecco le situazioni per le quali è stato creato SDK.",
+    "cta": "Avvia un progetto",
+    "engagementsEyebrow": "Impegni",
+    "engagementsHeading": "Come iniziano solitamente gli impegni",
+    "engagementsBody": "La maggior parte degli impegni inizia con una breve conversazione o un riassunto scritto del problema. Da lì, SDK propone una risposta mirata: un audit a prezzo fisso, un flusso di lavoro in termini di tempo e materiali o un modello ibrido a seconda dell'incertezza del sistema e della chiarezza dell'obiettivo.",
+    "lookForEyebrow": "Cosa cerchiamo",
+    "lookForHeading": "Un problema chiaro e una squadra disposta a affrontarlo.",
+    "lookForBody": "I migliori impegni iniziano quando il cliente sa che qualcosa non va ma non ne conosce ancora tutta la portata. Cerchiamo team che vogliano comprendere il meccanismo, non solo ricevere una presentazione.",
+    "lookFor1Title": "Un vincolo specifico",
+    "lookFor1Body": "Prestazioni, affidabilità, costi, velocità di consegna o conformità. Il problema non deve essere nuovo: deve essere reale e misurabile.",
+    "lookFor2Title": "Accesso al sistema",
+    "lookFor2Body": "Accesso in lettura alla codebase, all'infrastruttura e alle persone che comprendono lo stato attuale. Senza questo, qualsiasi valutazione è un’ipotesi.",
+    "lookFor3Title": "Un decisore",
+    "lookFor3Body": "Qualcuno che possa approvare l'ambito, il budget e la tempistica. Non un comitato: una persona con l’autorità di portare avanti il ​​lavoro.",
+    "fitEyebrow": "Adatta",
+    "fitHeading": "Quando SDK non è la risposta giusta",
+    "fitBody": "Lo diciamo non più spesso di quanto potresti aspettarti. SDK non è una carrozzeria per ticket di overflow e non accettiamo impegni in cui il problema non è ancora definito o il team non può impegnarsi nel processo."
+  }
+}

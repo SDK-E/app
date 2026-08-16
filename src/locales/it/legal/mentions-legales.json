@@ -1,0 +1,25 @@
+{
+  "legal": {
+    "mentionsLegales": {
+      "title": "Mentions légales",
+      "intro": "Legal notices for the SDK Enterprises website.",
+      "publisherTitle": "Editore",
+      "publisherWebsite": "Il sito web accessibile all'indirizzo {domain} è pubblicato da {company}, operante come {name}.",
+      "siren": "SIREN: {siren}",
+      "siret": "SIRET: {siret}",
+      "registeredOffice": "Sede Legale: {address}",
+      "legalForm": "Forma giuridica e capitale sociale: Imprenditore automobilistico (impresa individuale, microimpresa), senza capitale sociale",
+      "registration": "Iscrizione azienda: RCS Paris {siren}",
+      "directorTitle": "Direttore della pubblicazione",
+      "director": "Direttore della pubblicazione: Hicham SADDEK.",
+      "hostingTitle": "Ospitare",
+      "hosting": "Il sito è ospitato da Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, Stati Uniti.",
+      "contactTitle": "Contatto",
+      "contact": "Domande sul sito possono essere inviate a {email} o telefonicamente al numero {phone}.",
+      "intellectualPropertyTitle": "Proprietà intellettuale",
+      "intellectualProperty": "La struttura, i testi, il logo e i contenuti del sito sono di proprietà di SDK Enterprises. Qualsiasi riproduzione o rappresentazione, totale o parziale, senza previa autorizzazione è vietata, salvo quanto consentito dalla legge applicabile.",
+      "legalFrameworkTitle": "Quadro giuridico",
+      "legalFramework": "Le presenti comunicazioni sono disciplinate dal diritto francese e sono redatte conformemente all'articolo 6-III della legge francese n° 2004-575 del 21 giugno 2004 sulla fiducia nell'economia digitale (LCEN)."
+    }
+  }
+}

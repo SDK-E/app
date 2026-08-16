@@ -1,0 +1,25 @@
+{
+  "legal": {
+    "mentionsLegales": {
+      "title": "Mentions légales",
+      "intro": "Legal notices for the SDK Enterprises website.",
+      "publisherTitle": "Kustantaja",
+      "publisherWebsite": "{domain}-sivuston on julkaissut {company}, joka toimii nimellä {name}.",
+      "siren": "SIREN: {siren}",
+      "siret": "SIRET: {siret}",
+      "registeredOffice": "Kotipaikka: {address}",
+      "legalForm": "Oikeudellinen muoto ja osakepääoma: Itsenäinen yrittäjä (yksityinen elinkeinonharjoittaja, mikroyritys), ei osakepääomaa",
+      "registration": "Yrityksen rekisteröinti: RCS Paris {siren}",
+      "directorTitle": "Julkaisujohtaja",
+      "director": "Julkaisujohtaja: Hicham SADDEK.",
+      "hostingTitle": "Isännöinti",
+      "hosting": "Sivustoa isännöi Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, Yhdysvallat.",
+      "contactTitle": "Ota yhteyttä",
+      "contact": "Sivustoa koskevia kysymyksiä voi lähettää osoitteeseen {email} tai puhelimitse numeroon {phone}.",
+      "intellectualPropertyTitle": "Henkinen omaisuus",
+      "intellectualProperty": "Sivuston rakenne, tekstit, logo ja sisältö ovat SDK Enterprises:n omaisuutta. Kaikenlainen jäljentäminen tai esittäminen kokonaan tai osittain ilman ennakkolupaa on kielletty, paitsi sovellettavan lain sallimissa rajoissa.",
+      "legalFrameworkTitle": "Oikeudellinen kehys",
+      "legalFramework": "Nämä ilmoitukset ovat Ranskan lain alaisia, ja ne on laadittu luottamuksesta digitaalitalouteen 21. kesäkuuta 2004 annetun Ranskan lain nro 2004-575 (LCEN) 6-III artiklan mukaisesti."
+    }
+  }
+}

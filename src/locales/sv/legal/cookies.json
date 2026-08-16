@@ -1,0 +1,16 @@
+{
+  "legal": {
+    "cookies": {
+      "title": "Cookie policy",
+      "intro": "What cookies are and whether this site uses them.",
+      "whatIsTitle": "Vad är en kaka?",
+      "whatIs": "En cookie är en liten textfil som placeras på din enhet när du besöker en webbplats. Det gör att webbplatsen kan känna igen din webbläsare och komma ihåg information.",
+      "thisSiteTitle": "Cookies som sätts av denna webbplats",
+      "thisSite": "Inga analyser, reklam eller spårningscookies ställs in av denna webbplats. Analyslösningen som används (Vercel Analytics) är cookiefri. Din surfning spåras därför inte.",
+      "consentBannerTitle": "Samtyckesbanner",
+      "consentBanner": "Ingen samtyckesbanner visas eftersom inga cookies är inställda. Om ett cookie-inställningsskript lades till skulle en samtyckesbanner krävas och den här sidan skulle uppdateras.",
+      "browserSettingsTitle": "Hantera cookies i din webbläsare",
+      "browserSettings": "Du kan när som helst konfigurera din webbläsare att vägra eller ta bort cookies. Instruktionerna beror på din webbläsare (Chrome, Firefox, Safari, Edge). Guider finns tillgängliga på www.cnil.fr."
+    }
+  }
+}

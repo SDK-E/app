@@ -1,0 +1,26 @@
+{
+  "legal": {
+    "terms": {
+      "title": "Terms of use",
+      "intro": "The rules for using this website.",
+      "purposeTitle": "Scopo",
+      "purpose": "Questi termini regolano l'utilizzo del sito web {name}. Accedendo al sito accetti questi termini.",
+      "servicesTitle": "Presentazione dei servizi",
+      "services": "Il sito presenta i servizi di {name} e consente di inviare una richiesta di progetto. Questo contenuto è fornito solo a scopo informativo e non costituisce né un'offerta contrattuale né un impegno a fornire servizi.",
+      "enquiriesTitle": "Richieste di progetto",
+      "enquiries": "Le informazioni inviate tramite il modulo \"Avvia un progetto\" vengono gestite in conformità con l'informativa sulla privacy. Ricevere una richiesta non implica alcun obbligo di accettarla.",
+      "intellectualPropertyTitle": "Proprietà intellettuale",
+      "intellectualProperty": "I testi, il logo, le immagini e i contenuti del sito sono di proprietà di SDK Enterprises e non possono essere riutilizzati senza previa autorizzazione.",
+      "availabilityTitle": "Disponibilità del sito",
+      "availability": "Il sito viene fornito \"così com'è\". SDK Enterprises compie ogni ragionevole sforzo per mantenerlo accessibile ma non garantisce una disponibilità ininterrotta o priva di errori.",
+      "liabilityTitle": "Responsabilità",
+      "liability": "Nella misura consentita dalla legge, la responsabilità di SDK Enterprises è limitata ai danni diretti e non si estende ai danni indiretti. I collegamenti a siti di terzi sono di esclusiva responsabilità dei rispettivi editori.",
+      "changesTitle": "Cambiamenti",
+      "changes": "SDK Enterprises può modificare questi termini in qualsiasi momento. La versione applicabile è quella pubblicata in questa pagina.",
+      "lawTitle": "Legge applicabile",
+      "law": "Le presenti condizioni sono regolate dalla legge francese. In caso di controversia sono competenti i tribunali francesi.",
+      "contactTitle": "Contatto",
+      "contact": "Per qualsiasi domanda, contatta {company} all'indirizzo {email}."
+    }
+  }
+}

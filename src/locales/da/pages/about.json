@@ -1,0 +1,36 @@
+{
+  "aboutPage": {
+    "eyebrow": "Om SDK Enterprises",
+    "title": "Senioringeniør, direkte levering.",
+    "intro": "Frankrig-baseret B2B ingeniørvirksomhed. Vi bygger, moderniserer og driver software på tværs af stakken - backend-platforme, cloud-infrastruktur, AI-automatisering, realtidssystemer og internt værktøj.",
+    "body": "SDK Enterprises blev grundlagt i 2019 og arbejder med et lille antal kunder ad gangen. Holdet er kun for seniorer: ingen juniorer, ingen account managers, ingen overdragelser til offshore levering. De fleste engagementer er omfattet af fastprisrevisioner, dedikerede tekniske arbejdsstrømme eller igangværende moderniseringssprints.",
+    "cta": "Start et projekt",
+    "approachEyebrow": "Vores tilgang",
+    "approachHeading": "Hvorfor vi holder holdet lille",
+    "approachBody": "Når et bureau vokser forbi det punkt, hvor partnerne kender hver ingeniør, vises kontolaget. Dette lag er, hvor kontekst går tabt, tidslinjer glider og omkostninger multipliceres. SDK er struktureret til at undgå det.",
+    "approach1Title": "Ingen kontoadministratorer",
+    "approach1Body": "Du taler med den ingeniør, der er ansvarlig for arbejdet. Ingen oversættelse, ingen forsinkelser, ingen fejlkommunikation mellem salg og levering.",
+    "approach2Title": "Ingen offshore-aflevering",
+    "approach2Body": "Teamet, der designer systemet, bliver ved implementering og overdragelse. Viden forbliver ét sted.",
+    "approach3Title": "Ingen juniorressourcer",
+    "approach3Body": "Hver SDK ingeniør er senior-niveau. Vi bruger ikke klientengagementer til at uddanne mindre erfarne medarbejdere.",
+    "beliefsEyebrow": "Hvad vi tror på",
+    "beliefsHeading": "Antagelserne bag arbejdet",
+    "beliefsBody": "Disse er ikke markedsføringserklæringer. De er de begrænsninger, der former enhver beslutning, vi træffer.",
+    "belief1Title": "Software er et ansvar, indtil det er forstået",
+    "belief1Body": "Hver linje kode bærer vedligeholdelsesomkostninger. Målet er ikke at skrive mere kode - det er at reducere omkostningerne ved den kode, der allerede eksisterer.",
+    "belief2Title": "Diagnose før recept",
+    "belief2Body": "Vi sælger ikke en fast engagementstype. Vi diagnosticerer først systemet: arkitektur, dataflow, implementering, team og begrænsninger. Så foreslår vi det engagement, der passer.",
+    "belief3Title": "Gennemsigtighed er en funktion",
+    "belief3Body": "Synlige fremskridt, skriftlige opdateringer og direkte adgang til ingeniørerne. Hemmeligholdelse omkring levering er et symptom på en proces, der ikke kan forklares.",
+    "companyFacts": {
+      "name": "Juridisk navn",
+      "tradingName": "Handelsnavn",
+      "siren": "SIREN",
+      "siret": "SIRET",
+      "address": "Registreret hjemsted",
+      "email": "E-mail",
+      "phone": "Telefon"
+    }
+  }
+}

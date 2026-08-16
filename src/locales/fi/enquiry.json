@@ -1,0 +1,74 @@
+{
+  "enquiry": {
+    "title": "Aloita projekti",
+    "subtitle": "Kerro meille, mitä yrität rakentaa, modernisoida, automatisoida tai korjata. Vastaamme 2 arkipäivän kuluessa ja teemme rehellisen arvion sopivuudesta ja siitä, mitä se vaatii.",
+    "body": "Lomake kerää vähimmäistiedot, joita tarvitaan harkittuun vastaamiseen. Mitään ei jaeta SDK Enterprises:n ulkopuolelle, ja voit myös ottaa meihin yhteyttä suoraan osoitteessa hello@sdk.enterprises.",
+    "body2": "Tarkistamme jokaisen kyselyn itse. Ei tilivastaavia, ei hyväksymisskriptejä, ei vaihtoja.",
+    "nextStepsEyebrow": "Mitä tapahtuu seuraavaksi",
+    "nextStepsHeading": "Kyselystä sitoutumiseen",
+    "nextStepsBody": "Kun olet lähettänyt lomakkeen, luemme sen itse. Jos se sopii, vastaamme lyhyellä kirjallisella arvioinnilla ja ehdotuksella sitoutumismallilla. Jos se ei sovi, kerromme sinulle miksi ja ehdotamme vaihtoehtoa.",
+    "nextStep1Title": "Tarkista",
+    "nextStep1Body": "Luemme hakemuksesi ja tarkistamme sen nykyisen kapasiteettimme ja asiantuntemuksemme mukaan. Yleensä 2 arkipäivän sisällä.",
+    "nextStep2Title": "Arviointi",
+    "nextStep2Body": "Lyhyt kirjallinen vastaus: mikä mielestämme on ongelma, sopiiko se ja mikä olisi ensimmäinen askel.",
+    "nextStep3Title": "Soita tai asynkronoi",
+    "nextStep3Body": "30 minuutin puhelu tai asynkroninen vaihto selventääksesi soveltamisalaa, rajoituksia ja aikajanaa. Ei pitch deckiä, ellet halua sellaista.",
+    "nextStep4Title": "ehdotus",
+    "nextStep4Body": "Kirjallinen ehdotus, jossa on laajuus, kiinteä hinta tai hinta, aikajana ja virstanpylväät. Allekirjoitat, aloitamme.",
+    "form": {
+      "companyName": "Yritys",
+      "email": "Ammattimainen sähköposti",
+      "website": "Yrityksen verkkosivut",
+      "capability": "Tarvitaan valmiuksia",
+      "description": "Ongelma/projektin kuvaus",
+      "environment": "Olemassa oleva ympäristö",
+      "timeline": "Aikajana",
+      "budgetRange": "Budjettialue",
+      "context": "Tukikonteksti",
+      "submit": "Lähetä tiedustelu"
+    },
+    "capabilities": {
+      "aiEngineering": "AI Engineering",
+      "softwareEngineering": "Ohjelmistotuotanto",
+      "frontendProduct": "Käyttöliittymä ja tuote",
+      "cloudInfrastructure": "Pilvi ja infrastruktuuri",
+      "dataCacheSearch": "Tiedot / välimuisti / haku",
+      "modernization": "Modernisointi",
+      "other": "muu"
+    },
+    "timelines": {
+      "asap": "ASAP",
+      "oneToThreeMonths": "1-3 kuukautta",
+      "threeToSixMonths": "3-6 kuukautta",
+      "sixPlusMonths": "6+ kuukautta",
+      "notSure": "En ole varma"
+    },
+    "budgets": {
+      "under10k": "< 10k €",
+      "tenToTwentyFiveK": "10 000-25 000 €",
+      "twentyFiveToFiftyK": "25 000-50 000 €",
+      "fiftyPlusK": "50 000 €+",
+      "notSure": "En ole varma"
+    },
+    "validation": {
+      "companyNameRequired": "Yrityksen nimi vaaditaan",
+      "emailRequired": "Ammattimainen sähköposti vaaditaan",
+      "emailInvalid": "Anna kelvollinen sähköpostiosoite",
+      "websiteInvalid": "Anna kelvollinen URL-osoite",
+      "capabilityRequired": "Valitse ominaisuus",
+      "descriptionRequired": "Kuvaile projektia tai ongelmaa",
+      "descriptionTooShort": "Kuvauksen tulee olla vähintään 50 merkkiä pitkä",
+      "descriptionTooLong": "Kuvauksen tulee olla alle 4000 merkkiä pitkä",
+      "environmentTooLong": "Ympäristön tulee olla alle 4000 merkkiä",
+      "contextTooLong": "Tukikontekstin tulee olla alle 4000 merkkiä"
+    },
+    "success": {
+      "title": "Kysely lähetetty",
+      "body": "Kiitos – tarkistamme projektisi ja vastaamme 2 arkipäivän kuluessa."
+    },
+    "error": {
+      "title": "Jotain meni pieleen",
+      "body": "Emme voineet lähettää kyselyäsi. Yritä uudelleen tai lähetä meille sähköpostia."
+    }
+  }
+}

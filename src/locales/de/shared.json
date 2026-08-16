@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "siteDescription": "Französisches Ingenieurbüro B2B. Wir entwickeln, modernisieren und betreiben Software im gesamten Stack – Backend-Plattformen, Cloud-Infrastruktur, KI-Automatisierung, Echtzeitsysteme und interne Tools.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Dienstleistungen",
+    "servicesDescription": "SDK Enterprises erstellt, modernisiert und betreibt Software im gesamten Stack – KI-Agenten, Backend-Plattformen, Webschnittstellen, Cloud-Infrastruktur, Datensysteme und Legacy-Modernisierung.",
+    "workTitle": "Arbeit",
+    "workDescription": "Die Situationen, für die SDK Enterprises eingerichtet ist – Migration, Plattformen mit hohem Volumen, KI-Automatisierung und leitende technische Bereitstellung.",
+    "howWeWorkTitle": "Wie wir arbeiten",
+    "howWeWorkDescription": "Ein klarer Weg vom Problem zur Produktion. Vier Schritte, sichtbarer Fortschritt in jeder Phase.",
+    "aboutTitle": "Über",
+    "aboutDescription": "Das in Frankreich ansässige Ingenieurbüro B2B. Senior-Lieferung, direkte Kommunikation, keine Account-Ebene.",
+    "startAProjectTitle": "Starten Sie ein Projekt",
+    "startAProjectDescription": "Sagen Sie uns, was Sie bauen, modernisieren, automatisieren oder reparieren möchten. Wir sagen dir ehrlich, ob es passt und was es dafür braucht."
+  },
+  "nav": {
+    "toggleMenu": "Menü umschalten",
+    "home": "SDK Enterprises Startseite",
+    "main": "Hauptsächlich",
+    "services": "Dienstleistungen",
+    "work": "Arbeit",
+    "process": "Prozess",
+    "about": "Über",
+    "discussProject": "Besprechen Sie ein Projekt",
+    "signIn": "Melden Sie sich an",
+    "legal": "Legal",
+    "mentionsLegales": "Erwähnt Rechtsanwälte",
+    "privacy": "Privatsphäre",
+    "terms": "Bedingungen",
+    "cookies": "Kekse"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "KI · Software · Cloud · Systemtechnik"
+  },
+  "auth": {
+    "loginRedirecting": "Weiterleitung zum Login...",
+    "logoutRedirecting": "Weiterleitung zum Abmelden..."
+  },
+  "errors": {
+    "pageNotFound": "Diese Seite existiert nicht oder wurde verschoben.",
+    "backToHome": "Zurück nach Hause",
+    "somethingWentWrong": "Etwas ist schief gelaufen",
+    "tryAgain": "Versuchen Sie es erneut",
+    "contactSupport": "Wenn das Problem weiterhin besteht, wenden Sie sich bitte an den Support."
+  }
+}

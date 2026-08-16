@@ -1,0 +1,36 @@
+{
+  "aboutPage": {
+    "eyebrow": "A SDK Enterprises-ről",
+    "title": "Vezetőmérnökség, közvetlen szállítás.",
+    "intro": "Franciaországi székhelyű B2B mérnöki cég. Szoftvereket építünk, korszerűsítünk és üzemeltetünk a teljes veremben – háttérplatformok, felhő infrastruktúra, mesterséges intelligencia automatizálás, valós idejű rendszerek és belső eszközök.",
+    "body": "A 2019-ben alapított SDK Enterprises egyszerre kevés ügyféllel dolgozik. A csapat csak idősebbek: nincsenek juniorok, nincs ügyfélmenedzser, nincs átadás offshore szállításhoz. A legtöbb megbízás fix áras auditok, dedikált mérnöki munkafolyamatok vagy folyamatban lévő modernizációs sprintek körébe tartozik.",
+    "cta": "Indítson el egy projektet",
+    "approachEyebrow": "A mi megközelítésünk",
+    "approachHeading": "Miért tartjuk kicsiben a csapatot",
+    "approachBody": "Amikor egy ügynökség túlnő azon a ponton, ahol a partnerek minden mérnököt ismernek, megjelenik a fiókréteg. Ez az a réteg, ahol a kontextus elvész, az idővonalak csúsznak, és a költségek megsokszorozódnak. A SDK ennek elkerülésére készült.",
+    "approach1Title": "Nincsenek fiókkezelők",
+    "approach1Body": "Beszéljen a munkáért felelős mérnökkel. Nincs fordítás, nincs késés, nincs félreértés az értékesítés és a szállítás között.",
+    "approach2Title": "Nincs offshore átadás",
+    "approach2Body": "A rendszert tervező csapat a megvalósításon és az átadáson keresztül marad. A tudás egy helyen marad.",
+    "approach3Title": "Nincs junior erőforrás",
+    "approach3Body": "Minden SDK mérnök felső szintű. Nem használjuk az ügyfelek bevonását kevésbé tapasztalt munkatársak képzésére.",
+    "beliefsEyebrow": "Amit hiszünk",
+    "beliefsHeading": "A munka mögött meghúzódó feltételezések",
+    "beliefsBody": "Ezek nem marketing nyilatkozatok. Ezek azok a korlátok, amelyek minden döntésünket meghatározzák.",
+    "belief1Title": "A szoftver mindaddig felelősséggel tartozik, amíg meg nem érti",
+    "belief1Body": "Minden kódsor karbantartási költséggel jár. A cél nem az, hogy több kódot írjunk, hanem a már meglévő kód költségének csökkentése.",
+    "belief2Title": "Diagnosztika felírás előtt",
+    "belief2Body": "Nem forgalmazunk rögzített eljegyzési típust. Először diagnosztizáljuk a rendszert: az architektúrát, az adatáramlást, a telepítést, a csapatot és a korlátozásokat. Ezután javasoljuk a megfelelő eljegyzést.",
+    "belief3Title": "Az átlátszóság jellemző",
+    "belief3Body": "Látható haladás, írásos frissítések és közvetlen hozzáférés a mérnökökhöz. A szállítás körüli titkolózás egy olyan folyamat tünete, amelyet nem lehet megmagyarázni.",
+    "companyFacts": {
+      "name": "Jogi név",
+      "tradingName": "Kereskedelmi név",
+      "siren": "SIREN",
+      "siret": "SIRET",
+      "address": "Székhely",
+      "email": "E-mail",
+      "phone": "Telefon"
+    }
+  }
+}

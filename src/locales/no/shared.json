@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "siteDescription": "Fransk B2B ingeniørfirma. Vi bygger, moderniserer og driver programvare på tvers av stabelen – backend-plattformer, skyinfrastruktur, AI-automatisering, sanntidssystemer og intern verktøy.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Tjenester",
+    "servicesDescription": "SDK Enterprises bygger, moderniserer og driver programvare på tvers av stabelen – AI-agenter, backend-plattformer, webgrensesnitt, skyinfrastruktur, datasystemer og eldre modernisering.",
+    "workTitle": "Arbeid",
+    "workDescription": "Situasjonene SDK Enterprises er satt opp for – migrering, høyvolumsplattformer, AI-automatisering og senior ingeniørleveranser.",
+    "howWeWorkTitle": "Hvordan vi jobber",
+    "howWeWorkDescription": "En tydelig vei fra problem til produksjon. Fire trinn, synlig fremgang på hvert trinn.",
+    "aboutTitle": "Om",
+    "aboutDescription": "Frankrike-basert B2B ingeniørselskap. Seniorleveranse, direkte kommunikasjon, ingen kontolag.",
+    "startAProjectTitle": "Start et prosjekt",
+    "startAProjectDescription": "Fortell oss hva du prøver å bygge, modernisere, automatisere eller fikse. Vi vil fortelle deg ærlig om det passer og hva som kreves."
+  },
+  "nav": {
+    "toggleMenu": "Bytt meny",
+    "home": "SDK Enterprises hjemme",
+    "main": "Hoved",
+    "services": "Tjenester",
+    "work": "Arbeid",
+    "process": "Prosess",
+    "about": "Om",
+    "discussProject": "Diskuter et prosjekt",
+    "signIn": "Logg på",
+    "legal": "Lovlig",
+    "mentionsLegales": "Nevner legales",
+    "privacy": "Personvern",
+    "terms": "Vilkår",
+    "cookies": "Informasjonskapsler"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "AI · Programvare · Cloud · Systems Engineering"
+  },
+  "auth": {
+    "loginRedirecting": "Omdirigerer til pålogging...",
+    "logoutRedirecting": "Omdirigerer til utlogging..."
+  },
+  "errors": {
+    "pageNotFound": "Denne siden eksisterer ikke eller har blitt flyttet.",
+    "backToHome": "Tilbake til hjemmet",
+    "somethingWentWrong": "Noe gikk galt",
+    "tryAgain": "Prøv igjen",
+    "contactSupport": "Hvis problemet vedvarer, vennligst kontakt kundestøtte."
+  }
+}

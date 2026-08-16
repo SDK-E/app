@@ -1,0 +1,26 @@
+{
+  "legal": {
+    "terms": {
+      "title": "Terms of use",
+      "intro": "The rules for using this website.",
+      "purposeTitle": "Cél",
+      "purpose": "Ezek a feltételek szabályozzák a {name} webhely Ön általi használatát. Az oldal megnyitásával Ön elfogadja ezeket a feltételeket.",
+      "servicesTitle": "Szolgáltatások bemutatása",
+      "services": "Az oldal bemutatja a {name} szolgáltatásait, és lehetővé teszi projektkérdés benyújtását. Ez a tartalom csak tájékoztató jellegű, és nem minősül szerződéses ajánlatnak vagy szolgáltatásnyújtásra vonatkozó kötelezettségvállalásnak.",
+      "enquiriesTitle": "Projekt megkeresések",
+      "enquiries": "A „Projekt indítása” űrlapon keresztül benyújtott információkat az adatvédelmi szabályzatnak megfelelően kezeljük. A megkeresés fogadása nem jelent kötelezettséget annak elfogadására.",
+      "intellectualPropertyTitle": "Szellemi tulajdon",
+      "intellectualProperty": "Az oldal szövegei, logója, látványvilága és tartalma a SDK Enterprises tulajdonát képezik, és előzetes engedély nélkül nem használhatók fel újra.",
+      "availabilityTitle": "A webhely elérhetősége",
+      "availability": "Az oldal „ahogy van”. A SDK Enterprises ésszerű erőfeszítéseket tesz annak érdekében, hogy elérhető legyen, de nem garantálja a megszakítás nélküli vagy hibamentes elérhetőséget.",
+      "liabilityTitle": "Felelősség",
+      "liability": "A törvény által megengedett mértékig a SDK Enterprises felelőssége a közvetlen károkra korlátozódik, és nem terjed ki a közvetett károkra. A harmadik felek webhelyeire mutató linkekért kizárólag a kiadók felelősek.",
+      "changesTitle": "Változások",
+      "changes": "A SDK Enterprises ezeket a feltételeket bármikor módosíthatja. Az érvényes verzió az ezen az oldalon közzétett verzió.",
+      "lawTitle": "Irányadó jog",
+      "law": "Ezekre a feltételekre a francia jog az irányadó. Vita esetén a francia bíróságok rendelkeznek joghatósággal.",
+      "contactTitle": "Kapcsolatfelvétel",
+      "contact": "Kérdéseivel forduljon a {company}-hez a {email} címen."
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "aboutPage": {
+    "eyebrow": "Über SDK Enterprises",
+    "title": "Leitender Ingenieur, direkte Lieferung.",
+    "intro": "Das in Frankreich ansässige Ingenieurbüro B2B. Wir entwickeln, modernisieren und betreiben Software im gesamten Stack – Backend-Plattformen, Cloud-Infrastruktur, KI-Automatisierung, Echtzeitsysteme und interne Tools.",
+    "body": "SDK Enterprises wurde 2019 gegründet und arbeitet jeweils mit einer kleinen Anzahl von Kunden zusammen. Das Team besteht nur aus Senioren: keine Junioren, keine Kundenbetreuer, keine Übergaben an Offshore-Lieferanten. Bei den meisten Aufträgen handelt es sich um Festpreisaudits, dedizierte Engineering-Workstreams oder laufende Modernisierungssprints.",
+    "cta": "Starten Sie ein Projekt",
+    "approachEyebrow": "Unser Ansatz",
+    "approachHeading": "Warum wir das Team klein halten",
+    "approachBody": "Wenn eine Agentur über den Punkt hinauswächst, an dem die Partner jeden Techniker kennen, erscheint die Account-Ebene. Auf dieser Ebene geht der Kontext verloren, Zeitpläne verschieben sich und die Kosten vervielfachen sich. SDK ist so strukturiert, dass dies vermieden wird.",
+    "approach1Title": "Keine Account Manager",
+    "approach1Body": "Sie sprechen mit dem für die Arbeiten verantwortlichen Ingenieur. Keine Übersetzung, keine Verzögerungen, keine Missverständnisse zwischen Verkauf und Lieferung.",
+    "approach2Title": "Keine Offshore-Übergabe",
+    "approach2Body": "Das Team, das das System entwirft, begleitet die Implementierung und Übergabe. Wissen bleibt an einem Ort.",
+    "approach3Title": "Keine Junior-Ressourcen",
+    "approach3Body": "Jeder SDK-Ingenieur ist ein erfahrener Ingenieur. Wir nutzen Kundenaufträge nicht, um weniger erfahrenes Personal zu schulen.",
+    "beliefsEyebrow": "Was wir glauben",
+    "beliefsHeading": "Die Annahmen hinter der Arbeit",
+    "beliefsBody": "Dies sind keine Marketingaussagen. Sie sind die Zwänge, die jede unserer Entscheidungen prägen.",
+    "belief1Title": "Software ist eine Haftung, bis sie verstanden wird",
+    "belief1Body": "Jede Codezeile verursacht Wartungskosten. Das Ziel besteht nicht darin, mehr Code zu schreiben, sondern darin, die Kosten für den bereits vorhandenen Code zu senken.",
+    "belief2Title": "Diagnose vor der Verschreibung",
+    "belief2Body": "Wir verkaufen keinen festen Engagement-Typ. Wir diagnostizieren zunächst das System: Architektur, Datenfluss, Bereitstellung, Team und Einschränkungen. Dann schlagen wir Ihnen das passende Engagement vor.",
+    "belief3Title": "Transparenz ist ein Merkmal",
+    "belief3Body": "Sichtbarer Fortschritt, schriftliche Aktualisierungen und direkter Zugang zu den Ingenieuren. Die Geheimhaltung rund um die Lieferung ist ein Symptom eines Prozesses, der nicht erklärt werden kann.",
+    "companyFacts": {
+      "name": "Offizieller Name",
+      "tradingName": "Handelsname",
+      "siren": "SIREN",
+      "siret": "SIRET",
+      "address": "Eingetragener Sitz",
+      "email": "E-Mail",
+      "phone": "Telefon"
+    }
+  }
+}

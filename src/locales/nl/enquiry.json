@@ -1,0 +1,74 @@
+{
+  "enquiry": {
+    "title": "Start een project",
+    "subtitle": "Vertel ons wat u probeert te bouwen, moderniseren, automatiseren of repareren. We zullen binnen 2 werkdagen antwoorden met een eerlijke beoordeling van de geschiktheid en wat ervoor nodig is.",
+    "body": "Het formulier verzamelt de minimale informatie die nodig is om doordacht te reageren. Er wordt niets gedeeld buiten SDK Enterprises, maar u kunt ons ook rechtstreeks bereiken via hello@sdk.enterprises.",
+    "body2": "Wij beoordelen elke aanvraag zelf. Geen accountmanagers, geen kwalificatiescripts, geen overdrachten.",
+    "nextStepsEyebrow": "Wat gebeurt er daarna",
+    "nextStepsHeading": "Van onderzoek naar betrokkenheid",
+    "nextStepsBody": "Nadat u het formulier heeft verzonden, lezen wij het zelf. Als het past, zullen we antwoorden met een korte schriftelijke beoordeling en een voorgesteld engagementmodel. Als het niet past, vertellen we u waarom en stellen we een alternatief voor.",
+    "nextStep1Title": "Beoordeling",
+    "nextStep1Body": "Wij lezen uw inzending en toetsen deze aan onze huidige capaciteit en expertise. Meestal binnen 2 werkdagen.",
+    "nextStep2Title": "Beoordeling",
+    "nextStep2Body": "Een korte schriftelijke reactie: wat wij denken dat het probleem is, of het past en wat de eerste stap zou zijn.",
+    "nextStep3Title": "Bellen of asynchroon",
+    "nextStep3Body": "Een gesprek van 30 minuten of een asynchrone uitwisseling om de reikwijdte, beperkingen en tijdlijn te verduidelijken. Geen pitchdeck tenzij je er een wilt.",
+    "nextStep4Title": "Voorstel",
+    "nextStep4Body": "Een schriftelijk voorstel met reikwijdte, vaste prijs of tarief, tijdlijn en mijlpalen. Jij tekent, wij beginnen.",
+    "form": {
+      "companyName": "Bedrijf",
+      "email": "Professionele e-mail",
+      "website": "Bedrijfswebsite",
+      "capability": "Vermogen nodig",
+      "description": "Probleem-/projectbeschrijving",
+      "environment": "Bestaande omgeving",
+      "timeline": "Tijdlijn",
+      "budgetRange": "Budgetbereik",
+      "context": "Ondersteunende context",
+      "submit": "Stuur aanvraag"
+    },
+    "capabilities": {
+      "aiEngineering": "AI-techniek",
+      "softwareEngineering": "Software-engineering",
+      "frontendProduct": "Frontend en product",
+      "cloudInfrastructure": "Cloud en infrastructuur",
+      "dataCacheSearch": "Gegevens / Cache / Zoeken",
+      "modernization": "Modernisering",
+      "other": "Anders"
+    },
+    "timelines": {
+      "asap": "Zo snel mogelijk",
+      "oneToThreeMonths": "1–3 maanden",
+      "threeToSixMonths": "3–6 maanden",
+      "sixPlusMonths": "6+ maanden",
+      "notSure": "Niet zeker"
+    },
+    "budgets": {
+      "under10k": "< € 10k",
+      "tenToTwentyFiveK": "€ 10.000 – 25.000",
+      "twentyFiveToFiftyK": "€ 25.000 – 50.000",
+      "fiftyPlusK": "€50k+",
+      "notSure": "Niet zeker"
+    },
+    "validation": {
+      "companyNameRequired": "Bedrijfsnaam is vereist",
+      "emailRequired": "Professionele e-mail is vereist",
+      "emailInvalid": "Voer een geldig e-mailadres in",
+      "websiteInvalid": "Voer een geldige URL in",
+      "capabilityRequired": "Selecteer een mogelijkheid",
+      "descriptionRequired": "Beschrijf het project of probleem",
+      "descriptionTooShort": "Beschrijving moet minimaal 50 tekens bevatten",
+      "descriptionTooLong": "Beschrijving moet minder dan 4000 tekens bevatten",
+      "environmentTooLong": "Omgeving moet minder dan 4000 tekens bevatten",
+      "contextTooLong": "Ondersteunende context moet minder dan 4000 tekens bevatten"
+    },
+    "success": {
+      "title": "Onderzoek verzonden",
+      "body": "Bedankt. We zullen uw project beoordelen en binnen twee werkdagen reageren."
+    },
+    "error": {
+      "title": "Er is iets misgegaan",
+      "body": "We konden uw aanvraag niet verzenden. Probeer het opnieuw of stuur ons direct een e-mail."
+    }
+  }
+}

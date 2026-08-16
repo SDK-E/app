@@ -1,0 +1,26 @@
+{
+  "legal": {
+    "terms": {
+      "title": "Terms of use",
+      "intro": "The rules for using this website.",
+      "purposeTitle": "Objetivo",
+      "purpose": "Estes termos regem o uso do site {name}. Ao acessar o site você concorda com estes termos.",
+      "servicesTitle": "Apresentação de serviços",
+      "services": "O site apresenta os serviços da {name} e permite enviar uma consulta de projeto. Este conteúdo é fornecido apenas a título informativo e não representa uma oferta contratual nem um compromisso de prestação de serviços.",
+      "enquiriesTitle": "Consultas de projeto",
+      "enquiries": "A informação submetida através do formulário “Iniciar um projeto” é tratada de acordo com a política de privacidade. Receber uma consulta não implica qualquer obrigação de aceitá-la.",
+      "intellectualPropertyTitle": "Propriedade intelectual",
+      "intellectualProperty": "Os textos, logótipo, imagens e conteúdos do site são propriedade da SDK Enterprises e não poderão ser reutilizados sem autorização prévia.",
+      "availabilityTitle": "Disponibilidade do local",
+      "availability": "O site é fornecido \"como está\". SDK Enterprises faz esforços razoáveis ​​para mantê-lo acessível, mas não garante disponibilidade ininterrupta ou livre de erros.",
+      "liabilityTitle": "Responsabilidade",
+      "liability": "Na medida permitida por lei, a responsabilidade da SDK Enterprises é limitada a danos diretos e não se estende a danos indiretos. Links para sites de terceiros são de responsabilidade exclusiva de seus editores.",
+      "changesTitle": "Mudanças",
+      "changes": "SDK Enterprises pode alterar estes termos a qualquer momento. A versão aplicável é a publicada nesta página.",
+      "lawTitle": "Lei aplicável",
+      "law": "Estes termos são regidos pela lei francesa. Em caso de litígio, os tribunais franceses são competentes.",
+      "contactTitle": "Contato",
+      "contact": "Para qualquer dúvida, entre em contato com {company} em {email}."
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "legal": {
+    "privacy": {
+      "title": "Privacy policy",
+      "intro": "How SDK Enterprises handles personal data, in accordance with the GDPR (RGPD).",
+      "processors": [
+        {
+          "name": "Vercel",
+          "role": "Website hosting and cookieless analytics"
+        },
+        {
+          "name": "Auth0 (Okta)",
+          "role": "Authentication for the client portal"
+        },
+        {
+          "name": "Resend",
+          "role": "Transactional email for project enquiries"
+        },
+        {
+          "name": "Prisma Postgres",
+          "role": "Managed PostgreSQL database"
+        }
+      ],
+      "controllerTitle": "Behandlingsansvarlig",
+      "controller": "Behandlingsansvarlig er {company}, som handler som {name}, registrert kontor på {address}. For alle spørsmål om dine personlige data, kontakt oss på {email}.",
+      "collectedDataTitle": "Data samlet inn",
+      "collectedData": "Det eneste datainnsamlingsskjemaet på denne siden er det offentlige \"Start et prosjekt\"-skjema. De forespurte dataene er strengt begrenset til:",
+      "collectedDataItems": [
+        "Firmanavn (påkrevd)",
+        "Profesjonell e-postadresse (påkrevd)",
+        "Selskapets nettsted (valgfritt)",
+        "Nødvendig evne (påkrevd)",
+        "Prosjekt- eller problembeskrivelse (obligatorisk)",
+        "Eksisterende miljø (valgfritt)",
+        "Tidslinje (valgfritt)",
+        "Budsjettområde (valgfritt)",
+        "Støttekontekst (valgfritt)"
+      ],
+      "purposesTitle": "Formål og rettsgrunnlag",
+      "purposesNote": "Dine data behandles til:",
+      "purposeItems": [
+        "svare på din prosjekthenvendelse — forhåndskontraktuelle tiltak (Art. 6(1)(b) GDPR) og legitim interesse (Art. 6(1)(f));",
+        "drifte, sikre og forbedre nettstedet — legitim interesse (Art. 6(1)(f));",
+        "overholde alle gjeldende juridiske forpliktelser (Art. 6(1)(c))."
+      ],
+      "recipientsTitle": "Mottakere",
+      "recipientsNote": "Dataene dine er kun tilgjengelige for autoriserte personer innenfor SDK Enterprises. Det kan behandles av følgende prosessorer, strengt tatt for behovene til deres tjenester:",
+      "transfersTitle": "Overføringer utenfor EU",
+      "transfers": "Noen prosessorer kan behandle data utenfor det europeiske økonomiske samarbeidsområdet (spesielt i USA). Der dette skjer, brukes hensiktsmessige sikkerhetstiltak, for eksempel EU-kommisjonens standard kontraktuelle klausuler.",
+      "retentionTitle": "Oppbevaring",
+      "retention": "Data som samles inn gjennom skjemaet oppbevares i 12 måneder fra siste kontakt, med mindre en lengre oppbevaring er påkrevd ved lov. Etter denne perioden blir den slettet eller anonymisert.",
+      "rightsTitle": "Dine rettigheter",
+      "rightsNote": "I henhold til Articles 15 to 22 GDPR har du rett til tilgang, retting, sletting, begrensning, portabilitet og innsigelse. Du kan også trekke tilbake samtykket ditt når som helst.",
+      "rightsContact": "For å utøve disse rettighetene, skriv til oss på {email}. Vi svarer innen en måned. Du kan også sende inn en klage til CNIL (www.cnil.fr).",
+      "childrenTitle": "Barn",
+      "children": "Siden er rettet mot profesjonelle og er ikke beregnet på mindreårige. Forespørselsskjemaet er ikke beregnet på personer under 16 år.",
+      "automatedTitle": "Automatisert beslutningstaking",
+      "automated": "Ingen automatisert beslutningstaking eller profilering utføres på dine data.",
+      "securityTitle": "Sikkerhet",
+      "security": "Rimelige tekniske og organisatoriske tiltak er på plass for å beskytte dataene dine (krypterte tilkoblinger, tilgangskontroller). Ingen absolutt garanti kan tilbys.",
+      "registerTitle": "Registrering og erklæring",
+      "register": "SDK Enterprises fører et internt register over behandlingsaktiviteter (Art. 30 GDPR). Ingen CNIL-deklarasjonsnummer er hevdet eller oppfunnet."
+    }
+  }
+}

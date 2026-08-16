@@ -1,0 +1,25 @@
+{
+  "legal": {
+    "mentionsLegales": {
+      "title": "Erwähnt Rechtsanwälte",
+      "intro": "Rechtliche Hinweise zur SDK Enterprises-Website.",
+      "publisherTitle": "Herausgeber",
+      "publisherWebsite": "Die unter {domain} zugängliche Website wird von {company} unter dem Handelsnamen {name} veröffentlicht.",
+      "siren": "SIREN: {siren}",
+      "siret": "SIRET: {siret}",
+      "registeredOffice": "Eingetragener Firmensitz: {address}",
+      "legalForm": "Rechtsform und Stammkapital: Selbstunternehmer (Einzelunternehmer, Kleinstunternehmen), kein Stammkapital",
+      "registration": "Firmenregistrierung: RCS Paris {siren}",
+      "directorTitle": "Publikationsleiter",
+      "director": "Publikationsleiter: Hicham SADDEK.",
+      "hostingTitle": "Hosting",
+      "hosting": "Die Website wird von Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA, gehostet.",
+      "contactTitle": "Kontakt",
+      "contact": "Fragen zur Website können an {email} oder telefonisch an {phone} gesendet werden.",
+      "intellectualPropertyTitle": "Geistiges Eigentum",
+      "intellectualProperty": "Struktur, Texte, Logo und Inhalt der Website sind Eigentum von SDK Enterprises. Jegliche Vervielfältigung oder Darstellung, ganz oder teilweise, ohne vorherige Genehmigung ist verboten, sofern dies nicht durch geltendes Recht zulässig ist.",
+      "legalFrameworkTitle": "Rechtlicher Rahmen",
+      "legalFramework": "Diese Hinweise unterliegen französischem Recht und werden gemäß Artikel 6-III des französischen Gesetzes Nr. 2004-575 vom 21. Juni 2004 über das Vertrauen in die digitale Wirtschaft (LCEN) erstellt."
+    }
+  }
+}

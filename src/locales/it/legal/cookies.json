@@ -1,0 +1,16 @@
+{
+  "legal": {
+    "cookies": {
+      "title": "Cookie policy",
+      "intro": "What cookies are and whether this site uses them.",
+      "whatIsTitle": "Cos'è un biscotto?",
+      "whatIs": "Un cookie è un piccolo file di testo inserito nel tuo dispositivo quando visiti un sito web. Permette al sito di riconoscere il tuo browser e ricordare informazioni.",
+      "thisSiteTitle": "Cookie impostati da questo sito",
+      "thisSite": "Nessun cookie analitico, pubblicitario o di tracciamento viene impostato da questo sito. La soluzione di analisi in uso (Vercel Analytics) è priva di cookie. La tua navigazione quindi non viene tracciata.",
+      "consentBannerTitle": "Striscione di consenso",
+      "consentBanner": "Non viene mostrato alcun banner di consenso perché non sono impostati cookie. Se venisse aggiunto uno script di impostazione dei cookie, verrebbe richiesto un banner di consenso e questa pagina verrebbe aggiornata.",
+      "browserSettingsTitle": "Gestire i cookie nel tuo browser",
+      "browserSettings": "Puoi configurare il tuo browser per rifiutare o eliminare i cookie in qualsiasi momento. Le istruzioni dipendono dal browser utilizzato (Chrome, Firefox, Safari, Edge). Le guide sono disponibili presso www.cnil.fr."
+    }
+  }
+}

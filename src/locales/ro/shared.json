@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "siteDescription": "Companie franceză de inginerie B2B. Construim, modernizăm și operăm software în întreaga stivă — platforme backend, infrastructură cloud, automatizare AI, sisteme în timp real și instrumente interne.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Servicii",
+    "servicesDescription": "SDK Enterprises construiește, modernizează și operează software în întreaga stivă - agenți AI, platforme backend, interfețe web, infrastructură cloud, sisteme de date și modernizare moștenită.",
+    "workTitle": "Munca",
+    "workDescription": "Situațiile pentru care este configurat SDK Enterprises — migrare, platforme de mare volum, automatizare AI și livrare de inginerie senior.",
+    "howWeWorkTitle": "Cum lucrăm",
+    "howWeWorkDescription": "O cale clară de la problemă la producție. Patru pași, progres vizibil în fiecare etapă.",
+    "aboutTitle": "Despre",
+    "aboutDescription": "Companie de inginerie B2B cu sediul în Franța. Livrare senior, comunicare directă, fără strat de cont.",
+    "startAProjectTitle": "Începeți un proiect",
+    "startAProjectDescription": "Spuneți-ne ce încercați să construiți, să modernizați, să automatizați sau să remediați. Vă vom spune sincer dacă este potrivit și ce ar fi nevoie."
+  },
+  "nav": {
+    "toggleMenu": "Comutați meniul",
+    "home": "SDK Enterprises acasă",
+    "main": "Principal",
+    "services": "Servicii",
+    "work": "Munca",
+    "process": "Proces",
+    "about": "Despre",
+    "discussProject": "Discutați un proiect",
+    "signIn": "Conectați-vă",
+    "legal": "Legal",
+    "mentionsLegales": "Mențiuni legale",
+    "privacy": "Confidențialitate",
+    "terms": "Termeni",
+    "cookies": "Cookie-uri"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "AI · Software · Cloud · Ingineria sistemelor"
+  },
+  "auth": {
+    "loginRedirecting": "Se redirecționează către autentificare...",
+    "logoutRedirecting": "Se redirecționează către deconectare..."
+  },
+  "errors": {
+    "pageNotFound": "Această pagină nu există sau a fost mutată.",
+    "backToHome": "Înapoi acasă",
+    "somethingWentWrong": "Ceva a mers prost",
+    "tryAgain": "Încercați din nou",
+    "contactSupport": "Dacă problema persistă, vă rugăm să contactați asistența."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "workPage": {
+    "eyebrow": "Travailler avec SDK",
+    "body": "Vous savez quand quelque chose dans votre pile vous coûte cher. Voici les situations pour lesquelles le SDK est conçu.",
+    "cta": "Démarrer un projet",
+    "engagementsEyebrow": "Fiançailles",
+    "engagementsHeading": "Comment commencent habituellement les engagements",
+    "engagementsBody": "La plupart des engagements commencent par une courte conversation ou un résumé écrit du problème. À partir de là, SDK propose une réponse ciblée : un audit à prix fixe, un flux de travail en termes de temps et de matériel ou un modèle hybride en fonction de l'incertitude du système et de la clarté de l'objectif.",
+    "lookForEyebrow": "Ce que nous recherchons",
+    "lookForHeading": "Un problème clair et une équipe prête à s’y engager.",
+    "lookForBody": "Les meilleurs engagements commencent lorsque le client sait que quelque chose ne va pas, mais n’en connaît pas encore l’ampleur. Nous recherchons des équipes qui souhaitent comprendre le mécanisme, et pas seulement recevoir un diaporama.",
+    "lookFor1Title": "Une contrainte spécifique",
+    "lookFor1Body": "Performances, fiabilité, coût, rapidité de livraison ou conformité. Il n’est pas nécessaire que le problème soit nouveau : il doit être réel et mesurable.",
+    "lookFor2Title": "Accès au système",
+    "lookFor2Body": "Accès en lecture à la base de code, à l'infrastructure et aux personnes qui comprennent l'état actuel. Sans cela, toute évaluation n’est qu’une conjecture.",
+    "lookFor3Title": "Un décideur",
+    "lookFor3Body": "Quelqu'un qui peut approuver la portée, le budget et le calendrier. Il ne s'agit pas d'un comité, mais d'une seule personne ayant le pouvoir de faire avancer les travaux.",
+    "fitEyebrow": "Ajustement",
+    "fitHeading": "Quand SDK n’est pas la bonne réponse",
+    "fitBody": "Nous disons non plus souvent que vous ne le pensez. SDK n'est pas un atelier de carrosserie pour les tickets de débordement, et nous ne prenons pas d'engagements où le problème n'est pas encore défini ou où l'équipe ne peut pas s'engager dans le processus."
+  }
+}

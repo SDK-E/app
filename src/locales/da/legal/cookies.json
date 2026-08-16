@@ -1,0 +1,16 @@
+{
+  "legal": {
+    "cookies": {
+      "title": "Cookie policy",
+      "intro": "What cookies are and whether this site uses them.",
+      "whatIsTitle": "Hvad er en cookie?",
+      "whatIs": "En cookie er en lille tekstfil, der placeres på din enhed, når du besøger en hjemmeside. Det giver webstedet mulighed for at genkende din browser og huske oplysninger.",
+      "thisSiteTitle": "Cookies indstillet af dette websted",
+      "thisSite": "Ingen analyse-, reklame- eller sporingscookies sættes af dette websted. Den anvendte analyseløsning (Vercel Analytics) er uden cookies. Din browsing spores derfor ikke.",
+      "consentBannerTitle": "Samtykke banner",
+      "consentBanner": "Der vises ikke noget samtykkebanner, fordi der ikke er indstillet cookies. Hvis et cookie-indstillingsscript blev tilføjet, ville et samtykkebanner blive påkrævet, og denne side ville blive opdateret.",
+      "browserSettingsTitle": "Håndtering af cookies i din browser",
+      "browserSettings": "Du kan til enhver tid konfigurere din browser til at afvise eller slette cookies. Instruktionerne afhænger af din browser (Chrome, Firefox, Safari, Edge). Vejledninger er tilgængelige på www.cnil.fr."
+    }
+  }
+}

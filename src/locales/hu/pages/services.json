@@ -1,0 +1,19 @@
+{
+  "servicesPage": {
+    "eyebrow": "Szolgáltatások",
+    "body": "Szoftvereket építünk és üzemeltetünk a teljes készletben: AI-ügynökök és automatizálás, háttérplatformok, webes felületek, felhő-infrastruktúra, adatrendszerek és örökölt modernizáció. Egy speciális probléma vagy egy teljes munkafolyamat – a munkát végző mérnökök azok, akikkel beszél.",
+    "cta": "Indítson el egy projektet",
+    "engagementEyebrow": "Eljegyzési modellek",
+    "engagementHeading": "Hogyan foglalkozunk",
+    "engagementBody": "A SDK kétféleképpen lép be: egy fix árú audit, amely egy adott problémát diagnosztizál, és javaslatot tesz a továbblépésre, vagy egy dedikált mérnöki munkafolyamat, ahol egy vezető csapat birtokolja a megvalósítást a végétől a végéig. Hibrid megállapodások léteznek olyan rendszerek számára, amelyeknek diagnosztizálásra és tartós szállításra van szükségük.",
+    "engagementModel1Title": "Fix árú audit",
+    "engagementModel1Body": "Egy adott probléma kiterjedt diagnózisa: architektúra áttekintése, áttelepítési útvonal, teljesítmény szűk keresztmetszet vagy biztonsági felülvizsgálat. Az output egy írásos terv prioritásokkal, kockázatokkal és becsült erőfeszítéssel.",
+    "engagementModel2Title": "Mérnöki munkafolyamat",
+    "engagementModel2Body": "A verembe egy meghatározott ideig beágyazott idősebb csapat. Heti szállítás, látható haladás és közvetlen kommunikáció a szoftvert építő mérnökökkel.",
+    "engagementModel3Title": "Hibrid",
+    "engagementModel3Body": "Először audit, majd munkafolyamat. A problémát diagnosztizáló csapat marad a megoldás megvalósításában. Nincs átadás egy másik fiókhoz tartozó csapatnak.",
+    "whatWeDontDoEyebrow": "Amit nem csinálunk",
+    "whatWeDontDoHeading": "Nem titkoljuk a mechanizmust.",
+    "whatWeDontDoBody": "Nincsenek juniorok a kódbázisodban. Nincs fiókkezelő közted és a mérnökök között. Nincs offshore átadás a javaslat után. Nincs olyan elköteleződés, amely a szükségesnél nagyobb hatókör eladásán múlik."
+  }
+}

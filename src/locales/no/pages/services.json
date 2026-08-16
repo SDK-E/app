@@ -1,0 +1,19 @@
+{
+  "servicesPage": {
+    "eyebrow": "Tjenester",
+    "body": "Vi bygger og driver programvare på tvers av hele stabelen: AI-agenter og automatisering, backend-plattformer, webgrensesnitt, skyinfrastruktur, datasystemer og eldre modernisering. Ett spesialisert problem eller en hel arbeidsstrøm - ingeniørene som gjør arbeidet er de du snakker med.",
+    "cta": "Start et prosjekt",
+    "engagementEyebrow": "Engasjementmodeller",
+    "engagementHeading": "Hvordan vi engasjerer oss",
+    "engagementBody": "SDK går inn på to måter: en fastprisrevisjon som diagnostiserer et spesifikt problem og foreslår en vei videre, eller en dedikert ingeniørarbeidsstrøm der et seniorteam eier implementeringen fra ende til annen. Hybride ordninger finnes for systemer som trenger både diagnose og vedvarende levering.",
+    "engagementModel1Title": "Fastprisrevisjon",
+    "engagementModel1Body": "En scoped diagnose av et spesifikt problem: arkitekturgjennomgang, migreringsbane, ytelsesflaskehals eller sikkerhetsgjennomgang. Output er en skriftlig plan med prioriteringer, risikoer og estimert innsats.",
+    "engagementModel2Title": "Ingeniørarbeid",
+    "engagementModel2Body": "Et seniorlag innebygd i stabelen din for en definert periode. Ukentlig levering, synlig fremgang og direkte kommunikasjon med ingeniørene som bygger programvaren.",
+    "engagementModel3Title": "Hybrid",
+    "engagementModel3Body": "Revisjon først, deretter arbeidsstrøm. Teamet som diagnostiserer problemet blir værende for å implementere løsningen. Ingen overlevering til et annet kontoteam.",
+    "whatWeDontDoEyebrow": "Det vi ikke gjør",
+    "whatWeDontDoHeading": "Vi skjuler ikke mekanismen.",
+    "whatWeDontDoBody": "Ingen juniorer på kodebasen din. Ingen kontoansvarlig mellom deg og ingeniørene. Ingen offshore-utlevering etter forslaget. Ingen engasjement som avhenger av å selge deg et større omfang enn du trenger."
+  }
+}

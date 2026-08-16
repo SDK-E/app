@@ -1,0 +1,65 @@
+{
+  "legal": {
+    "privacy": {
+      "title": "Privacy policy",
+      "intro": "How SDK Enterprises handles personal data, in accordance with the GDPR (RGPD).",
+      "processors": [
+        {
+          "name": "Vercel",
+          "role": "Website hosting and cookieless analytics"
+        },
+        {
+          "name": "Auth0 (Okta)",
+          "role": "Authentication for the client portal"
+        },
+        {
+          "name": "Resend",
+          "role": "Transactional email for project enquiries"
+        },
+        {
+          "name": "Prisma Postgres",
+          "role": "Managed PostgreSQL database"
+        }
+      ],
+      "controllerTitle": "Operatorul de date",
+      "controller": "Operatorul de date este {company}, tranzacționând ca {name}, cu sediul social la {address}. Pentru orice întrebare despre datele dumneavoastră personale, contactați-ne la {email}.",
+      "collectedDataTitle": "Date colectate",
+      "collectedData": "Singurul formular de colectare a datelor de pe acest site este formularul public „Începe un proiect”. Datele solicitate sunt strict limitate la:",
+      "collectedDataItems": [
+        "Numele companiei (obligatoriu)",
+        "Adresă de e-mail profesională (obligatoriu)",
+        "Site-ul companiei (opțional)",
+        "Capacitate necesară (obligatorie)",
+        "Descrierea proiectului sau a problemei (obligatoriu)",
+        "Mediu existent (opțional)",
+        "Cronologie (opțional)",
+        "Interval de buget (opțional)",
+        "Context suport (opțional)"
+      ],
+      "purposesTitle": "Scopuri și temeiuri juridice",
+      "purposesNote": "Datele dumneavoastră sunt prelucrate pentru:",
+      "purposeItems": [
+        "să răspundă la întrebarea dvs. de proiect — măsuri precontractuale (Art. 6(1)(b) GDPR) și interes legitim (Art. 6(1)(f));",
+        "operați, securizați și îmbunătățiți site-ul — interes legitim (Art. 6(1)(f));",
+        "respectă orice obligații legale aplicabile (Art. 6(1)(c))."
+      ],
+      "recipientsTitle": "Destinatari",
+      "recipientsNote": "Datele dvs. sunt accesibile numai persoanelor autorizate din SDK Enterprises. Poate fi prelucrată de următorii procesatori, strict pentru nevoile serviciilor lor:",
+      "transfersTitle": "Transferuri în afara UE",
+      "transfers": "Unii procesatori pot prelucra date în afara Spațiului Economic European (în special în Statele Unite). În cazul în care se întâmplă acest lucru, sunt utilizate garanții adecvate, cum ar fi clauzele contractuale standard ale Comisiei Europene.",
+      "retentionTitle": "Retentie",
+      "retention": "Datele colectate prin formular sunt păstrate timp de 12 luni de la ultimul contact, cu excepția cazului în care legea impune o păstrare mai lungă. După această perioadă, acesta este șters sau anonimizat.",
+      "rightsTitle": "Drepturile tale",
+      "rightsNote": "În conformitate cu Articles 15 to 22 GDPR, aveți dreptul de acces, rectificare, ștergere, restricție, portabilitate și obiecție. De asemenea, vă puteți retrage consimțământul în orice moment.",
+      "rightsContact": "Pentru exercitarea acestor drepturi, scrieți-ne la {email}. Raspundem in termen de o luna. De asemenea, puteți depune o plângere la CNIL (www.cnil.fr).",
+      "childrenTitle": "Copii",
+      "children": "Site-ul este destinat profesioniștilor și nu este destinat minorilor. Formularul de întrebare nu este destinat persoanelor sub 16 ani.",
+      "automatedTitle": "Luare automată a deciziilor",
+      "automated": "Nu se efectuează nicio luare automată de decizii sau profilare asupra datelor dumneavoastră.",
+      "securityTitle": "Securitate",
+      "security": "Sunt luate măsuri tehnice și organizatorice rezonabile pentru a vă proteja datele (conexiuni criptate, controale de acces). Nu poate fi oferită nicio garanție absolută.",
+      "registerTitle": "Înregistrare și declarație",
+      "register": "SDK Enterprises menține un registru intern al activităților de prelucrare (Art. 30 GDPR). Nu este revendicat sau inventat niciun număr de declarație CNIL."
+    }
+  }
+}

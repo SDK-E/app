@@ -1,0 +1,22 @@
+{
+  "workPage": {
+    "eyebrow": "Work with SDK",
+    "body": "You know when something in your stack is costing you. Here are the situations SDK is built for.",
+    "cta": "Start a project",
+    "engagementsEyebrow": "Engagements",
+    "engagementsHeading": "How engagements usually start",
+    "engagementsBody": "Most engagements begin with a short conversation or a written summary of the problem. From there, SDK proposes a scoped response: a fixed-price audit, a time-and-materials workstream, or a hybrid model depending on the uncertainty in the system and the clarity of the goal.",
+    "lookForEyebrow": "What we look for",
+    "lookForHeading": "A clear problem and a team willing to engage with it.",
+    "lookForBody": "The best engagements start when the client knows something is wrong but does not yet know the full extent. We look for teams that want to understand the mechanism, not just receive a slide deck.",
+    "lookFor1Title": "A specific constraint",
+    "lookFor1Body": "Performance, reliability, cost, speed of delivery, or compliance. The problem does not need to be novel — it needs to be real and measurable.",
+    "lookFor2Title": "Access to the system",
+    "lookFor2Body": "Read access to the codebase, infrastructure, and the people who understand the current state. Without this, any assessment is guesswork.",
+    "lookFor3Title": "A decision maker",
+    "lookFor3Body": "Someone who can approve the scope, the budget, and the timeline. Not a committee — one person with the authority to move the work forward.",
+    "fitEyebrow": "Fit",
+    "fitHeading": "When SDK is not the right answer",
+    "fitBody": "We say no more often than you might expect. SDK is not a body shop for overflow tickets, and we do not take engagements where the problem is not yet defined or the team cannot commit to the process."
+  }
+}

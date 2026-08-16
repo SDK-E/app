@@ -1,0 +1,132 @@
+{
+  "hero": {
+    "eyebrow": "B2B KI · Software · Cloud · Systemtechnik",
+    "heading": "Ein Engineering-Partner für den Stack, den Ihr Unternehmen benötigt.",
+    "leadParagraph": "SDK Enterprises erstellt, modernisiert und betreibt Software im gesamten Stack – Backend-Plattformen, Cloud-Infrastruktur, KI-Automatisierung, Echtzeitsysteme und interne Tools. Sie beschäftigen sich mit einem speziellen Problem oder verfügen über einen breiteren Arbeitsbereich; Wie auch immer, die Leute, die die Arbeit machen, sind die Leute, mit denen Sie sprechen.",
+    "ctaStartProject": "Starten Sie ein Projekt",
+    "ctaExploreServices": "Entdecken Sie Dienstleistungen",
+    "trustFrance": "Das in Frankreich ansässige Unternehmen B2B",
+    "trustSenior": "Leitende technische Lieferung",
+    "trustAI": "KI + Backend + Cloud",
+    "trustClients": "Europäische und Remote-Kunden"
+  },
+  "services": {
+    "eyebrow": "Dienstleistungen",
+    "title": "Nutzen Sie den gesamten Stapel – oder nur den Teil, den Sie benötigen.",
+    "intro": "SDK kann sich an einem speziellen Problem beteiligen oder einen breiteren technischen Workstream übernehmen.",
+    "items": [
+      {
+        "number": "01",
+        "category": "KI-Engineering",
+        "title": "KI-Agenten und Automatisierung",
+        "copy": "LLM-Integrationen, Agenten, RAG, Workflow-Automatisierung, Entwicklertools und KI-gestützte Abläufe."
+      },
+      {
+        "number": "02",
+        "category": "Backend",
+        "title": "Plattformen, APIs und SaaS",
+        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs und Echtzeit-Backend-Architektur."
+      },
+      {
+        "number": "03",
+        "category": "Frontend",
+        "title": "Web- und Anwendungsschnittstellen",
+        "copy": "React, Vue, Nuxt, TypeScript, Tailwind und Shadcn."
+      },
+      {
+        "number": "04",
+        "category": "Wolke",
+        "title": "Cloud & Infrastruktur",
+        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD und Bereitstellungsarchitektur."
+      },
+      {
+        "number": "05",
+        "category": "Daten",
+        "title": "Datenbanken, Cache und Suche",
+        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey und Elasticsearch."
+      },
+      {
+        "number": "06",
+        "category": "Modernisierung",
+        "title": "Legacy-Modernisierung",
+        "copy": "Framework-Upgrades, Migration, technische Schuldenreduzierung und Leistungsoptimierung."
+      }
+    ]
+  },
+  "whySdk": {
+    "eyebrow": "Warum SDK",
+    "title": "Senior Engineering ohne unnötige Schichten.",
+    "intro": "Direkte Kommunikation, schnelle Diagnose und pragmatische Umsetzung.",
+    "items": [
+      {
+        "kicker": "FR",
+        "copy": "Ein in Frankreich ansässiges B2B-Unternehmen für europäische und entfernte Kunden."
+      },
+      {
+        "kicker": "KI",
+        "copy": "LLM Integrationen, Agenten, Automatisierung und interne Tools."
+      },
+      {
+        "kicker": "RT",
+        "copy": "Echtzeit- und hochvolumige Plattformarbeit."
+      },
+      {
+        "kicker": "DIREKT",
+        "copy": "Sie sprechen mit den Ingenieuren, die die Arbeit erledigen, nicht mit einer Account-Ebene."
+      }
+    ]
+  },
+  "engagements": {
+    "eyebrow": "Arbeiten Sie mit SDK",
+    "title": "Bringen Sie ein konkretes Problem mit. Erhalten Sie eine konkrete Antwort.",
+    "intro": "Sie wissen, wann etwas in Ihrem Stapel Sie kostet. Hier sind die Situationen, für die der SDK eingerichtet ist.",
+    "items": [
+      {
+        "title": "Ein System, das zu alt ist, um weiter zu patchen.",
+        "copy": "Sie benötigen einen Migrationsplan, keinen Wunsch – eine Prüfung dessen, was ausgeführt wird, was unterbrochen wird und in welcher Reihenfolge eingezogen wird."
+      },
+      {
+        "title": "Volumen, für das Ihr aktueller Stack nicht ausgelegt ist.",
+        "copy": "Echtzeitaufnahme, Backends mit hohem Durchsatz und die Infrastruktur, um sie stabil zu halten."
+      },
+      {
+        "title": "KI, die Sie einsetzen können.",
+        "copy": "LLM-Integrationen, Agenten und Automatisierung, die einen internen Arbeitsablauf verändern – keine Demo, die beim Pitch aufhört."
+      },
+      {
+        "title": "Ein Team, das erfahrene Hände braucht.",
+        "copy": "Direkte technische Bereitstellung auf Ihrer Codebasis, ohne dass eine mittlere Ebene Entscheidungen verlangsamt."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Wie wir arbeiten",
+    "title": "Ein klarer Weg vom Problem zur Produktion.",
+    "intro": "Vier Schritte, sichtbarer Fortschritt in jeder Phase.",
+    "items": [
+      {
+        "title": "Verstehe",
+        "copy": "Geschäftsziel, Stack, Einschränkungen und Erfolgskriterien."
+      },
+      {
+        "title": "Design",
+        "copy": "Architektur, Umfang, Risiken und Meilensteine."
+      },
+      {
+        "title": "Bauen",
+        "copy": "Umsetzung mit sichtbaren Fortschritten."
+      },
+      {
+        "title": "Übergabe",
+        "copy": "Bereitstellung, Dokumentation und Eigentumsübertragung."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Arbeiten Sie mit SDK",
+    "heading": "Bringen Sie uns das Problem, das Sie lösen möchten.",
+    "body": "Sagen Sie uns, was Sie bauen, modernisieren, automatisieren oder reparieren möchten – wir sagen Ihnen ehrlich, ob es passt und was dafür erforderlich ist.",
+    "registeredUnder": "Registriert unter {company}",
+    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  }
+}

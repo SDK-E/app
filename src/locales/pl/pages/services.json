@@ -1,0 +1,19 @@
+{
+  "servicesPage": {
+    "eyebrow": "Usługi",
+    "body": "Tworzymy i obsługujemy oprogramowanie w pełnym zakresie: agentów i automatyzacji AI, platform backendowych, interfejsów internetowych, infrastruktury chmurowej, systemów danych i modernizacji starszych rozwiązań. Jeden wyspecjalizowany problem lub cały strumień pracy — rozmawiasz z inżynierami wykonującymi daną pracę.",
+    "cta": "Rozpocznij projekt",
+    "engagementEyebrow": "Modele zaangażowania",
+    "engagementHeading": "Jak się angażujemy",
+    "engagementBody": "SDK można zastosować na dwa sposoby: w ramach audytu o ustalonej cenie, który diagnozuje konkretny problem i proponuje dalszą drogę, lub w ramach dedykowanego strumienia prac inżynieryjnych, w którym zespół wyższego szczebla jest właścicielem kompleksowego wdrożenia. Istnieją rozwiązania hybrydowe dla systemów, które wymagają zarówno diagnozy, jak i ciągłego dostarczania.",
+    "engagementModel1Title": "Audyt stałej ceny",
+    "engagementModel1Body": "Zakresowa diagnoza konkretnego problemu: przegląd architektury, ścieżka migracji, wąskie gardło wydajności lub przegląd bezpieczeństwa. Wynik to pisemny plan zawierający priorytety, ryzyko i szacunkowy wysiłek.",
+    "engagementModel2Title": "Strumień pracy inżynierskiej",
+    "engagementModel2Body": "Zespół seniorów osadzony w Twoim stosie na określony czas. Cotygodniowe dostawy, widoczny postęp i bezpośrednia komunikacja z inżynierami budującymi oprogramowanie.",
+    "engagementModel3Title": "Hybrydowy",
+    "engagementModel3Body": "Najpierw audyt, potem strumień pracy. Zespół, który zdiagnozuje problem, pozostaje przy wdrażaniu rozwiązania. Żadnego przekazania do innego zespołu obsługi klienta.",
+    "whatWeDontDoEyebrow": "Czego nie robimy",
+    "whatWeDontDoHeading": "Nie ukrywamy mechanizmu.",
+    "whatWeDontDoBody": "Brak juniorów w bazie kodu. Brak menedżera konta pomiędzy Tobą a inżynierami. Po złożeniu propozycji nie ma żadnego przekazania na morzu. Żadnego zaangażowania, które zależy od sprzedania Ci większego zakresu niż potrzebujesz."
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "enquiry": {
+    "title": "Start a project",
+    "subtitle": "Tell us what you are trying to build, modernize, automate or fix. We will reply within 2 business days with an honest assessment of fit and what it would take.",
+    "body": "The form collects the minimum information needed to respond thoughtfully. Nothing is shared outside SDK Enterprises, and you can also reach us directly at hello@sdk.enterprises.",
+    "body2": "We review every enquiry ourselves. No account managers, no qualification scripts, no hand-offs.",
+    "nextStepsEyebrow": "What happens next",
+    "nextStepsHeading": "From enquiry to engagement",
+    "nextStepsBody": "After you submit the form, we read it ourselves. If it is a fit, we will reply with a short written assessment and a proposed engagement model. If it is not a fit, we will tell you why and suggest an alternative.",
+    "nextStep1Title": "Review",
+    "nextStep1Body": "We read your submission and check it against our current capacity and expertise. Usually within 2 business days.",
+    "nextStep2Title": "Assessment",
+    "nextStep2Body": "A short written response: what we think the problem is, whether it is a fit, and what the first move would be.",
+    "nextStep3Title": "Call or async",
+    "nextStep3Body": "A 30-minute call or an async exchange to clarify scope, constraints, and timeline. No pitch deck unless you want one.",
+    "nextStep4Title": "Proposal",
+    "nextStep4Body": "A written proposal with scope, fixed price or rate, timeline, and milestones. You sign, we start.",
+    "form": {
+      "companyName": "Company",
+      "email": "Professional email",
+      "website": "Company website",
+      "capability": "Capability needed",
+      "description": "Problem / project description",
+      "environment": "Existing environment",
+      "timeline": "Timeline",
+      "budgetRange": "Budget range",
+      "context": "Supporting context",
+      "submit": "Send enquiry"
+    },
+    "capabilities": {
+      "aiEngineering": "AI Engineering",
+      "softwareEngineering": "Software Engineering",
+      "frontendProduct": "Frontend & Product",
+      "cloudInfrastructure": "Cloud & Infrastructure",
+      "dataCacheSearch": "Data / Cache / Search",
+      "modernization": "Modernization",
+      "other": "Other"
+    },
+    "timelines": {
+      "asap": "ASAP",
+      "oneToThreeMonths": "1–3 months",
+      "threeToSixMonths": "3–6 months",
+      "sixPlusMonths": "6+ months",
+      "notSure": "Not sure"
+    },
+    "budgets": {
+      "under10k": "< €10k",
+      "tenToTwentyFiveK": "€10k–25k",
+      "twentyFiveToFiftyK": "€25k–50k",
+      "fiftyPlusK": "€50k+",
+      "notSure": "Not sure"
+    },
+    "validation": {
+      "companyNameRequired": "Company name is required",
+      "emailRequired": "Professional email is required",
+      "emailInvalid": "Enter a valid email address",
+      "websiteInvalid": "Enter a valid URL",
+      "capabilityRequired": "Select a capability",
+      "descriptionRequired": "Describe the project or problem",
+      "descriptionTooShort": "Description must be at least 50 characters",
+      "descriptionTooLong": "Description must be under 4000 characters",
+      "environmentTooLong": "Environment must be under 4000 characters",
+      "contextTooLong": "Supporting context must be under 4000 characters"
+    },
+    "success": {
+      "title": "Enquiry sent",
+      "body": "Thanks — we'll review your project and reply within 2 business days."
+    },
+    "error": {
+      "title": "Something went wrong",
+      "body": "We couldn't send your enquiry. Please try again or email us directly."
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "servicesPage": {
+    "eyebrow": "Prestations",
+    "body": "Nous construisons et exploitons des logiciels sur l'ensemble de la pile : agents d'IA et automatisation, plates-formes backend, interfaces Web, infrastructure cloud, systèmes de données et modernisation des systèmes existants. Un problème spécialisé ou un flux de travail entier : les ingénieurs qui effectuent le travail sont ceux à qui vous parlez.",
+    "cta": "Démarrer un projet",
+    "engagementEyebrow": "Modèles d'engagement",
+    "engagementHeading": "Comment nous nous engageons",
+    "engagementBody": "SDK entre de deux manières : un audit à prix fixe qui diagnostique un problème spécifique et propose une voie à suivre, ou un flux de travail d'ingénierie dédié où une équipe senior est responsable de la mise en œuvre de bout en bout. Des arrangements hybrides existent pour les systèmes qui nécessitent à la fois un diagnostic et une prestation continue.",
+    "engagementModel1Title": "Audit au forfait",
+    "engagementModel1Body": "Un diagnostic étendu d'un problème spécifique : examen de l'architecture, chemin de migration, goulot d'étranglement des performances ou examen de la sécurité. Le résultat est un plan écrit avec les priorités, les risques et l’effort estimé.",
+    "engagementModel2Title": "Domaine de travail d'ingénierie",
+    "engagementModel2Body": "Une équipe senior intégrée dans votre stack pour une durée définie. Livraison hebdomadaire, progrès visibles et communication directe avec les ingénieurs qui construisent le logiciel.",
+    "engagementModel3Title": "Hybride",
+    "engagementModel3Body": "Auditez d’abord, puis flux de travail. L'équipe qui diagnostique le problème reste pour mettre en œuvre la solution. Pas de transfert vers une autre équipe de compte.",
+    "whatWeDontDoEyebrow": "Ce que nous ne faisons pas",
+    "whatWeDontDoHeading": "Nous ne cachons pas le mécanisme.",
+    "whatWeDontDoBody": "Aucun junior sur votre base de code. Pas de gestionnaire de compte entre vous et les ingénieurs. Pas de transfert offshore après la proposition. Aucun engagement qui dépend de la vente d’une portée plus grande que celle dont vous avez besoin."
+  }
+}

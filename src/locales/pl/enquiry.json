@@ -1,0 +1,74 @@
+{
+  "enquiry": {
+    "title": "Rozpocznij projekt",
+    "subtitle": "Powiedz nam, co próbujesz zbudować, zmodernizować, zautomatyzować lub naprawić. Odpowiemy w ciągu 2 dni roboczych, przedstawiając rzetelną ocenę dopasowania i kosztów.",
+    "body": "Formularz zbiera minimum informacji potrzebnych do przemyślanej odpowiedzi. Nic nie jest udostępniane poza SDK Enterprises, możesz także skontaktować się z nami bezpośrednio pod adresem hello@sdk.enterprises.",
+    "body2": "Sami sprawdzamy każde zapytanie. Żadnych menedżerów kont, żadnych skryptów kwalifikacyjnych, żadnych przekazań.",
+    "nextStepsEyebrow": "Co stanie się dalej",
+    "nextStepsHeading": "Od zapytania do zaangażowania",
+    "nextStepsBody": "Po przesłaniu formularza sami go czytamy. Jeśli będzie pasować, prześlemy krótką pisemną ocenę i proponowany model zaangażowania. Jeżeli nie będzie to dla Ciebie odpowiednie rozwiązanie, poinformujemy Cię dlaczego i zaproponujemy alternatywę.",
+    "nextStep1Title": "Recenzja",
+    "nextStep1Body": "Czytamy Twoje zgłoszenie i porównujemy je z naszymi obecnymi możliwościami i wiedzą specjalistyczną. Zwykle w ciągu 2 dni roboczych.",
+    "nextStep2Title": "Ocena",
+    "nextStep2Body": "Krótka pisemna odpowiedź: na czym naszym zdaniem polega problem, czy pasuje i jaki byłby pierwszy ruch.",
+    "nextStep3Title": "Zadzwoń lub asynchronizuj",
+    "nextStep3Body": "30-minutowa rozmowa telefoniczna lub asynchroniczna wymiana zdań w celu wyjaśnienia zakresu, ograniczeń i harmonogramu. Żadnego boiska, chyba że chcesz.",
+    "nextStep4Title": "Propozycja",
+    "nextStep4Body": "Pisemna oferta zawierająca zakres, stałą cenę lub stawkę, harmonogram i kamienie milowe. Ty podpisujesz, zaczynamy.",
+    "form": {
+      "companyName": "Firma",
+      "email": "Profesjonalny e-mail",
+      "website": "Strona firmowa",
+      "capability": "Potrzebna zdolność",
+      "description": "Opis problemu/projektu",
+      "environment": "Istniejące środowisko",
+      "timeline": "Oś czasu",
+      "budgetRange": "Zakres budżetu",
+      "context": "Kontekst pomocniczy",
+      "submit": "Wyślij zapytanie"
+    },
+    "capabilities": {
+      "aiEngineering": "Inżynieria AI",
+      "softwareEngineering": "Inżynieria oprogramowania",
+      "frontendProduct": "Frontend i produkt",
+      "cloudInfrastructure": "Chmura i infrastruktura",
+      "dataCacheSearch": "Dane / Pamięć podręczna / Szukaj",
+      "modernization": "Modernizacja",
+      "other": "Inne"
+    },
+    "timelines": {
+      "asap": "JAK NAJSZYBCIEJ",
+      "oneToThreeMonths": "1–3 miesiące",
+      "threeToSixMonths": "3–6 miesięcy",
+      "sixPlusMonths": "ponad 6 miesięcy",
+      "notSure": "Nie jestem pewien"
+    },
+    "budgets": {
+      "under10k": "< 10 tys. euro",
+      "tenToTwentyFiveK": "10–25 tys. euro",
+      "twentyFiveToFiftyK": "25–50 tys. euro",
+      "fiftyPlusK": "50 tys. euro+",
+      "notSure": "Nie jestem pewien"
+    },
+    "validation": {
+      "companyNameRequired": "Nazwa firmy jest wymagana",
+      "emailRequired": "Wymagany jest profesjonalny adres e-mail",
+      "emailInvalid": "Wpisz prawidłowy adres e-mail",
+      "websiteInvalid": "Wprowadź prawidłowy adres URL",
+      "capabilityRequired": "Wybierz możliwość",
+      "descriptionRequired": "Opisz projekt lub problem",
+      "descriptionTooShort": "Opis musi mieć co najmniej 50 znaków",
+      "descriptionTooLong": "Opis musi mieć mniej niż 4000 znaków",
+      "environmentTooLong": "Środowisko musi mieć mniej niż 4000 znaków",
+      "contextTooLong": "Kontekst pomocniczy musi mieć mniej niż 4000 znaków"
+    },
+    "success": {
+      "title": "Zapytanie wysłane",
+      "body": "Dziękujemy — sprawdzimy Twój projekt i odpowiemy w ciągu 2 dni roboczych."
+    },
+    "error": {
+      "title": "Coś poszło nie tak",
+      "body": "Nie mogliśmy wysłać Twojego zapytania. Spróbuj ponownie lub napisz do nas bezpośrednio."
+    }
+  }
+}

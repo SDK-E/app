@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "siteDescription": "Francouzská strojírenská společnost B2B. Vytváříme, modernizujeme a provozujeme software napříč zásobníky – backendové platformy, cloudová infrastruktura, automatizace AI, systémy v reálném čase a interní nástroje.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Služby",
+    "servicesDescription": "SDK Enterprises vytváří, modernizuje a provozuje software napříč zásobníky – agenty AI, backendové platformy, webová rozhraní, cloudovou infrastrukturu, datové systémy a starší modernizaci.",
+    "workTitle": "Práce",
+    "workDescription": "Situace, pro které je SDK Enterprises nastaven — migrace, velkoobjemové platformy, automatizace umělé inteligence a poskytování služeb pro seniory.",
+    "howWeWorkTitle": "Jak pracujeme",
+    "howWeWorkDescription": "Jasná cesta od problému k výrobě. Čtyři kroky, viditelný pokrok v každé fázi.",
+    "aboutTitle": "O",
+    "aboutDescription": "Francouzská strojírenská společnost B2B. Senior doručení, přímá komunikace, žádná vrstva účtu.",
+    "startAProjectTitle": "Začněte projekt",
+    "startAProjectDescription": "Řekněte nám, co se snažíte vybudovat, modernizovat, automatizovat nebo opravit. Upřímně vám řekneme, zda se to hodí a co by to chtělo."
+  },
+  "nav": {
+    "toggleMenu": "Přepnout nabídku",
+    "home": "SDK Enterprises domů",
+    "main": "Hlavní",
+    "services": "Služby",
+    "work": "Práce",
+    "process": "Proces",
+    "about": "O",
+    "discussProject": "Diskutujte o projektu",
+    "signIn": "Přihlaste se",
+    "legal": "Právní",
+    "mentionsLegales": "Zmiňuje légales",
+    "privacy": "soukromí",
+    "terms": "Podmínky",
+    "cookies": "Soubory cookie"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "AI · Software · Cloud · Systémové inženýrství"
+  },
+  "auth": {
+    "loginRedirecting": "Přesměrování na přihlášení...",
+    "logoutRedirecting": "Přesměrování na odhlášení..."
+  },
+  "errors": {
+    "pageNotFound": "Tato stránka neexistuje nebo byla přesunuta.",
+    "backToHome": "Zpátky domů",
+    "somethingWentWrong": "Něco se pokazilo",
+    "tryAgain": "Zkuste to znovu",
+    "contactSupport": "Pokud problém přetrvává, kontaktujte podporu."
+  }
+}

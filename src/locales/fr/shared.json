@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "siteDescription": "Société d'ingénierie française B2B. Nous construisons, modernisons et exploitons des logiciels sur toute la pile : plates-formes back-end, infrastructure cloud, automatisation de l'IA, systèmes en temps réel et outils internes.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Prestations",
+    "servicesDescription": "SDK Enterprises crée, modernise et exploite des logiciels sur toute la pile : agents d'IA, plates-formes back-end, interfaces Web, infrastructure cloud, systèmes de données et modernisation de l'héritage.",
+    "workTitle": "Travail",
+    "workDescription": "Les situations pour lesquelles SDK Enterprises est conçu : migration, plates-formes à grand volume, automatisation de l'IA et prestation d'ingénierie de haut niveau.",
+    "howWeWorkTitle": "Comment nous travaillons",
+    "howWeWorkDescription": "Un chemin clair du problème à la production. Quatre étapes, des progrès visibles à chaque étape.",
+    "aboutTitle": "À propos",
+    "aboutDescription": "Société d'ingénierie B2B basée en France. Livraison senior, communication directe, pas de couche de compte.",
+    "startAProjectTitle": "Démarrer un projet",
+    "startAProjectDescription": "Dites-nous ce que vous essayez de créer, de moderniser, d'automatiser ou de réparer. Nous vous dirons honnêtement si cela vous convient et ce que cela prendrait."
+  },
+  "nav": {
+    "toggleMenu": "Basculer le menu",
+    "home": "Accueil SDK Enterprises",
+    "main": "Principal",
+    "services": "Prestations",
+    "work": "Travail",
+    "process": "Processus",
+    "about": "À propos",
+    "discussProject": "Discuter d'un projet",
+    "signIn": "Connectez-vous",
+    "legal": "Juridique",
+    "mentionsLegales": "Mentions légales",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "cookies": "Biscuits"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "IA · Logiciels · Cloud · Ingénierie des systèmes"
+  },
+  "auth": {
+    "loginRedirecting": "Redirection vers la connexion...",
+    "logoutRedirecting": "Redirection vers la déconnexion..."
+  },
+  "errors": {
+    "pageNotFound": "Cette page n'existe pas ou a été déplacée.",
+    "backToHome": "Retour à la maison",
+    "somethingWentWrong": "Quelque chose s'est mal passé",
+    "tryAgain": "Réessayez",
+    "contactSupport": "Si le problème persiste, veuillez contacter l'assistance."
+  }
+}

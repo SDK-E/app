@@ -1,0 +1,74 @@
+{
+  "enquiry": {
+    "title": "Avvia un progetto",
+    "subtitle": "Raccontaci cosa stai cercando di costruire, modernizzare, automatizzare o correggere. Risponderemo entro 2 giorni lavorativi con una valutazione onesta dell'idoneità e di ciò che sarebbe necessario.",
+    "body": "Il modulo raccoglie le informazioni minime necessarie per rispondere in modo ponderato. Nulla viene condiviso al di fuori di SDK Enterprises e puoi anche contattarci direttamente all'indirizzo hello@sdk.enterprises.",
+    "body2": "Esaminiamo noi stessi ogni richiesta. Nessun account manager, nessuno script di qualificazione, nessun passaggio di consegne.",
+    "nextStepsEyebrow": "Cosa succede dopo",
+    "nextStepsHeading": "Dalla richiesta al coinvolgimento",
+    "nextStepsBody": "Dopo aver inviato il modulo, lo leggiamo noi stessi. Se è idoneo, risponderemo con una breve valutazione scritta e un modello di coinvolgimento proposto. Se non è adatto, ti spiegheremo il motivo e suggeriremo un'alternativa.",
+    "nextStep1Title": "Recensione",
+    "nextStep1Body": "Leggiamo la tua richiesta e la confrontiamo con le nostre attuali capacità e competenze. Di solito entro 2 giorni lavorativi.",
+    "nextStep2Title": "Valutazione",
+    "nextStep2Body": "Una breve risposta scritta: quale pensiamo sia il problema, se è adatto e quale sarebbe la prima mossa.",
+    "nextStep3Title": "Chiama o asincrono",
+    "nextStep3Body": "Una chiamata di 30 minuti o uno scambio asincrono per chiarire ambito, vincoli e tempistica. Nessun pitch deck a meno che tu non ne voglia uno.",
+    "nextStep4Title": "Proposta",
+    "nextStep4Body": "Una proposta scritta con ambito, prezzo o tariffa fissa, tempistica e tappe fondamentali. Tu firmi, iniziamo.",
+    "form": {
+      "companyName": "Compagnia",
+      "email": "E-mail professionale",
+      "website": "Sito web aziendale",
+      "capability": "Capacità necessaria",
+      "description": "Descrizione del problema/progetto",
+      "environment": "Ambiente esistente",
+      "timeline": "Cronologia",
+      "budgetRange": "Gamma di budget",
+      "context": "Contesto di supporto",
+      "submit": "Invia richiesta"
+    },
+    "capabilities": {
+      "aiEngineering": "Ingegneria dell'intelligenza artificiale",
+      "softwareEngineering": "Ingegneria del software",
+      "frontendProduct": "Frontend e prodotto",
+      "cloudInfrastructure": "Cloud e infrastruttura",
+      "dataCacheSearch": "Dati/Cache/Cerca",
+      "modernization": "Modernizzazione",
+      "other": "Altro"
+    },
+    "timelines": {
+      "asap": "AL PIÙ PRESTO",
+      "oneToThreeMonths": "1–3 mesi",
+      "threeToSixMonths": "3–6 mesi",
+      "sixPlusMonths": "6+ mesi",
+      "notSure": "Non ne sono sicuro"
+    },
+    "budgets": {
+      "under10k": "<€10k",
+      "tenToTwentyFiveK": "€ 10.000-25.000",
+      "twentyFiveToFiftyK": "€ 25.000-50.000",
+      "fiftyPlusK": "€ 50.000 +",
+      "notSure": "Non ne sono sicuro"
+    },
+    "validation": {
+      "companyNameRequired": "Il nome dell'azienda è obbligatorio",
+      "emailRequired": "È richiesta un'e-mail professionale",
+      "emailInvalid": "Inserisci un indirizzo email valido",
+      "websiteInvalid": "Inserisci un URL valido",
+      "capabilityRequired": "Seleziona una funzionalità",
+      "descriptionRequired": "Descrivi il progetto o il problema",
+      "descriptionTooShort": "La descrizione deve contenere almeno 50 caratteri",
+      "descriptionTooLong": "La descrizione deve contenere meno di 4000 caratteri",
+      "environmentTooLong": "L'ambiente deve contenere meno di 4000 caratteri",
+      "contextTooLong": "Il contesto di supporto deve contenere meno di 4000 caratteri"
+    },
+    "success": {
+      "title": "Richiesta inviata",
+      "body": "Grazie: esamineremo il tuo progetto e ti risponderemo entro 2 giorni lavorativi."
+    },
+    "error": {
+      "title": "Qualcosa è andato storto",
+      "body": "Non è stato possibile inviare la tua richiesta. Riprova o inviaci direttamente un'e-mail."
+    }
+  }
+}

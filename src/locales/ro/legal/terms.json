@@ -1,0 +1,26 @@
+{
+  "legal": {
+    "terms": {
+      "title": "Terms of use",
+      "intro": "The rules for using this website.",
+      "purposeTitle": "Scop",
+      "purpose": "Acești termeni guvernează utilizarea de către dvs. a site-ului web {name}. Accesând site-ul, sunteți de acord cu acești termeni.",
+      "servicesTitle": "Prezentarea serviciilor",
+      "services": "Site-ul prezintă serviciile {name} și vă permite să trimiteți o solicitare de proiect. Acest conținut este furnizat doar cu titlu informativ și nu reprezintă nici o ofertă contractuală, nici un angajament de a furniza servicii.",
+      "enquiriesTitle": "Cereri despre proiecte",
+      "enquiries": "Informațiile transmise prin formularul „Începe un proiect” sunt tratate în conformitate cu politica de confidențialitate. Primirea unei cereri nu implică nicio obligație de a o accepta.",
+      "intellectualPropertyTitle": "Proprietatea intelectuală",
+      "intellectualProperty": "Textele, logo-ul, imaginile și conținutul site-ului sunt proprietatea SDK Enterprises și nu pot fi reutilizate fără autorizație prealabilă.",
+      "availabilityTitle": "Disponibilitatea site-ului",
+      "availability": "Site-ul este furnizat „ca atare”. SDK Enterprises depune eforturi rezonabile pentru a-l menține accesibil, dar nu garantează disponibilitatea neîntreruptă sau fără erori.",
+      "liabilityTitle": "Răspunderea",
+      "liability": "În măsura permisă de lege, răspunderea SDK Enterprises este limitată la daune directe și nu se extinde la daune indirecte. Linkurile către site-uri terțe sunt responsabilitatea exclusivă a editorilor acestora.",
+      "changesTitle": "Schimbări",
+      "changes": "SDK Enterprises poate modifica acești termeni în orice moment. Versiunea aplicabilă este cea publicată pe această pagină.",
+      "lawTitle": "Legea aplicabilă",
+      "law": "Acești termeni sunt guvernați de legea franceză. În cazul unui litigiu, instanțele franceze sunt competente.",
+      "contactTitle": "Contact",
+      "contact": "Pentru orice întrebare, contactați {company} la {email}."
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "aboutPage": {
+    "eyebrow": "About SDK Enterprises",
+    "title": "Senior engineering, direct delivery.",
+    "intro": "France-based B2B engineering company. We build, modernize and operate software across the stack — backend platforms, cloud infrastructure, AI automation, realtime systems and internal tooling.",
+    "body": "Founded in 2019, SDK Enterprises works with a small number of clients at a time. The team is senior-only: no juniors, no account managers, no hand-offs to offshore delivery. Most engagements are scoped as fixed-price audits, dedicated engineering workstreams, or ongoing modernization sprints.",
+    "cta": "Start a project",
+    "approachEyebrow": "Our approach",
+    "approachHeading": "Why we keep the team small",
+    "approachBody": "When an agency grows past the point where the partners know every engineer, the account layer appears. That layer is where context is lost, timelines slip, and cost multiplies. SDK is structured to avoid that.",
+    "approach1Title": "No account managers",
+    "approach1Body": "You talk to the engineer responsible for the work. No translation, no delays, no miscommunication between sales and delivery.",
+    "approach2Title": "No offshore hand-off",
+    "approach2Body": "The team that designs the system stays through implementation and handover. Knowledge stays in one place.",
+    "approach3Title": "No junior resourcing",
+    "approach3Body": "Every SDK engineer is senior-level. We do not use client engagements to train less experienced staff.",
+    "beliefsEyebrow": "What we believe",
+    "beliefsHeading": "The assumptions behind the work",
+    "beliefsBody": "These are not marketing statements. They are the constraints that shape every decision we make.",
+    "belief1Title": "Software is a liability until it is understood",
+    "belief1Body": "Every line of code carries maintenance cost. The goal is not to write more code — it is to reduce the cost of the code that already exists.",
+    "belief2Title": "Diagnosis before prescription",
+    "belief2Body": "We do not sell a fixed engagement type. We diagnose the system first: architecture, data flow, deployment, team, and constraints. Then we propose the engagement that fits.",
+    "belief3Title": "Transparency is a feature",
+    "belief3Body": "Visible progress, written updates, and direct access to the engineers. Secrecy around delivery is a symptom of a process that cannot be explained.",
+    "companyFacts": {
+      "name": "Legal name",
+      "tradingName": "Trading name",
+      "siren": "SIREN",
+      "siret": "SIRET",
+      "address": "Registered office",
+      "email": "Email",
+      "phone": "Phone"
+    }
+  }
+}

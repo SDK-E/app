@@ -1,0 +1,22 @@
+{
+  "workPage": {
+    "eyebrow": "Arbeiten Sie mit SDK",
+    "body": "Sie wissen, wann etwas in Ihrem Stapel Sie kostet. Hier sind die Situationen, für die der SDK gebaut wurde.",
+    "cta": "Starten Sie ein Projekt",
+    "engagementsEyebrow": "Engagements",
+    "engagementsHeading": "Wie Verlobungen normalerweise beginnen",
+    "engagementsBody": "Die meisten Aufträge beginnen mit einem kurzen Gespräch oder einer schriftlichen Zusammenfassung des Problems. Von dort aus schlägt SDK eine skalierte Antwort vor: eine Prüfung zum Festpreis, einen Arbeitsablauf mit Zeit- und Materialaufwand oder ein Hybridmodell, abhängig von der Unsicherheit im System und der Klarheit des Ziels.",
+    "lookForEyebrow": "Was wir suchen",
+    "lookForHeading": "Ein klares Problem und ein Team, das bereit ist, sich darauf einzulassen.",
+    "lookForBody": "Die besten Engagements beginnen, wenn der Kunde weiß, dass etwas nicht stimmt, aber noch nicht das volle Ausmaß kennt. Wir suchen Teams, die den Mechanismus verstehen und nicht nur eine Präsentation erhalten möchten.",
+    "lookFor1Title": "Eine spezifische Einschränkung",
+    "lookFor1Body": "Leistung, Zuverlässigkeit, Kosten, Liefergeschwindigkeit oder Compliance. Das Problem muss nicht neu sein – es muss real und messbar sein.",
+    "lookFor2Title": "Zugriff auf das System",
+    "lookFor2Body": "Lesezugriff auf die Codebasis, die Infrastruktur und die Personen, die den aktuellen Stand verstehen. Ohne dies ist jede Einschätzung eine Vermutung.",
+    "lookFor3Title": "Ein Entscheidungsträger",
+    "lookFor3Body": "Jemand, der den Umfang, das Budget und den Zeitplan genehmigen kann. Kein Ausschuss – eine Person mit der Autorität, die Arbeit voranzutreiben.",
+    "fitEyebrow": "Passt",
+    "fitHeading": "Wenn SDK nicht die richtige Antwort ist",
+    "fitBody": "Wir sagen öfter Nein, als Sie vielleicht erwarten. SDK ist keine Karosseriewerkstatt für Überlauftickets und wir übernehmen keine Aufträge, bei denen das Problem noch nicht definiert ist oder das Team sich nicht auf den Prozess festlegen kann."
+  }
+}

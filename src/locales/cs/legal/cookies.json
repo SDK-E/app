@@ -1,0 +1,16 @@
+{
+  "legal": {
+    "cookies": {
+      "title": "Cookie policy",
+      "intro": "What cookies are and whether this site uses them.",
+      "whatIsTitle": "Co je to cookie?",
+      "whatIs": "Cookie je malý textový soubor umístěný do vašeho zařízení, když navštívíte webovou stránku. Umožňuje webu rozpoznat váš prohlížeč a zapamatovat si informace.",
+      "thisSiteTitle": "Soubory cookie nastavené tímto webem",
+      "thisSite": "Tato stránka nenastavuje žádné analytické, reklamní nebo sledovací soubory cookie. Používané analytické řešení (Vercel Analytics) je bez souborů cookie. Vaše procházení proto není sledováno.",
+      "consentBannerTitle": "Banner souhlasu",
+      "consentBanner": "Nezobrazuje se žádný banner souhlasu, protože nejsou nastaveny žádné soubory cookie. Pokud by byl přidán skript pro nastavení souborů cookie, byl by vyžadován banner souhlasu a tato stránka by byla aktualizována.",
+      "browserSettingsTitle": "Správa cookies ve vašem prohlížeči",
+      "browserSettings": "Svůj prohlížeč můžete nakonfigurovat tak, aby cookies kdykoli odmítal nebo smazal. Pokyny závisí na vašem prohlížeči (Chrome, Firefox, Safari, Edge). Návody jsou k dispozici na www.cnil.fr."
+    }
+  }
+}

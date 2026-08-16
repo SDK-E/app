@@ -1,0 +1,132 @@
+{
+  "hero": {
+    "eyebrow": "B2B IA · Software · Nube · Ingeniería de Sistemas",
+    "heading": "Un socio de ingeniería para la pila que su empresa necesita.",
+    "leadParagraph": "SDK Enterprises crea, moderniza y opera software en toda la pila: plataformas backend, infraestructura en la nube, automatización de IA, sistemas en tiempo real y herramientas internas. Te involucras en un problema especializado o posees un flujo de trabajo más amplio; De cualquier manera, las personas que hacen el trabajo son las personas con las que hablas.",
+    "ctaStartProject": "iniciar un proyecto",
+    "ctaExploreServices": "Explorar servicios",
+    "trustFrance": "Empresa B2B con sede en Francia",
+    "trustSenior": "Entrega de ingeniería senior",
+    "trustAI": "IA + backend + nube",
+    "trustClients": "Clientes europeos y remotos"
+  },
+  "services": {
+    "eyebrow": "Servicios",
+    "title": "Utilice toda la pila o sólo la parte que necesite.",
+    "intro": "SDK puede abordar un problema especializado o poseer un flujo de trabajo técnico más amplio.",
+    "items": [
+      {
+        "number": "01",
+        "category": "Ingeniería de IA",
+        "title": "Agentes de IA y automatización",
+        "copy": "Integraciones LLM, agentes, RAG, automatización del flujo de trabajo, herramientas para desarrolladores y operaciones asistidas por IA."
+      },
+      {
+        "number": "02",
+        "category": "backend",
+        "title": "Plataformas, APIs y SaaS",
+        "copy": "PHP, Laravel, Symfony, Java, Spring Boot, Node.js, APIs y arquitectura backend en tiempo real."
+      },
+      {
+        "number": "03",
+        "category": "Interfaz",
+        "title": "Interfaces web y de aplicaciones",
+        "copy": "React, Vue, Nuxt, TypeScript, Tailwind y Shadcn."
+      },
+      {
+        "number": "04",
+        "category": "nube",
+        "title": "Nube e infraestructura",
+        "copy": "AWS, GCP, Azure, Kubernetes, Helm, CI/CD y arquitectura de implementación."
+      },
+      {
+        "number": "05",
+        "category": "Datos",
+        "title": "Bases de datos, caché y búsqueda",
+        "copy": "PostgreSQL, MySQL, MongoDB, Redis, Valkey y Elasticsearch."
+      },
+      {
+        "number": "06",
+        "category": "Modernización",
+        "title": "Modernización heredada",
+        "copy": "Actualizaciones del framework, migración, reducción de deuda técnica y optimización del rendimiento."
+      }
+    ]
+  },
+  "whySdk": {
+    "eyebrow": "¿Por qué SDK?",
+    "title": "Ingeniería senior sin capas innecesarias.",
+    "intro": "Comunicación directa, diagnóstico rápido y ejecución pragmática.",
+    "items": [
+      {
+        "kicker": "FR",
+        "copy": "Una empresa B2B con sede en Francia para clientes europeos y remotos."
+      },
+      {
+        "kicker": "IA",
+        "copy": "Integraciones LLM, agentes, automatización y herramientas internas."
+      },
+      {
+        "kicker": "RT",
+        "copy": "Trabajo en plataforma en tiempo real y de gran volumen."
+      },
+      {
+        "kicker": "DIRECTO",
+        "copy": "Habla con los ingenieros que hacen el trabajo, no con una capa de cuenta."
+      }
+    ]
+  },
+  "engagements": {
+    "eyebrow": "Trabajar con SDK",
+    "title": "Trae un problema específico. Obtenga una respuesta específica.",
+    "intro": "Sabes cuando algo en tu pila te está costando. Estas son las situaciones para las que está configurado el SDK.",
+    "items": [
+      {
+        "title": "Un sistema demasiado viejo para seguir parcheando.",
+        "copy": "Necesita un plan de migración, no un deseo: una auditoría de lo que se ejecuta, lo que falla y el orden de entrada."
+      },
+      {
+        "title": "Volumen para el que no se creó su pila actual.",
+        "copy": "Ingestión en tiempo real, backends de alto rendimiento y la infraestructura para mantenerlos estables."
+      },
+      {
+        "title": "IA que puedes poner a trabajar.",
+        "copy": "Integraciones, agentes y automatización de LLM que cambian un flujo de trabajo interno, no una demostración que se detiene en el terreno de juego."
+      },
+      {
+        "title": "Un equipo que necesita manos de alto nivel.",
+        "copy": "Entrega directa de ingeniería en su código base, sin una capa intermedia que ralentice las decisiones."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "como trabajamos",
+    "title": "Un camino claro del problema a la producción.",
+    "intro": "Cuatro pasos, progreso visible en cada etapa.",
+    "items": [
+      {
+        "title": "entender",
+        "copy": "Objetivo empresarial, pila, limitaciones y criterios de éxito."
+      },
+      {
+        "title": "Diseño",
+        "copy": "Arquitectura, alcance, riesgos e hitos."
+      },
+      {
+        "title": "construir",
+        "copy": "Implementación con avances visibles."
+      },
+      {
+        "title": "Entrega",
+        "copy": "Implementar, documentar y transferir propiedad."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Trabajar con SDK",
+    "heading": "Tráenos el problema que necesitas resolver.",
+    "body": "Díganos qué está intentando construir, modernizar, automatizar o arreglar; le diremos honestamente si encaja y qué se necesitaría.",
+    "registeredUnder": "Registrado bajo {company}",
+    "sirenSiret": "SIREN {siren} · SIRET {siret}"
+  }
+}

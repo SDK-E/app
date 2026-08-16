@@ -1,0 +1,26 @@
+{
+  "legal": {
+    "terms": {
+      "title": "Terms of use",
+      "intro": "The rules for using this website.",
+      "purposeTitle": "Účel",
+      "purpose": "Tyto podmínky upravují vaše používání webu {name}. Vstupem na stránky souhlasíte s těmito podmínkami.",
+      "servicesTitle": "Prezentace služeb",
+      "services": "Stránka představuje služby {name} a umožňuje vám podat žádost o projekt. Tento obsah je poskytován pouze pro informaci a není smluvní nabídkou ani závazkem k poskytování služeb.",
+      "enquiriesTitle": "Projektové dotazy",
+      "enquiries": "S informacemi zaslanými prostřednictvím formuláře „Zahájit projekt“ se nakládá v souladu se zásadami ochrany osobních údajů. Obdržení dotazu neznamená žádnou povinnost jej přijmout.",
+      "intellectualPropertyTitle": "Duševní vlastnictví",
+      "intellectualProperty": "Texty, logo, vizuální prvky a obsah stránek jsou majetkem SDK Enterprises a nemohou být znovu použity bez předchozího souhlasu.",
+      "availabilityTitle": "Dostupnost stránek",
+      "availability": "Stránka je poskytována „tak, jak je“. SDK Enterprises vynakládá přiměřené úsilí, aby byl přístupný, ale nezaručuje nepřetržitou nebo bezchybnou dostupnost.",
+      "liabilityTitle": "Odpovědnost",
+      "liability": "V rozsahu povoleném zákonem je odpovědnost SDK Enterprises omezena na přímé škody a nevztahuje se na nepřímé škody. Za odkazy na stránky třetích stran jsou výhradně odpovědní jejich vydavatelé.",
+      "changesTitle": "Změny",
+      "changes": "SDK Enterprises může tyto podmínky kdykoli změnit. Platná verze je verze zveřejněná na této stránce.",
+      "lawTitle": "Rozhodné právo",
+      "law": "Tyto podmínky se řídí francouzským právem. V případě sporu jsou příslušné francouzské soudy.",
+      "contactTitle": "Kontakt",
+      "contact": "V případě jakýchkoli dotazů kontaktujte {company} na {email}."
+    }
+  }
+}

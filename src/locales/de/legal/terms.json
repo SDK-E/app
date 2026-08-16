@@ -1,0 +1,26 @@
+{
+  "legal": {
+    "terms": {
+      "title": "Nutzungsbedingungen",
+      "intro": "Die Regeln für die Nutzung dieser Website.",
+      "purposeTitle": "Zweck",
+      "purpose": "Diese Bedingungen regeln Ihre Nutzung der {name}-Website. Durch den Zugriff auf die Website stimmen Sie diesen Bedingungen zu.",
+      "servicesTitle": "Präsentation von Dienstleistungen",
+      "services": "Die Seite stellt die Leistungen von {name} vor und bietet Ihnen die Möglichkeit, eine Projektanfrage zu stellen. Diese Inhalte dienen lediglich der Information und stellen weder ein Vertragsangebot noch eine Verpflichtung zur Erbringung von Leistungen dar.",
+      "enquiriesTitle": "Projektanfragen",
+      "enquiries": "Die über das Formular „Projekt starten“ übermittelten Informationen werden gemäß der Datenschutzrichtlinie behandelt. Der Eingang einer Anfrage bedeutet keine Verpflichtung, diese anzunehmen.",
+      "intellectualPropertyTitle": "Geistiges Eigentum",
+      "intellectualProperty": "Die Texte, das Logo, das Bildmaterial und der Inhalt der Website sind Eigentum von SDK Enterprises und dürfen nicht ohne vorherige Genehmigung wiederverwendet werden.",
+      "availabilityTitle": "Verfügbarkeit der Website",
+      "availability": "Die Website wird „wie besehen“ bereitgestellt. SDK Enterprises unternimmt angemessene Anstrengungen, um die Verfügbarkeit aufrechtzuerhalten, garantiert jedoch keine ununterbrochene oder fehlerfreie Verfügbarkeit.",
+      "liabilityTitle": "Haftung",
+      "liability": "Soweit gesetzlich zulässig, ist die Haftung von SDK Enterprises auf direkte Schäden beschränkt und erstreckt sich nicht auf indirekte Schäden. Für Links zu Websites Dritter sind ausschließlich deren Herausgeber verantwortlich.",
+      "changesTitle": "Änderungen",
+      "changes": "SDK Enterprises kann diese Bedingungen jederzeit ändern. Es gilt die auf dieser Seite veröffentlichte Version.",
+      "lawTitle": "Geltendes Recht",
+      "law": "Diese Bedingungen unterliegen französischem Recht. Im Streitfall sind die französischen Gerichte zuständig.",
+      "contactTitle": "Kontakt",
+      "contact": "Bei Fragen wenden Sie sich bitte an {company} unter {email}."
+    }
+  }
+}
