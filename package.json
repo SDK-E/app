@@ -20,6 +20,7 @@
     "typecheck": "tsc --noEmit",
     "test": "npm run generate && vitest",
     "test:run": "npm run generate && vitest run",
+    "test:coverage": "prisma generate && vitest run --coverage",
     "agents:check": "node --import tsx scripts/check-agent-contract.ts",
     "verify": "npm run generate && npm run agents:check && npm run format:check && npm run typecheck && npm run lint && vitest run && npm run i18n:check && next build --turbopack",
     "audit": "npm audit --audit-level=high",

@@ -78,3 +78,14 @@ jobs:
       - id: changed
         run: echo "files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | tr '\n' ',')" >> $GITHUB_OUTPUT
       - run: node --import tsx scripts/agent-pr-eval.ts --body '${{ github.event.pull_request.body }}' --title '${{ github.event.pull_request.title }}' --files '${{ steps.changed.outputs.files }}'
+
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run test:coverage

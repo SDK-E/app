@@ -261,6 +261,9 @@ Skills live in `.agents/skills/` and are committed:
 - `public-site` — the SEO, indexing, metadata, and Core Web Vitals guardrails
   for every public-facing route, layout, component, image, translation, and
   content change (load before any public-site work).
+- `test-writing` — Vitest 4 unit-test conventions, behavior-over-implementation
+  coverage, boundary mocking, scenario naming, assertion quality, warnings as
+  failures, repro-first bug discipline, and coverage floor targets.
 - opencode loads these via `skills.paths` in `opencode.json`; other agents
   scan `.agents/skills/` themselves.
 
