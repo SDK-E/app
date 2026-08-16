@@ -19,6 +19,7 @@ const client = (role: ClientPrincipal["role"], companyId = "company-a"): ClientP
   email: "client@example.test",
   name: "Client User",
   avatarUrl: null,
+  preferredLocale: "en",
   companyId,
   companyName: "Company A",
   role,
@@ -31,6 +32,7 @@ const staff = (role: SdkStaffPrincipal["role"]): SdkStaffPrincipal => ({
   email: "staff@example.test",
   name: "Staff User",
   avatarUrl: null,
+  preferredLocale: "en",
   role,
 });
 
@@ -41,6 +43,7 @@ const unassigned: AppPrincipal = {
   email: "unassigned@example.test",
   name: "Unassigned User",
   avatarUrl: null,
+  preferredLocale: "en",
 };
 
 describe("role permissions", () => {

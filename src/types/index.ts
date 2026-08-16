@@ -75,6 +75,7 @@ interface PrincipalUser {
   email: string;
   name: string;
   avatarUrl: string | null;
+  preferredLocale: string;
 }
 
 export interface UnassignedPrincipal extends PrincipalUser {

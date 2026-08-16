@@ -13,6 +13,15 @@ export interface EnquiryNotification {
   context?: string | null;
 }
 
+export interface InvitationNotification {
+  email: string;
+  inviterName: string;
+  destination: string;
+  role: string;
+  acceptUrl: string;
+  expiresAt: Date;
+}
+
 function escapeHtml(value: string): string {
   return value
     .replace(/&/g, "&amp;")
@@ -112,4 +121,51 @@ export async function sendEnquiryNotification(
     return sendViaResend(enquiry);
   }
   return sendViaLocalSmtp(enquiry);
+}
+
+function renderInvitationHtml(invitation: InvitationNotification): string {
+  return [
+    '<div style="font-family: sans-serif; line-height: 1.5; color: #111;">',
+    "<h2>You have been invited to SDK Enterprises</h2>",
+    `<p>${escapeHtml(invitation.inviterName)} invited you to ${escapeHtml(invitation.destination)} as ${escapeHtml(invitation.role)}.</p>`,
+    `<p><a href="${escapeHtml(invitation.acceptUrl)}">Review and accept the invitation</a></p>`,
+    `<p>This single-use link expires ${escapeHtml(invitation.expiresAt.toISOString())}.</p>`,
+    "</div>",
+  ].join("\n");
+}
+
+export async function sendInvitationNotification(invitation: InvitationNotification): Promise<boolean> {
+  const message = {
+    from: `SDK Enterprises <no-reply@${siteConfig.contact.domain}>`,
+    to: invitation.email,
+    subject: `Invitation to ${invitation.destination}`,
+    html: renderInvitationHtml(invitation),
+  };
+  if (getServerEnv().NODE_ENV !== "production") {
+    const smtpUrl = getServerEnv().MAIL_SMTP_URL ?? "smtp://localhost:1025";
+    const { createTransport } = await import("nodemailer");
+    const transport = createTransport(smtpUrl);
+    try {
+      await transport.sendMail(message);
+      return true;
+    } catch (error) {
+      console.error("invitation email: local mail sink unreachable", error instanceof Error ? error.message : "unknown error");
+      return false;
+    } finally {
+      transport.close();
+    }
+  }
+  const apiKey = getServerEnv().RESEND_API_KEY;
+  if (!apiKey) {
+    console.error("invitation email: RESEND_API_KEY not set");
+    return false;
+  }
+  const { Resend } = await import("resend");
+  const { data, error } = await new Resend(apiKey).emails.send(message);
+  if (error) {
+    console.error("invitation email: resend send failed", error.name, error.message);
+    return false;
+  }
+  console.log("invitation email: accepted by Resend", data?.id);
+  return true;
 }

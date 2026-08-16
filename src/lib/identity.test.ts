@@ -17,6 +17,7 @@ const localUser = {
   email: "person@example.test",
   name: "Person Example",
   avatarUrl: null,
+  preferredLocale: "en",
   isActive: true,
   sdkStaffRole: null,
   memberships: [],

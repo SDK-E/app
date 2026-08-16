@@ -25,6 +25,21 @@ enum SdkStaffRole {
   @@map("sdk_staff_role")
 }
 
+enum InvitationKind {
+  CLIENT
+  SDK_STAFF
+
+  @@map("invitation_kind")
+}
+
+enum InvitationDeliveryStatus {
+  PENDING
+  SENT
+  FAILED
+
+  @@map("invitation_delivery_status")
+}
+
 enum Priority {
   LOW
   MEDIUM
@@ -112,26 +127,29 @@ enum InvoiceStatus {
 }
 
 model User {
-  id           String        @id @default(uuid())
-  auth0Sub     String        @unique
-  email        String        @unique @db.VarChar(255)
-  name         String        @db.VarChar(255)
-  avatarUrl    String?       @db.VarChar(1024)
-  sdkStaffRole SdkStaffRole?
-  isActive     Boolean       @default(true)
-  lastLoginAt  DateTime?
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @updatedAt
+  id              String        @id @default(uuid())
+  auth0Sub        String        @unique
+  email           String        @unique @db.VarChar(255)
+  name            String        @db.VarChar(255)
+  avatarUrl       String?       @db.VarChar(1024)
+  preferredLocale String        @default("en") @db.VarChar(5)
+  sdkStaffRole    SdkStaffRole?
+  isActive        Boolean       @default(true)
+  lastLoginAt     DateTime?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
 
-  memberships       Membership[]      @relation("UserMemberships")
-  invitedMembers    Membership[]      @relation("MembershipInvitations")
-  requests          Request[]         @relation("RequestSubmittedBy")
-  reviewedRequests  Request[]         @relation("RequestReviewedBy")
-  requestActivities RequestActivity[]
-  projects          Project[]         @relation("ProjectCreatedBy")
-  messages          Message[]
-  invoices          Invoice[]
-  documents         Document[]
+  memberships         Membership[]      @relation("UserMemberships")
+  invitedMembers      Membership[]      @relation("MembershipInvitations")
+  requests            Request[]         @relation("RequestSubmittedBy")
+  reviewedRequests    Request[]         @relation("RequestReviewedBy")
+  requestActivities   RequestActivity[]
+  projects            Project[]         @relation("ProjectCreatedBy")
+  messages            Message[]
+  invoices            Invoice[]
+  documents           Document[]
+  sentInvitations     Invitation[]      @relation("InvitationInviter")
+  acceptedInvitations Invitation[]      @relation("InvitationAcceptor")
 
   @@index([email])
   @@index([auth0Sub])
@@ -155,10 +173,41 @@ model Company {
   documents         Document[]
   messages          Message[]
   invoices          Invoice[]
+  invitations       Invitation[]
 
   @@index([slug])
   @@index([createdAt])
   @@map("company")
+}
+
+model Invitation {
+  id             String                   @id @default(uuid())
+  tokenHash      String                   @unique @db.VarChar(64)
+  email          String                   @db.VarChar(255)
+  kind           InvitationKind
+  companyId      String?
+  clientRole     ClientRole?
+  sdkStaffRole   SdkStaffRole?
+  invitedBy      String
+  expiresAt      DateTime
+  acceptedAt     DateTime?
+  acceptedBy     String?
+  revokedAt      DateTime?
+  deliveryStatus InvitationDeliveryStatus @default(PENDING)
+  lastSentAt     DateTime?
+  createdAt      DateTime                 @default(now())
+  updatedAt      DateTime                 @updatedAt
+
+  company  Company? @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  inviter  User     @relation("InvitationInviter", fields: [invitedBy], references: [id], onDelete: Restrict)
+  acceptor User?    @relation("InvitationAcceptor", fields: [acceptedBy], references: [id], onDelete: SetNull)
+
+  @@index([email])
+  @@index([companyId])
+  @@index([invitedBy])
+  @@index([expiresAt])
+  @@index([createdAt])
+  @@map("invitation")
 }
 
 model Membership {

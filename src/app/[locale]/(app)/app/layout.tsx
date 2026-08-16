@@ -22,7 +22,7 @@ export default async function ProtectedAppLayout({
   }
 
   if (principal.kind === "unassigned") {
-    return <AccessPending principal={principal} />;
+    return <AccessPending principal={principal} locale={locale} />;
   }
 
   return (

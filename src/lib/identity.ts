@@ -27,6 +27,7 @@ const principalSelect = {
   email: true,
   name: true,
   avatarUrl: true,
+  preferredLocale: true,
   isActive: true,
   sdkStaffRole: true,
   memberships: {
@@ -80,6 +81,7 @@ export async function resolveAppPrincipal(session: SessionData): Promise<AppPrin
     email: user.email,
     name: user.name,
     avatarUrl: user.avatarUrl,
+    preferredLocale: user.preferredLocale,
   };
 
   if (user.sdkStaffRole) {

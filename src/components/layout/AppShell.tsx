@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 
+import { updatePreferredLocaleAction } from "@/app/[locale]/(app)/app/profile/actions";
+import { AccountMenu } from "@/components/layout/AccountMenu";
 import type { AssignedPrincipal } from "@/types";
 
 interface AppShellProps {
@@ -17,6 +19,10 @@ export async function AppShell({ children, locale, principal }: AppShellProps) {
   const links = principal.kind === "client"
     ? [{ href: `/${locale}/app`, label: t("dashboard") }, { href: `/${locale}/app/requests`, label: t("requests") }]
     : [{ href: `/${locale}/app`, label: t("operations") }];
+  const canManageUsers = principal.kind === "sdk-staff"
+    ? principal.role === "ADMIN"
+    : ["OWNER", "ADMINISTRATOR"].includes(principal.role);
+  if (canManageUsers) links.push({ href: `/${locale}/app/users`, label: principal.kind === "client" ? t("team") : t("users") });
 
   return (
     <div className="min-h-screen bg-background text-foreground lg:grid lg:grid-cols-[260px_1fr]">
@@ -47,12 +53,7 @@ export async function AppShell({ children, locale, principal }: AppShellProps) {
             <p className="text-micro uppercase tracking-eyebrow text-muted-foreground">{context}</p>
             <p className="mt-1 text-body font-semibold">{principal.name}</p>
           </div>
-          <Link
-            href="/auth/logout"
-            className="rounded-control border border-dark px-4 py-3 text-label font-extrabold uppercase tracking-eyebrow transition-colors hover:bg-dark hover:text-light focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark"
-          >
-            {t("logout")}
-          </Link>
+          <AccountMenu locale={locale} name={principal.name} email={principal.email} avatarUrl={principal.avatarUrl} profileLabel={t("profile")} logoutLabel={t("logout")} languageLabel={t("language")} updateLocale={updatePreferredLocaleAction} />
         </header>
         <main className="px-6 py-12 lg:px-10 lg:py-16">{children}</main>
       </div>

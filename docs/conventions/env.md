@@ -12,15 +12,15 @@ invalid variables cause the application to fail at startup in every environment.
 
 | Variable                | Required   | Description |
 |-------------------------|------------|-------------|
-| `DATABASE_URL`          | yes        | PostgreSQL connection string. Format: `postgresql://user:password@host:port/database`. |
+| `DATABASE_URL`          | yes        | PostgreSQL connection string. Format: `postgresql://user:password@host:port/database`. Use `sslmode=verify-full`; the runtime normalizes legacy `prefer`, `require`, and `verify-ca` aliases to that secure behavior. |
 | `AUTH0_SECRET`          | yes        | Auth0 session encryption secret. Minimum 32 characters. Generate with `openssl rand -hex 32`. |
 | `AUTH0_ISSUER_BASE_URL` | one of two | Auth0 tenant domain used for token validation, e.g. `https://dev-xxx.us.auth0.com`. Either this or `AUTH0_DOMAIN` must be set. |
 | `AUTH0_DOMAIN`          | one of two | Auth0 tenant domain without scheme, e.g. `dev-xxx.us.auth0.com`. Used to derive `AUTH0_ISSUER_BASE_URL` when the latter is unset. |
 | `AUTH0_BASE_URL`        | no         | Root URL where the application is hosted, e.g. `http://localhost:3000`. |
 | `AUTH0_CLIENT_ID`       | yes        | Auth0 application client ID. |
 | `AUTH0_CLIENT_SECRET`   | yes        | Auth0 application client secret. |
-| `RESEND_API_KEY`        | prod-only  | Resend API key for the public "Start a project" enquiry email (`docs/content/start-a-project.md`). Server-only. Required in production for email delivery; its absence must fail loudly, never silently succeed. |
-| `MAIL_SMTP_URL`         | no         | Development only: SMTP URL of the local mail sink (`scripts/mail-sink.ts`, smtp-tester) that dev emails are delivered to. Defaults to `smtp://localhost:1025`. The sink auto-starts with `npm run dev`; run standalone with `npm run mail`. Received email is checked via `npm run mail:*` CLI commands or the `maildev` MCP server — no UI. Ignored in production. |
+| `RESEND_API_KEY`        | prod-only  | Resend API key for project-enquiry notifications and authenticated user invitations. Server-only. Required in production for email delivery; its absence must fail loudly, never silently succeed. |
+| `MAIL_SMTP_URL`         | no         | Development only: SMTP URL of the local mail sink (`scripts/mail-sink.ts`, smtp-tester) that enquiry and invitation emails are delivered to. Defaults to `smtp://localhost:1025`. The sink auto-starts with `npm run dev`; run standalone with `npm run mail`. Received email is checked via `npm run mail:*` CLI commands or the `maildev` MCP server — no UI. Ignored in production. |
 | `MAIL_HTTP_URL`         | no         | Development only: HTTP base URL of the mail sink API. Defaults to `http://localhost:1080`. Read by the mail CLI (`scripts/mail-cli.ts`) and the `maildev` MCP server (`scripts/mail-mcp.ts`). |
 | `MAIL_SMTP_PORT`        | no         | Development only: SMTP port the mail sink binds to. Defaults to `1025`. Overrides the sink's listening port (e.g. on a conflict); if changed, `MAIL_SMTP_URL` must point at the new port. |
 | `MAIL_HTTP_PORT`        | no         | Development only: HTTP port the mail sink API listens on. Defaults to `1080`. If changed, `MAIL_HTTP_URL` must point at the new port. |
