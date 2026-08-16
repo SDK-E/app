@@ -264,8 +264,23 @@ Skills live in `.agents/skills/` and are committed:
 - `test-writing` — Vitest 4 unit-test conventions, behavior-over-implementation
   coverage, boundary mocking, scenario naming, assertion quality, warnings as
   failures, repro-first bug discipline, and coverage floor targets.
+- `bugfix` — repro-first bug discipline, simplest-hypothesis debugging, Prisma
+  error routing via `prisma-next-debug`, regression test, and `npm run verify`
+  before claiming a fix.
+- `code-review` — diff review against task scope, scope-creep, silent regression,
+  context blindness, lockfile/schema/security-path justification, and short
+  synthesis output.
 - opencode loads these via `skills.paths` in `opencode.json`; other agents
   scan `.agents/skills/` themselves.
+
+## Deterministic enforcement
+
+Formatter, permissions, and the PR gate are configured in `opencode.json` and
+`kilo.jsonc` — not in this file. Read those configs for the exact allow/deny
+rules and the native prettier hook. The PR gate (`agent-pr-eval`) enforces
+required PR-body sections, forbidden files, and high-blast-radius rationale.
+The `verify` chain includes `format:check`; warnings, notices, and skips are
+failures — read full output and fix them.
 
 ## Project commands
 

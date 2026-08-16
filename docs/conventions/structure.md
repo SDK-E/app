@@ -189,6 +189,9 @@ docs(structure): document directory conventions
   mechanical formatting — wrapping long calls, consistent whitespace. Run
   `npm run format` on the files you touch. Do not reformat unrelated files in
   the same change.
+- Prettier runs automatically on save via the opencode/kilo formatter hook
+  (`custom-prettier` command in `opencode.json`). The `verify` chain includes
+  `format:check`; warnings, notices, and skips are treated as failures.
 - Structure is the author's job, not the formatter's: one concern per file,
   ~200-line soft cap, domain folders with `index.ts` barrels, and a blank line
   between logical steps (see AGENTS.md "Coding standards"). Prettier collapses

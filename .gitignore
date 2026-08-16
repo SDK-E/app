@@ -46,6 +46,7 @@ next-env.d.ts
 .beads/
 .opencode/*
 !.opencode/plugins/
+!.opencode/agents/
 .runtime/
 CLAUDE.md
 
