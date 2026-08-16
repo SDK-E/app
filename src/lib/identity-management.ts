@@ -8,7 +8,7 @@ export async function assignCompanyMembership(input: {
   role: ClientRole;
   invitedBy?: string;
 }) {
-  return getPrisma().$transaction(async transaction => {
+  return getPrisma().$transaction(async (transaction) => {
     const user = await transaction.user.findUniqueOrThrow({
       where: { id: input.userId },
       select: { sdkStaffRole: true },
@@ -30,10 +30,13 @@ export async function assignCompanyMembership(input: {
 }
 
 export async function assignSdkStaffRole(userId: string, role: SdkStaffRole) {
-  return getPrisma().$transaction(async transaction => {
+  return getPrisma().$transaction(async (transaction) => {
     const membership = await transaction.membership.findUnique({ where: { userId } });
     if (membership) {
-      throw new IdentityError("IDENTITY_CONFLICT", "Company members cannot receive SDK staff roles.");
+      throw new IdentityError(
+        "IDENTITY_CONFLICT",
+        "Company members cannot receive SDK staff roles."
+      );
     }
     return transaction.user.update({ where: { id: userId }, data: { sdkStaffRole: role } });
   });

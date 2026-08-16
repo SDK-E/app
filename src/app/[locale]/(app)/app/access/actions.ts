@@ -8,9 +8,16 @@ import { getCurrentPrincipal } from "@/lib/identity";
 import { requestAccessSchema } from "@/lib/schemas/userManagement";
 import { requestCompanyAccess } from "@/lib/user-management";
 
-export interface AccessRequestState { error?: string; success?: string }
+export interface AccessRequestState {
+  error?: string;
+  success?: string;
+}
 
-export async function requestAccessAction(locale: string, _state: AccessRequestState, formData: FormData): Promise<AccessRequestState> {
+export async function requestAccessAction(
+  locale: string,
+  _state: AccessRequestState,
+  formData: FormData
+): Promise<AccessRequestState> {
   void _state;
   const parsed = requestAccessSchema.safeParse({
     code: formData.get("code"),
@@ -22,11 +29,25 @@ export async function requestAccessAction(locale: string, _state: AccessRequestS
   try {
     const request = await requestCompanyAccess(principal, parsed.data);
     const notifiees = await getAccessRequestNotifiees(request.companyId);
-    await Promise.all(notifiees.map(({ email, name }) => sendAccessRequestCreatedNotification({ to: email, recipientName: name, companyName: request.company.name, requesterName: principal.name, requesterEmail: principal.email })));
+    await Promise.all(
+      notifiees.map(({ email, name }) =>
+        sendAccessRequestCreatedNotification({
+          to: email,
+          recipientName: name,
+          companyName: request.company.name,
+          requesterName: principal.name,
+          requesterEmail: principal.email,
+        })
+      )
+    );
     revalidatePath("/", "layout");
-    return { success: `Access request sent to ${request.company.name}. A company owner or administrator will review it.` };
+    return {
+      success: `Access request sent to ${request.company.name}. A company owner or administrator will review it.`,
+    };
   } catch (error) {
-    return { error: error instanceof Error ? error.message : "The access request could not be submitted." };
+    return {
+      error: error instanceof Error ? error.message : "The access request could not be submitted.",
+    };
   }
 }
 
@@ -37,7 +58,10 @@ async function getAccessRequestNotifiees(companyId: string) {
       where: { companyId, role: { in: ["OWNER", "ADMINISTRATOR"] } },
       include: { user: { select: { email: true, name: true } } },
     }),
-    db.user.findMany({ where: { sdkStaffRole: "ADMIN", isActive: true }, select: { email: true, name: true } }),
+    db.user.findMany({
+      where: { sdkStaffRole: "ADMIN", isActive: true },
+      select: { email: true, name: true },
+    }),
   ]);
   const seen = new Set<string>();
   const notifiees: Array<{ email: string; name: string }> = [];

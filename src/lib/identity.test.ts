@@ -6,13 +6,19 @@ import { Prisma } from "@/generated/prisma/client";
 const mocks = vi.hoisted(() => ({ upsert: vi.fn(), findUnique: vi.fn(), update: vi.fn() }));
 
 vi.mock("@/lib/db", () => ({
-  getPrisma: () => ({ user: { upsert: mocks.upsert, findUnique: mocks.findUnique, update: mocks.update } }),
+  getPrisma: () => ({
+    user: { upsert: mocks.upsert, findUnique: mocks.findUnique, update: mocks.update },
+  }),
 }));
 
 import { IdentityError, resolveAppPrincipal } from "@/lib/identity";
 
 function session(user: SessionData["user"]): SessionData {
-  return { user, tokenSet: { accessToken: "test", expiresAt: 1 }, internal: { sid: "test", createdAt: 1 } };
+  return {
+    user,
+    tokenSet: { accessToken: "test", expiresAt: 1 },
+    internal: { sid: "test", createdAt: 1 },
+  };
 }
 
 const localUser = {
@@ -60,7 +66,9 @@ describe("resolveAppPrincipal", () => {
   it("resolves a company membership", async () => {
     mocks.upsert.mockResolvedValue({
       ...localUser,
-      memberships: [{ role: "OWNER", company: { id: "company-a", name: "Company A", isActive: true } }],
+      memberships: [
+        { role: "OWNER", company: { id: "company-a", name: "Company A", isActive: true } },
+      ],
     });
     await expect(
       resolveAppPrincipal(session({ sub: "auth0|user-1", email: "person@example.test" }))
@@ -83,7 +91,9 @@ describe("resolveAppPrincipal", () => {
     mocks.upsert.mockResolvedValueOnce({
       ...localUser,
       sdkStaffRole: "ADMIN",
-      memberships: [{ role: "OWNER", company: { id: "company-a", name: "Company A", isActive: true } }],
+      memberships: [
+        { role: "OWNER", company: { id: "company-a", name: "Company A", isActive: true } },
+      ],
     });
     await expect(
       resolveAppPrincipal(session({ sub: "auth0|user-1", email: "person@example.test" }))
@@ -91,7 +101,9 @@ describe("resolveAppPrincipal", () => {
   });
 
   it("rejects malformed Auth0 identities before database access", async () => {
-    await expect(resolveAppPrincipal(session({ sub: "auth0|missing-email" }))).rejects.toMatchObject({
+    await expect(
+      resolveAppPrincipal(session({ sub: "auth0|missing-email" }))
+    ).rejects.toMatchObject({
       code: "INVALID_IDENTITY",
     });
     expect(mocks.upsert).not.toHaveBeenCalled();
@@ -111,9 +123,15 @@ describe("resolveAppPrincipal", () => {
       resolveAppPrincipal(session({ sub: "auth0|user-1", email: "person@example.test" }))
     ).resolves.toMatchObject({ kind: "unassigned" });
 
-    expect(mocks.findUnique).toHaveBeenCalledWith({ where: { auth0Sub: "auth0|user-1" }, select: { id: true } });
+    expect(mocks.findUnique).toHaveBeenCalledWith({
+      where: { auth0Sub: "auth0|user-1" },
+      select: { id: true },
+    });
     expect(mocks.update).toHaveBeenCalledWith(
-      expect.objectContaining({ where: { id: "user-1" }, data: expect.objectContaining({ email: "person@example.test" }) })
+      expect.objectContaining({
+        where: { id: "user-1" },
+        data: expect.objectContaining({ email: "person@example.test" }),
+      })
     );
   });
 

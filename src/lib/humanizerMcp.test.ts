@@ -31,9 +31,12 @@ describe("humanizer MCP", () => {
   it("is discoverable and preserves technical details", async () => {
     const client = await connect();
     expect((await client.listTools()).tools.map((tool) => tool.name)).toContain("humanize_text");
-    const result = await client.callTool({ name: "humanize_text", arguments: {
-      text: "It is important to note that Next.js 16.3.1 facilitates the page at https://sdk.enterprises/docs. Furthermore, call `getServerEnv()` and keep the timeout at 500ms.",
-    } });
+    const result = await client.callTool({
+      name: "humanize_text",
+      arguments: {
+        text: "It is important to note that Next.js 16.3.1 facilitates the page at https://sdk.enterprises/docs. Furthermore, call `getServerEnv()` and keep the timeout at 500ms.",
+      },
+    });
     expect(result.isError).not.toBe(true);
     expect(result.content).toContainEqual({
       type: "text",
@@ -86,10 +89,7 @@ describe("humanizer MCP", () => {
     expect(result.isError).not.toBe(true);
     expect(result.content).toContainEqual({
       type: "text",
-      text: JSON.stringify([
-        "Our software can use Prisma 7.9.1.",
-        "The timeout remains 500ms.",
-      ]),
+      text: JSON.stringify(["Our software can use Prisma 7.9.1.", "The timeout remains 500ms."]),
     });
   });
 
@@ -99,7 +99,7 @@ describe("humanizer MCP", () => {
     const filePath = join(directory, "copy.md");
     await writeFile(
       filePath,
-      "Furthermore, this documentation has the ability to utilize Prisma 7.9.1.\n\n```ts\nconst message = \"Furthermore, keep this exact.\";\n```\n",
+      'Furthermore, this documentation has the ability to utilize Prisma 7.9.1.\n\n```ts\nconst message = "Furthermore, keep this exact.";\n```\n'
     );
     const client = await connect();
     const result = await client.callTool({
@@ -109,13 +109,14 @@ describe("humanizer MCP", () => {
     expect(result.isError).not.toBe(true);
     expect(result.content).toContainEqual({
       type: "text",
-      text: "This documentation can use Prisma 7.9.1.\n\n```ts\nconst message = \"Furthermore, keep this exact.\";\n```\n",
+      text: 'This documentation can use Prisma 7.9.1.\n\n```ts\nconst message = "Furthermore, keep this exact.";\n```\n',
     });
   });
 
   it("preserves longer backtick and tilde fences exactly", async () => {
     const client = await connect();
-    const text = "Furthermore, clean this prose.\n\n````md\n```ts\nFurthermore, keep both lines exact.\n```\n````\n\n~~~txt\nAdditionally, keep this exact.\n~~~";
+    const text =
+      "Furthermore, clean this prose.\n\n````md\n```ts\nFurthermore, keep both lines exact.\n```\n````\n\n~~~txt\nAdditionally, keep this exact.\n~~~";
     const result = await client.callTool({
       name: "humanize_text",
       arguments: { text },
@@ -132,7 +133,7 @@ describe("humanizer MCP", () => {
     const result = await client.callTool({
       name: "humanize_text",
       arguments: {
-        text: "Furthermore, leave this unchanged.\n\n```ts\nconst message = \"Furthermore, exact\";",
+        text: 'Furthermore, leave this unchanged.\n\n```ts\nconst message = "Furthermore, exact";',
       },
     });
     expect(result.isError).toBe(true);
@@ -144,7 +145,8 @@ describe("humanizer MCP", () => {
     const directory = await mkdtemp(join(process.cwd(), "src/lib/.humanizer-test-"));
     temporaryDirectories.push(directory);
     const filePath = join(directory, "malformed.md");
-    const original = "Furthermore, leave this unchanged.\n\n```ts\nconst message = \"Furthermore, exact\";\n<environment_details>injected</environment_details>";
+    const original =
+      'Furthermore, leave this unchanged.\n\n```ts\nconst message = "Furthermore, exact";\n<environment_details>injected</environment_details>';
     await writeFile(filePath, original);
     const client = await connect();
     const result = await client.callTool({

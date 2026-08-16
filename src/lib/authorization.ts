@@ -9,11 +9,7 @@ import type {
 } from "@/types";
 
 export type AuthorizationErrorCode =
-  | "UNAUTHENTICATED"
-  | "UNASSIGNED"
-  | "FORBIDDEN"
-  | "COMPANY_REQUIRED"
-  | "NOT_FOUND";
+  "UNAUTHENTICATED" | "UNASSIGNED" | "FORBIDDEN" | "COMPANY_REQUIRED" | "NOT_FOUND";
 
 export class AuthorizationError extends Error {
   constructor(
@@ -51,10 +47,7 @@ export function requireSdkStaff(
   principal: AppPrincipal,
   allowedRoles?: readonly SdkStaffRole[]
 ): SdkStaffPrincipal {
-  if (
-    principal.kind !== "sdk-staff" ||
-    (allowedRoles && !allowedRoles.includes(principal.role))
-  ) {
+  if (principal.kind !== "sdk-staff" || (allowedRoles && !allowedRoles.includes(principal.role))) {
     throw new AuthorizationError(403, "FORBIDDEN", "SDK staff access is required.");
   }
   return principal;
@@ -92,7 +85,11 @@ export function requireCompanyAccess(
   }
 
   if (!requestedCompanyId) {
-    throw new AuthorizationError(403, "COMPANY_REQUIRED", "SDK staff must select a target company.");
+    throw new AuthorizationError(
+      403,
+      "COMPANY_REQUIRED",
+      "SDK staff must select a target company."
+    );
   }
   return requestedCompanyId;
 }

@@ -47,19 +47,23 @@ export async function saveRequestAction(
   locale: string,
   requestId: string | null,
   _state: RequestActionState,
-  formData: FormData,
+  formData: FormData
 ): Promise<RequestActionState> {
   const principal = await getCurrentPrincipal();
   if (!principal) return { error: "Your session has ended. Sign in and try again." };
   const intent = formData.get("intent") === "submit" ? "submit" : "draft";
-  const parsed = (intent === "submit" ? requestSubmissionSchema : requestDraftSchema).safeParse(values(formData));
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message ?? "Check the request details." };
+  const parsed = (intent === "submit" ? requestSubmissionSchema : requestDraftSchema).safeParse(
+    values(formData)
+  );
+  if (!parsed.success)
+    return { error: parsed.error.issues[0]?.message ?? "Check the request details." };
   let savedId: string;
   try {
     if (requestId) {
-      const saved = intent === "submit"
-        ? await submitRequest(principal, requestId, parsed.data)
-        : await updateRequestDraft(principal, requestId, parsed.data);
+      const saved =
+        intent === "submit"
+          ? await submitRequest(principal, requestId, parsed.data)
+          : await updateRequestDraft(principal, requestId, parsed.data);
       savedId = saved.id;
     } else {
       const draft = await createRequestDraft(principal, parsed.data);
@@ -73,46 +77,86 @@ export async function saveRequestAction(
   redirect(`/${locale}/app/requests/${savedId}`);
 }
 
-export async function replyAction(locale: string, requestId: string, _state: RequestActionState, formData: FormData) {
+export async function replyAction(
+  locale: string,
+  requestId: string,
+  _state: RequestActionState,
+  formData: FormData
+) {
   const principal = await getCurrentPrincipal();
   if (!principal) return { error: "Your session has ended." };
   const parsed = requestReplySchema.safeParse({ content: formData.get("content") });
   if (!parsed.success) return { error: parsed.error.issues[0]?.message };
-  try { await respondToInformationRequest(principal, requestId, parsed.data.content); }
-  catch (error) { return { error: message(error) }; }
+  try {
+    await respondToInformationRequest(principal, requestId, parsed.data.content);
+  } catch (error) {
+    return { error: message(error) };
+  }
   revalidatePath(`/${locale}/app/requests/${requestId}`);
   return {};
 }
 
-export async function acceptProposalAction(locale: string, requestId: string, _state: RequestActionState, _formData: FormData) {
+export async function acceptProposalAction(
+  locale: string,
+  requestId: string,
+  _state: RequestActionState,
+  _formData: FormData
+) {
   void _state;
   void _formData;
   const principal = await getCurrentPrincipal();
   if (!principal) return { error: "Your session has ended." };
-  try { await acceptProposal(principal, requestId); }
-  catch (error) { return { error: message(error) }; }
+  try {
+    await acceptProposal(principal, requestId);
+  } catch (error) {
+    return { error: message(error) };
+  }
   revalidatePath(`/${locale}/app/requests/${requestId}`);
   return {};
 }
 
-export async function sdkDecisionAction(locale: string, companyId: string, requestId: string, _state: RequestActionState, formData: FormData) {
+export async function sdkDecisionAction(
+  locale: string,
+  companyId: string,
+  requestId: string,
+  _state: RequestActionState,
+  formData: FormData
+) {
   const principal = await getCurrentPrincipal();
   if (!principal) return { error: "Your session has ended." };
-  const parsed = sdkRequestDecisionSchema.safeParse({ decision: formData.get("decision"), content: formData.get("content") });
+  const parsed = sdkRequestDecisionSchema.safeParse({
+    decision: formData.get("decision"),
+    content: formData.get("content"),
+  });
   if (!parsed.success) return { error: parsed.error.issues[0]?.message };
-  try { await decideRequest(principal, companyId, requestId, parsed.data); }
-  catch (error) { return { error: message(error) }; }
+  try {
+    await decideRequest(principal, companyId, requestId, parsed.data);
+  } catch (error) {
+    return { error: message(error) };
+  }
   revalidatePath(`/${locale}/app/companies/${companyId}/requests/${requestId}`);
   return {};
 }
 
-export async function convertAction(locale: string, companyId: string, requestId: string, _state: RequestActionState, formData: FormData) {
+export async function convertAction(
+  locale: string,
+  companyId: string,
+  requestId: string,
+  _state: RequestActionState,
+  formData: FormData
+) {
   const principal = await getCurrentPrincipal();
   if (!principal) return { error: "Your session has ended." };
-  const parsed = projectConversionSchema.safeParse({ name: formData.get("name"), description: formData.get("description") });
+  const parsed = projectConversionSchema.safeParse({
+    name: formData.get("name"),
+    description: formData.get("description"),
+  });
   if (!parsed.success) return { error: parsed.error.issues[0]?.message };
-  try { await convertRequestToProject(principal, companyId, requestId, parsed.data); }
-  catch (error) { return { error: message(error) }; }
+  try {
+    await convertRequestToProject(principal, companyId, requestId, parsed.data);
+  } catch (error) {
+    return { error: message(error) };
+  }
   revalidatePath(`/${locale}/app/companies/${companyId}/requests/${requestId}`);
   return {};
 }

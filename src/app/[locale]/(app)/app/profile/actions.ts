@@ -10,7 +10,14 @@ export async function updatePreferredLocaleAction(locale: string): Promise<{ ok:
   const parsed = localeSchema.safeParse(locale);
   const principal = await getCurrentPrincipal();
   if (!parsed.success || !principal) return { ok: false };
-  await getPrisma().user.update({ where: { id: principal.id }, data: { preferredLocale: parsed.data } });
-  (await cookies()).set("NEXT_LOCALE", parsed.data, { path: "/", sameSite: "lax", httpOnly: false });
+  await getPrisma().user.update({
+    where: { id: principal.id },
+    data: { preferredLocale: parsed.data },
+  });
+  (await cookies()).set("NEXT_LOCALE", parsed.data, {
+    path: "/",
+    sameSite: "lax",
+    httpOnly: false,
+  });
   return { ok: true };
 }

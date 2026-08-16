@@ -40,7 +40,9 @@ const principalSelect = {
   },
 } as const;
 
-function isUniqueConstraintViolation(error: unknown): error is Prisma.PrismaClientKnownRequestError {
+function isUniqueConstraintViolation(
+  error: unknown
+): error is Prisma.PrismaClientKnownRequestError {
   return error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2002";
 }
 
@@ -143,10 +145,8 @@ export async function resolveAppPrincipal(session: SessionData): Promise<AppPrin
   return { ...common, kind: "unassigned" };
 }
 
-export const getCurrentPrincipal = cache(
-  async (): Promise<AppPrincipal | null> => {
-    const { getAuth0Client } = await import("@/lib/auth");
-    const session = await getAuth0Client().getSession();
-    return session ? resolveAppPrincipal(session) : null;
-  }
-);
+export const getCurrentPrincipal = cache(async (): Promise<AppPrincipal | null> => {
+  const { getAuth0Client } = await import("@/lib/auth");
+  const session = await getAuth0Client().getSession();
+  return session ? resolveAppPrincipal(session) : null;
+});

@@ -19,13 +19,17 @@ export async function createOwnedCompany(principal: AppPrincipal, name: string) 
   if (principal.kind !== "unassigned") {
     throw new AuthorizationError(403, "FORBIDDEN", "Only unassigned users can create a company.");
   }
-  return getPrisma().$transaction(async transaction => {
+  return getPrisma().$transaction(async (transaction) => {
     const user = await transaction.user.findUniqueOrThrow({
       where: { id: principal.id },
       include: { memberships: true },
     });
     if (user.sdkStaffRole || user.memberships.length > 0 || !user.isActive) {
-      throw new AuthorizationError(403, "FORBIDDEN", "This account already has an assignment or is inactive.");
+      throw new AuthorizationError(
+        403,
+        "FORBIDDEN",
+        "This account already has an assignment or is inactive."
+      );
     }
     return transaction.company.create({
       data: {

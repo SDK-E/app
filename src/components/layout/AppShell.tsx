@@ -16,13 +16,22 @@ export async function AppShell({ children, locale, principal }: AppShellProps) {
   const t = await getTranslations({ locale, namespace: "portal.nav" });
   const context = principal.kind === "client" ? principal.companyName : "SDK Enterprises";
   const areaLabel = principal.kind === "client" ? t("clientArea") : t("staffArea");
-  const links = principal.kind === "client"
-    ? [{ href: `/${locale}/app`, label: t("dashboard") }, { href: `/${locale}/app/requests`, label: t("requests") }]
-    : [{ href: `/${locale}/app`, label: t("operations") }];
-  const canManageUsers = principal.kind === "sdk-staff"
-    ? principal.role === "ADMIN"
-    : ["OWNER", "ADMINISTRATOR"].includes(principal.role);
-  if (canManageUsers) links.push({ href: `/${locale}/app/users`, label: principal.kind === "client" ? t("team") : t("users") });
+  const links =
+    principal.kind === "client"
+      ? [
+          { href: `/${locale}/app`, label: t("dashboard") },
+          { href: `/${locale}/app/requests`, label: t("requests") },
+        ]
+      : [{ href: `/${locale}/app`, label: t("operations") }];
+  const canManageUsers =
+    principal.kind === "sdk-staff"
+      ? principal.role === "ADMIN"
+      : ["OWNER", "ADMINISTRATOR"].includes(principal.role);
+  if (canManageUsers)
+    links.push({
+      href: `/${locale}/app/users`,
+      label: principal.kind === "client" ? t("team") : t("users"),
+    });
 
   return (
     <div className="min-h-screen bg-background text-foreground lg:grid lg:grid-cols-[260px_1fr]">
@@ -42,7 +51,15 @@ export async function AppShell({ children, locale, principal }: AppShellProps) {
         </div>
         <nav aria-label="Application" className="border-t border-[#2d4b28] px-3 py-3 lg:px-4">
           <div className="flex gap-2 overflow-x-auto lg:block lg:space-y-2">
-            {links.map((link) => <Link key={link.href} href={link.href} className="block min-h-11 whitespace-nowrap rounded-nav px-4 py-3 text-label font-extrabold uppercase tracking-eyebrow text-light transition-colors hover:bg-[#2d4b28] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">{link.label}</Link>)}
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block min-h-11 whitespace-nowrap rounded-nav px-4 py-3 text-label font-extrabold uppercase tracking-eyebrow text-light transition-colors hover:bg-[#2d4b28] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </nav>
       </aside>
@@ -53,7 +70,16 @@ export async function AppShell({ children, locale, principal }: AppShellProps) {
             <p className="text-micro uppercase tracking-eyebrow text-muted-foreground">{context}</p>
             <p className="mt-1 text-body font-semibold">{principal.name}</p>
           </div>
-          <AccountMenu locale={locale} name={principal.name} email={principal.email} avatarUrl={principal.avatarUrl} profileLabel={t("profile")} logoutLabel={t("logout")} languageLabel={t("language")} updateLocale={updatePreferredLocaleAction} />
+          <AccountMenu
+            locale={locale}
+            name={principal.name}
+            email={principal.email}
+            avatarUrl={principal.avatarUrl}
+            profileLabel={t("profile")}
+            logoutLabel={t("logout")}
+            languageLabel={t("language")}
+            updateLocale={updatePreferredLocaleAction}
+          />
         </header>
         <main className="px-6 py-12 lg:px-10 lg:py-16">{children}</main>
       </div>

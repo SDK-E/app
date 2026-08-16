@@ -22,7 +22,11 @@ export function ActionForm({
   return (
     <form action={formAction} className="space-y-4">
       {children}
-      {state.error ? <p role="alert" className="text-body text-destructive">{state.error}</p> : null}
+      {state.error ? (
+        <p role="alert" className="text-body text-destructive">
+          {state.error}
+        </p>
+      ) : null}
       <Button type="submit" variant={variant} disabled={pending}>
         {pending ? (pendingLabel ?? buttonLabel) : buttonLabel}
       </Button>

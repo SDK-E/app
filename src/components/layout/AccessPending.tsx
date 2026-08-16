@@ -10,7 +10,13 @@ import { Badge } from "@/components/ui/Badge";
 import { getUserAccessRequests } from "@/lib/user-management";
 import type { UnassignedPrincipal } from "@/types";
 
-export async function AccessPending({ principal, locale }: { principal: UnassignedPrincipal; locale: string }) {
+export async function AccessPending({
+  principal,
+  locale,
+}: {
+  principal: UnassignedPrincipal;
+  locale: string;
+}) {
   const [t, requests] = await Promise.all([
     getTranslations({ locale, namespace: "portal.onboarding" }),
     getUserAccessRequests(principal),
@@ -33,7 +39,11 @@ export async function AccessPending({ principal, locale }: { principal: Unassign
         <p className="mt-6 max-w-[60ch] text-body text-muted-foreground">
           {t("intro", { email: principal.email })}
         </p>
-        <CompanyCreationForm action={createCompanyAction.bind(null, locale)} label={t("create")} nameLabel={t("name")} />
+        <CompanyCreationForm
+          action={createCompanyAction.bind(null, locale)}
+          label={t("create")}
+          nameLabel={t("name")}
+        />
         <p className="mt-6 text-body text-muted-foreground">{t("alternative")}</p>
 
         <div className="mt-10 border-t border-line pt-8">
@@ -50,20 +60,36 @@ export async function AccessPending({ principal, locale }: { principal: Unassign
         <div className="mt-10 border-t border-line pt-8">
           <h2 className="text-h3 font-extrabold">{t("requestsTitle")}</h2>
           <div className="mt-5 space-y-3">
-            {requests.map(request => (
-              <div key={request.id} className="flex items-center justify-between gap-4 rounded-control border border-line px-4 py-3">
+            {requests.map((request) => (
+              <div
+                key={request.id}
+                className="flex items-center justify-between gap-4 rounded-control border border-line px-4 py-3"
+              >
                 <div>
                   <p className="text-body font-semibold">{request.company.name}</p>
                   <p className="mt-1 text-micro uppercase tracking-eyebrow text-muted-foreground">
-                    {request.requestedRole.replaceAll("_", " ")} · {new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(request.createdAt)}
+                    {request.requestedRole.replaceAll("_", " ")} ·{" "}
+                    {new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(
+                      request.createdAt
+                    )}
                   </p>
                 </div>
-                <Badge tone={request.status === "PENDING" ? "live" : request.status === "APPROVED" ? "live" : "neutral"}>
+                <Badge
+                  tone={
+                    request.status === "PENDING"
+                      ? "live"
+                      : request.status === "APPROVED"
+                        ? "live"
+                        : "neutral"
+                  }
+                >
                   {t(`accessStatus.${request.status}`)}
                 </Badge>
               </div>
             ))}
-            {!requests.length ? <p className="text-body text-muted-foreground">{t("requestsEmpty")}</p> : null}
+            {!requests.length ? (
+              <p className="text-body text-muted-foreground">{t("requestsEmpty")}</p>
+            ) : null}
           </div>
         </div>
 

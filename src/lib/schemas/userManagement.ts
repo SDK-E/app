@@ -29,11 +29,19 @@ export const membershipUpdateSchema = z.object({
 
 export const idSchema = z.string().uuid();
 
-export const staffUpdateSchema = z.object({
-  userId: z.string().uuid(),
-  role: z.enum(sdkStaffRoles).optional(),
-  isActive: z.enum(["true", "false"]).transform(value => value === "true").optional(),
-}).refine(value => value.role !== undefined || value.isActive !== undefined, "Choose a staff update.");
+export const staffUpdateSchema = z
+  .object({
+    userId: z.string().uuid(),
+    role: z.enum(sdkStaffRoles).optional(),
+    isActive: z
+      .enum(["true", "false"])
+      .transform((value) => value === "true")
+      .optional(),
+  })
+  .refine(
+    (value) => value.role !== undefined || value.isActive !== undefined,
+    "Choose a staff update."
+  );
 
 export const requestAccessSchema = z.object({
   code: z.string().trim().min(4, "Enter the company access code.").max(16),

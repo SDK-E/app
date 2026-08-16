@@ -1,7 +1,12 @@
 import { redirect } from "next/navigation";
 
 interface LoginPageProps {
-  searchParams: Promise<{ callbackUrl?: string; returnTo?: string; screen_hint?: string; email?: string }>;
+  searchParams: Promise<{
+    callbackUrl?: string;
+    returnTo?: string;
+    screen_hint?: string;
+    email?: string;
+  }>;
 }
 
 export default async function LoginPage({ searchParams }: LoginPageProps) {

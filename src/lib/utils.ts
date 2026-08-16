@@ -1,25 +1,48 @@
-import { clsx, type ClassValue } from "clsx"
-import { extendTailwindMerge } from "tailwind-merge"
+import { clsx, type ClassValue } from "clsx";
+import { extendTailwindMerge } from "tailwind-merge";
 
 const twMerge = extendTailwindMerge({
   override: {
     theme: {
       color: [
-        "dark", "light", "paper", "muted", "fog", "line", "brand",
-        "background", "foreground",
-        "card", "card-foreground",
-        "popover", "popover-foreground",
-        "primary", "primary-foreground",
-        "secondary", "secondary-foreground",
+        "dark",
+        "light",
+        "paper",
+        "muted",
+        "fog",
+        "line",
+        "brand",
+        "background",
+        "foreground",
+        "card",
+        "card-foreground",
+        "popover",
+        "popover-foreground",
+        "primary",
+        "primary-foreground",
+        "secondary",
+        "secondary-foreground",
         "muted-foreground",
-        "accent", "accent-foreground",
-        "destructive", "destructive-foreground",
-        "border", "ring", "input",
-        "sidebar", "sidebar-foreground",
-        "sidebar-primary", "sidebar-primary-foreground",
-        "sidebar-accent", "sidebar-accent-foreground",
-        "sidebar-border", "sidebar-ring",
-        "chart-1", "chart-2", "chart-3", "chart-4", "chart-5",
+        "accent",
+        "accent-foreground",
+        "destructive",
+        "destructive-foreground",
+        "border",
+        "ring",
+        "input",
+        "sidebar",
+        "sidebar-foreground",
+        "sidebar-primary",
+        "sidebar-primary-foreground",
+        "sidebar-accent",
+        "sidebar-accent-foreground",
+        "sidebar-border",
+        "sidebar-ring",
+        "chart-1",
+        "chart-2",
+        "chart-3",
+        "chart-4",
+        "chart-5",
       ],
     },
   },
@@ -30,10 +53,10 @@ const twMerge = extendTailwindMerge({
       radius: ["card", "control", "nav"],
     },
   },
-})
+});
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export function formatDate(
