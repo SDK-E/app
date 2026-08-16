@@ -5,6 +5,8 @@ import { AccessPending } from "@/components/layout/AccessPending";
 import { AppShell } from "@/components/layout/AppShell";
 import { getCurrentPrincipal } from "@/lib/identity";
 
+export const dynamic = "force-dynamic";
+
 export default async function ProtectedAppLayout({
   children,
   params,

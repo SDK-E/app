@@ -1,12 +1,7 @@
-import { getServerEnv } from "@/lib/env";
 import { siteConfig } from "@/lib/siteConfig";
 import type { Metadata } from "next";
 
 export function getSiteUrl(): string {
-  const env = getServerEnv();
-  if (env.AUTH0_BASE_URL) {
-    return env.AUTH0_BASE_URL.replace(/\/$/, "");
-  }
   return `https://${siteConfig.contact.domain}`;
 }
 

@@ -1,7 +1,7 @@
 import type { SessionData } from "@auth0/nextjs-auth0/types";
 import { z } from "zod";
 
-import { prisma } from "@/lib/db";
+import { getPrisma } from "@/lib/db";
 import type { AppPrincipal, ClientRole, SdkStaffRole } from "@/types";
 
 const auth0IdentitySchema = z.object({
@@ -44,7 +44,7 @@ export async function resolveAppPrincipal(session: SessionData): Promise<AppPrin
   }
 
   const identity = parsed.data;
-  const user = await prisma.user.upsert({
+  const user = await getPrisma().user.upsert({
     where: { auth0Sub: identity.sub },
     create: {
       auth0Sub: identity.sub,

@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({ upsert: vi.fn() }));
 
-vi.mock("@/lib/db", () => ({ prisma: { user: { upsert: mocks.upsert } } }));
+vi.mock("@/lib/db", () => ({ getPrisma: () => ({ user: { upsert: mocks.upsert } }) }));
 
 import { IdentityError, resolveAppPrincipal } from "@/lib/identity";
 

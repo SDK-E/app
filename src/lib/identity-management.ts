@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/db";
+import { getPrisma } from "@/lib/db";
 import { IdentityError } from "@/lib/identity";
 import type { ClientRole, SdkStaffRole } from "@/types";
 
@@ -8,7 +8,7 @@ export async function assignCompanyMembership(input: {
   role: ClientRole;
   invitedBy?: string;
 }) {
-  return prisma.$transaction(async transaction => {
+  return getPrisma().$transaction(async transaction => {
     const user = await transaction.user.findUniqueOrThrow({
       where: { id: input.userId },
       select: { sdkStaffRole: true },
@@ -30,7 +30,7 @@ export async function assignCompanyMembership(input: {
 }
 
 export async function assignSdkStaffRole(userId: string, role: SdkStaffRole) {
-  return prisma.$transaction(async transaction => {
+  return getPrisma().$transaction(async transaction => {
     const membership = await transaction.membership.findUnique({ where: { userId } });
     if (membership) {
       throw new IdentityError("IDENTITY_CONFLICT", "Company members cannot receive SDK staff roles.");

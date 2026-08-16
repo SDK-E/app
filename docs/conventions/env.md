@@ -28,10 +28,9 @@ invalid variables cause the application to fail at startup in every environment.
 
 ## Public variables
 
-Variables safe to expose to the browser are exported from `src/lib/env.ts` via
-`publicEnv`. Today that is `AUTH0_CLIENT_ID`, used by the Auth0 SDK callback.
-No test or CI fallback credentials are embedded in application code; each
-environment must inject its own values.
+No environment variables are currently exposed to browser code. Auth0 client
+configuration remains server-side. No test or CI fallback credentials are
+embedded in application code; each runtime environment injects its own values.
 
 ## Environment files
 

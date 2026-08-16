@@ -2,7 +2,7 @@
 
 import { enquirySchema, type EnquiryInput } from "@/lib/schemas/enquiry";
 import { sendEnquiryNotification } from "@/lib/email";
-import { prisma } from "@/lib/db";
+import { getPrisma } from "@/lib/db";
 
 export type EnquiryResult =
   | { success: true }
@@ -23,7 +23,7 @@ export async function submitEnquiry(input: EnquiryInput): Promise<EnquiryResult>
   const data = parsed.data;
 
   try {
-    await prisma.enquiry.create({
+    await getPrisma().enquiry.create({
       data: {
         companyName: data.companyName,
         email: data.email,

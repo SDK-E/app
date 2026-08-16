@@ -136,10 +136,9 @@ maps to `./src/*`.
 ### Environment variables
 
 - Format: `SCREAMING_SNAKE_CASE`.
-- Variables exposed to the browser must be prefixed `NEXT_PUBLIC_`:
-  - `AUTH0_CLIENT_ID` — public, exposed via `publicEnv` in `src/lib/env.ts`
-  - `DATABASE_URL` — server-only (never `NEXT_PUBLIC_`)
-  - `AUTH0_SECRET` — server-only secret
+- Variables exposed to the browser must be prefixed `NEXT_PUBLIC_`; none are
+  currently required. `DATABASE_URL`, `AUTH0_CLIENT_ID`, and `AUTH0_SECRET`
+  remain server-only.
 - Server-only variables are read via `src/lib/env.ts` (single access point,
   validated with schema parsing). Do NOT read `process.env` directly in
   components or `lib/` modules.

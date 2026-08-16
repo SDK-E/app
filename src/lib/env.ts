@@ -14,9 +14,6 @@ const serverEnvSchema = z.object({
 });
 
 type ServerEnv = z.infer<typeof serverEnvSchema>;
-type PublicEnv = Pick<ServerEnv, "AUTH0_CLIENT_ID">;
-
-const publicEnvSchema = serverEnvSchema.pick({ AUTH0_CLIENT_ID: true });
 
 function buildErrorMessage(error: z.ZodError): string {
   return error.issues
@@ -55,7 +52,3 @@ export function getServerEnv(): ServerEnv {
   }
   return cachedEnv;
 }
-
-export const publicEnv: PublicEnv = publicEnvSchema.parse({
-  AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
-});
