@@ -23,6 +23,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run agents:check
+      - run: npm run format:check
+      - run: npm run audit
       - run: npm run lint
 
   typecheck:
@@ -59,3 +61,20 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run test:run
+      - run: npm run i18n:check
+
+  agent-pr-eval:
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - id: changed
+        run: echo "files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | tr '\n' ',')" >> $GITHUB_OUTPUT
+      - run: node --import tsx scripts/agent-pr-eval.ts --body '${{ github.event.pull_request.body }}' --title '${{ github.event.pull_request.title }}' --files '${{ steps.changed.outputs.files }}'

@@ -211,6 +211,8 @@ relevant file before touching code:
 - `docs/content/start-a-project.md` — approved public enquiry form + delivery
   spec (Enquiry table + Resend).
 - `docs/content/legal-pages.md` — legal page requirements + review flags.
+- `docs/agent/failure-taxonomy.md` — agent failure modes + review tags.
+- `docs/agent/review-log.md` — logged corrections by failure mode (Phase 4 input).
 
 In opencode, these are also exposed as an `@docs` reference.
 
