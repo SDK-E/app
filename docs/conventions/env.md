@@ -41,10 +41,45 @@ embedded in application code; each runtime environment injects its own values.
 
 ## Local setup
 
-Create a `.env.local` in the project root with the required values:
+Local development uses a local Prisma dev server — never the production database.
+
+Start the local Postgres server (detached, runs in the background):
 
 ```bash
-DATABASE_URL=postgresql://user:pass@localhost:5432/sdkapp
+npx prisma dev --detach -n sdk-app -P 5432
+```
+
+Check the running server and its actual DB port (it may not be `5432` if the port
+was busy when you started it):
+
+```bash
+npx prisma dev ls
+```
+
+Manage the local server lifecycle:
+
+```bash
+npx prisma dev ls        # list servers (name, status, URLs)
+npx prisma dev stop      # stop the current project's server
+npx prisma dev start     # restart a stopped server
+```
+
+Then create the `sdkapp` database on that server (once):
+
+```bash
+DATABASE_URL="<tcp URL from prisma dev ls>" npx prisma db execute --stdin <<'SQL'
+CREATE DATABASE sdkapp;
+SQL
+```
+
+Create a `.env.local` in the project root with the required values. Point all
+three database variables at the local server and the `sdkapp` database — replace
+`<port>` with the value from `npx prisma dev ls`:
+
+```bash
+DATABASE_URL=postgres://postgres:postgres@localhost:<port>/sdkapp?sslmode=disable
+POSTGRES_URL=postgres://postgres:postgres@localhost:<port>/sdkapp?sslmode=disable
+PRISMA_DATABASE_URL=postgres://postgres:postgres@localhost:<port>/sdkapp?sslmode=disable
 AUTH0_SECRET=replace-with-openssl-rand-hex-32
 AUTH0_ISSUER_BASE_URL=https://dev-xxx.us.auth0.com
 AUTH0_BASE_URL=http://localhost:3000
@@ -52,6 +87,18 @@ AUTH0_CLIENT_ID=your-client-id
 AUTH0_CLIENT_SECRET=your-client-secret
 NODE_ENV=development
 ```
+
+Apply migrations to the local database:
+
+```bash
+DATABASE_URL="$(node -e "require('dotenv').config({path:'.env.local'});process.stdout.write(process.env.DATABASE_URL)")" npx prisma migrate deploy
+```
+
+**Do not** point `DATABASE_URL` (or `POSTGRES_URL` / `PRISMA_DATABASE_URL`) at
+the production database (`db.prisma.io`) in `.env.local`. Vercel CLI's
+`vercel env pull` writes the production connection string — if you use it, reset
+the three database variables back to the local server before running anything
+destructive (e.g. `prisma migrate reset`).
 
 ## Conventions
 
