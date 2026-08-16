@@ -102,7 +102,7 @@ Do not assume versions — the exact stack is:
 ## Agent context management
 
 Gastown workers run through KiloCode. Project-level auto-compaction is enabled
-in `kilocode.json`: compact at 45% of the model's advertised context window,
+in `kilo.jsonc`: compact at 45% of the model's advertised context window,
 prune stale tool output, and preserve the two most recent turns verbatim.
 Do not disable it with `KILO_DISABLE_AUTOCOMPACT` or
 `KILO_DISABLE_PRUNE`. Custom model definitions must declare accurate context
@@ -111,7 +111,7 @@ and output limits; KiloCode cannot track or compact an unknown context window.
 ## MCP servers
 
 Keyless MCP servers are configured in `.mcp.json` (read by Claude Code, Cursor,
-Windsurf, VS Code, Zed, etc.) and mirrored in `kilocode.json` and `opencode.json`.
+Windsurf, VS Code, Zed, etc.) and mirrored in `kilo.jsonc` and `opencode.json`.
 Any agent can start using them right after `npm install` — no API keys required.
 Prefer them over guessing: they are the cheapest way to avoid hallucinations.
 

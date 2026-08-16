@@ -34,7 +34,7 @@ function normalizeMcpConfig(path: string): Record<string, string[]> {
 }
 
 const canonicalMcp = normalizeMcpConfig(".mcp.json");
-for (const path of ["kilocode.json", "opencode.json"]) {
+for (const path of ["kilo.jsonc", "opencode.json"]) {
   const candidate = normalizeMcpConfig(path);
   if (JSON.stringify(candidate) !== JSON.stringify(canonicalMcp)) {
     fail(`${path} MCP servers differ from .mcp.json`);

@@ -44,7 +44,8 @@ next-env.d.ts
 
 # gas-town infrastructure (worktree runtime, not project code)
 .beads/
-.opencode/
+.opencode/*
+!.opencode/plugins/
 .runtime/
 CLAUDE.md
 

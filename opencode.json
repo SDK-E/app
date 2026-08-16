@@ -39,9 +39,57 @@
       "description": "Project docs: conventions (structure, env), architecture, ADRs, design system (design/), content standards + claims rules (content/). Consult before writing code or copy."
     }
   },
+  "formatter": {
+    "prettier": { "disabled": true },
+    "custom-prettier": {
+      "command": ["npx", "prettier", "--write", "$FILE"],
+      "extensions": [".ts", ".tsx", ".js", ".jsx", ".json", ".css", ".md", ".mdx", ".yml", ".yaml"]
+    }
+  },
   "compaction": {
     "auto": true,
     "tail_turns": 15
+  },
+  "permission": {
+    "bash": {
+      "*": "ask",
+      "npm *": "allow",
+      "npx *": "allow",
+      "node *": "allow",
+      "python3 *": "allow",
+      "git status *": "allow",
+      "git diff *": "allow",
+      "git log *": "allow",
+      "git show *": "allow",
+      "git fetch *": "allow",
+      "git pull *": "allow",
+      "git push *": "allow",
+      "git add *": "allow",
+      "git commit *": "allow",
+      "git checkout *": "allow",
+      "git branch *": "allow",
+      "git remote *": "allow",
+      "git stash *": "allow",
+      "git restore *": "allow",
+      "git push --force *": "deny",
+      "git push --force-with-lease *": "deny",
+      "git push -f *": "deny",
+      "git reset --hard *": "deny",
+      "git clean *": "deny",
+      "npx prisma migrate deploy*": "deny",
+      "npx prisma migrate reset*": "deny",
+      "npx prisma db push*": "ask",
+      "npx prisma db execute*": "ask",
+      "npx prisma migrate dev*": "ask",
+      "npx prisma migrate status*": "ask",
+      "psql *": "deny",
+      "rm -rf *": "deny",
+      "rm -fr *": "deny",
+      "rm -r -f *": "deny",
+      "rm -f -r *": "deny",
+      "rm --recursive *": "deny",
+      "rm -r *": "ask"
+    }
   },
   "tool_output": {
     "max_lines": 200,
