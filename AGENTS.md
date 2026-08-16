@@ -121,6 +121,10 @@ MCP package versions when adding or deliberately upgrading a server.
   login flow).
 - **prisma** — Prisma CLI operations (migrate, generate, studio) directly from
   the agent. Reads this project's `prisma.config.ts`.
+- **postgres** — browse and query the local dev Postgres via
+  `@microsoft/postgres-mcp`. Connects using `PGSQL_MCP_CONNECTION_STRING` from
+  the gitignored `.env` file (never commit it); requires the local Prisma dev
+  server (`npm run dev`).
 - **maildev** — local dev mail sink: `list_emails`, `read_email`,
   `clear_emails`, `wait_for_email`. Requires `npm run dev` (sink auto-starts).
   Use it to verify the enquiry form's notification email — no UI.

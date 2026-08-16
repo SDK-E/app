@@ -12,6 +12,10 @@
       "command": "npx",
       "args": ["-y", "@playwright/mcp@0.0.79", "--browser", "chromium"]
     },
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@microsoft/postgres-mcp@0.1.0-rc.6", "run"]
+    },
     "prisma": {
       "command": "npx",
       "args": ["prisma", "mcp"]

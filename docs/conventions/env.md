@@ -26,6 +26,15 @@ invalid variables cause the application to fail at startup in every environment.
 | `MAIL_HTTP_PORT`        | no         | Development only: HTTP port the mail sink API listens on. Defaults to `1080`. If changed, `MAIL_HTTP_URL` must point at the new port. |
 | `NODE_ENV`              | yes        | `development` \| `test` \| `production`. |
 
+## Agent-only variables
+
+These are not read by the application; they configure the local agent MCP
+servers (opencode, KiloCode, Claude Code).
+
+| Variable                          | Required | Description |
+|-----------------------------------|----------|-------------|
+| `PGSQL_MCP_CONNECTION_STRING`     | dev-only | PostgreSQL connection string for the `postgres` MCP server (`@microsoft/postgres-mcp`), so agents can browse and query the local dev database. Lives in the gitignored `.env` file — never commit it. Point it at the same database as `DATABASE_URL`. |
+
 ## Public variables
 
 No environment variables are currently exposed to browser code. Auth0 client
