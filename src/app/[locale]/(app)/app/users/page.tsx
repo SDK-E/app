@@ -73,7 +73,12 @@ export default async function UsersPage({ params }: { params: Promise<{ locale: 
               ) : null}
               <label className="block text-label font-extrabold uppercase tracking-eyebrow">
                 {t("role")}
-                <select className={`${fieldClass} mt-2`} name="role">
+                <select
+                  className={`${fieldClass} mt-2`}
+                  name="role"
+                  defaultValue="PROJECT_MEMBER"
+                  required
+                >
                   {clientRoles.map((role) => (
                     <option key={role} value={role}>
                       {role.replaceAll("_", " ")}
@@ -99,7 +104,12 @@ export default async function UsersPage({ params }: { params: Promise<{ locale: 
                 </label>
                 <label className="block text-label font-extrabold uppercase tracking-eyebrow">
                   {t("role")}
-                  <select className={`${fieldClass} mt-2`} name="role">
+                  <select
+                    className={`${fieldClass} mt-2`}
+                    name="role"
+                    defaultValue="DELIVERY"
+                    required
+                  >
                     <option value="ADMIN">ADMIN</option>
                     <option value="DELIVERY">DELIVERY</option>
                     <option value="FINANCE">FINANCE</option>
@@ -167,7 +177,12 @@ export default async function UsersPage({ params }: { params: Promise<{ locale: 
                     label={t("updateRole")}
                   >
                     <input type="hidden" name="membershipId" value={membership.id} />
-                    <select className={fieldClass} name="role" defaultValue={membership.role}>
+                    <select
+                      key={membership.role}
+                      className={fieldClass}
+                      name="role"
+                      defaultValue={membership.role}
+                    >
                       {membership.role === "OWNER" ? (
                         <option value="OWNER">OWNER</option>
                       ) : (
@@ -211,6 +226,7 @@ export default async function UsersPage({ params }: { params: Promise<{ locale: 
                       >
                         <input type="hidden" name="membershipId" value={user.memberships[0].id} />
                         <select
+                          key={user.memberships[0].role}
                           className={fieldClass}
                           name="role"
                           defaultValue={user.memberships[0].role}
@@ -241,7 +257,12 @@ export default async function UsersPage({ params }: { params: Promise<{ locale: 
                         label={t("updateRole")}
                       >
                         <input type="hidden" name="userId" value={user.id} />
-                        <select className={fieldClass} name="role" defaultValue={user.sdkStaffRole}>
+                        <select
+                          key={user.sdkStaffRole}
+                          className={fieldClass}
+                          name="role"
+                          defaultValue={user.sdkStaffRole}
+                        >
                           <option value="ADMIN">ADMIN</option>
                           <option value="DELIVERY">DELIVERY</option>
                           <option value="FINANCE">FINANCE</option>
@@ -317,6 +338,11 @@ export default async function UsersPage({ params }: { params: Promise<{ locale: 
 
       <div className="mt-12">
         <h2 className="text-h3 font-extrabold">{t("pendingInvitations")}</h2>
+        {data.kind === "staff" && data.pendingInvitationCount > data.invitations.length ? (
+          <p className="mt-2 text-body text-muted-foreground">
+            {t("morePending", { count: data.pendingInvitationCount - data.invitations.length })}
+          </p>
+        ) : null}
         <div className="mt-5 space-y-4">
           {data.invitations
             .filter((invitation) => !invitation.acceptedAt && !invitation.revokedAt)

@@ -72,6 +72,17 @@ export function formatDate(
   });
 }
 
+export function normalizeEmail(email: string): string {
+  return email.trim().toLowerCase();
+}
+
+export function maskEmail(email: string): string {
+  const [local, domain] = normalizeEmail(email).split("@");
+  if (!domain) return email;
+  const first = local.slice(0, 1);
+  return `${first}${"*".repeat(Math.max(local.length - 1, 3))}@${domain}`;
+}
+
 export function slugify(text: string): string {
   return text
     .toLowerCase()

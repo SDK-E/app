@@ -1,10 +1,17 @@
+import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 
 import { RequestForm, type RequestFormCopy } from "@/components/portal/RequestForm";
+import { hasPermission } from "@/lib/authorization";
+import { getCurrentPrincipal } from "@/lib/identity";
 import { saveRequestAction } from "../actions";
 
 export default async function NewRequestPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  const principal = await getCurrentPrincipal();
+  if (!principal || principal.kind !== "client" || !hasPermission(principal, "request:create")) {
+    redirect(`/${locale}/app/requests`);
+  }
   const t = await getTranslations({ locale, namespace: "portal.requests" });
   const copy = {
     ...(t.raw("form") as Omit<RequestFormCopy, "capabilities">),

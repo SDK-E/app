@@ -208,6 +208,7 @@ model Invitation {
   revokedAt      DateTime?
   deliveryStatus InvitationDeliveryStatus @default(PENDING)
   lastSentAt     DateTime?
+  deliveryAttempts Int                    @default(0)
   createdAt      DateTime                 @default(now())
   updatedAt      DateTime                 @updatedAt
 

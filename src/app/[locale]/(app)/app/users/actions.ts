@@ -24,6 +24,7 @@ import {
   regenerateCompanyAccessCode,
   removeMembership,
   renewInvitation,
+  restoreInvitationDelivery,
   revokeInvitation,
   updateMembershipRole,
   updateStaffUser,
@@ -215,11 +216,27 @@ export async function resendInvitationAction(
   try {
     const principal = await principalOrThrow();
     const renewed = await renewInvitation(principal, id.data);
-    const sent = await deliver(locale, renewed.token, renewed.invitation, principal.name);
+    let sent: boolean;
+    try {
+      sent = await deliver(locale, renewed.token, renewed.invitation, principal.name);
+    } catch {
+      await restoreInvitationDelivery(id.data, {
+        tokenHash: renewed.previousTokenHash,
+        expiresAt: renewed.previousExpiresAt,
+      });
+      revalidatePath(`/${locale}/app/users`);
+      return { error: "The invitation could not be renewed. Your previous link is still valid." };
+    }
+    if (!sent) {
+      await restoreInvitationDelivery(id.data, {
+        tokenHash: renewed.previousTokenHash,
+        expiresAt: renewed.previousExpiresAt,
+      });
+      revalidatePath(`/${locale}/app/users`);
+      return { error: "The invitation could not be renewed. Your previous link is still valid." };
+    }
     revalidatePath(`/${locale}/app/users`);
-    return sent
-      ? { success: "Invitation resent." }
-      : { error: "The invitation was renewed, but email delivery failed." };
+    return { success: "Invitation resent." };
   } catch (error) {
     return { error: errorMessage(error) };
   }

@@ -13,7 +13,6 @@ export interface InvitationActionState {
 
 const claimsSchema = z.object({
   email: z.string().email(),
-  email_verified: z.boolean().default(false),
 });
 
 export async function acceptInvitationAction(
@@ -31,13 +30,14 @@ export async function acceptInvitationAction(
   if (!session || !principal) return { error: "Sign in to accept this invitation." };
   const claims = claimsSchema.safeParse(session.user);
   if (!claims.success)
-    return { error: "Your Auth0 profile does not include a verified email address." };
+    return {
+      error: "Your Auth0 profile does not include the details needed to accept this invitation.",
+    };
   try {
     await acceptInvitation({
       token,
       userId: principal.id,
       email: claims.data.email,
-      emailVerified: claims.data.email_verified,
     });
   } catch (error) {
     return {

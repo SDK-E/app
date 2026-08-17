@@ -52,6 +52,17 @@ describe("resolveAppPrincipal", () => {
     expect(principal.kind).toBe("unassigned");
   });
 
+  it("stores the Auth0 email normalized to lowercase", async () => {
+    mocks.upsert.mockResolvedValue(localUser);
+    await resolveAppPrincipal(
+      session({ sub: "auth0|user-1", email: "PERSON@Example.Test", name: "Person Example" })
+    );
+
+    const input = mocks.upsert.mock.calls[0][0];
+    expect(input.create).toEqual(expect.objectContaining({ email: "person@example.test" }));
+    expect(input.update).toEqual(expect.objectContaining({ email: "person@example.test" }));
+  });
+
   it("refreshes profile fields without looking up a user by email", async () => {
     mocks.upsert.mockResolvedValue({ ...localUser, name: "Updated Name" });
     await resolveAppPrincipal(

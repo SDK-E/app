@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
+import { hasPermission } from "@/lib/authorization";
 import { getClientDashboard, listActiveCompanies } from "@/lib/data/serviceRequests";
 import { getCurrentPrincipal } from "@/lib/identity";
 
@@ -173,12 +174,14 @@ export default async function AppHomePage({ params }: { params: Promise<{ locale
           <p className="mt-5 text-body text-muted-foreground">
             {attention.length ? t("dashboard.informationNeeded") : t("dashboard.nextDefault")}
           </p>
-          <Link
-            href={`/${locale}/app/requests/new`}
-            className="mt-5 inline-flex min-h-11 items-center rounded-control bg-brand px-5 text-label font-extrabold uppercase tracking-eyebrow text-dark"
-          >
-            {t("dashboard.newRequest")}
-          </Link>
+          {hasPermission(principal, "request:create") ? (
+            <Link
+              href={`/${locale}/app/requests/new`}
+              className="mt-5 inline-flex min-h-11 items-center rounded-control bg-brand px-5 text-label font-extrabold uppercase tracking-eyebrow text-dark"
+            >
+              {t("dashboard.newRequest")}
+            </Link>
+          ) : null}
         </Card>
       </div>
     </section>

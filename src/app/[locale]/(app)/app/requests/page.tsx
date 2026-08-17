@@ -5,11 +5,13 @@ import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { getCurrentPrincipal } from "@/lib/identity";
+import { hasPermission } from "@/lib/authorization";
 import { listRequests } from "@/lib/data/serviceRequests";
 
 export default async function RequestsPage({ params }: { params: Promise<{ locale: string }> }) {
   const [{ locale }, principal] = await Promise.all([params, getCurrentPrincipal()]);
   if (!principal || principal.kind !== "client") return null;
+  const canCreate = hasPermission(principal, "request:create");
   const [requests, t] = await Promise.all([
     listRequests(principal),
     getTranslations({ locale, namespace: "portal.requests" }),
@@ -24,12 +26,14 @@ export default async function RequestsPage({ params }: { params: Promise<{ local
           <h1 className="mt-4 text-h1 font-extrabold">{t("title")}</h1>
           <p className="mt-4 max-w-[65ch] text-body text-muted-foreground">{t("intro")}</p>
         </div>
-        <Link
-          href={`/${locale}/app/requests/new`}
-          className="inline-flex min-h-11 items-center rounded-control bg-brand px-5 text-label font-extrabold uppercase tracking-eyebrow text-dark"
-        >
-          {t("new")}
-        </Link>
+        {canCreate ? (
+          <Link
+            href={`/${locale}/app/requests/new`}
+            className="inline-flex min-h-11 items-center rounded-control bg-brand px-5 text-label font-extrabold uppercase tracking-eyebrow text-dark"
+          >
+            {t("new")}
+          </Link>
+        ) : null}
       </div>
       <div className="mt-10 space-y-4">
         {requests.map((request) => (
@@ -52,9 +56,11 @@ export default async function RequestsPage({ params }: { params: Promise<{ local
             title={t("emptyTitle")}
             description={t("emptyBody")}
             action={
-              <Link className="underline" href={`/${locale}/app/requests/new`}>
-                {t("new")}
-              </Link>
+              canCreate ? (
+                <Link className="underline" href={`/${locale}/app/requests/new`}>
+                  {t("new")}
+                </Link>
+              ) : null
             }
           />
         ) : null}

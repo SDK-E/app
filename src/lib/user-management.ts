@@ -14,6 +14,10 @@ import type { AppPrincipal, ClientRole, SdkStaffRole } from "@/types";
 
 const INVITATION_TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
+function normalizeEmail(email: string): string {
+  return email.trim().toLowerCase();
+}
+
 function forbidden(message: string): never {
   throw new AuthorizationError(403, "FORBIDDEN", message);
 }
@@ -60,32 +64,45 @@ export async function getUserManagementData(principal: AppPrincipal) {
       invitations,
       users: [],
       accessRequests,
+      pendingInvitationCount: invitations.length,
       company,
     };
   }
   if (principal.kind !== "sdk-staff" || principal.role !== "ADMIN")
     forbidden("SDK administrator access is required.");
-  const [users, companies, invitations, accessRequests] = await Promise.all([
-    db.user.findMany({
-      include: { memberships: { include: { company: true } } },
-      orderBy: { createdAt: "desc" },
-    }),
-    db.company.findMany({ where: { isActive: true }, orderBy: { name: "asc" } }),
-    db.invitation.findMany({
-      include: { company: true },
-      orderBy: { createdAt: "desc" },
-      take: 100,
-    }),
-    db.companyAccessRequest.findMany({
-      where: { status: "PENDING" },
-      include: {
-        user: { select: { id: true, name: true, email: true, avatarUrl: true } },
-        company: { select: { name: true } },
-      },
-      orderBy: { createdAt: "desc" },
-    }),
-  ]);
-  return { kind: "staff" as const, users, companies, invitations, memberships: [], accessRequests };
+  const [users, companies, invitations, pendingInvitationCount, accessRequests] = await Promise.all(
+    [
+      db.user.findMany({
+        include: { memberships: { include: { company: true } } },
+        orderBy: { createdAt: "desc" },
+      }),
+      db.company.findMany({ where: { isActive: true }, orderBy: { name: "asc" } }),
+      db.invitation.findMany({
+        where: { acceptedAt: null, revokedAt: null },
+        include: { company: true },
+        orderBy: { createdAt: "desc" },
+        take: 100,
+      }),
+      db.invitation.count({ where: { acceptedAt: null, revokedAt: null } }),
+      db.companyAccessRequest.findMany({
+        where: { status: "PENDING" },
+        include: {
+          user: { select: { id: true, name: true, email: true, avatarUrl: true } },
+          company: { select: { name: true } },
+        },
+        orderBy: { createdAt: "desc" },
+      }),
+    ]
+  );
+  return {
+    kind: "staff" as const,
+    users,
+    companies,
+    invitations,
+    memberships: [],
+    accessRequests,
+    pendingInvitationCount,
+  };
 }
 
 function assertClientRoleGrant(principal: AppPrincipal, role: ClientRole) {
@@ -111,11 +128,22 @@ export async function createClientInvitation(
     forbidden("SDK administrator access is required.");
   const company = await getPrisma().company.findFirst({ where: { id: companyId, isActive: true } });
   if (!company) forbidden("The company is not available.");
+  const email = normalizeEmail(input.email);
+  const existingUser = await getPrisma().user.findFirst({
+    where: { email, OR: [{ sdkStaffRole: { not: null } }, { memberships: { some: {} } }] },
+    select: { id: true },
+  });
+  if (existingUser) forbidden("This email already has an account with application access.");
+  const pending = await getPrisma().invitation.findFirst({
+    where: { email, kind: "CLIENT", companyId, acceptedAt: null, revokedAt: null },
+    select: { id: true },
+  });
+  if (pending) forbidden("An invitation to this email is already pending. Resend it instead.");
   const token = randomBytes(32).toString("base64url");
   const invitation = await getPrisma().invitation.create({
     data: {
       tokenHash: hashInvitationToken(token),
-      email: input.email.trim().toLowerCase(),
+      email,
       kind: "CLIENT",
       companyId,
       clientRole: input.role,
@@ -134,11 +162,23 @@ export async function createStaffInvitation(
   requirePermission(principal, "staff:create");
   if (principal.kind !== "sdk-staff" || principal.role !== "ADMIN")
     forbidden("SDK administrator access is required.");
+  const email = normalizeEmail(input.email);
+  const existingUser = await getPrisma().user.findFirst({
+    where: { email },
+    select: { id: true, sdkStaffRole: true, memberships: { select: { id: true }, take: 1 } },
+  });
+  if (existingUser && (existingUser.sdkStaffRole || existingUser.memberships.length))
+    forbidden("This email already has an account with application access.");
+  const pending = await getPrisma().invitation.findFirst({
+    where: { email, kind: "SDK_STAFF", acceptedAt: null, revokedAt: null },
+    select: { id: true },
+  });
+  if (pending) forbidden("An invitation to this email is already pending. Resend it instead.");
   const token = randomBytes(32).toString("base64url");
   const invitation = await getPrisma().invitation.create({
     data: {
       tokenHash: hashInvitationToken(token),
-      email: input.email.trim().toLowerCase(),
+      email,
       kind: "SDK_STAFF",
       sdkStaffRole: input.role,
       invitedBy: principal.id,
@@ -149,9 +189,19 @@ export async function createStaffInvitation(
 }
 
 export async function markInvitationDelivery(id: string, sent: boolean) {
-  return getPrisma().invitation.update({
-    where: { id },
-    data: { deliveryStatus: sent ? "SENT" : "FAILED", lastSentAt: new Date() },
+  if (sent) {
+    return getPrisma().invitation.update({
+      where: { id },
+      data: {
+        deliveryStatus: "SENT",
+        lastSentAt: new Date(),
+        deliveryAttempts: { increment: 1 },
+      },
+    });
+  }
+  await getPrisma().invitation.updateMany({
+    where: { id, deliveryStatus: { not: "SENT" } },
+    data: { deliveryStatus: "FAILED", deliveryAttempts: { increment: 1 } },
   });
 }
 
@@ -187,7 +237,26 @@ export async function renewInvitation(principal: AppPrincipal, id: string) {
     },
     include: { company: true },
   });
-  return { invitation: updated, token };
+  return {
+    invitation: updated,
+    token,
+    previousTokenHash: invitation.tokenHash,
+    previousExpiresAt: invitation.expiresAt,
+  };
+}
+
+export async function restoreInvitationDelivery(
+  id: string,
+  previous: { tokenHash: string; expiresAt: Date }
+) {
+  return getPrisma().invitation.update({
+    where: { id },
+    data: {
+      tokenHash: previous.tokenHash,
+      expiresAt: previous.expiresAt,
+      deliveryStatus: "PENDING",
+    },
+  });
 }
 
 export async function updateMembershipRole(
@@ -257,16 +326,7 @@ export async function updateStaffUser(
   return getPrisma().user.update({ where: { id: userId }, data: input });
 }
 
-export async function acceptInvitation(input: {
-  token: string;
-  userId: string;
-  email: string;
-  emailVerified: boolean;
-}) {
-  if (!input.emailVerified)
-    forbidden(
-      "Verify your email with Auth0 before accepting this invitation. Check the verification email in your inbox, then try again."
-    );
+export async function acceptInvitation(input: { token: string; userId: string; email: string }) {
   return getPrisma().$transaction(async (db) => {
     const invitation = await db.invitation.findUnique({
       where: { tokenHash: hashInvitationToken(input.token) },
@@ -282,7 +342,7 @@ export async function acceptInvitation(input: {
     if (invitation.acceptedAt) forbidden("This invitation has already been used.");
     if (invitation.expiresAt <= new Date())
       forbidden("This invitation has expired. Ask the person who invited you to send a new one.");
-    if (invitation.email.trim().toLowerCase() !== input.email.trim().toLowerCase())
+    if (normalizeEmail(invitation.email) !== normalizeEmail(input.email))
       forbidden("Sign in with the email address that received this invitation.");
     const user = await db.user.findUniqueOrThrow({
       where: { id: input.userId },
@@ -290,7 +350,25 @@ export async function acceptInvitation(input: {
     });
     if (user.sdkStaffRole || user.memberships.length)
       forbidden("This account already has an application assignment.");
+    const matches = await db.user.findMany({
+      where: { email: { equals: normalizeEmail(invitation.email), mode: "insensitive" } },
+      select: { id: true },
+    });
+    if (matches.length > 1)
+      forbidden(
+        "This invitation email is linked to more than one account. Sign in with the account that registered it and request a new invitation."
+      );
+    const claimed = await db.invitation.updateMany({
+      where: { id: invitation.id, acceptedAt: null, revokedAt: null },
+      data: { acceptedAt: new Date(), acceptedBy: user.id },
+    });
+    if (claimed.count === 0) forbidden("This invitation has already been used.");
     if (invitation.kind === "CLIENT" && invitation.companyId && invitation.clientRole) {
+      const company = await db.company.findFirst({
+        where: { id: invitation.companyId, isActive: true },
+        select: { id: true },
+      });
+      if (!company) forbidden("The company is no longer active.");
       await db.membership.create({
         data: {
           userId: user.id,
@@ -307,10 +385,6 @@ export async function acceptInvitation(input: {
         data: { sdkStaffRole: invitation.sdkStaffRole },
       });
     } else forbidden("This invitation has an invalid target.");
-    await db.invitation.update({
-      where: { id: invitation.id },
-      data: { acceptedAt: new Date(), acceptedBy: user.id },
-    });
     const updated = await db.invitation.findUnique({
       where: { id: invitation.id },
       include: { company: true },

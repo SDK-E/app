@@ -7,8 +7,10 @@ import { InvitationAcceptForm } from "@/components/portal/InvitationAcceptForm";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { getServerEnv } from "@/lib/env";
-import { getCurrentPrincipal } from "@/lib/identity";
+import { getCurrentPrincipal, IdentityError } from "@/lib/identity";
 import { getInvitationPreview } from "@/lib/user-management";
+import { maskEmail, normalizeEmail } from "@/lib/utils";
+import type { AppPrincipal } from "@/types";
 
 export const metadata: Metadata = {
   title: "Invitation | SDK Enterprises",
@@ -39,11 +41,16 @@ export default async function InvitationPage({
   params: Promise<{ locale: string; token: string }>;
 }) {
   const { locale, token } = await params;
-  const [t, invitation, principal] = await Promise.all([
+  const [t, invitation] = await Promise.all([
     getTranslations({ locale, namespace: "portal.invitation" }),
     getInvitationPreview(token),
-    getCurrentPrincipal(),
   ]);
+  let principal: AppPrincipal | null = null;
+  try {
+    principal = await getCurrentPrincipal();
+  } catch (error) {
+    if (!(error instanceof IdentityError)) throw error;
+  }
   const inviteUrl = `/${locale}/invite/${token}`;
   const absoluteInviteUrl = `${await origin()}${inviteUrl}`;
   const available =
@@ -55,6 +62,10 @@ export default async function InvitationPage({
   const role = (invitation?.clientRole ?? invitation?.sdkStaffRole ?? "member")
     .replaceAll("_", " ")
     .toLowerCase();
+  const matchesInvitee =
+    !!principal &&
+    !!invitation &&
+    normalizeEmail(principal.email) === normalizeEmail(invitation.email);
   const unavailableCopy = invitation
     ? {
         expired: t("unavailableExpired", {
@@ -83,7 +94,9 @@ export default async function InvitationPage({
               {t("intro", { destination, role })}
             </p>
             <p className="mt-3 text-body text-muted-foreground">
-              {t("email", { email: invitation.email })}
+              {t("email", {
+                email: matchesInvitee ? invitation.email : maskEmail(invitation.email),
+              })}
             </p>
             {invitation.inviter?.name ? (
               <p className="mt-3 text-body text-muted-foreground">
@@ -113,15 +126,24 @@ export default async function InvitationPage({
                   {t("haveAccount")}
                 </Button>
               </div>
-            ) : principal.email.toLowerCase() === invitation.email.toLowerCase() ? (
+            ) : matchesInvitee && principal.kind === "unassigned" ? (
               <InvitationAcceptForm
                 action={acceptInvitationAction.bind(null, locale, token)}
                 label={t("accept")}
               />
+            ) : matchesInvitee ? (
+              <div className="mt-8 space-y-3">
+                <p role="alert" className="text-body">
+                  {t("alreadyAssigned")}
+                </p>
+                <Button href={`/${locale}/app`} className="w-full">
+                  {t("openPortal")}
+                </Button>
+              </div>
             ) : (
               <div className="mt-8 space-y-3">
                 <p role="alert" className="text-body">
-                  {t("mismatch", { invited: invitation.email, signedin: principal.email })}
+                  {t("mismatch", { signedin: principal.email })}
                 </p>
                 <Button
                   href={`/auth/logout?returnTo=${encodeURIComponent(absoluteInviteUrl)}`}

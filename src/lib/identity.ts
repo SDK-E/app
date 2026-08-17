@@ -13,6 +13,10 @@ const auth0IdentitySchema = z.object({
   picture: z.string().url().optional(),
 });
 
+function normalizeEmail(email: string): string {
+  return email.trim().toLowerCase();
+}
+
 export class IdentityError extends Error {
   constructor(
     public readonly code: "INVALID_IDENTITY" | "INACTIVE_USER" | "IDENTITY_CONFLICT",
@@ -62,7 +66,7 @@ export async function resolveAppPrincipal(session: SessionData): Promise<AppPrin
   const identity = parsed.data;
   const db = getPrisma();
   const profile = {
-    email: identity.email,
+    email: normalizeEmail(identity.email),
     name: identity.name ?? identity.email,
     avatarUrl: identity.picture ?? null,
     lastLoginAt: new Date(),
