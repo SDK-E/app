@@ -87,7 +87,7 @@ Rules in `public-site` skill. Load before any public-facing route/layout/compone
 
 ## Skills
 
-`.agents/skills/` (committed): `prisma-next-*`, `deploy-to-vercel`, `vercel-cli-with-tokens`, `author-auth0-skill`, `resend-email`, `i18n`, `humanize-copy`, `public-site`, `test-writing`, `bugfix`, `code-review`. OpenCode loads via `skills.paths`; others scan `.agents/skills/`.
+`.agents/skills/`: `prisma-next-*`, `deploy-to-vercel`, `vercel-cli-with-tokens`, `author-auth0-skill`, `resend-email`, `i18n`, `humanize-copy`, `public-site`, `test-writing`, `bugfix`, `code-review`. OpenCode loads via `skills.paths`; others scan `.agents/skills/`.
 
 ## Deterministic enforcement
 

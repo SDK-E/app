@@ -115,7 +115,7 @@ export async function createClientInvitation(
   const invitation = await getPrisma().invitation.create({
     data: {
       tokenHash: hashInvitationToken(token),
-      email: input.email,
+      email: input.email.trim().toLowerCase(),
       kind: "CLIENT",
       companyId,
       clientRole: input.role,
@@ -138,7 +138,7 @@ export async function createStaffInvitation(
   const invitation = await getPrisma().invitation.create({
     data: {
       tokenHash: hashInvitationToken(token),
-      email: input.email,
+      email: input.email.trim().toLowerCase(),
       kind: "SDK_STAFF",
       sdkStaffRole: input.role,
       invitedBy: principal.id,
@@ -282,7 +282,7 @@ export async function acceptInvitation(input: {
     if (invitation.acceptedAt) forbidden("This invitation has already been used.");
     if (invitation.expiresAt <= new Date())
       forbidden("This invitation has expired. Ask the person who invited you to send a new one.");
-    if (invitation.email !== input.email.trim().toLowerCase())
+    if (invitation.email.trim().toLowerCase() !== input.email.trim().toLowerCase())
       forbidden("Sign in with the email address that received this invitation.");
     const user = await db.user.findUniqueOrThrow({
       where: { id: input.userId },
@@ -311,7 +311,11 @@ export async function acceptInvitation(input: {
       where: { id: invitation.id },
       data: { acceptedAt: new Date(), acceptedBy: user.id },
     });
-    return invitation;
+    const updated = await db.invitation.findUnique({
+      where: { id: invitation.id },
+      include: { company: true },
+    });
+    return updated;
   });
 }
 
