@@ -14,6 +14,7 @@ Classification of failures observed in agent-generated PRs and code changes.
 | `review:api`      | Hallucinated path/API, stale import, wrong type shape     |
 | `review:contract` | Breaking change without migration, schema drift           |
 | `review:style`    | Formatting, naming, structure convention violation        |
+| `review:tokens`   | Excessive token use, verbose output, missing compression  |
 
 ## Blast-radius bands
 
@@ -29,6 +30,18 @@ Classification of failures observed in agent-generated PRs and code changes.
 - `review:logic`, `review:security`, `review:contract` → PR blocked until fixed.
 - `review:typo`, `review:style` → auto-fix preferred; reviewer may approve with note.
 - `review:perf`, `review:test`, `review:api` → reviewer decides; log in review-log.
+- `review:tokens` → compress output, use caveman-compress on memory files, reduce verbosity.
+
+## Token reduction failure modes
+
+| Mode                 | Symptom                             | Fix                                     |
+| -------------------- | ----------------------------------- | --------------------------------------- |
+| Verbose output       | Long explanations, filler phrases   | Apply caveman compression rules         |
+| Stale context        | Re-deriving known facts             | Reference docs/ instead of re-searching |
+| Unnecessary searches | websearch for things in repo docs   | Follow evidence hierarchy               |
+| Large tool output    | cat/awk/sed on files                | Use Read/Grep tools with limits         |
+| Memory bloat         | AGENTS.md > 50 lines                | Compress to pointer table format        |
+| Redundant reads      | Re-reading same file multiple times | Cache in context, read once             |
 
 ## Source
 

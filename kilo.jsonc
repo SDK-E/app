@@ -7,7 +7,7 @@
   },
   "permission": {
     "bash": {
-      "*": "ask",
+      "*": "allow",
       "npm *": "allow",
       "npx *": "allow",
       "node *": "allow",
@@ -33,18 +33,26 @@
       "git clean *": "deny",
       "npx prisma migrate deploy*": "deny",
       "npx prisma migrate reset*": "deny",
-      "npx prisma db push*": "ask",
-      "npx prisma db execute*": "ask",
-      "npx prisma migrate dev*": "ask",
-      "npx prisma migrate status*": "ask",
+      "npx prisma db push*": "allow",
+      "npx prisma db execute*": "allow",
+      "npx prisma migrate dev*": "allow",
+      "npx prisma migrate status*": "allow",
       "psql *": "deny",
       "rm -rf *": "deny",
       "rm -fr *": "deny",
       "rm -r -f *": "deny",
       "rm -f -r *": "deny",
       "rm --recursive *": "deny",
-      "rm -r *": "ask"
-    }
+      "rm -r *": "allow",
+      "grep *": "deny",
+      "cat *": "deny",
+      "sed *": "deny",
+      "head *": "deny",
+      "tail *": "deny",
+      "awk *": "deny"
+    },
+    "websearch": "allow",
+    "webfetch": "allow"
   },
   "mcp": {
     "context7": {

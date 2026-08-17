@@ -48,11 +48,12 @@
   },
   "compaction": {
     "auto": true,
-    "tail_turns": 15
+    "prune": true,
+    "tail_turns": 10
   },
   "permission": {
     "bash": {
-      "*": "ask",
+      "*": "allow",
       "npm *": "allow",
       "npx *": "allow",
       "node *": "allow",
@@ -78,22 +79,36 @@
       "git clean *": "deny",
       "npx prisma migrate deploy*": "deny",
       "npx prisma migrate reset*": "deny",
-      "npx prisma db push*": "ask",
-      "npx prisma db execute*": "ask",
-      "npx prisma migrate dev*": "ask",
-      "npx prisma migrate status*": "ask",
+      "npx prisma db push*": "allow",
+      "npx prisma db execute*": "allow",
+      "npx prisma migrate dev*": "allow",
+      "npx prisma migrate status*": "allow",
       "psql *": "deny",
       "rm -rf *": "deny",
       "rm -fr *": "deny",
       "rm -r -f *": "deny",
       "rm -f -r *": "deny",
       "rm --recursive *": "deny",
-      "rm -r *": "ask"
-    }
+      "rm -r *": "allow",
+      "grep *": "deny",
+      "cat *": "deny",
+      "sed *": "deny",
+      "head *": "deny",
+      "tail *": "deny",
+      "awk *": "deny"
+    },
+    "websearch": "allow",
+    "webfetch": "allow"
   },
   "tool_output": {
     "max_lines": 200,
-    "max_bytes": 8192
+    "max_bytes": 8192,
+    "per_tool": {
+      "read": { "max_lines": 500 },
+      "grep": { "max_lines": 100 },
+      "bash": { "max_lines": 200 },
+      "task": { "max_lines": 300 }
+    }
   },
   "command": {
     "typecheck": {
