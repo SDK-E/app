@@ -95,6 +95,9 @@
     "@parcel/watcher@2.6.0": true,
     "@swc/core@1.16.0": true
   },
+  "overrides": {
+    "deepmerge-ts": "^8.0.0"
+  },
   "browserslist": [
     ">0.5%",
     "last 2 versions",
