@@ -49,7 +49,10 @@ export function AppNav({
   }
   const activeCompanyId = resolveActiveCompanyId(pathname);
   const memberships = principal.memberships;
-  const active = memberships.find((membership) => membership.companyId === activeCompanyId) ?? null;
+  const active =
+    memberships.find((membership) => membership.companyId === activeCompanyId) ??
+    memberships[0] ??
+    null;
   const links: Array<{ href: string; label: string }> = [];
   if (active) {
     links.push(
