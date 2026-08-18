@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from "react";
 import { useTranslations } from "next-intl";
-import { submitEnquiry, type EnquiryResult } from "@/lib/enquiries";
+import { submitEnquiry, type EnquiryResult } from "@/lib/marketing/enquiries";
 import { Button } from "@/components/ui/Button";
 
 export function EnquiryForm() {

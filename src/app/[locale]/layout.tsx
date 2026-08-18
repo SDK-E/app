@@ -6,8 +6,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { locales, Locale } from "@/i18n";
-import { getSiteUrl } from "@/lib/seo";
-import { siteConfig } from "@/lib/siteConfig";
+import { getSiteUrl } from "@/lib/marketing/seo";
+import { siteConfig } from "@/lib/marketing/site";
 import "../globals.css";
 
 const jetbrainsMono = JetBrains_Mono({

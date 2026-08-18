@@ -19,11 +19,11 @@
     },
     "maildev": {
       "type": "local",
-      "command": ["node", "scripts/mail-mcp.ts"]
+      "command": ["node", "scripts/mail/mail-mcp.ts"]
     },
     "humanizer": {
       "type": "local",
-      "command": ["node", "--import", "tsx", "scripts/humanizer-mcp.ts"]
+      "command": ["node", "--import", "tsx", "scripts/mcp/humanizer-mcp.ts"]
     },
     "gh_grep": {
       "type": "remote",

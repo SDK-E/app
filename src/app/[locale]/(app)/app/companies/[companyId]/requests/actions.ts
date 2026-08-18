@@ -11,8 +11,8 @@ import {
   respondToInformationRequest,
   submitRequest,
   updateRequestDraft,
-} from "@/lib/data/serviceRequests";
-import { getCurrentPrincipal } from "@/lib/identity";
+} from "@/lib/requests";
+import { getCurrentPrincipal } from "@/lib/auth/identity";
 import {
   projectConversionSchema,
   requestDraftSchema,
@@ -45,6 +45,7 @@ function message(error: unknown) {
 
 export async function saveRequestAction(
   locale: string,
+  companyId: string,
   requestId: string | null,
   _state: RequestActionState,
   formData: FormData
@@ -62,23 +63,24 @@ export async function saveRequestAction(
     if (requestId) {
       const saved =
         intent === "submit"
-          ? await submitRequest(principal, requestId, parsed.data)
-          : await updateRequestDraft(principal, requestId, parsed.data);
+          ? await submitRequest(principal, companyId, requestId, parsed.data)
+          : await updateRequestDraft(principal, companyId, requestId, parsed.data);
       savedId = saved.id;
     } else {
-      const draft = await createRequestDraft(principal, parsed.data);
+      const draft = await createRequestDraft(principal, companyId, parsed.data);
       savedId = draft.id;
-      if (intent === "submit") await submitRequest(principal, draft.id, parsed.data);
+      if (intent === "submit") await submitRequest(principal, companyId, draft.id, parsed.data);
     }
   } catch (error) {
     return { error: message(error) };
   }
-  revalidatePath(`/${locale}/app`);
-  redirect(`/${locale}/app/requests/${savedId}`);
+  revalidatePath(`/${locale}/app/companies/${companyId}/requests`);
+  redirect(`/${locale}/app/companies/${companyId}/requests/${savedId}`);
 }
 
 export async function replyAction(
   locale: string,
+  companyId: string,
   requestId: string,
   _state: RequestActionState,
   formData: FormData
@@ -88,16 +90,17 @@ export async function replyAction(
   const parsed = requestReplySchema.safeParse({ content: formData.get("content") });
   if (!parsed.success) return { error: parsed.error.issues[0]?.message };
   try {
-    await respondToInformationRequest(principal, requestId, parsed.data.content);
+    await respondToInformationRequest(principal, companyId, requestId, parsed.data.content);
   } catch (error) {
     return { error: message(error) };
   }
-  revalidatePath(`/${locale}/app/requests/${requestId}`);
+  revalidatePath(`/${locale}/app/companies/${companyId}/requests/${requestId}`);
   return {};
 }
 
 export async function acceptProposalAction(
   locale: string,
+  companyId: string,
   requestId: string,
   _state: RequestActionState,
   _formData: FormData
@@ -107,11 +110,11 @@ export async function acceptProposalAction(
   const principal = await getCurrentPrincipal();
   if (!principal) return { error: "Your session has ended." };
   try {
-    await acceptProposal(principal, requestId);
+    await acceptProposal(principal, companyId, requestId);
   } catch (error) {
     return { error: message(error) };
   }
-  revalidatePath(`/${locale}/app/requests/${requestId}`);
+  revalidatePath(`/${locale}/app/companies/${companyId}/requests/${requestId}`);
   return {};
 }
 

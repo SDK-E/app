@@ -1,7 +1,7 @@
 "use server";
 
 import { createOwnedCompany } from "@/lib/companies";
-import { getCurrentPrincipal } from "@/lib/identity";
+import { getCurrentPrincipal } from "@/lib/auth/identity";
 import { companyCreationSchema } from "@/lib/schemas/company";
 
 export interface CompanyCreationState {

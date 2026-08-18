@@ -4,51 +4,36 @@ import { headers } from "next/headers";
 import { revalidatePath } from "next/cache";
 
 import { getServerEnv } from "@/lib/env";
-import { sendAccessRequestResolvedNotification, sendInvitationNotification } from "@/lib/email";
-import { getCurrentPrincipal } from "@/lib/identity";
+import { sendInvitationNotification } from "@/lib/email";
 import {
-  approveAccessRequestSchema,
   clientInvitationSchema,
-  declineAccessRequestSchema,
   idSchema,
-  membershipUpdateSchema,
   staffInvitationSchema,
-  staffUpdateSchema,
 } from "@/lib/schemas/userManagement";
 import {
-  approveCompanyAccessRequest,
   createClientInvitation,
   createStaffInvitation,
-  declineCompanyAccessRequest,
   markInvitationDelivery,
-  regenerateCompanyAccessCode,
-  removeMembership,
   renewInvitation,
   restoreInvitationDelivery,
   revokeInvitation,
-  updateMembershipRole,
-  updateStaffUser,
-} from "@/lib/user-management";
+} from "@/lib/users";
+import { errorMessage, principalOrThrow } from "./actions-common";
+import type { UserActionState } from "./actions-common";
 
-export interface UserActionState {
-  error?: string;
-  success?: string;
+export type { UserActionState };
+
+function usersPath(locale: string, companyId?: string | null) {
+  return companyId ? `/${locale}/app/companies/${companyId}/users` : `/${locale}/app/users`;
 }
 
-function errorMessage(error: unknown) {
-  return error instanceof Error ? error.message : "The action could not be completed.";
-}
-async function principalOrThrow() {
-  const principal = await getCurrentPrincipal();
-  if (!principal) throw new Error("Your session has ended.");
-  return principal;
-}
 async function origin() {
   const configured = getServerEnv().AUTH0_BASE_URL;
   if (configured) return configured.replace(/\/$/, "");
   const values = await headers();
   return `${values.get("x-forwarded-proto") ?? "http"}://${values.get("host")}`;
 }
+
 async function deliver(
   locale: string,
   token: string,
@@ -79,20 +64,27 @@ async function deliver(
 
 export async function inviteClientAction(
   locale: string,
+  companyId: string | null,
   _state: UserActionState,
   formData: FormData
 ): Promise<UserActionState> {
   const parsed = clientInvitationSchema.safeParse({
     email: formData.get("email"),
     role: formData.get("role"),
-    companyId: formData.get("companyId") || undefined,
+    companyId: formData.get("companyId") || companyId || undefined,
   });
   if (!parsed.success) return { error: parsed.error.issues[0]?.message };
   try {
     const principal = await principalOrThrow();
-    const created = await createClientInvitation(principal, parsed.data);
+    const targetCompanyId = String(formData.get("companyId") || "") || companyId || undefined;
+    if (!targetCompanyId) throw new Error("A company is required.");
+    const created = await createClientInvitation(
+      principal,
+      { email: parsed.data.email, role: parsed.data.role },
+      targetCompanyId
+    );
     const sent = await deliver(locale, created.token, created.invitation, principal.name);
-    revalidatePath(`/${locale}/app/users`);
+    revalidatePath(usersPath(locale, targetCompanyId));
     return {
       success: sent
         ? "Invitation sent."
@@ -128,78 +120,17 @@ export async function inviteStaffAction(
   }
 }
 
-export async function updateMembershipAction(
-  locale: string,
-  _state: UserActionState,
-  formData: FormData
-): Promise<UserActionState> {
-  const parsed = membershipUpdateSchema.safeParse({
-    membershipId: formData.get("membershipId"),
-    role: formData.get("role"),
-  });
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message };
-  try {
-    await updateMembershipRole(
-      await principalOrThrow(),
-      parsed.data.membershipId,
-      parsed.data.role
-    );
-    revalidatePath(`/${locale}/app/users`);
-    return { success: "Role updated." };
-  } catch (error) {
-    return { error: errorMessage(error) };
-  }
-}
-
-export async function removeMembershipAction(
-  locale: string,
-  _state: UserActionState,
-  formData: FormData
-): Promise<UserActionState> {
-  const id = idSchema.safeParse(formData.get("membershipId"));
-  if (!id.success) return { error: "Invalid membership." };
-  try {
-    await removeMembership(await principalOrThrow(), id.data);
-    revalidatePath(`/${locale}/app/users`);
-    return { success: "Access removed." };
-  } catch (error) {
-    return { error: errorMessage(error) };
-  }
-}
-
-export async function updateStaffAction(
-  locale: string,
-  _state: UserActionState,
-  formData: FormData
-): Promise<UserActionState> {
-  const parsed = staffUpdateSchema.safeParse({
-    userId: formData.get("userId"),
-    role: formData.get("role") || undefined,
-    isActive: formData.get("isActive") || undefined,
-  });
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message };
-  try {
-    await updateStaffUser(await principalOrThrow(), parsed.data.userId, {
-      role: parsed.data.role,
-      isActive: parsed.data.isActive,
-    });
-    revalidatePath(`/${locale}/app/users`);
-    return { success: "User updated." };
-  } catch (error) {
-    return { error: errorMessage(error) };
-  }
-}
-
 export async function revokeInvitationAction(
   locale: string,
+  companyId: string | null,
   _state: UserActionState,
   formData: FormData
 ): Promise<UserActionState> {
   const id = idSchema.safeParse(formData.get("invitationId"));
   if (!id.success) return { error: "Invalid invitation." };
   try {
-    await revokeInvitation(await principalOrThrow(), id.data);
-    revalidatePath(`/${locale}/app/users`);
+    await revokeInvitation(await principalOrThrow(), id.data, companyId ?? undefined);
+    revalidatePath(usersPath(locale, companyId));
     return { success: "Invitation revoked." };
   } catch (error) {
     return { error: errorMessage(error) };
@@ -208,6 +139,7 @@ export async function revokeInvitationAction(
 
 export async function resendInvitationAction(
   locale: string,
+  companyId: string | null,
   _state: UserActionState,
   formData: FormData
 ): Promise<UserActionState> {
@@ -215,7 +147,7 @@ export async function resendInvitationAction(
   if (!id.success) return { error: "Invalid invitation." };
   try {
     const principal = await principalOrThrow();
-    const renewed = await renewInvitation(principal, id.data);
+    const renewed = await renewInvitation(principal, id.data, companyId ?? undefined);
     let sent: boolean;
     try {
       sent = await deliver(locale, renewed.token, renewed.invitation, principal.name);
@@ -224,7 +156,7 @@ export async function resendInvitationAction(
         tokenHash: renewed.previousTokenHash,
         expiresAt: renewed.previousExpiresAt,
       });
-      revalidatePath(`/${locale}/app/users`);
+      revalidatePath(usersPath(locale, companyId));
       return { error: "The invitation could not be renewed. Your previous link is still valid." };
     }
     if (!sent) {
@@ -232,79 +164,11 @@ export async function resendInvitationAction(
         tokenHash: renewed.previousTokenHash,
         expiresAt: renewed.previousExpiresAt,
       });
-      revalidatePath(`/${locale}/app/users`);
+      revalidatePath(usersPath(locale, companyId));
       return { error: "The invitation could not be renewed. Your previous link is still valid." };
     }
-    revalidatePath(`/${locale}/app/users`);
+    revalidatePath(usersPath(locale, companyId));
     return { success: "Invitation resent." };
-  } catch (error) {
-    return { error: errorMessage(error) };
-  }
-}
-
-export async function approveAccessRequestAction(
-  locale: string,
-  _state: UserActionState,
-  formData: FormData
-): Promise<UserActionState> {
-  const parsed = approveAccessRequestSchema.safeParse({
-    requestId: formData.get("requestId"),
-    role: formData.get("role"),
-  });
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message };
-  try {
-    const principal = await principalOrThrow();
-    const { request } = await approveCompanyAccessRequest(principal, parsed.data.requestId, {
-      role: parsed.data.role,
-    });
-    await sendAccessRequestResolvedNotification({
-      to: request.user.email,
-      recipientName: request.user.name,
-      companyName: request.company.name,
-      outcome: "APPROVED",
-      role: parsed.data.role.replaceAll("_", " ").toLowerCase(),
-    });
-    revalidatePath(`/${locale}/app/users`);
-    return { success: "Access request approved." };
-  } catch (error) {
-    return { error: errorMessage(error) };
-  }
-}
-
-export async function declineAccessRequestAction(
-  locale: string,
-  _state: UserActionState,
-  formData: FormData
-): Promise<UserActionState> {
-  const parsed = declineAccessRequestSchema.safeParse({ requestId: formData.get("requestId") });
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message };
-  try {
-    const principal = await principalOrThrow();
-    const request = await declineCompanyAccessRequest(principal, parsed.data.requestId);
-    await sendAccessRequestResolvedNotification({
-      to: request.user.email,
-      recipientName: request.user.name,
-      companyName: request.company.name,
-      outcome: "DECLINED",
-    });
-    revalidatePath(`/${locale}/app/users`);
-    return { success: "Access request declined." };
-  } catch (error) {
-    return { error: errorMessage(error) };
-  }
-}
-
-export async function regenerateAccessCodeAction(
-  locale: string,
-  _state: UserActionState,
-  formData: FormData
-): Promise<UserActionState> {
-  const companyId = idSchema.safeParse(formData.get("companyId"));
-  if (!companyId.success) return { error: "Invalid company." };
-  try {
-    await regenerateCompanyAccessCode(await principalOrThrow(), companyId.data);
-    revalidatePath(`/${locale}/app/users`);
-    return { success: "Access code regenerated." };
   } catch (error) {
     return { error: errorMessage(error) };
   }

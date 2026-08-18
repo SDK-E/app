@@ -1,16 +1,14 @@
 import { getTranslations } from "next-intl/server";
 
-import { ActionForm } from "@/components/portal/ActionForm";
-import { Badge } from "@/components/ui/Badge";
-import { Card } from "@/components/ui/Card";
-import { getRequest } from "@/lib/data/serviceRequests";
-import { getCurrentPrincipal } from "@/lib/identity";
-import { convertAction, sdkDecisionAction } from "@/app/[locale]/(app)/app/requests/actions";
+import { RequestActionPanels } from "@/components/portal/requests/RequestActionPanels";
+import { RequestConversationCard } from "@/components/portal/requests/RequestConversationCard";
+import { RequestDetailsCard } from "@/components/portal/requests/RequestDetailsCard";
+import { RequestHeader } from "@/components/portal/requests/RequestHeader";
+import { RequestHistoryCard } from "@/components/portal/requests/RequestHistoryCard";
+import { getRequest } from "@/lib/requests";
+import { getCurrentPrincipal } from "@/lib/auth/identity";
 
-const control =
-  "mt-2 min-h-12 w-full rounded-control border border-line bg-paper px-4 py-3 text-body outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark";
-
-export default async function CompanyRequestPage({
+export default async function CompanyRequestDetailPage({
   params,
 }: {
   params: Promise<{ locale: string; companyId: string; requestId: string }>;
@@ -19,130 +17,36 @@ export default async function CompanyRequestPage({
     params,
     getCurrentPrincipal(),
   ]);
-  if (!principal || principal.kind !== "sdk-staff") return null;
-  const [request, t, tr] = await Promise.all([
+  if (!principal || principal.kind === "unassigned") return null;
+  const [request, tr, t] = await Promise.all([
     getRequest(principal, requestId, companyId),
-    getTranslations({ locale, namespace: "portal.operations" }),
     getTranslations({ locale, namespace: "portal.requests" }),
+    getTranslations({ locale, namespace: "portal.operations" }),
   ]);
-  const action = sdkDecisionAction.bind(null, locale, companyId, requestId);
   return (
     <article>
-      <div className="flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <p className="text-label font-extrabold uppercase tracking-eyebrow text-muted-foreground">
-            {t("title")}
-          </p>
-          <h1 className="mt-4 text-h1 font-extrabold">{request.title}</h1>
-        </div>
-        <Badge>
-          {request.projects.length ? tr("converted") : tr(`statuses.${request.status}`)}
-        </Badge>
-      </div>
+      <RequestHeader
+        locale={locale}
+        request={request}
+        t={tr}
+        eyebrow={t("title")}
+        submittedByName={request.submittedByUser.name}
+      />
       <div className="mt-10 grid gap-6 xl:grid-cols-[1.2fr_.8fr]">
         <div className="space-y-6">
-          <Card>
-            <h2 className="text-h3 font-extrabold">{tr("details")}</h2>
-            <p className="mt-5 whitespace-pre-wrap text-body">{request.description}</p>
-            {request.businessContext ? (
-              <p className="mt-4 whitespace-pre-wrap text-body text-muted-foreground">
-                {request.businessContext}
-              </p>
-            ) : null}
-          </Card>
-          <Card>
-            <h2 className="text-h3 font-extrabold">{tr("conversation")}</h2>
-            <div className="mt-5 space-y-4">
-              {request.messages.map((item) => (
-                <div key={item.id} className="border-t border-line pt-4">
-                  <p className="text-body font-semibold">{item.author.name}</p>
-                  <p className="mt-1 whitespace-pre-wrap text-body text-muted-foreground">
-                    {item.content}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </Card>
-          <Card>
-            <h2 className="text-h3 font-extrabold">{tr("history")}</h2>
-            <ol className="mt-5 space-y-4">
-              {request.activities.map((item) => (
-                <li key={item.id} className="border-l border-line pl-4 text-body">
-                  <p className="font-semibold">{item.type.replaceAll("_", " ").toLowerCase()}</p>
-                  <p className="text-muted-foreground">
-                    {item.actor.name} ·{" "}
-                    {new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(
-                      item.createdAt
-                    )}
-                  </p>
-                </li>
-              ))}
-            </ol>
-          </Card>
+          <RequestDetailsCard request={request} t={tr} />
+          <RequestConversationCard request={request} t={tr} />
+          <RequestHistoryCard locale={locale} request={request} t={tr} />
         </div>
-        <aside className="space-y-6">
-          {request.status === "SUBMITTED" ? (
-            <Card>
-              <ActionForm action={action} buttonLabel={t("startReview")}>
-                <input type="hidden" name="decision" value="start-review" />
-              </ActionForm>
-            </Card>
-          ) : null}
-          {request.status === "IN_REVIEW" ? (
-            <>
-              <Card>
-                <ActionForm action={action} buttonLabel={t("requestInformation")}>
-                  <input type="hidden" name="decision" value="request-information" />
-                  <label className="block text-label font-extrabold uppercase tracking-eyebrow">
-                    {t("response")}
-                    <textarea className={control} name="content" rows={5} required />
-                  </label>
-                </ActionForm>
-              </Card>
-              <Card>
-                <ActionForm action={action} buttonLabel={t("proposalReady")}>
-                  <input type="hidden" name="decision" value="proposal-ready" />
-                  <label className="block text-label font-extrabold uppercase tracking-eyebrow">
-                    {t("response")}
-                    <textarea className={control} name="content" rows={5} required />
-                  </label>
-                </ActionForm>
-              </Card>
-            </>
-          ) : null}
-          {["SUBMITTED", "IN_REVIEW", "INFORMATION_REQUIRED", "PROPOSAL_READY"].includes(
-            request.status
-          ) ? (
-            <Card>
-              <ActionForm action={action} buttonLabel={t("reject")} variant="destructive">
-                <input type="hidden" name="decision" value="reject" />
-                <label className="block text-label font-extrabold uppercase tracking-eyebrow">
-                  {t("response")}
-                  <textarea className={control} name="content" rows={4} required />
-                </label>
-              </ActionForm>
-            </Card>
-          ) : null}
-          {request.status === "APPROVED" && !request.projects.length ? (
-            <Card>
-              <h2 className="text-h3 font-extrabold">{t("convert")}</h2>
-              <div className="mt-5">
-                <ActionForm
-                  action={convertAction.bind(null, locale, companyId, requestId)}
-                  buttonLabel={t("convert")}
-                >
-                  <label className="block text-label font-extrabold uppercase tracking-eyebrow">
-                    {t("projectName")}
-                    <input className={control} name="name" required />
-                  </label>
-                  <label className="block text-label font-extrabold uppercase tracking-eyebrow">
-                    {t("projectDescription")}
-                    <textarea className={control} name="description" rows={5} required />
-                  </label>
-                </ActionForm>
-              </div>
-            </Card>
-          ) : null}
+        <aside>
+          <RequestActionPanels
+            locale={locale}
+            companyId={companyId}
+            request={request}
+            principal={principal}
+            staffT={t}
+            clientT={tr}
+          />
         </aside>
       </div>
     </article>

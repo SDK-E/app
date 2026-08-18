@@ -18,7 +18,7 @@ import { QualityFramework } from "@/components/marketing/QualityFramework";
 import { ServiceChapter, type ServiceChapterItem } from "@/components/marketing/ServiceChapter";
 import SiteFooter from "@/components/marketing/SiteFooter";
 import { localizePath } from "@/i18n";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata } from "@/lib/marketing/seo";
 
 type TeamModelItem = {
   number: string;

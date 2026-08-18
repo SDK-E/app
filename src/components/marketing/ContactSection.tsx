@@ -1,5 +1,5 @@
 import { Section } from "@/components/layout/Section";
-import { siteConfig } from "@/lib/siteConfig";
+import { siteConfig } from "@/lib/marketing/site";
 import { getTranslations } from "next-intl/server";
 
 export default async function ContactSection({ locale }: { locale: string }) {

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { LegalPage } from "@/components/marketing/LegalPage";
 import { LegalH2, LegalIntro, LegalParagraph, LegalTitle } from "@/components/marketing/LegalText";
 import { getTranslations } from "next-intl/server";
-import { siteConfig } from "@/lib/siteConfig";
-import { breadcrumbListJsonLd } from "@/lib/seo";
+import { siteConfig } from "@/lib/marketing/site";
+import { breadcrumbListJsonLd } from "@/lib/marketing/seo";
 
 export async function generateMetadata({
   params,

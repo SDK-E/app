@@ -1,5 +1,5 @@
 import { Auth0Client } from "@auth0/nextjs-auth0/server";
-import { getServerEnv } from "./env";
+import { getServerEnv } from "@/lib/env";
 
 function createAuth0Client() {
   const env = getServerEnv();

@@ -18,11 +18,11 @@
     },
     "maildev": {
       "command": "node",
-      "args": ["scripts/mail-mcp.ts"]
+      "args": ["scripts/mail/mail-mcp.ts"]
     },
     "humanizer": {
       "command": "node",
-      "args": ["--import", "tsx", "scripts/humanizer-mcp.ts"]
+      "args": ["--import", "tsx", "scripts/mcp/humanizer-mcp.ts"]
     },
     "gh_grep": {
       "url": "https://mcp.grep.app"

@@ -18,7 +18,7 @@ async function connect(): Promise<Client> {
   const client = new Client({ name: "humanizer-test", version: "1.0.0" });
   const transport = new StdioClientTransport({
     command: process.execPath,
-    args: ["--import", "tsx", "scripts/humanizer-mcp.ts"],
+    args: ["--import", "tsx", "scripts/mcp/humanizer-mcp.ts"],
     cwd: process.cwd(),
     stderr: "pipe",
   });
@@ -94,7 +94,7 @@ describe("humanizer MCP", () => {
   });
 
   it("humanizes a workspace prose file without changing fenced code", async () => {
-    const directory = await mkdtemp(join(process.cwd(), "src/lib/.humanizer-test-"));
+    const directory = await mkdtemp(join(process.cwd(), "scripts/mcp/.humanizer-test-"));
     temporaryDirectories.push(directory);
     const filePath = join(directory, "copy.md");
     await writeFile(
@@ -142,7 +142,7 @@ describe("humanizer MCP", () => {
   });
 
   it("rejects a malformed fenced file and leaves the source untouched", async () => {
-    const directory = await mkdtemp(join(process.cwd(), "src/lib/.humanizer-test-"));
+    const directory = await mkdtemp(join(process.cwd(), "scripts/mcp/.humanizer-test-"));
     temporaryDirectories.push(directory);
     const filePath = join(directory, "malformed.md");
     const original =

@@ -11,8 +11,8 @@ import {
   type QualityFrameworkItem,
 } from "@/components/marketing/QualityFramework";
 import SiteFooter from "@/components/marketing/SiteFooter";
-import { buildMetadata } from "@/lib/seo";
-import { siteConfig } from "@/lib/siteConfig";
+import { buildMetadata } from "@/lib/marketing/seo";
+import { siteConfig } from "@/lib/marketing/site";
 
 export async function generateMetadata({
   params,

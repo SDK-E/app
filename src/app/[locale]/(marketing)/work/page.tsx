@@ -10,7 +10,7 @@ import { ProjectCta } from "@/components/marketing/ProjectCta";
 import { ScenarioStudy, type ScenarioStudyItem } from "@/components/marketing/ScenarioStudy";
 import SiteFooter from "@/components/marketing/SiteFooter";
 import { localizePath } from "@/i18n";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata } from "@/lib/marketing/seo";
 
 export async function generateMetadata({
   params,

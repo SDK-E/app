@@ -3,7 +3,7 @@
 import { useActionState, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
-import type { RequestActionState } from "@/app/[locale]/(app)/app/requests/actions";
+import type { RequestActionState } from "@/app/[locale]/(app)/app/companies/[companyId]/requests/actions";
 
 const field =
   "mt-2 min-h-12 w-full rounded-control border border-line bg-paper px-4 py-3 text-body outline-none focus-visible:border-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark";

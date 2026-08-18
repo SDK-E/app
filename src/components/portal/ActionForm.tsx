@@ -3,7 +3,7 @@
 import { useActionState } from "react";
 
 import { Button } from "@/components/ui/Button";
-import type { RequestActionState } from "@/app/[locale]/(app)/app/requests/actions";
+import type { RequestActionState } from "@/app/[locale]/(app)/app/companies/[companyId]/requests/actions";
 
 export function ActionForm({
   action,

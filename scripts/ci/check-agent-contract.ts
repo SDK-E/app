@@ -80,11 +80,11 @@ for (const path of [
   "docs/conventions/structure.md",
   "docs/conventions/env.md",
   "src/lib/env.ts",
-  "src/lib/auth.ts",
-  "src/lib/identity.ts",
-  "src/lib/authorization.ts",
-  "scripts/mail-mcp.ts",
-  "scripts/humanizer-mcp.ts",
+  "src/lib/auth/auth0.ts",
+  "src/lib/auth/identity.ts",
+  "src/lib/auth/authorization.ts",
+  "scripts/mail/mail-mcp.ts",
+  "scripts/mcp/humanizer-mcp.ts",
 ]) {
   try {
     readFileSync(resolve(root, path));

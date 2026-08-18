@@ -4,9 +4,9 @@ import { revalidatePath } from "next/cache";
 
 import { getPrisma } from "@/lib/db";
 import { sendAccessRequestCreatedNotification } from "@/lib/email";
-import { getCurrentPrincipal } from "@/lib/identity";
+import { getCurrentPrincipal } from "@/lib/auth/identity";
 import { requestAccessSchema } from "@/lib/schemas/userManagement";
-import { requestCompanyAccess } from "@/lib/user-management";
+import { requestCompanyAccess } from "@/lib/users";
 
 export interface AccessRequestState {
   error?: string;

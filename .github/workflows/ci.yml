@@ -23,6 +23,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run agents:check
+      - run: npm run check:file-length
       - run: npm run format:check
       - run: npm run audit
       - run: npm run lint
@@ -77,7 +78,7 @@ jobs:
       - run: npm ci
       - id: changed
         run: echo "files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | tr '\n' ',')" >> $GITHUB_OUTPUT
-      - run: node --import tsx scripts/agent-pr-eval.ts --body '${{ github.event.pull_request.body }}' --title '${{ github.event.pull_request.title }}' --files '${{ steps.changed.outputs.files }}'
+      - run: node --import tsx scripts/ci/agent-pr-eval.ts --body '${{ github.event.pull_request.body }}' --title '${{ github.event.pull_request.title }}' --files '${{ steps.changed.outputs.files }}'
 
   coverage:
     runs-on: ubuntu-latest

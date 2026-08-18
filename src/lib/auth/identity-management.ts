@@ -1,5 +1,5 @@
 import { getPrisma } from "@/lib/db";
-import { IdentityError } from "@/lib/identity";
+import { IdentityError } from "@/lib/auth/identity";
 import type { ClientRole, SdkStaffRole } from "@/types";
 
 export async function assignCompanyMembership(input: {
@@ -31,7 +31,7 @@ export async function assignCompanyMembership(input: {
 
 export async function assignSdkStaffRole(userId: string, role: SdkStaffRole) {
   return getPrisma().$transaction(async (transaction) => {
-    const membership = await transaction.membership.findUnique({ where: { userId } });
+    const membership = await transaction.membership.findFirst({ where: { userId } });
     if (membership) {
       throw new IdentityError(
         "IDENTITY_CONFLICT",

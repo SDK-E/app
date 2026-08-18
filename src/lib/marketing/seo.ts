@@ -1,4 +1,4 @@
-import { siteConfig } from "@/lib/siteConfig";
+import { siteConfig } from "@/lib/marketing/site";
 import type { Metadata } from "next";
 
 export function getSiteUrl(): string {
@@ -104,12 +104,12 @@ export function buildMetadata(params: {
     description,
     alternates: {
       canonical: absoluteUrl(canonicalPath),
+      ...alternates,
       languages: {
         en: absoluteUrl(`/en${path === "/" ? "/" : path}`),
         fr: absoluteUrl(`/fr${path === "/" ? "/" : path}`),
         ...alternates?.languages,
       },
-      ...alternates,
     },
     openGraph: {
       ...defaultOg,

@@ -3,9 +3,9 @@
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
-import { getAuth0Client } from "@/lib/auth";
-import { getCurrentPrincipal } from "@/lib/identity";
-import { acceptInvitation } from "@/lib/user-management";
+import { getAuth0Client } from "@/lib/auth/auth0";
+import { getCurrentPrincipal } from "@/lib/auth/identity";
+import { acceptInvitation } from "@/lib/users";
 
 export interface InvitationActionState {
   error?: string;

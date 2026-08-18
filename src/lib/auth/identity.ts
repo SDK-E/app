@@ -112,8 +112,7 @@ export async function resolveAppPrincipal(session: SessionData): Promise<AppPrin
     throw new IdentityError("INACTIVE_USER", "This application user is inactive.");
   }
 
-  const membership = user.memberships[0];
-  if (user.sdkStaffRole && membership) {
+  if (user.sdkStaffRole && user.memberships.length > 0) {
     throw new IdentityError(
       "IDENTITY_CONFLICT",
       "An SDK staff user cannot also have a client-company membership."
@@ -133,17 +132,16 @@ export async function resolveAppPrincipal(session: SessionData): Promise<AppPrin
     return { ...common, kind: "sdk-staff", role: user.sdkStaffRole as SdkStaffRole };
   }
 
-  if (membership) {
-    if (!membership.company.isActive) {
-      throw new IdentityError("INACTIVE_USER", "This client company is inactive.");
-    }
-    return {
-      ...common,
-      kind: "client",
+  const memberships = user.memberships
+    .filter((membership) => membership.company.isActive)
+    .map((membership) => ({
       companyId: membership.company.id,
       companyName: membership.company.name,
       role: membership.role as ClientRole,
-    };
+    }));
+
+  if (memberships.length > 0) {
+    return { ...common, kind: "client", memberships };
   }
 
   return { ...common, kind: "unassigned" };

@@ -11,7 +11,7 @@ vi.mock("@/lib/db", () => ({
   }),
 }));
 
-import { IdentityError, resolveAppPrincipal } from "@/lib/identity";
+import { IdentityError, resolveAppPrincipal } from "@/lib/auth/identity";
 
 function session(user: SessionData["user"]): SessionData {
   return {
@@ -83,7 +83,10 @@ describe("resolveAppPrincipal", () => {
     });
     await expect(
       resolveAppPrincipal(session({ sub: "auth0|user-1", email: "person@example.test" }))
-    ).resolves.toMatchObject({ kind: "client", companyId: "company-a", role: "OWNER" });
+    ).resolves.toMatchObject({
+      kind: "client",
+      memberships: [{ companyId: "company-a", role: "OWNER" }],
+    });
   });
 
   it("resolves SDK staff separately from client memberships", async () => {

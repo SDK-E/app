@@ -240,7 +240,6 @@ model Membership {
   company Company @relation("CompanyMemberships", fields: [companyId], references: [id], onDelete: Cascade)
   inviter User?   @relation("MembershipInvitations", fields: [invitedBy], references: [id], onDelete: SetNull)
 
-  @@unique([userId])
   @@unique([userId, companyId])
   @@index([companyId])
   @@index([userId])

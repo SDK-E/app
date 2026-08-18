@@ -80,11 +80,15 @@ export interface UnassignedPrincipal extends PrincipalUser {
   kind: "unassigned";
 }
 
-export interface ClientPrincipal extends PrincipalUser {
-  kind: "client";
+export interface ClientMembership {
   companyId: string;
   companyName: string;
   role: ClientRole;
+}
+
+export interface ClientPrincipal extends PrincipalUser {
+  kind: "client";
+  memberships: ClientMembership[];
 }
 
 export interface SdkStaffPrincipal extends PrincipalUser {

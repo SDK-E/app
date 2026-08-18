@@ -1,19 +1,22 @@
 import { getTranslations } from "next-intl/server";
 
 import { RequestForm, type RequestFormCopy } from "@/components/portal/RequestForm";
-import { getRequest } from "@/lib/data/serviceRequests";
-import { getCurrentPrincipal } from "@/lib/identity";
+import { getRequest } from "@/lib/requests";
+import { getCurrentPrincipal } from "@/lib/auth/identity";
 import { saveRequestAction } from "../../actions";
 
 export default async function EditRequestPage({
   params,
 }: {
-  params: Promise<{ locale: string; requestId: string }>;
+  params: Promise<{ locale: string; companyId: string; requestId: string }>;
 }) {
-  const [{ locale, requestId }, principal] = await Promise.all([params, getCurrentPrincipal()]);
+  const [{ locale, companyId, requestId }, principal] = await Promise.all([
+    params,
+    getCurrentPrincipal(),
+  ]);
   if (!principal || principal.kind !== "client") return null;
   const [request, t] = await Promise.all([
-    getRequest(principal, requestId),
+    getRequest(principal, requestId, companyId),
     getTranslations({ locale, namespace: "portal.requests" }),
   ]);
   if (request.status !== "DRAFT") throw new Error("Only draft requests can be edited.");
@@ -34,7 +37,7 @@ export default async function EditRequestPage({
       <h1 className="text-h1 font-extrabold">{request.title}</h1>
       <div className="mt-10">
         <RequestForm
-          action={saveRequestAction.bind(null, locale, requestId)}
+          action={saveRequestAction.bind(null, locale, companyId, requestId)}
           copy={copy}
           initial={initial}
         />

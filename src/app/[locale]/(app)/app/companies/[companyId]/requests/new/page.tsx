@@ -2,15 +2,22 @@ import { redirect } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 
 import { RequestForm, type RequestFormCopy } from "@/components/portal/RequestForm";
-import { hasPermission } from "@/lib/authorization";
-import { getCurrentPrincipal } from "@/lib/identity";
+import { hasPermission } from "@/lib/auth/authorization";
+import { getCurrentPrincipal } from "@/lib/auth/identity";
 import { saveRequestAction } from "../actions";
 
-export default async function NewRequestPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  const principal = await getCurrentPrincipal();
-  if (!principal || principal.kind !== "client" || !hasPermission(principal, "request:create")) {
-    redirect(`/${locale}/app/requests`);
+export default async function NewRequestPage({
+  params,
+}: {
+  params: Promise<{ locale: string; companyId: string }>;
+}) {
+  const [{ locale, companyId }, principal] = await Promise.all([params, getCurrentPrincipal()]);
+  if (
+    !principal ||
+    principal.kind !== "client" ||
+    !hasPermission(principal, "request:create", companyId)
+  ) {
+    redirect(`/${locale}/app/companies/${companyId}/requests`);
   }
   const t = await getTranslations({ locale, namespace: "portal.requests" });
   const copy = {
@@ -24,7 +31,7 @@ export default async function NewRequestPage({ params }: { params: Promise<{ loc
       </p>
       <h1 className="mt-4 text-h1 font-extrabold">{t("new")}</h1>
       <div className="mt-10">
-        <RequestForm action={saveRequestAction.bind(null, locale, null)} copy={copy} />
+        <RequestForm action={saveRequestAction.bind(null, locale, companyId, null)} copy={copy} />
       </div>
     </section>
   );

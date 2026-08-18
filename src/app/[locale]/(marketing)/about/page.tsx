@@ -12,8 +12,8 @@ import {
 } from "@/components/marketing/QualityFramework";
 import SiteFooter from "@/components/marketing/SiteFooter";
 import { localizePath } from "@/i18n";
-import { siteConfig } from "@/lib/siteConfig";
-import { buildMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/marketing/site";
+import { buildMetadata } from "@/lib/marketing/seo";
 
 export async function generateMetadata({
   params,

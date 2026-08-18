@@ -1,6 +1,6 @@
 import { randomBytes } from "node:crypto";
 
-import { AuthorizationError } from "@/lib/authorization";
+import { AuthorizationError, notFound, requireCompanyAccess, requirePermission } from "@/lib/auth";
 import { getPrisma } from "@/lib/db";
 import { slugify } from "@/lib/utils";
 import type { AppPrincipal } from "@/types";
@@ -16,19 +16,23 @@ export function generateAccessCode(): string {
 }
 
 export async function createOwnedCompany(principal: AppPrincipal, name: string) {
-  if (principal.kind !== "unassigned") {
-    throw new AuthorizationError(403, "FORBIDDEN", "Only unassigned users can create a company.");
+  if (principal.kind !== "client" && principal.kind !== "unassigned") {
+    throw new AuthorizationError(
+      403,
+      "FORBIDDEN",
+      "Only client users or unassigned users can create a company."
+    );
   }
   return getPrisma().$transaction(async (transaction) => {
     const user = await transaction.user.findUniqueOrThrow({
       where: { id: principal.id },
       include: { memberships: true },
     });
-    if (user.sdkStaffRole || user.memberships.length > 0 || !user.isActive) {
+    if (user.sdkStaffRole || !user.isActive) {
       throw new AuthorizationError(
         403,
         "FORBIDDEN",
-        "This account already has an assignment or is inactive."
+        "This account is SDK staff or inactive and cannot create a company."
       );
     }
     return transaction.company.create({
@@ -42,5 +46,16 @@ export async function createOwnedCompany(principal: AppPrincipal, name: string) 
       },
       include: { memberships: true },
     });
+  });
+}
+
+export async function regenerateCompanyAccessCode(principal: AppPrincipal, companyId: string) {
+  const assigned = requirePermission(principal, "company:update", companyId);
+  const targetCompanyId = requireCompanyAccess(assigned, companyId);
+  const company = await getPrisma().company.findUnique({ where: { id: targetCompanyId } });
+  if (!company) notFound("Company not found.");
+  return getPrisma().company.update({
+    where: { id: targetCompanyId },
+    data: { accessCode: generateAccessCode() },
   });
 }

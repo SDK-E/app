@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 import { locales } from "@/i18n";
-import { getSiteUrl } from "@/lib/seo";
+import { getSiteUrl } from "@/lib/marketing/seo";
 
 const PUBLIC_PATHS = [
   "/",

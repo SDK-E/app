@@ -1,9 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 
 import { updatePreferredLocaleAction } from "@/app/[locale]/(app)/app/profile/actions";
 import { AccountMenu } from "@/components/layout/AccountMenu";
+import { ActiveCompanyLabel } from "@/components/layout/ActiveCompanyLabel";
+import { AppNav } from "@/components/layout/AppNav";
 import type { AssignedPrincipal } from "@/types";
 
 interface AppShellProps {
@@ -14,25 +15,7 @@ interface AppShellProps {
 
 export async function AppShell({ children, locale, principal }: AppShellProps) {
   const t = await getTranslations({ locale, namespace: "portal.nav" });
-  const context = principal.kind === "client" ? principal.companyName : "SDK Enterprises";
   const areaLabel = principal.kind === "client" ? t("clientArea") : t("staffArea");
-  const links =
-    principal.kind === "client"
-      ? [
-          { href: `/${locale}/app`, label: t("dashboard") },
-          { href: `/${locale}/app/requests`, label: t("requests") },
-        ]
-      : [{ href: `/${locale}/app`, label: t("operations") }];
-  const canManageUsers =
-    principal.kind === "sdk-staff"
-      ? principal.role === "ADMIN"
-      : ["OWNER", "ADMINISTRATOR"].includes(principal.role);
-  if (canManageUsers)
-    links.push({
-      href: `/${locale}/app/users`,
-      label: principal.kind === "client" ? t("team") : t("users"),
-    });
-
   return (
     <div className="min-h-screen bg-background text-foreground lg:grid lg:grid-cols-[260px_1fr]">
       <aside className="border-b border-line bg-dark text-light lg:min-h-screen lg:border-r lg:border-b-0 lg:border-r-[#2d4b28]">
@@ -50,24 +33,26 @@ export async function AppShell({ children, locale, principal }: AppShellProps) {
           </span>
         </div>
         <nav aria-label="Application" className="border-t border-[#2d4b28] px-3 py-3 lg:px-4">
-          <div className="flex gap-2 overflow-x-auto lg:block lg:space-y-2">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="block min-h-11 whitespace-nowrap rounded-nav px-4 py-3 text-label font-extrabold uppercase tracking-eyebrow text-light transition-colors hover:bg-[#2d4b28] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
+          <AppNav
+            locale={locale}
+            principal={principal}
+            labels={{
+              dashboard: t("dashboard"),
+              requests: t("requests"),
+              operations: t("operations"),
+              team: t("team"),
+              users: t("users"),
+            }}
+          />
         </nav>
       </aside>
 
       <div className="min-w-0">
         <header className="flex min-h-20 items-center justify-between gap-6 border-b border-line px-6 lg:px-10">
           <div>
-            <p className="text-micro uppercase tracking-eyebrow text-muted-foreground">{context}</p>
+            <p className="text-micro uppercase tracking-eyebrow text-muted-foreground">
+              <ActiveCompanyLabel principal={principal} fallback="SDK Enterprises" />
+            </p>
             <p className="mt-1 text-body font-semibold">{principal.name}</p>
           </div>
           <AccountMenu

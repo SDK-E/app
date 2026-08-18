@@ -8,19 +8,17 @@ export default defineConfig({
   },
   test: {
     environment: "jsdom",
-    include: ["src/**/*.test.{ts,tsx}"],
-  },
-  // @ts-expect-error coverage is a valid vitest property not represented in ViteUserConfig types
-  coverage: {
-    provider: "v8",
-    include: ["src/**/*.{ts,tsx}"],
-    exclude: ["src/generated/**"],
-    reporter: ["text", "html"],
-    thresholds: {
-      lines: 43,
-      statements: 40,
-      functions: 46,
-      branches: 31,
+    include: ["src/**/*.test.{ts,tsx}", "scripts/**/*.test.{ts,tsx}"],
+    coverage: {
+      provider: "v8",
+      include: ["src/lib/**/*.{ts,tsx}", "src/proxy.ts"],
+      reporter: ["text", "html"],
+      thresholds: {
+        lines: 80,
+        statements: 80,
+        functions: 80,
+        branches: 80,
+      },
     },
   },
 });

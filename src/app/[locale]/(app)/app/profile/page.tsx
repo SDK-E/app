@@ -3,7 +3,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 
 import { Card } from "@/components/ui/Card";
-import { getCurrentPrincipal } from "@/lib/identity";
+import { getCurrentPrincipal } from "@/lib/auth/identity";
 
 export const metadata: Metadata = {
   title: "Profile | SDK Enterprises",
@@ -14,7 +14,6 @@ export default async function ProfilePage({ params }: { params: Promise<{ locale
   const [{ locale }, principal] = await Promise.all([params, getCurrentPrincipal()]);
   if (!principal || principal.kind === "unassigned") return null;
   const t = await getTranslations({ locale, namespace: "portal.profile" });
-  const role = principal.role.replaceAll("_", " ").toLowerCase();
   return (
     <section className="max-w-3xl">
       <p className="text-label font-extrabold uppercase tracking-eyebrow text-muted-foreground">
@@ -44,18 +43,40 @@ export default async function ProfilePage({ params }: { params: Promise<{ locale
           </div>
         </div>
         <dl className="mt-8 grid gap-5 border-t border-line pt-6 sm:grid-cols-2">
-          <div>
-            <dt className="text-label font-extrabold uppercase tracking-eyebrow">{t("role")}</dt>
-            <dd className="mt-2 text-body capitalize">{role}</dd>
-          </div>
-          <div>
-            <dt className="text-label font-extrabold uppercase tracking-eyebrow">
-              {t("workspace")}
-            </dt>
-            <dd className="mt-2 text-body">
-              {principal.kind === "client" ? principal.companyName : "SDK Enterprises"}
-            </dd>
-          </div>
+          {principal.kind === "client" ? (
+            <div className="sm:col-span-2">
+              <dt className="text-label font-extrabold uppercase tracking-eyebrow">
+                {t("workspace")}
+              </dt>
+              <dd className="mt-2 space-y-2 text-body">
+                {principal.memberships.map((membership) => (
+                  <p key={membership.companyId}>
+                    <span className="font-semibold">{membership.companyName}</span>
+                    <span className="ml-2 text-muted-foreground">
+                      {membership.role.replaceAll("_", " ").toLowerCase()}
+                    </span>
+                  </p>
+                ))}
+              </dd>
+            </div>
+          ) : (
+            <>
+              <div>
+                <dt className="text-label font-extrabold uppercase tracking-eyebrow">
+                  {t("role")}
+                </dt>
+                <dd className="mt-2 text-body capitalize">
+                  {principal.role.replaceAll("_", " ").toLowerCase()}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-label font-extrabold uppercase tracking-eyebrow">
+                  {t("workspace")}
+                </dt>
+                <dd className="mt-2 text-body">SDK Enterprises</dd>
+              </div>
+            </>
+          )}
           <div>
             <dt className="text-label font-extrabold uppercase tracking-eyebrow">
               {t("language")}

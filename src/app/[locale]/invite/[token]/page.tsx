@@ -7,8 +7,8 @@ import { InvitationAcceptForm } from "@/components/portal/InvitationAcceptForm";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { getServerEnv } from "@/lib/env";
-import { getCurrentPrincipal, IdentityError } from "@/lib/identity";
-import { getInvitationPreview } from "@/lib/user-management";
+import { getCurrentPrincipal, IdentityError } from "@/lib/auth/identity";
+import { getInvitationPreview } from "@/lib/users";
 import { maskEmail, normalizeEmail } from "@/lib/utils";
 import type { AppPrincipal } from "@/types";
 

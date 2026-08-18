@@ -3,7 +3,7 @@
 import { cookies } from "next/headers";
 
 import { getPrisma } from "@/lib/db";
-import { getCurrentPrincipal } from "@/lib/identity";
+import { getCurrentPrincipal } from "@/lib/auth/identity";
 import { localeSchema } from "@/lib/schemas/userManagement";
 
 export async function updatePreferredLocaleAction(locale: string): Promise<{ ok: boolean }> {

@@ -8,7 +8,7 @@ These instructions supplement the repository-level `AGENTS.md` for `src/app/**`.
 - Route handlers and Server Actions authorize at the server boundary using the
   resolved application principal, not UI state or raw Auth0 claims.
 - Protected routes use `getCurrentPrincipal()` and the authorization helpers in
-  `@/lib/authorization`.
+  `@/lib/auth/authorization`.
 - Tenant resource operations derive client scope from the principal and include the
   authorized `companyId` in the database query.
 - New public routes must follow the repository SEO, i18n, sitemap, and proxy rules.

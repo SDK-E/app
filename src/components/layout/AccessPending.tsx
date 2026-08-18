@@ -7,7 +7,7 @@ import { createCompanyAction } from "@/app/[locale]/(app)/app/company/actions";
 import { AccessRequestForm } from "@/components/portal/AccessRequestForm";
 import { CompanyCreationForm } from "@/components/portal/CompanyCreationForm";
 import { Badge } from "@/components/ui/Badge";
-import { getUserAccessRequests } from "@/lib/user-management";
+import { getUserAccessRequests } from "@/lib/users";
 import type { UnassignedPrincipal } from "@/types";
 
 export async function AccessPending({

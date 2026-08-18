@@ -3,7 +3,7 @@ import { z } from "zod";
 
 import { AccessPending } from "@/components/layout/AccessPending";
 import { AppShell } from "@/components/layout/AppShell";
-import { getCurrentPrincipal } from "@/lib/identity";
+import { getCurrentPrincipal } from "@/lib/auth/identity";
 
 export const dynamic = "force-dynamic";
 

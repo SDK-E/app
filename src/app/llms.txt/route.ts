@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { getSiteUrl } from "@/lib/seo";
-import { siteConfig } from "@/lib/siteConfig";
+import { getSiteUrl } from "@/lib/marketing/seo";
+import { siteConfig } from "@/lib/marketing/site";
 
 export const dynamic = "force-static";
 
