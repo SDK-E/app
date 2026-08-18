@@ -40,6 +40,7 @@ export async function AppShell({ children, locale, principal }: AppShellProps) {
               dashboard: t("dashboard"),
               requests: t("requests"),
               operations: t("operations"),
+              companies: t("companies"),
               team: t("team"),
               users: t("users"),
             }}

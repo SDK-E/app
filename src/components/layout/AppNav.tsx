@@ -10,6 +10,7 @@ interface AppNavLabels {
   dashboard: string;
   requests: string;
   operations: string;
+  companies: string;
   team: string;
   users: string;
 }
@@ -30,6 +31,10 @@ export function AppNav({
         href: `/${locale}/app`,
         label: labels.operations,
       },
+      {
+        href: `/${locale}/app/companies`,
+        label: labels.companies,
+      },
     ];
     if (principal.role === "ADMIN")
       links.push({ href: `/${locale}/app/users`, label: labels.users });
@@ -47,6 +52,7 @@ export function AppNav({
       </div>
     );
   }
+  if (principal.kind !== "client") return null;
   const activeCompanyId = resolveActiveCompanyId(pathname);
   const memberships = principal.memberships;
   const active =
