@@ -135,6 +135,29 @@ enum InvoiceStatus {
   @@map("invoice_status")
 }
 
+enum ProviderStatus {
+  DRAFT
+  SUBMITTED
+  UNDER_REVIEW
+  CHANGES_REQUESTED
+  APPROVED
+  ACTIVE
+  SUSPENDED
+  REJECTED
+  ARCHIVED
+
+  @@map("provider_status")
+}
+
+enum AuditActorKind {
+  USER
+  PROVIDER
+  SDK_STAFF
+  SYSTEM
+
+  @@map("audit_actor_kind")
+}
+
 model User {
   id              String        @id @default(uuid())
   auth0Sub        String        @unique
@@ -161,6 +184,8 @@ model User {
   acceptedInvitations Invitation[]      @relation("InvitationAcceptor")
   accessRequests      CompanyAccessRequest[] @relation("CompanyAccessRequestUser")
   resolvedAccessRequests CompanyAccessRequest[] @relation("CompanyAccessRequestResolver")
+  provider            Provider?
+  auditEvents         AuditEvent[]
 
   @@index([email])
   @@index([auth0Sub])
@@ -493,4 +518,43 @@ model Enquiry {
   @@index([email])
   @@index([createdAt])
   @@map("enquiry")
+}
+
+model Provider {
+  id          String        @id @default(uuid())
+  userId      String        @unique
+  status      ProviderStatus @default(DRAFT)
+  businessName String?      @db.VarChar(255)
+  timeZone    String?       @db.VarChar(100)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([status])
+  @@index([createdAt])
+  @@map("provider")
+}
+
+model AuditEvent {
+  id          String         @id @default(uuid())
+  companyId   String?
+  actorId     String?
+  actorKind   AuditActorKind @default(USER)
+  action      String         @db.VarChar(100)
+  targetType  String         @db.VarChar(100)
+  targetId    String         @db.VarChar(100)
+  fromState   String?        @db.VarChar(100)
+  toState     String?        @db.VarChar(100)
+  metadata    Json?
+  createdAt   DateTime       @default(now())
+
+  actor User? @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([actorId])
+  @@index([targetType, targetId])
+  @@index([companyId])
+  @@index([createdAt])
+  @@map("audit_event")
 }
