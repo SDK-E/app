@@ -4,7 +4,7 @@ import { z } from "zod";
 
 import { Prisma } from "@/generated/prisma/client";
 import { getPrisma } from "@/lib/db";
-import type { AppPrincipal, ClientRole, SdkStaffRole } from "@/types";
+import type { AppPrincipal, ClientRole, ProviderPrincipal, SdkStaffRole } from "@/types";
 
 const auth0IdentitySchema = z.object({
   sub: z.string().min(1),
@@ -36,6 +36,7 @@ const principalSelect = {
   preferredLocale: true,
   isActive: true,
   sdkStaffRole: true,
+  provider: { select: { id: true } },
   memberships: {
     select: {
       role: true,
@@ -57,6 +58,20 @@ function identityConflict(): IdentityError {
   );
 }
 
+function staffMemberConflict(): IdentityError {
+  return new IdentityError(
+    "IDENTITY_CONFLICT",
+    "An SDK staff user cannot also have a client-company membership."
+  );
+}
+
+function providerMemberConflict(): IdentityError {
+  return new IdentityError(
+    "IDENTITY_CONFLICT",
+    "A provider profile cannot also have a client-company membership."
+  );
+}
+
 export async function resolveAppPrincipal(session: SessionData): Promise<AppPrincipal> {
   const parsed = auth0IdentitySchema.safeParse(session.user);
   if (!parsed.success) {
@@ -64,7 +79,9 @@ export async function resolveAppPrincipal(session: SessionData): Promise<AppPrin
   }
 
   const identity = parsed.data;
+
   const db = getPrisma();
+
   const profile = {
     email: normalizeEmail(identity.email),
     name: identity.name ?? identity.email,
@@ -113,10 +130,7 @@ export async function resolveAppPrincipal(session: SessionData): Promise<AppPrin
   }
 
   if (user.sdkStaffRole && user.memberships.length > 0) {
-    throw new IdentityError(
-      "IDENTITY_CONFLICT",
-      "An SDK staff user cannot also have a client-company membership."
-    );
+    throw staffMemberConflict();
   }
 
   const common = {
@@ -127,6 +141,13 @@ export async function resolveAppPrincipal(session: SessionData): Promise<AppPrin
     avatarUrl: user.avatarUrl,
     preferredLocale: user.preferredLocale,
   };
+
+  if (user.provider) {
+    if (user.memberships.length > 0) {
+      throw providerMemberConflict();
+    }
+    return { ...common, kind: "provider", providerId: user.provider.id } as ProviderPrincipal;
+  }
 
   if (user.sdkStaffRole) {
     return { ...common, kind: "sdk-staff", role: user.sdkStaffRole as SdkStaffRole };
