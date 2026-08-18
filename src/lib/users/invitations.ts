@@ -13,13 +13,23 @@ import type { AppPrincipal, ClientRole, SdkStaffRole } from "@/types";
 
 export async function createClientInvitation(
   principal: AppPrincipal,
-  input: { email: string; role: Exclude<ClientRole, "OWNER"> },
+  input: { email: string; role: ClientRole },
   companyId: string
 ) {
   requirePermission(principal, "membership:invite", companyId);
-  assertClientRoleGrant(principal, input.role, companyId);
   if (principal.kind === "sdk-staff" && principal.role !== "ADMIN")
     forbidden("SDK administrator access is required.");
+  if (input.role === "OWNER") {
+    if (principal.kind !== "sdk-staff" || principal.role !== "ADMIN")
+      forbidden("Only SDK administrators can invite a company owner.");
+    const owner = await getPrisma().membership.findFirst({
+      where: { companyId, role: "OWNER" },
+      select: { id: true },
+    });
+    if (owner) forbidden("This company already has an owner.");
+  } else {
+    assertClientRoleGrant(principal, input.role, companyId);
+  }
   const company = await getPrisma().company.findFirst({ where: { id: companyId, isActive: true } });
   if (!company) forbidden("The company is not available.");
   const email = normalizeEmail(input.email);
