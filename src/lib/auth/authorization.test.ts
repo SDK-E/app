@@ -8,6 +8,7 @@ import {
   requireCompanyAccess,
   requireCompanyPageContext,
   requirePermission,
+  requireProviderPrincipal,
   requireSdkStaff,
   tenantWhere,
 } from "@/lib/auth/authorization";
@@ -16,6 +17,7 @@ import type {
   ClientMembership,
   ClientPrincipal,
   ClientRole,
+  ProviderPrincipal,
   SdkStaffPrincipal,
 } from "@/types";
 
@@ -50,6 +52,17 @@ const staff = (role: SdkStaffPrincipal["role"]): SdkStaffPrincipal => ({
   role,
 });
 
+const provider: ProviderPrincipal = {
+  kind: "provider",
+  id: "user-provider",
+  auth0Sub: "auth0|provider",
+  email: "provider@example.test",
+  name: "Provider User",
+  avatarUrl: null,
+  preferredLocale: "en",
+  providerId: "provider-1",
+};
+
 const unassigned: AppPrincipal = {
   kind: "unassigned",
   id: "user-unassigned",
@@ -73,6 +86,7 @@ describe("role permissions", () => {
 
   it.each([
     ["OWNER", "staff:update"],
+    ["ADMINISTRATOR", "company:create"],
     ["ADMINISTRATOR", "company:update"],
     ["PROJECT_MEMBER", "membership:invite"],
     ["BILLING", "invoice:update"],
@@ -83,6 +97,7 @@ describe("role permissions", () => {
 
   it.each([
     ["ADMIN", "staff:update"],
+    ["ADMIN", "company:create"],
     ["DELIVERY", "project:update"],
     ["FINANCE", "invoice:update"],
   ] as const)("grants the expected SDK permission to %s", (role, permission) => {
@@ -91,7 +106,9 @@ describe("role permissions", () => {
 
   it.each([
     ["ADMIN", "invoice:update", true],
+    ["DELIVERY", "company:create", false],
     ["DELIVERY", "invoice:update", false],
+    ["FINANCE", "company:create", false],
     ["FINANCE", "project:update", false],
   ] as const)("enforces SDK permission boundaries for %s", (role, permission, expected) => {
     expect(hasPermission(staff(role), permission)).toBe(expected);
@@ -161,5 +178,18 @@ describe("authorization boundaries", () => {
     expect(() => requireCompanyPageContext(staff("DELIVERY"), "", "request:view")).toThrowError(
       "A target company is required for resource access."
     );
+  });
+
+  it("requires the principal to be a provider for provider guards", () => {
+    expect(() => requireProviderPrincipal(unassigned)).toThrowError(AuthorizationError);
+    expect(() => requireProviderPrincipal(client("OWNER"))).toThrowError(AuthorizationError);
+    expect(() => requireProviderPrincipal(staff("ADMIN"))).toThrowError(AuthorizationError);
+    expect(() => requireProviderPrincipal(provider)).not.toThrow();
+  });
+
+  it("denies all client and SDK permissions to a provider principal", () => {
+    expect(hasPermission(provider, "company:view", "company-a")).toBe(false);
+    expect(hasPermission(provider, "staff:update")).toBe(false);
+    expect(hasPermission(provider, "invoice:create", "company-a")).toBe(false);
   });
 });

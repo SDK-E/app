@@ -35,6 +35,7 @@ export type SdkStaffRole = (typeof sdkStaffRoles)[number];
 
 export const permissions = [
   "company:view",
+  "company:create",
   "company:update",
   "membership:view",
   "membership:invite",
@@ -96,5 +97,10 @@ export interface SdkStaffPrincipal extends PrincipalUser {
   role: SdkStaffRole;
 }
 
-export type AssignedPrincipal = ClientPrincipal | SdkStaffPrincipal;
+export interface ProviderPrincipal extends PrincipalUser {
+  kind: "provider";
+  providerId: string;
+}
+
+export type AssignedPrincipal = ClientPrincipal | SdkStaffPrincipal | ProviderPrincipal;
 export type AppPrincipal = UnassignedPrincipal | AssignedPrincipal;

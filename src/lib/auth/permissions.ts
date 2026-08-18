@@ -83,6 +83,7 @@ export const sdkRolePermissions: Record<SdkStaffRole, ReadonlySet<Permission>> =
     ...membershipAdminPermissions,
     ...billingWritePermissions,
     "company:update",
+    "company:create",
     "staff:view",
     "staff:create",
     "staff:update",
