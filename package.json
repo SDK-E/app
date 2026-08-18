@@ -11,7 +11,7 @@
     "mail:clear": "node scripts/mail/mail-cli.ts clear",
     "mail:wait": "node scripts/mail/mail-cli.ts wait",
     "mail:health": "node scripts/mail/mail-cli.ts health",
-    "build": "npm run generate && next build --turbopack",
+    "build": "prisma migrate deploy && npm run generate && next build --turbopack",
     "start": "next start",
     "generate": "prisma generate",
     "lint": "eslint",
