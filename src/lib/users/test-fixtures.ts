@@ -1,4 +1,4 @@
-import type { AppPrincipal } from "@/types";
+import type { AppPrincipal, ProviderPrincipal } from "@/types";
 
 export const common = {
   id: "user-1",
@@ -17,6 +17,7 @@ export type PrincipalKind =
   | "viewer"
   | "sdk-admin"
   | "delivery"
+  | "provider"
   | "unassigned";
 
 export function principal(
@@ -27,6 +28,8 @@ export function principal(
   if (kind === "unassigned") return { ...common, kind: "unassigned" };
   if (kind === "sdk-admin" || kind === "delivery")
     return { ...common, kind: "sdk-staff", role: kind === "sdk-admin" ? "ADMIN" : "DELIVERY" };
+  if (kind === "provider")
+    return { ...common, kind: "provider", providerId: "provider-1" } as ProviderPrincipal;
   const role =
     kind === "owner"
       ? "OWNER"

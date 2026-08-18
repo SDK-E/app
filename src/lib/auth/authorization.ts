@@ -5,6 +5,7 @@ import type {
   ClientMembership,
   ClientPrincipal,
   Permission,
+  ProviderPrincipal,
   SdkStaffPrincipal,
   SdkStaffRole,
 } from "@/types";
@@ -59,6 +60,13 @@ export function requireSdkStaff(
   return principal;
 }
 
+export function requireProviderPrincipal(principal: AppPrincipal): ProviderPrincipal {
+  if (principal.kind !== "provider") {
+    throw new AuthorizationError(403, "FORBIDDEN", "Provider access is required.");
+  }
+  return principal;
+}
+
 export function getClientMembership(
   principal: ClientPrincipal,
   companyId: string
@@ -80,6 +88,7 @@ export function hasPermission(
   companyId?: string
 ): boolean {
   if (principal.kind === "unassigned") return false;
+  if (principal.kind === "provider") return false;
   if (principal.kind === "client") {
     if (!companyId) {
       if (!clientScopedPermissions.has(permission)) return false;

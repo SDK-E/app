@@ -59,7 +59,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ locale
                 ))}
               </dd>
             </div>
-          ) : (
+          ) : principal.kind === "sdk-staff" ? (
             <>
               <div>
                 <dt className="text-label font-extrabold uppercase tracking-eyebrow">
@@ -76,7 +76,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ locale
                 <dd className="mt-2 text-body">SDK Enterprises</dd>
               </div>
             </>
-          )}
+          ) : null}
           <div>
             <dt className="text-label font-extrabold uppercase tracking-eyebrow">
               {t("language")}
