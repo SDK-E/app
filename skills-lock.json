@@ -13,6 +13,18 @@
       "skillPath": "skills/deploy-to-vercel/SKILL.md",
       "computedHash": "03e0eaaa9bf13ba1e7ffa387f5893de6f324c0868c627001f179395a8feaa7c9"
     },
+    "internal-dev-workbench": {
+      "source": "vercel/workflow",
+      "sourceType": "github",
+      "skillPath": "skills/internal-dev-workbench/SKILL.md",
+      "computedHash": "0a95e27fa15772abf98de088375a0f84ab8f183b577b2120903698406ce90bc5"
+    },
+    "migrating-to-workflow-sdk": {
+      "source": "vercel/workflow",
+      "sourceType": "github",
+      "skillPath": "skills/migrating-to-workflow-sdk/SKILL.md",
+      "computedHash": "f641182d7988667a46e1549943e3daa29faac412da8716828d99eee5f7b626cb"
+    },
     "prisma-next-debug": {
       "source": "prisma/prisma-next",
       "sourceType": "github",
@@ -42,6 +54,18 @@
       "sourceType": "github",
       "skillPath": "skills/vercel-cli-with-tokens/SKILL.md",
       "computedHash": "eb16b20dcbe6ce51e0372083d624e0847af1b09487ec99249227d5a8eddebfc0"
+    },
+    "workflow": {
+      "source": "vercel/workflow",
+      "sourceType": "github",
+      "skillPath": "skills/workflow/SKILL.md",
+      "computedHash": "eae859f624c59eeb67ddb91e8f1bc85793f463bc3ff4c854cb53dd3a72fd01a5"
+    },
+    "workflow-init": {
+      "source": "vercel/workflow",
+      "sourceType": "github",
+      "skillPath": "skills/workflow-init/SKILL.md",
+      "computedHash": "e74ed0468589670865a7dc1dcf4f8cd21c3dce164e5caa66d74c5800d70dfe68"
     }
   }
 }
