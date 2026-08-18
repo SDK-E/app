@@ -1,19 +1,33 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { buildCompanySlug, generateAccessCode, regenerateCompanyAccessCode } from "@/lib/companies";
+import { buildCompanySlug, createSdkCompany, generateAccessCode } from "@/lib/companies";
 import { principal } from "@/lib/users/test-fixtures";
 
-const mocks = vi.hoisted(() => ({
-  company: { findUnique: vi.fn(), update: vi.fn() },
-}));
+const mocks = vi.hoisted(() => {
+  const company = {
+    findFirst: vi.fn(),
+    findMany: vi.fn(),
+    create: vi.fn(),
+    update: vi.fn(),
+  };
+  const invitation = { findFirst: vi.fn(), create: vi.fn() };
+  const user = { findFirst: vi.fn() };
+  const transaction = { company, invitation, user };
+  const prisma = {
+    company,
+    invitation,
+    user,
+    $transaction: vi.fn((callback) => callback(transaction)),
+  };
+  return { prisma, company, invitation, user, transaction };
+});
 
 vi.mock("@/lib/db", () => ({
-  getPrisma: () => ({ company: mocks.company }),
+  getPrisma: () => mocks.prisma,
 }));
 
 beforeEach(() => {
-  mocks.company.findUnique.mockReset();
-  mocks.company.update.mockReset();
+  vi.resetAllMocks();
 });
 
 describe("buildCompanySlug", () => {
@@ -36,49 +50,102 @@ describe("generateAccessCode", () => {
   });
 });
 
-describe("regenerateCompanyAccessCode", () => {
-  it("rotates the access code for the principal's own company", async () => {
-    mocks.company.findUnique.mockResolvedValue({ id: "company-1", accessCode: "OLD-CODE" });
-    mocks.company.update.mockImplementation(async ({ data }) => ({
-      id: "company-1",
-      accessCode: data.accessCode,
-    }));
+describe("createSdkCompany", () => {
+  it("creates an active company and an OWNER invitation in one transaction", async () => {
+    mocks.user.findFirst.mockResolvedValue(null);
+    mocks.invitation.findFirst.mockResolvedValue(null);
+    mocks.company.create.mockImplementation(async ({ data }) => ({ id: "company-9", ...data }));
+    mocks.invitation.create.mockImplementation(async ({ data }) => ({ id: "inv-9", ...data }));
 
-    const result = await regenerateCompanyAccessCode(principal("owner"), "company-1");
+    const result = await createSdkCompany(principal("sdk-admin"), {
+      name: "Acme Ltd",
+      ownerEmail: "Owner@Example.com",
+    });
 
-    expect(mocks.company.findUnique).toHaveBeenCalledWith({ where: { id: "company-1" } });
-    expect(result.accessCode).not.toBe("OLD-CODE");
-    expect(result.accessCode).toMatch(/^[0-9A-F]{4}-[0-9A-F]{4}$/);
-  });
-
-  it("lets SDK administrators rotate any company's code", async () => {
-    mocks.company.findUnique.mockResolvedValue({ id: "company-2" });
-    mocks.company.update.mockImplementation(async ({ data }) => ({
-      id: "company-2",
-      accessCode: data.accessCode,
-    }));
-
-    await regenerateCompanyAccessCode(principal("sdk-admin"), "company-2");
-
-    expect(mocks.company.update).toHaveBeenCalledWith({
-      where: { id: "company-2" },
+    expect(mocks.company.create).toHaveBeenCalledWith({
       data: expect.objectContaining({
+        name: "Acme Ltd",
+        slug: expect.stringMatching(/^acme-ltd-[0-9a-f]{6}$/),
         accessCode: expect.stringMatching(/^[0-9A-F]{4}-[0-9A-F]{4}$/),
       }),
     });
+    expect(mocks.invitation.create).toHaveBeenCalledWith({
+      data: expect.objectContaining({
+        email: "owner@example.com",
+        kind: "CLIENT",
+        companyId: "company-9",
+        clientRole: "OWNER",
+        invitedBy: "user-1",
+        expiresAt: expect.any(Date),
+      }),
+      include: { company: true },
+    });
+    expect(result.company.name).toBe("Acme Ltd");
+    expect(result.invitation.clientRole).toBe("OWNER");
+    expect(result.token).toBeTruthy();
   });
 
-  it("rejects delivery staff without company update permission", async () => {
-    await expect(regenerateCompanyAccessCode(principal("delivery"), "company-1")).rejects.toThrow(
-      "Missing permission: company:update"
-    );
-    expect(mocks.company.findUnique).not.toHaveBeenCalled();
+  it("rejects delivery staff without company creation permission", async () => {
+    await expect(
+      createSdkCompany(principal("delivery"), {
+        name: "Acme Ltd",
+        ownerEmail: "owner@example.com",
+      })
+    ).rejects.toThrow("Missing permission: company:create");
+    expect(mocks.company.create).not.toHaveBeenCalled();
   });
 
-  it("rejects a client rotating another company's code", async () => {
-    await expect(regenerateCompanyAccessCode(principal("owner"), "company-2")).rejects.toThrow(
-      "Cross-company access is denied."
-    );
-    expect(mocks.company.findUnique).not.toHaveBeenCalled();
+  it("rejects client principals", async () => {
+    await expect(
+      createSdkCompany(principal("owner"), {
+        name: "Acme Ltd",
+        ownerEmail: "owner@example.com",
+      })
+    ).rejects.toThrow("Missing permission: company:create");
+  });
+
+  it("rejects an owner email already assigned to a company", async () => {
+    mocks.user.findFirst.mockResolvedValue({
+      id: "user-9",
+      sdkStaffRole: null,
+      memberships: [{ id: "m1" }],
+    });
+
+    await expect(
+      createSdkCompany(principal("sdk-admin"), {
+        name: "Acme Ltd",
+        ownerEmail: "member@example.com",
+      })
+    ).rejects.toThrow("already belongs to a company");
+    expect(mocks.company.create).not.toHaveBeenCalled();
+  });
+
+  it("rejects an SDK staff email as owner", async () => {
+    mocks.user.findFirst.mockResolvedValue({
+      id: "user-9",
+      sdkStaffRole: "ADMIN",
+      memberships: [],
+    });
+
+    await expect(
+      createSdkCompany(principal("sdk-admin"), {
+        name: "Acme Ltd",
+        ownerEmail: "staff@example.com",
+      })
+    ).rejects.toThrow("SDK staff accounts cannot become company owners.");
+    expect(mocks.company.create).not.toHaveBeenCalled();
+  });
+
+  it("rejects a duplicate pending owner invitation for the email", async () => {
+    mocks.user.findFirst.mockResolvedValue(null);
+    mocks.invitation.findFirst.mockResolvedValue({ id: "inv-9" });
+
+    await expect(
+      createSdkCompany(principal("sdk-admin"), {
+        name: "Acme Ltd",
+        ownerEmail: "owner@example.com",
+      })
+    ).rejects.toThrow("already pending");
+    expect(mocks.company.create).not.toHaveBeenCalled();
   });
 });

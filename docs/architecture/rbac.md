@@ -28,9 +28,15 @@ permission and tenant scope.
   billing administration.
 - `BILLING`: invoice reads plus contextual company/project reads.
 - `VIEWER`: read-only client resources.
-- `ADMIN`: staff, company, delivery, and finance administration.
+- `ADMIN`: staff, company (including company creation), delivery, and finance
+  administration.
 - `DELIVERY`: delivery reads/writes without staff, destructive, or finance administration.
 - `FINANCE`: invoice reads/writes plus contextual company/project reads.
+
+`company:create` is an SDK-administrator permission. An SDK-created company has
+no members; its first member is provisioned by an SDK-administrator OWNER
+invitation (a user can hold only one OWNER membership per company, enforced in
+`createClientInvitation`).
 
 The exact permission sets are tested directly. Adding a future operation
 requires adding its Permission, updating the centralized maps, and adding

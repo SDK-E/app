@@ -26,7 +26,10 @@ enforce the cross-table staff/member invariant.
 | `VIEWER`         | Read-only company access                                                           |
 
 Company creation grants the initial `OWNER`. Ownership transfer must preserve
-at least one owner when that workflow is implemented.
+at least one owner when that workflow is implemented. SDK administrators can
+also create a company from the staff portal; the create step provisions the
+company's first `OWNER` through an SDK-only owner invitation, so a company is
+never created without a path to a named owner.
 
 ## SDK staff roles
 
