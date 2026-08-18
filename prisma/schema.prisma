@@ -149,6 +149,14 @@ enum ProviderStatus {
   @@map("provider_status")
 }
 
+enum ProviderReviewAction {
+  APPROVED
+  REJECTED
+  CHANGES_REQUESTED
+
+  @@map("provider_review_action")
+}
+
 enum AuditActorKind {
   USER
   PROVIDER
@@ -186,6 +194,7 @@ model User {
   resolvedAccessRequests CompanyAccessRequest[] @relation("CompanyAccessRequestResolver")
   provider            Provider?
   auditEvents         AuditEvent[]
+  providerReviews     ProviderReview[]
 
   @@index([email])
   @@index([auth0Sub])
@@ -521,15 +530,32 @@ model Enquiry {
 }
 
 model Provider {
-  id          String        @id @default(uuid())
-  userId      String        @unique
-  status      ProviderStatus @default(DRAFT)
-  businessName String?      @db.VarChar(255)
-  timeZone    String?       @db.VarChar(100)
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @updatedAt
+  id                  String           @id @default(uuid())
+  userId              String           @unique
+  status              ProviderStatus   @default(DRAFT)
+  businessName        String?          @db.VarChar(255)
+  timeZone            String?          @db.VarChar(100)
+  professionalTitle   String?          @db.VarChar(255)
+  biography           String?          @db.Text
+  cvStorageKey        String?          @db.VarChar(1024)
+  portfolioUrl        String?          @db.VarChar(1024)
+  yearsOfExperience   Int?
+  languages           String[]         @default([])
+  expectedRateMin     Decimal?         @db.Decimal(10, 2)
+  expectedRateMax     Decimal?         @db.Decimal(10, 2)
+  linkedinUrl         String?          @db.VarChar(1024)
+  githubUrl           String?          @db.VarChar(1024)
+  websiteUrl          String?          @db.VarChar(1024)
+  businessLegalInfo   String?          @db.Text
+  vatInfo             String?          @db.VarChar(255)
+  preferredProjectTypes String[]       @default([])
+  completenessScore   Int              @default(0)
+  createdAt           DateTime         @default(now())
+  updatedAt           DateTime         @updatedAt
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  reviews ProviderReview[]
 
   @@index([userId])
   @@index([status])
@@ -557,4 +583,22 @@ model AuditEvent {
   @@index([companyId])
   @@index([createdAt])
   @@map("audit_event")
+}
+
+model ProviderReview {
+  id          String              @id @default(uuid())
+  providerId  String
+  reviewerId  String
+  action      ProviderReviewAction
+  reason      String?             @db.Text
+  internalNotes String?           @db.Text
+  createdAt   DateTime            @default(now())
+
+  provider Provider @relation(fields: [providerId], references: [id], onDelete: Cascade)
+  reviewer User    @relation(fields: [reviewerId], references: [id], onDelete: Restrict)
+
+  @@index([providerId])
+  @@index([reviewerId])
+  @@index([createdAt])
+  @@map("provider_review")
 }

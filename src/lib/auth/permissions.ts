@@ -87,6 +87,9 @@ export const sdkRolePermissions: Record<SdkStaffRole, ReadonlySet<Permission>> =
     "staff:view",
     "staff:create",
     "staff:update",
+    "provider:view",
+    "provider:update",
+    "provider:review",
   ]),
   DELIVERY: new Set([
     "company:view",
@@ -103,6 +106,8 @@ export const sdkRolePermissions: Record<SdkStaffRole, ReadonlySet<Permission>> =
     "message:view",
     "message:create",
     "message:update",
+    "provider:view",
+    "provider:review",
   ]),
   FINANCE: new Set(["company:view", "project:view", "invoice:view", ...billingWritePermissions]),
 };

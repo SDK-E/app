@@ -64,6 +64,9 @@ export const permissions = [
   "staff:view",
   "staff:create",
   "staff:update",
+  "provider:view",
+  "provider:update",
+  "provider:review",
 ] as const;
 
 export type Permission = (typeof permissions)[number];
