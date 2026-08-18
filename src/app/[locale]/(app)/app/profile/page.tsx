@@ -29,7 +29,6 @@ export default async function ProfilePage({ params }: { params: Promise<{ locale
               alt=""
               width={72}
               height={72}
-              unoptimized
               className="size-18 rounded-full object-cover"
             />
           ) : (

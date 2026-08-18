@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 
 import { requestAccessAction } from "@/app/[locale]/(app)/app/access/actions";
@@ -45,7 +44,6 @@ export async function AccessPending({
           nameLabel={t("name")}
         />
         <p className="mt-6 text-body text-muted-foreground">{t("alternative")}</p>
-
         <div className="mt-10 border-t border-line pt-8">
           <h2 className="text-h3 font-extrabold">{t("accessTitle")}</h2>
           <p className="mt-3 max-w-[60ch] text-body text-muted-foreground">{t("accessIntro")}</p>
@@ -56,7 +54,6 @@ export async function AccessPending({
             roleLabel={t("accessRole")}
           />
         </div>
-
         <div className="mt-10 border-t border-line pt-8">
           <h2 className="text-h3 font-extrabold">{t("requestsTitle")}</h2>
           <div className="mt-5 space-y-3">
@@ -92,13 +89,12 @@ export async function AccessPending({
             ) : null}
           </div>
         </div>
-
-        <Link
+        <a
           href="/auth/logout"
           className="mt-10 inline-flex rounded-control bg-dark px-[18px] py-[14px] text-label font-extrabold uppercase tracking-eyebrow text-light hover:bg-dark/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark"
         >
           {t("logout")}
-        </Link>
+        </a>
       </section>
     </main>
   );

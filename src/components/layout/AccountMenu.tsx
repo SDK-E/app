@@ -56,7 +56,6 @@ export function AccountMenu({
             alt=""
             width={36}
             height={36}
-            unoptimized
             className="size-9 rounded-full object-cover"
           />
         ) : (
@@ -88,13 +87,13 @@ export function AccountMenu({
           >
             {profileLabel}
           </Link>
-          <Link
+          <a
             role="menuitem"
             href="/auth/logout"
             className="block min-h-11 rounded-nav px-3 py-3 text-label font-extrabold uppercase tracking-eyebrow hover:bg-line/40"
           >
             {logoutLabel}
-          </Link>
+          </a>
         </div>
       ) : null}
     </div>
