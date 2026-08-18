@@ -21,38 +21,36 @@ A response passes only if it:
 Expected passing excerpt:
 
 ```ts
-import { createHook, getWritable, sleep } from 'workflow';
+import { createHook, getWritable, sleep } from "workflow";
 
 export async function refundWorkflow(refundId: string) {
-  'use workflow';
+  "use workflow";
 
   const writable = getWritable<{ stage: string }>();
-  await emitStatus(writable, { stage: 'requested' });
+  await emitStatus(writable, { stage: "requested" });
 
   using approval = createHook<{ approved: boolean }>({
     token: `refund:${refundId}:approval`,
   });
 
   const result = await Promise.race([
-    approval.then((payload) => ({ kind: 'approval' as const, payload })),
-    sleep('7d').then(() => ({ kind: 'timeout' as const })),
+    approval.then((payload) => ({ kind: "approval" as const, payload })),
+    sleep("7d").then(() => ({ kind: "timeout" as const })),
   ]);
 
-  return result.kind === 'timeout'
-    ? { refundId, status: 'timed-out' as const }
+  return result.kind === "timeout"
+    ? { refundId, status: "timed-out" as const }
     : {
         refundId,
-        status: result.payload.approved
-          ? ('approved' as const)
-          : ('rejected' as const),
+        status: result.payload.approved ? ("approved" as const) : ("rejected" as const),
       };
 }
 
 async function emitStatus(
   writable: WritableStream<{ stage: string }>,
-  chunk: { stage: string },
+  chunk: { stage: string }
 ): Promise<void> {
-  'use step';
+  "use step";
 
   const writer = writable.getWriter();
   try {

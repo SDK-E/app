@@ -3,7 +3,7 @@ name: migrating-to-workflow-sdk
 description: Migrates Temporal, Inngest, Trigger.dev, and AWS Step Functions workflows to the Workflow SDK. Use when porting Activities, Workers, Signals, step.run(), step.waitForEvent(), Trigger.dev tasks / wait.forToken / triggerAndWait, ASL JSON state machines, Task/Choice/Wait/Parallel states, task tokens, or child workflows.
 metadata:
   author: Vercel Inc.
-  version: '0.2.0'
+  version: "0.2.0"
 ---
 
 # Migrating to the Workflow SDK
@@ -50,6 +50,7 @@ Use this skill when converting an existing orchestration system to the Workflow 
   3. Otherwise, keep examples framework-agnostic with `Request` / `Response`. Do not default to Next.js-only route signatures unless Next.js is explicitly named.
 
 > Fast memory aid:
+>
 > - Callback URL + default ack -> `createWebhook()`
 > - Callback URL + custom ack -> `createWebhook({ respondWith: 'manual' })`
 > - Deterministic server-side resume -> `createHook()` + `resumeHook()`
@@ -89,10 +90,15 @@ Return the migration in this structure:
 
 ```md
 ## Migration Plan
+
 ## Source -> Target Mapping
+
 ## Migrated Code
+
 ## App Boundary / Resume Endpoints
+
 ## Verification Checklist
+
 ## Open Questions
 ```
 
@@ -153,10 +159,15 @@ Expected response shape:
 
 ```md
 ## Migration Plan
+
 ## Source -> Target Mapping
+
 ## Migrated Code
+
 ## App Boundary / Resume Endpoints
+
 ## Verification Checklist
+
 ## Open Questions
 ```
 

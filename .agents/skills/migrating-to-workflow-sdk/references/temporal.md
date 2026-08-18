@@ -6,18 +6,18 @@ Userland imports come from `workflow` and `workflow/api`. Never import from `@wo
 
 ## Map these constructs
 
-| Temporal | Workflow SDK |
-| --- | --- |
-| Workflow Definition / Execution | `"use workflow"` + `start()` |
-| Activity | `"use step"` |
-| Worker + Task Queue | remove from app code |
-| Signal | `createHook()` or `createWebhook()` |
-| Query | `getWritable({ namespace: 'status' })` on the workflow side; clients read via `getRun(runId).getReadable()` |
-| Update | `createHook()` + `resumeHook()` (one-way; no return-value parity — stream the result via `getWritable()` or keep a separate HTTP read route) |
-| Child Workflow | step-wrapped `start()` / `getRun()` |
-| Activity timeouts (`startToCloseTimeout`, `scheduleToCloseTimeout`, `heartbeatTimeout`) | enforce inside steps with `AbortSignal.timeout()`, or `Promise.race(step(), sleep(...))` from the workflow |
-| Activity retry policy (`maximumAttempts`, `initialInterval`, etc.) | `maxRetries` + `RetryableError` / `FatalError` classification |
-| Event history | run timeline / event log |
+| Temporal                                                                                | Workflow SDK                                                                                                                                 |
+| --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Workflow Definition / Execution                                                         | `"use workflow"` + `start()`                                                                                                                 |
+| Activity                                                                                | `"use step"`                                                                                                                                 |
+| Worker + Task Queue                                                                     | remove from app code                                                                                                                         |
+| Signal                                                                                  | `createHook()` or `createWebhook()`                                                                                                          |
+| Query                                                                                   | `getWritable({ namespace: 'status' })` on the workflow side; clients read via `getRun(runId).getReadable()`                                  |
+| Update                                                                                  | `createHook()` + `resumeHook()` (one-way; no return-value parity — stream the result via `getWritable()` or keep a separate HTTP read route) |
+| Child Workflow                                                                          | step-wrapped `start()` / `getRun()`                                                                                                          |
+| Activity timeouts (`startToCloseTimeout`, `scheduleToCloseTimeout`, `heartbeatTimeout`) | enforce inside steps with `AbortSignal.timeout()`, or `Promise.race(step(), sleep(...))` from the workflow                                   |
+| Activity retry policy (`maximumAttempts`, `initialInterval`, etc.)                      | `maxRetries` + `RetryableError` / `FatalError` classification                                                                                |
+| Event history                                                                           | run timeline / event log                                                                                                                     |
 
 ## Remove
 

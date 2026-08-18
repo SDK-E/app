@@ -2,24 +2,24 @@
 
 ## Map these constructs
 
-| Trigger.dev | Workflow SDK |
-| --- | --- |
-| `task({ id, run })` | `"use workflow"` or `"use step"` |
-| `schemaTask({ schema, run })` | `"use workflow"` with plain typed args |
-| `wait.for({ seconds \| minutes \| hours \| days })` | `sleep()` |
-| `wait.until({ date })` | `sleep()` until target date |
-| `wait.forToken({ timeout })` | `createHook()` or `createWebhook()` |
-| `task.triggerAndWait()` | step-wrapped `start()` + `getRun().returnValue` |
-| `task.trigger()` | `start()` from `workflow/api` |
-| `batch.triggerAndWait()` | parallel `start()` + `Promise.all(runIds.map(id => getRun(id).returnValue))` |
-| `tasks.trigger()` from API route / server action | `start()` from `workflow/api` |
-| `AbortTaskRunError` | `FatalError` |
-| `retry.onThrow` / `retry.fetch` | step `RetryableError` + `maxRetries` |
-| `retry` options on `task()` | `maxRetries` on the step |
-| `queue` / `machine` config on `task()` | remove from app code |
-| `logger.info` / `logger.warn` | standard logging |
-| `metadata.set()` | `executionContext` or step return values |
-| `metadata.stream()` | `getWritable()` |
+| Trigger.dev                                         | Workflow SDK                                                                 |
+| --------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `task({ id, run })`                                 | `"use workflow"` or `"use step"`                                             |
+| `schemaTask({ schema, run })`                       | `"use workflow"` with plain typed args                                       |
+| `wait.for({ seconds \| minutes \| hours \| days })` | `sleep()`                                                                    |
+| `wait.until({ date })`                              | `sleep()` until target date                                                  |
+| `wait.forToken({ timeout })`                        | `createHook()` or `createWebhook()`                                          |
+| `task.triggerAndWait()`                             | step-wrapped `start()` + `getRun().returnValue`                              |
+| `task.trigger()`                                    | `start()` from `workflow/api`                                                |
+| `batch.triggerAndWait()`                            | parallel `start()` + `Promise.all(runIds.map(id => getRun(id).returnValue))` |
+| `tasks.trigger()` from API route / server action    | `start()` from `workflow/api`                                                |
+| `AbortTaskRunError`                                 | `FatalError`                                                                 |
+| `retry.onThrow` / `retry.fetch`                     | step `RetryableError` + `maxRetries`                                         |
+| `retry` options on `task()`                         | `maxRetries` on the step                                                     |
+| `queue` / `machine` config on `task()`              | remove from app code                                                         |
+| `logger.info` / `logger.warn`                       | standard logging                                                             |
+| `metadata.set()`                                    | `executionContext` or step return values                                     |
+| `metadata.stream()`                                 | `getWritable()`                                                              |
 
 ## Remove
 

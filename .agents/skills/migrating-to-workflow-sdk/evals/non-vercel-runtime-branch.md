@@ -13,7 +13,7 @@ We are migrating a Temporal workflow to the Workflow SDK, but the app runs on Ho
 - a startup helper like:
 
 ```ts
-import { getWorld } from 'workflow/runtime';
+import { getWorld } from "workflow/runtime";
 
 export async function startWorkflowWorld(): Promise<void> {
   await getWorld().start?.();
@@ -37,7 +37,7 @@ interface World extends Storage, Queue, Streamer {
 ```
 
 ```ts
-import { getWorld } from 'workflow/runtime';
+import { getWorld } from "workflow/runtime";
 
 export async function startWorkflowWorld(): Promise<void> {
   await getWorld().start?.();

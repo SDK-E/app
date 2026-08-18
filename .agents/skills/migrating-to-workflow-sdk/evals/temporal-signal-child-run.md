@@ -5,14 +5,14 @@
 Migrate the following Temporal workflow to the Workflow SDK. Keep the business behavior the same.
 
 ```ts
-import * as wf from '@temporalio/workflow';
-import type * as activities from '../activities/order';
+import * as wf from "@temporalio/workflow";
+import type * as activities from "../activities/order";
 
 const { loadOrder, chargeCard } = wf.proxyActivities<typeof activities>({
-  startToCloseTimeout: '5 minute',
+  startToCloseTimeout: "5 minute",
 });
 
-export const approveOrder = wf.defineSignal<[boolean]>('approveOrder');
+export const approveOrder = wf.defineSignal<[boolean]>("approveOrder");
 
 export async function orderWorkflow(orderId: string) {
   let approved: boolean | undefined;
@@ -26,11 +26,11 @@ export async function orderWorkflow(orderId: string) {
   await wf.condition(() => approved !== undefined);
 
   if (!approved) {
-    return { orderId, status: 'rejected' as const };
+    return { orderId, status: "rejected" as const };
   }
 
   const result = await chargeCard(order.id);
-  return { orderId, chargeId: result.id, status: 'completed' as const };
+  return { orderId, chargeId: result.id, status: "completed" as const };
 }
 ```
 

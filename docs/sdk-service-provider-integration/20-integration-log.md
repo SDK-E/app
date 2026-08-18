@@ -32,11 +32,11 @@ Do not build any provider-facing UI yet. Only the underlying concepts, database 
 
 **Outcome / notes:**
 
-- [X] Provider identity decoupled from generic user
-- [X] Role/capability boundaries testable
-- [X] Money is currency-aware
-- [X] Status transitions enforce rules
-- [X] Audit model in place
+- [x] Provider identity decoupled from generic user
+- [x] Role/capability boundaries testable
+- [x] Money is currency-aware
+- [x] Status transitions enforce rules
+- [x] Audit model in place
 
 ---
 

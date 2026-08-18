@@ -3,10 +3,10 @@ name: workflow
 description: Creates durable, resumable workflows using Vercel's Workflow SDK. Use when building workflows that need to survive restarts, pause for external events, retry on failure, or coordinate multi-step operations over time. Triggers on mentions of "workflow", "durable functions", "resumable", "workflow sdk", "queue", "event", "push", "subscribe", or step-based orchestration.
 metadata:
   author: Vercel Inc.
-  version: '1.10'
+  version: "1.10"
 ---
 
-## *CRITICAL*: Always Use Correct `workflow` Documentation
+## _CRITICAL_: Always Use Correct `workflow` Documentation
 
 Your knowledge of `workflow` is outdated.
 
@@ -47,8 +47,8 @@ Related packages also include bundled docs:
 **Directives:**
 
 ```typescript
-"use workflow";  // First line - makes async function durable
-"use step";      // First line - makes function a cached, retryable unit
+"use workflow"; // First line - makes async function durable
+"use step"; // First line - makes function a cached, retryable unit
 ```
 
 **Essential imports:**
@@ -63,7 +63,12 @@ import { getWorkflowMetadata, getStepMetadata } from "workflow";
 import { start, getRun, resumeHook, resumeWebhook } from "workflow/api";
 
 // Observability & data hydration
-import { hydrateResourceIO, observabilityRevivers, parseStepName, parseWorkflowName } from "workflow/observability";
+import {
+  hydrateResourceIO,
+  observabilityRevivers,
+  parseStepName,
+  parseWorkflowName,
+} from "workflow/observability";
 
 // Framework integrations
 import { withWorkflow } from "workflow/next";
@@ -111,11 +116,11 @@ export async function dataProcessingWorkflow(userId: string) {
 
 When you need logic directly in a workflow function (not in a step), these restrictions apply:
 
-| Limitation | Workaround |
-|------------|------------|
-| No `fetch()` | `import { fetch } from "workflow"` then `globalThis.fetch = fetch` |
-| No `setTimeout`/`setInterval` | Use `sleep("5s")` from `"workflow"` |
-| No Node.js modules (fs, crypto, etc.) | Move to a step function |
+| Limitation                            | Workaround                                                         |
+| ------------------------------------- | ------------------------------------------------------------------ |
+| No `fetch()`                          | `import { fetch } from "workflow"` then `globalThis.fetch = fetch` |
+| No `setTimeout`/`setInterval`         | Use `sleep("5s")` from `"workflow"`                                |
+| No Node.js modules (fs, crypto, etc.) | Move to a step function                                            |
 
 **Example - Using fetch in workflow context:**
 
@@ -124,7 +129,7 @@ import { fetch } from "workflow";
 
 export async function myWorkflow() {
   "use workflow";
-  globalThis.fetch = fetch;  // Required for AI SDK and HTTP libraries
+  globalThis.fetch = fetch; // Required for AI SDK and HTTP libraries
   // Now generateText() and other libraries work
 }
 ```
@@ -173,6 +178,7 @@ export async function myAgentWorkflow(userMessage: string) {
 ```
 
 **Key points:**
+
 - `getWritable<UIMessageChunk>()` streams output to the workflow run's default stream
 - Tool `execute` functions that need Node.js/npm access should use `"use step"`
 - Tool `execute` functions that use workflow primitives (`sleep()`, `createHook()`) should **NOT** use `"use step"` — they run at the workflow level
@@ -212,7 +218,7 @@ async function triggerChild(data: string) {
 
 export async function parentWorkflow() {
   "use workflow";
-  const childRunId = await triggerChild("some data");  // Fire-and-forget via step
+  const childRunId = await triggerChild("some data"); // Fire-and-forget via step
   await sleep("1h");
 }
 ```
@@ -232,10 +238,10 @@ export async function approvalWorkflow() {
   "use workflow";
 
   const hook = createHook<{ approved: boolean }>({
-    token: "approval-123",  // deterministic token for external systems
+    token: "approval-123", // deterministic token for external systems
   });
 
-  const result = await hook;  // Workflow suspends here
+  const result = await hook; // Workflow suspends here
   return result.approved;
 }
 ```
@@ -336,6 +342,7 @@ export class Point {
 ```
 
 **Critical rules:**
+
 1. **Define serde methods INSIDE the class body** as static methods with computed property syntax (`static [WORKFLOW_SERIALIZE](...)`). The SWC plugin detects them by scanning the class. Do NOT assign them externally (e.g., `(MyClass as any)[WORKFLOW_SERIALIZE] = ...`) -- the compiler will not detect this.
 2. **Serde methods must return only devalue-compatible types** (plain objects, arrays, primitives, Date, Map, Set, Uint8Array, etc.). No functions, no class instances, no Node.js-specific objects.
 3. **Add `"use step"` to Node.js-dependent instance methods.** The SWC plugin strips `"use step"` method bodies from the workflow bundle. This is how you keep Node.js imports (fs, crypto, child_process, etc.) out of the workflow sandbox. The class shell with its serde methods remains in the workflow bundle; only the step method bodies are removed.
@@ -360,6 +367,7 @@ Use these tools to verify classes are correctly set up:
 Use `getWritable()` to stream data from workflows. `getWritable()` can be called in **both** workflow and step contexts, but you **cannot interact with the stream** (call `getWriter()`, `write()`, `close()`) directly in a workflow function. The stream must be passed to step functions for actual I/O, or steps can call `getWritable()` themselves.
 
 **Get the stream in a workflow, pass it to a step:**
+
 ```typescript
 import { getWritable } from "workflow";
 
@@ -381,6 +389,7 @@ async function writeData(writable: WritableStream, chunk: string) {
 ```
 
 **Call `getWritable()` directly inside a step (no need to pass it):**
+
 ```typescript
 import { getWritable } from "workflow";
 
@@ -400,6 +409,7 @@ async function streamData(chunk: string) {
 Use `getWritable({ namespace: 'name' })` to create multiple independent streams for different types of data. This is useful for separating logs from primary output, different log levels, agent outputs, metrics, or any distinct data channels. Long-running workflows benefit from namespaced streams because you can replay only the important events (e.g., final results) while keeping verbose logs in a separate stream.
 
 **Example: Log levels and agent output separation:**
+
 ```typescript
 import { getWritable } from "workflow";
 
@@ -449,19 +459,20 @@ async function emitAgentResult(result: string) {
 
 export async function agentWorkflow(task: string) {
   "use workflow";
-  
+
   await logInfo(`Starting task: ${task}`);
   await logDebug("Initializing agent context");
   await emitAgentThought("Analyzing the task requirements...");
-  
+
   // ... agent processing ...
-  
+
   await emitAgentResult("Task completed successfully");
   await logInfo("Workflow finished");
 }
 ```
 
 **Consuming namespaced streams:**
+
 ```typescript
 import { start, getRun } from "workflow/api";
 import { agentWorkflow } from "./workflows/agent";
@@ -484,11 +495,11 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const runId = searchParams.get("runId")!;
   const startIndex = parseInt(searchParams.get("startIndex") || "0", 10);
-  
+
   const run = getRun(runId);
   // Resume only the important stream, skip verbose debug logs
   const stream = run.getReadable({ startIndex });
-  
+
   return new Response(stream);
 }
 ```
@@ -555,6 +566,7 @@ stdout contains **only** the URL (or the JSON object) — all other output goes 
 stderr — so you can capture it directly, e.g. `URL=$(npx workflow web <run_id> --backend vercel --url)`.
 
 **Debugging tips:**
+
 - Use `--json` (`-j`) on any command for machine-readable output
 - Use `--web` to open the Vercel Observability dashboard in your browser, or `--url` to just print the deep link
 - Use `--help` on any command for full usage details
@@ -626,14 +638,18 @@ import { start, resumeWebhook } from "workflow/api";
 import { waitForHook } from "@workflow/vitest";
 
 const run = await start(ingestWorkflow, ["ep-1"]);
-const hook = await waitForHook(run);  // Discovers the random webhook token
-await resumeWebhook(hook.token, new Request("https://example.com/webhook", {
-  method: "POST",
-  body: JSON.stringify({ event: "order.created" }),
-}));
+const hook = await waitForHook(run); // Discovers the random webhook token
+await resumeWebhook(
+  hook.token,
+  new Request("https://example.com/webhook", {
+    method: "POST",
+    body: JSON.stringify({ event: "order.created" }),
+  })
+);
 ```
 
 **Key APIs:**
+
 - `start()` — trigger a workflow
 - `run.returnValue` — await workflow completion
 - `waitForHook(run, { token? })` / `waitForSleep(run)` — wait for workflow to reach a pause point
@@ -641,6 +657,7 @@ await resumeWebhook(hook.token, new Request("https://example.com/webhook", {
 - `getRun(runId).wakeUp({ correlationIds })` — skip `sleep()` calls
 
 **Best practices:**
+
 - Keep unit tests (no plugin) and integration tests (`workflow()` plugin) in separate configs
 - Use deterministic hook tokens based on test data for easier resumption
 - Set generous `testTimeout` — workflows may run longer than typical unit tests
@@ -651,12 +668,19 @@ await resumeWebhook(hook.token, new Request("https://example.com/webhook", {
 Use `await getWorld()` to build observability dashboards, admin panels, and inspect workflow state. `getWorld()` is asynchronous and returns `Promise<World>` (dynamic import / env-based setup).
 
 **Key imports:**
+
 ```typescript
 import { getWorld } from "workflow/runtime";
-import { hydrateResourceIO, observabilityRevivers, parseStepName, parseWorkflowName } from "workflow/observability";
+import {
+  hydrateResourceIO,
+  observabilityRevivers,
+  parseStepName,
+  parseWorkflowName,
+} from "workflow/observability";
 ```
 
 **Key docs** (grep `node_modules/workflow/docs/` for full details):
+
 - `api-reference/workflow-runtime/world/storage.mdx` — events, runs, steps, hooks (events are source of truth; others are materialized views)
 - `api-reference/workflow-observability/` — hydration and name parsing
 
@@ -668,18 +692,25 @@ import { hydrateResourceIO, observabilityRevivers, parseStepName, parseWorkflowN
 const world = await getWorld();
 
 // Runs
-const { data, cursor } = await world.runs.list({ pagination: { cursor }, resolveData: 'all' | 'none' });
-const run = await world.runs.get(runId, { resolveData: 'all' | 'none' });
+const { data, cursor } = await world.runs.list({
+  pagination: { cursor },
+  resolveData: "all" | "none",
+});
+const run = await world.runs.get(runId, { resolveData: "all" | "none" });
 // Cancel via event creation (no cancel() method on runs)
-await world.events.create(runId, { eventType: 'run_cancelled' });
+await world.events.create(runId, { eventType: "run_cancelled" });
 
 // Steps — runId is top-level, NOT inside pagination
-const { data, cursor } = await world.steps.list({ runId, pagination: { cursor }, resolveData: 'all' | 'none' });
-const step = await world.steps.get(runId, stepId, { resolveData: 'all' | 'none' });
+const { data, cursor } = await world.steps.list({
+  runId,
+  pagination: { cursor },
+  resolveData: "all" | "none",
+});
+const step = await world.steps.get(runId, stepId, { resolveData: "all" | "none" });
 
 // Events
 const { data, cursor } = await world.events.list({ runId, pagination: { cursor } });
-await world.events.create(runId, { eventType: 'run_cancelled' });
+await world.events.create(runId, { eventType: "run_cancelled" });
 
 // Hooks
 const hook = await world.hooks.get(hookId);
@@ -710,7 +741,7 @@ Controls whether input/output data is **included** in the response. Accepts `'al
 
 ```typescript
 // Lightweight status check — no I/O loaded
-const run = await world.runs.get(runId, { resolveData: 'none' });
+const run = await world.runs.get(runId, { resolveData: "none" });
 console.log(run.status); // 'running' | 'completed' | 'failed' | 'cancelled'
 
 // Full inspection — resolveData includes data, hydrateResourceIO deserializes it
@@ -731,8 +762,8 @@ Step I/O is serialized via [devalue](https://github.com/Rich-Harris/devalue) wit
 ```typescript
 import { hydrateResourceIO, observabilityRevivers } from "workflow/observability";
 
-const { data: steps } = await world.steps.list({ runId, resolveData: 'all' });
-const hydrated = steps.map(s => hydrateResourceIO(s, observabilityRevivers));
+const { data: steps } = await world.steps.list({ runId, resolveData: "all" });
+const hydrated = steps.map((s) => hydrateResourceIO(s, observabilityRevivers));
 // hydrated[0].input → [123, 2] (actual function arguments)
 // hydrated[0].output → 125 (actual return value)
 ```
@@ -754,22 +785,22 @@ const parsed = parseWorkflowName("workflow//./src/workflows/order//processOrder"
 
 Events are the append-only source of truth. Runs/Steps/Hooks are materialized views.
 
-| Category | Types |
-|----------|-------|
-| Run | `run_created`, `run_started`, `run_completed`, `run_failed`, `run_cancelled` |
-| Step | `step_created`, `step_started`, `step_completed`, `step_failed`, `step_retrying` |
-| Hook | `hook_created`, `hook_received`, `hook_disposed`, `hook_conflict` |
-| Wait | `wait_created`, `wait_completed` |
+| Category | Types                                                                            |
+| -------- | -------------------------------------------------------------------------------- |
+| Run      | `run_created`, `run_started`, `run_completed`, `run_failed`, `run_cancelled`     |
+| Step     | `step_created`, `step_started`, `step_completed`, `step_failed`, `step_retrying` |
+| Hook     | `hook_created`, `hook_received`, `hook_disposed`, `hook_conflict`                |
+| Wait     | `wait_created`, `wait_completed`                                                 |
 
 ## Error Handling Patterns
 
 Three error strategies for different failure modes:
 
-| Error Type | Use When | Behavior |
-|------------|----------|----------|
-| `FatalError` | Permanent failure (bad input, auth denied) | Terminates workflow immediately, no retry |
-| `RetryableError` | Transient failure (rate limit, timeout) | Retries with optional `retryAfter` delay |
-| `Promise.allSettled` | Parallel steps with mixed criticality | Continues even if some steps fail |
+| Error Type           | Use When                                   | Behavior                                  |
+| -------------------- | ------------------------------------------ | ----------------------------------------- |
+| `FatalError`         | Permanent failure (bad input, auth denied) | Terminates workflow immediately, no retry |
+| `RetryableError`     | Transient failure (rate limit, timeout)    | Retries with optional `retryAfter` delay  |
+| `Promise.allSettled` | Parallel steps with mixed criticality      | Continues even if some steps fail         |
 
 ```typescript
 import { FatalError, RetryableError } from "workflow";
@@ -782,9 +813,9 @@ throw new RetryableError("API rate limited", { retryAfter: "5m" });
 
 // Mixed criticality parallel execution
 const results = await Promise.allSettled([
-  criticalStep(data),    // Must succeed
-  optionalStep(data),    // OK to fail
-  enrichmentStep(data),  // OK to fail
+  criticalStep(data), // Must succeed
+  optionalStep(data), // OK to fail
+  enrichmentStep(data), // OK to fail
 ]);
 const [critical, optional, enrichment] = results;
 if (critical.status === "rejected") throw new FatalError(critical.reason);

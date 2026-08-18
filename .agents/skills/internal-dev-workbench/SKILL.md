@@ -3,7 +3,7 @@ name: internal-dev-workbench
 description: Spin up a portless + tmux dev session for the Workflow SDK that gives each git worktree isolated `<branch>.<name>.localhost` URLs for the Next.js workbench and the observability UI, plus a Claude statusline that surfaces those URLs. Use only when the user asks for a "portless dev session", a "tmux dev layout for workflow", "worktree-isolated dev URLs", or wants to wire workflow dev URLs into the Claude statusline. Do not activate for the generic "start the dev server" / "run pnpm dev" task.
 metadata:
   author: Pranay Prakash
-  version: '0.1'
+  version: "0.1"
 ---
 
 # internal-dev-workbench
@@ -101,9 +101,10 @@ Wire it into `~/.claude/settings.json` so it works across all sessions and workt
 }
 ```
 
-Adjust the prefix if your main checkout lives elsewhere. The script itself is worktree-aware: it reads Claude's `workspace.current_dir` from stdin to derive the current branch, so the *same script invocation* from `~/github/vercel/workflow/...` correctly surfaces routes for whichever worktree the Claude session is running in.
+Adjust the prefix if your main checkout lives elsewhere. The script itself is worktree-aware: it reads Claude's `workspace.current_dir` from stdin to derive the current branch, so the _same script invocation_ from `~/github/vercel/workflow/...` correctly surfaces routes for whichever worktree the Claude session is running in.
 
 Output rules:
+
 - Nothing to show (no matching portless route, no matching tmux session) → empty output.
 - Each piece appears independently — start a server but no tmux session and you'll see just the dev/obs fragments; the reverse shows just the tmux fragment.
 - No git context but routes exist → falls back to the first matching `turbopack`/`workflow-obs` route, no tmux indicator.

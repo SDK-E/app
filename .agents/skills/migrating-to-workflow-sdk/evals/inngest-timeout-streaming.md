@@ -5,25 +5,25 @@
 Migrate the following Inngest workflow to the Workflow SDK.
 
 ```ts
-import { inngest } from '../client';
+import { inngest } from "../client";
 
 export const refundWorkflow = inngest.createFunction(
-  { id: 'refund-workflow' },
-  { event: 'refund/requested' },
+  { id: "refund-workflow" },
+  { event: "refund/requested" },
   async ({ event, step }) => {
-    await step.realtime.publish('status', { stage: 'requested' });
+    await step.realtime.publish("status", { stage: "requested" });
 
-    const approval = await step.waitForEvent('wait-for-approval', {
-      event: 'refund/approved',
-      match: 'data.refundId',
-      timeout: '7d',
+    const approval = await step.waitForEvent("wait-for-approval", {
+      event: "refund/approved",
+      match: "data.refundId",
+      timeout: "7d",
     });
 
     if (!approval) {
-      return { refundId: event.data.refundId, status: 'timed-out' as const };
+      return { refundId: event.data.refundId, status: "timed-out" as const };
     }
 
-    return { refundId: event.data.refundId, status: 'approved' as const };
+    return { refundId: event.data.refundId, status: "approved" as const };
   }
 );
 ```
@@ -47,7 +47,7 @@ export const refundWorkflow = inngest.createFunction(
 
 ```ts
 const result = await Promise.race([
-  approval.then((payload) => ({ kind: 'approval' as const, payload })),
-  sleep('7d').then(() => ({ kind: 'timeout' as const })),
+  approval.then((payload) => ({ kind: "approval" as const, payload })),
+  sleep("7d").then(() => ({ kind: "timeout" as const })),
 ]);
 ```

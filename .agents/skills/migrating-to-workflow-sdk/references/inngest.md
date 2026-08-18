@@ -2,17 +2,17 @@
 
 ## Map these constructs
 
-| Inngest | Workflow SDK |
-| --- | --- |
-| `inngest.createFunction()` | `"use workflow"` + `start()` |
-| `step.run()` | `"use step"` |
-| `step.sleep()` / `step.sleepUntil()` | `sleep()` |
-| `step.waitForEvent()` | `createHook()` or `createWebhook()` |
-| timeout on `step.waitForEvent()` | `Promise.race()` + `sleep()` |
-| `step.invoke()` | step-wrapped `start()` / `getRun()` |
-| `inngest.send()` / event triggers | app-boundary `start()` |
-| `step.sendEvent()` | step-wrapped `start()` fan-out |
-| `step.realtime.publish()` | `getWritable()` |
+| Inngest                              | Workflow SDK                        |
+| ------------------------------------ | ----------------------------------- |
+| `inngest.createFunction()`           | `"use workflow"` + `start()`        |
+| `step.run()`                         | `"use step"`                        |
+| `step.sleep()` / `step.sleepUntil()` | `sleep()`                           |
+| `step.waitForEvent()`                | `createHook()` or `createWebhook()` |
+| timeout on `step.waitForEvent()`     | `Promise.race()` + `sleep()`        |
+| `step.invoke()`                      | step-wrapped `start()` / `getRun()` |
+| `inngest.send()` / event triggers    | app-boundary `start()`              |
+| `step.sendEvent()`                   | step-wrapped `start()` fan-out      |
+| `step.realtime.publish()`            | `getWritable()`                     |
 
 ## Remove
 

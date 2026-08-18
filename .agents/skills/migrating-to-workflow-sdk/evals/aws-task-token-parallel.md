@@ -64,9 +64,6 @@ Migrate the following Step Functions workflow to the Workflow SDK.
 ## Expected excerpt
 
 ```ts
-await Promise.all([
-  reserveInventory(orderId),
-  chargePayment(orderId),
-]);
-await sleep('1d');
+await Promise.all([reserveInventory(orderId), chargePayment(orderId)]);
+await sleep("1d");
 ```

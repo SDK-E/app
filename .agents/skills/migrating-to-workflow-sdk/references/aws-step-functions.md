@@ -2,17 +2,17 @@
 
 ## Map these constructs
 
-| AWS Step Functions | Workflow SDK |
-| --- | --- |
-| ASL JSON state machine | `"use workflow"` function |
-| Task / Lambda | `"use step"` |
-| Choice | `if` / `else` / `switch` |
-| Wait | `sleep()` |
-| Parallel | `Promise.all()` |
-| Map | Inline sequential → `for` loop; bounded parallel (`MaxConcurrency: N`) → batched `Promise.all` or a concurrency limiter like `p-limit`; Distributed Map / large fan-out → step-wrapped `start()` per item, then step-wrapped `getRun()` to collect. |
-| Retry / Catch | step retries + `try` / `catch`, `RetryableError`, `FatalError`, `maxRetries` |
-| `.waitForTaskToken` | `createHook()` or `createWebhook()` |
-| `StartExecution` (child state machine) | step-wrapped `start()` / `getRun()` |
+| AWS Step Functions                     | Workflow SDK                                                                                                                                                                                                                                        |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ASL JSON state machine                 | `"use workflow"` function                                                                                                                                                                                                                           |
+| Task / Lambda                          | `"use step"`                                                                                                                                                                                                                                        |
+| Choice                                 | `if` / `else` / `switch`                                                                                                                                                                                                                            |
+| Wait                                   | `sleep()`                                                                                                                                                                                                                                           |
+| Parallel                               | `Promise.all()`                                                                                                                                                                                                                                     |
+| Map                                    | Inline sequential → `for` loop; bounded parallel (`MaxConcurrency: N`) → batched `Promise.all` or a concurrency limiter like `p-limit`; Distributed Map / large fan-out → step-wrapped `start()` per item, then step-wrapped `getRun()` to collect. |
+| Retry / Catch                          | step retries + `try` / `catch`, `RetryableError`, `FatalError`, `maxRetries`                                                                                                                                                                        |
+| `.waitForTaskToken`                    | `createHook()` or `createWebhook()`                                                                                                                                                                                                                 |
+| `StartExecution` (child state machine) | step-wrapped `start()` / `getRun()`                                                                                                                                                                                                                 |
 
 ## Remove
 
@@ -46,23 +46,23 @@
 Use this when your app receives the approval in server-side code and can reconstruct a business token.
 
 ```ts title="workflows/approval.ts"
-import { createHook } from 'workflow';
+import { createHook } from "workflow";
 
 export async function approvalWorkflow(orderId: string) {
-  'use workflow';
+  "use workflow";
   using approval = createHook<{ approved: boolean }>({
     token: `order:${orderId}:approval`,
   });
   const { approved } = await approval;
   return {
     orderId,
-    status: approved ? ('approved' as const) : ('rejected' as const),
+    status: approved ? ("approved" as const) : ("rejected" as const),
   };
 }
 ```
 
 ```ts title="app/api/approvals/route.ts"
-import { resumeHook } from 'workflow/api';
+import { resumeHook } from "workflow/api";
 
 export async function POST(request: Request) {
   const body = (await request.json()) as {
@@ -81,30 +81,27 @@ export async function POST(request: Request) {
 Use this when the external system needs a callback URL and the default `202 Accepted` response is fine.
 
 ```ts
-import { createWebhook } from 'workflow';
+import { createWebhook } from "workflow";
 
 type ApprovalPayload = { approved: boolean };
 
 export async function approvalWorkflow(orderId: string) {
-  'use workflow';
+  "use workflow";
   using approval = createWebhook();
   await sendApprovalRequest(orderId, approval.url);
   const request = await approval;
   const body = (await request.json()) as ApprovalPayload;
   return {
     orderId,
-    status: body.approved ? ('approved' as const) : ('rejected' as const),
+    status: body.approved ? ("approved" as const) : ("rejected" as const),
   };
 }
 
-async function sendApprovalRequest(
-  orderId: string,
-  callbackUrl: string,
-): Promise<void> {
-  'use step';
+async function sendApprovalRequest(orderId: string, callbackUrl: string): Promise<void> {
+  "use step";
   await fetch(process.env.APPROVAL_API_URL!, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ orderId, callbackUrl }),
   });
 }
@@ -115,43 +112,35 @@ async function sendApprovalRequest(
 Use this when the external system needs a callback URL and the migrated flow must send a custom HTTP response.
 
 ```ts
-import { createWebhook, type RequestWithResponse } from 'workflow';
+import { createWebhook, type RequestWithResponse } from "workflow";
 
 type ApprovalPayload = { approved: boolean };
 
 export async function approvalWorkflow(orderId: string) {
-  'use workflow';
-  using approval = createWebhook({ respondWith: 'manual' });
+  "use workflow";
+  using approval = createWebhook({ respondWith: "manual" });
   await sendApprovalRequest(orderId, approval.url);
   const request = await approval;
   const body = (await request.json()) as ApprovalPayload;
   await acknowledgeApproval(request, body.approved);
   return {
     orderId,
-    status: body.approved ? ('approved' as const) : ('rejected' as const),
+    status: body.approved ? ("approved" as const) : ("rejected" as const),
   };
 }
 
-async function sendApprovalRequest(
-  orderId: string,
-  callbackUrl: string,
-): Promise<void> {
-  'use step';
+async function sendApprovalRequest(orderId: string, callbackUrl: string): Promise<void> {
+  "use step";
   await fetch(process.env.APPROVAL_API_URL!, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ orderId, callbackUrl }),
   });
 }
 
-async function acknowledgeApproval(
-  request: RequestWithResponse,
-  approved: boolean,
-): Promise<void> {
-  'use step';
-  await request.respondWith(
-    Response.json({ ok: true, approved }),
-  );
+async function acknowledgeApproval(request: RequestWithResponse, approved: boolean): Promise<void> {
+  "use step";
+  await request.respondWith(Response.json({ ok: true, approved }));
 }
 ```
 
@@ -170,30 +159,27 @@ Use this when all of the following are true:
 Workflow code:
 
 ```ts
-import { createWebhook } from 'workflow';
+import { createWebhook } from "workflow";
 
 type ApprovalPayload = { approved: boolean };
 
 export async function refundWorkflow(refundId: string) {
-  'use workflow';
+  "use workflow";
   using approval = createWebhook();
   await sendApprovalRequest(refundId, approval.url);
   const request = await approval;
   const payload = (await request.json()) as ApprovalPayload;
   return {
     refundId,
-    status: payload.approved ? ('approved' as const) : ('rejected' as const),
+    status: payload.approved ? ("approved" as const) : ("rejected" as const),
   };
 }
 
-async function sendApprovalRequest(
-  refundId: string,
-  callbackUrl: string,
-): Promise<void> {
-  'use step';
+async function sendApprovalRequest(refundId: string, callbackUrl: string): Promise<void> {
+  "use step";
   await fetch(process.env.APPROVAL_API_URL!, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ refundId, callbackUrl }),
   });
 }
@@ -208,7 +194,7 @@ interface World extends Queue, Streamer, Storage {
 ```
 
 ```ts
-import { getWorld } from 'workflow/runtime';
+import { getWorld } from "workflow/runtime";
 
 export async function startWorkflowWorld(): Promise<void> {
   await getWorld().start?.();
@@ -218,13 +204,13 @@ export async function startWorkflowWorld(): Promise<void> {
 Hono app boundary:
 
 ```ts
-import { Hono } from 'hono';
-import { start } from 'workflow/api';
-import { refundWorkflow } from '../workflows/refund';
+import { Hono } from "hono";
+import { start } from "workflow/api";
+import { refundWorkflow } from "../workflows/refund";
 
 const app = new Hono();
 
-app.post('/api/refunds/start', async (c) => {
+app.post("/api/refunds/start", async (c) => {
   const body = (await c.req.json()) as { refundId: string };
   const run = await start(refundWorkflow, [body.refundId]);
   return c.json({ runId: run.runId });

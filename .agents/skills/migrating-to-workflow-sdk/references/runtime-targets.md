@@ -34,7 +34,7 @@ interface World extends Queue, Streamer, Storage {
 Bootstrap example for self-hosted runtimes:
 
 ```ts
-import { getWorld } from 'workflow/runtime';
+import { getWorld } from "workflow/runtime";
 
 export async function startWorkflowWorld(): Promise<void> {
   await getWorld().start?.();
@@ -56,8 +56,8 @@ When the target is self-hosted, include this explanation almost verbatim:
 Framework-agnostic app boundary:
 
 ```ts
-import { start } from 'workflow/api';
-import { onboardingWorkflow } from '../workflows/onboarding';
+import { start } from "workflow/api";
+import { onboardingWorkflow } from "../workflows/onboarding";
 
 export async function POST(request: Request) {
   const body = (await request.json()) as { userId: string };
@@ -69,13 +69,13 @@ export async function POST(request: Request) {
 Named-framework app boundary example (Hono):
 
 ```ts
-import { Hono } from 'hono';
-import { start } from 'workflow/api';
-import { onboardingWorkflow } from '../workflows/onboarding';
+import { Hono } from "hono";
+import { start } from "workflow/api";
+import { onboardingWorkflow } from "../workflows/onboarding";
 
 const app = new Hono();
 
-app.post('/api/onboarding/start', async (c) => {
+app.post("/api/onboarding/start", async (c) => {
   const body = (await c.req.json()) as { userId: string };
   const run = await start(onboardingWorkflow, [body.userId]);
   return c.json({ runId: run.runId });
@@ -87,7 +87,7 @@ export default app;
 Startup bootstrap:
 
 ```ts
-import { getWorld } from 'workflow/runtime';
+import { getWorld } from "workflow/runtime";
 
 export async function startWorkflowWorld(): Promise<void> {
   await getWorld().start?.();
