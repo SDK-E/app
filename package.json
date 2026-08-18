@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "db:migrate": "prisma migrate deploy",
     "dev": "concurrently -k -n app,mail -c blue,green \"next dev --turbopack\" \"node scripts/mail/mail-sink.ts\"",
     "mail": "node scripts/mail/mail-sink.ts",
     "mail:list": "node scripts/mail/mail-cli.ts list",
@@ -11,7 +12,7 @@
     "mail:clear": "node scripts/mail/mail-cli.ts clear",
     "mail:wait": "node scripts/mail/mail-cli.ts wait",
     "mail:health": "node scripts/mail/mail-cli.ts health",
-    "build": "prisma migrate deploy && npm run generate && next build --turbopack",
+    "build": "npm run generate && next build --turbopack",
     "start": "next start",
     "generate": "prisma generate",
     "lint": "eslint",
