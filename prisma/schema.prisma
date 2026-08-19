@@ -494,11 +494,16 @@ model Invoice {
   createdAt   DateTime      @default(now())
   updatedAt   DateTime      @updatedAt
 
+  stripeInvoiceId      String?  @unique @db.VarChar(255)
+  stripeCustomerId     String?  @db.VarChar(255)
+  stripeSubscriptionId String?  @db.VarChar(255)
+
   company       Company    @relation(fields: [companyId], references: [id])
   project       Project?   @relation(fields: [projectId], references: [id])
   milestone     Milestone? @relation(fields: [milestoneId], references: [id])
   request       Request?   @relation(fields: [requestId], references: [id])
   createdByUser User       @relation(fields: [createdBy], references: [id], onDelete: Restrict)
+  payments      Payment[]
 
   @@index([companyId])
   @@index([projectId])
@@ -561,6 +566,71 @@ model Provider {
   @@index([status])
   @@index([createdAt])
   @@map("provider")
+}
+
+model StripeCustomer {
+  id              String   @id @default(uuid())
+  companyId       String   @unique
+  stripeCustomerId String  @unique @db.VarChar(255)
+  email           String   @db.VarChar(255)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([companyId])
+  @@map("stripe_customer")
+}
+
+model StripeConnectedAccount {
+  id               String                @id @default(uuid())
+  userId           String                @unique
+  accountId        String                @unique @db.VarChar(255)
+  type             String?               @db.VarChar(50)
+  capabilities     Json?
+  requirements     Json?
+  detailsSubmitted Boolean               @default(false)
+  createdAt        DateTime              @default(now())
+  updatedAt        DateTime              @updatedAt
+
+  @@index([userId])
+  @@map("stripe_connected_account")
+}
+
+model Subscription {
+  id                    String              @id @default(uuid())
+  companyId             String
+  stripeSubscriptionId  String              @unique @db.VarChar(255)
+  stripeCustomerId      String              @db.VarChar(255)
+  stripePriceId         String              @db.VarChar(255)
+  status                String              @db.VarChar(50)
+  currentPeriodStart    DateTime?
+  currentPeriodEnd      DateTime?
+  cancelAtPeriodEnd     Boolean             @default(false)
+  metadata              Json?
+  createdAt             DateTime            @default(now())
+  updatedAt             DateTime            @updatedAt
+
+  @@index([companyId])
+  @@index([stripeCustomerId])
+  @@map("subscription")
+}
+
+model Payment {
+  id                    String              @id @default(uuid())
+  invoiceId             String
+  stripePaymentIntentId String?             @unique @db.VarChar(255)
+  amount                Decimal             @db.Decimal(12, 2)
+  currency              String              @default("USD") @db.VarChar(3)
+  status                String              @db.VarChar(50)
+  providerAccountId     String?             @db.VarChar(255)
+  metadata              Json?
+  createdAt             DateTime            @default(now())
+  updatedAt             DateTime            @updatedAt
+
+  invoice Invoice @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+
+  @@index([invoiceId])
+  @@index([providerAccountId])
+  @@map("payment")
 }
 
 model AuditEvent {
