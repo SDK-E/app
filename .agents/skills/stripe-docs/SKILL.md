@@ -8,7 +8,6 @@ metadata:
   short-description: Read and search Stripe documentation from the terminal
 allowed-tools:
   - Bash(stripe docs *)
-
 ---
 
 Use `stripe docs` instead of fetching [docs.stripe.com](https://docs.stripe.com/.md) content directly with `curl` or `WebFetch`.
