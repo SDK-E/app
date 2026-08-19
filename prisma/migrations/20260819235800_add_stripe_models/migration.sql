@@ -1,10 +1,10 @@
 -- AlterTable
-ALTER TABLE "invoice" ADD COLUMN     "stripeCustomerId" VARCHAR(255),
-ADD COLUMN     "stripeInvoiceId" VARCHAR(255),
-ADD COLUMN     "stripeSubscriptionId" VARCHAR(255);
+ALTER TABLE "invoice" ADD COLUMN IF NOT EXISTS     "stripeCustomerId" VARCHAR(255),
+ADD COLUMN IF NOT EXISTS     "stripeInvoiceId" VARCHAR(255),
+ADD COLUMN IF NOT EXISTS     "stripeSubscriptionId" VARCHAR(255);
 
 -- CreateTable
-CREATE TABLE "stripe_customer" (
+CREATE TABLE IF NOT EXISTS "stripe_customer" (
     "id" TEXT NOT NULL,
     "companyId" TEXT NOT NULL,
     "stripeCustomerId" VARCHAR(255) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE "stripe_customer" (
 );
 
 -- CreateTable
-CREATE TABLE "stripe_connected_account" (
+CREATE TABLE IF NOT EXISTS "stripe_connected_account" (
     "id" TEXT NOT NULL,
     "userId" TEXT NOT NULL,
     "accountId" VARCHAR(255) NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE "stripe_connected_account" (
 );
 
 -- CreateTable
-CREATE TABLE "subscription" (
+CREATE TABLE IF NOT EXISTS "subscription" (
     "id" TEXT NOT NULL,
     "companyId" TEXT NOT NULL,
     "stripeSubscriptionId" VARCHAR(255) NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE "subscription" (
 );
 
 -- CreateTable
-CREATE TABLE "payment" (
+CREATE TABLE IF NOT EXISTS "payment" (
     "id" TEXT NOT NULL,
     "invoiceId" TEXT NOT NULL,
     "stripePaymentIntentId" VARCHAR(255),
@@ -64,43 +64,52 @@ CREATE TABLE "payment" (
 );
 
 -- CreateIndex
-CREATE UNIQUE INDEX "stripe_customer_companyId_key" ON "stripe_customer"("companyId");
+CREATE UNIQUE INDEX IF NOT EXISTS "stripe_customer_companyId_key" ON "stripe_customer"("companyId");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "stripe_customer_stripeCustomerId_key" ON "stripe_customer"("stripeCustomerId");
+CREATE UNIQUE INDEX IF NOT EXISTS "stripe_customer_stripeCustomerId_key" ON "stripe_customer"("stripeCustomerId");
 
 -- CreateIndex
-CREATE INDEX "stripe_customer_companyId_idx" ON "stripe_customer"("companyId");
+CREATE INDEX IF NOT EXISTS "stripe_customer_companyId_idx" ON "stripe_customer"("companyId");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "stripe_connected_account_userId_key" ON "stripe_connected_account"("userId");
+CREATE UNIQUE INDEX IF NOT EXISTS "stripe_connected_account_userId_key" ON "stripe_connected_account"("userId");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "stripe_connected_account_accountId_key" ON "stripe_connected_account"("accountId");
+CREATE UNIQUE INDEX IF NOT EXISTS "stripe_connected_account_accountId_key" ON "stripe_connected_account"("accountId");
 
 -- CreateIndex
-CREATE INDEX "stripe_connected_account_userId_idx" ON "stripe_connected_account"("userId");
+CREATE INDEX IF NOT EXISTS "stripe_connected_account_userId_idx" ON "stripe_connected_account"("userId");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "subscription_stripeSubscriptionId_key" ON "subscription"("stripeSubscriptionId");
+CREATE UNIQUE INDEX IF NOT EXISTS "subscription_stripeSubscriptionId_key" ON "subscription"("stripeSubscriptionId");
 
 -- CreateIndex
-CREATE INDEX "subscription_companyId_idx" ON "subscription"("companyId");
+CREATE INDEX IF NOT EXISTS "subscription_companyId_idx" ON "subscription"("companyId");
 
 -- CreateIndex
-CREATE INDEX "subscription_stripeCustomerId_idx" ON "subscription"("stripeCustomerId");
+CREATE INDEX IF NOT EXISTS "subscription_stripeCustomerId_idx" ON "subscription"("stripeCustomerId");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "payment_stripePaymentIntentId_key" ON "payment"("stripePaymentIntentId");
+CREATE UNIQUE INDEX IF NOT EXISTS "payment_stripePaymentIntentId_key" ON "payment"("stripePaymentIntentId");
 
 -- CreateIndex
-CREATE INDEX "payment_invoiceId_idx" ON "payment"("invoiceId");
+CREATE INDEX IF NOT EXISTS "payment_invoiceId_idx" ON "payment"("invoiceId");
 
 -- CreateIndex
-CREATE INDEX "payment_providerAccountId_idx" ON "payment"("providerAccountId");
+CREATE INDEX IF NOT EXISTS "payment_providerAccountId_idx" ON "payment"("providerAccountId");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "invoice_stripeInvoiceId_key" ON "invoice"("stripeInvoiceId");
+CREATE UNIQUE INDEX IF NOT EXISTS "invoice_stripeInvoiceId_key" ON "invoice"("stripeInvoiceId");
 
 -- AddForeignKey
-ALTER TABLE "payment" ADD CONSTRAINT "payment_invoiceId_fkey" FOREIGN KEY ("invoiceId") REFERENCES "invoice"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM information_schema.table_constraints 
+    WHERE constraint_name = 'payment_invoiceId_fkey' 
+    AND table_name = 'payment'
+  ) THEN
+    ALTER TABLE "payment" ADD CONSTRAINT "payment_invoiceId_fkey" FOREIGN KEY ("invoiceId") REFERENCES "invoice"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+  END IF;
+END $$;
