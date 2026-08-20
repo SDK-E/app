@@ -1,0 +1,128 @@
+enum DocumentStatus {
+  DRAFT
+  UPLOADED
+  ARCHIVED
+  DELETED
+
+  @@map("document_status")
+}
+
+enum MessageStatus {
+  SENT
+  READ
+  ARCHIVED
+  DELETED
+
+  @@map("message_status")
+}
+
+enum InvoiceStatus {
+  DRAFT
+  SENT
+  PAID
+  OVERDUE
+  CANCELLED
+  REFUNDED
+
+  @@map("invoice_status")
+}
+
+model Document {
+  id          String         @id @default(uuid())
+  companyId   String
+  projectId   String?
+  milestoneId String?
+  requestId   String?
+  name        String         @db.VarChar(255)
+  storageKey  String         @db.VarChar(1024)
+  mimeType    String         @db.VarChar(255)
+  sizeBytes   Int
+  status      DocumentStatus @default(DRAFT)
+  uploadedBy  String
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  company        Company    @relation(fields: [companyId], references: [id])
+  project        Project?   @relation(fields: [projectId], references: [id])
+  milestone      Milestone? @relation(fields: [milestoneId], references: [id])
+  request        Request?   @relation(fields: [requestId], references: [id])
+  uploadedByUser User       @relation(fields: [uploadedBy], references: [id], onDelete: Restrict)
+
+  @@index([companyId])
+  @@index([projectId])
+  @@index([milestoneId])
+  @@index([requestId])
+  @@index([uploadedBy])
+  @@index([status])
+  @@index([createdAt])
+  @@map("document")
+}
+
+model Message {
+  id              String        @id @default(uuid())
+  companyId       String
+  projectId       String?
+  milestoneId     String?
+  requestId       String?
+  content         String        @db.Text
+  authorId        String
+  parentMessageId String?
+  status          MessageStatus @default(SENT)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  company       Company    @relation(fields: [companyId], references: [id])
+  project       Project?   @relation(fields: [projectId], references: [id])
+  milestone     Milestone? @relation(fields: [milestoneId], references: [id])
+  request       Request?   @relation(fields: [requestId], references: [id])
+  author        User       @relation(fields: [authorId], references: [id], onDelete: Restrict)
+  parentMessage Message?   @relation("MessageReplies", fields: [parentMessageId], references: [id], onDelete: SetNull)
+  replies       Message[]  @relation("MessageReplies")
+
+  @@index([companyId])
+  @@index([projectId])
+  @@index([milestoneId])
+  @@index([requestId])
+  @@index([authorId])
+  @@index([parentMessageId])
+  @@index([status])
+  @@index([createdAt])
+  @@map("message")
+}
+
+model Invoice {
+  id          String        @id @default(uuid())
+  companyId   String
+  projectId   String?
+  milestoneId String?
+  requestId   String?
+  amount      Decimal       @db.Decimal(12, 2)
+  currency    String        @default("USD") @db.VarChar(3)
+  status      InvoiceStatus @default(DRAFT)
+  dueDate     DateTime?
+  paidAt      DateTime?
+  createdBy   String
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  stripeInvoiceId      String?  @unique @db.VarChar(255)
+  stripeCustomerId     String?  @db.VarChar(255)
+  stripeSubscriptionId String?  @db.VarChar(255)
+
+  company       Company    @relation(fields: [companyId], references: [id])
+  project       Project?   @relation(fields: [projectId], references: [id])
+  milestone     Milestone? @relation(fields: [milestoneId], references: [id])
+  request       Request?   @relation(fields: [requestId], references: [id])
+  createdByUser User       @relation(fields: [createdBy], references: [id], onDelete: Restrict)
+  payments      Payment[]
+
+  @@index([companyId])
+  @@index([projectId])
+  @@index([milestoneId])
+  @@index([requestId])
+  @@index([createdBy])
+  @@index([status])
+  @@index([companyId, status])
+  @@index([createdAt])
+  @@map("invoice")
+}

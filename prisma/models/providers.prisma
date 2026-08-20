@@ -1,0 +1,376 @@
+enum ProviderStatus {
+  DRAFT
+  SUBMITTED
+  UNDER_REVIEW
+  CHANGES_REQUESTED
+  APPROVED
+  ACTIVE
+  SUSPENDED
+  REJECTED
+  ARCHIVED
+
+  @@map("provider_status")
+}
+
+enum ProviderReviewAction {
+  APPROVED
+  REJECTED
+  CHANGES_REQUESTED
+
+  @@map("provider_review_action")
+}
+
+enum VerificationType {
+  IDENTITY
+  BUSINESS_REGISTRATION
+  VAT_TAX
+  BANK_PAYOUT
+  PROFESSIONAL_CREDENTIAL
+
+  @@map("verification_type")
+}
+
+enum VerificationStatus {
+  NOT_STARTED
+  PENDING
+  IN_PROGRESS
+  VERIFIED
+  FAILED
+  EXPIRED
+  WAIVED
+
+  @@map("verification_status")
+}
+
+enum VerificationEvidenceStatus {
+  PENDING
+  UPLOADED
+  ARCHIVED
+
+  @@map("verification_evidence_status")
+}
+
+enum CommercialStatus {
+  NOT_READY
+  READY
+  SUSPENDED
+
+  @@map("commercial_status")
+}
+
+enum AbsenceStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CANCELLED
+
+  @@map("absence_status")
+}
+
+enum ReservationStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+
+  @@map("reservation_status")
+}
+
+enum ServiceStatus {
+  DRAFT
+  SUBMITTED
+  UNDER_REVIEW
+  CHANGES_REQUESTED
+  APPROVED
+  REJECTED
+  PUBLISHED
+  UNPUBLISHED
+
+  @@map("service_status")
+}
+
+enum PricingModel {
+  HOURLY
+  FIXED_PROJECT
+  RETAINER
+  DAY_RATE
+
+  @@map("pricing_model")
+}
+
+enum ServiceReviewAction {
+  APPROVED
+  REJECTED
+  CHANGES_REQUESTED
+
+  @@map("service_review_action")
+}
+
+enum ServiceMediaAssetKind {
+  IMAGE
+  VIDEO
+  DOCUMENT
+  OTHER
+
+  @@map("service_media_asset_kind")
+}
+
+model Provider {
+  id                  String           @id @default(uuid())
+  userId              String           @unique
+  status              ProviderStatus   @default(DRAFT)
+  businessName        String?          @db.VarChar(255)
+  timeZone            String?          @db.VarChar(100)
+  professionalTitle   String?          @db.VarChar(255)
+  biography           String?          @db.Text
+  cvStorageKey        String?          @db.VarChar(1024)
+  portfolioUrl        String?          @db.VarChar(1024)
+  yearsOfExperience   Int?
+  languages           String[]         @default([])
+  expectedRateMin     Decimal?         @db.Decimal(10, 2)
+  expectedRateMax     Decimal?         @db.Decimal(10, 2)
+  linkedinUrl         String?          @db.VarChar(1024)
+  githubUrl           String?          @db.VarChar(1024)
+  websiteUrl          String?          @db.VarChar(1024)
+  businessLegalInfo   String?          @db.Text
+  vatInfo             String?          @db.VarChar(255)
+  preferredProjectTypes String[]       @default([])
+  completenessScore   Int              @default(0)
+  commercialStatus    CommercialStatus @default(NOT_READY)
+  defaultDailyHours   Decimal?         @db.Decimal(4, 1)
+  createdAt           DateTime         @default(now())
+  updatedAt           DateTime         @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  reviews                ProviderReview[]
+  services               ProviderService[]
+  verificationRecords    VerificationRecord[]
+  commercialReadiness    ProviderCommercialReadiness?
+  weeklyCapacity         ProviderWeeklyCapacity[]
+  absences               ProviderAbsence[]
+  capacityReservations   CapacityReservation[]
+
+  @@index([userId])
+  @@index([status])
+  @@index([commercialStatus])
+  @@index([createdAt])
+  @@map("provider")
+}
+
+model ProviderReview {
+  id          String              @id @default(uuid())
+  providerId  String
+  reviewerId  String
+  action      ProviderReviewAction
+  reason      String?             @db.Text
+  internalNotes String?           @db.Text
+  createdAt   DateTime            @default(now())
+
+  provider Provider @relation(fields: [providerId], references: [id], onDelete: Cascade)
+  reviewer User    @relation(fields: [reviewerId], references: [id], onDelete: Restrict)
+
+  @@index([providerId])
+  @@index([reviewerId])
+  @@index([createdAt])
+  @@map("provider_review")
+}
+
+model VerificationRequirement {
+  id          String           @id @default(uuid())
+  type        VerificationType @unique
+  name        String           @db.VarChar(255)
+  description String?          @db.Text
+  required    Boolean          @default(true)
+  enabled     Boolean          @default(true)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  @@map("verification_requirement")
+}
+
+model VerificationRecord {
+  id              String             @id @default(uuid())
+  providerId      String
+  type            VerificationType
+  status          VerificationStatus @default(NOT_STARTED)
+  verifiedAt      DateTime?
+  expiresAt       DateTime?
+  verifiedById    String?
+  rejectionReason String?            @db.Text
+  internalNotes   String?            @db.Text
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+
+  provider  Provider              @relation(fields: [providerId], references: [id], onDelete: Cascade)
+  verifiedBy User?                 @relation("VerificationReviewedBy", fields: [verifiedById], references: [id], onDelete: SetNull)
+  evidence   VerificationEvidence[]
+
+  @@unique([providerId, type])
+  @@index([providerId])
+  @@index([type])
+  @@index([status])
+  @@index([createdAt])
+  @@map("verification_record")
+}
+
+model VerificationEvidence {
+  id             String                     @id @default(uuid())
+  verificationId String
+  name           String                     @db.VarChar(255)
+  storageKey     String                     @db.VarChar(1024)
+  mimeType       String                     @db.VarChar(255)
+  sizeBytes      Int
+  contentHash    String?                    @db.VarChar(255)
+  status         VerificationEvidenceStatus @default(PENDING)
+  uploadedBy     String
+  createdAt      DateTime                   @default(now())
+  updatedAt      DateTime                   @updatedAt
+
+  verification VerificationRecord @relation(fields: [verificationId], references: [id], onDelete: Cascade)
+  uploader     User               @relation(fields: [uploadedBy], references: [id], onDelete: Restrict)
+
+  @@index([verificationId])
+  @@index([uploadedBy])
+  @@index([createdAt])
+  @@map("verification_evidence")
+}
+
+model ProviderCommercialReadiness {
+  id            String    @id @default(uuid())
+  providerId    String    @unique
+  contractReady Boolean   @default(false)
+  payoutReady   Boolean   @default(false)
+  taxInfoReady  Boolean   @default(false)
+  lastCheckedAt DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  provider Provider @relation(fields: [providerId], references: [id], onDelete: Cascade)
+
+  @@index([providerId])
+  @@map("provider_commercial_readiness")
+}
+
+model ProviderWeeklyCapacity {
+  id          String   @id @default(uuid())
+  providerId  String
+  weekday     Int
+  hoursPerDay Decimal  @db.Decimal(4, 1)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  provider Provider @relation(fields: [providerId], references: [id], onDelete: Cascade)
+
+  @@unique([providerId, weekday])
+  @@index([providerId])
+  @@map("provider_weekly_capacity")
+}
+
+model ProviderAbsence {
+  id         String        @id @default(uuid())
+  providerId String
+  startDate  DateTime      @db.Date
+  endDate    DateTime      @db.Date
+  reason     String?       @db.Text
+  status     AbsenceStatus @default(PENDING)
+
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+
+  provider Provider @relation(fields: [providerId], references: [id], onDelete: Cascade)
+
+  @@index([providerId, startDate, endDate])
+  @@index([status])
+  @@map("provider_absence")
+}
+
+model CapacityReservation {
+  id            String            @id @default(uuid())
+  providerId    String
+  engagementId  String?
+  hoursPerDay   Decimal           @db.Decimal(4, 1)
+  startDate     DateTime          @db.Date
+  endDate       DateTime          @db.Date
+  status        ReservationStatus @default(PENDING)
+
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+
+  provider Provider @relation(fields: [providerId], references: [id], onDelete: Cascade)
+
+  @@index([providerId, startDate, endDate])
+  @@index([status])
+  @@index([engagementId])
+  @@map("capacity_reservation")
+}
+
+model ProviderService {
+  id                String        @id @default(uuid())
+  providerId        String
+  status            ServiceStatus @default(DRAFT)
+  title             String        @db.VarChar(255)
+  description       String        @db.Text
+  capability        String        @default("other") @db.VarChar(100)
+  categoryTags      String[]      @default([])
+  pricingModel      PricingModel?
+  rateMin           Decimal?      @db.Decimal(10, 2)
+  rateMax           Decimal?      @db.Decimal(10, 2)
+  currency          String        @default("USD") @db.VarChar(3)
+  estimatedDuration String?       @db.VarChar(100)
+  deliverables      String?       @db.Text
+  completenessScore Int           @default(0)
+  publishedAt       DateTime?
+  unpublishedAt     DateTime?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  provider Provider               @relation(fields: [providerId], references: [id], onDelete: Cascade)
+  reviews  ProviderServiceReview[]
+  media    ServiceMediaAsset[]
+
+  @@index([providerId])
+  @@index([status])
+  @@index([capability])
+  @@index([createdAt])
+  @@map("provider_service")
+}
+
+model ProviderServiceReview {
+  id         String              @id @default(uuid())
+  serviceId  String
+  reviewerId String
+  action     ServiceReviewAction
+  reason     String?             @db.Text
+  createdAt  DateTime            @default(now())
+
+  service  ProviderService @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  reviewer User            @relation(fields: [reviewerId], references: [id], onDelete: Restrict)
+
+  @@index([serviceId])
+  @@index([reviewerId])
+  @@index([createdAt])
+  @@map("provider_service_review")
+}
+
+model ServiceMediaAsset {
+  id         String                @id @default(uuid())
+  serviceId  String
+  name       String                @db.VarChar(255)
+  storageKey String                @db.VarChar(1024)
+  mimeType   String                @db.VarChar(255)
+  sizeBytes  Int
+  kind       ServiceMediaAssetKind @default(OTHER)
+  sortOrder  Int                   @default(0)
+  uploadedBy String
+  createdAt  DateTime              @default(now())
+  updatedAt  DateTime              @updatedAt
+
+  service  ProviderService @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  uploader User            @relation(fields: [uploadedBy], references: [id], onDelete: Restrict)
+
+  @@index([serviceId])
+  @@index([uploadedBy])
+  @@index([createdAt])
+  @@map("service_media_asset")
+}

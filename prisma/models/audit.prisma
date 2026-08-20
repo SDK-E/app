@@ -1,0 +1,30 @@
+enum AuditActorKind {
+  USER
+  PROVIDER
+  SDK_STAFF
+  SYSTEM
+
+  @@map("audit_actor_kind")
+}
+
+model AuditEvent {
+  id          String         @id @default(uuid())
+  companyId   String?
+  actorId     String?
+  actorKind   AuditActorKind @default(USER)
+  action      String         @db.VarChar(100)
+  targetType  String         @db.VarChar(100)
+  targetId    String         @db.VarChar(100)
+  fromState   String?        @db.VarChar(100)
+  toState     String?        @db.VarChar(100)
+  metadata    Json?
+  createdAt   DateTime       @default(now())
+
+  actor User? @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([actorId])
+  @@index([targetType, targetId])
+  @@index([companyId])
+  @@index([createdAt])
+  @@map("audit_event")
+}

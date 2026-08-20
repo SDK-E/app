@@ -1,0 +1,170 @@
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+
+  @@map("priority")
+}
+
+enum RequestStatus {
+  DRAFT
+  SUBMITTED
+  IN_REVIEW
+  INFORMATION_REQUIRED
+  PROPOSAL_READY
+  APPROVED
+  REJECTED
+  CLOSED
+
+  @@map("request_status")
+}
+
+enum RequestActivityType {
+  CREATED
+  UPDATED
+  SUBMITTED
+  REVIEW_STARTED
+  INFORMATION_REQUESTED
+  INFORMATION_PROVIDED
+  PROPOSAL_READY
+  ACCEPTED
+  REJECTED
+  CONVERTED_TO_PROJECT
+
+  @@map("request_activity_type")
+}
+
+enum ProjectStatus {
+  PLANNING
+  ACTIVE
+  ON_HOLD
+  COMPLETED
+  CANCELLED
+
+  @@map("project_status")
+}
+
+enum MilestoneStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  OVERDUE
+  CANCELLED
+
+  @@map("milestone_status")
+}
+
+model Request {
+  id                    String        @id @default(uuid())
+  companyId             String
+  title                 String        @db.VarChar(255)
+  description           String        @db.Text
+  capability            String        @default("other") @db.VarChar(100)
+  businessContext       String?       @db.Text
+  supportingInformation String?       @db.Text
+  supportingLinks       String[]      @default([])
+  status                RequestStatus @default(DRAFT)
+  priority              Priority      @default(MEDIUM)
+  submittedBy           String
+  reviewedBy            String?
+  reviewedAt            DateTime?
+  closedAt              DateTime?
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
+
+  company         Company @relation(fields: [companyId], references: [id])
+  submittedByUser User    @relation("RequestSubmittedBy", fields: [submittedBy], references: [id], onDelete: Restrict)
+  reviewedByUser  User?   @relation("RequestReviewedBy", fields: [reviewedBy], references: [id], onDelete: SetNull)
+
+  projects   Project[]
+  documents  Document[]
+  messages   Message[]
+  invoices   Invoice[]
+  activities RequestActivity[]
+
+  @@index([companyId])
+  @@index([companyId, updatedAt])
+  @@index([status])
+  @@index([priority])
+  @@index([submittedBy])
+  @@index([createdAt])
+  @@map("request")
+}
+
+model RequestActivity {
+  id         String              @id @default(uuid())
+  companyId  String
+  requestId  String
+  actorId    String
+  type       RequestActivityType
+  fromStatus RequestStatus?
+  toStatus   RequestStatus?
+  createdAt  DateTime            @default(now())
+
+  company Company @relation(fields: [companyId], references: [id])
+  request Request @relation(fields: [requestId], references: [id], onDelete: Cascade)
+  actor   User    @relation(fields: [actorId], references: [id], onDelete: Restrict)
+
+  @@index([companyId, createdAt])
+  @@index([requestId, createdAt])
+  @@index([actorId])
+  @@map("request_activity")
+}
+
+model Project {
+  id          String        @id @default(uuid())
+  companyId   String
+  requestId   String?
+  name        String        @db.VarChar(255)
+  description String        @db.Text
+  status      ProjectStatus @default(PLANNING)
+  startDate   DateTime?
+  dueDate     DateTime?
+  completedAt DateTime?
+  createdBy   String
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  company       Company  @relation(fields: [companyId], references: [id])
+  request       Request? @relation(fields: [requestId], references: [id])
+  createdByUser User     @relation("ProjectCreatedBy", fields: [createdBy], references: [id], onDelete: Restrict)
+
+  milestones Milestone[]
+  documents  Document[]
+  messages   Message[]
+  invoices   Invoice[]
+
+  @@index([companyId])
+  @@index([requestId])
+  @@index([status])
+  @@index([createdBy])
+  @@index([createdAt])
+  @@map("project")
+}
+
+model Milestone {
+  id          String          @id @default(uuid())
+  projectId   String
+  companyId   String
+  name        String          @db.VarChar(255)
+  description String          @db.Text
+  status      MilestoneStatus @default(PENDING)
+  dueDate     DateTime?
+  completedAt DateTime?
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  company Company @relation(fields: [companyId], references: [id])
+
+  documents Document[]
+  messages  Message[]
+  invoices  Invoice[]
+
+  @@index([projectId])
+  @@index([companyId])
+  @@index([status])
+  @@index([createdAt])
+  @@map("milestone")
+}
