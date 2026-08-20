@@ -67,6 +67,9 @@ export const permissions = [
   "provider:view",
   "provider:update",
   "provider:review",
+  "match:view",
+  "match:execute",
+  "match:override",
 ] as const;
 
 export type Permission = (typeof permissions)[number];

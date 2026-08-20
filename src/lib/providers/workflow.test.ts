@@ -79,7 +79,7 @@ describe("createProviderProfile", () => {
     mocks.provider.create.mockResolvedValue({ id: "provider-1", status: "DRAFT" });
     const result = await createProviderProfile(principal("provider"));
     expect(mocks.provider.create).toHaveBeenCalledWith({
-      data: { userId: "user-1", status: "DRAFT" },
+      data: { userId: "user-1", status: "DRAFT", companyId: null },
     });
     expect(result.id).toBe("provider-1");
   });

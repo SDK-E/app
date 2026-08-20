@@ -116,6 +116,7 @@ enum ServiceMediaAssetKind {
 
 model Provider {
   id                  String           @id @default(uuid())
+  companyId           String?
   userId              String           @unique
   status              ProviderStatus   @default(DRAFT)
   businessName        String?          @db.VarChar(255)
@@ -141,6 +142,7 @@ model Provider {
   updatedAt           DateTime         @updatedAt
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  company Company? @relation(fields: [companyId], references: [id], onDelete: Cascade)
 
   reviews                ProviderReview[]
   services               ProviderService[]
@@ -149,8 +151,11 @@ model Provider {
   weeklyCapacity         ProviderWeeklyCapacity[]
   absences               ProviderAbsence[]
   capacityReservations   CapacityReservation[]
+  matchCandidates        MatchCandidate[]
+  matchOverrides         MatchOverride[]
 
   @@index([userId])
+  @@index([companyId])
   @@index([status])
   @@index([commercialStatus])
   @@index([createdAt])

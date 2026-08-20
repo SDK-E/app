@@ -63,6 +63,10 @@ model Opportunity {
   positions OpportunityPosition[]
   activities OpportunityActivity[]
   documents Document[]
+  matchRuns MatchRun[]
+  matchCandidates MatchCandidate[]
+  matchOverrides MatchOverride[]
+  matchWeightConfigs MatchWeightConfig[]
 
   @@index([companyId, status])
   @@index([companyId, visibilityMode])
@@ -102,6 +106,9 @@ model OpportunityPosition {
   opportunity Opportunity @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
   company     Company     @relation("OpportunityPositionCompany", fields: [companyId], references: [id])
   documents   Document[]
+  matchCandidates MatchCandidate[]
+  matchOverrides MatchOverride[]
+  matchWeightConfigs MatchWeightConfig[]
 
   @@index([opportunityId])
   @@index([companyId])

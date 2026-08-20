@@ -77,6 +77,8 @@ model User {
   opportunities       Opportunity[]        @relation("OpportunityCreatedBy")
   ownedOpportunities  Opportunity[]        @relation("OpportunityOwner")
   opportunityActivities OpportunityActivity[]
+  matchRunsTriggered  MatchRun[]           @relation("MatchRunTriggeredBy")
+  matchOverrides      MatchOverride[]
 
   @@index([email])
   @@index([auth0Sub])
@@ -106,6 +108,11 @@ model Company {
   opportunities     Opportunity[]
   opportunityPositions OpportunityPosition[] @relation("OpportunityPositionCompany")
   opportunityActivities OpportunityActivity[]
+  matchRuns         MatchRun[]
+  matchCandidates   MatchCandidate[]
+  matchOverrides    MatchOverride[]
+  matchWeightConfigs MatchWeightConfig[]
+  providers         Provider[]
 
   @@index([slug])
   @@index([createdAt])

@@ -1,0 +1,125 @@
+enum MatchRunStatus {
+  PENDING
+  RUNNING
+  COMPLETED
+  FAILED
+
+  @@map("match_run_status")
+}
+
+enum MatchCandidateSelectionState {
+  NOT_SELECTED
+  AUTO_SHORTLISTED
+  MANUAL_OVERRIDE
+
+  @@map("match_candidate_selection_state")
+}
+
+enum MatchOverrideType {
+  BOOST
+  SUPPRESS
+  EXCLUDE
+
+  @@map("match_override_type")
+}
+
+model MatchRun {
+  id                String           @id @default(uuid())
+  companyId         String
+  opportunityId     String
+  triggeredById     String
+  status            MatchRunStatus   @default(PENDING)
+  configSnapshot    Json
+  totalCandidates   Int              @default(0)
+  eligibleCandidates Int             @default(0)
+  warningsCount     Int              @default(0)
+  errorMessage      String?          @db.Text
+  startedAt         DateTime?
+  completedAt       DateTime?
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+
+  company       Company           @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  opportunity   Opportunity       @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  triggeredBy   User              @relation("MatchRunTriggeredBy", fields: [triggeredById], references: [id], onDelete: Restrict)
+  candidates    MatchCandidate[]
+
+  @@index([companyId, opportunityId, createdAt])
+  @@map("match_run")
+}
+
+model MatchCandidate {
+  id                  String                      @id @default(uuid())
+  matchRunId          String
+  companyId           String
+  opportunityId       String
+  providerId          String
+  positionId          String?
+  overallScore        Int
+  eligibilityPassed   Boolean
+  scoreBreakdown      Json
+  explanation         Json
+  warnings            Json
+  selectionState      MatchCandidateSelectionState @default(NOT_SELECTED)
+  createdAt           DateTime                    @default(now())
+
+  matchRun   MatchRun         @relation(fields: [matchRunId], references: [id], onDelete: Cascade)
+  company    Company          @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  opportunity Opportunity      @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  provider   Provider         @relation(fields: [providerId], references: [id], onDelete: Cascade)
+  position   OpportunityPosition? @relation(fields: [positionId], references: [id], onDelete: SetNull)
+
+  @@index([matchRunId, overallScore])
+  @@unique([matchRunId, opportunityId, providerId])
+  @@index([opportunityId, providerId])
+  @@map("match_candidate")
+}
+
+model MatchOverride {
+  id              String           @id @default(uuid())
+  companyId       String
+  opportunityId   String
+  providerId      String
+  positionId      String?
+  actorId         String
+  type            MatchOverrideType
+  reason          String           @db.Text
+  active          Boolean          @default(true)
+  createdAt       DateTime         @default(now())
+
+  company     Company              @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  opportunity Opportunity          @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  provider    Provider             @relation(fields: [providerId], references: [id], onDelete: Cascade)
+  position    OpportunityPosition? @relation(fields: [positionId], references: [id], onDelete: SetNull)
+  actor       User                 @relation(fields: [actorId], references: [id], onDelete: Restrict)
+
+  @@index([opportunityId, providerId, createdAt])
+  @@map("match_override")
+}
+
+model MatchWeightConfig {
+  id                   String   @id @default(uuid())
+  companyId            String
+  opportunityId        String?
+  positionId           String?
+  skillMatchWeight     Int      @default(12)
+  seniorityWeight      Int      @default(12)
+  rateWeight           Int      @default(12)
+  availabilityWeight   Int      @default(12)
+  locationWeight       Int      @default(12)
+  languageWeight       Int      @default(12)
+  completenessWeight   Int      @default(12)
+  serviceFitWeight     Int      @default(12)
+  active               Boolean  @default(true)
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  company     Company              @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  opportunity Opportunity?         @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  position    OpportunityPosition? @relation(fields: [positionId], references: [id], onDelete: Cascade)
+
+  @@unique([companyId, opportunityId, positionId])
+  @@index([companyId])
+  @@index([opportunityId])
+  @@map("match_weight_config")
+}

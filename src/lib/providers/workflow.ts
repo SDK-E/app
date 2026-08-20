@@ -23,6 +23,7 @@ export async function createProviderProfile(principal: AppPrincipal): Promise<Pr
     data: {
       userId: principal.id,
       status: "DRAFT",
+      companyId: null,
     },
   });
 }
