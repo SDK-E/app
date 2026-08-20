@@ -60,10 +60,10 @@ Providers must not be able to approve their own application. Rejection and chang
 
 **Outcome / notes:**
 
-- [ ] Incomplete applications blocked from submission
-- [ ] Provider cannot self-approve
-- [ ] Every review transition is audited
-- [ ] Rejection reasons separated from internal notes
+- [X] Incomplete applications blocked from submission
+- [X] Provider cannot self-approve
+- [X] Every review transition is audited
+- [X] Rejection reasons separated from internal notes
 
 ---
 
@@ -86,10 +86,10 @@ Client-facing views must never expose provider-private or internal SDK data. Pro
 
 **Outcome / notes:**
 
-- [ ] Client-safe profile serialization
-- [ ] SDK-managed skill catalogue
-- [ ] Provider suggestions separated from controlled taxonomy
-- [ ] Visibility rules enforced
+- [X] Client-safe profile serialization
+- [X] SDK-managed skill catalogue
+- [X] Provider suggestions separated from controlled taxonomy
+- [X] Visibility rules enforced
 
 ---
 
@@ -112,9 +112,9 @@ Verification requirements must be configurable. Approval and commercial readines
 
 **Outcome / notes:**
 
-- [ ] Verification requirements configurable
-- [ ] Approval and commercial readiness are distinct
-- [ ] Sensitive data permission-controlled
+- [X] Verification requirements configurable
+- [X] Approval and commercial readiness are distinct
+- [X] Sensitive data permission-controlled
 
 ---
 
@@ -137,10 +137,10 @@ Available capacity must be derived correctly from availability and absences. Fut
 
 **Outcome / notes:**
 
-- [ ] Capacity derived correctly
-- [ ] Future reservations work
-- [ ] Absence reduces capacity
-- [ ] Timezone preserved
+- [X] Capacity derived correctly
+- [X] Future reservations work
+- [X] Absence reduces capacity
+- [X] Timezone preserved
 
 ---
 
@@ -164,9 +164,9 @@ Providers must not be able to self-publish unapproved services. Published servic
 
 **Outcome / notes:**
 
-- [ ] Provider cannot self-publish
-- [ ] Published snapshot is client-safe
-- [ ] SDK moderation workflow complete
+- [X] Provider cannot self-publish
+- [X] Published snapshot is client-safe
+- [X] SDK moderation workflow complete
 
 ---
 
@@ -188,9 +188,9 @@ Client requests must not automatically become provider-visible. SDK must be able
 
 **Outcome / notes:**
 
-- [ ] Requests not auto-visible to providers
-- [ ] SDK can convert to opportunity
-- [ ] Internal ownership tracked
+- [X] Requests not auto-visible to providers
+- [X] SDK can convert to opportunity
+- [X] Internal ownership tracked
 
 ---
 
