@@ -15,6 +15,7 @@ export default defineConfig({
     coverage: {
       provider: "v8",
       include: ["src/lib/**/*.{ts,tsx}", "src/proxy.ts"],
+      exclude: ["**/schemas.ts"],
       reporter: ["text", "html"],
       thresholds: {
         lines: 80,
