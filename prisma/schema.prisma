@@ -221,6 +221,45 @@ enum ReservationStatus {
   @@map("reservation_status")
 }
 
+enum ServiceStatus {
+  DRAFT
+  SUBMITTED
+  UNDER_REVIEW
+  CHANGES_REQUESTED
+  APPROVED
+  REJECTED
+  PUBLISHED
+  UNPUBLISHED
+
+  @@map("service_status")
+}
+
+enum PricingModel {
+  HOURLY
+  FIXED_PROJECT
+  RETAINER
+  DAY_RATE
+
+  @@map("pricing_model")
+}
+
+enum ServiceReviewAction {
+  APPROVED
+  REJECTED
+  CHANGES_REQUESTED
+
+  @@map("service_review_action")
+}
+
+enum ServiceMediaAssetKind {
+  IMAGE
+  VIDEO
+  DOCUMENT
+  OTHER
+
+  @@map("service_media_asset_kind")
+}
+
 model User {
   id              String        @id @default(uuid())
   auth0Sub        String        @unique
@@ -250,6 +289,8 @@ model User {
   provider            Provider?
   auditEvents         AuditEvent[]
   providerReviews     ProviderReview[]
+  serviceReviews      ProviderServiceReview[]
+  uploadedServiceMedia ServiceMediaAsset[]
   verifiedProviders   VerificationRecord[] @relation("VerificationReviewedBy")
   uploadedEvidence    VerificationEvidence[]
 
@@ -620,6 +661,7 @@ model Provider {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   reviews                ProviderReview[]
+  services               ProviderService[]
   verificationRecords    VerificationRecord[]
   commercialReadiness    ProviderCommercialReadiness?
   weeklyCapacity         ProviderWeeklyCapacity[]
@@ -866,4 +908,74 @@ model CapacityReservation {
   @@index([status])
   @@index([engagementId])
   @@map("capacity_reservation")
+}
+
+model ProviderService {
+  id                String        @id @default(uuid())
+  providerId        String
+  status            ServiceStatus @default(DRAFT)
+  title             String        @db.VarChar(255)
+  description       String        @db.Text
+  capability        String        @default("other") @db.VarChar(100)
+  categoryTags      String[]      @default([])
+  pricingModel      PricingModel?
+  rateMin           Decimal?      @db.Decimal(10, 2)
+  rateMax           Decimal?      @db.Decimal(10, 2)
+  currency          String        @default("USD") @db.VarChar(3)
+  estimatedDuration String?       @db.VarChar(100)
+  deliverables      String?       @db.Text
+  completenessScore Int           @default(0)
+  publishedAt       DateTime?
+  unpublishedAt     DateTime?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  provider Provider               @relation(fields: [providerId], references: [id], onDelete: Cascade)
+  reviews  ProviderServiceReview[]
+  media    ServiceMediaAsset[]
+
+  @@index([providerId])
+  @@index([status])
+  @@index([capability])
+  @@index([createdAt])
+  @@map("provider_service")
+}
+
+model ProviderServiceReview {
+  id         String              @id @default(uuid())
+  serviceId  String
+  reviewerId String
+  action     ServiceReviewAction
+  reason     String?             @db.Text
+  createdAt  DateTime            @default(now())
+
+  service  ProviderService @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  reviewer User            @relation(fields: [reviewerId], references: [id], onDelete: Restrict)
+
+  @@index([serviceId])
+  @@index([reviewerId])
+  @@index([createdAt])
+  @@map("provider_service_review")
+}
+
+model ServiceMediaAsset {
+  id         String                @id @default(uuid())
+  serviceId  String
+  name       String                @db.VarChar(255)
+  storageKey String                @db.VarChar(1024)
+  mimeType   String                @db.VarChar(255)
+  sizeBytes  Int
+  kind       ServiceMediaAssetKind @default(OTHER)
+  sortOrder  Int                   @default(0)
+  uploadedBy String
+  createdAt  DateTime              @default(now())
+  updatedAt  DateTime              @updatedAt
+
+  service  ProviderService @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  uploader User            @relation(fields: [uploadedBy], references: [id], onDelete: Restrict)
+
+  @@index([serviceId])
+  @@index([uploadedBy])
+  @@index([createdAt])
+  @@map("service_media_asset")
 }
