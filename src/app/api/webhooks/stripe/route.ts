@@ -6,11 +6,12 @@ import { NextResponse } from "next/server";
 import { getServerEnv } from "@/lib/env";
 import { getPrisma } from "@/lib/db";
 
-const stripe = new Stripe(getServerEnv().STRIPE_SECRET_KEY);
-
 export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
+  const env = getServerEnv();
+  const stripe = new Stripe(env.STRIPE_SECRET_KEY);
+
   const body = await request.text();
   const signature = request.headers.get("stripe-signature");
 
