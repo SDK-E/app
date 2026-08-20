@@ -35,6 +35,13 @@ OpenCode: `@docs` reference.
 
 Auth0 = sessions. Postgres = identity + roles + permissions + tenant. SDK staff ≠ client. No passwords, fallback credentials, auth bypasses.
 
+## Planning conventions
+
+- Planning phase is business/domain surface only.
+- No code, no schema snippets, no Zod schemas, no Prisma models in plans.
+- Plans describe: domain concepts, business rules, invariants, edge cases, acceptance criteria, test surface.
+- Implementation detail belongs in the implementation commit, not the plan.
+
 <!-- nextjs-agent-rules -->
 
 Breaking changes — read `node_modules/next/dist/docs/` before code. Heed deprecation notices.
