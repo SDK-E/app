@@ -239,10 +239,10 @@ Matching must be explainable and repeatable with the same input. Operators must 
 
 **Outcome / notes:**
 
-- [ ] Same input produces explainable results
-- [ ] Operators see match reasons
-- [ ] Manual overrides audited
-- [ ] Matching does not select
+- [x] Same input produces explainable results
+- [x] Operators see match reasons
+- [x] Manual overrides audited
+- [x] Matching does not select
 
 ---
 
@@ -869,15 +869,15 @@ AI recommendations must remain explainable and operator-overridable. Do not repl
 
 | Step | Title                                               | Status  |
 | ---- | --------------------------------------------------- | ------- |
-| 1    | Domain foundations                                  | pending |
-| 2    | Provider application                                | pending |
-| 3    | Provider profile and skills                         | pending |
-| 4    | Verification and commercial readiness               | pending |
-| 5    | Availability and capacity                           | pending |
-| 6    | Provider services catalogue                         | pending |
-| 7    | Client requests and project intake                  | pending |
-| 8    | Opportunity creation and lifecycle                  | pending |
-| 9    | Matching engine V1                                  | pending |
+| 1    | Domain foundations                                  | done    |
+| 2    | Provider application                                | done    |
+| 3    | Provider profile and skills                         | done    |
+| 4    | Verification and commercial readiness               | done    |
+| 5    | Availability and capacity                           | done    |
+| 6    | Provider services catalogue                         | done    |
+| 7    | Client requests and project intake                  | done    |
+| 8    | Opportunity creation and lifecycle                  | done    |
+| 9    | Matching engine V1                                  | done    |
 | 10   | Invitations and opportunity browsing                | pending |
 | 11   | Proposals                                           | pending |
 | 12   | Shortlisting, interviews, and offers                | pending |

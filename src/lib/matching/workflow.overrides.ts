@@ -2,7 +2,6 @@ import { getPrisma } from "@/lib/db";
 import { createAuditEvent } from "@/lib/audit";
 import { requireSdkStaff } from "@/lib/auth/authorization";
 import { requireActiveCompany } from "@/lib/requests/guards";
-import { createOverride, deactivatePreviousOverrides } from "./queries";
 import type { AppPrincipal } from "@/types";
 import type { OverrideInput } from "./types";
 
@@ -15,10 +14,26 @@ export async function applyMatchOverride(
   await requireActiveCompany(staff, companyId);
 
   return getPrisma().$transaction(async (tx) => {
-    await deactivatePreviousOverrides(companyId, input.opportunityId, input.providerId);
-    const override = await createOverride({
-      ...input,
-      companyId,
+    await tx.matchOverride.updateMany({
+      where: {
+        companyId,
+        opportunityId: input.opportunityId,
+        providerId: input.providerId,
+        active: true,
+      },
+      data: { active: false },
+    });
+    const override = await tx.matchOverride.create({
+      data: {
+        companyId,
+        opportunityId: input.opportunityId,
+        providerId: input.providerId,
+        actorId: input.actorId,
+        type: input.type,
+        reason: input.reason,
+        active: true,
+        positionId: input.positionId,
+      },
     });
 
     const action =

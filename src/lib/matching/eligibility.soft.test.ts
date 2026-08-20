@@ -1,10 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Opportunity, Provider } from "@/generated/prisma/client";
-import type {
-  ProviderAbsence,
-  ProviderService,
-  ProviderWeeklyCapacity,
-} from "@/generated/prisma/client";
+import type { ProviderService } from "@/generated/prisma/client";
 import { Prisma } from "@/generated/prisma/client";
 import {
   checkTimezoneOverlap,

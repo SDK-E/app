@@ -1,6 +1,6 @@
 import { getPrisma } from "@/lib/db";
-import type { MatchRunInput, OverrideInput, MatchCandidateResult } from "./types";
-import type { MatchRun, MatchRunStatus } from "@/generated/prisma/client";
+import type { MatchRunInput, OverrideInput } from "./types";
+import type { MatchRunStatus } from "@/generated/prisma/client";
 
 export async function createMatchRun(input: MatchRunInput) {
   return getPrisma().matchRun.create({

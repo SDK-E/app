@@ -1,5 +1,4 @@
 import type { Opportunity, Provider, ProviderService } from "@/generated/prisma/client";
-import type { ScoreDimension } from "./types";
 import { calculateCompletenessScore } from "@/lib/providers/score";
 
 export function scoreSkills(
@@ -101,11 +100,14 @@ export function scoreAvailability(
   return { raw };
 }
 
-export function scoreLocation(provider: Provider, _opportunity: Opportunity): { raw: number } {
-  if (!provider.timeZone) return { raw: 50 };
-  const offset = getUtcOffsetHours(provider.timeZone);
-  if (offset == null) return { raw: 50 };
-  return { raw: 100 };
+export function scoreLocation(provider: Provider, opportunity: Opportunity): { raw: number } {
+  if (!provider.timeZone || !opportunity.locationTimezone) return { raw: 50 };
+  const providerOffset = getUtcOffsetHours(provider.timeZone);
+  const oppOffset = getUtcOffsetHours(opportunity.locationTimezone);
+  if (providerOffset == null || oppOffset == null) return { raw: 50 };
+  const diff = Math.abs(providerOffset - oppOffset);
+  if (diff <= 3) return { raw: 100 };
+  return { raw: Math.max(0, 100 - diff * 10) };
 }
 
 export function scoreLanguage(provider: Provider, opportunity: Opportunity): { raw: number } {
