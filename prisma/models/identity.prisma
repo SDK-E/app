@@ -57,6 +57,7 @@ model User {
   invitedMembers      Membership[]      @relation("MembershipInvitations")
   requests            Request[]         @relation("RequestSubmittedBy")
   reviewedRequests    Request[]         @relation("RequestReviewedBy")
+  ownedRequests       Request[]         @relation("RequestOwner")
   requestActivities   RequestActivity[]
   projects            Project[]         @relation("ProjectCreatedBy")
   messages            Message[]
@@ -73,6 +74,7 @@ model User {
   uploadedServiceMedia ServiceMediaAsset[]
   verifiedProviders   VerificationRecord[] @relation("VerificationReviewedBy")
   uploadedEvidence    VerificationEvidence[]
+  opportunities       Opportunity[]        @relation("OpportunityCreatedBy")
 
   @@index([email])
   @@index([auth0Sub])
@@ -99,6 +101,7 @@ model Company {
   invoices          Invoice[]
   invitations       Invitation[]
   accessRequests    CompanyAccessRequest[]
+  opportunities     Opportunity[]
 
   @@index([slug])
   @@index([createdAt])

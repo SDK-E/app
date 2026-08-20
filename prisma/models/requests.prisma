@@ -30,6 +30,8 @@ enum RequestActivityType {
   PROPOSAL_READY
   ACCEPTED
   REJECTED
+  OWNER_ASSIGNED
+  CONVERTED_TO_OPPORTUNITY
   CONVERTED_TO_PROJECT
 
   @@map("request_activity_type")
@@ -56,32 +58,47 @@ enum MilestoneStatus {
 }
 
 model Request {
-  id                    String        @id @default(uuid())
+  id                    String              @id @default(uuid())
   companyId             String
-  title                 String        @db.VarChar(255)
-  description           String        @db.Text
-  capability            String        @default("other") @db.VarChar(100)
-  businessContext       String?       @db.Text
-  supportingInformation String?       @db.Text
-  supportingLinks       String[]      @default([])
-  status                RequestStatus @default(DRAFT)
-  priority              Priority      @default(MEDIUM)
+  title                 String              @db.VarChar(255)
+  description           String              @db.Text
+  capability            String              @default("other") @db.VarChar(100)
+  businessContext       String?             @db.Text
+  supportingInformation String?             @db.Text
+  supportingLinks       String[]            @default([])
+  status                RequestStatus       @default(DRAFT)
+  priority              Priority            @default(MEDIUM)
   submittedBy           String
   reviewedBy            String?
   reviewedAt            DateTime?
   closedAt              DateTime?
-  createdAt             DateTime      @default(now())
-  updatedAt             DateTime      @updatedAt
+  createdAt             DateTime            @default(now())
+  updatedAt             DateTime            @updatedAt
+  ownerId               String?
+  desiredOutcomes       String?             @db.Text
+  requiredSkills        String[]            @default([])
+  preferredSkills       String[]            @default([])
+  seniority             String?             @db.VarChar(100)
+  startDate             DateTime?
+  duration              String?             @db.VarChar(100)
+  expectedWorkload      String?             @db.VarChar(100)
+  locationTimezone      String?             @db.VarChar(100)
+  language              String?             @db.VarChar(100)
+  budgetContext         String?             @db.Text
+  confidentialityLevel  String?             @db.VarChar(100)
+  preferredEngagementModel String?           @db.VarChar(100)
 
   company         Company @relation(fields: [companyId], references: [id])
   submittedByUser User    @relation("RequestSubmittedBy", fields: [submittedBy], references: [id], onDelete: Restrict)
   reviewedByUser  User?   @relation("RequestReviewedBy", fields: [reviewedBy], references: [id], onDelete: SetNull)
+  owner           User?   @relation("RequestOwner", fields: [ownerId], references: [id], onDelete: SetNull)
 
   projects   Project[]
   documents  Document[]
   messages   Message[]
   invoices   Invoice[]
   activities RequestActivity[]
+  opportunity Opportunity?
 
   @@index([companyId])
   @@index([companyId, updatedAt])
@@ -89,6 +106,7 @@ model Request {
   @@index([priority])
   @@index([submittedBy])
   @@index([createdAt])
+  @@index([ownerId])
   @@map("request")
 }
 

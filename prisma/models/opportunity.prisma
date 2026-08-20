@@ -1,0 +1,42 @@
+enum OpportunityStatus {
+  DRAFT
+  READY
+  OPEN
+  FILLED
+  CLOSED
+  CANCELLED
+
+  @@map("opportunity_status")
+}
+
+enum OpportunityVisibilityMode {
+  DIRECT
+  INVITE_ONLY
+  ELIGIBLE_NETWORK
+
+  @@map("opportunity_visibility_mode")
+}
+
+model Opportunity {
+  id          String                    @id @default(uuid())
+  companyId   String
+  requestId   String?  @unique
+  title       String                    @db.VarChar(255)
+  description String                    @db.Text
+  status      OpportunityStatus         @default(DRAFT)
+  visibilityMode OpportunityVisibilityMode @default(INVITE_ONLY)
+  createdBy   String
+  createdAt   DateTime                  @default(now())
+  updatedAt   DateTime                  @updatedAt
+
+  company       Company  @relation(fields: [companyId], references: [id])
+  request       Request? @relation(fields: [requestId], references: [id], onDelete: SetNull)
+  createdByUser User     @relation("OpportunityCreatedBy", fields: [createdBy], references: [id], onDelete: Restrict)
+
+  @@index([companyId])
+  @@index([requestId])
+  @@index([status])
+  @@index([createdBy])
+  @@index([createdAt])
+  @@map("opportunity")
+}
