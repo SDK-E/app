@@ -204,6 +204,23 @@ enum CommercialStatus {
   @@map("commercial_status")
 }
 
+enum AbsenceStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CANCELLED
+
+  @@map("absence_status")
+}
+
+enum ReservationStatus {
+  PENDING
+  CONFIRMED
+  CANCELLED
+
+  @@map("reservation_status")
+}
+
 model User {
   id              String        @id @default(uuid())
   auth0Sub        String        @unique
@@ -596,14 +613,18 @@ model Provider {
   preferredProjectTypes String[]       @default([])
   completenessScore   Int              @default(0)
   commercialStatus    CommercialStatus @default(NOT_READY)
+  defaultDailyHours   Decimal?         @db.Decimal(4, 1)
   createdAt           DateTime         @default(now())
   updatedAt           DateTime         @updatedAt
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  reviews              ProviderReview[]
-  verificationRecords  VerificationRecord[]
-  commercialReadiness  ProviderCommercialReadiness?
+  reviews                ProviderReview[]
+  verificationRecords    VerificationRecord[]
+  commercialReadiness    ProviderCommercialReadiness?
+  weeklyCapacity         ProviderWeeklyCapacity[]
+  absences               ProviderAbsence[]
+  capacityReservations   CapacityReservation[]
 
   @@index([userId])
   @@index([status])
@@ -791,4 +812,58 @@ model ProviderCommercialReadiness {
 
   @@index([providerId])
   @@map("provider_commercial_readiness")
+}
+
+model ProviderWeeklyCapacity {
+  id          String   @id @default(uuid())
+  providerId  String
+  weekday     Int
+  hoursPerDay Decimal  @db.Decimal(4, 1)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  provider Provider @relation(fields: [providerId], references: [id], onDelete: Cascade)
+
+  @@unique([providerId, weekday])
+  @@index([providerId])
+  @@map("provider_weekly_capacity")
+}
+
+model ProviderAbsence {
+  id         String        @id @default(uuid())
+  providerId String
+  startDate  DateTime      @db.Date
+  endDate    DateTime      @db.Date
+  reason     String?       @db.Text
+  status     AbsenceStatus @default(PENDING)
+
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+
+  provider Provider @relation(fields: [providerId], references: [id], onDelete: Cascade)
+
+  @@index([providerId, startDate, endDate])
+  @@index([status])
+  @@map("provider_absence")
+}
+
+model CapacityReservation {
+  id            String            @id @default(uuid())
+  providerId    String
+  engagementId  String?
+  hoursPerDay   Decimal           @db.Decimal(4, 1)
+  startDate     DateTime          @db.Date
+  endDate       DateTime          @db.Date
+  status        ReservationStatus @default(PENDING)
+
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+
+  provider Provider @relation(fields: [providerId], references: [id], onDelete: Cascade)
+
+  @@index([providerId, startDate, endDate])
+  @@index([status])
+  @@index([engagementId])
+  @@map("capacity_reservation")
 }
