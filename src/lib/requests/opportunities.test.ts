@@ -66,6 +66,14 @@ describe("convertRequestToOpportunity", () => {
         visibilityMode: "INVITE_ONLY",
         status: "DRAFT",
         createdBy: "user-1",
+        requiredSkills: [],
+        preferredSkills: [],
+        seniority: null,
+        engagementType: null,
+        startDate: null,
+        duration: null,
+        locationTimezone: null,
+        languages: [],
       },
     });
     expect(mocks.requestActivity.create).toHaveBeenCalledWith({

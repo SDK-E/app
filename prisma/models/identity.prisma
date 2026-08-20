@@ -75,6 +75,8 @@ model User {
   verifiedProviders   VerificationRecord[] @relation("VerificationReviewedBy")
   uploadedEvidence    VerificationEvidence[]
   opportunities       Opportunity[]        @relation("OpportunityCreatedBy")
+  ownedOpportunities  Opportunity[]        @relation("OpportunityOwner")
+  opportunityActivities OpportunityActivity[]
 
   @@index([email])
   @@index([auth0Sub])
@@ -102,6 +104,8 @@ model Company {
   invitations       Invitation[]
   accessRequests    CompanyAccessRequest[]
   opportunities     Opportunity[]
+  opportunityPositions OpportunityPosition[] @relation("OpportunityPositionCompany")
+  opportunityActivities OpportunityActivity[]
 
   @@index([slug])
   @@index([createdAt])

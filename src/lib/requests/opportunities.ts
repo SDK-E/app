@@ -40,6 +40,14 @@ export async function convertRequestToOpportunity(
         visibilityMode: "INVITE_ONLY",
         status: "DRAFT",
         createdBy: staff.id,
+        requiredSkills: current.requiredSkills ?? [],
+        preferredSkills: current.preferredSkills ?? [],
+        seniority: current.seniority ?? null,
+        engagementType: current.preferredEngagementModel ?? null,
+        startDate: current.startDate ?? null,
+        duration: current.duration ?? null,
+        locationTimezone: current.locationTimezone ?? null,
+        languages: current.language ? [current.language] : [],
       },
     });
     await tx.requestActivity.create({
