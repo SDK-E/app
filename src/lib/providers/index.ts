@@ -28,3 +28,24 @@ export {
   evaluateCommercialReadiness,
   updateReadinessComponent,
 } from "./commercial-readiness";
+export {
+  getWeeklyCapacity,
+  upsertWeeklyCapacity,
+  getDefaultDailyHours,
+  setDefaultDailyHours,
+  getCapacityRange,
+} from "./availability/availability";
+export {
+  createAbsence,
+  approveAbsence,
+  rejectAbsence,
+  cancelAbsence,
+  getAbsences,
+} from "./availability/absences";
+export {
+  createReservation,
+  confirmReservation,
+  cancelReservation,
+  getReservations,
+  getReservationFeasibility,
+} from "./availability/reservations";
