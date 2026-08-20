@@ -25,6 +25,7 @@ const serverEnvSchema = z.object({
   MAIL_SMTP_URL: z.string().url("MAIL_SMTP_URL must be a valid URL").optional(),
   NODE_ENV: z.enum(["development", "test", "production"]),
   STRIPE_SECRET_KEY: z.string().min(1, "STRIPE_SECRET_KEY is required"),
+  STRIPE_WEBHOOK_SECRET: z.string().min(1, "STRIPE_WEBHOOK_SECRET is required"),
 });
 
 type ServerEnv = z.infer<typeof serverEnvSchema>;

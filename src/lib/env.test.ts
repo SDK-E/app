@@ -30,6 +30,7 @@ const validEnv: Array<[string, string]> = [
   ["AUTH0_CLIENT_SECRET", "client-secret"],
   ["NODE_ENV", "test"],
   ["STRIPE_SECRET_KEY", "sk_test_123"],
+  ["STRIPE_WEBHOOK_SECRET", "whsec_123"],
 ];
 
 async function loadEnv() {
