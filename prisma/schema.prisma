@@ -166,6 +166,44 @@ enum AuditActorKind {
   @@map("audit_actor_kind")
 }
 
+enum VerificationType {
+  IDENTITY
+  BUSINESS_REGISTRATION
+  VAT_TAX
+  BANK_PAYOUT
+  PROFESSIONAL_CREDENTIAL
+
+  @@map("verification_type")
+}
+
+enum VerificationStatus {
+  NOT_STARTED
+  PENDING
+  IN_PROGRESS
+  VERIFIED
+  FAILED
+  EXPIRED
+  WAIVED
+
+  @@map("verification_status")
+}
+
+enum VerificationEvidenceStatus {
+  PENDING
+  UPLOADED
+  ARCHIVED
+
+  @@map("verification_evidence_status")
+}
+
+enum CommercialStatus {
+  NOT_READY
+  READY
+  SUSPENDED
+
+  @@map("commercial_status")
+}
+
 model User {
   id              String        @id @default(uuid())
   auth0Sub        String        @unique
@@ -195,6 +233,8 @@ model User {
   provider            Provider?
   auditEvents         AuditEvent[]
   providerReviews     ProviderReview[]
+  verifiedProviders   VerificationRecord[] @relation("VerificationReviewedBy")
+  uploadedEvidence    VerificationEvidence[]
 
   @@index([email])
   @@index([auth0Sub])
@@ -555,15 +595,19 @@ model Provider {
   vatInfo             String?          @db.VarChar(255)
   preferredProjectTypes String[]       @default([])
   completenessScore   Int              @default(0)
+  commercialStatus    CommercialStatus @default(NOT_READY)
   createdAt           DateTime         @default(now())
   updatedAt           DateTime         @updatedAt
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  reviews ProviderReview[]
+  reviews              ProviderReview[]
+  verificationRecords  VerificationRecord[]
+  commercialReadiness  ProviderCommercialReadiness?
 
   @@index([userId])
   @@index([status])
+  @@index([commercialStatus])
   @@index([createdAt])
   @@map("provider")
 }
@@ -671,4 +715,80 @@ model ProviderReview {
   @@index([reviewerId])
   @@index([createdAt])
   @@map("provider_review")
+}
+
+model VerificationRequirement {
+  id          String           @id @default(uuid())
+  type        VerificationType @unique
+  name        String           @db.VarChar(255)
+  description String?          @db.Text
+  required    Boolean          @default(true)
+  enabled     Boolean          @default(true)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  @@map("verification_requirement")
+}
+
+model VerificationRecord {
+  id              String             @id @default(uuid())
+  providerId      String
+  type            VerificationType
+  status          VerificationStatus @default(NOT_STARTED)
+  verifiedAt      DateTime?
+  expiresAt       DateTime?
+  verifiedById    String?
+  rejectionReason String?            @db.Text
+  internalNotes   String?            @db.Text
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+
+  provider  Provider              @relation(fields: [providerId], references: [id], onDelete: Cascade)
+  verifiedBy User?                 @relation("VerificationReviewedBy", fields: [verifiedById], references: [id], onDelete: SetNull)
+  evidence   VerificationEvidence[]
+
+  @@unique([providerId, type])
+  @@index([providerId])
+  @@index([type])
+  @@index([status])
+  @@index([createdAt])
+  @@map("verification_record")
+}
+
+model VerificationEvidence {
+  id             String                     @id @default(uuid())
+  verificationId String
+  name           String                     @db.VarChar(255)
+  storageKey     String                     @db.VarChar(1024)
+  mimeType       String                     @db.VarChar(255)
+  sizeBytes      Int
+  contentHash    String?                    @db.VarChar(255)
+  status         VerificationEvidenceStatus @default(PENDING)
+  uploadedBy     String
+  createdAt      DateTime                   @default(now())
+  updatedAt      DateTime                   @updatedAt
+
+  verification VerificationRecord @relation(fields: [verificationId], references: [id], onDelete: Cascade)
+  uploader     User               @relation(fields: [uploadedBy], references: [id], onDelete: Restrict)
+
+  @@index([verificationId])
+  @@index([uploadedBy])
+  @@index([createdAt])
+  @@map("verification_evidence")
+}
+
+model ProviderCommercialReadiness {
+  id            String    @id @default(uuid())
+  providerId    String    @unique
+  contractReady Boolean   @default(false)
+  payoutReady   Boolean   @default(false)
+  taxInfoReady  Boolean   @default(false)
+  lastCheckedAt DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  provider Provider @relation(fields: [providerId], references: [id], onDelete: Cascade)
+
+  @@index([providerId])
+  @@map("provider_commercial_readiness")
 }

@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS "subscription" (
     "id" TEXT NOT NULL,
     "companyId" TEXT NOT NULL,
     "stripeSubscriptionId" VARCHAR(255) NOT NULL,
+    "stripeCustomerId" VARCHAR(255) NOT NULL,
     "stripePriceId" VARCHAR(255) NOT NULL,
     "status" VARCHAR(50) NOT NULL,
     "currentPeriodStart" TIMESTAMP(3),
