@@ -67,6 +67,8 @@ model Opportunity {
   matchCandidates MatchCandidate[]
   matchOverrides MatchOverride[]
   matchWeightConfigs MatchWeightConfig[]
+  invitations OpportunityInvitation[]
+  providerPreferences OpportunityProviderPreference[]
 
   @@index([companyId, status])
   @@index([companyId, visibilityMode])

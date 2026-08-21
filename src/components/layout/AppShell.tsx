@@ -43,6 +43,8 @@ export async function AppShell({ children, locale, principal }: AppShellProps) {
               companies: t("companies"),
               team: t("team"),
               users: t("users"),
+              opportunities: t("opportunities"),
+              invitations: t("invitations"),
             }}
           />
         </nav>

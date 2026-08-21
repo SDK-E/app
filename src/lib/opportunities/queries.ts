@@ -1,6 +1,6 @@
 import { notFound, requireSdkStaff } from "@/lib/auth/authorization";
-import { getPrisma } from "@/lib/db";
 import { requireActiveCompany } from "@/lib/requests/guards";
+import { getPrisma } from "@/lib/db";
 import {
   canViewOpportunity,
   selectOpportunityPositionSafe,
@@ -9,11 +9,14 @@ import {
 import { Prisma } from "@/generated/prisma/client";
 import type { OpportunityStatus, OpportunityVisibilityMode } from "@/generated/prisma/client";
 import type { AppPrincipal } from "@/types";
+import { listOpportunitiesForProvider } from "@/lib/opportunities/browse-provider";
 
 export interface ListOpportunitiesFilters {
   visibilityMode?: OpportunityVisibilityMode;
   status?: OpportunityStatus;
   skills?: string[];
+  take?: number;
+  skip?: number;
 }
 
 export async function listOpportunities(
@@ -21,14 +24,18 @@ export async function listOpportunities(
   companyId: string,
   filters: ListOpportunitiesFilters = {}
 ) {
-  const where: Prisma.OpportunityWhereInput = { companyId };
+  if (principal.kind === "provider") {
+    return listOpportunitiesForProvider(principal, filters);
+  }
 
   const isPrivileged =
     principal.kind === "sdk-staff" && (principal.role === "ADMIN" || principal.role === "DELIVERY");
 
+  const where: Prisma.OpportunityWhereInput = { companyId };
+
   if (isPrivileged) {
     if (filters.visibilityMode) where.visibilityMode = filters.visibilityMode;
-  } else if (principal.kind === "client" || principal.kind === "provider") {
+  } else if (principal.kind === "client") {
     where.visibilityMode = "ELIGIBLE_NETWORK";
   } else {
     return [];

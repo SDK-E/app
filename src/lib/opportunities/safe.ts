@@ -15,7 +15,7 @@ export type OpportunityClientRecord = Omit<
 export type OpportunityPublicRecord = Omit<
   OpportunityClientRecord,
   "clientName" | "budgetMin" | "budgetMax"
->;
+> & { providerAction?: "SAVED" | "HIDDEN" | null };
 
 export type OpportunitySafeRecord =
   OpportunityInternalRecord | OpportunityClientRecord | OpportunityPublicRecord;
@@ -34,7 +34,8 @@ function isPrivileged(principal: AppPrincipal): boolean {
 
 export function selectOpportunitySafe(
   principal: AppPrincipal,
-  opportunity: Opportunity
+  opportunity: Opportunity,
+  providerAction?: "SAVED" | "HIDDEN" | null
 ): OpportunitySafeRecord {
   if (isPrivileged(principal)) {
     return opportunity;
@@ -46,6 +47,9 @@ export function selectOpportunitySafe(
     const publicRecord = omit(clientRecord, ["clientName", "budgetMin", "budgetMax"]);
     if (opportunity.clientIdentityVisible) {
       (publicRecord as Record<string, unknown>).clientName = opportunity.clientName;
+    }
+    if (providerAction !== undefined) {
+      (publicRecord as Record<string, unknown>).providerAction = providerAction;
     }
     return publicRecord as OpportunityPublicRecord;
   }
@@ -79,10 +83,16 @@ export function selectOpportunityPositionSafe(
 
 export function canViewOpportunity(
   principal: AppPrincipal,
-  visibilityMode: OpportunityVisibilityMode
+  visibilityMode: OpportunityVisibilityMode,
+  hasActiveInvitation?: boolean
 ): boolean {
   if (isPrivileged(principal)) return true;
   if (principal.kind === "client") return visibilityMode === "ELIGIBLE_NETWORK";
-  if (principal.kind === "provider") return visibilityMode === "ELIGIBLE_NETWORK";
+  if (principal.kind === "provider") {
+    if (visibilityMode === "ELIGIBLE_NETWORK") return true;
+    if ((visibilityMode === "DIRECT" || visibilityMode === "INVITE_ONLY") && hasActiveInvitation)
+      return true;
+    return false;
+  }
   return false;
 }

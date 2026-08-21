@@ -265,9 +265,9 @@ Only eligible and authorized providers may see opportunities. Invitation expiry 
 
 **Outcome / notes:**
 
-- [ ] Eligibility enforced on browse
-- [ ] Invitation expiry deterministic
-- [ ] Notifications idempotent
+- [x] Eligibility enforced on browse
+- [x] Invitation expiry deterministic
+- [x] Notifications idempotent
 
 ---
 
@@ -878,7 +878,7 @@ AI recommendations must remain explainable and operator-overridable. Do not repl
 | 7    | Client requests and project intake                  | done    |
 | 8    | Opportunity creation and lifecycle                  | done    |
 | 9    | Matching engine V1                                  | done    |
-| 10   | Invitations and opportunity browsing                | pending |
+| 10   | Invitations and opportunity browsing                | done    |
 | 11   | Proposals                                           | pending |
 | 12   | Shortlisting, interviews, and offers                | pending |
 | 13   | Engagement core                                     | pending |

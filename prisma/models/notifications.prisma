@@ -1,0 +1,69 @@
+enum NotificationCategory {
+  OPPORTUNITY
+  INVITATION
+  PROPOSAL
+  INTERVIEW
+  OFFER
+  ENGAGEMENT
+  SYSTEM
+
+  @@map("notification_category")
+}
+
+enum NotificationType {
+  OPPORTUNITY_INVITATION_SENT
+  OPPORTUNITY_INVITATION_ACCEPTED
+  OPPORTUNITY_INVITATION_DECLINED
+  OPPORTUNITY_INVITATION_EXPIRED
+  OPPORTUNITY_SAVED
+  OPPORTUNITY_RECOMMENDED
+
+  @@map("notification_type")
+}
+
+enum NotificationChannel {
+  IN_APP
+  EMAIL
+
+  @@map("notification_channel")
+}
+
+model Notification {
+  id            String   @id @default(uuid())
+  recipientId   String
+  recipientKind String   @db.VarChar(32)
+  category      NotificationCategory
+  type          NotificationType
+  title         String   @db.VarChar(255)
+  body          String?  @db.Text
+  data          Json?
+  eventKey      String   @db.VarChar(255)
+  readAt        DateTime?
+  createdAt     DateTime @default(now())
+
+  deliveries NotificationDelivery[]
+
+  @@unique([recipientId, eventKey])
+  @@index([recipientId, createdAt])
+  @@index([category, type])
+  @@map("notification")
+}
+
+model NotificationDelivery {
+  id             String               @id @default(uuid())
+  notificationId String
+  channel        NotificationChannel
+  status         String               @db.VarChar(32)
+  sentAt         DateTime?
+  deliveredAt    DateTime?
+  failedAt       DateTime?
+  errorMessage   String?              @db.Text
+  attempts       Int                  @default(0)
+  createdAt      DateTime             @default(now())
+
+  notification Notification @relation(fields: [notificationId], references: [id], onDelete: Cascade)
+
+  @@unique([notificationId, channel])
+  @@index([notificationId])
+  @@map("notification_delivery")
+}

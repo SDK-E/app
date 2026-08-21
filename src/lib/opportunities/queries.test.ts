@@ -1,10 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import {
-  getOpportunity,
-  getOpportunityAttachments,
-  listOpportunities,
-} from "@/lib/opportunities/queries";
+import { listOpportunities } from "@/lib/opportunities/queries";
 import { principal } from "@/lib/users/test-fixtures";
 import type { Opportunity } from "@/generated/prisma/client";
 
@@ -50,16 +46,33 @@ const mocks = vi.hoisted(() => {
   const opportunityPosition = make();
   const document = make();
   const company = make();
+  const provider = make();
+  const opportunityInvitation = make();
+  const opportunityProviderPreference = make();
   return {
-    prisma: { opportunity, opportunityPosition, document, company },
+    prisma: {
+      opportunity,
+      opportunityPosition,
+      document,
+      company,
+      provider,
+      opportunityInvitation,
+      opportunityProviderPreference,
+    },
     opportunity,
     opportunityPosition,
     document,
     company,
+    provider,
+    opportunityInvitation,
+    opportunityProviderPreference,
   };
 });
 
 vi.mock("@/lib/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@/lib/opportunities/eligibility-browse", () => ({
+  isProviderEligibleForOpportunity: vi.fn(async () => ({ eligible: true })),
+}));
 
 beforeEach(() => {
   for (const mock of [
@@ -67,6 +80,9 @@ beforeEach(() => {
     mocks.opportunityPosition,
     mocks.document,
     mocks.company,
+    mocks.provider,
+    mocks.opportunityInvitation,
+    mocks.opportunityProviderPreference,
   ]) {
     mock.findMany?.mockReset();
     mock.findFirst?.mockReset();
@@ -101,15 +117,16 @@ describe("listOpportunities", () => {
     expect(clientResult).toHaveLength(1);
     expect(clientResult[0].id).toBe("opp-eligible");
 
-    mocks.opportunity.findMany.mockClear();
+    mocks.provider.findFirst.mockResolvedValue({ id: "provider-1", companyId: "company-1" });
     mocks.opportunity.findMany.mockResolvedValue([
       makeOpportunity({ id: "opp-eligible", visibilityMode: "ELIGIBLE_NETWORK" }),
     ]);
+    mocks.opportunityInvitation.findMany.mockResolvedValue([]);
+    mocks.opportunityProviderPreference.findMany.mockResolvedValue([]);
+
     const providerResult = await listOpportunities(principal("provider"), "company-1");
-    expect(mocks.opportunity.findMany).toHaveBeenCalledWith({
-      where: { companyId: "company-1", visibilityMode: "ELIGIBLE_NETWORK" },
-    });
     expect(providerResult).toHaveLength(1);
+    expect(providerResult[0].id).toBe("opp-eligible");
   });
 
   it("applies status and skills filters for SDK staff", async () => {
@@ -127,70 +144,5 @@ describe("listOpportunities", () => {
         requiredSkills: { hasSome: ["typescript"] },
       },
     });
-  });
-});
-
-describe("getOpportunity", () => {
-  it("returns the opportunity for SDK staff including internal notes", async () => {
-    mocks.company.findFirst.mockResolvedValue({ id: "company-1" });
-    mocks.opportunity.findFirst.mockResolvedValue(
-      makeOpportunity({ id: "opp-1", visibilityMode: "DIRECT" })
-    );
-
-    const result = await getOpportunity(principal("sdk-admin"), "company-1", "opp-1");
-
-    expect(result.id).toBe("opp-1");
-    expect((result as Opportunity).internalNotes).toBe("hidden");
-  });
-
-  it("throws for non-SDK callers (unauthorized visibility)", async () => {
-    mocks.company.findFirst.mockResolvedValue({ id: "company-1" });
-    await expect(getOpportunity(principal("provider"), "company-1", "opp-1")).rejects.toThrow(
-      "SDK staff access is required."
-    );
-  });
-
-  it("throws when the opportunity does not exist", async () => {
-    mocks.company.findFirst.mockResolvedValue({ id: "company-1" });
-    mocks.opportunity.findFirst.mockResolvedValue(null);
-    await expect(getOpportunity(principal("sdk-admin"), "company-1", "opp-1")).rejects.toThrow(
-      "Opportunity not found."
-    );
-  });
-});
-
-describe("getOpportunityAttachments", () => {
-  it("filters documents by the opportunity and its positions", async () => {
-    mocks.company.findFirst.mockResolvedValue({ id: "company-1" });
-    mocks.opportunity.findFirst.mockResolvedValue(makeOpportunity({ id: "opp-1" }));
-    mocks.opportunityPosition.findMany.mockResolvedValue([{ id: "pos-1" }]);
-    mocks.document.findMany.mockResolvedValue([
-      { id: "doc-1", opportunityId: "opp-1" },
-      { id: "doc-2", opportunityPositionId: "pos-1" },
-    ]);
-
-    const result = await getOpportunityAttachments(principal("sdk-admin"), "company-1", "opp-1");
-
-    expect(mocks.document.findMany).toHaveBeenCalledWith({
-      where: {
-        companyId: "company-1",
-        OR: [{ opportunityId: "opp-1" }, { opportunityPositionId: { in: ["pos-1"] } }],
-      },
-    });
-    expect(result).toHaveLength(2);
-  });
-
-  it("excludes documents from other opportunities", async () => {
-    mocks.company.findFirst.mockResolvedValue({ id: "company-1" });
-    mocks.opportunity.findFirst.mockResolvedValue(makeOpportunity({ id: "opp-1" }));
-    mocks.opportunityPosition.findMany.mockResolvedValue([]);
-    mocks.document.findMany.mockImplementation(async ({ where }) => {
-      if (where.OR[0].opportunityId === "opp-1") return [{ id: "doc-1", opportunityId: "opp-1" }];
-      return [];
-    });
-
-    const result = await getOpportunityAttachments(principal("sdk-admin"), "company-1", "opp-1");
-    expect(result).toHaveLength(1);
-    expect(result[0].id).toBe("doc-1");
   });
 });

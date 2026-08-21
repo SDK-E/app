@@ -11,7 +11,9 @@
       "language": "Language",
       "logout": "Log out",
       "clientArea": "Client portal",
-      "staffArea": "SDK workspace"
+      "staffArea": "SDK workspace",
+      "opportunities": "Opportunities",
+      "invitations": "Invitations"
     },
     "dashboard": {
       "eyebrow": "Client dashboard",
@@ -234,6 +236,62 @@
       "errorTitle": "This part of the portal could not load",
       "errorBody": "Try again. If the problem continues, contact SDK with the page you were using.",
       "tryAgain": "Try again"
+    },
+    "opportunities": {
+      "browse": {
+        "eyebrow": "Opportunities",
+        "title": "Opportunities for your company",
+        "intro": "Browse the opportunities your company is eligible for, save the ones you like and respond to invitations.",
+        "saved": "Saved",
+        "invited": "Invited",
+        "save": "Save",
+        "hide": "Hide",
+        "accept": "Accept",
+        "decline": "Decline",
+        "viewInvitations": "View invitations",
+        "client": "Client",
+        "deadline": "Deadline",
+        "noDeadline": "Flexible",
+        "emptyTitle": "No opportunities yet",
+        "emptyBody": "When SDK shares an opportunity with your company, it will appear here."
+      },
+      "invitations": {
+        "eyebrow": "Invitations",
+        "title": "Your invitations",
+        "intro": "Review invitations to opportunities and decide whether to accept or decline.",
+        "accept": "Accept",
+        "decline": "Decline",
+        "expires": "Expires {date}",
+        "history": "History",
+        "emptyTitle": "No invitations",
+        "emptyBody": "You have no open invitations right now.",
+        "status": {
+          "PENDING": "Pending",
+          "ACCEPTED": "Accepted",
+          "DECLINED": "Declined",
+          "EXPIRED": "Expired"
+        }
+      },
+      "visibility": {
+        "DIRECT": "Direct",
+        "INVITE_ONLY": "Invite only",
+        "ELIGIBLE_NETWORK": "Eligible network"
+      },
+      "statuses": {
+        "DRAFT": "Draft",
+        "READY": "Ready",
+        "MATCHING": "Matching",
+        "OPEN": "Open",
+        "REVIEWING_PROPOSALS": "Reviewing proposals",
+        "SHORTLISTING": "Shortlisting",
+        "SELECTION": "Selection",
+        "PENDING_PROVIDER_ACCEPTANCE": "Awaiting your response",
+        "FILLED": "Filled",
+        "CLOSED": "Closed",
+        "ON_HOLD": "On hold",
+        "CANCELLED": "Cancelled",
+        "EXPIRED": "Expired"
+      }
     }
   }
 }

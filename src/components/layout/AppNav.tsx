@@ -13,6 +13,8 @@ interface AppNavLabels {
   companies: string;
   team: string;
   users: string;
+  opportunities: string;
+  invitations: string;
 }
 
 export function AppNav({
@@ -38,6 +40,25 @@ export function AppNav({
     ];
     if (principal.role === "ADMIN")
       links.push({ href: `/${locale}/app/users`, label: labels.users });
+    return (
+      <div className="flex gap-2 overflow-x-auto lg:block lg:space-y-2">
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="block min-h-11 whitespace-nowrap rounded-nav px-4 py-3 text-label font-extrabold uppercase tracking-eyebrow text-light transition-colors hover:bg-[#2d4b28] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
+    );
+  }
+  if (principal.kind === "provider") {
+    const links = [
+      { href: `/${locale}/app/opportunities`, label: labels.opportunities },
+      { href: `/${locale}/app/opportunities/invitations`, label: labels.invitations },
+    ];
     return (
       <div className="flex gap-2 overflow-x-auto lg:block lg:space-y-2">
         {links.map((link) => (

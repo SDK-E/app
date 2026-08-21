@@ -1,0 +1,59 @@
+enum OpportunityInvitationStatus {
+  PENDING
+  ACCEPTED
+  DECLINED
+  EXPIRED
+
+  @@map("opportunity_invitation_status")
+}
+
+enum OpportunityProviderAction {
+  SAVED
+  HIDDEN
+
+  @@map("opportunity_provider_action")
+}
+
+model OpportunityInvitation {
+  id            String                     @id @default(uuid())
+  opportunityId String
+  companyId     String
+  providerId    String
+  invitedById   String
+  status        OpportunityInvitationStatus @default(PENDING)
+  expiresAt     DateTime
+  acceptedAt    DateTime?
+  respondedAt   DateTime?
+  createdAt     DateTime                   @default(now())
+  updatedAt     DateTime                   @updatedAt
+
+  opportunity Opportunity            @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  company     Company                @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  provider    Provider               @relation(fields: [providerId], references: [id], onDelete: Cascade)
+  invitedBy   User                   @relation("OpportunityInvitationInviter", fields: [invitedById], references: [id], onDelete: Restrict)
+
+  @@index([opportunityId, providerId])
+  @@index([providerId, status])
+  @@index([companyId])
+  @@index([expiresAt])
+  @@map("opportunity_invitation")
+}
+
+model OpportunityProviderPreference {
+  id            String                  @id @default(uuid())
+  opportunityId String
+  providerId    String
+  companyId     String
+  action        OpportunityProviderAction
+  createdAt     DateTime                @default(now())
+  updatedAt     DateTime                @updatedAt
+
+  opportunity Opportunity @relation(fields: [opportunityId], references: [id], onDelete: Cascade)
+  provider    Provider    @relation(fields: [providerId], references: [id], onDelete: Cascade)
+  company     Company     @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  @@unique([opportunityId, providerId])
+  @@index([providerId])
+  @@index([companyId])
+  @@map("opportunity_provider_preference")
+}

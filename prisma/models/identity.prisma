@@ -76,6 +76,7 @@ model User {
   uploadedEvidence    VerificationEvidence[]
   opportunities       Opportunity[]        @relation("OpportunityCreatedBy")
   ownedOpportunities  Opportunity[]        @relation("OpportunityOwner")
+  opportunityInvitationsInvitedBy OpportunityInvitation[] @relation("OpportunityInvitationInviter")
   opportunityActivities OpportunityActivity[]
   matchRunsTriggered  MatchRun[]           @relation("MatchRunTriggeredBy")
   matchOverrides      MatchOverride[]
@@ -113,6 +114,8 @@ model Company {
   matchOverrides    MatchOverride[]
   matchWeightConfigs MatchWeightConfig[]
   providers         Provider[]
+  opportunityInvitations OpportunityInvitation[]
+  opportunityPreferences OpportunityProviderPreference[]
 
   @@index([slug])
   @@index([createdAt])

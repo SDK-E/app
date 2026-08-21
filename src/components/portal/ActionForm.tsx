@@ -11,16 +11,18 @@ export function ActionForm({
   pendingLabel,
   children,
   variant = "default",
+  formClassName = "space-y-4",
 }: {
   action: (state: RequestActionState, formData: FormData) => Promise<RequestActionState>;
   buttonLabel: string;
   pendingLabel?: string;
   children?: React.ReactNode;
-  variant?: "default" | "outline" | "dark" | "destructive";
+  variant?: "default" | "outline" | "dark" | "destructive" | "ghost";
+  formClassName?: string;
 }) {
   const [state, formAction, pending] = useActionState(action, {});
   return (
-    <form action={formAction} className="space-y-4">
+    <form action={formAction} className={formClassName}>
       {children}
       {state.error ? (
         <p role="alert" className="text-body text-destructive">

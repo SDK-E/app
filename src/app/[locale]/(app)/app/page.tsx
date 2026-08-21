@@ -20,7 +20,10 @@ export default async function AppHomePage({ params }: { params: Promise<{ locale
     if (!first) redirect(`/${locale}/app`);
     redirect(`/${locale}/app/companies/${first.companyId}`);
   }
-  if (principal.kind !== "sdk-staff") return null;
+  if (principal.kind !== "sdk-staff") {
+    if (principal.kind === "provider") redirect(`/${locale}/app/opportunities`);
+    return null;
+  }
   const t = await getTranslations({ locale, namespace: "portal" });
   const companies = principal.role === "FINANCE" ? [] : await listActiveCompanies(principal);
   return (

@@ -153,6 +153,8 @@ model Provider {
   capacityReservations   CapacityReservation[]
   matchCandidates        MatchCandidate[]
   matchOverrides         MatchOverride[]
+  opportunityInvitations OpportunityInvitation[]
+  opportunityPreferences OpportunityProviderPreference[]
 
   @@index([userId])
   @@index([companyId])
