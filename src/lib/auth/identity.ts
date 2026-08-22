@@ -34,6 +34,7 @@ const principalSelect = {
   name: true,
   avatarUrl: true,
   preferredLocale: true,
+  preferredTheme: true,
   isActive: true,
   sdkStaffRole: true,
   provider: { select: { id: true } },
@@ -140,6 +141,7 @@ export async function resolveAppPrincipal(session: SessionData): Promise<AppPrin
     name: user.name,
     avatarUrl: user.avatarUrl,
     preferredLocale: user.preferredLocale,
+    preferredTheme: user.preferredTheme,
   };
 
   if (user.provider) {

@@ -5,6 +5,10 @@ import { notFound } from "next/navigation";
 import { locales, Locale } from "@/i18n";
 import { getSiteUrl } from "@/lib/marketing/seo";
 import { siteConfig } from "@/lib/marketing/site";
+import { getCurrentPrincipal } from "@/lib/auth/identity";
+import { ThemeProvider } from "@/components/layout/ThemeProvider";
+import { InlineThemeScript } from "@/components/layout/InlineThemeScript";
+import { Toaster } from "sonner";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -63,6 +67,15 @@ export default async function RootLayout({
   }
 
   const messages = await getMessages({ locale });
+  const principal = await getCurrentPrincipal();
 
-  return <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>;
+  return (
+    <NextIntlClientProvider messages={messages}>
+      <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <InlineThemeScript initialTheme={principal?.preferredTheme ?? "system"} />
+        {children}
+        <Toaster />
+      </ThemeProvider>
+    </NextIntlClientProvider>
+  );
 }

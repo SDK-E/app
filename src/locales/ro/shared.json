@@ -70,5 +70,10 @@
     "connectionTitle": "Nu putem ajunge la server.",
     "connectionDescription": "Verificați conexiunea și încercați din nou.",
     "retryConnection": "Reîncercați conexiunea"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
   }
 }

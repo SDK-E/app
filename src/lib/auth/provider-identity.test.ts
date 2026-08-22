@@ -26,6 +26,7 @@ const providerUser = {
   name: "Person Example",
   avatarUrl: null,
   preferredLocale: "en",
+  preferredTheme: "system",
   isActive: true,
   sdkStaffRole: null,
   memberships: [],

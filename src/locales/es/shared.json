@@ -70,5 +70,10 @@
     "connectionTitle": "No podemos comunicarnos con el servidor.",
     "connectionDescription": "Comprueba tu conexión y vuelve a intentarlo.",
     "retryConnection": "Reintentar conexión"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
   }
 }

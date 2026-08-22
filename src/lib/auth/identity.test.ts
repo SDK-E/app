@@ -28,6 +28,7 @@ const localUser = {
   name: "Person Example",
   avatarUrl: null,
   preferredLocale: "en",
+  preferredTheme: "system",
   isActive: true,
   sdkStaffRole: null,
   memberships: [],

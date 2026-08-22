@@ -70,5 +70,10 @@
     "connectionTitle": "Nem tudjuk elérni a szervert.",
     "connectionDescription": "Ellenőrizze a kapcsolatot, és próbálja újra.",
     "retryConnection": "Próbálja újra a kapcsolatot"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
   }
 }

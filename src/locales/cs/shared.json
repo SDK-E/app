@@ -70,5 +70,10 @@
     "connectionTitle": "Nemůžeme se spojit se serverem.",
     "connectionDescription": "Zkontrolujte připojení a zkuste to znovu.",
     "retryConnection": "Opakujte připojení"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
   }
 }

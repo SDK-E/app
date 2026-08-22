@@ -70,5 +70,10 @@
     "connectionTitle": "Vi kan ikke nå serveren.",
     "connectionDescription": "Tjek din forbindelse, og prøv igen.",
     "retryConnection": "Prøv at oprette forbindelse igen"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
   }
 }

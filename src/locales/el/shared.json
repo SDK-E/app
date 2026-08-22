@@ -70,5 +70,10 @@
     "connectionTitle": "Δεν μπορούμε να φτάσουμε στον διακομιστή.",
     "connectionDescription": "Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.",
     "retryConnection": "Δοκιμάστε ξανά τη σύνδεση"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
   }
 }

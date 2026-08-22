@@ -70,5 +70,10 @@
     "connectionTitle": "Non possiamo raggiungere il server.",
     "connectionDescription": "Controlla la connessione e riprova.",
     "retryConnection": "Riprovare la connessione"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
   }
 }

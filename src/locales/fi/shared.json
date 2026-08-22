@@ -70,5 +70,10 @@
     "connectionTitle": "Emme saa yhteyttä palvelimeen.",
     "connectionDescription": "Tarkista yhteys ja yritä uudelleen.",
     "retryConnection": "Yritä muodostaa yhteys uudelleen"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
   }
 }

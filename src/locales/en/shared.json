@@ -70,5 +70,10 @@
     "connectionTitle": "We can't reach the server.",
     "connectionDescription": "Check your connection and try again.",
     "retryConnection": "Retry connection"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
   }
 }

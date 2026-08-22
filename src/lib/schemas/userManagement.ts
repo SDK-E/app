@@ -4,6 +4,7 @@ import { routing } from "@/i18n/routing";
 import { clientRoles, sdkStaffRoles } from "@/types";
 
 export const localeSchema = z.enum(routing.locales);
+export const themeSchema = z.enum(["light", "dark", "system"]);
 export const manageableClientRoleSchema = z.enum([
   "ADMINISTRATOR",
   "PROJECT_MEMBER",

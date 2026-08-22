@@ -38,6 +38,7 @@ const client = (
   name: "Client User",
   avatarUrl: null,
   preferredLocale: "en",
+  preferredTheme: "system",
   memberships,
 });
 
@@ -49,6 +50,7 @@ const staff = (role: SdkStaffPrincipal["role"]): SdkStaffPrincipal => ({
   name: "Staff User",
   avatarUrl: null,
   preferredLocale: "en",
+  preferredTheme: "system",
   role,
 });
 
@@ -60,6 +62,7 @@ const provider: ProviderPrincipal = {
   name: "Provider User",
   avatarUrl: null,
   preferredLocale: "en",
+  preferredTheme: "system",
   providerId: "provider-1",
 };
 
@@ -71,6 +74,7 @@ const unassigned: AppPrincipal = {
   name: "Unassigned User",
   avatarUrl: null,
   preferredLocale: "en",
+  preferredTheme: "system",
 };
 
 describe("role permissions", () => {

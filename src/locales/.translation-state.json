@@ -1022,7 +1022,10 @@
     "root.errors.connectionEyebrow": "CONNECTION",
     "root.errors.connectionTitle": "We can't reach the server.",
     "root.errors.connectionDescription": "Check your connection and try again.",
-    "root.errors.retryConnection": "Retry connection"
+    "root.errors.retryConnection": "Retry connection",
+    "root.theme.light": "Light theme",
+    "root.theme.dark": "Dark theme",
+    "root.theme.system": "System theme"
   },
   "de": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -2047,7 +2050,10 @@
     "root.errors.connectionEyebrow": "CONNECTION",
     "root.errors.connectionTitle": "We can't reach the server.",
     "root.errors.connectionDescription": "Check your connection and try again.",
-    "root.errors.retryConnection": "Retry connection"
+    "root.errors.retryConnection": "Retry connection",
+    "root.theme.light": "Light theme",
+    "root.theme.dark": "Dark theme",
+    "root.theme.system": "System theme"
   },
   "es": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -3072,7 +3078,10 @@
     "root.errors.connectionEyebrow": "CONNECTION",
     "root.errors.connectionTitle": "We can't reach the server.",
     "root.errors.connectionDescription": "Check your connection and try again.",
-    "root.errors.retryConnection": "Retry connection"
+    "root.errors.retryConnection": "Retry connection",
+    "root.theme.light": "Light theme",
+    "root.theme.dark": "Dark theme",
+    "root.theme.system": "System theme"
   },
   "pt": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -4097,7 +4106,10 @@
     "root.errors.connectionEyebrow": "CONNECTION",
     "root.errors.connectionTitle": "We can't reach the server.",
     "root.errors.connectionDescription": "Check your connection and try again.",
-    "root.errors.retryConnection": "Retry connection"
+    "root.errors.retryConnection": "Retry connection",
+    "root.theme.light": "Light theme",
+    "root.theme.dark": "Dark theme",
+    "root.theme.system": "System theme"
   },
   "it": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -5122,7 +5134,10 @@
     "root.errors.connectionEyebrow": "CONNECTION",
     "root.errors.connectionTitle": "We can't reach the server.",
     "root.errors.connectionDescription": "Check your connection and try again.",
-    "root.errors.retryConnection": "Retry connection"
+    "root.errors.retryConnection": "Retry connection",
+    "root.theme.light": "Light theme",
+    "root.theme.dark": "Dark theme",
+    "root.theme.system": "System theme"
   },
   "nl": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -6147,7 +6162,10 @@
     "root.errors.connectionEyebrow": "CONNECTION",
     "root.errors.connectionTitle": "We can't reach the server.",
     "root.errors.connectionDescription": "Check your connection and try again.",
-    "root.errors.retryConnection": "Retry connection"
+    "root.errors.retryConnection": "Retry connection",
+    "root.theme.light": "Light theme",
+    "root.theme.dark": "Dark theme",
+    "root.theme.system": "System theme"
   },
   "sv": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -7172,7 +7190,10 @@
     "root.errors.connectionEyebrow": "CONNECTION",
     "root.errors.connectionTitle": "We can't reach the server.",
     "root.errors.connectionDescription": "Check your connection and try again.",
-    "root.errors.retryConnection": "Retry connection"
+    "root.errors.retryConnection": "Retry connection",
+    "root.theme.light": "Light theme",
+    "root.theme.dark": "Dark theme",
+    "root.theme.system": "System theme"
   },
   "no": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -8197,7 +8218,10 @@
     "root.errors.connectionEyebrow": "CONNECTION",
     "root.errors.connectionTitle": "We can't reach the server.",
     "root.errors.connectionDescription": "Check your connection and try again.",
-    "root.errors.retryConnection": "Retry connection"
+    "root.errors.retryConnection": "Retry connection",
+    "root.theme.light": "Light theme",
+    "root.theme.dark": "Dark theme",
+    "root.theme.system": "System theme"
   },
   "da": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -9222,7 +9246,10 @@
     "root.errors.connectionEyebrow": "CONNECTION",
     "root.errors.connectionTitle": "We can't reach the server.",
     "root.errors.connectionDescription": "Check your connection and try again.",
-    "root.errors.retryConnection": "Retry connection"
+    "root.errors.retryConnection": "Retry connection",
+    "root.theme.light": "Light theme",
+    "root.theme.dark": "Dark theme",
+    "root.theme.system": "System theme"
   },
   "fi": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -10247,7 +10274,10 @@
     "root.errors.connectionEyebrow": "CONNECTION",
     "root.errors.connectionTitle": "We can't reach the server.",
     "root.errors.connectionDescription": "Check your connection and try again.",
-    "root.errors.retryConnection": "Retry connection"
+    "root.errors.retryConnection": "Retry connection",
+    "root.theme.light": "Light theme",
+    "root.theme.dark": "Dark theme",
+    "root.theme.system": "System theme"
   },
   "pl": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -11272,7 +11302,10 @@
     "root.errors.connectionEyebrow": "CONNECTION",
     "root.errors.connectionTitle": "We can't reach the server.",
     "root.errors.connectionDescription": "Check your connection and try again.",
-    "root.errors.retryConnection": "Retry connection"
+    "root.errors.retryConnection": "Retry connection",
+    "root.theme.light": "Light theme",
+    "root.theme.dark": "Dark theme",
+    "root.theme.system": "System theme"
   },
   "cs": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -12297,7 +12330,10 @@
     "root.errors.connectionEyebrow": "CONNECTION",
     "root.errors.connectionTitle": "We can't reach the server.",
     "root.errors.connectionDescription": "Check your connection and try again.",
-    "root.errors.retryConnection": "Retry connection"
+    "root.errors.retryConnection": "Retry connection",
+    "root.theme.light": "Light theme",
+    "root.theme.dark": "Dark theme",
+    "root.theme.system": "System theme"
   },
   "hu": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -13322,7 +13358,10 @@
     "root.errors.connectionEyebrow": "CONNECTION",
     "root.errors.connectionTitle": "We can't reach the server.",
     "root.errors.connectionDescription": "Check your connection and try again.",
-    "root.errors.retryConnection": "Retry connection"
+    "root.errors.retryConnection": "Retry connection",
+    "root.theme.light": "Light theme",
+    "root.theme.dark": "Dark theme",
+    "root.theme.system": "System theme"
   },
   "ro": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -14347,7 +14386,10 @@
     "root.errors.connectionEyebrow": "CONNECTION",
     "root.errors.connectionTitle": "We can't reach the server.",
     "root.errors.connectionDescription": "Check your connection and try again.",
-    "root.errors.retryConnection": "Retry connection"
+    "root.errors.retryConnection": "Retry connection",
+    "root.theme.light": "Light theme",
+    "root.theme.dark": "Dark theme",
+    "root.theme.system": "System theme"
   },
   "bg": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -15372,7 +15414,10 @@
     "root.errors.connectionEyebrow": "CONNECTION",
     "root.errors.connectionTitle": "We can't reach the server.",
     "root.errors.connectionDescription": "Check your connection and try again.",
-    "root.errors.retryConnection": "Retry connection"
+    "root.errors.retryConnection": "Retry connection",
+    "root.theme.light": "Light theme",
+    "root.theme.dark": "Dark theme",
+    "root.theme.system": "System theme"
   },
   "el": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -16397,6 +16442,9 @@
     "root.errors.connectionEyebrow": "CONNECTION",
     "root.errors.connectionTitle": "We can't reach the server.",
     "root.errors.connectionDescription": "Check your connection and try again.",
-    "root.errors.retryConnection": "Retry connection"
+    "root.errors.retryConnection": "Retry connection",
+    "root.theme.light": "Light theme",
+    "root.theme.dark": "Dark theme",
+    "root.theme.system": "System theme"
   }
 }

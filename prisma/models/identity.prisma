@@ -47,6 +47,7 @@ model User {
   name            String        @db.VarChar(255)
   avatarUrl       String?       @db.VarChar(1024)
   preferredLocale String        @default("en") @db.VarChar(5)
+  preferredTheme  String        @default("system") @db.VarChar(10)
   sdkStaffRole    SdkStaffRole?
   isActive        Boolean       @default(true)
   lastLoginAt     DateTime?

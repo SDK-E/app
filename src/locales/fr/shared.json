@@ -70,5 +70,10 @@
     "connectionTitle": "Nous ne pouvons pas accéder au serveur.",
     "connectionDescription": "Vérifiez votre connexion et réessayez.",
     "retryConnection": "Réessayer la connexion"
+  },
+  "theme": {
+    "light": "Thème clair",
+    "dark": "Thème sombre",
+    "system": "Thème système"
   }
 }

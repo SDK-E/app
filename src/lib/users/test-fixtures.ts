@@ -7,6 +7,7 @@ export const common = {
   name: "User",
   avatarUrl: null,
   preferredLocale: "en",
+  preferredTheme: "system",
 };
 
 export type PrincipalKind =

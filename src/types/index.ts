@@ -81,6 +81,7 @@ interface PrincipalUser {
   name: string;
   avatarUrl: string | null;
   preferredLocale: string;
+  preferredTheme: string;
 }
 
 export interface UnassignedPrincipal extends PrincipalUser {

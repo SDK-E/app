@@ -70,5 +70,10 @@
     "connectionTitle": "We kunnen de server niet bereiken.",
     "connectionDescription": "Controleer uw verbinding en probeer het opnieuw.",
     "retryConnection": "Probeer de verbinding opnieuw"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
   }
 }

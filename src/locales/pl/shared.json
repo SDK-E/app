@@ -70,5 +70,10 @@
     "connectionTitle": "Nie możemy się połączyć z serwerem.",
     "connectionDescription": "Sprawdź połączenie i spróbuj ponownie.",
     "retryConnection": "Ponów próbę połączenia"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
   }
 }

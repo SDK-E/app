@@ -70,5 +70,10 @@
     "connectionTitle": "Не можем да се свържем със сървъра.",
     "connectionDescription": "Проверете връзката си и опитайте отново.",
     "retryConnection": "Повторен опит за свързване"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
   }
 }
