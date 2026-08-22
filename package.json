@@ -27,7 +27,13 @@
     "verify": "npm run generate && npm run agents:check && npm run check:file-length && npm run format:check && npm run typecheck && npm run lint && vitest run && npm run i18n:check && next build --turbopack",
     "audit": "npm audit --audit-level=high",
     "i18n:translate": "python3 scripts/i18n/translate-locales.py",
-    "i18n:check": "python3 scripts/i18n/translate-locales-test.py && python3 scripts/i18n/translate-locales.py --check"
+    "i18n:check": "python3 scripts/i18n/translate-locales-test.py && python3 scripts/i18n/translate-locales.py --check",
+    "port:list": "node --import tsx scripts/portkiller/portkiller.ts list",
+    "port:find": "node --import tsx scripts/portkiller/portkiller.ts find",
+    "port:pid": "node --import tsx scripts/portkiller/portkiller.ts pid",
+    "port:check": "node --import tsx scripts/portkiller/portkiller.ts check",
+    "port:kill": "node --import tsx scripts/portkiller/portkiller.ts kill",
+    "port:kill-force": "node --import tsx scripts/portkiller/portkiller.ts kill-force"
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^4.26.0",
