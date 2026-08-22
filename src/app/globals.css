@@ -83,6 +83,7 @@
   --color-foreground: var(--foreground);
   --color-background: var(--background);
   --color-section-muted: var(--section-muted);
+  --color-section-accent: var(--section-accent);
   --color-dark-deep: #2d4b28;
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
@@ -101,6 +102,8 @@
   --section-bg: var(--color-light);
   --section-fg: var(--color-dark);
   --section-muted: #354833;
+  --section-accent: var(--color-dark-muted);
+  --section-dark-accent: var(--color-brand);
   --header-bg: var(--color-light);
   --header-fg: var(--color-dark);
   --card: #f8fbf7;
@@ -147,6 +150,8 @@
   --section-bg: var(--color-dark);
   --section-fg: var(--color-light);
   --section-muted: var(--color-fog);
+  --section-accent: var(--color-fog);
+  --section-dark-accent: var(--color-dark-muted);
   --header-bg: var(--color-dark);
   --header-fg: var(--color-light);
   --card: #082003;
