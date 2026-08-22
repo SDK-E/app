@@ -1,8 +1,16 @@
-export function Skeleton({ className = "" }: { className?: string }) {
+import * as React from "react";
+
+import { cn } from "@/lib/utils";
+
+function Skeleton({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
+      data-slot="skeleton"
       aria-hidden
-      className={`animate-pulse rounded-control bg-line/70 motion-reduce:animate-none ${className}`}
+      className={cn("animate-pulse rounded-control bg-muted motion-reduce:animate-none", className)}
+      {...props}
     />
   );
 }
+
+export { Skeleton };
