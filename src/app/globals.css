@@ -6,7 +6,10 @@
 
 @theme {
   --color-dark: #082003;
+  --color-dark-deep: #2d4b28;
+  --color-dark-muted: #354833;
   --color-brand: #2cdb16;
+  --color-brand-muted: #16300c;
   --color-light: #d7e8d3;
   --color-paper: #f8fbf7;
   --color-fog: #abc4a6;
@@ -39,6 +42,10 @@
   --radius-card: 0.625rem;
   --radius-control: 0.5rem;
   --radius-nav: 0.4375rem;
+
+  --animate-duration-fast: 100ms;
+  --animate-duration-normal: 200ms;
+  --animate-duration-slow: 400ms;
 }
 
 @theme inline {
@@ -75,6 +82,8 @@
   --color-card: var(--card);
   --color-foreground: var(--foreground);
   --color-background: var(--background);
+  --color-section-muted: var(--section-muted);
+  --color-dark-deep: #2d4b28;
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -87,6 +96,13 @@
 :root {
   --background: #d7e8d3;
   --foreground: #082003;
+  /* Surface context defaults for components rendered outside a Section
+     (portal pages, overlays). Section overrides these locally per tone. */
+  --section-bg: var(--color-light);
+  --section-fg: var(--color-dark);
+  --section-muted: #354833;
+  --header-bg: var(--color-light);
+  --header-fg: var(--color-dark);
   --card: #f8fbf7;
   --card-foreground: #082003;
   --popover: #f8fbf7;
@@ -96,19 +112,23 @@
   --secondary: #d7e8d3;
   --secondary-foreground: #082003;
   --muted: #d7e8d3;
-  --muted-foreground: #536b4f;
+  --muted-foreground: #354833;
   --accent: #d7e8d3;
   --accent-foreground: #082003;
-  --destructive: #082003;
-  --destructive-foreground: #d7e8d3;
+  --section-light-bg: var(--color-light);
+  --section-light-fg: var(--color-dark);
+  --section-light-muted: var(--color-dark-muted);
+  --section-dark-bg: var(--color-dark);
+  --section-dark-fg: var(--color-light);
+  --section-dark-muted: var(--color-fog);
+  --section-brand-bg: var(--color-brand);
+  --section-brand-fg: var(--color-dark);
+  --section-brand-muted: var(--color-brand-muted);
+  --destructive: #9b1c1c;
+  --destructive-foreground: #f8fbf7;
   --border: #9db497;
   --input: #536b4f;
   --ring: #082003;
-  --chart-1: #2cdb16;
-  --chart-2: #082003;
-  --chart-3: #536b4f;
-  --chart-4: #9db497;
-  --chart-5: #abc4a6;
   --radius: 0.625rem;
   --sidebar: #082003;
   --sidebar-foreground: #d7e8d3;
@@ -118,11 +138,17 @@
   --sidebar-accent-foreground: #082003;
   --sidebar-border: #2d4b28;
   --sidebar-ring: #2cdb16;
+  --color-dark-deep: #2d4b28;
 }
 
 .dark {
   --background: #082003;
   --foreground: #d7e8d3;
+  --section-bg: var(--color-dark);
+  --section-fg: var(--color-light);
+  --section-muted: var(--color-fog);
+  --header-bg: var(--color-dark);
+  --header-fg: var(--color-light);
   --card: #082003;
   --card-foreground: #d7e8d3;
   --popover: #082003;
@@ -135,16 +161,25 @@
   --muted-foreground: #abc4a6;
   --accent: #2d4b28;
   --accent-foreground: #d7e8d3;
-  --destructive: #d7e8d3;
+  --section-light-bg: var(--color-dark);
+  --section-light-fg: var(--color-light);
+  --section-light-muted: var(--color-fog);
+  --section-dark-bg: var(--color-light);
+  --section-dark-fg: var(--color-dark);
+  --section-dark-muted: var(--color-dark-muted);
+  --section-brand-bg: var(--color-brand);
+  --section-brand-fg: var(--color-dark);
+  --section-brand-muted: var(--color-brand-muted);
+  --destructive: #d6a8a8;
   --destructive-foreground: #082003;
   --border: #2d4b28;
   --input: #abc4a6;
   --ring: #2cdb16;
   --chart-1: #2cdb16;
-  --chart-2: #082003;
-  --chart-3: #536b4f;
-  --chart-4: #9db497;
-  --chart-5: #abc4a6;
+  --chart-2: #4f46e5;
+  --chart-3: #d97706;
+  --chart-4: #64748b;
+  --chart-5: #9db497;
   --sidebar: #082003;
   --sidebar-foreground: #d7e8d3;
   --sidebar-primary: #2cdb16;
@@ -153,6 +188,7 @@
   --sidebar-accent-foreground: #082003;
   --sidebar-border: #2d4b28;
   --sidebar-ring: #2cdb16;
+  --color-dark-deep: #2d4b28;
 }
 
 @layer base {
