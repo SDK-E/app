@@ -11,7 +11,7 @@ export function StatesSection() {
       <SectionHeader
         eyebrow="04 · States"
         title="Loading, empty and error — consistent surfaces."
-        intro="No color inventions. Skeleton uses the line tone, empty states a dashed border, errors stay on the paper surface with strong dark emphasis."
+        intro="No color inventions. Skeleton uses the muted surface tone, empty states a dashed border, errors stay on the paper surface with strong dark emphasis."
       />
       <div className="grid gap-3 lg:grid-cols-3">
         <div className="flex min-h-48 flex-col gap-3 rounded-card border border-line bg-paper p-6">

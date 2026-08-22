@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { ComponentsSection } from "@/components/design-system/ComponentsSection";
 import { PaletteSection } from "@/components/design-system/PaletteSection";
+import { PrimitivesSection } from "@/components/design-system/PrimitivesSection";
 import { StatesSection } from "@/components/design-system/StatesSection";
 import { SurfacesSection } from "@/components/design-system/SurfacesSection";
 import { TypeSection } from "@/components/design-system/TypeSection";
@@ -30,6 +31,7 @@ const navLinks = [
   { label: "Colors", href: "#colors" },
   { label: "Type", href: "#type" },
   { label: "Components", href: "#components" },
+  { label: "Primitives", href: "#primitives" },
   { label: "States", href: "#states" },
 ];
 
@@ -63,6 +65,7 @@ export default async function DesignSystemPage({
       <PaletteSection />
       <TypeSection />
       <ComponentsSection />
+      <PrimitivesSection />
       <StatesSection />
       <SurfacesSection />
     </div>
