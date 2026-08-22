@@ -2,8 +2,9 @@
   "$schema": "https://app.kilo.ai/config.json",
   "compaction": {
     "auto": true,
-    "threshold_percent": 45,
-    "prune": true
+    "threshold_percent": 65,
+    "prune": true,
+    "tail_turns": 10
   },
   "permission": {
     "bash": {

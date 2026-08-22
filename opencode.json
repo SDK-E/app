@@ -48,6 +48,7 @@
   },
   "compaction": {
     "auto": true,
+    "threshold_percent": 65,
     "prune": true,
     "tail_turns": 10
   },
