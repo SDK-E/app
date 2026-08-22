@@ -13,7 +13,7 @@ export function EngagementComparison({
   options: EngagementOption[];
 }) {
   return (
-    <div className="overflow-hidden rounded-card border border-line bg-paper">
+    <div className="overflow-hidden rounded-card border border-line bg-paper text-dark">
       <div className="hidden grid-cols-[0.55fr_repeat(3,1fr)] border-b border-line bg-dark text-light lg:grid">
         <div className="p-5" />
         {options.map((option) => (

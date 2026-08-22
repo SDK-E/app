@@ -42,7 +42,7 @@ export function ServiceChapter({
             <ul className="mt-4 space-y-3">
               {item.investigation.map((line) => (
                 <li key={line} className="flex gap-3 text-body">
-                  <span className="font-bold text-brand" aria-hidden>
+                  <span className="font-bold text-section-accent" aria-hidden>
                     —
                   </span>
                   {line}
@@ -55,7 +55,7 @@ export function ServiceChapter({
             <ul className="mt-4 space-y-3">
               {item.delivery.map((line) => (
                 <li key={line} className="flex gap-3 text-body">
-                  <span className="font-bold text-brand" aria-hidden>
+                  <span className="font-bold text-section-accent" aria-hidden>
                     —
                   </span>
                   {line}

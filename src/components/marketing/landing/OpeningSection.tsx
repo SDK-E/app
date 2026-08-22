@@ -18,7 +18,7 @@ export async function OpeningSection({
     <Section tone="dark">
       <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-[70px]">
         <div>
-          <p className="text-label font-bold uppercase tracking-eyebrow text-brand">
+          <p className="text-label font-bold uppercase tracking-eyebrow text-section-accent">
             {t("opening.eyebrow")}
           </p>
           <h2 className="mt-4 max-w-[15ch] text-[36px] font-extrabold tracking-title md:text-title">

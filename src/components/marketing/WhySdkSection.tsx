@@ -15,7 +15,9 @@ export default async function WhySdkSection({ locale }: { locale: string }) {
             key={proof.kicker}
             className="flex min-h-[175px] flex-col justify-between rounded-card border border-dark-deep p-5"
           >
-            <strong className="text-[32px] font-extrabold text-brand">{proof.kicker}</strong>
+            <strong className="text-[32px] font-extrabold text-section-accent">
+              {proof.kicker}
+            </strong>
             <span className="text-micro text-section-muted">{proof.copy}</span>
           </div>
         ))}

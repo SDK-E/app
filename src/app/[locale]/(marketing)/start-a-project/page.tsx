@@ -82,7 +82,7 @@ export default async function StartAProjectPage({
         <Section id="project-form" tone="dark">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-[70px]">
             <div>
-              <p className="text-label font-bold uppercase tracking-eyebrow text-brand">
+              <p className="text-label font-bold uppercase tracking-eyebrow text-section-accent">
                 {t("formEyebrow")}
               </p>
               <h2 className="mt-4 max-w-[15ch] text-[36px] font-extrabold tracking-title md:text-title">
@@ -93,14 +93,14 @@ export default async function StartAProjectPage({
                 <p>{t("body")}</p>
                 <p className="mt-4">
                   <a
-                    className="font-bold text-light underline underline-offset-4"
+                    className="font-bold underline underline-offset-4"
                     href={`mailto:${siteConfig.contact.email}`}
                   >
                     {siteConfig.contact.email}
                   </a>
                   <br />
                   <a
-                    className="font-bold text-light underline underline-offset-4"
+                    className="font-bold underline underline-offset-4"
                     href={`tel:${siteConfig.contact.phone.replaceAll(" ", "")}`}
                   >
                     {siteConfig.contact.phone}

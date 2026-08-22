@@ -49,7 +49,7 @@ export function PageHero({
                 index > 1 ? "lg:border-l lg:border-line" : ""
               }`}
             >
-              <span className="mr-3 text-brand" aria-hidden>
+              <span className="mr-3 text-section-accent" aria-hidden>
                 ●
               </span>
               {signal}
