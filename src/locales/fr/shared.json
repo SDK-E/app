@@ -43,6 +43,13 @@
     "backToHome": "Retour à la maison",
     "somethingWentWrong": "Quelque chose s'est mal passé",
     "tryAgain": "Réessayez",
-    "contactSupport": "Si le problème persiste, veuillez contacter l'assistance."
+    "contactSupport": "Si le problème persiste, veuillez contacter l'assistance.",
+    "accessNotGrantedTitle": "Accès non accordé",
+    "accessNotGrantedDescription": "Vous n'êtes pas autorisé à afficher cette page.",
+    "accessNotGrantedBack": "Retour au portail",
+    "unauthenticatedTitle": "Authentification requise",
+    "unauthenticatedDescription": "Veuillez vous connecter pour accéder à cette page.",
+    "unauthenticatedSignIn": "Connectez-vous",
+    "serverErrorDescription": "Une erreur inattendue s'est produite. Si le problème persiste, veuillez contacter l'assistance."
   }
 }

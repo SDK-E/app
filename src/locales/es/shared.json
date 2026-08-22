@@ -43,6 +43,13 @@
     "backToHome": "De vuelta a casa",
     "somethingWentWrong": "algo salió mal",
     "tryAgain": "Inténtalo de nuevo",
-    "contactSupport": "Si el problema persiste, comuníquese con el soporte."
+    "contactSupport": "Si el problema persiste, comuníquese con el soporte.",
+    "accessNotGrantedTitle": "Acceso no concedido",
+    "accessNotGrantedDescription": "No tienes permiso para ver esta página.",
+    "accessNotGrantedBack": "Volver al portal",
+    "unauthenticatedTitle": "Se requiere autenticación",
+    "unauthenticatedDescription": "Por favor inicia sesión para acceder a esta página.",
+    "unauthenticatedSignIn": "Iniciar sesión",
+    "serverErrorDescription": "Se produjo un error inesperado. Si el problema persiste, comuníquese con el soporte."
   }
 }

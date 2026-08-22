@@ -43,6 +43,13 @@
     "backToHome": "Tilbage til hjemmet",
     "somethingWentWrong": "Noget gik galt",
     "tryAgain": "Prøv igen",
-    "contactSupport": "Kontakt support, hvis problemet fortsætter."
+    "contactSupport": "Kontakt support, hvis problemet fortsætter.",
+    "accessNotGrantedTitle": "Adgang ikke givet",
+    "accessNotGrantedDescription": "Du har ikke tilladelse til at se denne side.",
+    "accessNotGrantedBack": "Tilbage til portalen",
+    "unauthenticatedTitle": "Godkendelse påkrævet",
+    "unauthenticatedDescription": "Log venligst ind for at få adgang til denne side.",
+    "unauthenticatedSignIn": "Log ind",
+    "serverErrorDescription": "Der opstod en uventet fejl. Kontakt support, hvis problemet fortsætter."
   }
 }

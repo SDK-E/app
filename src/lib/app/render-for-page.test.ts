@@ -2,46 +2,64 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { renderForPage } from "@/lib/app/render-for-page";
 import { AuthorizationError } from "@/lib/auth/authorization";
+import { IdentityError } from "@/lib/auth/identity";
 
 const mocks = vi.hoisted(() => ({
-  notFound: vi.fn(() => {
-    throw Object.assign(new Error("NEXT_NOT_FOUND"), { digest: "NEXT_NOT_FOUND" });
+  redirect: vi.fn(() => {
+    throw Object.assign(new Error("NEXT_REDIRECT"), { digest: "NEXT_REDIRECT" });
   }),
 }));
 
-vi.mock("next/navigation", () => ({ notFound: mocks.notFound }));
+vi.mock("next/navigation", () => ({ redirect: mocks.redirect }));
 
-const notFoundMock = mocks.notFound;
+const redirectMock = mocks.redirect;
 
-afterEach(() => notFoundMock.mockClear());
+afterEach(() => redirectMock.mockClear());
 
 describe("renderForPage", () => {
   it("resolves the computed value when access is allowed", async () => {
-    await expect(renderForPage(() => "ok")).resolves.toBe("ok");
-    expect(notFoundMock).not.toHaveBeenCalled();
+    await expect(renderForPage(() => "ok", "en")).resolves.toBe("ok");
+    expect(redirectMock).not.toHaveBeenCalled();
   });
 
-  it("renders a not-found page for forbidden page access", async () => {
+  it("redirects to unauthenticated for missing auth", async () => {
+    const error = new AuthorizationError(401, "UNAUTHENTICATED", "Authentication is required.");
+    await expect(
+      renderForPage(() => {
+        throw error;
+      }, "en")
+    ).rejects.toMatchObject({ digest: "NEXT_REDIRECT" });
+    expect(redirectMock).toHaveBeenCalledOnce();
+    expect(redirectMock).toHaveBeenCalledWith("/en/app/unauthenticated");
+  });
+
+  it("redirects to access-not-granted for forbidden page access", async () => {
     const error = new AuthorizationError(403, "FORBIDDEN", "Cross-company access is denied.");
     await expect(
       renderForPage(() => {
         throw error;
-      })
-    ).rejects.toMatchObject({ digest: "NEXT_NOT_FOUND" });
-    expect(notFoundMock).toHaveBeenCalledOnce();
+      }, "en")
+    ).rejects.toMatchObject({ digest: "NEXT_REDIRECT" });
+    expect(redirectMock).toHaveBeenCalledOnce();
+    expect(redirectMock).toHaveBeenCalledWith("/en/app/access-not-granted");
   });
 
-  it("renders a not-found page when a resource is missing", async () => {
-    const error = new AuthorizationError(404, "NOT_FOUND", "Request not found.");
+  it("redirects to access-not-granted for unassigned principals", async () => {
+    const error = new AuthorizationError(
+      403,
+      "UNASSIGNED",
+      "Application access has not been assigned."
+    );
     await expect(
       renderForPage(() => {
         throw error;
-      })
-    ).rejects.toMatchObject({ digest: "NEXT_NOT_FOUND" });
-    expect(notFoundMock).toHaveBeenCalledOnce();
+      }, "en")
+    ).rejects.toMatchObject({ digest: "NEXT_REDIRECT" });
+    expect(redirectMock).toHaveBeenCalledOnce();
+    expect(redirectMock).toHaveBeenCalledWith("/en/app/access-not-granted");
   });
 
-  it("keeps company-required errors for the caller to debug", async () => {
+  it("redirects to access-not-granted for missing company scope", async () => {
     const error = new AuthorizationError(
       403,
       "COMPANY_REQUIRED",
@@ -50,9 +68,35 @@ describe("renderForPage", () => {
     await expect(
       renderForPage(() => {
         throw error;
-      })
-    ).rejects.toBe(error);
-    expect(notFoundMock).not.toHaveBeenCalled();
+      }, "en")
+    ).rejects.toMatchObject({ digest: "NEXT_REDIRECT" });
+    expect(redirectMock).toHaveBeenCalledOnce();
+    expect(redirectMock).toHaveBeenCalledWith("/en/app/access-not-granted");
+  });
+
+  it("redirects to access-not-granted when a resource is missing", async () => {
+    const error = new AuthorizationError(404, "NOT_FOUND", "Request not found.");
+    await expect(
+      renderForPage(() => {
+        throw error;
+      }, "en")
+    ).rejects.toMatchObject({ digest: "NEXT_REDIRECT" });
+    expect(redirectMock).toHaveBeenCalledOnce();
+    expect(redirectMock).toHaveBeenCalledWith("/en/app/access-not-granted");
+  });
+
+  it("redirects to server-error for identity errors", async () => {
+    const error = new IdentityError(
+      "INVALID_IDENTITY",
+      "The Auth0 identity is missing required claims."
+    );
+    await expect(
+      renderForPage(() => {
+        throw error;
+      }, "en")
+    ).rejects.toMatchObject({ digest: "NEXT_REDIRECT" });
+    expect(redirectMock).toHaveBeenCalledOnce();
+    expect(redirectMock).toHaveBeenCalledWith("/en/app/server-error");
   });
 
   it("rethrows unrelated errors", async () => {
@@ -60,8 +104,8 @@ describe("renderForPage", () => {
     await expect(
       renderForPage(() => {
         throw error;
-      })
+      }, "en")
     ).rejects.toBe(error);
-    expect(notFoundMock).not.toHaveBeenCalled();
+    expect(redirectMock).not.toHaveBeenCalled();
   });
 });

@@ -43,6 +43,13 @@
     "backToHome": "Tillbaka till hemmet",
     "somethingWentWrong": "Något gick fel",
     "tryAgain": "Försök igen",
-    "contactSupport": "Kontakta supporten om problemet kvarstår."
+    "contactSupport": "Kontakta supporten om problemet kvarstår.",
+    "accessNotGrantedTitle": "Tillträde ej beviljad",
+    "accessNotGrantedDescription": "Du har inte behörighet att visa den här sidan.",
+    "accessNotGrantedBack": "Tillbaka till portalen",
+    "unauthenticatedTitle": "Autentisering krävs",
+    "unauthenticatedDescription": "Logga in för att komma åt den här sidan.",
+    "unauthenticatedSignIn": "Logga in",
+    "serverErrorDescription": "Ett oväntat fel inträffade. Kontakta supporten om problemet kvarstår."
   }
 }

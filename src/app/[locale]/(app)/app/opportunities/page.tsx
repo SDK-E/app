@@ -8,6 +8,7 @@ import { EmptyState } from "@/components/ui/EmptyState";
 import { OpportunityCardActions } from "@/components/portal/OpportunityCardActions";
 import { getCurrentPrincipal } from "@/lib/auth/identity";
 import { requireProviderPrincipal } from "@/lib/auth/authorization";
+import { renderForPage } from "@/lib/app/render-for-page";
 import { listOpportunities } from "@/lib/opportunities/queries";
 import { listProviderInvitations } from "@/lib/opportunities/invitations";
 import type { OpportunityPublicRecord } from "@/lib/opportunities/safe";
@@ -29,14 +30,16 @@ export default async function OpportunitiesPage({
 }) {
   const [{ locale }, principal] = await Promise.all([params, getCurrentPrincipal()]);
   if (!principal) return null;
-  requireProviderPrincipal(principal);
 
   const t = await getTranslations({ locale, namespace: "portal.opportunities" });
 
-  const [opportunities, invitations] = await Promise.all([
-    listOpportunities(principal, "", {}) as Promise<OpportunityPublicRecord[]>,
-    listProviderInvitations(principal),
-  ]);
+  const [opportunities, invitations] = await renderForPage(async () => {
+    requireProviderPrincipal(principal);
+    return Promise.all([
+      listOpportunities(principal, "", {}) as Promise<OpportunityPublicRecord[]>,
+      listProviderInvitations(principal),
+    ]);
+  }, locale);
 
   const pendingByOpportunity = new Map(
     invitations

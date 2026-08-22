@@ -43,6 +43,13 @@
     "backToHome": "Zurück nach Hause",
     "somethingWentWrong": "Etwas ist schief gelaufen",
     "tryAgain": "Versuchen Sie es erneut",
-    "contactSupport": "Wenn das Problem weiterhin besteht, wenden Sie sich bitte an den Support."
+    "contactSupport": "Wenn das Problem weiterhin besteht, wenden Sie sich bitte an den Support.",
+    "accessNotGrantedTitle": "Zugriff nicht gewährt",
+    "accessNotGrantedDescription": "Sie haben keine Berechtigung, diese Seite anzuzeigen.",
+    "accessNotGrantedBack": "Zurück zum Portal",
+    "unauthenticatedTitle": "Authentifizierung erforderlich",
+    "unauthenticatedDescription": "Bitte melden Sie sich an, um auf diese Seite zuzugreifen.",
+    "unauthenticatedSignIn": "Melden Sie sich an",
+    "serverErrorDescription": "Es ist ein unerwarteter Fehler aufgetreten. Wenn das Problem weiterhin besteht, wenden Sie sich bitte an den Support."
   }
 }

@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 
 import { getCurrentPrincipal } from "@/lib/auth/identity";
 import { requireCompanyContext } from "@/lib/auth/authorization";
+import { renderForPage } from "@/lib/app/render-for-page";
 import { getPrisma } from "@/lib/db";
 
 interface PageProps {
@@ -14,7 +15,12 @@ export default async function InvoicePayPage({ params }: PageProps) {
     redirect(`/${(await params).locale}/login`);
   }
 
-  const ctx = requireCompanyContext(principal, (await params).companyId, "invoice:view");
+  const ctx = await renderForPage(
+    async () => {
+      return requireCompanyContext(principal, (await params).companyId, "invoice:view");
+    },
+    (await params).locale
+  );
 
   const invoice = await getPrisma().invoice.findFirst({
     where: { id: (await params).invoiceId, companyId: ctx.companyId },

@@ -43,6 +43,13 @@
     "backToHome": "Обратно към дома",
     "somethingWentWrong": "Нещо се обърка",
     "tryAgain": "Опитайте отново",
-    "contactSupport": "Ако проблемът продължава, моля, свържете се с поддръжката."
+    "contactSupport": "Ако проблемът продължава, моля, свържете се с поддръжката.",
+    "accessNotGrantedTitle": "Достъпът не е предоставен",
+    "accessNotGrantedDescription": "Нямате разрешение да видите тази страница.",
+    "accessNotGrantedBack": "Обратно към портала",
+    "unauthenticatedTitle": "Изисква се удостоверяване",
+    "unauthenticatedDescription": "Моля, влезте за достъп до тази страница.",
+    "unauthenticatedSignIn": "влезте",
+    "serverErrorDescription": "Възникна неочаквана грешка. Ако проблемът продължава, моля, свържете се с поддръжката."
   }
 }

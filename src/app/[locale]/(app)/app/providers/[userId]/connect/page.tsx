@@ -1,5 +1,6 @@
 import { getCurrentPrincipal } from "@/lib/auth/identity";
 import { requireProviderPrincipal } from "@/lib/auth/authorization";
+import { renderForPage } from "@/lib/app/render-for-page";
 import { getPrisma } from "@/lib/db";
 
 interface PageProps {
@@ -12,11 +13,15 @@ export default async function ProviderConnectPage({ params }: PageProps) {
     return null;
   }
 
-  requireProviderPrincipal(principal);
-
-  const connectedAccount = await getPrisma().stripeConnectedAccount.findUnique({
-    where: { userId: (await params).userId },
-  });
+  const connectedAccount = await renderForPage(
+    async () => {
+      requireProviderPrincipal(principal);
+      return getPrisma().stripeConnectedAccount.findUnique({
+        where: { userId: (await params).userId },
+      });
+    },
+    (await params).locale
+  );
 
   return (
     <div className="space-y-6">

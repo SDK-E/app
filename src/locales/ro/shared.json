@@ -43,6 +43,13 @@
     "backToHome": "Înapoi acasă",
     "somethingWentWrong": "Ceva a mers prost",
     "tryAgain": "Încercați din nou",
-    "contactSupport": "Dacă problema persistă, vă rugăm să contactați asistența."
+    "contactSupport": "Dacă problema persistă, vă rugăm să contactați asistența.",
+    "accessNotGrantedTitle": "Accesul nu este acordat",
+    "accessNotGrantedDescription": "Nu aveți permisiunea de a vizualiza această pagină.",
+    "accessNotGrantedBack": "Înapoi la portal",
+    "unauthenticatedTitle": "Este necesară autentificarea",
+    "unauthenticatedDescription": "Vă rugăm să vă conectați pentru a accesa această pagină.",
+    "unauthenticatedSignIn": "Conectați-vă",
+    "serverErrorDescription": "A apărut o eroare neașteptată. Dacă problema persistă, vă rugăm să contactați asistența."
   }
 }

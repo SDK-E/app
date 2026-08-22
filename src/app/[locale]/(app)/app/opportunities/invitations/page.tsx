@@ -8,6 +8,7 @@ import { EmptyState } from "@/components/ui/EmptyState";
 import { OpportunityCardActions } from "@/components/portal/OpportunityCardActions";
 import { getCurrentPrincipal } from "@/lib/auth/identity";
 import { requireProviderPrincipal } from "@/lib/auth/authorization";
+import { renderForPage } from "@/lib/app/render-for-page";
 import { listProviderInvitations } from "@/lib/opportunities/invitations";
 
 export const metadata: Metadata = {
@@ -23,11 +24,13 @@ function formatDate(locale: string, value: Date | null | undefined) {
 export default async function InvitationsPage({ params }: { params: Promise<{ locale: string }> }) {
   const [{ locale }, principal] = await Promise.all([params, getCurrentPrincipal()]);
   if (!principal) return null;
-  requireProviderPrincipal(principal);
 
   const t = await getTranslations({ locale, namespace: "portal.opportunities" });
 
-  const invitations = await listProviderInvitations(principal);
+  const invitations = await renderForPage(async () => {
+    requireProviderPrincipal(principal);
+    return listProviderInvitations(principal);
+  }, locale);
   const pending = invitations.filter((invitation) => invitation.status === "PENDING");
   const history = invitations.filter((invitation) => invitation.status !== "PENDING");
 

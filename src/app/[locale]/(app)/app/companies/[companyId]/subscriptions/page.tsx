@@ -1,5 +1,6 @@
 import { getCurrentPrincipal } from "@/lib/auth/identity";
 import { requireCompanyContext } from "@/lib/auth/authorization";
+import { renderForPage } from "@/lib/app/render-for-page";
 import { getPrisma } from "@/lib/db";
 
 interface PageProps {
@@ -12,12 +13,16 @@ export default async function SubscriptionsPage({ params }: PageProps) {
     return null;
   }
 
-  const ctx = requireCompanyContext(principal, (await params).companyId, "invoice:view");
-
-  const subscriptions = await getPrisma().subscription.findMany({
-    where: { companyId: ctx.companyId },
-    orderBy: { createdAt: "desc" },
-  });
+  const subscriptions = await renderForPage(
+    async () => {
+      const ctx = requireCompanyContext(principal, (await params).companyId, "invoice:view");
+      return getPrisma().subscription.findMany({
+        where: { companyId: ctx.companyId },
+        orderBy: { createdAt: "desc" },
+      });
+    },
+    (await params).locale
+  );
 
   return (
     <div className="space-y-6">

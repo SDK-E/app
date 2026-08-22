@@ -43,6 +43,13 @@
     "backToHome": "Vissza haza",
     "somethingWentWrong": "Valami elromlott",
     "tryAgain": "Próbáld újra",
-    "contactSupport": "Ha a probléma továbbra is fennáll, forduljon az ügyfélszolgálathoz."
+    "contactSupport": "Ha a probléma továbbra is fennáll, forduljon az ügyfélszolgálathoz.",
+    "accessNotGrantedTitle": "A hozzáférés nem biztosított",
+    "accessNotGrantedDescription": "Nincs engedélye ennek az oldalnak a megtekintéséhez.",
+    "accessNotGrantedBack": "Vissza a portálra",
+    "unauthenticatedTitle": "Hitelesítés szükséges",
+    "unauthenticatedDescription": "Kérjük, jelentkezzen be az oldal eléréséhez.",
+    "unauthenticatedSignIn": "Jelentkezzen be",
+    "serverErrorDescription": "Váratlan hiba történt. Ha a probléma továbbra is fennáll, forduljon az ügyfélszolgálathoz."
   }
 }

@@ -43,6 +43,13 @@
     "backToHome": "Terug naar huis",
     "somethingWentWrong": "Er is iets misgegaan",
     "tryAgain": "Probeer het opnieuw",
-    "contactSupport": "Als het probleem zich blijft voordoen, neem dan contact op met de ondersteuning."
+    "contactSupport": "Als het probleem zich blijft voordoen, neem dan contact op met de ondersteuning.",
+    "accessNotGrantedTitle": "Toegang niet verleend",
+    "accessNotGrantedDescription": "U heeft geen toestemming om deze pagina te bekijken.",
+    "accessNotGrantedBack": "Terug naar portaal",
+    "unauthenticatedTitle": "Authenticatie vereist",
+    "unauthenticatedDescription": "Meld u aan om toegang te krijgen tot deze pagina.",
+    "unauthenticatedSignIn": "Log in",
+    "serverErrorDescription": "Er is een onverwachte fout opgetreden. Als het probleem zich blijft voordoen, neem dan contact op met de ondersteuning."
   }
 }

@@ -996,7 +996,14 @@
     "root.errors.backToHome": "Back to home",
     "root.errors.somethingWentWrong": "Something went wrong",
     "root.errors.tryAgain": "Try again",
-    "root.errors.contactSupport": "If the problem persists, please contact support."
+    "root.errors.contactSupport": "If the problem persists, please contact support.",
+    "root.errors.accessNotGrantedTitle": "Access not granted",
+    "root.errors.accessNotGrantedDescription": "You do not have permission to view this page.",
+    "root.errors.accessNotGrantedBack": "Back to portal",
+    "root.errors.unauthenticatedTitle": "Authentication required",
+    "root.errors.unauthenticatedDescription": "Please sign in to access this page.",
+    "root.errors.unauthenticatedSignIn": "Sign in",
+    "root.errors.serverErrorDescription": "An unexpected error occurred. If the problem persists, please contact support."
   },
   "de": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -1995,7 +2002,14 @@
     "root.errors.backToHome": "Back to home",
     "root.errors.somethingWentWrong": "Something went wrong",
     "root.errors.tryAgain": "Try again",
-    "root.errors.contactSupport": "If the problem persists, please contact support."
+    "root.errors.contactSupport": "If the problem persists, please contact support.",
+    "root.errors.accessNotGrantedTitle": "Access not granted",
+    "root.errors.accessNotGrantedDescription": "You do not have permission to view this page.",
+    "root.errors.accessNotGrantedBack": "Back to portal",
+    "root.errors.unauthenticatedTitle": "Authentication required",
+    "root.errors.unauthenticatedDescription": "Please sign in to access this page.",
+    "root.errors.unauthenticatedSignIn": "Sign in",
+    "root.errors.serverErrorDescription": "An unexpected error occurred. If the problem persists, please contact support."
   },
   "es": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -2994,7 +3008,14 @@
     "root.errors.backToHome": "Back to home",
     "root.errors.somethingWentWrong": "Something went wrong",
     "root.errors.tryAgain": "Try again",
-    "root.errors.contactSupport": "If the problem persists, please contact support."
+    "root.errors.contactSupport": "If the problem persists, please contact support.",
+    "root.errors.accessNotGrantedTitle": "Access not granted",
+    "root.errors.accessNotGrantedDescription": "You do not have permission to view this page.",
+    "root.errors.accessNotGrantedBack": "Back to portal",
+    "root.errors.unauthenticatedTitle": "Authentication required",
+    "root.errors.unauthenticatedDescription": "Please sign in to access this page.",
+    "root.errors.unauthenticatedSignIn": "Sign in",
+    "root.errors.serverErrorDescription": "An unexpected error occurred. If the problem persists, please contact support."
   },
   "pt": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -3993,7 +4014,14 @@
     "root.errors.backToHome": "Back to home",
     "root.errors.somethingWentWrong": "Something went wrong",
     "root.errors.tryAgain": "Try again",
-    "root.errors.contactSupport": "If the problem persists, please contact support."
+    "root.errors.contactSupport": "If the problem persists, please contact support.",
+    "root.errors.accessNotGrantedTitle": "Access not granted",
+    "root.errors.accessNotGrantedDescription": "You do not have permission to view this page.",
+    "root.errors.accessNotGrantedBack": "Back to portal",
+    "root.errors.unauthenticatedTitle": "Authentication required",
+    "root.errors.unauthenticatedDescription": "Please sign in to access this page.",
+    "root.errors.unauthenticatedSignIn": "Sign in",
+    "root.errors.serverErrorDescription": "An unexpected error occurred. If the problem persists, please contact support."
   },
   "it": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -4992,7 +5020,14 @@
     "root.errors.backToHome": "Back to home",
     "root.errors.somethingWentWrong": "Something went wrong",
     "root.errors.tryAgain": "Try again",
-    "root.errors.contactSupport": "If the problem persists, please contact support."
+    "root.errors.contactSupport": "If the problem persists, please contact support.",
+    "root.errors.accessNotGrantedTitle": "Access not granted",
+    "root.errors.accessNotGrantedDescription": "You do not have permission to view this page.",
+    "root.errors.accessNotGrantedBack": "Back to portal",
+    "root.errors.unauthenticatedTitle": "Authentication required",
+    "root.errors.unauthenticatedDescription": "Please sign in to access this page.",
+    "root.errors.unauthenticatedSignIn": "Sign in",
+    "root.errors.serverErrorDescription": "An unexpected error occurred. If the problem persists, please contact support."
   },
   "nl": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -5991,7 +6026,14 @@
     "root.errors.backToHome": "Back to home",
     "root.errors.somethingWentWrong": "Something went wrong",
     "root.errors.tryAgain": "Try again",
-    "root.errors.contactSupport": "If the problem persists, please contact support."
+    "root.errors.contactSupport": "If the problem persists, please contact support.",
+    "root.errors.accessNotGrantedTitle": "Access not granted",
+    "root.errors.accessNotGrantedDescription": "You do not have permission to view this page.",
+    "root.errors.accessNotGrantedBack": "Back to portal",
+    "root.errors.unauthenticatedTitle": "Authentication required",
+    "root.errors.unauthenticatedDescription": "Please sign in to access this page.",
+    "root.errors.unauthenticatedSignIn": "Sign in",
+    "root.errors.serverErrorDescription": "An unexpected error occurred. If the problem persists, please contact support."
   },
   "sv": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -6990,7 +7032,14 @@
     "root.errors.backToHome": "Back to home",
     "root.errors.somethingWentWrong": "Something went wrong",
     "root.errors.tryAgain": "Try again",
-    "root.errors.contactSupport": "If the problem persists, please contact support."
+    "root.errors.contactSupport": "If the problem persists, please contact support.",
+    "root.errors.accessNotGrantedTitle": "Access not granted",
+    "root.errors.accessNotGrantedDescription": "You do not have permission to view this page.",
+    "root.errors.accessNotGrantedBack": "Back to portal",
+    "root.errors.unauthenticatedTitle": "Authentication required",
+    "root.errors.unauthenticatedDescription": "Please sign in to access this page.",
+    "root.errors.unauthenticatedSignIn": "Sign in",
+    "root.errors.serverErrorDescription": "An unexpected error occurred. If the problem persists, please contact support."
   },
   "no": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -7989,7 +8038,14 @@
     "root.errors.backToHome": "Back to home",
     "root.errors.somethingWentWrong": "Something went wrong",
     "root.errors.tryAgain": "Try again",
-    "root.errors.contactSupport": "If the problem persists, please contact support."
+    "root.errors.contactSupport": "If the problem persists, please contact support.",
+    "root.errors.accessNotGrantedTitle": "Access not granted",
+    "root.errors.accessNotGrantedDescription": "You do not have permission to view this page.",
+    "root.errors.accessNotGrantedBack": "Back to portal",
+    "root.errors.unauthenticatedTitle": "Authentication required",
+    "root.errors.unauthenticatedDescription": "Please sign in to access this page.",
+    "root.errors.unauthenticatedSignIn": "Sign in",
+    "root.errors.serverErrorDescription": "An unexpected error occurred. If the problem persists, please contact support."
   },
   "da": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -8988,7 +9044,14 @@
     "root.errors.backToHome": "Back to home",
     "root.errors.somethingWentWrong": "Something went wrong",
     "root.errors.tryAgain": "Try again",
-    "root.errors.contactSupport": "If the problem persists, please contact support."
+    "root.errors.contactSupport": "If the problem persists, please contact support.",
+    "root.errors.accessNotGrantedTitle": "Access not granted",
+    "root.errors.accessNotGrantedDescription": "You do not have permission to view this page.",
+    "root.errors.accessNotGrantedBack": "Back to portal",
+    "root.errors.unauthenticatedTitle": "Authentication required",
+    "root.errors.unauthenticatedDescription": "Please sign in to access this page.",
+    "root.errors.unauthenticatedSignIn": "Sign in",
+    "root.errors.serverErrorDescription": "An unexpected error occurred. If the problem persists, please contact support."
   },
   "fi": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -9987,7 +10050,14 @@
     "root.errors.backToHome": "Back to home",
     "root.errors.somethingWentWrong": "Something went wrong",
     "root.errors.tryAgain": "Try again",
-    "root.errors.contactSupport": "If the problem persists, please contact support."
+    "root.errors.contactSupport": "If the problem persists, please contact support.",
+    "root.errors.accessNotGrantedTitle": "Access not granted",
+    "root.errors.accessNotGrantedDescription": "You do not have permission to view this page.",
+    "root.errors.accessNotGrantedBack": "Back to portal",
+    "root.errors.unauthenticatedTitle": "Authentication required",
+    "root.errors.unauthenticatedDescription": "Please sign in to access this page.",
+    "root.errors.unauthenticatedSignIn": "Sign in",
+    "root.errors.serverErrorDescription": "An unexpected error occurred. If the problem persists, please contact support."
   },
   "pl": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -10986,7 +11056,14 @@
     "root.errors.backToHome": "Back to home",
     "root.errors.somethingWentWrong": "Something went wrong",
     "root.errors.tryAgain": "Try again",
-    "root.errors.contactSupport": "If the problem persists, please contact support."
+    "root.errors.contactSupport": "If the problem persists, please contact support.",
+    "root.errors.accessNotGrantedTitle": "Access not granted",
+    "root.errors.accessNotGrantedDescription": "You do not have permission to view this page.",
+    "root.errors.accessNotGrantedBack": "Back to portal",
+    "root.errors.unauthenticatedTitle": "Authentication required",
+    "root.errors.unauthenticatedDescription": "Please sign in to access this page.",
+    "root.errors.unauthenticatedSignIn": "Sign in",
+    "root.errors.serverErrorDescription": "An unexpected error occurred. If the problem persists, please contact support."
   },
   "cs": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -11985,7 +12062,14 @@
     "root.errors.backToHome": "Back to home",
     "root.errors.somethingWentWrong": "Something went wrong",
     "root.errors.tryAgain": "Try again",
-    "root.errors.contactSupport": "If the problem persists, please contact support."
+    "root.errors.contactSupport": "If the problem persists, please contact support.",
+    "root.errors.accessNotGrantedTitle": "Access not granted",
+    "root.errors.accessNotGrantedDescription": "You do not have permission to view this page.",
+    "root.errors.accessNotGrantedBack": "Back to portal",
+    "root.errors.unauthenticatedTitle": "Authentication required",
+    "root.errors.unauthenticatedDescription": "Please sign in to access this page.",
+    "root.errors.unauthenticatedSignIn": "Sign in",
+    "root.errors.serverErrorDescription": "An unexpected error occurred. If the problem persists, please contact support."
   },
   "hu": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -12984,7 +13068,14 @@
     "root.errors.backToHome": "Back to home",
     "root.errors.somethingWentWrong": "Something went wrong",
     "root.errors.tryAgain": "Try again",
-    "root.errors.contactSupport": "If the problem persists, please contact support."
+    "root.errors.contactSupport": "If the problem persists, please contact support.",
+    "root.errors.accessNotGrantedTitle": "Access not granted",
+    "root.errors.accessNotGrantedDescription": "You do not have permission to view this page.",
+    "root.errors.accessNotGrantedBack": "Back to portal",
+    "root.errors.unauthenticatedTitle": "Authentication required",
+    "root.errors.unauthenticatedDescription": "Please sign in to access this page.",
+    "root.errors.unauthenticatedSignIn": "Sign in",
+    "root.errors.serverErrorDescription": "An unexpected error occurred. If the problem persists, please contact support."
   },
   "ro": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -13983,7 +14074,14 @@
     "root.errors.backToHome": "Back to home",
     "root.errors.somethingWentWrong": "Something went wrong",
     "root.errors.tryAgain": "Try again",
-    "root.errors.contactSupport": "If the problem persists, please contact support."
+    "root.errors.contactSupport": "If the problem persists, please contact support.",
+    "root.errors.accessNotGrantedTitle": "Access not granted",
+    "root.errors.accessNotGrantedDescription": "You do not have permission to view this page.",
+    "root.errors.accessNotGrantedBack": "Back to portal",
+    "root.errors.unauthenticatedTitle": "Authentication required",
+    "root.errors.unauthenticatedDescription": "Please sign in to access this page.",
+    "root.errors.unauthenticatedSignIn": "Sign in",
+    "root.errors.serverErrorDescription": "An unexpected error occurred. If the problem persists, please contact support."
   },
   "bg": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -14982,7 +15080,14 @@
     "root.errors.backToHome": "Back to home",
     "root.errors.somethingWentWrong": "Something went wrong",
     "root.errors.tryAgain": "Try again",
-    "root.errors.contactSupport": "If the problem persists, please contact support."
+    "root.errors.contactSupport": "If the problem persists, please contact support.",
+    "root.errors.accessNotGrantedTitle": "Access not granted",
+    "root.errors.accessNotGrantedDescription": "You do not have permission to view this page.",
+    "root.errors.accessNotGrantedBack": "Back to portal",
+    "root.errors.unauthenticatedTitle": "Authentication required",
+    "root.errors.unauthenticatedDescription": "Please sign in to access this page.",
+    "root.errors.unauthenticatedSignIn": "Sign in",
+    "root.errors.serverErrorDescription": "An unexpected error occurred. If the problem persists, please contact support."
   },
   "el": {
     "root.designSystem.eyebrow": "SDK Enterprises · Design system",
@@ -15981,6 +16086,13 @@
     "root.errors.backToHome": "Back to home",
     "root.errors.somethingWentWrong": "Something went wrong",
     "root.errors.tryAgain": "Try again",
-    "root.errors.contactSupport": "If the problem persists, please contact support."
+    "root.errors.contactSupport": "If the problem persists, please contact support.",
+    "root.errors.accessNotGrantedTitle": "Access not granted",
+    "root.errors.accessNotGrantedDescription": "You do not have permission to view this page.",
+    "root.errors.accessNotGrantedBack": "Back to portal",
+    "root.errors.unauthenticatedTitle": "Authentication required",
+    "root.errors.unauthenticatedDescription": "Please sign in to access this page.",
+    "root.errors.unauthenticatedSignIn": "Sign in",
+    "root.errors.serverErrorDescription": "An unexpected error occurred. If the problem persists, please contact support."
   }
 }

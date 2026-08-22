@@ -43,6 +43,13 @@
     "backToHome": "Takaisin kotiin",
     "somethingWentWrong": "Jotain meni pieleen",
     "tryAgain": "Yritä uudelleen",
-    "contactSupport": "Jos ongelma jatkuu, ota yhteyttä tukeen."
+    "contactSupport": "Jos ongelma jatkuu, ota yhteyttä tukeen.",
+    "accessNotGrantedTitle": "Pääsyä ei myönnetty",
+    "accessNotGrantedDescription": "Sinulla ei ole lupaa tarkastella tätä sivua.",
+    "accessNotGrantedBack": "Takaisin portaaliin",
+    "unauthenticatedTitle": "Todennus vaaditaan",
+    "unauthenticatedDescription": "Kirjaudu sisään päästäksesi tälle sivulle.",
+    "unauthenticatedSignIn": "Kirjaudu sisään",
+    "serverErrorDescription": "Tapahtui odottamaton virhe. Jos ongelma jatkuu, ota yhteyttä tukeen."
   }
 }

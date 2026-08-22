@@ -43,6 +43,13 @@
     "backToHome": "Powrót do domu",
     "somethingWentWrong": "Coś poszło nie tak",
     "tryAgain": "Spróbuj ponownie",
-    "contactSupport": "Jeśli problem będzie się powtarzał, skontaktuj się z pomocą techniczną."
+    "contactSupport": "Jeśli problem będzie się powtarzał, skontaktuj się z pomocą techniczną.",
+    "accessNotGrantedTitle": "Dostęp nie został przyznany",
+    "accessNotGrantedDescription": "Nie masz uprawnień do przeglądania tej strony.",
+    "accessNotGrantedBack": "Powrót do portalu",
+    "unauthenticatedTitle": "Wymagane uwierzytelnienie",
+    "unauthenticatedDescription": "Aby uzyskać dostęp do tej strony, zaloguj się.",
+    "unauthenticatedSignIn": "Zaloguj się",
+    "serverErrorDescription": "Wystąpił nieoczekiwany błąd. Jeśli problem będzie się powtarzał, skontaktuj się z pomocą techniczną."
   }
 }

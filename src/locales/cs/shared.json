@@ -43,6 +43,13 @@
     "backToHome": "Zpátky domů",
     "somethingWentWrong": "Něco se pokazilo",
     "tryAgain": "Zkuste to znovu",
-    "contactSupport": "Pokud problém přetrvává, kontaktujte podporu."
+    "contactSupport": "Pokud problém přetrvává, kontaktujte podporu.",
+    "accessNotGrantedTitle": "Přístup nebyl udělen",
+    "accessNotGrantedDescription": "K zobrazení této stránky nemáte oprávnění.",
+    "accessNotGrantedBack": "Zpět na portál",
+    "unauthenticatedTitle": "Vyžaduje se ověření",
+    "unauthenticatedDescription": "Pro přístup na tuto stránku se prosím přihlaste.",
+    "unauthenticatedSignIn": "Přihlaste se",
+    "serverErrorDescription": "Došlo k neočekávané chybě. Pokud problém přetrvává, kontaktujte podporu."
   }
 }

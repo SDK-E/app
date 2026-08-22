@@ -43,6 +43,13 @@
     "backToHome": "Ritorno a casa",
     "somethingWentWrong": "Qualcosa è andato storto",
     "tryAgain": "Riprova",
-    "contactSupport": "Se il problema persiste, contatta l'assistenza."
+    "contactSupport": "Se il problema persiste, contatta l'assistenza.",
+    "accessNotGrantedTitle": "Accesso non concesso",
+    "accessNotGrantedDescription": "Non hai il permesso per visualizzare questa pagina.",
+    "accessNotGrantedBack": "Ritorno al portale",
+    "unauthenticatedTitle": "Autenticazione richiesta",
+    "unauthenticatedDescription": "Effettua il login per accedere a questa pagina.",
+    "unauthenticatedSignIn": "Registrazione",
+    "serverErrorDescription": "Si è verificato un errore imprevisto. Se il problema persiste, contatta l'assistenza."
   }
 }

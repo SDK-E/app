@@ -22,7 +22,7 @@ export default async function CompanyDashboardPage({
   const [{ locale, companyId }, principal] = await Promise.all([params, getCurrentPrincipal()]);
   if (!principal || principal.kind !== "client") return null;
   const t = await getTranslations({ locale, namespace: "portal" });
-  const data = await renderForPage(() => getClientDashboard(principal, companyId));
+  const data = await renderForPage(() => getClientDashboard(principal, companyId), locale);
   const attention = data.requests.filter((request) => request.status === "INFORMATION_REQUIRED");
   const overdue = data.invoices.filter((invoice) => invoice.status === "OVERDUE");
   return (

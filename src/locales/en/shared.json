@@ -43,6 +43,13 @@
     "backToHome": "Back to home",
     "somethingWentWrong": "Something went wrong",
     "tryAgain": "Try again",
-    "contactSupport": "If the problem persists, please contact support."
+    "contactSupport": "If the problem persists, please contact support.",
+    "accessNotGrantedTitle": "Access not granted",
+    "accessNotGrantedDescription": "You do not have permission to view this page.",
+    "accessNotGrantedBack": "Back to portal",
+    "unauthenticatedTitle": "Authentication required",
+    "unauthenticatedDescription": "Please sign in to access this page.",
+    "unauthenticatedSignIn": "Sign in",
+    "serverErrorDescription": "An unexpected error occurred. If the problem persists, please contact support."
   }
 }

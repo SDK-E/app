@@ -43,6 +43,13 @@
     "backToHome": "Επιστροφή στο σπίτι",
     "somethingWentWrong": "Κάτι πήγε στραβά",
     "tryAgain": "Προσπαθήστε ξανά",
-    "contactSupport": "Εάν το πρόβλημα παραμένει, επικοινωνήστε με την υποστήριξη."
+    "contactSupport": "Εάν το πρόβλημα παραμένει, επικοινωνήστε με την υποστήριξη.",
+    "accessNotGrantedTitle": "Δεν παραχωρήθηκε πρόσβαση",
+    "accessNotGrantedDescription": "Δεν έχετε άδεια προβολής αυτής της σελίδας.",
+    "accessNotGrantedBack": "Επιστροφή στην πύλη",
+    "unauthenticatedTitle": "Απαιτείται έλεγχος ταυτότητας",
+    "unauthenticatedDescription": "Παρακαλούμε συνδεθείτε για να αποκτήσετε πρόσβαση σε αυτήν τη σελίδα.",
+    "unauthenticatedSignIn": "Συνδεθείτε",
+    "serverErrorDescription": "Παρουσιάστηκε απροσδόκητο σφάλμα. Εάν το πρόβλημα παραμένει, επικοινωνήστε με την υποστήριξη."
   }
 }

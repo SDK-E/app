@@ -43,6 +43,13 @@
     "backToHome": "Tilbake til hjemmet",
     "somethingWentWrong": "Noe gikk galt",
     "tryAgain": "Prøv igjen",
-    "contactSupport": "Hvis problemet vedvarer, vennligst kontakt kundestøtte."
+    "contactSupport": "Hvis problemet vedvarer, vennligst kontakt kundestøtte.",
+    "accessNotGrantedTitle": "Tilgang ikke gitt",
+    "accessNotGrantedDescription": "Du har ikke tillatelse til å se denne siden.",
+    "accessNotGrantedBack": "Tilbake til portalen",
+    "unauthenticatedTitle": "Autentisering kreves",
+    "unauthenticatedDescription": "Logg på for å få tilgang til denne siden.",
+    "unauthenticatedSignIn": "Logg på",
+    "serverErrorDescription": "Det oppstod en uventet feil. Hvis problemet vedvarer, vennligst kontakt support."
   }
 }
