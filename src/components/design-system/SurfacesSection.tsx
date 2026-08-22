@@ -8,7 +8,6 @@ export function SurfacesSection() {
     <>
       <Section tone="dark" borderTop>
         <SectionHeader
-          tone="dark"
           eyebrow="05 · Dark surface"
           title="Dark sections carry the same system."
           intro="Primary text turns light, secondary turns fog, and green is used for highlights. Border line darkens to keep the composition quiet."
@@ -21,7 +20,6 @@ export function SurfacesSection() {
 
       <Section tone="brand" borderTop>
         <SectionHeader
-          tone="brand"
           eyebrow="06 · Brand surface"
           title="One brand section per page, at most."
           intro="Green backgrounds carry dark text. Use this sparingly — it is the loudest surface in the system."

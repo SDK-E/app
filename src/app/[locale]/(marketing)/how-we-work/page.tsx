@@ -52,7 +52,7 @@ export default async function HowWeWorkPage({ params }: { params: Promise<{ loca
   const scopeSteps = t.raw("scope.steps") as string[];
 
   return (
-    <div className="flex min-h-screen flex-col bg-light text-dark">
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header
         links={[
           { label: tNav("services"), href: "/services" },
@@ -92,7 +92,6 @@ export default async function HowWeWorkPage({ params }: { params: Promise<{ loca
             eyebrow={t("process.eyebrow")}
             title={t("process.heading")}
             intro={t("process.intro")}
-            tone="dark"
           />
           <ProcessTimeline
             items={process}
@@ -114,7 +113,6 @@ export default async function HowWeWorkPage({ params }: { params: Promise<{ loca
             eyebrow={t("quality.eyebrow")}
             title={t("quality.heading")}
             intro={t("quality.intro")}
-            tone="dark"
           />
           <QualityFramework items={quality} />
         </Section>
@@ -122,21 +120,21 @@ export default async function HowWeWorkPage({ params }: { params: Promise<{ loca
         <Section>
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-[70px]">
             <div>
-              <p className="text-label font-bold uppercase tracking-eyebrow text-muted-foreground">
+              <p className="text-label font-bold uppercase tracking-eyebrow">
                 {t("scope.eyebrow")}
               </p>
               <h2 className="mt-4 max-w-[17ch] text-[36px] font-extrabold tracking-title md:text-title">
                 {t("scope.heading")}
               </h2>
-              <p className="mt-5 max-w-[58ch] text-body text-muted-foreground">{t("scope.body")}</p>
+              <p className="mt-5 max-w-[58ch] text-body text-section-muted">{t("scope.body")}</p>
             </div>
-            <ol className="border-t-2 border-dark">
+            <ol className="border-t-2 border-current">
               {scopeSteps.map((step, index) => (
                 <li
                   key={step}
                   className="grid grid-cols-[48px_1fr] border-b border-line py-5 text-body"
                 >
-                  <span className="text-label font-bold text-muted-foreground">0{index + 1}</span>
+                  <span className="text-label font-bold text-section-muted">0{index + 1}</span>
                   <span className="font-bold">{step}</span>
                 </li>
               ))}

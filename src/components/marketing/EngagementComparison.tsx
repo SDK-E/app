@@ -17,7 +17,7 @@ export function EngagementComparison({
       <div className="hidden grid-cols-[0.55fr_repeat(3,1fr)] border-b border-line bg-dark text-light lg:grid">
         <div className="p-5" />
         {options.map((option) => (
-          <h3 key={option.title} className="border-l border-[#2d4b28] p-5 text-h3">
+          <h3 key={option.title} className="border-l border-dark-deep p-5 text-h3">
             {option.title}
           </h3>
         ))}
@@ -38,9 +38,7 @@ export function EngagementComparison({
               <p className="mb-2 text-label font-bold uppercase tracking-eyebrow lg:hidden">
                 {option.title}
               </p>
-              <p className="text-body text-muted-foreground">
-                {option[field as keyof Omit<EngagementOption, "title">]}
-              </p>
+              <p className="text-body">{option[field as keyof Omit<EngagementOption, "title">]}</p>
             </div>
           ))}
         </div>

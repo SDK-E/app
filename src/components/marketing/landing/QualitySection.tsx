@@ -24,13 +24,10 @@ export async function QualitySection({
         eyebrow={t("quality.eyebrow")}
         title={t("quality.heading")}
         intro={t("quality.intro")}
-        tone="dark"
       />
       <QualityFramework items={items} />
       <div className="mt-8">
-        <ArrowLink href={localizePath(locale, "/how-we-work")} className="text-light">
-          {t("quality.link")}
-        </ArrowLink>
+        <ArrowLink href={localizePath(locale, "/how-we-work")}>{t("quality.link")}</ArrowLink>
       </div>
     </Section>
   );

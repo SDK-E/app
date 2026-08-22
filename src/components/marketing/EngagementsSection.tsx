@@ -14,12 +14,10 @@ export default async function EngagementsSection({ locale }: { locale: string })
         {scenarios.map((scenario, index) => (
           <Card key={scenario.title} className="flex min-h-[200px] flex-col justify-between">
             <div>
-              <p className="text-micro font-bold uppercase tracking-label text-muted-foreground">
-                0{index + 1}
-              </p>
+              <p className="text-micro font-bold uppercase tracking-label">0{index + 1}</p>
               <h3 className="mt-8 text-h3">{scenario.title}</h3>
             </div>
-            <p className="mt-4 text-body text-muted-foreground">{scenario.copy}</p>
+            <p className="mt-4 text-body">{scenario.copy}</p>
           </Card>
         ))}
       </div>

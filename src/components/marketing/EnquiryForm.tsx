@@ -178,7 +178,7 @@ export function EnquiryForm() {
       {result && result.success && (
         <div className="rounded-card border border-line bg-paper p-6">
           <p className="text-h3">{t("success.title")}</p>
-          <p className="mt-3 text-body text-muted-foreground">{t("success.body")}</p>
+          <p className="mt-3 text-body">{t("success.body")}</p>
         </div>
       )}
 

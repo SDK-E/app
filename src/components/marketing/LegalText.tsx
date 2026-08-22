@@ -9,9 +9,7 @@ export function LegalTitle({ id, children }: { id?: string; children: ReactNode 
 }
 
 export function LegalIntro({ children }: { children: ReactNode }) {
-  return (
-    <p className="mt-4 max-w-[70ch] text-body leading-[1.7] text-muted-foreground">{children}</p>
-  );
+  return <p className="mt-4 max-w-[70ch] text-body leading-[1.7]">{children}</p>;
 }
 
 export function LegalH2({ children }: { children: ReactNode }) {

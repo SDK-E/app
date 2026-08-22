@@ -25,7 +25,7 @@ export default async function ContactSection({ locale }: { locale: string }) {
             <br />
             {t("sirenSiret", { siren: siteConfig.contact.siren, siret: siteConfig.contact.siret })}
           </p>
-          <div className="mt-4 divide-y divide-[#31512c]">
+          <div className="mt-4 divide-y divide-dark-deep">
             {[
               siteConfig.contact.email,
               siteConfig.contact.phone,

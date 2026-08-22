@@ -7,7 +7,7 @@ const palette: { token: string; value: string; className: string }[] = [
   { token: "brand", value: "#2cdb16", className: "bg-brand" },
   { token: "light", value: "#d7e8d3", className: "bg-light border border-line" },
   { token: "paper", value: "#f8fbf7", className: "bg-paper border border-line" },
-  { token: "muted", value: "#536b4f", className: "bg-muted-foreground" },
+  { token: "dark-muted", value: "#354833", className: "bg-dark-muted" },
   { token: "fog", value: "#abc4a6", className: "bg-fog" },
   { token: "line", value: "#9db497", className: "bg-line" },
 ];
@@ -26,7 +26,7 @@ export function PaletteSection() {
             <div className={`h-16 w-full rounded-control ${color.className}`} />
             <div>
               <p className="text-label font-bold uppercase tracking-eyebrow">{color.token}</p>
-              <p className="mt-1 text-micro text-muted-foreground">{color.value}</p>
+              <p className="mt-1 text-micro">{color.value}</p>
             </div>
           </Card>
         ))}

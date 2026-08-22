@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 
-import { Section } from "@/components/layout/Section";
+import { Section, sectionToneStyles } from "@/components/layout/Section";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { ProcessTimeline, type ProcessTimelineItem } from "@/components/marketing/ProcessTimeline";
@@ -22,7 +22,10 @@ export async function ProcessSection({
         title={t("process.heading")}
         intro={t("process.intro")}
       />
-      <div className="rounded-card bg-dark px-6 text-light md:px-8">
+      <div
+        style={sectionToneStyles.dark}
+        className="rounded-card border border-dark-deep px-6 py-4 md:px-8"
+      >
         <ProcessTimeline
           items={items}
           labels={{

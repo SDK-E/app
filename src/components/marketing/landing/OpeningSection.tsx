@@ -26,8 +26,10 @@ export async function OpeningSection({
           </h2>
         </div>
         <div>
-          <p className="max-w-[65ch] text-body text-fog md:text-lead">{t("opening.body")}</p>
-          <p className="mt-5 max-w-[65ch] text-body text-fog">{t("opening.body2")}</p>
+          <p className="max-w-[65ch] text-body text-section-muted md:text-lead">
+            {t("opening.body")}
+          </p>
+          <p className="mt-5 max-w-[65ch] text-body text-section-muted">{t("opening.body2")}</p>
         </div>
       </div>
       <div className="mt-12">

@@ -16,12 +16,11 @@ export function TypeSection() {
   return (
     <Section id="type" tone="dark">
       <SectionHeader
-        tone="dark"
         eyebrow="02 · Typography"
         title="JetBrains Mono, tuned like an editorial type system."
         intro="Headlines set tight and large; labels set small, uppercase and tracked. Body copy never goes below 14px."
       />
-      <div className="grid gap-px overflow-hidden rounded-card border border-[#2d4b28] bg-[#2d4b28]">
+      <div className="grid gap-px overflow-hidden rounded-card border border-dark-deep bg-dark-deep">
         {typeRamp.map((row) => (
           <div key={row.token} className="bg-dark px-6 py-5">
             <p className={`text-light ${row.className}`}>{row.sample}</p>

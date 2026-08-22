@@ -22,18 +22,18 @@ export function ProblemNavigator({
         <h2 className="max-w-[12ch] text-[36px] font-extrabold tracking-title md:text-title">
           {heading}
         </h2>
-        <p className="mt-5 max-w-[44ch] text-body text-muted-foreground">{intro}</p>
+        <p className="mt-5 max-w-[44ch] text-body text-section-muted">{intro}</p>
       </div>
-      <ol className="border-t-2 border-dark">
+      <ol className="border-t-2 border-current">
         {items.map((item) => (
           <li key={item.number} className="border-b border-line">
             <Link
               href={item.href}
               className="group grid gap-3 py-6 transition-opacity motion-reduce:transition-none hover:opacity-70 sm:grid-cols-[48px_0.75fr_1.25fr_24px] sm:items-start"
             >
-              <span className="text-label font-bold text-muted-foreground">{item.number}</span>
+              <span className="text-label font-bold text-section-muted">{item.number}</span>
               <span className="text-h3 font-extrabold">{item.title}</span>
-              <span className="max-w-[48ch] text-body text-muted-foreground">{item.copy}</span>
+              <span className="max-w-[48ch] text-body text-section-muted">{item.copy}</span>
               <span
                 className="text-h3 transition-transform group-hover:translate-x-1 motion-reduce:transition-none"
                 aria-hidden

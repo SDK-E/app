@@ -47,7 +47,7 @@ export default async function StartAProjectPage({
   }));
 
   return (
-    <div className="flex min-h-screen flex-col bg-light text-dark">
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header
         links={[
           { label: tNav("services"), href: "/services" },
@@ -88,8 +88,8 @@ export default async function StartAProjectPage({
               <h2 className="mt-4 max-w-[15ch] text-[36px] font-extrabold tracking-title md:text-title">
                 {t("formHeading")}
               </h2>
-              <p className="mt-5 max-w-[52ch] text-body text-fog">{t("formIntro")}</p>
-              <div className="mt-8 border-t border-[#2d4b28] pt-6 text-body text-fog">
+              <p className="mt-5 max-w-[52ch] text-body text-section-muted">{t("formIntro")}</p>
+              <div className="mt-8 border-t border-dark-deep pt-6 text-body text-section-muted">
                 <p>{t("body")}</p>
                 <p className="mt-4">
                   <a
@@ -108,7 +108,7 @@ export default async function StartAProjectPage({
                 </p>
               </div>
             </div>
-            <div className="rounded-card bg-light p-5 text-dark md:p-8">
+            <div className="rounded-card border border-line bg-light p-5 text-dark md:p-8">
               <EnquiryForm />
             </div>
           </div>

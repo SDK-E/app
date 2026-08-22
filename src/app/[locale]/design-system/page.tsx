@@ -40,7 +40,7 @@ export default async function DesignSystemPage({
 }) {
   const { locale: _locale } = await params;
   return (
-    <div className="bg-light text-dark">
+    <div className="bg-background text-foreground">
       <Header
         links={navLinks}
         cta={{ label: "Discuss a project", href: "#components" }}

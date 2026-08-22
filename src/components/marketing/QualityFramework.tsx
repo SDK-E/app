@@ -11,9 +11,9 @@ export function QualityFramework({ items }: { items: QualityFrameworkItem[] }) {
         <li key={item.number} className="rounded-card border border-line bg-paper p-6 text-dark">
           <div className="flex items-start justify-between gap-6">
             <h3 className="max-w-[18ch] text-h3">{item.title}</h3>
-            <span className="text-label font-bold text-muted-foreground">{item.number}</span>
+            <span className="text-label font-bold">{item.number}</span>
           </div>
-          <p className="mt-6 max-w-[52ch] text-body text-muted-foreground">{item.copy}</p>
+          <p className="mt-6 max-w-[52ch] text-body">{item.copy}</p>
         </li>
       ))}
     </ol>

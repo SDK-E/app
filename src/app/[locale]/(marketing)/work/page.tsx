@@ -36,7 +36,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
   const scenarios = t.raw("scenarios.items") as ScenarioStudyItem[];
 
   return (
-    <div className="flex min-h-screen flex-col bg-light text-dark">
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header
         links={[
           { label: tNav("services"), href: "/services" },
@@ -89,7 +89,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
               <h2 className="max-w-[18ch] text-[36px] font-extrabold tracking-title md:text-title">
                 {t("principle.heading")}
               </h2>
-              <p className="mt-5 max-w-[65ch] text-body text-fog md:text-lead">
+              <p className="mt-5 max-w-[65ch] text-body text-section-muted md:text-lead">
                 {t("principle.body")}
               </p>
             </div>

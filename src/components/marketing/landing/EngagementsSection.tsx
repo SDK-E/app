@@ -24,7 +24,6 @@ export async function EngagementsSection({
         eyebrow={t("engagements.eyebrow")}
         title={t("engagements.heading")}
         intro={t("engagements.intro")}
-        tone="dark"
       />
       <EngagementComparison
         labels={{
@@ -35,7 +34,7 @@ export async function EngagementsSection({
         options={options}
       />
       <div className="mt-8">
-        <ArrowLink href={localizePath(locale, "/services#engagements")} className="text-light">
+        <ArrowLink href={localizePath(locale, "/services#engagements")}>
           {t("engagements.link")}
         </ArrowLink>
       </div>

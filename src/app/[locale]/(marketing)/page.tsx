@@ -75,7 +75,7 @@ export default async function LandingPage({ params }: { params: Promise<{ locale
   const qualityItems = tProcess.raw("quality.items") as QualityFrameworkItem[];
 
   return (
-    <div className="bg-light text-dark">
+    <div className="bg-background text-foreground">
       <Header
         links={[
           { label: tNav("services"), href: "/services" },

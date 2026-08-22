@@ -13,7 +13,7 @@ export default async function Hero({ locale }: { locale: string }) {
           {t("heading")}
         </h1>
         <div>
-          <p className="text-body text-muted-foreground md:text-lead">{t("leadParagraph")}</p>
+          <p className="text-body md:text-lead">{t("leadParagraph")}</p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Button href="#about">{t("ctaStartProject")} →</Button>
             <Button href="#services" variant="outline">
@@ -24,7 +24,7 @@ export default async function Hero({ locale }: { locale: string }) {
       </div>
       <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {["trustFrance", "trustSenior", "trustAI", "trustClients"].map((key) => (
-          <p key={key} className="border-t border-dark pt-3 text-micro text-muted-foreground">
+          <p key={key} className="border-t border-current pt-3 text-micro text-section-muted">
             {t(key)}
           </p>
         ))}

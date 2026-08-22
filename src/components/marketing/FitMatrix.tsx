@@ -10,7 +10,7 @@ export function FitMatrix({
   notFitItems: string[];
 }) {
   return (
-    <div className="grid overflow-hidden rounded-card border border-line bg-paper lg:grid-cols-2">
+    <div className="grid overflow-hidden rounded-card border border-line bg-paper text-dark lg:grid-cols-2">
       {[
         { title: fitTitle, items: fitItems },
         { title: notFitTitle, items: notFitItems },
@@ -22,7 +22,7 @@ export function FitMatrix({
           <h3 className="text-h3">{group.title}</h3>
           <ul className="mt-6 space-y-4">
             {group.items.map((item) => (
-              <li key={item} className="flex gap-3 text-body text-muted-foreground">
+              <li key={item} className="flex gap-3 text-body">
                 <span className="font-bold text-dark" aria-hidden>
                   {index === 0 ? "+" : "—"}
                 </span>

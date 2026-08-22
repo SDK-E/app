@@ -15,20 +15,20 @@ export function ProcessTimeline({
   labels: { output: string; decision: string };
 }) {
   return (
-    <ol className="border-t-2 border-light">
+    <ol className="border-t-2 border-dark-deep">
       {items.map((item) => (
         <li
           key={item.number}
-          className="grid gap-6 border-b border-[#2d4b28] py-8 lg:grid-cols-[80px_0.6fr_1fr_0.85fr] lg:gap-8"
+          className="grid gap-6 border-b border-dark-deep py-8 lg:grid-cols-[80px_0.6fr_1fr_0.85fr] lg:gap-8"
         >
           <p className="text-label font-bold text-brand">{item.number}</p>
           <div>
             <h3 className="text-h3">{item.title}</h3>
-            <p className="mt-3 text-body text-fog">{item.purpose}</p>
+            <p className="mt-3 text-body text-section-muted">{item.purpose}</p>
           </div>
           <ul className="space-y-3">
             {item.activities.map((activity) => (
-              <li key={activity} className="flex gap-3 text-body text-fog">
+              <li key={activity} className="flex gap-3 text-body text-section-muted">
                 <span className="text-brand" aria-hidden>
                   —
                 </span>
@@ -36,15 +36,15 @@ export function ProcessTimeline({
               </li>
             ))}
           </ul>
-          <div className="rounded-card border border-[#2d4b28] p-5">
+          <div className="rounded-card border border-dark-deep p-5">
             <p className="text-micro font-bold uppercase tracking-eyebrow text-brand">
               {labels.output}
             </p>
-            <p className="mt-2 text-body text-light">{item.output}</p>
+            <p className="mt-2 text-body text-section-muted">{item.output}</p>
             <p className="mt-5 text-micro font-bold uppercase tracking-eyebrow text-brand">
               {labels.decision}
             </p>
-            <p className="mt-2 text-body text-fog">{item.decision}</p>
+            <p className="mt-2 text-body text-section-muted">{item.decision}</p>
           </div>
         </li>
       ))}

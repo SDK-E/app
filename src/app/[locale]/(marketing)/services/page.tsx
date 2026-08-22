@@ -74,7 +74,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
   const teamSteps = t.raw("teamModel.steps") as TeamModelItem[];
 
   return (
-    <div className="flex min-h-screen flex-col bg-light text-dark">
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
       <Header
         links={[
           { label: tNav("services"), href: "/services" },
@@ -102,13 +102,11 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
         />
 
         <Section id="starting-points" tone="dark">
-          <div className="[&_a]:text-light [&_h2]:text-light [&_ol]:border-light [&_li]:border-[#2d4b28] [&_span]:text-fog [&_span:nth-child(2)]:text-light">
-            <ProblemNavigator
-              heading={t("navigator.heading")}
-              intro={t("navigator.intro")}
-              items={navigatorItems}
-            />
-          </div>
+          <ProblemNavigator
+            heading={t("navigator.heading")}
+            intro={t("navigator.intro")}
+            items={navigatorItems}
+          />
         </Section>
 
         <Section>
@@ -138,7 +136,6 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
             eyebrow={t("engagements.eyebrow")}
             title={t("engagements.heading")}
             intro={t("engagements.intro")}
-            tone="dark"
           />
           <EngagementComparison
             labels={{

@@ -7,7 +7,7 @@ export type HomeSystemMapItem = {
 
 export function HomeSystemMap({ items }: { items: HomeSystemMapItem[] }) {
   return (
-    <ol className="overflow-hidden rounded-card border border-line bg-paper">
+    <ol className="overflow-hidden rounded-card border border-line bg-paper text-dark">
       {items.map((item, index) => (
         <li
           key={item.number}
@@ -15,10 +15,10 @@ export function HomeSystemMap({ items }: { items: HomeSystemMapItem[] }) {
             index > 0 ? "border-t border-line" : ""
           }`}
         >
-          <span className="text-label font-bold text-muted-foreground">{item.number}</span>
+          <span className="text-label font-bold">{item.number}</span>
           <h3 className="max-w-[18ch] text-h3">{item.title}</h3>
-          <p className="max-w-[54ch] text-body text-muted-foreground">{item.copy}</p>
-          <p className="text-micro font-bold uppercase leading-relaxed tracking-eyebrow text-dark">
+          <p className="max-w-[54ch] text-body">{item.copy}</p>
+          <p className="text-micro font-bold uppercase leading-relaxed tracking-eyebrow">
             {item.systems.join(" · ")}
           </p>
         </li>

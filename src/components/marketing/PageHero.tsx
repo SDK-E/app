@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/layout/Container";
+import { Section } from "@/components/layout/Section";
 
 export function PageHero({
   eyebrow,
@@ -17,19 +18,17 @@ export function PageHero({
   signals: string[];
 }) {
   return (
-    <section className="bg-light py-12 text-dark md:py-16 lg:py-[96px]">
+    <Section tone="light" className="py-12 md:py-16 lg:py-[96px]">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[1.35fr_0.65fr] lg:gap-[70px]">
           <div>
-            <p className="text-label font-bold uppercase tracking-eyebrow text-muted-foreground">
-              {eyebrow}
-            </p>
+            <p className="text-label font-bold uppercase tracking-eyebrow">{eyebrow}</p>
             <h1 className="mt-5 max-w-[14ch] text-[40px] font-extrabold leading-[0.98] tracking-title md:text-[58px] lg:text-display">
               {title}
             </h1>
           </div>
           <div className="flex flex-col justify-end">
-            <p className="max-w-[58ch] text-body text-muted-foreground md:text-lead">{intro}</p>
+            <p className="max-w-[58ch] text-body text-section-muted md:text-lead">{intro}</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Button href={primaryCta.href}>{primaryCta.label} →</Button>
               {secondaryCta ? (
@@ -58,6 +57,6 @@ export function PageHero({
           ))}
         </ul>
       </Container>
-    </section>
+    </Section>
   );
 }

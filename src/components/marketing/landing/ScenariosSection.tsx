@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 
-import { Section } from "@/components/layout/Section";
+import { Section, sectionToneStyles } from "@/components/layout/Section";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { ScenarioStudy, type ScenarioStudyItem } from "@/components/marketing/ScenarioStudy";
@@ -21,9 +21,8 @@ export async function ScenariosSection({
         eyebrow={t("scenarios.eyebrow")}
         title={t("scenarios.heading")}
         intro={t("scenarios.intro")}
-        tone="dark"
       />
-      <div className="rounded-card bg-light p-6 text-dark md:p-8">
+      <div style={sectionToneStyles.light} className="rounded-card p-6 md:p-8">
         {items.map((scenario) => (
           <ScenarioStudy
             key={scenario.number}
@@ -37,9 +36,7 @@ export async function ScenariosSection({
         ))}
       </div>
       <div className="mt-8">
-        <ArrowLink href={localizePath(locale, "/work")} className="text-light">
-          {t("scenarios.link")}
-        </ArrowLink>
+        <ArrowLink href={localizePath(locale, "/work")}>{t("scenarios.link")}</ArrowLink>
       </div>
     </Section>
   );
