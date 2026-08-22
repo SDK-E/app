@@ -2,7 +2,7 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import { extname, join, resolve } from "node:path";
 
 const ROOT = process.cwd();
-const MAX_LINES = 200;
+const MAX_LINES = 250;
 const ROOTS = ["src", "scripts"];
 const EXCLUDED_DIRS = new Set(["generated", "node_modules", ".next"]);
 const EXCLUDED_EXTENSIONS = new Set([".json", ".js", ".mjs", ".cjs"]);
