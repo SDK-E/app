@@ -46,7 +46,7 @@ export function AppNav({
           <Link
             key={link.href}
             href={link.href}
-            className="block min-h-11 whitespace-nowrap rounded-nav px-4 py-3 text-label font-extrabold uppercase tracking-eyebrow text-light transition-colors hover:bg-[#2d4b28] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+            className="block min-h-11 whitespace-nowrap rounded-nav px-4 py-3 text-label font-extrabold uppercase tracking-eyebrow text-light transition-colors hover:bg-dark-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
           >
             {link.label}
           </Link>
@@ -65,7 +65,7 @@ export function AppNav({
           <Link
             key={link.href}
             href={link.href}
-            className="block min-h-11 whitespace-nowrap rounded-nav px-4 py-3 text-label font-extrabold uppercase tracking-eyebrow text-light transition-colors hover:bg-[#2d4b28] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+            className="block min-h-11 whitespace-nowrap rounded-nav px-4 py-3 text-label font-extrabold uppercase tracking-eyebrow text-light transition-colors hover:bg-dark-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
           >
             {link.label}
           </Link>
@@ -95,7 +95,7 @@ export function AppNav({
   return (
     <>
       {memberships.length > 1 ? (
-        <div className="flex flex-col gap-0.5 border-t border-[#2d4b28] px-3 py-2">
+        <div className="flex flex-col gap-0.5 border-t border-dark-deep px-3 py-2">
           {memberships.map((membership) => (
             <CompanyLink
               key={membership.companyId}
@@ -112,7 +112,7 @@ export function AppNav({
           <Link
             key={link.href}
             href={link.href}
-            className="block min-h-11 whitespace-nowrap rounded-nav px-4 py-3 text-label font-extrabold uppercase tracking-eyebrow text-light transition-colors hover:bg-[#2d4b28] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+            className="block min-h-11 whitespace-nowrap rounded-nav px-4 py-3 text-label font-extrabold uppercase tracking-eyebrow text-light transition-colors hover:bg-dark-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
           >
             {link.label}
           </Link>

@@ -48,7 +48,7 @@ export function AccountMenu({
         onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
         aria-haspopup="menu"
-        className="flex min-h-11 items-center gap-3 rounded-control px-2 text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark"
+        className="flex min-h-11 items-center gap-3 rounded-control px-2 text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
       >
         {avatarUrl ? (
           <Image
@@ -59,7 +59,7 @@ export function AccountMenu({
             className="size-9 rounded-full object-cover"
           />
         ) : (
-          <span className="flex size-9 items-center justify-center rounded-full bg-dark text-label text-light">
+          <span className="flex size-9 items-center justify-center rounded-full bg-primary text-label text-primary-foreground">
             {name.slice(0, 1).toUpperCase()}
           </span>
         )}
@@ -72,9 +72,9 @@ export function AccountMenu({
       {open ? (
         <div
           role="menu"
-          className="absolute right-0 z-50 mt-2 w-64 rounded-card border border-line bg-paper p-3 shadow-sm"
+          className="absolute right-0 z-50 mt-2 w-64 rounded-card border border-line bg-paper p-3 text-dark shadow-sm"
         >
-          <p className="px-2 py-2 text-micro uppercase tracking-eyebrow text-muted-foreground">
+          <p className="px-2 py-2 text-micro uppercase tracking-eyebrow text-dark">
             {languageLabel}
           </p>
           <LanguageSwitcher updateLocale={updateLocale} />

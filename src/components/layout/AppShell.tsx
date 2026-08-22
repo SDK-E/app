@@ -18,7 +18,7 @@ export async function AppShell({ children, locale, principal }: AppShellProps) {
   const areaLabel = principal.kind === "client" ? t("clientArea") : t("staffArea");
   return (
     <div className="min-h-screen bg-background text-foreground lg:grid lg:grid-cols-[260px_1fr]">
-      <aside className="border-b border-line bg-dark text-light lg:min-h-screen lg:border-r lg:border-b-0 lg:border-r-[#2d4b28]">
+      <aside className="border-b border-line bg-dark text-light lg:min-h-screen lg:border-r lg:border-b-0 lg:border-r-dark-deep">
         <div className="flex min-h-20 items-center justify-between px-6 lg:block lg:px-7 lg:py-8">
           <Image
             src="/brand/sdk-logo-dark.png"
@@ -32,7 +32,7 @@ export async function AppShell({ children, locale, principal }: AppShellProps) {
             {areaLabel}
           </span>
         </div>
-        <nav aria-label="Application" className="border-t border-[#2d4b28] px-3 py-3 lg:px-4">
+        <nav aria-label="Application" className="border-t border-dark-deep px-3 py-3 lg:px-4">
           <AppNav
             locale={locale}
             principal={principal}

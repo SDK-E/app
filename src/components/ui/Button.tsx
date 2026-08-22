@@ -5,17 +5,18 @@ import { Slot } from "radix-ui";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center gap-2 rounded-control text-label font-extrabold uppercase tracking-eyebrow whitespace-nowrap transition-colors motion-reduce:transition-none outline-none select-none disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "group/button inline-flex shrink-0 items-center justify-center gap-2 rounded-control text-label font-extrabold uppercase tracking-eyebrow whitespace-nowrap transition-colors motion-reduce:transition-none outline-none select-none disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
         default: "bg-brand text-dark hover:bg-brand/90",
-        outline: "border border-dark text-dark hover:bg-dark hover:text-light",
+        outline:
+          "border border-current text-current hover:bg-[var(--section-fg)] hover:text-[var(--section-bg)]",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        dark: "bg-dark text-light hover:bg-dark/90",
+        dark: "bg-[var(--section-fg)] text-[var(--section-bg)] hover:opacity-90",
         ghost: "hover:bg-muted hover:text-foreground",
         destructive: "bg-destructive/10 text-destructive hover:bg-destructive/20",
-        link: "text-brand underline-offset-4 hover:underline",
+        link: "text-foreground underline-offset-4 hover:underline",
       },
       size: {
         default: "h-auto px-[18px] py-[14px]",

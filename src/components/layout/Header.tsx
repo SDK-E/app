@@ -42,11 +42,11 @@ export function Header({
 
   const navLinkClass = (label: string) =>
     `text-label font-bold uppercase tracking-eyebrow transition-opacity motion-reduce:transition-none hover:opacity-70 ${
-      activeLabel === label ? "text-dark border-b-2 border-brand" : "text-dark"
+      activeLabel === label ? "border-b-2 border-brand" : ""
     }`;
 
   return (
-    <header className="border-b border-line bg-light">
+    <header className="border-b border-line bg-[var(--header-bg)] text-[var(--header-fg)]">
       <Container>
         <div className="flex h-[78px] items-center justify-between">
           <Link
@@ -60,8 +60,18 @@ export function Header({
               title="SDK Enterprises"
               width={1429}
               height={495}
-              className="h-[26px] w-auto md:h-[30px]"
+              className="h-[26px] w-auto dark:hidden md:h-[30px]"
               priority
+              unoptimized
+            />
+            <Image
+              src="/brand/sdk-logo-dark.png"
+              alt=""
+              title="SDK Enterprises"
+              width={1429}
+              height={495}
+              className="hidden h-[26px] w-auto dark:block md:h-[30px]"
+              aria-hidden
               unoptimized
             />
           </Link>
@@ -111,7 +121,7 @@ export function Header({
             aria-label={ariaToggleMenu ?? t("toggleMenu")}
             aria-expanded={open}
             onClick={() => setOpen((value) => !value)}
-            className="rounded-nav p-2 text-dark transition-colors motion-reduce:transition-none hover:bg-line/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark md:hidden"
+            className="rounded-nav p-2 transition-colors motion-reduce:transition-none hover:bg-line/40 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current md:hidden"
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
               {open ? (
@@ -135,7 +145,7 @@ export function Header({
       </Container>
 
       {open ? (
-        <div className="border-t border-line bg-light md:hidden">
+        <div className="border-t border-line bg-[var(--header-bg)] text-[var(--header-fg)] md:hidden">
           <Container>
             <nav aria-label={ariaMain ?? t("main")} className="flex flex-col gap-4 py-6">
               {links.map((link) => (
