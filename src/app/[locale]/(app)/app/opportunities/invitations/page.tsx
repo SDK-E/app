@@ -43,7 +43,7 @@ export default async function InvitationsPage({ params }: { params: Promise<{ lo
         <h1 className="text-h1 font-extrabold">{t("invitations.title")}</h1>
         <Link
           href={`/${locale}/app/opportunities`}
-          className="text-label font-extrabold uppercase tracking-eyebrow text-brand hover:underline"
+          className="text-label font-extrabold uppercase tracking-eyebrow underline decoration-brand decoration-2 underline-offset-4 hover:opacity-80"
         >
           {t("browse.eyebrow")}
         </Link>

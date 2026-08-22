@@ -54,7 +54,7 @@ export default async function OpportunitiesPage({
         <h1 className="text-h1 font-extrabold">{t("browse.title")}</h1>
         <Link
           href={`/${locale}/app/opportunities/invitations`}
-          className="text-label font-extrabold uppercase tracking-eyebrow text-brand hover:underline"
+          className="text-label font-extrabold uppercase tracking-eyebrow underline decoration-brand decoration-2 underline-offset-4 hover:opacity-80"
         >
           {t("browse.viewInvitations")}
         </Link>

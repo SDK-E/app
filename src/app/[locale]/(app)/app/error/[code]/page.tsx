@@ -40,7 +40,7 @@ export default async function PortalErrorPageRoute({
       action={
         <a
           href={`/${locale}${config.backHref}`}
-          className="text-label font-extrabold uppercase tracking-eyebrow text-brand hover:underline"
+          className="text-label font-extrabold uppercase tracking-eyebrow underline decoration-brand decoration-2 underline-offset-4 hover:opacity-80"
         >
           {code === "server-error" ? t("backToHome") : t("accessNotGrantedBack")}
         </a>
