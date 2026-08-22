@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { RequestForm, type RequestFormCopy } from "@/components/portal/RequestForm";
 import { getRequest } from "@/lib/requests";
 import { getCurrentPrincipal } from "@/lib/auth/identity";
+import { renderForPage } from "@/lib/app/render-for-page";
 import { saveRequestAction } from "../../actions";
 
 export default async function EditRequestPage({
@@ -16,7 +17,7 @@ export default async function EditRequestPage({
   ]);
   if (!principal || principal.kind !== "client") return null;
   const [request, t] = await Promise.all([
-    getRequest(principal, requestId, companyId),
+    renderForPage(() => getRequest(principal, requestId, companyId), locale),
     getTranslations({ locale, namespace: "portal.requests" }),
   ]);
   if (request.status !== "DRAFT") throw new Error("Only draft requests can be edited.");

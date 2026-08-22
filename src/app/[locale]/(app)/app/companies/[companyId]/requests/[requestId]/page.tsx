@@ -7,6 +7,7 @@ import { RequestHeader } from "@/components/portal/requests/RequestHeader";
 import { RequestHistoryCard } from "@/components/portal/requests/RequestHistoryCard";
 import { getRequest } from "@/lib/requests";
 import { getCurrentPrincipal } from "@/lib/auth/identity";
+import { renderForPage } from "@/lib/app/render-for-page";
 
 export default async function CompanyRequestDetailPage({
   params,
@@ -19,7 +20,7 @@ export default async function CompanyRequestDetailPage({
   ]);
   if (!principal || principal.kind === "unassigned") return null;
   const [request, tr, t] = await Promise.all([
-    getRequest(principal, requestId, companyId),
+    renderForPage(() => getRequest(principal, requestId, companyId), locale),
     getTranslations({ locale, namespace: "portal.requests" }),
     getTranslations({ locale, namespace: "portal.operations" }),
   ]);
