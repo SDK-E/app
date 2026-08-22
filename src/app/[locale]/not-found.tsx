@@ -1,25 +1,41 @@
-import type { Metadata } from "next";
-import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Page not found — SDK Enterprises",
-  robots: { index: false, follow: false },
-};
+import { Button } from "@/components/ui/Button";
+import { ErrorPage } from "@/components/layout/ErrorPage";
 
-export default async function NotFound() {
-  const t = await getTranslations("errors");
+export default async function LocaleNotFound({ params }: { params?: Promise<{ locale: string }> }) {
+  const resolvedParams = params ? await params : { locale: "en" };
+  const { locale } = resolvedParams;
+  const t = await getTranslations({ locale, namespace: "errors" });
+
+  const routeMotif = (
+    <svg
+      width="240"
+      height="160"
+      viewBox="0 0 240 160"
+      fill="none"
+      className="text-muted-foreground opacity-50"
+      aria-hidden="true"
+    >
+      <path d="M40 120 L100 120 L120 100 L200 100" stroke="currentColor" strokeWidth="1" />
+      <circle cx="200" cy="100" r="3" fill="currentColor" opacity="0.5" />
+      <circle cx="40" cy="120" r="3" fill="currentColor" opacity="0.5" />
+    </svg>
+  );
 
   return (
-    <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-light px-6 text-center">
-      <h1 className="text-h1">404</h1>
-      <p className="text-body text-muted-foreground">{t("pageNotFound")}</p>
-      <Link
-        href="/"
-        className="text-label font-bold uppercase tracking-eyebrow text-dark underline underline-offset-4"
-      >
-        {t("backToHome")}
-      </Link>
-    </div>
+    <ErrorPage
+      eyebrow={t("pageNotFoundEyebrow")}
+      headline={t("pageNotFoundHeadline")}
+      description={t("pageNotFoundDescription")}
+      primaryAction={
+        <Button href={`/${locale}/`} variant="default">
+          {t("backToHome")}
+        </Button>
+      }
+      tone="light"
+      motif={routeMotif}
+      locale={locale}
+    />
   );
 }

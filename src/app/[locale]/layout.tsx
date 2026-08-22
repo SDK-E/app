@@ -1,20 +1,10 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { locales, Locale } from "@/i18n";
 import { getSiteUrl } from "@/lib/marketing/seo";
 import { siteConfig } from "@/lib/marketing/site";
-import "../globals.css";
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -74,13 +64,5 @@ export default async function RootLayout({
 
   const messages = await getMessages({ locale });
 
-  return (
-    <html lang={locale} className={jetbrainsMono.variable}>
-      <body className="antialiased">
-        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
-        <SpeedInsights />
-        <Analytics />
-      </body>
-    </html>
-  );
+  return <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>;
 }
