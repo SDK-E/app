@@ -30,7 +30,7 @@ describe("renderForPage", () => {
       }, "en")
     ).rejects.toMatchObject({ digest: "NEXT_REDIRECT" });
     expect(redirectMock).toHaveBeenCalledOnce();
-    expect(redirectMock).toHaveBeenCalledWith("/en/app/unauthenticated");
+    expect(redirectMock).toHaveBeenCalledWith("/en/unauthenticated");
   });
 
   it("redirects to access-not-granted for forbidden page access", async () => {
@@ -41,7 +41,7 @@ describe("renderForPage", () => {
       }, "en")
     ).rejects.toMatchObject({ digest: "NEXT_REDIRECT" });
     expect(redirectMock).toHaveBeenCalledOnce();
-    expect(redirectMock).toHaveBeenCalledWith("/en/app/access-not-granted");
+    expect(redirectMock).toHaveBeenCalledWith("/en/app/error/access-not-granted");
   });
 
   it("redirects to access-not-granted for unassigned principals", async () => {
@@ -56,7 +56,7 @@ describe("renderForPage", () => {
       }, "en")
     ).rejects.toMatchObject({ digest: "NEXT_REDIRECT" });
     expect(redirectMock).toHaveBeenCalledOnce();
-    expect(redirectMock).toHaveBeenCalledWith("/en/app/access-not-granted");
+    expect(redirectMock).toHaveBeenCalledWith("/en/app/error/access-not-granted");
   });
 
   it("redirects to access-not-granted for missing company scope", async () => {
@@ -71,7 +71,7 @@ describe("renderForPage", () => {
       }, "en")
     ).rejects.toMatchObject({ digest: "NEXT_REDIRECT" });
     expect(redirectMock).toHaveBeenCalledOnce();
-    expect(redirectMock).toHaveBeenCalledWith("/en/app/access-not-granted");
+    expect(redirectMock).toHaveBeenCalledWith("/en/app/error/access-not-granted");
   });
 
   it("redirects to access-not-granted when a resource is missing", async () => {
@@ -82,7 +82,7 @@ describe("renderForPage", () => {
       }, "en")
     ).rejects.toMatchObject({ digest: "NEXT_REDIRECT" });
     expect(redirectMock).toHaveBeenCalledOnce();
-    expect(redirectMock).toHaveBeenCalledWith("/en/app/access-not-granted");
+    expect(redirectMock).toHaveBeenCalledWith("/en/app/error/access-not-granted");
   });
 
   it("redirects to server-error for identity errors", async () => {
@@ -96,7 +96,7 @@ describe("renderForPage", () => {
       }, "en")
     ).rejects.toMatchObject({ digest: "NEXT_REDIRECT" });
     expect(redirectMock).toHaveBeenCalledOnce();
-    expect(redirectMock).toHaveBeenCalledWith("/en/app/server-error");
+    expect(redirectMock).toHaveBeenCalledWith("/en/app/error/server-error");
   });
 
   it("rethrows unrelated errors", async () => {

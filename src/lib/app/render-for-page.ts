@@ -5,11 +5,11 @@ import { AuthorizationError } from "@/lib/auth/authorization";
 import { IdentityError } from "@/lib/auth/identity";
 
 const authRedirects = new Map<AuthorizationErrorCode, string>([
-  ["UNAUTHENTICATED", "/app/unauthenticated"],
-  ["UNASSIGNED", "/app/access-not-granted"],
-  ["FORBIDDEN", "/app/access-not-granted"],
-  ["COMPANY_REQUIRED", "/app/access-not-granted"],
-  ["NOT_FOUND", "/app/access-not-granted"],
+  ["UNAUTHENTICATED", "/unauthenticated"],
+  ["UNASSIGNED", "/app/error/access-not-granted"],
+  ["FORBIDDEN", "/app/error/access-not-granted"],
+  ["COMPANY_REQUIRED", "/app/error/access-not-granted"],
+  ["NOT_FOUND", "/app/error/access-not-granted"],
 ]);
 
 export async function renderForPage<T>(compute: () => T | Promise<T>, locale: string): Promise<T> {
@@ -23,7 +23,7 @@ export async function renderForPage<T>(compute: () => T | Promise<T>, locale: st
       }
     }
     if (error instanceof IdentityError) {
-      redirect(`/${locale}/app/server-error`);
+      redirect(`/${locale}/app/error/server-error`);
     }
     throw error;
   }
