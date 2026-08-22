@@ -14,7 +14,6 @@ const PUBLIC_ROUTES = [
   "/invite/*",
   "/auth/*",
   "/favicon.ico",
-  "/design-system",
   "/legal/*",
   "/privacy",
   "/terms",
@@ -24,6 +23,10 @@ const PUBLIC_ROUTES = [
   "/llms.txt",
 ];
 const STATIC_PUBLIC_ROUTES = ["/robots.txt", "/sitemap.xml", "/llms.txt"];
+
+function isProductionDeployment(): boolean {
+  return process.env.NODE_ENV === "production" && process.env.VERCEL_ENV !== "preview";
+}
 
 const i18nMiddleware = createMiddleware(routing);
 
@@ -54,6 +57,10 @@ export async function proxy(request: NextRequest) {
 
   if (pathname.startsWith("/auth")) {
     return getAuth0Client().middleware(request);
+  }
+
+  if (isProductionDeployment() && stripLocale(pathname) === "/design-system") {
+    return new Response(null, { status: 404 });
   }
 
   if (STATIC_PUBLIC_ROUTES.some((route) => pathname === route)) {

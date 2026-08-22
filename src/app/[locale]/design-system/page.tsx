@@ -1,15 +1,32 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import nextDynamic from "next/dynamic";
 
-import { ComponentsSection } from "@/components/design-system/ComponentsSection";
-import { PaletteSection } from "@/components/design-system/PaletteSection";
-import { PrimitivesSection } from "@/components/design-system/PrimitivesSection";
-import { StatesSection } from "@/components/design-system/StatesSection";
-import { SurfacesSection } from "@/components/design-system/SurfacesSection";
-import { TypeSection } from "@/components/design-system/TypeSection";
 import { Header } from "@/components/layout/Header";
 import { Section } from "@/components/layout/Section";
 import { SectionHeader } from "@/components/layout/SectionHeader";
 import { Button } from "@/components/ui/Button";
+
+export const dynamic = "force-dynamic";
+
+const ComponentsSection = nextDynamic(() =>
+  import("@/components/design-system/ComponentsSection").then((mod) => mod.ComponentsSection)
+);
+const PaletteSection = nextDynamic(() =>
+  import("@/components/design-system/PaletteSection").then((mod) => mod.PaletteSection)
+);
+const PrimitivesSection = nextDynamic(() =>
+  import("@/components/design-system/PrimitivesSection").then((mod) => mod.PrimitivesSection)
+);
+const StatesSection = nextDynamic(() =>
+  import("@/components/design-system/StatesSection").then((mod) => mod.StatesSection)
+);
+const SurfacesSection = nextDynamic(() =>
+  import("@/components/design-system/SurfacesSection").then((mod) => mod.SurfacesSection)
+);
+const TypeSection = nextDynamic(() =>
+  import("@/components/design-system/TypeSection").then((mod) => mod.TypeSection)
+);
 
 export async function generateMetadata({
   params,
@@ -40,6 +57,10 @@ export default async function DesignSystemPage({
 }: {
   params: Promise<{ locale: string }>;
 }) {
+  if (process.env.NODE_ENV === "production" && process.env.VERCEL_ENV !== "preview") {
+    notFound();
+  }
+
   const { locale: _locale } = await params;
   return (
     <div className="bg-background text-foreground">
