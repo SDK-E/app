@@ -34,7 +34,7 @@ export function CompanyCreationForm({
           minLength={2}
           maxLength={255}
           autoComplete="organization"
-          className="mt-2 min-h-11 w-full rounded-control border border-dark/40 bg-paper px-3 text-body normal-case tracking-normal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark"
+          className="mt-2 min-h-11 w-full rounded-control border border-dark/40 bg-paper px-3 text-body text-dark normal-case tracking-normal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
         />
       </label>
       {state.error ? (

@@ -27,7 +27,7 @@ export default async function CompanyDashboardPage({
   const overdue = data.invoices.filter((invoice) => invoice.status === "OVERDUE");
   return (
     <section>
-      <p className="text-label font-extrabold uppercase tracking-eyebrow text-muted-foreground">
+      <p className="text-label font-extrabold uppercase tracking-eyebrow">
         {t("dashboard.eyebrow")}
       </p>
       <h1 className="mt-4 max-w-4xl text-h1 font-extrabold">{t("dashboard.title")}</h1>
@@ -51,7 +51,7 @@ export default async function CompanyDashboardPage({
               </p>
             ) : null}
             {!attention.length && !overdue.length ? (
-              <p className="text-body text-muted-foreground">{t("dashboard.noAttention")}</p>
+              <p className="text-body">{t("dashboard.noAttention")}</p>
             ) : null}
           </div>
         </Card>
@@ -65,14 +65,12 @@ export default async function CompanyDashboardPage({
                   <Badge>{project.status.replaceAll("_", " ")}</Badge>
                 </div>
                 {project.milestones[0] ? (
-                  <p className="mt-2 text-body text-muted-foreground">
-                    {project.milestones[0].name}
-                  </p>
+                  <p className="mt-2 text-body">{project.milestones[0].name}</p>
                 ) : null}
               </div>
             ))}
             {!data.projects.length ? (
-              <p className="text-body text-muted-foreground">{t("dashboard.noProjects")}</p>
+              <p className="text-body">{t("dashboard.noProjects")}</p>
             ) : null}
           </div>
         </Card>
@@ -100,7 +98,7 @@ export default async function CompanyDashboardPage({
               </Link>
             ))}
             {!data.requests.length ? (
-              <p className="text-body text-muted-foreground">{t("dashboard.noRequests")}</p>
+              <p className="text-body">{t("dashboard.noRequests")}</p>
             ) : null}
           </div>
         </Card>
@@ -115,7 +113,7 @@ export default async function CompanyDashboardPage({
                     totals.sent + totals.overdue
                   )}
                 </p>
-                <p className="text-muted-foreground">
+                <p className="">
                   {t("dashboard.overdue")}: {currency}{" "}
                   {new Intl.NumberFormat(locale, { minimumFractionDigits: 2 }).format(
                     totals.overdue
@@ -124,7 +122,7 @@ export default async function CompanyDashboardPage({
               </div>
             ))}
             {!Object.keys(data.invoiceTotals).length ? (
-              <p className="text-body text-muted-foreground">{t("dashboard.noInvoices")}</p>
+              <p className="text-body">{t("dashboard.noInvoices")}</p>
             ) : null}
           </div>
         </Card>
@@ -138,14 +136,14 @@ export default async function CompanyDashboardPage({
                 className="block border-t border-line pt-3 text-body"
               >
                 <span className="font-semibold">{item.request.title}</span>
-                <span className="block text-muted-foreground">
+                <span className="block">
                   {item.type.replaceAll("_", " ").toLowerCase()} ·{" "}
                   {new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(item.createdAt)}
                 </span>
               </Link>
             ))}
             {!data.recentActivity.length ? (
-              <p className="text-body text-muted-foreground">{t("dashboard.noActivity")}</p>
+              <p className="text-body">{t("dashboard.noActivity")}</p>
             ) : null}
           </div>
         </Card>

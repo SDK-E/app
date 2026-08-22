@@ -17,7 +17,7 @@ export async function RequestHistoryCard({
         {request.activities.map((item) => (
           <li key={item.id} className="border-l border-line pl-4 text-body">
             <p className="font-semibold">{item.type.replaceAll("_", " ").toLowerCase()}</p>
-            <p className="text-muted-foreground">
+            <p className="text-body">
               {item.actor.name} ·{" "}
               {new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(item.createdAt)}
             </p>

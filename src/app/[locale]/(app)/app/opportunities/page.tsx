@@ -49,9 +49,7 @@ export default async function OpportunitiesPage({
 
   return (
     <section className="max-w-5xl">
-      <p className="text-label font-extrabold uppercase tracking-eyebrow text-muted-foreground">
-        {t("browse.eyebrow")}
-      </p>
+      <p className="text-label font-extrabold uppercase tracking-eyebrow">{t("browse.eyebrow")}</p>
       <div className="mt-4 flex flex-wrap items-end justify-between gap-4">
         <h1 className="text-h1 font-extrabold">{t("browse.title")}</h1>
         <Link
@@ -83,22 +81,20 @@ export default async function OpportunitiesPage({
                   <Badge tone="review">{t(`statuses.${opportunity.status}`)}</Badge>
                 </div>
                 <h2 className="mt-4 text-h3 font-extrabold">{opportunity.title}</h2>
-                <p className="mt-3 text-body text-muted-foreground line-clamp-4">
-                  {opportunity.description}
-                </p>
+                <p className="mt-3 text-body line-clamp-4">{opportunity.description}</p>
                 {opportunity.requiredSkills.length ? (
                   <div className="mt-4 flex flex-wrap gap-2">
                     {opportunity.requiredSkills.map((skill) => (
                       <span
                         key={skill}
-                        className="rounded-control border border-line px-2 py-1 text-micro font-extrabold uppercase tracking-widest text-muted-foreground"
+                        className="rounded-control border border-line px-2 py-1 text-micro font-extrabold uppercase tracking-widest"
                       >
                         {skill}
                       </span>
                     ))}
                   </div>
                 ) : null}
-                <dl className="mt-4 space-y-1 text-body text-muted-foreground">
+                <dl className="mt-4 space-y-1 text-body">
                   {opportunity.clientIdentityVisible &&
                   (opportunity as OpportunityPublicRecord & { clientName?: string | null })
                     .clientName ? (

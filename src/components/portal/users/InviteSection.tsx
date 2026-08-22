@@ -107,7 +107,7 @@ export async function InviteSection({
           <p className="mt-2 text-body font-mono uppercase tracking-widest">
             {data.company.accessCode}
           </p>
-          <p className="mt-2 text-body text-muted-foreground">{t("accessCodeHelp")}</p>
+          <p className="mt-2 text-body">{t("accessCodeHelp")}</p>
           <div className="mt-4">
             <UserActionForm
               action={regenerateAccessCodeAction.bind(null, locale, companyId ?? null)}
@@ -120,7 +120,7 @@ export async function InviteSection({
       ) : data.kind === "staff" ? (
         <Card>
           <h2 className="text-h3 font-extrabold">{t("accessCode")}</h2>
-          <p className="mt-2 text-body text-muted-foreground">{t("accessCodeHelp")}</p>
+          <p className="mt-2 text-body">{t("accessCodeHelp")}</p>
           <div className="mt-4">
             <UserActionForm
               action={regenerateAccessCodeAction.bind(null, locale, null)}

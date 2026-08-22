@@ -22,7 +22,7 @@ export async function AccessPending({
   ]);
   return (
     <main className="flex min-h-screen items-center justify-center bg-background px-6 py-16 text-foreground">
-      <section className="w-full max-w-2xl rounded-card border border-line bg-paper p-8 md:p-12">
+      <section className="w-full max-w-2xl rounded-card border border-line bg-paper p-8 text-dark md:p-12">
         <Image
           src="/brand/sdk-logo-light.png"
           alt="SDK Enterprises"
@@ -31,11 +31,11 @@ export async function AccessPending({
           priority
           className="h-auto w-[140px]"
         />
-        <p className="mt-12 text-label font-extrabold uppercase tracking-eyebrow text-muted-foreground">
+        <p className="mt-12 text-label font-extrabold uppercase tracking-eyebrow text-dark-muted">
           {t("eyebrow")}
         </p>
         <h1 className="mt-4 text-[32px] font-extrabold md:text-h1">{t("title")}</h1>
-        <p className="mt-6 max-w-[60ch] text-body text-muted-foreground">
+        <p className="mt-6 max-w-[60ch] text-body text-dark-muted">
           {t("intro", { email: principal.email })}
         </p>
         <CompanyCreationForm
@@ -43,10 +43,10 @@ export async function AccessPending({
           label={t("create")}
           nameLabel={t("name")}
         />
-        <p className="mt-6 text-body text-muted-foreground">{t("alternative")}</p>
+        <p className="mt-6 text-body text-dark-muted">{t("alternative")}</p>
         <div className="mt-10 border-t border-line pt-8">
           <h2 className="text-h3 font-extrabold">{t("accessTitle")}</h2>
-          <p className="mt-3 max-w-[60ch] text-body text-muted-foreground">{t("accessIntro")}</p>
+          <p className="mt-3 max-w-[60ch] text-body text-dark-muted">{t("accessIntro")}</p>
           <AccessRequestForm
             action={requestAccessAction.bind(null, locale)}
             submitLabel={t("requestAccess")}
@@ -64,7 +64,7 @@ export async function AccessPending({
               >
                 <div>
                   <p className="text-body font-semibold">{request.company.name}</p>
-                  <p className="mt-1 text-micro uppercase tracking-eyebrow text-muted-foreground">
+                  <p className="mt-1 text-micro uppercase tracking-eyebrow text-dark-muted">
                     {request.requestedRole.replaceAll("_", " ")} ·{" "}
                     {new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(
                       request.createdAt
@@ -85,13 +85,13 @@ export async function AccessPending({
               </div>
             ))}
             {!requests.length ? (
-              <p className="text-body text-muted-foreground">{t("requestsEmpty")}</p>
+              <p className="text-body text-dark-muted">{t("requestsEmpty")}</p>
             ) : null}
           </div>
         </div>
         <a
           href="/auth/logout"
-          className="mt-10 inline-flex rounded-control bg-dark px-[18px] py-[14px] text-label font-extrabold uppercase tracking-eyebrow text-light hover:bg-dark/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark"
+          className="mt-10 inline-flex rounded-control bg-dark px-[18px] py-[14px] text-label font-extrabold uppercase tracking-eyebrow text-light hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
         >
           {t("logout")}
         </a>

@@ -16,9 +16,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ locale
   const t = await getTranslations({ locale, namespace: "portal.profile" });
   return (
     <section className="max-w-3xl">
-      <p className="text-label font-extrabold uppercase tracking-eyebrow text-muted-foreground">
-        {t("eyebrow")}
-      </p>
+      <p className="text-label font-extrabold uppercase tracking-eyebrow">{t("eyebrow")}</p>
       <h1 className="mt-4 text-[32px] font-extrabold md:text-h1">{t("title")}</h1>
       <p className="mt-5 max-w-[65ch] text-body text-muted-foreground">{t("intro")}</p>
       <Card className="mt-10">
@@ -38,7 +36,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ locale
           )}
           <div>
             <h2 className="text-h3 font-extrabold">{principal.name}</h2>
-            <p className="mt-1 text-body text-muted-foreground">{principal.email}</p>
+            <p className="mt-1 text-body">{principal.email}</p>
           </div>
         </div>
         <dl className="mt-8 grid gap-5 border-t border-line pt-6 sm:grid-cols-2">
@@ -51,7 +49,7 @@ export default async function ProfilePage({ params }: { params: Promise<{ locale
                 {principal.memberships.map((membership) => (
                   <p key={membership.companyId}>
                     <span className="font-semibold">{membership.companyName}</span>
-                    <span className="ml-2 text-muted-foreground">
+                    <span className="ml-2">
                       {membership.role.replaceAll("_", " ").toLowerCase()}
                     </span>
                   </p>

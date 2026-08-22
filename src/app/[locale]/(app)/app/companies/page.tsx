@@ -36,9 +36,7 @@ export default async function CompaniesDirectoryPage({
     <section>
       <div className="flex flex-wrap items-end justify-between gap-5">
         <div>
-          <p className="text-label font-extrabold uppercase tracking-eyebrow text-muted-foreground">
-            {t("eyebrow")}
-          </p>
+          <p className="text-label font-extrabold uppercase tracking-eyebrow">{t("eyebrow")}</p>
           <h1 className="mt-4 text-[32px] font-extrabold md:text-h1">{t("title")}</h1>
           <p className="mt-5 max-w-[65ch] text-body text-muted-foreground">{t("intro")}</p>
         </div>
@@ -61,7 +59,7 @@ export default async function CompaniesDirectoryPage({
                   {company.isActive ? t("active") : t("inactive")}
                 </Badge>
               </div>
-              <p className="mt-2 text-body text-muted-foreground">
+              <p className="mt-2 text-body">
                 {company._count.memberships === 1
                   ? t("membersOne")
                   : t("membersMany", { count: company._count.memberships })}

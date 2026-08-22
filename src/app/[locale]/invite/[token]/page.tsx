@@ -82,28 +82,24 @@ export default async function InvitationPage({
   return (
     <main className="flex min-h-screen items-center justify-center bg-background px-6 py-12">
       <Card className="w-full max-w-xl">
-        <p className="text-label font-extrabold uppercase tracking-eyebrow text-muted-foreground">
-          SDK Enterprises
-        </p>
+        <p className="text-label font-extrabold uppercase tracking-eyebrow">SDK Enterprises</p>
         <h1 className="mt-4 text-[32px] font-extrabold md:text-h1">
           {available ? t("title") : t("unavailableTitle")}
         </h1>
         {available ? (
           <>
-            <p className="mt-5 text-body text-muted-foreground">
-              {t("intro", { destination, role })}
-            </p>
-            <p className="mt-3 text-body text-muted-foreground">
+            <p className="mt-5 text-body text-dark-muted">{t("intro", { destination, role })}</p>
+            <p className="mt-3 text-body text-dark-muted">
               {t("email", {
                 email: matchesInvitee ? invitation.email : maskEmail(invitation.email),
               })}
             </p>
             {invitation.inviter?.name ? (
-              <p className="mt-3 text-body text-muted-foreground">
+              <p className="mt-3 text-body text-dark-muted">
                 {t("invitedBy", { name: invitation.inviter.name })}
               </p>
             ) : null}
-            <p className="mt-3 text-body text-muted-foreground">
+            <p className="mt-3 text-body text-dark-muted">
               {t("expires", {
                 date: new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(
                   invitation.expiresAt
@@ -156,7 +152,7 @@ export default async function InvitationPage({
             )}
           </>
         ) : (
-          <p className="mt-5 text-body text-muted-foreground">{unavailableCopy}</p>
+          <p className="mt-5 text-body text-dark-muted">{unavailableCopy}</p>
         )}
       </Card>
     </main>

@@ -36,7 +36,7 @@ export default async function InvitationsPage({ params }: { params: Promise<{ lo
 
   return (
     <section className="max-w-3xl">
-      <p className="text-label font-extrabold uppercase tracking-eyebrow text-muted-foreground">
+      <p className="text-label font-extrabold uppercase tracking-eyebrow">
         {t("invitations.eyebrow")}
       </p>
       <div className="mt-4 flex flex-wrap items-end justify-between gap-4">
@@ -62,16 +62,14 @@ export default async function InvitationsPage({ params }: { params: Promise<{ lo
             <Card key={invitation.id} className="flex flex-col">
               <div className="flex flex-wrap items-center gap-2">
                 <Badge tone="live">{t("invitations.status.PENDING")}</Badge>
-                <span className="text-body text-muted-foreground">
+                <span className="text-body">
                   {t("invitations.expires", {
                     date: formatDate(locale, invitation.expiresAt) ?? "",
                   })}
                 </span>
               </div>
               <h2 className="mt-4 text-h3 font-extrabold">{invitation.opportunity.title}</h2>
-              <p className="mt-3 text-body text-muted-foreground line-clamp-4">
-                {invitation.opportunity.description}
-              </p>
+              <p className="mt-3 text-body line-clamp-4">{invitation.opportunity.description}</p>
               <div className="mt-6 border-t border-line pt-5">
                 <OpportunityCardActions
                   opportunityId={invitation.opportunityId}

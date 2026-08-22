@@ -22,9 +22,7 @@ export default async function UsersPage({ params }: { params: Promise<{ locale: 
   const clientRoles = ["ADMINISTRATOR", "PROJECT_MEMBER", "BILLING", "VIEWER"];
   return (
     <section>
-      <p className="text-label font-extrabold uppercase tracking-eyebrow text-muted-foreground">
-        {t("eyebrow")}
-      </p>
+      <p className="text-label font-extrabold uppercase tracking-eyebrow">{t("eyebrow")}</p>
       <h1 className="mt-4 text-[32px] font-extrabold md:text-h1">{t("title")}</h1>
       <p className="mt-5 max-w-[65ch] text-body text-muted-foreground">{t("intro")}</p>
 

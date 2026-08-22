@@ -26,9 +26,7 @@ export default async function CompanyRequestsPage({
     <section>
       <div className="flex flex-wrap items-end justify-between gap-5">
         <div>
-          <p className="text-label font-extrabold uppercase tracking-eyebrow text-muted-foreground">
-            {t("eyebrow")}
-          </p>
+          <p className="text-label font-extrabold uppercase tracking-eyebrow">{t("eyebrow")}</p>
           <h1 className="mt-4 text-h1 font-extrabold">{headerT("title")}</h1>
           <p className="mt-4 max-w-[65ch] text-body text-muted-foreground">{headerT("intro")}</p>
         </div>
@@ -50,9 +48,7 @@ export default async function CompanyRequestsPage({
             <Card className="flex flex-wrap items-center justify-between gap-4 transition-colors hover:border-dark">
               <div>
                 <h2 className="text-h3 font-extrabold">{request.title}</h2>
-                <p className="mt-2 text-body text-muted-foreground">
-                  {t(`capabilities.${request.capability}`)}
-                </p>
+                <p className="mt-2 text-body">{t(`capabilities.${request.capability}`)}</p>
               </div>
               <Badge tone={request.status === "INFORMATION_REQUIRED" ? "live" : "neutral"}>
                 {request.projects.length ? t("converted") : t(`statuses.${request.status}`)}

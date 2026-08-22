@@ -66,17 +66,17 @@ export default async function ManageCompanyPage({
           <h2 className="text-h3 font-extrabold">{t("details")}</h2>
           <dl className="mt-5 space-y-3 text-body">
             <div className="flex justify-between gap-4 border-t border-line pt-3">
-              <dt className="text-muted-foreground">{t("slug")}</dt>
+              <dt>{t("slug")}</dt>
               <dd className="font-mono">{company.slug}</dd>
             </div>
             {company.accessCode ? (
               <div className="flex justify-between gap-4 border-t border-line pt-3">
-                <dt className="text-muted-foreground">{t("accessCode")}</dt>
+                <dt>{t("accessCode")}</dt>
                 <dd className="font-mono uppercase tracking-widest">{company.accessCode}</dd>
               </div>
             ) : null}
             <div className="flex justify-between gap-4 border-t border-line pt-3">
-              <dt className="text-muted-foreground">{t("createdDate")}</dt>
+              <dt>{t("createdDate")}</dt>
               <dd>
                 {new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(company.createdAt)}
               </dd>
@@ -100,7 +100,7 @@ export default async function ManageCompanyPage({
                 label={t("regenerate")}
               />
             </div>
-            <p className="mt-6 text-body text-muted-foreground">{t("actionsHelp")}</p>
+            <p className="mt-6 text-body">{t("actionsHelp")}</p>
           </Card>
         ) : null}
 

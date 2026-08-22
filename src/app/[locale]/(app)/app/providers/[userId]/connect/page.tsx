@@ -27,19 +27,17 @@ export default async function ProviderConnectPage({ params }: PageProps) {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold">Stripe Connect</h1>
-        <p className="text-muted-foreground">Manage your Stripe Express account and payouts.</p>
+        <p className="">Manage your Stripe Express account and payouts.</p>
       </div>
 
       {connectedAccount ? (
         <div className="space-y-4">
           <div className="rounded-lg border p-4">
             <p className="font-medium">Account ID: {connectedAccount.accountId}</p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm">
               Status: {connectedAccount.detailsSubmitted ? "Active" : "Incomplete"}
             </p>
-            <p className="text-sm text-muted-foreground">
-              Type: {connectedAccount.type ?? "express"}
-            </p>
+            <p className="text-sm">Type: {connectedAccount.type ?? "express"}</p>
           </div>
 
           <form action={`/${(await params).locale}/api/connect/onboarding`} method="post">
@@ -62,7 +60,7 @@ export default async function ProviderConnectPage({ params }: PageProps) {
           </form>
         </div>
       ) : (
-        <p className="text-muted-foreground">No Stripe Connect account linked.</p>
+        <p className="">No Stripe Connect account linked.</p>
       )}
     </div>
   );

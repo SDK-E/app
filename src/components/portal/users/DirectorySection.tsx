@@ -37,7 +37,7 @@ export async function DirectorySection({
               >
                 <div>
                   <p className="text-body font-semibold">{membership.user.name}</p>
-                  <p className="text-body text-muted-foreground">{membership.user.email}</p>
+                  <p className="text-body">{membership.user.email}</p>
                 </div>
                 <UserActionForm
                   action={updateMembershipAction.bind(null, locale, companyId ?? null)}
@@ -79,8 +79,8 @@ export async function DirectorySection({
                       {user.isActive ? t("active") : t("inactive")}
                     </Badge>
                   </div>
-                  <p className="mt-1 text-body text-muted-foreground">{user.email}</p>
-                  <p className="mt-2 text-micro uppercase tracking-eyebrow text-muted-foreground">
+                  <p className="mt-1 text-body">{user.email}</p>
+                  <p className="mt-2 text-micro uppercase tracking-eyebrow">
                     {user.memberships[0]?.company.name ??
                       (user.sdkStaffRole ? "SDK Enterprises" : t("unassigned"))}
                   </p>
@@ -145,7 +145,7 @@ export async function DirectorySection({
                     </UserActionForm>
                   </>
                 ) : (
-                  <p className="text-body text-muted-foreground">{t("inviteToAssign")}</p>
+                  <p className="text-body">{t("inviteToAssign")}</p>
                 )}
               </Card>
             ))}

@@ -6,7 +6,7 @@ import type { AccessRequestState } from "@/app/[locale]/(app)/app/access/actions
 import { Button } from "@/components/ui/Button";
 
 const fieldClass =
-  "mt-2 min-h-11 w-full rounded-control border border-dark/40 bg-paper px-3 text-body normal-case tracking-normal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark";
+  "mt-2 min-h-11 w-full rounded-control border border-dark/40 bg-paper px-3 text-body text-dark normal-case tracking-normal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current";
 
 export function AccessRequestForm({
   action,

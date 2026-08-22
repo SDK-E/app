@@ -15,14 +15,10 @@ export async function RequestConversationCard({
         {request.messages.map((item) => (
           <div key={item.id} className="border-t border-line pt-4">
             <p className="text-body font-semibold">{item.author.name}</p>
-            <p className="mt-1 whitespace-pre-wrap text-body text-muted-foreground">
-              {item.content}
-            </p>
+            <p className="mt-1 whitespace-pre-wrap text-body">{item.content}</p>
           </div>
         ))}
-        {!request.messages.length ? (
-          <p className="text-body text-muted-foreground">{t("noMessages")}</p>
-        ) : null}
+        {!request.messages.length ? <p className="text-body">{t("noMessages")}</p> : null}
       </div>
     </Card>
   );

@@ -28,11 +28,11 @@ export default async function SubscriptionsPage({ params }: PageProps) {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold">Subscriptions</h1>
-        <p className="text-muted-foreground">Manage recurring billing for this company.</p>
+        <p className="">Manage recurring billing for this company.</p>
       </div>
 
       {subscriptions.length === 0 ? (
-        <p className="text-muted-foreground">No subscriptions yet.</p>
+        <p className="">No subscriptions yet.</p>
       ) : (
         <div className="space-y-4">
           {subscriptions.map((subscription) => (
@@ -40,9 +40,9 @@ export default async function SubscriptionsPage({ params }: PageProps) {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="font-medium">{subscription.stripeSubscriptionId}</p>
-                  <p className="text-sm text-muted-foreground">Status: {subscription.status}</p>
+                  <p className="text-sm">Status: {subscription.status}</p>
                 </div>
-                <div className="text-right text-sm text-muted-foreground">
+                <div className="text-right text-sm">
                   {subscription.currentPeriodEnd && (
                     <p>Renews: {new Date(subscription.currentPeriodEnd).toLocaleDateString()}</p>
                   )}

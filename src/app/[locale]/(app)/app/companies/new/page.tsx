@@ -24,9 +24,7 @@ export default async function CreateCompanyPage({
   const t = await getTranslations({ locale, namespace: "portal.companies.new" });
   return (
     <section>
-      <p className="text-label font-extrabold uppercase tracking-eyebrow text-muted-foreground">
-        {t("eyebrow")}
-      </p>
+      <p className="text-label font-extrabold uppercase tracking-eyebrow">{t("eyebrow")}</p>
       <h1 className="mt-4 text-h1 font-extrabold">{t("title")}</h1>
       <p className="mt-5 max-w-[65ch] text-body text-muted-foreground">{t("intro")}</p>
       <div className="mt-6 max-w-xl">

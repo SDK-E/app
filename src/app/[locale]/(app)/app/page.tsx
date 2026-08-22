@@ -28,9 +28,7 @@ export default async function AppHomePage({ params }: { params: Promise<{ locale
   const companies = principal.role === "FINANCE" ? [] : await listActiveCompanies(principal);
   return (
     <section>
-      <p className="text-label font-extrabold uppercase tracking-eyebrow text-muted-foreground">
-        SDK
-      </p>
+      <p className="text-label font-extrabold uppercase tracking-eyebrow">SDK</p>
       <h1 className="mt-4 text-h1 font-extrabold">{t("operations.title")}</h1>
       <p className="mt-4 max-w-[65ch] text-body text-muted-foreground">{t("operations.intro")}</p>
       <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -38,7 +36,7 @@ export default async function AppHomePage({ params }: { params: Promise<{ locale
           <Link key={company.id} href={`/${locale}/app/companies/${company.id}/requests`}>
             <Card className="transition-colors hover:border-dark">
               <h2 className="text-h3 font-extrabold">{company.name}</h2>
-              <p className="mt-2 text-body text-muted-foreground">{t("operations.companies")}</p>
+              <p className="mt-2 text-body">{t("operations.companies")}</p>
             </Card>
           </Link>
         ))}

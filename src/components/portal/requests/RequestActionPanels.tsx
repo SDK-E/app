@@ -10,7 +10,7 @@ import type { AssignedPrincipal } from "@/types";
 import type { RequestDetail, Translator } from "@/lib/requests/types";
 
 const control =
-  "mt-2 min-h-12 w-full rounded-control border border-line bg-paper px-4 py-3 text-body outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark";
+  "mt-2 min-h-12 w-full rounded-control border border-line bg-paper px-4 py-3 text-body text-dark outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current";
 
 export async function RequestActionPanels({
   locale,

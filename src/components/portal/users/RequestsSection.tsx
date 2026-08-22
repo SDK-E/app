@@ -38,8 +38,8 @@ export async function RequestsSection({
             >
               <div>
                 <p className="text-body font-semibold">{request.user.name}</p>
-                <p className="mt-1 text-body text-muted-foreground">{request.user.email}</p>
-                <p className="mt-1 text-micro uppercase tracking-eyebrow text-muted-foreground">
+                <p className="mt-1 text-body">{request.user.email}</p>
+                <p className="mt-1 text-micro uppercase tracking-eyebrow">
                   {data.kind === "staff" ? `${request.company.name} · ` : ""}
                   {request.requestedRole.replaceAll("_", " ")} ·{" "}
                   {t("requested", {
@@ -96,7 +96,7 @@ export async function RequestsSection({
               >
                 <div>
                   <p className="text-body font-semibold">{invitation.email}</p>
-                  <p className="mt-1 text-body text-muted-foreground">
+                  <p className="mt-1 text-body">
                     {invitation.clientRole ?? invitation.sdkStaffRole} ·{" "}
                     {t("expires", {
                       date: new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(

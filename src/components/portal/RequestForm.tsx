@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 import type { RequestActionState } from "@/app/[locale]/(app)/app/companies/[companyId]/requests/actions";
 
 const field =
-  "mt-2 min-h-12 w-full rounded-control border border-line bg-paper px-4 py-3 text-body outline-none focus-visible:border-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark";
+  "mt-2 min-h-12 w-full rounded-control border border-line bg-paper px-4 py-3 text-body text-dark outline-none focus-visible:border-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current";
 
 export interface RequestFormCopy {
   title: string;
@@ -40,7 +40,7 @@ export function RequestForm({
       {reviewing ? (
         <div className="rounded-card border border-line bg-paper p-6">
           <h2 className="text-h3 font-extrabold">{copy.reviewHeading}</h2>
-          <p className="mt-3 text-body text-muted-foreground">
+          <p className="mt-3 text-body">
             Review the information below, then submit it to SDK. You can return to make changes.
           </p>
         </div>

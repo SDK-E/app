@@ -26,9 +26,7 @@ export default async function NewRequestPage({
   };
   return (
     <section>
-      <p className="text-label font-extrabold uppercase tracking-eyebrow text-muted-foreground">
-        {t("eyebrow")}
-      </p>
+      <p className="text-label font-extrabold uppercase tracking-eyebrow">{t("eyebrow")}</p>
       <h1 className="mt-4 text-h1 font-extrabold">{t("new")}</h1>
       <div className="mt-10">
         <RequestForm action={saveRequestAction.bind(null, locale, companyId, null)} copy={copy} />

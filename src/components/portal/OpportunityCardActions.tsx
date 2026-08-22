@@ -63,9 +63,7 @@ export function OpportunityCardActions({
   return (
     <div className="flex flex-wrap items-center gap-2">
       {providerAction === "SAVED" ? (
-        <span className="text-label font-extrabold uppercase tracking-eyebrow text-muted-foreground">
-          {savedLabel}
-        </span>
+        <span className="text-label font-extrabold uppercase tracking-eyebrow">{savedLabel}</span>
       ) : (
         <ActionForm
           action={saveOpportunityAction}
