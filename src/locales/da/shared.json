@@ -50,6 +50,25 @@
     "unauthenticatedTitle": "Godkendelse påkrævet",
     "unauthenticatedDescription": "Log venligst ind for at få adgang til denne side.",
     "unauthenticatedSignIn": "Log ind",
-    "serverErrorDescription": "Der opstod en uventet fejl. Kontakt support, hvis problemet fortsætter."
+    "serverErrorDescription": "Der opstod en uventet fejl. Kontakt support, hvis problemet fortsætter.",
+    "pageNotFoundEyebrow": "404 / SIDE IKKE FUNDET",
+    "pageNotFoundHeadline": "Denne rute findes ikke.",
+    "pageNotFoundDescription": "Siden kan være flyttet, eller adressen kan være forkert.",
+    "goBack": "Gå tilbage",
+    "accessRestrictedEyebrow": "403 / ADGANG BEGRÆNSET",
+    "accessRestrictedTitle": "Du har ikke adgang til denne side.",
+    "accessRestrictedDescription": "Dette område er begrænset til autoriserede brugere.",
+    "contactUs": "Kontakt os",
+    "serverErrorEyebrow": "500 / SERVERFEJL",
+    "serverErrorTitle": "Noget fejlede fra vores side.",
+    "maintenanceEyebrow": "VEDLIGEHOLDELSE",
+    "maintenanceTitle": "Vi laver et par forbedringer.",
+    "maintenanceDescription": "SDK Enterprises vender snart tilbage.",
+    "refreshPage": "Opdater siden",
+    "statusLabel": "Operationel",
+    "connectionEyebrow": "FORBINDELSE",
+    "connectionTitle": "Vi kan ikke nå serveren.",
+    "connectionDescription": "Tjek din forbindelse, og prøv igen.",
+    "retryConnection": "Prøv at oprette forbindelse igen"
   }
 }

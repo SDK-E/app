@@ -50,6 +50,25 @@
     "unauthenticatedTitle": "Autentisering krävs",
     "unauthenticatedDescription": "Logga in för att komma åt den här sidan.",
     "unauthenticatedSignIn": "Logga in",
-    "serverErrorDescription": "Ett oväntat fel inträffade. Kontakta supporten om problemet kvarstår."
+    "serverErrorDescription": "Ett oväntat fel inträffade. Kontakta supporten om problemet kvarstår.",
+    "pageNotFoundEyebrow": "404 / SIDAN HITTEN INTE",
+    "pageNotFoundHeadline": "Den här rutten finns inte.",
+    "pageNotFoundDescription": "Sidan kan ha flyttats eller så kan adressen vara fel.",
+    "goBack": "Gå tillbaka",
+    "accessRestrictedEyebrow": "403 / TILLGÅNG BEGRÄNSAD",
+    "accessRestrictedTitle": "Du har inte tillgång till den här sidan.",
+    "accessRestrictedDescription": "Detta område är begränsat till behöriga användare.",
+    "contactUs": "Kontakta oss",
+    "serverErrorEyebrow": "500 / SERVERFEL",
+    "serverErrorTitle": "Något misslyckades på vår sida.",
+    "maintenanceEyebrow": "UNDERHÅLL",
+    "maintenanceTitle": "Vi gör några förbättringar.",
+    "maintenanceDescription": "SDK Enterprises kommer tillbaka inom kort.",
+    "refreshPage": "Uppdatera sidan",
+    "statusLabel": "Operativt",
+    "connectionEyebrow": "ANSLUTNING",
+    "connectionTitle": "Vi kan inte nå servern.",
+    "connectionDescription": "Kontrollera din anslutning och försök igen.",
+    "retryConnection": "Försök att ansluta igen"
   }
 }

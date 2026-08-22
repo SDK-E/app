@@ -50,6 +50,25 @@
     "unauthenticatedTitle": "Vyžaduje se ověření",
     "unauthenticatedDescription": "Pro přístup na tuto stránku se prosím přihlaste.",
     "unauthenticatedSignIn": "Přihlaste se",
-    "serverErrorDescription": "Došlo k neočekávané chybě. Pokud problém přetrvává, kontaktujte podporu."
+    "serverErrorDescription": "Došlo k neočekávané chybě. Pokud problém přetrvává, kontaktujte podporu.",
+    "pageNotFoundEyebrow": "404 / STRÁNKA NENALEZENA",
+    "pageNotFoundHeadline": "Tato trasa neexistuje.",
+    "pageNotFoundDescription": "Stránka se mohla přesunout nebo adresa může být chybná.",
+    "goBack": "Vraťte se",
+    "accessRestrictedEyebrow": "403 / PŘÍSTUP OMEZEN",
+    "accessRestrictedTitle": "Na tuto stránku nemáte přístup.",
+    "accessRestrictedDescription": "Tato oblast je omezena na oprávněné uživatele.",
+    "contactUs": "Kontaktujte nás",
+    "serverErrorEyebrow": "500 / CHYBA SERVERU",
+    "serverErrorTitle": "Něco se na naší straně nepovedlo.",
+    "maintenanceEyebrow": "ÚDRŽBA",
+    "maintenanceTitle": "Připravujeme několik vylepšení.",
+    "maintenanceDescription": "SDK Enterprises se brzy vrátí.",
+    "refreshPage": "Obnovit stránku",
+    "statusLabel": "Provozní",
+    "connectionEyebrow": "PŘIPOJENÍ",
+    "connectionTitle": "Nemůžeme se spojit se serverem.",
+    "connectionDescription": "Zkontrolujte připojení a zkuste to znovu.",
+    "retryConnection": "Opakujte připojení"
   }
 }

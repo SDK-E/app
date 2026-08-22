@@ -50,6 +50,25 @@
     "unauthenticatedTitle": "Authenticatie vereist",
     "unauthenticatedDescription": "Meld u aan om toegang te krijgen tot deze pagina.",
     "unauthenticatedSignIn": "Log in",
-    "serverErrorDescription": "Er is een onverwachte fout opgetreden. Als het probleem zich blijft voordoen, neem dan contact op met de ondersteuning."
+    "serverErrorDescription": "Er is een onverwachte fout opgetreden. Als het probleem zich blijft voordoen, neem dan contact op met de ondersteuning.",
+    "pageNotFoundEyebrow": "404 / PAGINA NIET GEVONDEN",
+    "pageNotFoundHeadline": "Deze route bestaat niet.",
+    "pageNotFoundDescription": "Mogelijk is de pagina verplaatst of is het adres onjuist.",
+    "goBack": "Ga terug",
+    "accessRestrictedEyebrow": "403 / TOEGANG BEPERKT",
+    "accessRestrictedTitle": "U heeft geen toegang tot deze pagina.",
+    "accessRestrictedDescription": "Dit gebied is beperkt tot geautoriseerde gebruikers.",
+    "contactUs": "Neem contact met ons op",
+    "serverErrorEyebrow": "500 / SERVERFOUT",
+    "serverErrorTitle": "Er is iets mislukt aan onze kant.",
+    "maintenanceEyebrow": "ONDERHOUD",
+    "maintenanceTitle": "We voeren een paar verbeteringen door.",
+    "maintenanceDescription": "SDK Enterprises komt binnenkort terug.",
+    "refreshPage": "Pagina vernieuwen",
+    "statusLabel": "Operationeel",
+    "connectionEyebrow": "VERBINDING",
+    "connectionTitle": "We kunnen de server niet bereiken.",
+    "connectionDescription": "Controleer uw verbinding en probeer het opnieuw.",
+    "retryConnection": "Probeer de verbinding opnieuw"
   }
 }

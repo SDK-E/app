@@ -50,6 +50,25 @@
     "unauthenticatedTitle": "Autenticação necessária",
     "unauthenticatedDescription": "Por favor faça login para acessar esta página.",
     "unauthenticatedSignIn": "Faça login",
-    "serverErrorDescription": "Ocorreu um erro inesperado. Se o problema persistir, entre em contato com o suporte."
+    "serverErrorDescription": "Ocorreu um erro inesperado. Se o problema persistir, entre em contato com o suporte.",
+    "pageNotFoundEyebrow": "404 / PÁGINA NÃO ENCONTRADA",
+    "pageNotFoundHeadline": "Esta rota não existe.",
+    "pageNotFoundDescription": "A página pode ter sido movida ou o endereço pode estar errado.",
+    "goBack": "Volte",
+    "accessRestrictedEyebrow": "403 / ACESSO RESTRITO",
+    "accessRestrictedTitle": "Você não tem acesso a esta página.",
+    "accessRestrictedDescription": "Esta área é restrita a usuários autorizados.",
+    "contactUs": "Contate-nos",
+    "serverErrorEyebrow": "500 / ERRO DO SERVIDOR",
+    "serverErrorTitle": "Algo falhou do nosso lado.",
+    "maintenanceEyebrow": "MANUTENÇÃO",
+    "maintenanceTitle": "Estamos fazendo algumas melhorias.",
+    "maintenanceDescription": "SDK Enterprises estará de volta em breve.",
+    "refreshPage": "Atualizar página",
+    "statusLabel": "Operacional",
+    "connectionEyebrow": "CONEXÃO",
+    "connectionTitle": "Não conseguimos acessar o servidor.",
+    "connectionDescription": "Verifique sua conexão e tente novamente.",
+    "retryConnection": "Tentar novamente a conexão"
   }
 }

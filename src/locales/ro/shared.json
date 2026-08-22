@@ -50,6 +50,25 @@
     "unauthenticatedTitle": "Este necesară autentificarea",
     "unauthenticatedDescription": "Vă rugăm să vă conectați pentru a accesa această pagină.",
     "unauthenticatedSignIn": "Conectați-vă",
-    "serverErrorDescription": "A apărut o eroare neașteptată. Dacă problema persistă, vă rugăm să contactați asistența."
+    "serverErrorDescription": "A apărut o eroare neașteptată. Dacă problema persistă, vă rugăm să contactați asistența.",
+    "pageNotFoundEyebrow": "404 / PAGINA NU GĂSIT",
+    "pageNotFoundHeadline": "Această rută nu există.",
+    "pageNotFoundDescription": "Este posibil ca pagina să se fi mutat sau adresa poate fi greșită.",
+    "goBack": "Du-te înapoi",
+    "accessRestrictedEyebrow": "403 / ACCES RESTRICȚIONAT",
+    "accessRestrictedTitle": "Nu aveți acces la această pagină.",
+    "accessRestrictedDescription": "Această zonă este limitată la utilizatorii autorizați.",
+    "contactUs": "Contactați-ne",
+    "serverErrorEyebrow": "500 / EROARE SERVER",
+    "serverErrorTitle": "Ceva a eșuat de partea noastră.",
+    "maintenanceEyebrow": "ÎNTREȚINERE",
+    "maintenanceTitle": "Facem câteva îmbunătățiri.",
+    "maintenanceDescription": "SDK Enterprises va reveni în curând.",
+    "refreshPage": "Reîmprospătați pagina",
+    "statusLabel": "Operațional",
+    "connectionEyebrow": "CONECTARE",
+    "connectionTitle": "Nu putem ajunge la server.",
+    "connectionDescription": "Verificați conexiunea și încercați din nou.",
+    "retryConnection": "Reîncercați conexiunea"
   }
 }

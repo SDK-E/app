@@ -50,6 +50,25 @@
     "unauthenticatedTitle": "Изисква се удостоверяване",
     "unauthenticatedDescription": "Моля, влезте за достъп до тази страница.",
     "unauthenticatedSignIn": "влезте",
-    "serverErrorDescription": "Възникна неочаквана грешка. Ако проблемът продължава, моля, свържете се с поддръжката."
+    "serverErrorDescription": "Възникна неочаквана грешка. Ако проблемът продължава, моля, свържете се с поддръжката.",
+    "pageNotFoundEyebrow": "404 / СТРАНИЦАТА НЕ Е НАМЕРЕНА",
+    "pageNotFoundHeadline": "Този маршрут не съществува.",
+    "pageNotFoundDescription": "Страницата може да е преместена или адресът да е грешен.",
+    "goBack": "Върни се назад",
+    "accessRestrictedEyebrow": "403 / ДОСТЪПЪТ ОГРАНИЧЕН",
+    "accessRestrictedTitle": "Нямате достъп до тази страница.",
+    "accessRestrictedDescription": "Тази област е ограничена до оторизирани потребители.",
+    "contactUs": "Свържете се с нас",
+    "serverErrorEyebrow": "500 / ГРЕШКА НА СЪРВЪРА",
+    "serverErrorTitle": "Нещо се провали от наша страна.",
+    "maintenanceEyebrow": "ПОДДРЪЖКА",
+    "maintenanceTitle": "Правим няколко подобрения.",
+    "maintenanceDescription": "SDK Enterprises ще се върне скоро.",
+    "refreshPage": "Опресняване на страницата",
+    "statusLabel": "Оперативен",
+    "connectionEyebrow": "ВРЪЗКА",
+    "connectionTitle": "Не можем да се свържем със сървъра.",
+    "connectionDescription": "Проверете връзката си и опитайте отново.",
+    "retryConnection": "Повторен опит за свързване"
   }
 }

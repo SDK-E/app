@@ -50,6 +50,25 @@
     "unauthenticatedTitle": "Hitelesítés szükséges",
     "unauthenticatedDescription": "Kérjük, jelentkezzen be az oldal eléréséhez.",
     "unauthenticatedSignIn": "Jelentkezzen be",
-    "serverErrorDescription": "Váratlan hiba történt. Ha a probléma továbbra is fennáll, forduljon az ügyfélszolgálathoz."
+    "serverErrorDescription": "Váratlan hiba történt. Ha a probléma továbbra is fennáll, forduljon az ügyfélszolgálathoz.",
+    "pageNotFoundEyebrow": "404 / OLDAL NEM TALÁLHATÓ",
+    "pageNotFoundHeadline": "Ez az útvonal nem létezik.",
+    "pageNotFoundDescription": "Lehet, hogy az oldal elköltözött, vagy rossz a cím.",
+    "goBack": "Menj vissza",
+    "accessRestrictedEyebrow": "403 / HOZZÁFÉRÉS KORLÁTOZOTT",
+    "accessRestrictedTitle": "Nincs hozzáférése ehhez az oldalhoz.",
+    "accessRestrictedDescription": "Ez a terület a jogosult felhasználók számára korlátozott.",
+    "contactUs": "Vegye fel velünk a kapcsolatot",
+    "serverErrorEyebrow": "500 / SZERVER HIBA",
+    "serverErrorTitle": "Valami nem sikerült a mi oldalunkon.",
+    "maintenanceEyebrow": "KARBANTARTÁS",
+    "maintenanceTitle": "Néhány fejlesztést végzünk.",
+    "maintenanceDescription": "A SDK Enterprises hamarosan visszatér.",
+    "refreshPage": "Frissítse az oldalt",
+    "statusLabel": "Működőképes",
+    "connectionEyebrow": "CSATLAKOZTATÁS",
+    "connectionTitle": "Nem tudjuk elérni a szervert.",
+    "connectionDescription": "Ellenőrizze a kapcsolatot, és próbálja újra.",
+    "retryConnection": "Próbálja újra a kapcsolatot"
   }
 }

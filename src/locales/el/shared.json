@@ -50,6 +50,25 @@
     "unauthenticatedTitle": "Απαιτείται έλεγχος ταυτότητας",
     "unauthenticatedDescription": "Παρακαλούμε συνδεθείτε για να αποκτήσετε πρόσβαση σε αυτήν τη σελίδα.",
     "unauthenticatedSignIn": "Συνδεθείτε",
-    "serverErrorDescription": "Παρουσιάστηκε απροσδόκητο σφάλμα. Εάν το πρόβλημα παραμένει, επικοινωνήστε με την υποστήριξη."
+    "serverErrorDescription": "Παρουσιάστηκε απροσδόκητο σφάλμα. Εάν το πρόβλημα παραμένει, επικοινωνήστε με την υποστήριξη.",
+    "pageNotFoundEyebrow": "404 / Η ΣΕΛΙΔΑ ΔΕΝ ΒΡΕΘΗΚΕ",
+    "pageNotFoundHeadline": "Αυτή η διαδρομή δεν υπάρχει.",
+    "pageNotFoundDescription": "Η σελίδα μπορεί να έχει μετακινηθεί ή η διεύθυνση μπορεί να είναι λάθος.",
+    "goBack": "Πήγαινε πίσω",
+    "accessRestrictedEyebrow": "403 / ΠΕΡΙΟΡΙΣΜΕΝΗ ΠΡΟΣΒΑΣΗ",
+    "accessRestrictedTitle": "Δεν έχετε πρόσβαση σε αυτήν τη σελίδα.",
+    "accessRestrictedDescription": "Αυτή η περιοχή περιορίζεται σε εξουσιοδοτημένους χρήστες.",
+    "contactUs": "Επικοινωνήστε μαζί μας",
+    "serverErrorEyebrow": "500 / ΣΦΑΛΜΑ ΔΙΑΚΟΜΙΣΤΗ",
+    "serverErrorTitle": "Κάτι απέτυχε από την πλευρά μας.",
+    "maintenanceEyebrow": "ΣΥΝΤΗΡΗΣΗ",
+    "maintenanceTitle": "Κάνουμε μερικές βελτιώσεις.",
+    "maintenanceDescription": "Το SDK Enterprises θα επιστρέψει σύντομα.",
+    "refreshPage": "Ανανέωση σελίδας",
+    "statusLabel": "Λειτουργικό",
+    "connectionEyebrow": "ΣΥΝΔΕΣΗ",
+    "connectionTitle": "Δεν μπορούμε να φτάσουμε στον διακομιστή.",
+    "connectionDescription": "Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά.",
+    "retryConnection": "Δοκιμάστε ξανά τη σύνδεση"
   }
 }

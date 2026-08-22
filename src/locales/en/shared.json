@@ -39,9 +39,9 @@
     "logoutRedirecting": "Redirecting to logout..."
   },
   "errors": {
-    "pageNotFound": "This page does not exist or has been moved.",
+    "pageNotFound": "The page may have moved, or the address might be wrong.",
     "backToHome": "Back to home",
-    "somethingWentWrong": "Something went wrong",
+    "somethingWentWrong": "Something failed on our side.",
     "tryAgain": "Try again",
     "contactSupport": "If the problem persists, please contact support.",
     "accessNotGrantedTitle": "Access not granted",
@@ -50,6 +50,25 @@
     "unauthenticatedTitle": "Authentication required",
     "unauthenticatedDescription": "Please sign in to access this page.",
     "unauthenticatedSignIn": "Sign in",
-    "serverErrorDescription": "An unexpected error occurred. If the problem persists, please contact support."
+    "serverErrorDescription": "The issue has been recorded. You can try again or return to the homepage.",
+    "pageNotFoundEyebrow": "404 / PAGE NOT FOUND",
+    "pageNotFoundHeadline": "This route doesn't exist.",
+    "pageNotFoundDescription": "The page may have moved, or the address might be wrong.",
+    "goBack": "Go back",
+    "accessRestrictedEyebrow": "403 / ACCESS RESTRICTED",
+    "accessRestrictedTitle": "You don't have access to this page.",
+    "accessRestrictedDescription": "This area is restricted to authorized users.",
+    "contactUs": "Contact us",
+    "serverErrorEyebrow": "500 / SERVER ERROR",
+    "serverErrorTitle": "Something failed on our side.",
+    "maintenanceEyebrow": "MAINTENANCE",
+    "maintenanceTitle": "We're making a few improvements.",
+    "maintenanceDescription": "SDK Enterprises will be back shortly.",
+    "refreshPage": "Refresh page",
+    "statusLabel": "Operational",
+    "connectionEyebrow": "CONNECTION",
+    "connectionTitle": "We can't reach the server.",
+    "connectionDescription": "Check your connection and try again.",
+    "retryConnection": "Retry connection"
   }
 }

@@ -50,6 +50,25 @@
     "unauthenticatedTitle": "Todennus vaaditaan",
     "unauthenticatedDescription": "Kirjaudu sisään päästäksesi tälle sivulle.",
     "unauthenticatedSignIn": "Kirjaudu sisään",
-    "serverErrorDescription": "Tapahtui odottamaton virhe. Jos ongelma jatkuu, ota yhteyttä tukeen."
+    "serverErrorDescription": "Tapahtui odottamaton virhe. Jos ongelma jatkuu, ota yhteyttä tukeen.",
+    "pageNotFoundEyebrow": "404 / SIVUA EI LÖYTY",
+    "pageNotFoundHeadline": "Tätä reittiä ei ole olemassa.",
+    "pageNotFoundDescription": "Sivu on saattanut siirtyä tai osoite on väärä.",
+    "goBack": "Mene takaisin",
+    "accessRestrictedEyebrow": "403 / PÄÄSY RAJOITETTU",
+    "accessRestrictedTitle": "Sinulla ei ole pääsyä tälle sivulle.",
+    "accessRestrictedDescription": "Tämä alue on rajoitettu valtuutetuille käyttäjille.",
+    "contactUs": "Ota yhteyttä",
+    "serverErrorEyebrow": "500 / PALVELINVIRHE",
+    "serverErrorTitle": "Jokin epäonnistui meidän puolellamme.",
+    "maintenanceEyebrow": "HUOLTO",
+    "maintenanceTitle": "Teemme muutamia parannuksia.",
+    "maintenanceDescription": "SDK Enterprises tulee takaisin pian.",
+    "refreshPage": "Päivitä sivu",
+    "statusLabel": "Toiminnassa",
+    "connectionEyebrow": "YHTEYS",
+    "connectionTitle": "Emme saa yhteyttä palvelimeen.",
+    "connectionDescription": "Tarkista yhteys ja yritä uudelleen.",
+    "retryConnection": "Yritä muodostaa yhteys uudelleen"
   }
 }
