@@ -1,19 +1,22 @@
 "use client";
 
-import { PortalErrorPage } from "@sdk-e/portal-shell/PortalErrorPage";
 import { useTranslations } from "next-intl";
 
+import { PortalErrorPage } from "@sdk-e/portal-shell/PortalErrorPage";
+
 export default function AppError({
+  error: _error,
   reset,
 }: {
-  _error: Error & { digest?: string };
+  error: Error & { digest?: string };
   reset: () => void;
 }) {
   const t = useTranslations("portal.states");
+  const tFooter = useTranslations("footer");
 
   return (
     <PortalErrorPage
-      locale="en"
+      copyright={tFooter("copyright")}
       label="Error"
       title={t("errorTitle")}
       description={t("errorBody")}

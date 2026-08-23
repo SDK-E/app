@@ -30,10 +30,11 @@ export default async function PortalErrorPageRoute({
   const [{ locale, code }] = await Promise.all([params]);
   const config = errorConfig[code] ?? errorConfig["server-error"];
   const t = await getTranslations({ locale, namespace: "errors" });
+  const tFooter = await getTranslations({ locale, namespace: "footer" });
 
   return (
     <PortalErrorPage
-      locale={locale}
+      copyright={tFooter("copyright")}
       label={config.label}
       title={t(config.titleKey)}
       description={config.descriptionKey ? t(config.descriptionKey) : undefined}
