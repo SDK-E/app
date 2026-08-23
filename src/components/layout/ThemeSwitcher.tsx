@@ -1,9 +1,10 @@
 "use client";
 
+import { Monitor, Moon, Sun } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { Sun, Moon, Monitor } from "lucide-react";
-import { useTranslations } from "next-intl";
+
 import { updatePreferredThemeAction } from "@/app/[locale]/(app)/app/profile/actions";
 
 const themes = ["light", "dark", "system"] as const;
@@ -26,24 +27,35 @@ export function ThemeSwitcher() {
 
   const currentTheme = (mounted ? theme : "system") as Theme;
 
-  function cycle() {
-    const currentIndex = themes.indexOf(currentTheme);
-    const next = themes[(currentIndex + 1) % themes.length];
+  function select(next: Theme) {
+    if (next === currentTheme) return;
     setTheme(next);
     updatePreferredThemeAction(next);
   }
 
-  const Icon = icons[currentTheme];
-
   return (
-    <button
-      type="button"
-      onClick={cycle}
-      aria-label={t(currentTheme)}
-      title={t(currentTheme)}
-      className="inline-flex h-10 w-10 items-center justify-center rounded-control text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-    >
-      <Icon className="h-5 w-5" />
-    </button>
+    <div className="inline-flex items-center gap-1 rounded-control border p-1">
+      {themes.map((value) => {
+        const Icon = icons[value];
+        const active = value === currentTheme;
+        return (
+          <button
+            key={value}
+            type="button"
+            onClick={() => select(value)}
+            aria-pressed={active}
+            aria-label={t(value)}
+            title={t(value)}
+            className={`inline-flex h-8 w-8 items-center justify-center rounded-control transition-colors motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current ${
+              active
+                ? "bg-foreground text-background"
+                : "text-muted-foreground hover:bg-muted hover:text-foreground"
+            }`}
+          >
+            <Icon className="h-4 w-4" aria-hidden />
+          </button>
+        );
+      })}
+    </div>
   );
 }

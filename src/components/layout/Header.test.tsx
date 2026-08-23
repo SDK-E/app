@@ -12,6 +12,9 @@ vi.mock("next-intl", () => ({
 vi.mock("@/components/layout/LanguageSwitcher", () => ({
   LanguageSwitcher: () => <span>Language switcher</span>,
 }));
+vi.mock("@/components/layout/ThemeSwitcher", () => ({
+  ThemeSwitcher: () => <span>Theme switcher</span>,
+}));
 
 import { Header } from "@/components/layout/Header";
 

@@ -11,6 +11,7 @@ import { localizePath } from "@/i18n";
 
 import { Container } from "./Container";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 export type HeaderLink = { label: string; href: string };
 
@@ -113,6 +114,7 @@ export function Header({
                 ) : null}
               </>
             ) : null}
+            <ThemeSwitcher />
             {locale && <LanguageSwitcher />}
           </div>
 
@@ -158,11 +160,10 @@ export function Header({
                   {link.label}
                 </Link>
               ))}
-              {locale && (
-                <div className="pt-2">
-                  <LanguageSwitcher />
-                </div>
-              )}
+              <div className="flex items-center gap-3 pt-2">
+                <ThemeSwitcher />
+                {locale && <LanguageSwitcher />}
+              </div>
               {resolvedSecondaryCta ? (
                 <Button
                   href={
