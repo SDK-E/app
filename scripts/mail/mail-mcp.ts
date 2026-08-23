@@ -1,6 +1,10 @@
+import "dotenv/config";
+import { config as loadLocalEnv } from "dotenv";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
+
+loadLocalEnv({ path: ".env.local", override: true });
 
 interface SinkMessage {
   id: string;
@@ -12,7 +16,8 @@ interface SinkMessage {
   html: string | null;
 }
 
-const HTTP_URL = process.env.MAIL_HTTP_URL ?? "http://localhost:1080";
+const HTTP_URL =
+  process.env.MAIL_HTTP_URL ?? `http://localhost:${process.env.MAIL_HTTP_PORT ?? 1080}`;
 
 async function fetchJson(path: string, init?: RequestInit): Promise<unknown> {
   const res = await fetch(`${HTTP_URL}${path}`, init);

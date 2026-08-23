@@ -14,7 +14,8 @@ export async function sendMessage(
   label: string
 ): Promise<boolean> {
   if (getServerEnv().NODE_ENV !== "production") {
-    const smtpUrl = getServerEnv().MAIL_SMTP_URL ?? "smtp://localhost:1025";
+    const env = getServerEnv();
+    const smtpUrl = env.MAIL_SMTP_URL ?? `smtp://localhost:${env.MAIL_SMTP_PORT ?? 1025}`;
     const { createTransport } = await import("nodemailer");
     const transport = createTransport(smtpUrl);
     try {
