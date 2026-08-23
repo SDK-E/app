@@ -18,7 +18,7 @@
     },
     "maildev": {
       "command": "node",
-      "args": ["packages/tooling/src/mail/mail-mcp.ts"]
+      "args": ["node_modules/@sdk-e/mailbox/dist/bin/mailbox-mcp.js"]
     },
     "humanizer": {
       "command": "node",

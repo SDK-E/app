@@ -51,7 +51,7 @@ To populate your local database with development seed data:
 ## Commands
 
 ```bash
-pnpm run dev        # Start web dev server (Turbopack) + mail sink
+pnpm run dev        # Start web dev server (Turbopack)
 pnpm run build      # prisma generate + turbo production build
 pnpm run start      # Serve production build
 pnpm run lint       # Run ESLint across the monorepo

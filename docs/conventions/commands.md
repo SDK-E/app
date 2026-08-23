@@ -6,7 +6,7 @@ All commands run from the repository root via pnpm workspaces + Turborepo.
 
 ```bash
 pnpm install        # Install all workspace dependencies
-pnpm run dev        # Start web dev server (Turbopack) + local mail sink
+pnpm run dev        # Start web dev server (Turbopack)
 pnpm run build      # prisma generate + turbo run build
 pnpm run start      # Start production server
 ```
@@ -46,14 +46,17 @@ pnpm --filter @sdk-e/db exec prisma migrate status    # Check status (ask)
 
 ## Mail
 
+The mail sink is the standalone shared service [`@sdk-e/mailbox`](https://github.com/SDK-E/mailbox).
+Start it once per machine (not per project), then inspect from here:
+
 ```bash
-pnpm run mail        # Local mail sink (SMTP :1025, inbox UI + HTTP API :1080)
-pnpm run mail:ui     # Open the inbox UI in a browser (health-checks the sink first)
+npx @sdk-e/mailbox   # Run the shared sink (SMTP :11025, inbox UI + HTTP API :11090)
+pnpm run mail:ui     # Open the inbox UI in a browser (health-checks first)
 pnpm run mail:list   # List emails
 pnpm run mail:read -- <id>  # Read email body
 pnpm run mail:wait "match"  # Wait for matching email
 pnpm run mail:clear  # Empty sink
-pnpm run mail:health # Check mail sink health
+pnpm run mail:health # Check mailbox health
 ```
 
 ## Assets
