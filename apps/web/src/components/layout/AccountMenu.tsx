@@ -64,14 +64,14 @@ export function AccountMenu({
         asChild
         className={`flex min-h-11 w-full items-center gap-3 rounded-control px-2 text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current ${
           collapsed ? "lg:justify-center lg:gap-0 lg:px-0" : ""
-        }`}
+        } ${inSidebar ? "" : "border border-border bg-card shadow-sm hover:bg-accent"}`}
       >
         <button type="button" aria-label={name}>
           <Avatar avatarUrl={avatarUrl} name={name} />
           {!collapsed && (
             <span className={`min-w-0 flex-1 ${inSidebar ? "block" : "hidden sm:block"}`}>
               <span
-                className={`block truncate text-body font-semibold ${inSidebar ? "text-light" : ""}`}
+                className={`block truncate text-body font-semibold ${inSidebar ? "text-light" : "text-foreground"}`}
               >
                 {name}
               </span>
@@ -83,7 +83,10 @@ export function AccountMenu({
             </span>
           )}
           {!collapsed && (
-            <span aria-hidden className="ml-auto shrink-0">
+            <span
+              aria-hidden
+              className={`ml-auto shrink-0 ${inSidebar ? "text-light" : "text-muted-foreground"}`}
+            >
               ⌄
             </span>
           )}
@@ -124,12 +127,12 @@ function Avatar({ avatarUrl, name }: { avatarUrl: string | null; name: string })
         alt=""
         width={36}
         height={36}
-        className="size-9 shrink-0 rounded-full object-cover"
+        className="size-9 shrink-0 rounded-full object-cover ring-1 ring-border"
       />
     );
   }
   return (
-    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary text-label text-primary-foreground">
+    <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary text-label text-primary-foreground ring-1 ring-border">
       {name.slice(0, 1).toUpperCase()}
     </span>
   );
