@@ -4,15 +4,16 @@ Keyless servers in `.mcp.json`, mirrored in `kilo.jsonc` / `opencode.json`. No A
 
 ## Available Servers
 
-| Server          | Purpose                                               | Key? |
-| --------------- | ----------------------------------------------------- | ---- |
-| `context7`      | Version-accurate docs (resolve ID, query one concept) | No   |
-| `next-devtools` | Inspect running app (requires `npm run dev`)          | No   |
-| `playwright`    | E2E (snapshot first, no screenshots)                  | No   |
-| `prisma`        | Migrations + Studio (use `prisma-next-*` skills)      | No   |
-| `maildev`       | Verify emails (resend-email pipeline)                 | No   |
-| `humanizer`     | Human copy only (use `humanize-copy` skill)           | No   |
-| `gh_grep`       | Real examples only (never override repo docs)         | No   |
+| Server          | Purpose                                                | Key? |
+| --------------- | ------------------------------------------------------ | ---- |
+| `context7`      | Version-accurate docs (resolve ID, query one concept)  | No   |
+| `next-devtools` | Inspect running app (requires `npm run dev`)           | No   |
+| `playwright`    | E2E (snapshot first, no screenshots)                   | No   |
+| `prisma`        | Migrations + Studio (use `prisma-next-*` skills)       | No   |
+| `maildev`       | Verify emails (resend-email pipeline)                  | No   |
+| `humanizer`     | Human copy only (use `humanize-copy` skill)            | No   |
+| `bg-remove`     | Strip flat backgrounds from raster assets in-workspace | No   |
+| `gh_grep`       | Real examples only (never override repo docs)          | No   |
 
 ## Usage Rules
 
@@ -22,6 +23,7 @@ Keyless servers in `.mcp.json`, mirrored in `kilo.jsonc` / `opencode.json`. No A
 - **prisma:** Use `prisma-next-*` skills, never raw SQL
 - **maildev:** Verify enquiry form emails, not arbitrary sends
 - **humanizer:** Public-facing copy only, preserve technical meaning
+- **bg-remove:** Flat/solid backgrounds only (logos, icons); destructive in-place edit — version-controlled files only; never photos or gradients
 - **gh_grep:** Real code examples only, never override local docs
 
 ## Sync

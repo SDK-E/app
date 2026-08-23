@@ -24,6 +24,10 @@
       "command": "node",
       "args": ["--import", "tsx", "scripts/mcp/humanizer-mcp.ts"]
     },
+    "bg-remove": {
+      "command": "node",
+      "args": ["--import", "tsx", "scripts/mcp/background-remover-mcp.ts"]
+    },
     "gh_grep": {
       "url": "https://mcp.grep.app"
     }
