@@ -4,15 +4,18 @@ import { useActionState } from "react";
 
 import { Button } from "@/components/ui/Button";
 import type { UserActionState } from "@/app/[locale]/(app)/app/users/actions";
+import { ConfirmButton } from "@/components/portal/users/ConfirmButton";
 
 export function UserActionForm({
   action,
   label,
+  confirmLabel,
   children,
   variant = "outline",
 }: {
   action: (state: UserActionState, data: FormData) => Promise<UserActionState>;
   label: string;
+  confirmLabel?: string;
   children?: React.ReactNode;
   variant?: "default" | "outline" | "dark" | "destructive";
 }) {
@@ -30,9 +33,13 @@ export function UserActionForm({
           {state.success}
         </p>
       ) : null}
-      <Button type="submit" variant={variant} disabled={pending}>
-        {label}
-      </Button>
+      {confirmLabel ? (
+        <ConfirmButton label={label} confirmLabel={confirmLabel} variant={variant} size="sm" />
+      ) : (
+        <Button type="submit" variant={variant} size="sm" disabled={pending}>
+          {label}
+        </Button>
+      )}
     </form>
   );
 }

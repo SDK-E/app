@@ -6,13 +6,13 @@ import { EmptyState } from "@/components/ui/EmptyState";
 describe("EmptyState", () => {
   afterEach(() => cleanup());
 
-  it("pins a mode-safe ink so its text survives dark-mode surface inversion", () => {
+  it("uses semantic surface tokens so its text survives dark-mode inversion", () => {
     const { container } = render(
       <EmptyState title="No requests yet" description="Nothing here yet." />
     );
     const el = container.firstElementChild as HTMLElement;
-    expect(el.className).toContain("bg-paper");
-    expect(el.className).toContain("text-dark");
+    expect(el.className).toContain("bg-card");
+    expect(el.className).toContain("text-card-foreground");
   });
 
   it("renders title and description", () => {
