@@ -2,18 +2,13 @@
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "build": {
-      "dependsOn": [
-        "^build",
-        "@sdk-e/db#generate"
-      ],
-      "outputs": [
-        ".next/**",
-        "!.next/cache/**"
-      ],
+      "dependsOn": ["^build", "@sdk-e/db#generate"],
+      "outputs": [".next/**", "!.next/cache/**"],
       "env": [
         "DATABASE_URL",
         "POSTGRES_URL",
         "PRISMA_DATABASE_URL",
+        "POSTGRES_URL_NON_POOLING",
         "AUTH0_SECRET",
         "AUTH0_DOMAIN",
         "AUTH0_ISSUER_BASE_URL",
@@ -23,45 +18,11 @@
         "RESEND_API_KEY",
         "STRIPE_SECRET_KEY",
         "STRIPE_WEBHOOK_SECRET",
-        "STRIPE_PUBLISHABLE_KEY",
-        "NEON_DATABASE_URL",
-        "NEON_DATABASE_URL_UNPOOLED",
-        "NEON_POSTGRES_URL",
-        "NEON_POSTGRES_URL_NON_POOLING",
-        "NEON_POSTGRES_PRISMA_URL",
-        "NEON_PGHOST",
-        "NEON_PGHOST_UNPOOLED",
-        "NEON_PGUSER",
-        "NEON_PGDATABASE",
-        "NEON_POSTGRES_USER",
-        "NEON_POSTGRES_HOST",
-        "NEON_POSTGRES_DATABASE",
-        "NEON_POSTGRES_PASSWORD",
-        "NEON_PGPASSWORD",
-        "NEON_PROJECT_ID"
+        "STRIPE_PUBLISHABLE_KEY"
       ]
     },
     "generate": {
-      "env": [
-        "DATABASE_URL",
-        "POSTGRES_URL",
-        "PRISMA_DATABASE_URL",
-        "NEON_DATABASE_URL",
-        "NEON_DATABASE_URL_UNPOOLED",
-        "NEON_POSTGRES_URL",
-        "NEON_POSTGRES_URL_NON_POOLING",
-        "NEON_POSTGRES_PRISMA_URL",
-        "NEON_PGHOST",
-        "NEON_PGHOST_UNPOOLED",
-        "NEON_PGUSER",
-        "NEON_PGDATABASE",
-        "NEON_POSTGRES_USER",
-        "NEON_POSTGRES_HOST",
-        "NEON_POSTGRES_DATABASE",
-        "NEON_POSTGRES_PASSWORD",
-        "NEON_PGPASSWORD",
-        "NEON_PROJECT_ID"
-      ]
+      "env": ["DATABASE_URL", "POSTGRES_URL", "PRISMA_DATABASE_URL", "POSTGRES_URL_NON_POOLING"]
     },
     "lint": {},
     "typecheck": {},
@@ -72,6 +33,7 @@
     "DATABASE_URL",
     "POSTGRES_URL",
     "PRISMA_DATABASE_URL",
+    "POSTGRES_URL_NON_POOLING",
     "AUTH0_SECRET",
     "AUTH0_DOMAIN",
     "AUTH0_ISSUER_BASE_URL",
@@ -84,25 +46,7 @@
     "STRIPE_SECRET_KEY",
     "STRIPE_WEBHOOK_SECRET",
     "STRIPE_PUBLISHABLE_KEY",
-    "STRIPE_MCP_KEY",
-    "NEON_DATABASE_URL",
-    "NEON_DATABASE_URL_UNPOOLED",
-    "NEON_POSTGRES_URL",
-    "NEON_POSTGRES_URL_NON_POOLING",
-    "NEON_POSTGRES_PRISMA_URL",
-    "NEON_PGHOST",
-    "NEON_PGHOST_UNPOOLED",
-    "NEON_PGUSER",
-    "NEON_PGDATABASE",
-    "NEON_POSTGRES_USER",
-    "NEON_POSTGRES_HOST",
-    "NEON_POSTGRES_DATABASE",
-    "NEON_POSTGRES_PASSWORD",
-    "NEON_PGPASSWORD",
-    "NEON_PROJECT_ID"
+    "STRIPE_MCP_KEY"
   ],
-  "globalDependencies": [
-    "**/.env",
-    "**/.env.local"
-  ]
+  "globalDependencies": ["**/.env", "**/.env.local"]
 }

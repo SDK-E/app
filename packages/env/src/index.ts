@@ -37,26 +37,8 @@ function buildErrorMessage(error: z.ZodError): string {
   return error.issues.map((issue) => `  ${issue.path.join(".")}: ${issue.message}`).join("\n");
 }
 
-function resolveDatabaseUrl(): string | undefined {
-  // Prefer Neon (branched) when custom prefix NEON is used on Vercel.
-  return (
-    process.env.NEON_DATABASE_URL ||
-    process.env.NEON_POSTGRES_PRISMA_URL ||
-    process.env.NEON_POSTGRES_URL ||
-    process.env.NEON_DATABASE_URL_UNPOOLED ||
-    process.env.NEON_POSTGRES_URL_NON_POOLING ||
-    process.env.DATABASE_URL ||
-    process.env.POSTGRES_URL ||
-    process.env.PRISMA_DATABASE_URL
-  );
-}
-
 function validateServerEnv(): ServerEnv {
-  const raw = {
-    ...process.env,
-    DATABASE_URL: resolveDatabaseUrl(),
-  };
-  const result = serverEnvSchema.safeParse(raw);
+  const result = serverEnvSchema.safeParse(process.env);
 
   if (!result.success) {
     throw new Error(buildErrorMessage(result.error));
