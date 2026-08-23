@@ -42,7 +42,8 @@ npx prisma migrate status    # Check status (ask)
 ## Mail
 
 ```bash
-npm run mail        # Local mail sink (SMTP :1025, HTTP API :1080)
+npm run mail        # Local mail sink (SMTP :1025, inbox UI + HTTP API :1080)
+npm run mail:ui     # Open the inbox UI in a browser (health-checks the sink first)
 npm run mail:list   # List emails
 npm run mail:read -- <id>  # Read email body
 npm run mail:wait "match"  # Wait for matching email

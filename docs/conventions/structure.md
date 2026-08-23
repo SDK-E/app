@@ -40,9 +40,12 @@ maps to `./src/*`.
 │   ├── schema.prisma
 │   └── migrations/
 ├── scripts/                    # Dev tooling (run directly, not app code)
-│   ├── mail-sink.ts            # Local mail sink (SMTP + HTTP API, no UI)
-│   ├── mail-cli.ts             # npm run mail:list / mail:read / mail:wait / ...
-│   ├── mail-mcp.ts             # maildev MCP server for agents
+│   ├── mail/
+│   │   ├── mail-sink.ts        # Local mail sink: SMTP :1025 + inbox UI/API on 127.0.0.1:1080
+│   │   ├── mail-ui.html        # Inbox UI served by the sink (local only, SDK design system)
+│   │   ├── mail-cli.ts         # npm run mail:list / mail:read / mail:wait / ...
+│   │   ├── mail-open.ts        # npm run mail:ui (health-check + open browser)
+│   │   └── mail-mcp.ts         # maildev MCP server for agents
 │   └── humanizer-mcp.ts        # Keyless copy-humanization MCP server
 ├── tests/                      # End-to-end tests (Playwright)
 │   ├── e2e/

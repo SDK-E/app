@@ -7,6 +7,7 @@
     "db:migrate": "prisma migrate deploy",
     "dev": "concurrently -k -n app,mail -c blue,green \"next dev --turbopack\" \"node scripts/mail/mail-sink.ts\"",
     "mail": "node scripts/mail/mail-sink.ts",
+    "mail:ui": "node scripts/mail/mail-open.ts",
     "mail:list": "node scripts/mail/mail-cli.ts list",
     "mail:read": "node scripts/mail/mail-cli.ts read",
     "mail:clear": "node scripts/mail/mail-cli.ts clear",
