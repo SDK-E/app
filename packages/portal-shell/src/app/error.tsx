@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 import { PortalErrorPage } from "@sdk-e/portal-shell/PortalErrorPage";
 
 export default function AppError({
-  error: _error,
   reset,
 }: {
   error: Error & { digest?: string };
