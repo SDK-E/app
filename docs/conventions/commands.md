@@ -50,6 +50,15 @@ npm run mail:clear  # Empty sink
 npm run mail:health # Check mail sink health
 ```
 
+## Assets
+
+```bash
+npm run bg:remove -- <image> [image...] [--border-tolerance <n>] [--uniform-tolerance <n>]
+# Remove a flat, uniform background from raster images in place (flood fill
+# from the borders + near-background sweep). Requires alpha-capable output:
+# .png, .webp, .avif, .tiff, .gif. Destructive — keep files under version control.
+```
+
 ## Agent Checks
 
 ```bash
