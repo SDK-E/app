@@ -1,8 +1,6 @@
 import { execSync } from "node:child_process";
 import { platform } from "node:os";
 
-type Command = "list" | "find" | "pid" | "check" | "kill" | "kill-force";
-
 interface ProcessInfo {
   pid: number;
   command: string;

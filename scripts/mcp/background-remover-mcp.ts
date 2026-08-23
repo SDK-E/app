@@ -1,5 +1,5 @@
 import { realpath, stat } from "node:fs/promises";
-import { extname, isAbsolute, relative, resolve } from "node:path";
+import { isAbsolute, relative, resolve } from "node:path";
 
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
@@ -57,7 +57,7 @@ server.registerTool(
   async ({ paths, border_tolerance, uniform_tolerance }) => {
     const lines: string[] = [];
     let failures = 0;
-    for (const [index, path] of paths.entries()) {
+    for (const path of paths.values()) {
       try {
         const resolvedPath = await writableProjectImage(path);
         const result = await stripBackground(resolvedPath, {

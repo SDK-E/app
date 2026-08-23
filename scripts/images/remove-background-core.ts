@@ -1,4 +1,3 @@
-import { writeFile } from "node:fs/promises";
 import { extname } from "node:path";
 
 import sharp from "sharp";
