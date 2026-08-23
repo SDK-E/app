@@ -93,10 +93,11 @@ export function AccountMenu({
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        side={inSidebar ? "top" : "bottom"}
+        side={inSidebar ? (collapsed ? "right" : "top") : "bottom"}
         align={inSidebar ? "start" : "end"}
-        sideOffset={8}
-        className="w-64 rounded-card p-3"
+        sideOffset={inSidebar && collapsed ? 12 : 8}
+        collisionPadding={12}
+        className="w-60 max-w-[calc(100vw-1rem)] rounded-card p-3 shadow-xl ring-1 ring-black/5 dark:ring-white/10"
       >
         <DropdownMenuLabel>{languageLabel}</DropdownMenuLabel>
         <div className="px-2 pb-2">
