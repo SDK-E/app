@@ -1,0 +1,10 @@
+{
+  "name": "@sdk-e/config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/site.ts",
+    "./site": "./src/site.ts"
+  }
+}

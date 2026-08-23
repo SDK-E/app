@@ -17,25 +17,26 @@ Formatter, permissions, and PR gate are deterministic — not prompt preferences
 
 ## PR Gate
 
-`scripts/agent-pr-eval.ts` runs on every PR via CI:
+`packages/tooling/src/ci/agent-pr-eval.ts` runs on every PR via CI:
 
 - **Required sections:** What changed / Why / How verified / Residual risk
-- **Forbidden files:** `.env*`, `src/generated/*`, build output, binaries >500 KB
-- **High-blast-radius paths:** `authorization.ts`, `auth.ts`, `identity*.ts`, `schema.prisma`, `migrations/*`, `proxy.ts`, `middleware.ts`, `locales/*`, `package.json`
+- **Forbidden files:** `.env*`, `packages/db/src/generated/*`, build output, binaries >500 KB
+- **High-blast-radius paths:** `authorization.ts`, `auth0.ts`, `identity*.ts`, `packages/db/prisma/schema*.prisma`, `packages/db/prisma/migrations/*`, `apps/web/src/proxy.ts`, `middleware.ts`, `packages/i18n/src/locales/*`, root `package.json`, lockfiles (`pnpm-lock.yaml`, `package-lock.json`)
 - **Bug-fix rule:** PR must cite failing test / repro evidence
 
 ## Verify Chain
 
 ```bash
-npm run verify
-# generate → agents:check → format:check → typecheck → lint → vitest → i18n:check → build
+pnpm run verify
+# generate → agents:check → check:file-length → format:check → typecheck → lint → vitest → i18n:check → contrast:check → build
 ```
 
 Warnings, notices, and skipped items = fail. Read full output and fix.
 
 ## Agent Contract
 
-`scripts/check-agent-contract.ts` validates:
+`packages/tooling/src/ci/check-agent-contract.ts` validates:
 
 - MCP server parity across `.mcp.json`, `kilo.jsonc`, `opencode.json`
-- Agent configs reference correct filenames (`kilo.jsonc`, `opencode.json`)
+- Required root scripts present (`agents:check`, `typecheck`, `lint`, `test:run`, `i18n:check`, `build`, `verify`)
+- Required paths exist: `docs/conventions/structure.md`, `docs/conventions/env.md`, `packages/env/src/index.ts`, `packages/auth/src/{auth0,identity,authorization}.ts`, `packages/tooling/src/mail/mail-mcp.ts`, `packages/tooling/src/mcp/humanizer-mcp.ts`

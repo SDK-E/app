@@ -1,0 +1,14 @@
+{
+  "name": "@sdk-e/i18n",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/i18n/*",
+    "./locales/*": "./src/locales/*"
+  },
+  "dependencies": {
+    "next-intl": "^4.13.6"
+  }
+}

@@ -19,15 +19,47 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./apps/web/src/*"],
+      "@sdk-e/types": ["./packages/types/src/index.ts"],
+      "@sdk-e/types/*": ["./packages/types/src/*"],
+      "@sdk-e/config": ["./packages/config/src/site.ts"],
+      "@sdk-e/config/*": ["./packages/config/src/*"],
+      "@sdk-e/env": ["./packages/env/src/index.ts"],
+      "@sdk-e/db": ["./packages/db/src/index.ts"],
+      "@sdk-e/db/client": ["./packages/db/src/generated/prisma/client.ts"],
+      "@sdk-e/db/*": ["./packages/db/src/generated/prisma/*"],
+      "@sdk-e/core/*": ["./packages/core/src/*"],
+      "@sdk-e/i18n": ["./packages/i18n/src/index.ts"],
+      "@sdk-e/i18n/locales/*": ["./packages/i18n/src/locales/*"],
+      "@sdk-e/i18n/*": ["./packages/i18n/src/i18n/*"],
+      "@sdk-e/test-support/*": ["./packages/test-support/src/*"],
+      "@sdk-e/auth": ["./packages/auth/src/index.ts"],
+      "@sdk-e/auth/*": ["./packages/auth/src/*"],
+      "@sdk-e/users": ["./packages/users/src/index.ts"],
+      "@sdk-e/users/*": ["./packages/users/src/*"],
+      "@sdk-e/companies": ["./packages/companies/src/index.ts"],
+      "@sdk-e/companies/*": ["./packages/companies/src/*"],
+      "@sdk-e/email/*": ["./packages/email/src/*"],
+      "@sdk-e/marketing/*": ["./packages/marketing/src/*"],
+      "@sdk-e/payments/*": ["./packages/payments/src/*"],
+      "@sdk-e/notifications/*": ["./packages/notifications/src/*"],
+      "@sdk-e/providers/*": ["./packages/providers/src/*"],
+      "@sdk-e/requests/*": ["./packages/requests/src/*"],
+      "@sdk-e/opportunities": ["./packages/opportunities/src/index.ts"],
+      "@sdk-e/opportunities/*": ["./packages/opportunities/src/*"],
+      "@sdk-e/matching": ["./packages/matching/src/index.ts"],
+      "@sdk-e/matching/*": ["./packages/matching/src/*"],
+      "@sdk-e/schemas/*": ["./packages/schemas/src/*"],
+      "@sdk-e/ui/*": ["./packages/ui/src/*"],
+      "@sdk-e/design-system/*": ["./packages/design-system/src/*"]
     }
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
+    "apps/web/.next/types/**/*.ts",
+    "apps/web/.next/dev/types/**/*.ts",
+    "apps/web/next-env.d.ts"
   ],
-  "exclude": ["node_modules", "prisma/seed.ts"]
+  "exclude": ["node_modules", "**/node_modules", "**/dist", ".turbo", "coverage"]
 }

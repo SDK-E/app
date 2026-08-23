@@ -1,0 +1,18 @@
+{
+  "name": "@sdk-e/companies",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@sdk-e/auth": "workspace:*",
+    "@sdk-e/core": "workspace:*",
+    "@sdk-e/db": "workspace:*",
+    "@sdk-e/users": "workspace:*"
+  },
+  "devDependencies": {
+    "@sdk-e/test-support": "workspace:*"
+  }
+}

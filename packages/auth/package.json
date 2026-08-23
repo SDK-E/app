@@ -1,0 +1,24 @@
+{
+  "name": "@sdk-e/auth",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*"
+  },
+  "dependencies": {
+    "@auth0/nextjs-auth0": "^4.26.0",
+    "@sdk-e/db": "workspace:*",
+    "@sdk-e/env": "workspace:*",
+    "@sdk-e/types": "workspace:*",
+    "zod": "^4.4.3"
+  },
+  "peerDependencies": {
+    "next": "*",
+    "react": "*"
+  },
+  "devDependencies": {
+    "@types/react": "^19"
+  }
+}

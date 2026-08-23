@@ -2,15 +2,16 @@
 
 ## Stack
 
-Next.js 16 (App Router) · React 19 · TypeScript 5 (strict) · Tailwind v4 · Prisma 7 (Postgres) · Auth0 · Vitest 4 · Zod 4 · `@/*` → `./src/*`
+pnpm workspaces + Turborepo monorepo · Next.js 16 (App Router, `apps/web`) · React 19 · TypeScript 5 (strict) · Tailwind v4 · Prisma 7 (Postgres, `packages/db`) · Auth0 · Vitest 4 · Zod 4 · app alias `@/*` → `apps/web/src/*` · cross-package imports `@sdk-e/<package>`
 
 ## Rules
 
-- `npm run verify` after every change. Warnings = fail.
-- Never raw SQL / `$queryRaw`. Verify models against `prisma/schema.prisma`.
+- `pnpm run verify` after every change. Warnings = fail.
+- Never raw SQL / `$queryRaw`. Verify models against `packages/db/prisma/schema.prisma`.
 - Auth: resolve by Auth0 `sub` only. Never email. Never authorize from browser.
 - `companyId` on every read/write. Use `requireCompanyAccess` / `tenantWhere`.
 - One component per file. `kebab-case` routes. Split >200-line modules.
+- New domain logic goes in its `packages/*` workspace, not `apps/web/src/lib`.
 - Read/Grep only. Never `cat`/`sed`/`head`/`tail`/`awk`/`grep -r`.
 - Stage explicit paths only. No push/publish unless requested.
 - Never add deps without checking existing coverage.

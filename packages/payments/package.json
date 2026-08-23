@@ -1,0 +1,14 @@
+{
+  "name": "@sdk-e/payments",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/stripe.ts",
+    "./*": "./src/*"
+  },
+  "dependencies": {
+    "@sdk-e/env": "workspace:*",
+    "stripe": "^22.5.0"
+  }
+}

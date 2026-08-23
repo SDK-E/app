@@ -19,15 +19,15 @@
     },
     "maildev": {
       "type": "local",
-      "command": ["node", "scripts/mail/mail-mcp.ts"]
+      "command": ["node", "packages/tooling/src/mail/mail-mcp.ts"]
     },
     "humanizer": {
       "type": "local",
-      "command": ["node", "--import", "tsx", "scripts/mcp/humanizer-mcp.ts"]
+      "command": ["node", "--import", "tsx", "packages/tooling/src/mcp/humanizer-mcp.ts"]
     },
     "bg-remove": {
       "type": "local",
-      "command": ["node", "--import", "tsx", "scripts/mcp/background-remover-mcp.ts"]
+      "command": ["node", "--import", "tsx", "packages/tooling/src/mcp/background-remover-mcp.ts"]
     },
     "gh_grep": {
       "type": "remote",

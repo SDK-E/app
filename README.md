@@ -1,29 +1,32 @@
 # SDK Enterprises - Client Platform
 
-Production-grade SDK foundation for enterprise applications, built with Next.js 16, TypeScript, and Auth0.
+Production-grade SDK foundation for enterprise applications, built as a
+pnpm + Turborepo monorepo: Next.js 16 (`apps/web`) with shared domain and UI
+packages under `packages/*` (`@sdk-e/*`), TypeScript, and Auth0.
 
 ## Conventions
 
 Before working on this project, read [docs/conventions/structure.md](docs/conventions/structure.md).
-It defines the directory layout and file, component, route, env var, and commit
-message conventions that all contributors MUST follow.
+It defines the workspace layout, package dependency direction, and file,
+component, route, env var, and commit message conventions that all
+contributors MUST follow.
 
 ## Getting Started
 
 First, install dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 Then, set up your environment variables. All variables are documented with
 descriptions in [docs/conventions/env.md](docs/conventions/env.md) — create a
-`.env.local` in the project root with the required values.
+`.env.local` in the repository root with the required values.
 
 Finally, run the development server:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
@@ -35,12 +38,12 @@ To populate your local database with development seed data:
 1. Ensure your database is migrated:
 
    ```bash
-   npx prisma migrate dev
+   pnpm --filter @sdk-e/db exec prisma migrate dev
    ```
 
 2. Run the seed script:
    ```bash
-   npx prisma db seed
+   pnpm --filter @sdk-e/db exec prisma db seed
    ```
 
 **Important:** This script is DEVELOPMENT-ONLY. It creates synthetic data with fictional companies, users, and records. Do NOT run it in production.
@@ -48,13 +51,12 @@ To populate your local database with development seed data:
 ## Commands
 
 ```bash
-npm run dev       # Start dev server (Turbopack)
-npm run build     # Production build
-npm run start     # Serve production build
-npm run lint      # Run ESLint
-npm run typecheck # Run TypeScript compiler
-npm run test      # Run Vitest
-npx prisma db seed # Populate development database with seed data
+pnpm run dev        # Start web dev server (Turbopack) + mail sink
+pnpm run build      # prisma generate + turbo production build
+pnpm run start      # Serve production build
+pnpm run lint       # Run ESLint across the monorepo
+pnpm run typecheck  # Run TypeScript compiler
+pnpm run test       # Run Vitest across all workspaces
 ```
 
 ## Tech Stack

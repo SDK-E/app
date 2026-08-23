@@ -7,7 +7,7 @@ Keyless servers in `.mcp.json`, mirrored in `kilo.jsonc` / `opencode.json`. No A
 | Server          | Purpose                                                | Key? |
 | --------------- | ------------------------------------------------------ | ---- |
 | `context7`      | Version-accurate docs (resolve ID, query one concept)  | No   |
-| `next-devtools` | Inspect running app (requires `npm run dev`)           | No   |
+| `next-devtools` | Inspect running app (requires `pnpm run dev`)          | No   |
 | `playwright`    | E2E (snapshot first, no screenshots)                   | No   |
 | `prisma`        | Migrations + Studio (use `prisma-next-*` skills)       | No   |
 | `maildev`       | Verify emails (resend-email pipeline)                  | No   |
@@ -18,7 +18,7 @@ Keyless servers in `.mcp.json`, mirrored in `kilo.jsonc` / `opencode.json`. No A
 ## Usage Rules
 
 - **context7:** Resolve library ID first, query one concept at a time
-- **next-devtools:** Run `npm run dev` first, then inspect routes/errors/cache
+- **next-devtools:** Run `pnpm run dev` first, then inspect routes/errors/cache
 - **playwright:** Snapshot before actions, no screenshots for evidence
 - **prisma:** Use `prisma-next-*` skills, never raw SQL
 - **maildev:** Verify enquiry form emails, not arbitrary sends
@@ -28,4 +28,4 @@ Keyless servers in `.mcp.json`, mirrored in `kilo.jsonc` / `opencode.json`. No A
 
 ## Sync
 
-`agents:check` validates MCP parity across `.mcp.json`, `kilo.jsonc`, `opencode.json`. When adding/changing an MCP server, update all three files and run `npm run agents:check`.
+`agents:check` validates MCP parity across `.mcp.json`, `kilo.jsonc`, `opencode.json`. When adding/changing an MCP server, update all three files and run `pnpm run agents:check`.
