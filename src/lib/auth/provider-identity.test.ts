@@ -69,13 +69,16 @@ describe("resolveAppPrincipal — provider identity", () => {
     ).resolves.toMatchObject({ kind: "provider", providerId: "provider-1" });
   });
 
-  it("normalizes provider identity on login with updated profile fields", async () => {
+  it("refreshes email on login without overwriting the provider profile", async () => {
     mocks.upsert.mockResolvedValue({ ...providerUser, name: "New Name" });
     await resolveAppPrincipal(
       session({ sub: "auth0|user-1", email: "person@example.test", name: "New Name" })
     );
 
     const input = mocks.upsert.mock.calls[0][0];
-    expect(input.update).toEqual(expect.objectContaining({ name: "New Name" }));
+    expect(input.update).toEqual({
+      email: "person@example.test",
+      lastLoginAt: expect.any(Date),
+    });
   });
 });

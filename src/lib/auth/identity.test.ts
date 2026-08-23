@@ -53,26 +53,41 @@ describe("resolveAppPrincipal", () => {
     expect(principal.kind).toBe("unassigned");
   });
 
-  it("stores the Auth0 email normalized to lowercase", async () => {
+  it("seeds name and avatar from Auth0 only on account creation", async () => {
     mocks.upsert.mockResolvedValue(localUser);
     await resolveAppPrincipal(
-      session({ sub: "auth0|user-1", email: "PERSON@Example.Test", name: "Person Example" })
+      session({
+        sub: "auth0|user-1",
+        email: "person@example.test",
+        name: "Person Example",
+        picture: "https://example.test/a.png",
+      })
     );
 
     const input = mocks.upsert.mock.calls[0][0];
-    expect(input.create).toEqual(expect.objectContaining({ email: "person@example.test" }));
-    expect(input.update).toEqual(expect.objectContaining({ email: "person@example.test" }));
+    expect(input.create).toEqual(
+      expect.objectContaining({ name: "Person Example", avatarUrl: "https://example.test/a.png" })
+    );
   });
 
-  it("refreshes profile fields without looking up a user by email", async () => {
-    mocks.upsert.mockResolvedValue({ ...localUser, name: "Updated Name" });
+  it("refreshes email and last login without overwriting the local profile", async () => {
+    mocks.upsert.mockResolvedValue({ ...localUser, name: "Locally Corrected" });
     await resolveAppPrincipal(
-      session({ sub: "auth0|user-1", email: "person@example.test", name: "Updated Name" })
+      session({
+        sub: "auth0|user-1",
+        email: "person@example.test",
+        name: "Auth0 Name",
+        picture: "https://example.test/new.png",
+      })
     );
 
     const input = mocks.upsert.mock.calls[0][0];
-    expect(input.where).toEqual({ auth0Sub: "auth0|user-1" });
-    expect(input.update).toEqual(expect.objectContaining({ name: "Updated Name" }));
+    expect(input.update).toEqual({
+      email: "person@example.test",
+      lastLoginAt: expect.any(Date),
+    });
+    expect(input.update).not.toHaveProperty("name");
+    expect(input.update).not.toHaveProperty("avatarUrl");
   });
 
   it("resolves a company membership", async () => {

@@ -83,19 +83,23 @@ export async function resolveAppPrincipal(session: SessionData): Promise<AppPrin
 
   const db = getPrisma();
 
-  const profile = {
+  // Auth0 seeds the profile on first login only. Name and avatar are locally
+  // owned afterwards (administrators may correct them); email stays Auth0-owned.
+  const loginSync = {
     email: normalizeEmail(identity.email),
+    lastLoginAt: new Date(),
+  };
+  const seedProfile = {
     name: identity.name ?? identity.email,
     avatarUrl: identity.picture ?? null,
-    lastLoginAt: new Date(),
   };
 
   let user;
   try {
     user = await db.user.upsert({
       where: { auth0Sub: identity.sub },
-      create: { auth0Sub: identity.sub, ...profile },
-      update: profile,
+      create: { auth0Sub: identity.sub, ...seedProfile, ...loginSync },
+      update: loginSync,
       select: principalSelect,
     });
   } catch (error) {
@@ -115,7 +119,7 @@ export async function resolveAppPrincipal(session: SessionData): Promise<AppPrin
     try {
       user = await db.user.update({
         where: { id: existing.id },
-        data: profile,
+        data: loginSync,
         select: principalSelect,
       });
     } catch (updateError) {
