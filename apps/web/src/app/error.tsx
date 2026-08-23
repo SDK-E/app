@@ -1,18 +1,22 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 import { Button } from "@sdk-e/ui/Button";
-import { ErrorPage } from "@/components/layout/ErrorPage";
+import { Container } from "@sdk-e/ui/Container";
 
+/**
+ * Root error boundary. It renders outside `[locale]/layout.tsx`, so no
+ * `NextIntlClientProvider` (and no server-only `getTranslations`) is
+ * available here. Copy is the English fallback from
+ * `packages/i18n/src/locales/en/shared.json` (`errors` + `footer`).
+ */
 export default function RootError({
   reset,
 }: {
-  _error: Error & { digest?: string };
+  error: Error & { digest?: string };
   reset: () => void;
 }) {
-  const t = useTranslations("errors");
-
   const codeMotif = (
     <svg
       width="240"
@@ -31,27 +35,65 @@ export default function RootError({
   );
 
   return (
-    <ErrorPage
-      eyebrow={t("serverErrorEyebrow")}
-      headline={t("serverErrorTitle")}
-      description={t("serverErrorDescription")}
-      primaryAction={
-        <button
-          type="button"
-          onClick={reset}
-          className="rounded-control bg-brand px-[18px] py-[14px] text-label font-extrabold uppercase tracking-eyebrow text-dark transition-colors motion-reduce:transition-none hover:bg-brand/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
-        >
-          {t("tryAgain")}
-        </button>
-      }
-      secondaryAction={
-        <Button href="/" variant="outline">
-          {t("backToHome")}
-        </Button>
-      }
-      tone="light"
-      motif={codeMotif}
-      locale="en"
-    />
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
+      <header className="border-b border-line">
+        <Container>
+          <div className="flex h-[78px] items-center">
+            <a href="/" className="block leading-none" aria-label="SDK Enterprises home">
+              <Image
+                src="/brand/sdk-logo-light.png"
+                alt="SDK Enterprises logo"
+                width={1429}
+                height={495}
+                className="h-[26px] w-auto md:h-[30px]"
+                priority
+                unoptimized
+              />
+            </a>
+          </div>
+        </Container>
+      </header>
+
+      <main className="flex flex-1 items-center">
+        <Container>
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_1fr] lg:gap-[70px]">
+            <div>
+              <p className="text-label font-bold uppercase tracking-eyebrow">500 / SERVER ERROR</p>
+              <h1 className="mt-4 max-w-[15ch] text-[36px] font-extrabold tracking-title md:text-title">
+                Something failed on our side.
+              </h1>
+              <p className="mt-4 max-w-[65ch] text-body text-muted-foreground">
+                The issue has been recorded. You can try again or return to the homepage.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <button
+                  type="button"
+                  onClick={reset}
+                  className="rounded-control bg-brand px-[18px] py-[14px] text-label font-extrabold uppercase tracking-eyebrow text-dark transition-colors motion-reduce:transition-none hover:bg-brand/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
+                >
+                  Try again
+                </button>
+                <Button href="/" variant="outline">
+                  Back to home
+                </Button>
+              </div>
+            </div>
+
+            <div className="hidden items-center justify-center lg:flex" aria-hidden="true">
+              {codeMotif}
+            </div>
+          </div>
+        </Container>
+      </main>
+
+      <footer className="bg-dark py-6 text-micro text-fog">
+        <Container>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <span>© SDK Enterprises</span>
+            <span>AI · Software · Cloud · Systems Engineering</span>
+          </div>
+        </Container>
+      </footer>
+    </div>
   );
 }
