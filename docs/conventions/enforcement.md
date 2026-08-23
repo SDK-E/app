@@ -28,10 +28,18 @@ Formatter, permissions, and PR gate are deterministic — not prompt preferences
 
 ```bash
 pnpm run verify
-# generate → agents:check → check:file-length → format:check → typecheck → lint → vitest → i18n:check → contrast:check → build
+# generate → agents:check → check:file-length → format:check → typecheck → lint → vitest → i18n:check → build
 ```
 
 Warnings, notices, and skipped items = fail. Read full output and fix.
+
+The rendered contrast audit is intentionally outside `verify` (it boots a
+browser against 23 pages in two themes and dominates chain time). Run it
+explicitly when touching UI or design tokens:
+
+```bash
+pnpm run contrast:check
+```
 
 ## Agent Contract
 

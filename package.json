@@ -30,7 +30,7 @@
     "test:coverage": "pnpm run generate && vitest run --coverage",
     "agents:check": "node --import tsx packages/tooling/src/ci/check-agent-contract.ts",
     "check:file-length": "node --import tsx packages/tooling/src/ci/check-file-length.ts",
-    "verify": "npm run generate && npm run agents:check && npm run check:file-length && npm run format:check && npm run typecheck && npm run lint && vitest run && npm run i18n:check && npm run contrast:check && npm run build",
+    "verify": "pnpm run generate && pnpm run agents:check && pnpm run check:file-length && pnpm run format:check && pnpm run typecheck && pnpm run lint && vitest run && pnpm run i18n:check && pnpm run build",
     "audit": "pnpm audit --audit-level=high",
     "i18n:translate": "python3 packages/tooling/i18n/translate-locales.py",
     "i18n:check": "python3 packages/tooling/i18n/translate-locales-test.py && python3 packages/tooling/i18n/translate-locales.py --check",

@@ -16,7 +16,7 @@ pnpm run start      # Start production server
 ```bash
 pnpm run lint         # ESLint (whole monorepo)
 pnpm run typecheck    # tsc --noEmit (whole monorepo)
-pnpm run verify       # Full chain: generate → agents:check → check:file-length → format:check → typecheck → lint → vitest → i18n:check → contrast:check → build
+pnpm run verify       # Full chain: generate → agents:check → check:file-length → format:check → typecheck → lint → vitest → i18n:check → build
 pnpm run format       # Prettier write
 pnpm run format:check # Prettier check (in verify)
 ```

@@ -6,10 +6,16 @@ export default defineConfig([
   ...nextVitals,
   ...nextTypescript,
   {
-    files: [
-      "packages/portal-shell/src/AccountMenu.tsx",
-      "packages/portal-shell/src/AccessPending.tsx",
-    ],
+    // eslint-plugin-react otherwise probes for a hoisted react package, which
+    // pnpm's layout does not provide at the repo root.
+    settings: {
+      react: { version: "19" },
+    },
+  },
+  {
+    // Pure App Router monorepo: the rule only understands a single pages
+    // directory and warns when none exists. next/link usage stays enforced by
+    // review and the core-web-vitals rules that do understand the app router.
     rules: {
       "@next/next/no-html-link-for-pages": "off",
     },
