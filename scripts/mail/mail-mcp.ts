@@ -1,10 +1,10 @@
-import "dotenv/config";
-import { config as loadLocalEnv } from "dotenv";
+import { config as loadEnv } from "dotenv";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 
-loadLocalEnv({ path: ".env.local", override: true });
+loadEnv({ path: ".env.local" });
+loadEnv({ path: ".env" });
 
 interface SinkMessage {
   id: string;

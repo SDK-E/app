@@ -1,8 +1,8 @@
-import "dotenv/config";
-import { config as loadLocalEnv } from "dotenv";
+import { config as loadEnv } from "dotenv";
 import { spawn } from "node:child_process";
 
-loadLocalEnv({ path: ".env.local", override: true });
+loadEnv({ path: ".env.local" });
+loadEnv({ path: ".env" });
 
 const HTTP_URL =
   process.env.MAIL_HTTP_URL ?? `http://localhost:${process.env.MAIL_HTTP_PORT ?? 1080}`;

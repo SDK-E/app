@@ -1,10 +1,10 @@
-import "dotenv/config";
-import { config as loadLocalEnv } from "dotenv";
+import { config as loadEnv } from "dotenv";
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import { readFile } from "node:fs/promises";
 import smtpTester from "smtp-tester";
 
-loadLocalEnv({ path: ".env.local", override: true });
+loadEnv({ path: ".env.local" });
+loadEnv({ path: ".env" });
 
 if (process.env.NODE_ENV === "production") {
   console.error("mail sink: refusing to start — local development tooling only");

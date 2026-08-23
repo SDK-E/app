@@ -1,7 +1,7 @@
-import "dotenv/config";
-import { config as loadLocalEnv } from "dotenv";
+import { config as loadEnv } from "dotenv";
 
-loadLocalEnv({ path: ".env.local", override: true });
+loadEnv({ path: ".env.local" });
+loadEnv({ path: ".env" });
 
 interface SinkMessage {
   id: string;
