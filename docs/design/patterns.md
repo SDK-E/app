@@ -81,14 +81,33 @@ surfaces, components). Rendered on `/design-system`.
   active section in `brand`, CTA as `dark` button. Mobile: menu button
   toggles a full-width panel (see `src/components/layout/Header.tsx` and
   `docs/design/responsive.md`).
-- **Portal sidebar** (not yet built — pattern only): dark surface, wordmark,
-  "Client Portal" workspace label, stacked 11px links, active item as
-  `bg-brand text-dark`, user block at the bottom separated by a dark border.
-  On mobile the sidebar collapses into the header menu pattern.
+- **Portal sidebar** (`src/components/layout/AppShellFrame.tsx`): dark
+  surface (`bg-sidebar` — equals `dark` in light mode, sits one step lighter
+  than the page canvas in dark mode), wordmark, workspace label, stacked 11px
+  links with an icon each, active company switcher above the section links.
+  Desktop (`lg`+) collapses to a 72px icon rail via a `PanelLeftClose` /
+  `PanelLeftOpen` toggle; labels hide, the grid width animates over 200ms and
+  the choice persists in localStorage. The user block (avatar, account menu
+  with language, theme, profile, logout) is pinned to the bottom behind a dark
+  border; its panel opens upward and never leaves the sidebar bounds — on the
+  72px rail the avatar expands the sidebar instead of opening the menu. On
+  mobile the sidebar stays a horizontal top
+  bar and the account menu lives in the page header instead.
 
 ## 10. Motion
 
 - Only what the system defines: focus transitions, hover opacity/background,
-  skeleton pulse, menu panel open/close. No entrance animations, parallax,
-  marquees or floating elements.
+  skeleton pulse, menu panel open/close, portal sidebar collapse (grid column
+  width + label/logo opacity, `duration-200`). No entrance animations,
+  parallax, marquees or floating elements.
 - Respect `prefers-reduced-motion`: disable transitions and the pulse.
+
+### Theme switching
+
+Light/dark/system is user-selectable at runtime (`ThemeSwitcher`, a segmented
+three-option control: marketing header desktop + mobile panel; portal sidebar
+account menu). `.dark` on
+`<html>` flips every CSS variable in `globals.css`; section tones invert by
+design — never pair them with `dark:` variants. Anonymous choices persist in
+localStorage (`theme`), signed-in users also sync to `User.preferredTheme`
+plus the `preferredTheme` cookie applied pre-paint by `InlineThemeScript`.
