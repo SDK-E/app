@@ -12,13 +12,25 @@ function rootRelative(path: string): string {
 dotenvDefault({ path: rootRelative(".env") });
 dotenvLocal({ path: rootRelative(".env.local") });
 
+function resolvePrismaUrl(): string | undefined {
+  return (
+    process.env.NEON_DATABASE_URL ||
+    process.env.NEON_POSTGRES_PRISMA_URL ||
+    process.env.NEON_POSTGRES_URL ||
+    process.env.NEON_DATABASE_URL_UNPOOLED ||
+    process.env.DATABASE_URL ||
+    process.env.POSTGRES_URL ||
+    process.env.PRISMA_DATABASE_URL
+  );
+}
+
 export default defineConfig({
   schema: "prisma/",
   migrations: {
     path: "prisma/migrations",
   },
   datasource: {
-    url: process.env["DATABASE_URL"],
-    shadowDatabaseUrl: process.env["SHADOW_DATABASE_URL"],
+    url: resolvePrismaUrl(),
+    shadowDatabaseUrl: process.env.SHADOW_DATABASE_URL || process.env.NEON_DATABASE_URL_UNPOOLED,
   },
 });
