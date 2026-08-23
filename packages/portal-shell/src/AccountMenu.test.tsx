@@ -6,14 +6,14 @@ const mocks = vi.hoisted(() => ({
   ThemeSwitcher: vi.fn(),
 }));
 
-vi.mock("@/components/layout/LanguageSwitcher", () => ({
+vi.mock("@sdk-e/portal-shell/LanguageSwitcher", () => ({
   LanguageSwitcher: mocks.LanguageSwitcher,
 }));
-vi.mock("@/components/layout/ThemeSwitcher", () => ({
+vi.mock("@sdk-e/portal-shell/ThemeSwitcher", () => ({
   ThemeSwitcher: mocks.ThemeSwitcher,
 }));
 
-import { AccountMenu } from "@/components/layout/AccountMenu";
+import { AccountMenu } from "@sdk-e/portal-shell/AccountMenu";
 
 const baseProps = {
   locale: "en",

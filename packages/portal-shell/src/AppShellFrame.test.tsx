@@ -9,13 +9,13 @@ const mocks = vi.hoisted(() => ({
   ActiveCompanyLabel: vi.fn(),
 }));
 
-vi.mock("@/components/layout/AppNav", () => ({ AppNav: mocks.AppNav }));
-vi.mock("@/components/layout/AccountMenu", () => ({ AccountMenu: mocks.AccountMenu }));
-vi.mock("@/components/layout/ActiveCompanyLabel", () => ({
+vi.mock("@sdk-e/portal-shell/AppNav", () => ({ AppNav: mocks.AppNav }));
+vi.mock("@sdk-e/portal-shell/AccountMenu", () => ({ AccountMenu: mocks.AccountMenu }));
+vi.mock("@sdk-e/portal-shell/ActiveCompanyLabel", () => ({
   ActiveCompanyLabel: mocks.ActiveCompanyLabel,
 }));
 
-import { AppShellFrame } from "@/components/layout/AppShellFrame";
+import { AppShellFrame } from "@sdk-e/portal-shell/AppShellFrame";
 
 const STORAGE_KEY = "sdk.portal.sidebar.collapsed";
 

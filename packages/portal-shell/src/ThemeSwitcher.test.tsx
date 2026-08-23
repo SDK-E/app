@@ -15,7 +15,7 @@ vi.mock("next-intl", () => ({
     ({ light: "Light theme", dark: "Dark theme", system: "System theme" })[key] ?? key,
 }));
 
-import { ThemeSwitcher } from "@/components/layout/ThemeSwitcher";
+import { ThemeSwitcher } from "@sdk-e/portal-shell/ThemeSwitcher";
 
 function arrange(theme: string) {
   const setTheme = vi.fn();

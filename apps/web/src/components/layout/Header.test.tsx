@@ -9,10 +9,10 @@ vi.mock("next-intl", () => ({
     ({ home: "Home", main: "Main", toggleMenu: "Toggle menu", openPortal: "Open portal" })[key] ??
     key,
 }));
-vi.mock("@/components/layout/LanguageSwitcher", () => ({
+vi.mock("@sdk-e/portal-shell/LanguageSwitcher", () => ({
   LanguageSwitcher: () => <span>Language switcher</span>,
 }));
-vi.mock("@/components/layout/ThemeSwitcher", () => ({
+vi.mock("@sdk-e/portal-shell/ThemeSwitcher", () => ({
   ThemeSwitcher: () => <span>Theme switcher</span>,
 }));
 

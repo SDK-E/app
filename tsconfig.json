@@ -51,7 +51,11 @@
       "@sdk-e/matching/*": ["./packages/matching/src/*"],
       "@sdk-e/schemas/*": ["./packages/schemas/src/*"],
       "@sdk-e/ui/*": ["./packages/ui/src/*"],
-      "@sdk-e/design-system/*": ["./packages/design-system/src/*"]
+      "@sdk-e/design-system/*": ["./packages/design-system/src/*"],
+      "@sdk-e/portal-shell/*": ["./packages/portal-shell/src/*"],
+      "@sdk-e/portal-staff/*": ["./packages/portal-staff/src/*"],
+      "@sdk-e/portal-companies/*": ["./packages/portal-companies/src/*"],
+      "@sdk-e/portal-providers/*": ["./packages/portal-providers/src/*"]
     }
   },
   "include": [

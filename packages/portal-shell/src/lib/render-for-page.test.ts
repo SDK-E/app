@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-import { renderForPage } from "@/lib/app/render-for-page";
+import { renderForPage } from "@sdk-e/portal-shell/lib/render-for-page";
 import { AuthorizationError } from "@sdk-e/auth/authorization";
 import { IdentityError } from "@sdk-e/auth/identity";
 

@@ -7,8 +7,8 @@ export default defineConfig([
   ...nextTypescript,
   {
     files: [
-      "apps/web/src/components/layout/AccountMenu.tsx",
-      "apps/web/src/components/layout/AccessPending.tsx",
+      "packages/portal-shell/src/AccountMenu.tsx",
+      "packages/portal-shell/src/AccessPending.tsx",
     ],
     rules: {
       "@next/next/no-html-link-for-pages": "off",
@@ -19,9 +19,9 @@ export default defineConfig([
     // under npm's flat node_modules (rule could not resolve react from these
     // files). Scoped here instead of globally so new code stays covered.
     files: [
-      "apps/web/src/components/layout/AppShellFrame.tsx",
-      "apps/web/src/components/layout/ThemeSwitcher.tsx",
-      "apps/web/src/components/portal/users/SearchInput.tsx",
+      "packages/portal-shell/src/AppShellFrame.tsx",
+      "packages/portal-shell/src/ThemeSwitcher.tsx",
+      "packages/portal-shell/src/components/portal/users/SearchInput.tsx",
     ],
     rules: {
       "react-hooks/set-state-in-effect": "off",

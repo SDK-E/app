@@ -1,19 +1,19 @@
 import { getTranslations } from "next-intl/server";
 
-import { ActivityFeed } from "@/components/portal/users/ActivityFeed";
-import { FilterSelect } from "@/components/portal/users/FilterSelect";
-import { SearchInput } from "@/components/portal/users/SearchInput";
-import { UsersTabNav } from "@/components/portal/users/UsersTabNav";
-import { ClientInviteCards } from "@/components/portal/users/client/ClientInviteCards";
-import { ClientInvitationsTable } from "@/components/portal/users/client/ClientInvitationsTable";
-import { ClientMembersTable } from "@/components/portal/users/client/ClientMembersTable";
-import { ClientRequestsTable } from "@/components/portal/users/client/ClientRequestsTable";
-import { StaffInviteCards } from "@/components/portal/users/staff/StaffInviteCards";
-import { StaffInvitationsTable } from "@/components/portal/users/staff/StaffInvitationsTable";
-import { StaffMembersTable } from "@/components/portal/users/staff/StaffMembersTable";
-import { StaffRequestsTable } from "@/components/portal/users/staff/StaffRequestsTable";
-import { UserIdentityCard } from "@/components/portal/users/staff/UserIdentityCard";
-import { UserMembershipsCard } from "@/components/portal/users/staff/UserMembershipsCard";
+import { ActivityFeed } from "@sdk-e/portal-shell/components/portal/users/ActivityFeed";
+import { FilterSelect } from "@sdk-e/portal-shell/components/portal/users/FilterSelect";
+import { SearchInput } from "@sdk-e/portal-shell/components/portal/users/SearchInput";
+import { UsersTabNav } from "@sdk-e/portal-shell/components/portal/users/UsersTabNav";
+import { ClientInviteCards } from "@sdk-e/portal-companies/components/users/client/ClientInviteCards";
+import { ClientInvitationsTable } from "@sdk-e/portal-companies/components/users/client/ClientInvitationsTable";
+import { ClientMembersTable } from "@sdk-e/portal-companies/components/users/client/ClientMembersTable";
+import { ClientRequestsTable } from "@sdk-e/portal-companies/components/users/client/ClientRequestsTable";
+import { StaffInviteCards } from "@sdk-e/portal-staff/components/users/staff/StaffInviteCards";
+import { StaffInvitationsTable } from "@sdk-e/portal-staff/components/users/staff/StaffInvitationsTable";
+import { StaffMembersTable } from "@sdk-e/portal-staff/components/users/staff/StaffMembersTable";
+import { StaffRequestsTable } from "@sdk-e/portal-staff/components/users/staff/StaffRequestsTable";
+import { UserIdentityCard } from "@sdk-e/portal-staff/components/users/staff/UserIdentityCard";
+import { UserMembershipsCard } from "@sdk-e/portal-staff/components/users/staff/UserMembershipsCard";
 import type { UsersListQuery } from "@sdk-e/users/list-links";
 import {
   activityEvents,

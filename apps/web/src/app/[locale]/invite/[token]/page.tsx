@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import { getTranslations } from "next-intl/server";
 
 import { acceptInvitationAction } from "@/app/[locale]/invite/[token]/actions";
-import { InvitationAcceptForm } from "@/components/portal/InvitationAcceptForm";
+import { InvitationAcceptForm } from "@sdk-e/portal-shell/components/portal/InvitationAcceptForm";
 import { Button } from "@sdk-e/ui/Button";
 import { Card } from "@sdk-e/ui/Card";
 import { getServerEnv } from "@sdk-e/env";
