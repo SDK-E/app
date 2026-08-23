@@ -2,13 +2,62 @@
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "build": {
-      "dependsOn": ["^build", "@sdk-e/db#generate"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "dependsOn": [
+        "^build",
+        "@sdk-e/db#generate"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**"
+      ],
+      "env": [
+        "DATABASE_URL",
+        "POSTGRES_URL",
+        "PRISMA_DATABASE_URL",
+        "AUTH0_SECRET",
+        "AUTH0_DOMAIN",
+        "AUTH0_ISSUER_BASE_URL",
+        "AUTH0_BASE_URL",
+        "AUTH0_CLIENT_ID",
+        "AUTH0_CLIENT_SECRET",
+        "RESEND_API_KEY",
+        "STRIPE_SECRET_KEY",
+        "STRIPE_WEBHOOK_SECRET",
+        "STRIPE_PUBLISHABLE_KEY"
+      ]
     },
-    "generate": {},
+    "generate": {
+      "env": [
+        "DATABASE_URL",
+        "POSTGRES_URL",
+        "PRISMA_DATABASE_URL"
+      ]
+    },
     "lint": {},
     "typecheck": {},
     "test": {},
     "test:run": {}
-  }
+  },
+  "globalEnv": [
+    "DATABASE_URL",
+    "POSTGRES_URL",
+    "PRISMA_DATABASE_URL",
+    "AUTH0_SECRET",
+    "AUTH0_DOMAIN",
+    "AUTH0_ISSUER_BASE_URL",
+    "AUTH0_BASE_URL",
+    "AUTH0_CLIENT_ID",
+    "AUTH0_CLIENT_SECRET",
+    "RESEND_API_KEY",
+    "MAIL_SMTP_URL",
+    "MAIL_HTTP_URL",
+    "STRIPE_SECRET_KEY",
+    "STRIPE_WEBHOOK_SECRET",
+    "STRIPE_PUBLISHABLE_KEY",
+    "STRIPE_MCP_KEY"
+  ],
+  "globalDependencies": [
+    "**/.env",
+    "**/.env.local"
+  ]
 }
