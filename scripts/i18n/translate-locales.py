@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 import tempfile
@@ -21,6 +22,17 @@ SUPPORTED_LOCALES = (
     "fr", "de", "es", "pt", "it", "nl", "sv", "no", "da", "fi",
     "pl", "cs", "hu", "ro", "bg", "el",
 )
+GOOGLE_ENDPOINT = "https://translate.googleapis.com/translate_a/single"
+LIBRETRANSLATE_URL = os.environ.get("LIBRETRANSLATE_URL", "https://libretranslate.com").rstrip("/")
+LIBRETRANSLATE_API_KEY = os.environ.get("LIBRETRANSLATE_API_KEY", "")
+DEEPL_API_KEY = os.environ.get("DEEPL_API_KEY", "")
+# DeepL splits its API by plan: ":fx" keys belong to api-free.deepl.com.
+DEEPL_ENDPOINT = (
+    "https://api-free.deepl.com/v2/translate"
+    if DEEPL_API_KEY.endswith(":fx")
+    else "https://api.deepl.com/v2/translate"
+)
+DEEPL_TARGET_LANGUAGES = {"no": "NB"}
 PROTECTED_TERMS = (
     "Auth0 (Okta)", "Prisma Postgres", "SDK Enterprises",
     "Articles 15 to 22 GDPR", "Art. 30 GDPR", "Art. 6(1)(b)",
@@ -125,13 +137,13 @@ def unprotect(text: str) -> str:
     return restored
 
 
-def translate_batch(texts: list[str], target_locale: str) -> list[str]:
+def translate_batch_google(texts: list[str], target_locale: str) -> list[str]:
     query = f"\n{TRANSLATION_MARKER}\n".join(texts)
     parameters = urllib.parse.urlencode(
         {"client": "gtx", "sl": "en", "tl": target_locale, "dt": "t", "q": query}
     )
     request = urllib.request.Request(
-        f"https://translate.googleapis.com/translate_a/single?{parameters}",
+        f"{GOOGLE_ENDPOINT}?{parameters}",
         headers={"User-Agent": "Mozilla/5.0"},
     )
     with urllib.request.urlopen(request, timeout=30) as response:
@@ -145,6 +157,90 @@ def translate_batch(texts: list[str], target_locale: str) -> list[str]:
     return parts
 
 
+def translate_batch_libre(texts: list[str], target_locale: str) -> list[str]:
+    payload: Dict[str, Any] = {
+        "q": texts,
+        "source": "en",
+        "target": target_locale,
+        "format": "text",
+    }
+    if LIBRETRANSLATE_API_KEY:
+        payload["api_key"] = LIBRETRANSLATE_API_KEY
+    request = urllib.request.Request(
+        f"{LIBRETRANSLATE_URL}/translate",
+        data=json.dumps(payload).encode("utf-8"),
+        headers={"Content-Type": "application/json"},
+    )
+    with urllib.request.urlopen(request, timeout=30) as response:
+        data = json.loads(response.read())
+    translated = data.get("translatedText")
+    if isinstance(translated, str):
+        translated = [translated]
+    if not isinstance(translated, list) or len(translated) != len(texts):
+        raise RuntimeError(
+            f"LibreTranslate batch mismatch: expected {len(texts)} results"
+        )
+    return [str(item) for item in translated]
+
+
+def translate_batch(texts: list[str], target_locale: str, provider: str = "google") -> list[str]:
+    if provider == "libre":
+        return translate_batch_libre(texts, target_locale)
+    return translate_batch_google(texts, target_locale)
+
+
+def translate_batch_deepl(texts: list[str], target_locale: str) -> list[str]:
+    payload = {
+        "text": texts,
+        "target_lang": DEEPL_TARGET_LANGUAGES.get(target_locale, target_locale.upper()),
+        "source_lang": "EN",
+    }
+    request = urllib.request.Request(
+        DEEPL_ENDPOINT,
+        data=json.dumps(payload).encode("utf-8"),
+        headers={
+            "Content-Type": "application/json",
+            "Authorization": f"DeepL-Auth-Key {DEEPL_API_KEY}",
+        },
+    )
+    with urllib.request.urlopen(request, timeout=30) as response:
+        data = json.loads(response.read())
+    translations = data.get("translations")
+    if not isinstance(translations, list) or len(translations) != len(texts):
+        raise RuntimeError(f"DeepL batch mismatch: expected {len(texts)} results")
+    return [str(item["text"]) for item in translations]
+
+
+def translate_batch(texts: list[str], target_locale: str, provider: str = "google") -> list[str]:
+    if provider == "libre":
+        return translate_batch_libre(texts, target_locale)
+    if provider == "deepl":
+        return translate_batch_deepl(texts, target_locale)
+    return translate_batch_google(texts, target_locale)
+
+
+def translate_with_fallback(
+    texts: list[str], target_locale: str
+) -> list[str]:
+    """DeepL first when configured; then Google; LibreTranslate as last resort."""
+    providers: list[tuple[str, Any]] = []
+    if DEEPL_API_KEY:
+        providers.append(("deepl", lambda: translate_batch_deepl(texts, target_locale)))
+    providers.append(
+        ("google", lambda: translate_batch_google(texts, target_locale))
+    )
+    providers.append(
+        ("libretranslate", lambda: translate_batch_libre(texts, target_locale))
+    )
+    failures: list[str] = []
+    for name, attempt in providers:
+        try:
+            return attempt()
+        except Exception as error:
+            failures.append(f"{name}: {error}")
+    raise RuntimeError("; ".join(failures))
+
+
 def translate_strings(texts: list[str], locale: str) -> dict[str, str]:
     translations: dict[str, str] = {}
     unique_texts = list(dict.fromkeys(texts))
@@ -153,7 +249,9 @@ def translate_strings(texts: list[str], locale: str) -> dict[str, str]:
         last_error: Exception | None = None
         for attempt in range(3):
             try:
-                results = translate_batch([protect(text) for text in batch], locale)
+                results = translate_with_fallback(
+                    [protect(text) for text in batch], locale
+                )
                 translations.update(
                     {source: unprotect(result) for source, result in zip(batch, results)}
                 )
@@ -171,7 +269,7 @@ def translate_strings(texts: list[str], locale: str) -> dict[str, str]:
                 single_error: Exception | None = None
                 for attempt in range(3):
                     try:
-                        result = translate_batch([protect(source)], locale)
+                        result = translate_with_fallback([protect(source)], locale)
                         translations[source] = unprotect(result[0])
                         single_error = None
                         break
