@@ -13,7 +13,10 @@
       "clientArea": "Klantenportaal",
       "staffArea": "SDK-werkruimte",
       "opportunities": "Opportunities",
-      "invitations": "Invitations"
+      "invitations": "Invitations",
+      "theme": "Thema",
+      "collapseSidebar": "Zijbalk samenvouwen",
+      "expandSidebar": "Vouw zijbalk uit"
     },
     "dashboard": {
       "eyebrow": "Klantendashboard",

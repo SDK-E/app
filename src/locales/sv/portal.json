@@ -13,7 +13,10 @@
       "clientArea": "Kundportal",
       "staffArea": "SDK arbetsyta",
       "opportunities": "Opportunities",
-      "invitations": "Invitations"
+      "invitations": "Invitations",
+      "theme": "Tema",
+      "collapseSidebar": "Dölj sidofältet",
+      "expandSidebar": "Expandera sidofältet"
     },
     "dashboard": {
       "eyebrow": "Kundens instrumentpanel",

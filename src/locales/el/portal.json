@@ -13,7 +13,10 @@
       "clientArea": "Πύλη πελάτη",
       "staffArea": "Χώρος εργασίας SDK",
       "opportunities": "Opportunities",
-      "invitations": "Invitations"
+      "invitations": "Invitations",
+      "theme": "Θέμα",
+      "collapseSidebar": "Σύμπτυξη πλαϊνής γραμμής",
+      "expandSidebar": "Αναπτύξτε την πλαϊνή γραμμή"
     },
     "dashboard": {
       "eyebrow": "Πίνακας ελέγχου πελάτη",

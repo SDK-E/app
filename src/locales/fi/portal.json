@@ -13,7 +13,10 @@
       "clientArea": "Asiakasportaali",
       "staffArea": "SDK työtila",
       "opportunities": "Opportunities",
-      "invitations": "Invitations"
+      "invitations": "Invitations",
+      "theme": "Teema",
+      "collapseSidebar": "Tiivistä sivupalkki",
+      "expandSidebar": "Laajenna sivupalkki"
     },
     "dashboard": {
       "eyebrow": "Asiakkaan kojelauta",

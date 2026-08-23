@@ -13,7 +13,10 @@
       "clientArea": "Ügyfélkapu",
       "staffArea": "SDK munkaterület",
       "opportunities": "Opportunities",
-      "invitations": "Invitations"
+      "invitations": "Invitations",
+      "theme": "téma",
+      "collapseSidebar": "Oldalsáv összecsukása",
+      "expandSidebar": "Az oldalsáv kibontása"
     },
     "dashboard": {
       "eyebrow": "Ügyfél irányítópultja",

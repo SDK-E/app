@@ -13,7 +13,10 @@
       "clientArea": "Portal klienta",
       "staffArea": "Obszar roboczy SDK",
       "opportunities": "Opportunities",
-      "invitations": "Invitations"
+      "invitations": "Invitations",
+      "theme": "Motyw",
+      "collapseSidebar": "Zwiń pasek boczny",
+      "expandSidebar": "Rozwiń pasek boczny"
     },
     "dashboard": {
       "eyebrow": "Panel klienta",

@@ -13,7 +13,10 @@
       "clientArea": "Klientský portál",
       "staffArea": "Pracovní plocha SDK",
       "opportunities": "Opportunities",
-      "invitations": "Invitations"
+      "invitations": "Invitations",
+      "theme": "téma",
+      "collapseSidebar": "Sbalit postranní panel",
+      "expandSidebar": "Rozbalte postranní panel"
     },
     "dashboard": {
       "eyebrow": "Klientský panel",

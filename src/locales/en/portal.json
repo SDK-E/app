@@ -13,7 +13,10 @@
       "clientArea": "Client portal",
       "staffArea": "SDK workspace",
       "opportunities": "Opportunities",
-      "invitations": "Invitations"
+      "invitations": "Invitations",
+      "theme": "Theme",
+      "collapseSidebar": "Collapse sidebar",
+      "expandSidebar": "Expand sidebar"
     },
     "dashboard": {
       "eyebrow": "Client dashboard",

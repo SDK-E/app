@@ -13,7 +13,10 @@
       "clientArea": "Portalul clientului",
       "staffArea": "SDK spațiu de lucru",
       "opportunities": "Opportunities",
-      "invitations": "Invitations"
+      "invitations": "Invitations",
+      "theme": "Temă",
+      "collapseSidebar": "Restrângeți bara laterală",
+      "expandSidebar": "Extinde bara laterală"
     },
     "dashboard": {
       "eyebrow": "Tabloul de bord client",

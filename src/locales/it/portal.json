@@ -13,7 +13,10 @@
       "clientArea": "Portale clienti",
       "staffArea": "Area di lavoro SDK",
       "opportunities": "Opportunities",
-      "invitations": "Invitations"
+      "invitations": "Invitations",
+      "theme": "Tema",
+      "collapseSidebar": "Comprimi la barra laterale",
+      "expandSidebar": "Espandi la barra laterale"
     },
     "dashboard": {
       "eyebrow": "Cruscotto cliente",

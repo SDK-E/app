@@ -13,7 +13,10 @@
       "clientArea": "Клиентски портал",
       "staffArea": "SDK работно пространство",
       "opportunities": "Opportunities",
-      "invitations": "Invitations"
+      "invitations": "Invitations",
+      "theme": "Тема",
+      "collapseSidebar": "Свиване на страничната лента",
+      "expandSidebar": "Разгъване на страничната лента"
     },
     "dashboard": {
       "eyebrow": "Клиентско табло",

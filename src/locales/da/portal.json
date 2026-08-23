@@ -13,7 +13,10 @@
       "clientArea": "Kundeportal",
       "staffArea": "SDK arbejdsområde",
       "opportunities": "Opportunities",
-      "invitations": "Invitations"
+      "invitations": "Invitations",
+      "theme": "Tema",
+      "collapseSidebar": "Skjul sidebjælken",
+      "expandSidebar": "Udvid sidebjælken"
     },
     "dashboard": {
       "eyebrow": "Klient dashboard",
