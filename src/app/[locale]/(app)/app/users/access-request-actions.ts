@@ -19,6 +19,11 @@ function usersPath(locale: string, companyId?: string | null) {
   return companyId ? `/${locale}/app/companies/${companyId}/users` : `/${locale}/app/users`;
 }
 
+function revalidateUserViews(locale: string, companyId?: string | null) {
+  revalidatePath(usersPath(locale, companyId));
+  revalidatePath(`/${locale}/app/users/[userId]`, "page");
+}
+
 export async function approveAccessRequestAction(
   locale: string,
   companyId: string | null,
@@ -42,7 +47,7 @@ export async function approveAccessRequestAction(
       outcome: "APPROVED",
       role: parsed.data.role.replaceAll("_", " ").toLowerCase(),
     });
-    revalidatePath(usersPath(locale, companyId));
+    revalidateUserViews(locale, companyId);
     return { success: "Access request approved." };
   } catch (error) {
     return { error: errorMessage(error) };
@@ -66,7 +71,7 @@ export async function declineAccessRequestAction(
       companyName: request.company.name,
       outcome: "DECLINED",
     });
-    revalidatePath(usersPath(locale, companyId));
+    revalidateUserViews(locale, companyId);
     return { success: "Access request declined." };
   } catch (error) {
     return { error: errorMessage(error) };
@@ -83,7 +88,7 @@ export async function regenerateAccessCodeAction(
   if (!id.success) return { error: "Invalid company." };
   try {
     await regenerateCompanyAccessCode(await principalOrThrow(), id.data);
-    revalidatePath(usersPath(locale, id.data));
+    revalidateUserViews(locale, id.data);
     return { success: "Access code regenerated." };
   } catch (error) {
     return { error: errorMessage(error) };

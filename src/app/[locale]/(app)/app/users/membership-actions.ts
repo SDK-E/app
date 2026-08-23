@@ -13,6 +13,11 @@ function usersPath(locale: string, companyId?: string | null) {
   return companyId ? `/${locale}/app/companies/${companyId}/users` : `/${locale}/app/users`;
 }
 
+function revalidateUserViews(locale: string, companyId?: string | null) {
+  revalidatePath(usersPath(locale, companyId));
+  revalidatePath(`/${locale}/app/users/[userId]`, "page");
+}
+
 export async function updateMembershipAction(
   locale: string,
   companyId: string | null,
@@ -31,7 +36,7 @@ export async function updateMembershipAction(
       parsed.data.role,
       companyId ?? undefined
     );
-    revalidatePath(usersPath(locale, companyId));
+    revalidateUserViews(locale, companyId);
     return { success: "Role updated." };
   } catch (error) {
     return { error: errorMessage(error) };
@@ -48,7 +53,7 @@ export async function removeMembershipAction(
   if (!id.success) return { error: "Invalid membership." };
   try {
     await removeMembership(await principalOrThrow(), id.data, companyId ?? undefined);
-    revalidatePath(usersPath(locale, companyId));
+    revalidateUserViews(locale, companyId);
     return { success: "Access removed." };
   } catch (error) {
     return { error: errorMessage(error) };
@@ -71,7 +76,7 @@ export async function updateStaffAction(
       role: parsed.data.role,
       isActive: parsed.data.isActive,
     });
-    revalidatePath(`/${locale}/app/users`);
+    revalidateUserViews(locale, null);
     return { success: "User updated." };
   } catch (error) {
     return { error: errorMessage(error) };

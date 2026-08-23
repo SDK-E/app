@@ -27,6 +27,11 @@ function usersPath(locale: string, companyId?: string | null) {
   return companyId ? `/${locale}/app/companies/${companyId}/users` : `/${locale}/app/users`;
 }
 
+function revalidateUserViews(locale: string, companyId?: string | null) {
+  revalidatePath(usersPath(locale, companyId));
+  revalidatePath(`/${locale}/app/users/[userId]`, "page");
+}
+
 async function origin() {
   const configured = getServerEnv().AUTH0_BASE_URL;
   if (configured) return configured.replace(/\/$/, "");
@@ -84,7 +89,7 @@ export async function inviteClientAction(
       targetCompanyId
     );
     const sent = await deliver(locale, created.token, created.invitation, principal.name);
-    revalidatePath(usersPath(locale, targetCompanyId));
+    revalidateUserViews(locale, targetCompanyId);
     return {
       success: sent
         ? "Invitation sent."
@@ -109,7 +114,7 @@ export async function inviteStaffAction(
     const principal = await principalOrThrow();
     const created = await createStaffInvitation(principal, parsed.data);
     const sent = await deliver(locale, created.token, created.invitation, principal.name);
-    revalidatePath(`/${locale}/app/users`);
+    revalidateUserViews(locale, null);
     return {
       success: sent
         ? "Invitation sent."
@@ -130,7 +135,7 @@ export async function revokeInvitationAction(
   if (!id.success) return { error: "Invalid invitation." };
   try {
     await revokeInvitation(await principalOrThrow(), id.data, companyId ?? undefined);
-    revalidatePath(usersPath(locale, companyId));
+    revalidateUserViews(locale, companyId);
     return { success: "Invitation revoked." };
   } catch (error) {
     return { error: errorMessage(error) };
@@ -156,7 +161,7 @@ export async function resendInvitationAction(
         tokenHash: renewed.previousTokenHash,
         expiresAt: renewed.previousExpiresAt,
       });
-      revalidatePath(usersPath(locale, companyId));
+      revalidateUserViews(locale, companyId);
       return { error: "The invitation could not be renewed. Your previous link is still valid." };
     }
     if (!sent) {
@@ -164,10 +169,10 @@ export async function resendInvitationAction(
         tokenHash: renewed.previousTokenHash,
         expiresAt: renewed.previousExpiresAt,
       });
-      revalidatePath(usersPath(locale, companyId));
+      revalidateUserViews(locale, companyId);
       return { error: "The invitation could not be renewed. Your previous link is still valid." };
     }
-    revalidatePath(usersPath(locale, companyId));
+    revalidateUserViews(locale, companyId);
     return { success: "Invitation resent." };
   } catch (error) {
     return { error: errorMessage(error) };
