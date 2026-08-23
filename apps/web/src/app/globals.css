@@ -2,6 +2,16 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* Tailwind v4's scanner only walks apps/web by default. Workspace packages
+   live outside it; the ../ count unwinds from this file up to the repo root
+   (apps/web/src/app = 4 levels). */
+@source "../../../../packages/ui/src";
+@source "../../../../packages/design-system/src";
+@source "../../../../packages/portal-shell/src";
+@source "../../../../packages/portal-staff/src";
+@source "../../../../packages/portal-companies/src";
+@source "../../../../packages/portal-providers/src";
+
 @custom-variant dark (&:is(.dark *));
 
 @theme {
