@@ -2,6 +2,7 @@ import { randomBytes } from "node:crypto";
 
 import { requirePermission } from "@/lib/auth/authorization";
 import { getPrisma } from "@/lib/db";
+import { recordUserManagementEvent } from "@/lib/users/audit";
 import {
   assertClientRoleGrant,
   hashInvitationToken,
@@ -62,6 +63,13 @@ export async function createClientInvitation(
     },
     include: { company: true },
   });
+  await recordUserManagementEvent(principal, {
+    action: "invitation.created",
+    companyId,
+    targetType: "invitation",
+    targetId: invitation.id,
+    toState: input.role,
+  });
   return { invitation, token };
 }
 
@@ -95,6 +103,12 @@ export async function createStaffInvitation(
       expiresAt: new Date(Date.now() + INVITATION_TTL_MS),
     },
   });
+  await recordUserManagementEvent(principal, {
+    action: "invitation.created",
+    targetType: "invitation",
+    targetId: invitation.id,
+    toState: input.role,
+  });
   return { invitation, token };
 }
 
@@ -122,7 +136,17 @@ export async function revokeInvitation(principal: AppPrincipal, id: string, comp
     if (invitation.companyId !== companyId) forbidden("Cross-company access is denied.");
   } else if (principal.kind !== "sdk-staff" || principal.role !== "ADMIN")
     forbidden("SDK administrator access is required.");
-  return getPrisma().invitation.update({ where: { id }, data: { revokedAt: new Date() } });
+  const revoked = await getPrisma().invitation.update({
+    where: { id },
+    data: { revokedAt: new Date() },
+  });
+  await recordUserManagementEvent(principal, {
+    action: "invitation.revoked",
+    companyId: invitation.companyId,
+    targetType: "invitation",
+    targetId: invitation.id,
+  });
+  return revoked;
 }
 
 export async function renewInvitation(principal: AppPrincipal, id: string, companyId?: string) {
@@ -146,6 +170,12 @@ export async function renewInvitation(principal: AppPrincipal, id: string, compa
       deliveryStatus: "PENDING",
     },
     include: { company: true },
+  });
+  await recordUserManagementEvent(principal, {
+    action: "invitation.renewed",
+    companyId: invitation.companyId,
+    targetType: "invitation",
+    targetId: invitation.id,
   });
   return {
     invitation: updated,

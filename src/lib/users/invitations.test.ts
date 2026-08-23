@@ -20,8 +20,9 @@ const mocks = vi.hoisted(() => {
   const invitation = make();
   const user = make();
   const company = make();
-  const prisma = { invitation, user, company };
-  return { prisma, invitation, user, company };
+  const auditEvent = { create: vi.fn().mockResolvedValue({ id: "audit-1" }) };
+  const prisma = { invitation, user, company, auditEvent };
+  return { prisma, invitation, user, company, auditEvent };
 });
 
 vi.mock("@/lib/db", () => ({
@@ -85,6 +86,28 @@ describe("createClientInvitation", () => {
       )
     ).rejects.toThrow("already pending");
     expect(mocks.invitation.create).not.toHaveBeenCalled();
+  });
+
+  it("records an audit event when a client invitation is created", async () => {
+    mocks.company.findFirst.mockResolvedValue({ id: "company-1" });
+    mocks.user.findFirst.mockResolvedValue(null);
+    mocks.invitation.findFirst.mockResolvedValue(null);
+    mocks.invitation.create.mockResolvedValue({ id: "inv-new" });
+
+    await createClientInvitation(
+      principal("owner"),
+      { email: "new.user@example.com", role: "PROJECT_MEMBER" },
+      "company-1"
+    );
+
+    expect(mocks.auditEvent.create).toHaveBeenCalledWith({
+      data: expect.objectContaining({
+        action: "invitation.created",
+        companyId: "company-1",
+        targetId: "inv-new",
+        toState: "PROJECT_MEMBER",
+      }),
+    });
   });
 });
 
@@ -171,6 +194,9 @@ describe("resend rollback", () => {
     expect(result.previousTokenHash).toBe("old-hash");
     expect(result.previousExpiresAt).toBe(later);
     expect(result.token).not.toBe("old-hash");
+    expect(mocks.auditEvent.create).toHaveBeenCalledWith({
+      data: expect.objectContaining({ action: "invitation.renewed", targetId: "inv-1" }),
+    });
   });
 
   it("restoreInvitationDelivery writes back the previous token and expiry", async () => {

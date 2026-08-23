@@ -34,6 +34,13 @@ const membershipAdminPermissions: Permission[] = [
   "membership:remove",
 ];
 
+const sdkUserAdminPermissions: Permission[] = [
+  "membership:create",
+  "user:view",
+  "user:update",
+  "user:activate",
+];
+
 const billingWritePermissions: Permission[] = [
   "invoice:create",
   "invoice:update",
@@ -87,6 +94,7 @@ export const sdkRolePermissions: Record<SdkStaffRole, ReadonlySet<Permission>> =
     "staff:view",
     "staff:create",
     "staff:update",
+    ...sdkUserAdminPermissions,
     "provider:view",
     "provider:update",
     "provider:review",

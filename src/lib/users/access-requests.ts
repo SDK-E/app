@@ -6,6 +6,7 @@ import {
 } from "@/lib/auth/authorization";
 import { assignCompanyMembership } from "@/lib/auth/identity-management";
 import { getPrisma } from "@/lib/db";
+import { recordUserManagementEvent } from "@/lib/users/audit";
 import { assertClientRoleGrant, canManageUsers, forbidden } from "@/lib/users/shared";
 import type { CompanyAccessRequestStatus } from "@/generated/prisma/client";
 import type { AppPrincipal, ClientRole } from "@/types";
@@ -113,6 +114,15 @@ export async function approveCompanyAccessRequest(
       user: { select: { id: true, name: true, email: true } },
     },
   });
+  await recordUserManagementEvent(principal, {
+    action: "access_request.approved",
+    companyId: request.companyId,
+    targetType: "company_access_request",
+    targetId: requestId,
+    fromState: request.status,
+    toState: "APPROVED",
+    metadata: { assignedRole: role, membershipId: membership.id, userId: request.userId },
+  });
   return { request: updated, membership };
 }
 
@@ -123,7 +133,7 @@ export async function declineCompanyAccessRequest(principal: AppPrincipal, reque
   if (!canManageUsers(context.principal, context.companyId))
     forbidden("User management is not available for this role.");
   if (request.status !== "PENDING") forbidden("This access request has already been resolved.");
-  return getPrisma().companyAccessRequest.update({
+  const updated = await getPrisma().companyAccessRequest.update({
     where: { id: requestId },
     data: { status: "DECLINED", resolvedAt: new Date(), resolvedBy: principal.id },
     include: {
@@ -131,4 +141,13 @@ export async function declineCompanyAccessRequest(principal: AppPrincipal, reque
       user: { select: { id: true, name: true, email: true } },
     },
   });
+  await recordUserManagementEvent(principal, {
+    action: "access_request.declined",
+    companyId: request.companyId,
+    targetType: "company_access_request",
+    targetId: requestId,
+    fromState: request.status,
+    toState: "DECLINED",
+  });
+  return updated;
 }

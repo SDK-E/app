@@ -10,7 +10,8 @@ const mocks = vi.hoisted(() => {
     delete: vi.fn(),
     count: vi.fn(),
   };
-  return { prisma: { membership }, membership };
+  const auditEvent = { create: vi.fn().mockResolvedValue({ id: "audit-1" }) };
+  return { prisma: { membership, auditEvent }, membership, auditEvent };
 });
 
 vi.mock("@/lib/db", () => ({ getPrisma: () => mocks.prisma }));
@@ -28,6 +29,7 @@ beforeEach(() => {
   mocks.membership.update.mockReset();
   mocks.membership.delete.mockReset();
   mocks.membership.count.mockReset();
+  mocks.auditEvent.create.mockClear();
 });
 
 describe("updateMembershipRole", () => {
@@ -42,6 +44,13 @@ describe("updateMembershipRole", () => {
     expect(mocks.membership.update).toHaveBeenCalledWith({
       where: { id: "membership-1" },
       data: { role: "PROJECT_MEMBER" },
+    });
+    expect(mocks.auditEvent.create).toHaveBeenCalledWith({
+      data: expect.objectContaining({
+        action: "membership.role_changed",
+        fromState: "VIEWER",
+        toState: "PROJECT_MEMBER",
+      }),
     });
   });
 
@@ -139,6 +148,12 @@ describe("removeMembership", () => {
       hasNoMemberships: true,
     });
     expect(mocks.membership.delete).toHaveBeenCalledWith({ where: { id: "membership-1" } });
+    expect(mocks.auditEvent.create).toHaveBeenCalledWith({
+      data: expect.objectContaining({
+        action: "membership.removed",
+        fromState: "VIEWER",
+      }),
+    });
   });
 
   it("rejects removing your own access", async () => {

@@ -15,8 +15,9 @@ const mocks = vi.hoisted(() => {
     findMany: vi.fn(),
     update: vi.fn(),
   };
-  const prisma = { company };
-  return { prisma, company };
+  const auditEvent = { create: vi.fn().mockResolvedValue({ id: "audit-1" }) };
+  const prisma = { company, auditEvent };
+  return { prisma, company, auditEvent };
 });
 
 vi.mock("@/lib/db", () => ({

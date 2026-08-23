@@ -8,6 +8,7 @@ import {
   requireSdkStaff,
 } from "@/lib/auth";
 import { getPrisma } from "@/lib/db";
+import { recordUserManagementEvent } from "@/lib/users/audit";
 import { slugify } from "@/lib/utils";
 import {
   forbidden,
@@ -163,8 +164,15 @@ export async function regenerateCompanyAccessCode(principal: AppPrincipal, compa
   const targetCompanyId = requireCompanyAccess(assigned, companyId);
   const company = await getPrisma().company.findUnique({ where: { id: targetCompanyId } });
   if (!company) notFound("Company not found.");
-  return getPrisma().company.update({
+  const updated = await getPrisma().company.update({
     where: { id: targetCompanyId },
     data: { accessCode: generateAccessCode() },
   });
+  await recordUserManagementEvent(principal, {
+    action: "access_code.regenerated",
+    companyId: targetCompanyId,
+    targetType: "company",
+    targetId: targetCompanyId,
+  });
+  return updated;
 }

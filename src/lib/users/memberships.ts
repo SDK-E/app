@@ -1,5 +1,6 @@
 import { requireCompanyAccess, requirePermission } from "@/lib/auth/authorization";
 import { getPrisma } from "@/lib/db";
+import { recordUserManagementEvent } from "@/lib/users/audit";
 import { assertClientRoleGrant, forbidden } from "@/lib/users/shared";
 import type { AppPrincipal, ClientRole } from "@/types";
 
@@ -24,7 +25,19 @@ export async function updateMembershipRole(
     forbidden("SDK administrator access is required.");
   if (membership.role === "OWNER" && role !== "OWNER")
     forbidden("Ownership transfer is not available from user management.");
-  return getPrisma().membership.update({ where: { id: membershipId }, data: { role } });
+  const updated = await getPrisma().membership.update({
+    where: { id: membershipId },
+    data: { role },
+  });
+  await recordUserManagementEvent(principal, {
+    action: "membership.role_changed",
+    companyId: membership.companyId,
+    targetType: "membership",
+    targetId: membership.id,
+    fromState: membership.role,
+    toState: role,
+  });
+  return updated;
 }
 export async function removeMembership(
   principal: AppPrincipal,
@@ -50,5 +63,12 @@ export async function removeMembership(
   }
   await getPrisma().membership.delete({ where: { id: membershipId } });
   const remaining = await getPrisma().membership.count({ where: { userId: membership.userId } });
+  await recordUserManagementEvent(principal, {
+    action: "membership.removed",
+    companyId: membership.companyId,
+    targetType: "membership",
+    targetId: membership.id,
+    fromState: membership.role,
+  });
   return { removed: membership, hasNoMemberships: remaining === 0 };
 }

@@ -1,5 +1,6 @@
 import { requirePermission } from "@/lib/auth/authorization";
 import { getPrisma } from "@/lib/db";
+import { recordUserManagementEvent } from "@/lib/users/audit";
 import { forbidden } from "@/lib/users/shared";
 import type { AppPrincipal, SdkStaffRole } from "@/types";
 
@@ -28,5 +29,24 @@ export async function updateStaffUser(
     });
     if (admins <= 1) forbidden("The last active SDK administrator cannot be changed.");
   }
-  return getPrisma().user.update({ where: { id: userId }, data: input });
+  const updated = await getPrisma().user.update({ where: { id: userId }, data: input });
+  if (input.role && input.role !== target.sdkStaffRole) {
+    await recordUserManagementEvent(principal, {
+      targetType: "user",
+      targetId: userId,
+      action: "staff_role.changed",
+      fromState: target.sdkStaffRole,
+      toState: input.role,
+    });
+  }
+  if (input.isActive !== undefined && input.isActive !== target.isActive) {
+    await recordUserManagementEvent(principal, {
+      targetType: "user",
+      targetId: userId,
+      action: "user.active_changed",
+      fromState: target.isActive ? "ACTIVE" : "INACTIVE",
+      toState: input.isActive ? "ACTIVE" : "INACTIVE",
+    });
+  }
+  return updated;
 }

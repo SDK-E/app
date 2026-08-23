@@ -5,7 +5,8 @@ import { principal } from "@/lib/users/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const user = { findUniqueOrThrow: vi.fn(), count: vi.fn(), update: vi.fn() };
-  return { prisma: { user }, user };
+  const auditEvent = { create: vi.fn() };
+  return { prisma: { user, auditEvent }, user, auditEvent };
 });
 
 vi.mock("@/lib/db", () => ({ getPrisma: () => mocks.prisma }));
@@ -14,6 +15,8 @@ beforeEach(() => {
   mocks.user.findUniqueOrThrow.mockReset();
   mocks.user.count.mockReset();
   mocks.user.update.mockReset();
+  mocks.auditEvent.create.mockReset();
+  mocks.auditEvent.create.mockResolvedValue({ id: "audit-1" });
 });
 
 describe("updateStaffUser", () => {
@@ -33,12 +36,21 @@ describe("updateStaffUser", () => {
       where: { id: "user-2" },
       data: { role: "FINANCE" },
     });
+    expect(mocks.auditEvent.create).toHaveBeenCalledWith({
+      data: expect.objectContaining({
+        action: "staff_role.changed",
+        targetId: "user-2",
+        fromState: "DELIVERY",
+        toState: "FINANCE",
+      }),
+    });
   });
 
   it("allows toggling the active flag on a delivery staff member", async () => {
     mocks.user.findUniqueOrThrow.mockResolvedValue({
       id: "user-2",
       sdkStaffRole: "DELIVERY",
+      isActive: true,
       memberships: [],
     });
     mocks.user.update.mockResolvedValue({ id: "user-2", isActive: false });
@@ -51,6 +63,26 @@ describe("updateStaffUser", () => {
       where: { id: "user-2" },
       data: { isActive: false },
     });
+    expect(mocks.auditEvent.create).toHaveBeenCalledWith({
+      data: expect.objectContaining({
+        action: "user.active_changed",
+        fromState: "ACTIVE",
+        toState: "INACTIVE",
+      }),
+    });
+  });
+
+  it("writes no audit event when nothing changed", async () => {
+    mocks.user.findUniqueOrThrow.mockResolvedValue({
+      id: "user-2",
+      sdkStaffRole: "DELIVERY",
+      memberships: [],
+    });
+    mocks.user.update.mockResolvedValue({ id: "user-2", sdkStaffRole: "DELIVERY" });
+
+    await updateStaffUser(principal("sdk-admin"), "user-2", { role: "DELIVERY" });
+
+    expect(mocks.auditEvent.create).not.toHaveBeenCalled();
   });
 
   it("rejects deactivating your own account", async () => {

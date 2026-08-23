@@ -57,3 +57,19 @@ export const approveAccessRequestSchema = z.object({
 export const declineAccessRequestSchema = z.object({
   requestId: z.string().uuid(),
 });
+
+export const directAssignmentSchema = z.object({
+  userId: z.string().uuid(),
+  companyId: z.string().uuid(),
+  role: z.enum(clientRoles),
+});
+
+export const userNameUpdateSchema = z.object({
+  userId: z.string().uuid(),
+  name: z.string().trim().min(1, "Enter a name.").max(100),
+});
+
+export const accountActiveSchema = z.object({
+  userId: z.string().uuid(),
+  isActive: z.enum(["true", "false"]).transform((value) => value === "true"),
+});

@@ -48,7 +48,7 @@ export async function acceptInvitation(input: { token: string; userId: string; e
         select: { id: true },
       });
       if (existing) forbidden("This account is already a member of this company.");
-      await db.membership.create({
+      const membership = await db.membership.create({
         data: {
           userId: user.id,
           companyId: invitation.companyId,
@@ -58,10 +58,33 @@ export async function acceptInvitation(input: { token: string; userId: string; e
           joinedAt: new Date(),
         },
       });
+      await db.auditEvent.create({
+        data: {
+          companyId: invitation.companyId,
+          actorId: user.id,
+          actorKind: "USER",
+          action: "invitation.accepted",
+          targetType: "invitation",
+          targetId: invitation.id,
+          toState: invitation.clientRole,
+          metadata: { membershipId: membership.id, userId: user.id, kind: "CLIENT" },
+        },
+      });
     } else if (invitation.kind === "SDK_STAFF" && invitation.sdkStaffRole) {
       await db.user.update({
         where: { id: user.id },
         data: { sdkStaffRole: invitation.sdkStaffRole },
+      });
+      await db.auditEvent.create({
+        data: {
+          actorId: user.id,
+          actorKind: "USER",
+          action: "invitation.accepted",
+          targetType: "invitation",
+          targetId: invitation.id,
+          toState: invitation.sdkStaffRole,
+          metadata: { userId: user.id, kind: "SDK_STAFF" },
+        },
       });
     } else forbidden("This invitation has an invalid target.");
     const updated = await db.invitation.findUnique({

@@ -11,10 +11,12 @@ const mocks = vi.hoisted(() => {
   });
   const companyAccessRequest = make();
   const membership = { findFirst: vi.fn() };
+  const auditEvent = { create: vi.fn().mockResolvedValue({ id: "audit-1" }) };
   return {
-    prisma: { companyAccessRequest, membership },
+    prisma: { companyAccessRequest, membership, auditEvent },
     companyAccessRequest,
     membership,
+    auditEvent,
     assignCompanyMembership: vi.fn(),
   };
 });
@@ -39,6 +41,7 @@ beforeEach(() => {
   mocks.companyAccessRequest.findUnique.mockReset();
   mocks.companyAccessRequest.update.mockReset();
   mocks.membership.findFirst.mockReset();
+  mocks.auditEvent.create.mockClear();
   mocks.assignCompanyMembership.mockReset();
 });
 
