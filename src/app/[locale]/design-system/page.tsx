@@ -15,6 +15,9 @@ const ComponentsSection = nextDynamic(() =>
 const PaletteSection = nextDynamic(() =>
   import("@/components/design-system/PaletteSection").then((mod) => mod.PaletteSection)
 );
+const PortalUsersSection = nextDynamic(() =>
+  import("@/components/design-system/PortalUsersSection").then((mod) => mod.PortalUsersSection)
+);
 const PrimitivesSection = nextDynamic(() =>
   import("@/components/design-system/PrimitivesSection").then((mod) => mod.PrimitivesSection)
 );
@@ -89,6 +92,7 @@ export default async function DesignSystemPage({
       <PrimitivesSection />
       <StatesSection />
       <SurfacesSection />
+      <PortalUsersSection />
     </div>
   );
 }
