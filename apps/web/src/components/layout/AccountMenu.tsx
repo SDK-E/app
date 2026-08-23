@@ -97,7 +97,7 @@ export function AccountMenu({
         align={inSidebar ? "start" : "end"}
         sideOffset={inSidebar && collapsed ? 12 : 8}
         collisionPadding={12}
-        className="w-60 max-w-[calc(100vw-1rem)] rounded-card p-3 shadow-xl ring-1 ring-black/5 dark:ring-white/10"
+        className="w-[var(--radix-dropdown-menu-trigger-width)] max-w-[calc(100vw-1rem)] rounded-card border-2 bg-white p-3 shadow-2xl ring-1 ring-black/10 dark:bg-[#0f2e0a] dark:ring-white/10"
       >
         <DropdownMenuLabel>{languageLabel}</DropdownMenuLabel>
         <div className="px-2 pb-2">
