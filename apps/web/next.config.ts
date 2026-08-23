@@ -35,6 +35,10 @@ const nextConfig: NextConfig = {
     "@sdk-e/matching",
     "@sdk-e/ui",
     "@sdk-e/design-system",
+    "@sdk-e/portal-shell",
+    "@sdk-e/portal-staff",
+    "@sdk-e/portal-companies",
+    "@sdk-e/portal-providers",
   ],
   images: {
     remotePatterns: [
