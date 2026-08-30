@@ -6,7 +6,7 @@
       "whatIsTitle": "Hvad er en cookie?",
       "whatIs": "En cookie er en lille tekstfil, der placeres på din enhed, når du besøger en hjemmeside. Det giver webstedet mulighed for at genkende din browser og huske oplysninger.",
       "thisSiteTitle": "Cookies indstillet af dette websted",
-      "thisSite": "Dette websted bruger platformen til samtykkestyring SecurePrivacy. Når du besøger, beder et banner om dit samtykke, før der sættes cookies. Dit valg gemmes i din browser, så banneret ikke vises igen, før det ændres. Cookies bruges kun til de formål, du accepterer. Google Analytics måler sidens publikumstrafik kun for besøkende, der samtykker til det i banneret. Sidens publikumsanalyse (Vercel Analytics) er cookiefri.",
+      "thisSite": "Dette websted bruger platformen til samtykkestyring SecurePrivacy. Når du besøger, beder et banner om dit samtykke, før der sættes cookies. Dit valg gemmes i din browser, så banneret ikke vises igen, før det ændres. Cookies bruges kun til de formål, du accepterer. Google Analytics og Google Tag Manager måler sidens publikumstrafik kun for besøkende, der samtykker til det i banneret. Sidens publikumsanalyse (Vercel Analytics) er cookiefri.",
       "consentBannerTitle": "Samtykke banner",
       "consentBanner": "Ved dit første besøg kan du i et banner acceptere eller afvise hver cookiekategori. Du kan til enhver tid ændre eller trække dit valg tilbage ved at åbne banneret igen fra denne side.",
       "browserSettingsTitle": "Håndtering af cookies i din browser",

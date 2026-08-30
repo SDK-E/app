@@ -6,7 +6,7 @@
       "whatIsTitle": "Co je to cookie?",
       "whatIs": "Cookie je malý textový soubor umístěný do vašeho zařízení, když navštívíte webovou stránku. Umožňuje webu rozpoznat váš prohlížeč a zapamatovat si informace.",
       "thisSiteTitle": "Soubory cookie nastavené tímto webem",
-      "thisSite": "Tyto stránky používají platformu pro správu souhlasu SecurePrivacy. Při návštěvě se zobrazí banner, který před nastavením souborů cookie žádá o váš souhlas. Vaše volba je uložena ve vašem prohlížeči, takže se banner znovu nezobrazí, dokud se nezmění. Soubory cookie se používají pouze pro účely, které přijmete. Google Analytics měří návštěvnost webu pouze pro návštěvníky, kteří s tím v banneru souhlasí. Návštěvnická analytika webu (Vercel Analytics) je bez cookies.",
+      "thisSite": "Tyto stránky používají platformu pro správu souhlasu SecurePrivacy. Při návštěvě se zobrazí banner, který před nastavením souborů cookie žádá o váš souhlas. Vaše volba je uložena ve vašem prohlížeči, takže se banner znovu nezobrazí, dokud se nezmění. Soubory cookie se používají pouze pro účely, které přijmete. Google Analytics a Google Tag Manager měří návštěvnost webu pouze pro návštěvníky, kteří s tím v banneru souhlasí. Návštěvnická analytika webu (Vercel Analytics) je bez cookies.",
       "consentBannerTitle": "Banner souhlasu",
       "consentBanner": "Při první návštěvě vám banner umožní přijmout nebo odmítnout každou kategorii souborů cookie. Svou volbu můžete kdykoli změnit nebo odvolat znovuotevřením banneru z této stránky.",
       "browserSettingsTitle": "Správa cookies ve vašem prohlížeči",

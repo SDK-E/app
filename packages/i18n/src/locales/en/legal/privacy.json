@@ -26,7 +26,7 @@
         },
         {
           "name": "Google (Google LLC)",
-          "role": "Consent-gated audience analytics (Google Analytics)"
+          "role": "Consent-gated audience analytics (Google Analytics, Google Tag Manager)"
         }
       ],
       "controllerTitle": "Data controller",

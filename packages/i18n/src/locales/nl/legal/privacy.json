@@ -26,7 +26,7 @@
         },
         {
           "name": "Google (Google LLC)",
-          "role": "Publieksanalyses met toestemming (Google Analytics)"
+          "role": "Publieksanalyses met toestemming (Google Analytics, Google Tag Manager)"
         }
       ],
       "controllerTitle": "Gegevensbeheerder",

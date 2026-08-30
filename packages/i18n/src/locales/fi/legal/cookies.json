@@ -6,7 +6,7 @@
       "whatIsTitle": "Mikä on eväste?",
       "whatIs": "Eväste on pieni tekstitiedosto, joka asetetaan laitteellesi, kun vierailet verkkosivustolla. Sen avulla sivusto tunnistaa selaimesi ja muistaa tiedot.",
       "thisSiteTitle": "Tämän sivuston asettamat evästeet",
-      "thisSite": "Tämä sivusto käyttää suostumustenhallinta-alustaa SecurePrivacy. Kun vierailet sivustolla, banneri pyytää suostumustasi ennen evästeiden asettamista. Valintasi tallennetaan selaimeesi, joten banneri ei ilmesty uudelleen ennen kuin se muuttuu. Evästeitä käytetään vain niihin tarkoituksiin, jotka hyväksyt. Google Analytics mittaa sivuston yleisöliikennettä vain vierailijoille, jotka antavat siihen suostumuksen bannerissa. Sivuston yleisöanalytiikka (Vercel Analytics) on evästeetön.",
+      "thisSite": "Tämä sivusto käyttää suostumustenhallinta-alustaa SecurePrivacy. Kun vierailet sivustolla, banneri pyytää suostumustasi ennen evästeiden asettamista. Valintasi tallennetaan selaimeesi, joten banneri ei ilmesty uudelleen ennen kuin se muuttuu. Evästeitä käytetään vain niihin tarkoituksiin, jotka hyväksyt. Google Analytics ja Google Tag Manager mittaavat sivuston yleisöliikennettä vain vierailijoille, jotka antavat siihen suostumuksen bannerissa. Sivuston yleisöanalytiikka (Vercel Analytics) on evästeetön.",
       "consentBannerTitle": "Suostumusbanneri",
       "consentBanner": "Ensimmäisellä vierailullasi bannerin avulla voit hyväksyä tai hylätä kunkin evästeluokan. Voit muuttaa tai peruuttaa valintasi milloin tahansa avaamalla bannerin uudelleen tältä sivulta.",
       "browserSettingsTitle": "Evästeiden hallinta selaimessasi",

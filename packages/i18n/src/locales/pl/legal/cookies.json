@@ -6,7 +6,7 @@
       "whatIsTitle": "Co to jest plik cookie?",
       "whatIs": "Plik cookie to mały plik tekstowy umieszczany na Twoim urządzeniu podczas odwiedzania strony internetowej. Pozwala witrynie rozpoznać Twoją przeglądarkę i zapamiętać informacje.",
       "thisSiteTitle": "Pliki cookie ustawione przez tę witrynę",
-      "thisSite": "Ta strona korzysta z platformy do zarządzania zgodami SecurePrivacy. Podczas wizyty baner prosi o Twoją zgodę przed ustawieniem plików cookie. Twój wybór jest zapisywany w przeglądarce, dzięki czemu baner nie pojawia się ponownie, dopóki się nie zmieni. Pliki cookie są używane wyłącznie do celów, które akceptujesz. Google Analytics mierzy ruch odbiorców witryny tylko dla odwiedzających, którzy wyrażą na to zgodę w banerze. Analityka odbiorców witryny (Vercel Analytics) nie korzysta z plików cookie.",
+      "thisSite": "Ta strona korzysta z platformy do zarządzania zgodami SecurePrivacy. Podczas wizyty baner prosi o Twoją zgodę przed ustawieniem plików cookie. Twój wybór jest zapisywany w przeglądarce, dzięki czemu baner nie pojawia się ponownie, dopóki się nie zmieni. Pliki cookie są używane wyłącznie do celów, które akceptujesz. Google Analytics i Google Tag Manager mierzą ruch odbiorców witryny tylko dla odwiedzających, którzy wyrażą na to zgodę w banerze. Analityka odbiorców witryny (Vercel Analytics) nie korzysta z plików cookie.",
       "consentBannerTitle": "Baner zgody",
       "consentBanner": "Podczas pierwszej wizyty baner umożliwia zaakceptowanie lub odrzucenie każdej kategorii plików cookie. Możesz w każdej chwili zmienić lub wycofać swój wybór, ponownie otwierając baner z tej strony.",
       "browserSettingsTitle": "Zarządzanie plikami cookies w Twojej przeglądarce",

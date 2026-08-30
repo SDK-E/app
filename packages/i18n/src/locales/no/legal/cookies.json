@@ -6,7 +6,7 @@
       "whatIsTitle": "Hva er en informasjonskapsel?",
       "whatIs": "En informasjonskapsel er en liten tekstfil som plasseres på enheten din når du besøker et nettsted. Det lar nettstedet gjenkjenne nettleseren din og huske informasjon.",
       "thisSiteTitle": "Informasjonskapsler satt av dette nettstedet",
-      "thisSite": "Dette nettstedet bruker plattformen for samtykkehåndtering SecurePrivacy. Når du besøker, spør et banner om samtykket ditt før informasjonskapsler settes. Ditt valg lagres i nettleseren slik at banneret ikke vises igjen før det endres. Informasjonskapsler brukes bare til formålene du godtar. Google Analytics måler nettstedets publikumstrafikk bare for besøkende som samtykker til det i banneret. Nettstedets publikumsanalyse (Vercel Analytics) er uten informasjonskapsler.",
+      "thisSite": "Dette nettstedet bruker plattformen for samtykkehåndtering SecurePrivacy. Når du besøker, spør et banner om samtykket ditt før informasjonskapsler settes. Ditt valg lagres i nettleseren slik at banneret ikke vises igjen før det endres. Informasjonskapsler brukes bare til formålene du godtar. Google Analytics og Google Tag Manager måler nettstedets publikumstrafikk bare for besøkende som samtykker til det i banneret. Nettstedets publikumsanalyse (Vercel Analytics) er uten informasjonskapsler.",
       "consentBannerTitle": "Samtykkebanner",
       "consentBanner": "På ditt første besøk kan du i et banner godta eller avvise hver informasjonskapselkategori. Du kan endre eller trekke tilbake valget ditt når som helst ved å åpne banneret igjen fra denne siden.",
       "browserSettingsTitle": "Administrere informasjonskapsler i nettleseren din",

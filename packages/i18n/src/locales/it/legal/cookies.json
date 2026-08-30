@@ -6,7 +6,7 @@
       "whatIsTitle": "Cos'è un biscotto?",
       "whatIs": "Un cookie è un piccolo file di testo inserito nel tuo dispositivo quando visiti un sito web. Permette al sito di riconoscere il tuo browser e ricordare informazioni.",
       "thisSiteTitle": "Cookie impostati da questo sito",
-      "thisSite": "Questo sito utilizza la piattaforma di gestione del consenso SecurePrivacy. Alla visita, un banner richiede il tuo consenso prima che vengano impostati i cookie. La tua scelta viene salvata nel browser in modo che il banner non venga più mostrato finché non cambia. I cookie sono utilizzati solo per le finalità che accetti. Google Analytics misura il traffico di pubblico del sito solo per i visitatori che lo acconsentono nel banner. Le statistiche di audience del sito (Vercel Analytics) non utilizzano cookie.",
+      "thisSite": "Questo sito utilizza la piattaforma di gestione del consenso SecurePrivacy. Alla visita, un banner richiede il tuo consenso prima che vengano impostati i cookie. La tua scelta viene salvata nel browser in modo che il banner non venga più mostrato finché non cambia. I cookie sono utilizzati solo per le finalità che accetti. Google Analytics e Google Tag Manager misurano il traffico di pubblico del sito solo per i visitatori che lo acconsentono nel banner. Le statistiche di audience del sito (Vercel Analytics) non utilizzano cookie.",
       "consentBannerTitle": "Striscione di consenso",
       "consentBanner": "Alla prima visita, un banner ti consente di accettare o rifiutare ogni categoria di cookie. Puoi modificare o revocare la tua scelta in qualsiasi momento riaprendo il banner da questa pagina.",
       "browserSettingsTitle": "Gestire i cookie nel tuo browser",

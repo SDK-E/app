@@ -6,7 +6,7 @@
       "whatIsTitle": "Was ist ein Cookie?",
       "whatIs": "Ein Cookie ist eine kleine Textdatei, die auf Ihrem Gerät abgelegt wird, wenn Sie eine Website besuchen. Dadurch kann die Website Ihren Browser erkennen und sich Informationen merken.",
       "thisSiteTitle": "Von dieser Website gesetzte Cookies",
-      "thisSite": "Diese Website verwendet die Consent-Management-Plattform SecurePrivacy. Beim Besuch bittet ein Banner um Ihre Zustimmung, bevor Cookies gesetzt werden. Ihre Auswahl wird in Ihrem Browser gespeichert, sodass das Banner bis zu einer Änderung nicht erneut erscheint. Cookies werden nur für die Zwecke verwendet, denen Sie zustimmen. Google Analytics erfasst den Traffic der Website nur für Besucher, die dem im Banner zustimmen. Die Besucheranalyse der Website (Vercel Analytics) arbeitet ohne Cookies.",
+      "thisSite": "Diese Website verwendet die Consent-Management-Plattform SecurePrivacy. Beim Besuch bittet ein Banner um Ihre Zustimmung, bevor Cookies gesetzt werden. Ihre Auswahl wird in Ihrem Browser gespeichert, sodass das Banner bis zu einer Änderung nicht erneut erscheint. Cookies werden nur für die Zwecke verwendet, denen Sie zustimmen. Google Analytics und Google Tag Manager erfassen den Traffic der Website nur für Besucher, die dem im Banner zustimmen. Die Besucheranalyse der Website (Vercel Analytics) arbeitet ohne Cookies.",
       "consentBannerTitle": "Einwilligungsbanner",
       "consentBanner": "Bei Ihrem ersten Besuch können Sie in einem Banner jede Cookie-Kategorie akzeptieren oder ablehnen. Sie können Ihre Auswahl jederzeit ändern oder widerrufen, indem Sie das Banner auf dieser Seite erneut öffnen.",
       "browserSettingsTitle": "Verwalten von Cookies in Ihrem Browser",

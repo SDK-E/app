@@ -26,7 +26,7 @@
         },
         {
           "name": "Google (Google LLC)",
-          "role": "Publikumsanalyse etter samtykke (Google Analytics)"
+          "role": "Publikumsanalyse etter samtykke (Google Analytics, Google Tag Manager)"
         }
       ],
       "controllerTitle": "Behandlingsansvarlig",

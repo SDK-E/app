@@ -26,7 +26,7 @@
         },
         {
           "name": "Google (Google LLC)",
-          "role": "Analytika návštěvnosti po udělení souhlasu (Google Analytics)"
+          "role": "Analytika návštěvnosti po udělení souhlasu (Google Analytics, Google Tag Manager)"
         }
       ],
       "controllerTitle": "Správce údajů",

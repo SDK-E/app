@@ -26,7 +26,7 @@
         },
         {
           "name": "Google (Google LLC)",
-          "role": "Yleisöanalytiikka suostumuksen perusteella (Google Analytics)"
+          "role": "Yleisöanalytiikka suostumuksen perusteella (Google Analytics, Google Tag Manager)"
         }
       ],
       "controllerTitle": "Rekisterinpitäjä",

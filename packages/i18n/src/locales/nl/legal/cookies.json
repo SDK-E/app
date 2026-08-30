@@ -6,7 +6,7 @@
       "whatIsTitle": "Wat is een koekje?",
       "whatIs": "Een cookie is een klein tekstbestand dat op uw apparaat wordt geplaatst wanneer u een website bezoekt. Hierdoor kan de site uw browser herkennen en informatie onthouden.",
       "thisSiteTitle": "Cookies geplaatst door deze site",
-      "thisSite": "Deze site gebruikt het consentmanagementplatform SecurePrivacy. Wanneer u de site bezoekt, vraagt een banner om uw toestemming voordat cookies worden geplaatst. Uw keuze wordt in uw browser opgeslagen, zodat de banner pas weer verschijnt wanneer deze verandert. Cookies worden alleen gebruikt voor de doeleinden die u accepteert. Google Analytics meet het publieksverkeer van de site alleen voor bezoekers die hiermee instemmen via de banner. De publieksanalyses van de site (Vercel Analytics) zijn cookieloos.",
+      "thisSite": "Deze site gebruikt het consentmanagementplatform SecurePrivacy. Wanneer u de site bezoekt, vraagt een banner om uw toestemming voordat cookies worden geplaatst. Uw keuze wordt in uw browser opgeslagen, zodat de banner pas weer verschijnt wanneer deze verandert. Cookies worden alleen gebruikt voor de doeleinden die u accepteert. Google Analytics en Google Tag Manager meten het publieksverkeer van de site alleen voor bezoekers die hiermee instemmen via de banner. De publieksanalyses van de site (Vercel Analytics) zijn cookieloos.",
       "consentBannerTitle": "Toestemmingsbanner",
       "consentBanner": "Bij uw eerste bezoek kunt u in een banner elke cookiecategorie accepteren of weigeren. U kunt uw keuze op elk moment wijzigen of intrekken door de banner vanaf deze pagina opnieuw te openen.",
       "browserSettingsTitle": "Cookies beheren in uw browser",

@@ -6,7 +6,7 @@
       "whatIsTitle": "O que é um biscoito?",
       "whatIs": "Um cookie é um pequeno arquivo de texto colocado no seu dispositivo quando você visita um site. Ele permite que o site reconheça seu navegador e lembre-se de informações.",
       "thisSiteTitle": "Cookies definidos por este site",
-      "thisSite": "Este site utiliza a plataforma de gestão de consentimento SecurePrivacy. Quando visita, um banner pede o seu consentimento antes de serem definidos cookies. A sua escolha é guardada no navegador para que o banner não volte a aparecer até que mude. Os cookies são utilizados apenas para as finalidades que aceita. O Google Analytics mede o tráfego de audiência do site apenas para os visitantes que o consentirem no banner. A análise de audiência do site (Vercel Analytics) não utiliza cookies.",
+      "thisSite": "Este site utiliza a plataforma de gestão de consentimento SecurePrivacy. Quando visita, um banner pede o seu consentimento antes de serem definidos cookies. A sua escolha é guardada no navegador para que o banner não volte a aparecer até que mude. Os cookies são utilizados apenas para as finalidades que aceita. O Google Analytics e o Google Tag Manager medem o tráfego de audiência do site apenas para os visitantes que o consentirem no banner. A análise de audiência do site (Vercel Analytics) não utiliza cookies.",
       "consentBannerTitle": "Bandeira de consentimento",
       "consentBanner": "Na sua primeira visita, um banner permite aceitar ou recusar cada categoria de cookies. Pode alterar ou retirar a sua escolha a qualquer momento, reabrindo o banner a partir desta página.",
       "browserSettingsTitle": "Gerenciando cookies no seu navegador",

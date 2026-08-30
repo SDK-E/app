@@ -34,8 +34,9 @@ in both languages.
   the stack: **Vercel** (hosting), **Auth0** (authentication), **Resend**
   (transactional email for enquiries), the **Postgres** provider (from
   `DATABASE_URL`), **Vercel Analytics** (analytics), **SecurePrivacy**
-  (consent management), **Google Analytics** (consent-gated audience
-  analytics). Do not list any provider that is not actually used.
+  (consent management), **Google Analytics** and **Google Tag Manager**
+  (consent-gated audience analytics). Do not list any provider that is not
+  actually used.
 
 ## 3. Content that is forbidden
 
@@ -69,13 +70,17 @@ in both languages.
   via SecurePrivacy and stores the visitor's consent choice in the browser.
   The cookie page, privacy processors list, and this document were updated in
   that commit; the revised legal pages require re-review under §5.
-- **Google Analytics is consent-gated (2026-08-30).** The GA tag never loads
-  until the visitor accepts the analytics service in the SecurePrivacy banner;
-  the loader in
+- **Google Analytics and Google Tag Manager are consent-gated (2026-08-30).**
+  The GA tag and the GTM container never load until the visitor accepts the
+  analytics service in the SecurePrivacy banner; the loader in
   `apps/web/src/components/analytics/GoogleAnalyticsConsent.tsx` waits for the
-  `sp_unblock_Google_Analytics` event (or `sp.checkConsent`) before injecting
-  gtag.js. The service name must stay in sync between the SecurePrivacy
-  dashboard Scan Report and `siteConfig.analytics.securePrivacyServiceName`.
+  `sp_unblock_Google_Analytics` / `sp_unblock_Google_Tag_Manager` events (or
+  `sp.checkConsent`) before injecting gtag.js / gtm.js. The service names must
+  stay in sync between the SecurePrivacy dashboard Scan Report and
+  `siteConfig.analytics.securePrivacyServiceName` /
+  `siteConfig.analytics.securePrivacyGtmServiceName`. GA4 and GTM load
+  side-by-side; do not duplicate the `G-DDSKTR68M7` GA4 tag inside the GTM
+  container or pageviews count twice.
 
 ## 5. Review gate (mandatory)
 

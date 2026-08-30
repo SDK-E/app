@@ -26,7 +26,7 @@
         },
         {
           "name": "Google (Google LLC)",
-          "role": "Közönség-analitika hozzájárulás alapján (Google Analytics)"
+          "role": "Közönség-analitika hozzájárulás alapján (Google Analytics, Google Tag Manager)"
         }
       ],
       "controllerTitle": "Adatkezelő",

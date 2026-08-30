@@ -6,7 +6,7 @@
       "whatIsTitle": "What is a cookie?",
       "whatIs": "A cookie is a small text file placed on your device when you visit a website. It allows the site to recognise your browser and remember information.",
       "thisSiteTitle": "Cookies set by this site",
-      "thisSite": "This site uses the consent-management platform SecurePrivacy. When you visit, a banner asks for your consent before cookies are set. Your choice is stored in your browser so the banner does not appear again until it changes. Cookies are only used for the purposes you accept. Google Analytics measures site audience traffic only for visitors who consent to it in the banner. The site's own analytics (Vercel Analytics) is cookieless.",
+      "thisSite": "This site uses the consent-management platform SecurePrivacy. When you visit, a banner asks for your consent before cookies are set. Your choice is stored in your browser so the banner does not appear again until it changes. Cookies are only used for the purposes you accept. Google Analytics and Google Tag Manager measure site audience traffic only for visitors who consent to them in the banner. The site's own analytics (Vercel Analytics) is cookieless.",
       "consentBannerTitle": "Consent banner",
       "consentBanner": "On your first visit, a banner lets you accept or refuse each category of cookie. You can change or withdraw your choice at any time by reopening the banner from this page.",
       "browserSettingsTitle": "Managing cookies in your browser",

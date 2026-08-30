@@ -6,7 +6,7 @@
       "whatIsTitle": "Vad är en kaka?",
       "whatIs": "En cookie är en liten textfil som placeras på din enhet när du besöker en webbplats. Det gör att webbplatsen kan känna igen din webbläsare och komma ihåg information.",
       "thisSiteTitle": "Cookies som sätts av denna webbplats",
-      "thisSite": "Den här webbplatsen använder plattformen för samtyckeshantering SecurePrivacy. När du besöker webbplatsen frågar en banner om ditt samtycke innan cookies sätts. Ditt val sparas i webbläsaren så att bannern inte visas igen förrän den ändras. Cookies används endast för de ändamål du accepterar. Google Analytics mäter webbplatsens publiktrafik endast för besökare som samtycker till det i bannern. Webbplatsens publikanalys (Vercel Analytics) är cookielös.",
+      "thisSite": "Den här webbplatsen använder plattformen för samtyckeshantering SecurePrivacy. När du besöker webbplatsen frågar en banner om ditt samtycke innan cookies sätts. Ditt val sparas i webbläsaren så att bannern inte visas igen förrän den ändras. Cookies används endast för de ändamål du accepterar. Google Analytics och Google Tag Manager mäter webbplatsens publiktrafik endast för besökare som samtycker till det i bannern. Webbplatsens publikanalys (Vercel Analytics) är cookielös.",
       "consentBannerTitle": "Samtyckesbanner",
       "consentBanner": "Vid ditt första besök kan du i en banner acceptera eller avvisa varje cookiekategori. Du kan ändra eller återkalla ditt val när som helst genom att öppna bannern igen från den här sidan.",
       "browserSettingsTitle": "Hantera cookies i din webbläsare",
