@@ -43,10 +43,10 @@ renames, formatting sweeps, or unrelated cleanups.
 
 The diff should not break behaviour the task did not intend to change.
 
-- Run the relevant tests (`npm run test:run` or the targeted suite).
+- Run the relevant tests (`pnpm run test:run` or the targeted suite).
 - Check for changed return types, removed guards, altered error paths, or
   renamed exports that call sites still reference.
-- Verify `npm run verify` is green after applying the diff locally.
+- Verify `pnpm run verify` is green after applying the diff locally.
 
 ### 3. Context blindness
 
@@ -114,4 +114,4 @@ unjustified lockfile/schema/security-path changes detected.
 - [ ] All new references resolve in the codebase.
 - [ ] Lockfile, schema, and security-path changes are justified.
 - [ ] Tests exercise the change (new behaviour, bug fix, edge case).
-- [ ] `npm run verify` is green with zero warnings.
+- [ ] `pnpm run verify` is green with zero warnings.

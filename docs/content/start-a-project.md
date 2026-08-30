@@ -67,18 +67,19 @@ Implement in a server-only module, e.g. `src/lib/enquiries.ts`:
      `New project enquiry — {company}`, body: all submitted fields
      (plain text or minimal HTML, escaped).
    - development: same message, delivered to the **local mail sink**
-     (smtp-tester, auto-started by `npm run dev`). Agents verify it with
-     `npm run mail:wait "New project enquiry"` or the `maildev` MCP tools — no
+     (smtp-tester, auto-started by `pnpm run dev`). Agents verify it with
+     `pnpm dlx @sdk-e/mailbox wait "New project enquiry"` or the `maildev` MCP tools — no
      key, no domain, no UI required.
 4. Error handling:
    - If the DB insert fails → return an error to the user; do not send email.
    - If the email fails but the DB insert succeeded → return success to the
      user, log the failure server-side, keep the record. Never leak internal
      errors to the client.
-   - **Local dev: the sink is the expected delivery target.** No Resend key is
-     needed — `npm run mail` receives and displays every sent email. If the
-     sink is down, the send fails server-side but the form still succeeds (the
-     DB row is the source of truth; email is a notification side effect).
+
+- **Local dev: the sink is the expected delivery target.** No Resend key is
+  needed — `pnpm dlx @sdk-e/mailbox` receives and displays every sent email. If the
+  sink is down, the send fails server-side but the form still succeeds (the
+  DB row is the source of truth; email is a notification side effect).
 
 ## 6. UI states
 
@@ -95,7 +96,7 @@ Implement in a server-only module, e.g. `src/lib/enquiries.ts`:
 - Add `RESEND_API_KEY` and `MAIL_SMTP_URL` to `docs/conventions/env.md`
   (server-only table) and the relevant vars to `.env.local`.
 - **Local (development):** emails go to the local mail sink (smtp-tester,
-  auto-started by `npm run dev`) — check them with `npm run mail:list` or the
+  auto-started by `pnpm run dev`) — check them with `pnpm dlx @sdk-e/mailbox list` or the
   `maildev` MCP tools. No Resend key is required.
   If the sink is down, the form still succeeds — it stores the enquiry and
   logs that the email send failed.
@@ -148,7 +149,7 @@ The form must be verified end-to-end in dev:
 1. Submit the form (happy path).
 2. Confirm a row is written to the `enquiry` table.
 3. Confirm the email lands in the local mail sink (auto-starts with
-   `npm run dev`): run `npm run mail:wait "New project enquiry"` — or use the
+   `pnpm run dev`): run `pnpm dlx @sdk-e/mailbox wait "New project enquiry"` — or use the
    `maildev` MCP tools (`list_emails` / `wait_for_email`). No UI needed.
 4. Confirm validation errors, the disabled-submit state and the success state
    render correctly.

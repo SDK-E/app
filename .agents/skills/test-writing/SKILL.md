@@ -49,8 +49,8 @@ The test suite is the boundary that stops regressions reaching production. Every
 | File location | Co-located: `src/**/*.test.{ts,tsx}`                      |
 | Alias         | `@/` → `./src`                                            |
 | Cleanup       | Call `cleanup()` in `afterEach` for React Testing Library |
-| Command       | `npm run test:run` (CI), `npm run test` (watch)           |
-| Coverage      | `npm run test:coverage` — passes at floor 43/40/46/31     |
+| Command       | `pnpm run test:run` (CI), `pnpm run test` (watch)         |
+| Coverage      | `pnpm run test:coverage` — passes at floor 43/40/46/31    |
 
 ## Writing a New Test File
 
@@ -68,7 +68,7 @@ The test suite is the boundary that stops regressions reaching production. Every
    ```
 5. For component tests, query by accessible role/text, not by test IDs or CSS classes.
 6. Assert the specific failure: `toThrowError(ExpectedError)` with a message check, not just `toThrow()`.
-7. Run `npm run test:run` and confirm zero warnings.
+7. Run `pnpm run test:run` and confirm zero warnings.
 
 ## Mocking Boundaries
 
@@ -109,8 +109,8 @@ The floor is set at measured values × 0.85 (lines 43, statements 40, functions 
 
 ## Workflow
 
-1. Run `npm run test:coverage` to see the current state.
+1. Run `pnpm run test:coverage` to see the current state.
 2. Identify the weakest module below the floor.
 3. Write tests for every branch/guard/transition in that module.
 4. Re-run coverage — confirm the module crosses the floor.
-5. Run `npm run verify` — full chain must be green with zero warnings.
+5. Run `pnpm run verify` — full chain must be green with zero warnings.

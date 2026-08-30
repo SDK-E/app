@@ -116,8 +116,8 @@ DRAFT) and must pass the review gate in `docs/content/voice-and-standards.md`
 
 ## 6. Verification tooling for this batch
 
-- Unit tests: Vitest (`npm run test`). Colocate `*.test.ts(x)` with code.
+- Unit tests: Vitest (`pnpm run test`). Colocate `*.test.ts(x)` with code.
 - Browser checks (responsive, a11y, console errors): Playwright via the MCP
   server at the four widths from `docs/design/responsive.md` §7 (1280/1024/768/390).
-- CI (`.github/workflows/ci.yml`): lint, typecheck, build, `npm run test:run`.
+- CI (`.github/workflows/ci.yml`): lint, typecheck, build, `pnpm run test:run`.
   Keep it green; do not weaken checks.

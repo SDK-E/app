@@ -16,7 +16,7 @@ pnpm run start      # Start production server
 ```bash
 pnpm run lint         # ESLint (whole monorepo)
 pnpm run typecheck    # tsc --noEmit (whole monorepo)
-pnpm run verify       # Full chain: generate → agents:check → check:file-length → format:check → typecheck → lint → vitest → i18n:check → build
+pnpm run verify       # Full chain: generate → format:check → typecheck → lint → knip → i18n:check → test:run → build
 pnpm run format       # Prettier write
 pnpm run format:check # Prettier check (in verify)
 ```
@@ -50,13 +50,13 @@ The mail sink is the standalone shared service [`@sdk-e/mailbox`](https://github
 Start it once per machine (not per project), then inspect from here:
 
 ```bash
-npx @sdk-e/mailbox   # Run the shared sink (SMTP :11025, inbox UI + HTTP API :11090)
-pnpm run mail:ui     # Open the inbox UI in a browser (health-checks first)
-pnpm run mail:list   # List emails
-pnpm run mail:read -- <id>  # Read email body
-pnpm run mail:wait "match"  # Wait for matching email
-pnpm run mail:clear  # Empty sink
-pnpm run mail:health # Check mailbox health
+pnpm dlx @sdk-e/mailbox         # Run the shared sink (SMTP :11025, inbox UI + HTTP API :11090)
+pnpm dlx @sdk-e/mailbox open    # Open the inbox UI in a browser (health-checks first)
+pnpm dlx @sdk-e/mailbox list    # List emails
+pnpm dlx @sdk-e/mailbox read -- <id>  # Read email body
+pnpm dlx @sdk-e/mailbox wait "match"  # Wait for matching email
+pnpm dlx @sdk-e/mailbox clear  # Empty sink
+pnpm dlx @sdk-e/mailbox health # Check mailbox health
 ```
 
 ## Assets
@@ -78,6 +78,6 @@ pnpm run port:list | port:find | port:pid | port:check | port:kill | port:kill-f
 
 ```bash
 pnpm run agents:check       # Validate agent contract (MCP parity, required paths/scripts)
-pnpm run check:file-length  # Enforce the 250-line cap across apps/ and packages/
+pnpm run lint               # ESLint (incl. 250-line file cap via max-lines rule)
 pnpm run contrast:check     # Rendered text-contrast audit (light + dark)
 ```

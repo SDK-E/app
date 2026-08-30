@@ -60,7 +60,7 @@
     "bash": {
       "*": "allow",
       "npm *": "allow",
-      "npx *": "allow",
+      "pnpm exec *": "allow",
       "node *": "allow",
       "python3 *": "allow",
       "git status *": "allow",
@@ -82,12 +82,12 @@
       "git push -f *": "deny",
       "git reset --hard *": "deny",
       "git clean *": "deny",
-      "npx prisma migrate deploy*": "deny",
-      "npx prisma migrate reset*": "deny",
-      "npx prisma db push*": "allow",
-      "npx prisma db execute*": "allow",
-      "npx prisma migrate dev*": "allow",
-      "npx prisma migrate status*": "allow",
+      "pnpm exec prisma migrate deploy*": "deny",
+      "pnpm exec prisma migrate reset*": "deny",
+      "pnpm exec prisma db push*": "allow",
+      "pnpm exec prisma db execute*": "allow",
+      "pnpm exec prisma migrate dev*": "allow",
+      "pnpm exec prisma migrate status*": "allow",
       "psql *": "deny",
       "rm -rf *": "deny",
       "rm -fr *": "deny",
@@ -118,19 +118,19 @@
   "command": {
     "typecheck": {
       "description": "Run the TypeScript compiler and fix any errors",
-      "template": "Run `npm run typecheck` and fix every type error it reports, following `docs/conventions/structure.md`."
+      "template": "Run `pnpm run typecheck` and fix every type error it reports, following `docs/conventions/structure.md`."
     },
     "migrate": {
       "description": "Create and apply a Prisma migration",
-      "template": "Create a Prisma migration named \"$ARGUMENTS\" using the prisma-next-migrations skill. Inspect the resolved database target first; do not apply to a remote or shared database without explicit user authorization. Review every migration line, then run `npx prisma migrate dev --name $ARGUMENTS` and `npx prisma generate`."
+      "template": "Create a Prisma migration named \"$ARGUMENTS\" using the prisma-next-migrations skill. Inspect the resolved database target first; do not apply to a remote or shared database without explicit user authorization. Review every migration line, then run `pnpm exec prisma migrate dev --name $ARGUMENTS` and `pnpm exec prisma generate`."
     },
     "test": {
       "description": "Run the Vitest suite and fix failures",
-      "template": "Run `npm run test:run` and fix every failing test."
+      "template": "Run `pnpm run test:run` and fix every failing test."
     },
     "verify": {
       "description": "Run the complete deterministic project verification",
-      "template": "Run `npm run verify`, fix repository-controlled failures, and report the exact commands and results."
+      "template": "Run `pnpm run verify`, fix repository-controlled failures, and report the exact commands and results."
     },
     "deploy": {
       "description": "Deploy to Vercel",

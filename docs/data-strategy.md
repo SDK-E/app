@@ -64,7 +64,7 @@ All seed data must be:
 
 ```bash
 # Set development database and run seeds
-DATABASE_URL="file:./dev.db" npx prisma db seed
+DATABASE_URL="file:./dev.db" pnpm exec prisma db seed
 ```
 
 The seed command must be gated so it refuses to run when `NODE_ENV === 'production'`.

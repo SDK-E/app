@@ -42,7 +42,7 @@ Do not edit code until you have a repro that fails.
    hypothesis and repeat. Do not loop through candidate solutions.
 4. **Ship the fix with a regression test.** The test must fail before the fix
    and pass after. Name the scenario, not the implementation.
-5. **End with `npm run verify`.** The full chain must be green with zero
+5. **End with `pnpm run verify`.** The full chain must be green with zero
    warnings, notices, or skipped items.
 
 ## Prisma Errors → prisma-next-debug
@@ -69,7 +69,7 @@ contract after any capability change.
 | Environment     | `jsdom`                                                        |
 | Test location   | Co-located: `src/**/*.test.{ts,tsx}`                           |
 | Alias           | `@/` → `./src`                                                 |
-| Command         | `npm run test:run` (CI), `npm run test` (watch)                |
+| Command         | `pnpm run test:run` (CI), `pnpm run test` (watch)              |
 | Regression test | Fails before fix, passes after                                 |
 | PR body         | States the repro evidence (test name + input that triggers it) |
 
@@ -80,5 +80,5 @@ contract after any capability change.
 - [ ] If Prisma error, routed through `prisma-next-debug` before editing.
 - [ ] Fixed the smallest code path that resolves the root cause.
 - [ ] Added or updated a regression test that fails before the fix.
-- [ ] `npm run verify` is green with zero warnings, notices, or skips.
+- [ ] `pnpm run verify` is green with zero warnings, notices, or skips.
 - [ ] PR body cites the repro evidence (failing test / input that triggers it).

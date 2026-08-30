@@ -29,7 +29,7 @@ write, or execute any command beyond the allowed read-only tools.
    Use `grep *` (allowed) to verify that referenced symbols, imports, and
    APIs exist in the codebase.
 3. **Run tests if practical.** If the repo is buildable and the diff touches
-   runnable code, run `npm run test:run` to check for silent regressions.
+   runnable code, run `pnpm run test:run` to check for silent regressions.
    Report whether tests passed.
 4. **Check scope.** Confirm every changed file maps to the stated task.
    Flag any unrelated refactor, rename, or formatting sweep.

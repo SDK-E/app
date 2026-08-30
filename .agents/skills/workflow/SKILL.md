@@ -510,28 +510,28 @@ export async function GET(request: Request) {
 
 ```bash
 # Check workflow endpoints are reachable
-npx workflow health
-npx workflow health --port 3001  # Non-default port
+pnpm exec workflow health
+pnpm exec workflow health --port 3001  # Non-default port
 
 # Visual dashboard for runs
-npx workflow web
-npx workflow web <run_id>
+pnpm exec workflow web
+pnpm exec workflow web <run_id>
 
 # CLI inspection (use --json for machine-readable output, --help for full usage)
-npx workflow inspect runs
-npx workflow inspect run <run_id>
+pnpm exec workflow inspect runs
+pnpm exec workflow inspect run <run_id>
 
 # For Vercel-deployed projects, specify backend and project
-npx workflow inspect runs --backend vercel --project <project-name> --team <team-slug>
-npx workflow inspect run <run_id> --backend vercel --project <project-name> --team <team-slug>
+pnpm exec workflow inspect runs --backend vercel --project <project-name> --team <team-slug>
+pnpm exec workflow inspect run <run_id> --backend vercel --project <project-name> --team <team-slug>
 
 # Open Vercel dashboard in browser for a specific run
-npx workflow inspect run <run_id> --web
-npx workflow web <run_id> --backend vercel --project <project-name> --team <team-slug>
+pnpm exec workflow inspect run <run_id> --web
+pnpm exec workflow web <run_id> --backend vercel --project <project-name> --team <team-slug>
 
 # Cancel a running workflow
-npx workflow cancel <run_id>
-npx workflow cancel <run_id> --backend vercel --project <project-name> --team <team-slug>
+pnpm exec workflow cancel <run_id>
+pnpm exec workflow cancel <run_id> --backend vercel --project <project-name> --team <team-slug>
 # --env defaults to "production"; use --env preview for preview deployments
 ```
 
@@ -544,14 +544,14 @@ UI. (`--web` opens the dashboard; `--url` only prints the link.)
 
 ```bash
 # Vercel run — prints the Vercel dashboard URL for the run
-npx workflow inspect run <run_id> --backend vercel --project <project> --team <team> --url
-npx workflow web <run_id> --backend vercel --project <project> --team <team> --env preview --url
+pnpm exec workflow inspect run <run_id> --backend vercel --project <project> --team <team> --url
+pnpm exec workflow web <run_id> --backend vercel --project <project> --team <team> --env preview --url
 
 # Local run — prints the local web UI deep link
-npx workflow inspect run <run_id> --url
+pnpm exec workflow inspect run <run_id> --url
 
 # Machine-readable: --url --json prints { "url": "..." } to stdout
-npx workflow inspect run <run_id> --backend vercel --url --json
+pnpm exec workflow inspect run <run_id> --backend vercel --url --json
 ```
 
 URL formats produced:
@@ -560,10 +560,10 @@ URL formats produced:
   (`--env` selects the environment; defaults to `production`. Resolving the team
   slug requires being logged in via `vercel login` with the project linked.)
 - **Local:** `http://localhost:<port>?resource=run&id=<run_id>` (port defaults
-  to `3456`; the link works while the `npx workflow web` server is running).
+  to `3456`; the link works while the `pnpm exec workflow web` server is running).
 
 stdout contains **only** the URL (or the JSON object) — all other output goes to
-stderr — so you can capture it directly, e.g. `URL=$(npx workflow web <run_id> --backend vercel --url)`.
+stderr — so you can capture it directly, e.g. `URL=$(pnpm exec workflow web <run_id> --backend vercel --url)`.
 
 **Debugging tips:**
 

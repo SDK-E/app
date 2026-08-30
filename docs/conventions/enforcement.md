@@ -11,7 +11,7 @@ Formatter, permissions, and PR gate are deterministic — not prompt preferences
 `opencode.json` and `kilo.jsonc` have identical `permission.bash` rules (last-match-wins):
 
 - **Allow:** Everything by default (`*`: allow)
-- **Deny:** `git push --force*`, `git reset --hard *`, `git clean *`, `npx prisma migrate deploy/reset`, `psql *`, `rm -rf*`, `grep *`, `cat *`, `sed *`, `head *`, `tail *`, `awk *`
+- **Deny:** `git push --force*`, `git reset --hard *`, `git clean *`, `pnpm exec prisma migrate deploy/reset`, `psql *`, `rm -rf*`, `grep *`, `cat *`, `sed *`, `head *`, `tail *`, `awk *`
 
 `.env*` reads denied by default. MCP tools keyed `{server}_{tool}` (single underscore). Websearch and webfetch allowed by default.
 
@@ -28,7 +28,7 @@ Formatter, permissions, and PR gate are deterministic — not prompt preferences
 
 ```bash
 pnpm run verify
-# generate → agents:check → check:file-length → format:check → typecheck → lint → vitest → i18n:check → build
+# generate → format:check → typecheck → lint → knip → i18n:check → test:run → build
 ```
 
 Warnings, notices, and skipped items = fail. Read full output and fix.

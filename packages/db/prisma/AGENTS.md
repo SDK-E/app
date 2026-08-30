@@ -12,4 +12,4 @@ These instructions supplement the repository-level `AGENTS.md` for `prisma/**`.
 - Never apply migrations to a remote, shared, staging, or production-like database
   without explicit authorization for that exact target.
 - Review every migration statement, run the migration against an authorized disposable
-  or local PostgreSQL database, then regenerate Prisma and run `npm run verify`.
+  or local PostgreSQL database, then regenerate Prisma and run `pnpm run verify`.

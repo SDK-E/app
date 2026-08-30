@@ -38,12 +38,12 @@ To populate your local database with development seed data:
 1. Ensure your database is migrated:
 
    ```bash
-   pnpm --filter @platform/db exec prisma migrate dev
+    pnpm --filter @platform/db exec prisma migrate dev
    ```
 
 2. Run the seed script:
    ```bash
-   pnpm --filter @platform/db exec prisma db seed
+     pnpm --filter @platform/db exec prisma db seed
    ```
 
 **Important:** This script is DEVELOPMENT-ONLY. It creates synthetic data with fictional companies, users, and records. Do NOT run it in production.

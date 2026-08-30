@@ -59,7 +59,7 @@ Each guide covers: install deps, configure framework, create first workflow, cre
 - Start the dev server per the guide.
 - Trigger the example endpoint with the provided `curl`.
 - Confirm logs show the workflow and steps executing.
-- Optional: `npx workflow web` or `npx workflow inspect runs`.
+- Optional: `pnpm exec workflow web` or `pnpm exec workflow inspect runs`.
 
 ### 4) No framework yet?
 

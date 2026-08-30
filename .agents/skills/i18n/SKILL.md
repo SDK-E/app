@@ -25,9 +25,9 @@ next-intl v4 with Next.js 16 App Router. 17 European locales: `en, fr, de, es, p
 ## Adding a new translation key
 
 1. Add the key to the appropriate file under `src/locales/en/` (English file paths, keys, nesting, and key order are the source of truth).
-2. Run `npm run i18n:translate`. The incremental translator updates only strings whose English source was added or changed, across all 16 targets.
+2. Run `pnpm run i18n:translate`. The incremental translator updates only strings whose English source was added or changed, across all 16 targets.
 3. Review the generated copy in context. Machine translation is a first pass, especially for legal, marketing, and idiomatic copy; never treat successful execution alone as linguistic approval.
-4. Run `npm run i18n:check` to verify JSON shape, keys, arrays, interpolation variables, and the absence of placeholders or leaked preservation markers.
+4. Run `pnpm run i18n:check` to verify JSON shape, keys, arrays, interpolation variables, and the absence of placeholders or leaked preservation markers.
 5. Use `getTranslations({ locale, namespace })` in server components.
 6. Use `useTranslations(namespace)` in client components.
 

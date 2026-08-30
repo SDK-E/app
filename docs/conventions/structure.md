@@ -226,7 +226,7 @@ docs(structure): document directory conventions
 
 ```bash
 pnpm install      # Install all workspaces
-pnpm run dev      # Start web dev server (Turbopack) + local mail sink
+pnpm run dev      # Start web dev server (Turbopack)
 pnpm run build    # prisma generate + turbo build (production build)
 pnpm run start    # Serve production build
 pnpm run lint     # Run ESLint across the monorepo

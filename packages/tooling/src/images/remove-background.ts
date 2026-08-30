@@ -2,7 +2,7 @@ import { stripBackground } from "./remove-background-core.js";
 
 function usage(): never {
   console.error(
-    "Usage: npm run bg:remove -- <image> [image...] [--border-tolerance <n>] [--uniform-tolerance <n>]\n\n" +
+    "Usage: pnpm run bg:remove -- <image> [image...] [--border-tolerance <n>] [--uniform-tolerance <n>]\n\n" +
       "Removes a flat, uniform background from raster images in place by flood-filling\n" +
       "from the borders, then clearing any remaining near-background pixels.\n" +
       "Supported outputs: .png, .webp, .avif, .tiff, .gif (formats with an alpha channel).",
