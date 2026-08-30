@@ -14,6 +14,10 @@ packages/db/generated
 .DS_Store
 coverage
 
+# config files with strict JSON requirements
+kilo.jsonc
+opencode.json
+
 # env
 .env
 .env.local

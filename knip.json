@@ -1,0 +1,17 @@
+{
+  "workspaces": {
+    "apps/*": {},
+    "packages/*": {}
+  },
+  "includeEntryExports": true,
+  "treatConfigHintsAsErrors": false,
+  "ignoreIssues": {
+    "apps/web/src/components/layout/HeaderNavLinks.tsx": ["exports"],
+    "apps/web/src/components/marketing/ContactSection.tsx": ["exports"],
+    "apps/web/src/components/marketing/EngagementsSection.tsx": ["exports"],
+    "apps/web/src/components/marketing/Hero.tsx": ["exports"],
+    "apps/web/src/components/marketing/ProcessSection.tsx": ["exports"],
+    "apps/web/src/components/marketing/ServicesSection.tsx": ["exports"],
+    "apps/web/src/components/marketing/WhySdkSection.tsx": ["exports"]
+  }
+}
