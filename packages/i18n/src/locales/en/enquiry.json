@@ -60,7 +60,8 @@
       "timeline": "Timeline",
       "budgetRange": "Budget range",
       "context": "Supporting context",
-      "submit": "Send enquiry"
+      "submit": "Send enquiry",
+      "submitting": "Sending..."
     },
     "capabilities": {
       "aiEngineering": "AI Engineering",

@@ -60,7 +60,8 @@
       "timeline": "Cronologie",
       "budgetRange": "Gama de buget",
       "context": "Context de sprijin",
-      "submit": "Trimiteți întrebarea"
+      "submit": "Trimiteți întrebarea",
+      "submitting": "Trimitere..."
     },
     "capabilities": {
       "aiEngineering": "Inginerie AI",

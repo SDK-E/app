@@ -60,7 +60,8 @@
       "timeline": "Tidslinje",
       "budgetRange": "Budsjettområde",
       "context": "Støtte kontekst",
-      "submit": "Send forespørsel"
+      "submit": "Send forespørsel",
+      "submitting": "Sender..."
     },
     "capabilities": {
       "aiEngineering": "AI Engineering",

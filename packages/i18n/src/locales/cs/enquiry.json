@@ -60,7 +60,8 @@
       "timeline": "Časová osa",
       "budgetRange": "Rozsah rozpočtu",
       "context": "Podpůrný kontext",
-      "submit": "Odeslat dotaz"
+      "submit": "Odeslat dotaz",
+      "submitting": "Odesílání..."
     },
     "capabilities": {
       "aiEngineering": "AI inženýrství",

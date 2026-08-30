@@ -60,7 +60,8 @@
       "timeline": "Хронология",
       "budgetRange": "Бюджетен диапазон",
       "context": "Поддържащ контекст",
-      "submit": "Изпратете запитване"
+      "submit": "Изпратете запитване",
+      "submitting": "Изпращане..."
     },
     "capabilities": {
       "aiEngineering": "ИИ инженерство",

@@ -60,7 +60,8 @@
       "timeline": "Oś czasu",
       "budgetRange": "Zakres budżetu",
       "context": "Kontekst pomocniczy",
-      "submit": "Wyślij zapytanie"
+      "submit": "Wyślij zapytanie",
+      "submitting": "Wysyłanie..."
     },
     "capabilities": {
       "aiEngineering": "Inżynieria AI",

@@ -60,7 +60,8 @@
       "timeline": "Zeitleiste",
       "budgetRange": "Budgetbereich",
       "context": "Unterstützender Kontext",
-      "submit": "Anfrage senden"
+      "submit": "Anfrage senden",
+      "submitting": "Senden..."
     },
     "capabilities": {
       "aiEngineering": "KI-Engineering",

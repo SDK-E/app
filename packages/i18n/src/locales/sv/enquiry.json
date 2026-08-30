@@ -60,7 +60,8 @@
       "timeline": "Tidslinje",
       "budgetRange": "Budgetintervall",
       "context": "Stödjande sammanhang",
-      "submit": "Skicka förfrågan"
+      "submit": "Skicka förfrågan",
+      "submitting": "Skickar..."
     },
     "capabilities": {
       "aiEngineering": "AI Engineering",

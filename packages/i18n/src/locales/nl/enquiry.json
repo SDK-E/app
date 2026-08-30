@@ -60,7 +60,8 @@
       "timeline": "Tijdlijn",
       "budgetRange": "Budgetbereik",
       "context": "Ondersteunende context",
-      "submit": "Stuur aanvraag"
+      "submit": "Stuur aanvraag",
+      "submitting": "Verzenden..."
     },
     "capabilities": {
       "aiEngineering": "AI-techniek",

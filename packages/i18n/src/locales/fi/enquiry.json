@@ -60,7 +60,8 @@
       "timeline": "Aikajana",
       "budgetRange": "Budjettialue",
       "context": "Tukikonteksti",
-      "submit": "Lähetä tiedustelu"
+      "submit": "Lähetä tiedustelu",
+      "submitting": "Lähetetään..."
     },
     "capabilities": {
       "aiEngineering": "AI Engineering",

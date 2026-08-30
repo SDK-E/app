@@ -60,7 +60,8 @@
       "timeline": "Idővonal",
       "budgetRange": "Költségvetési tartomány",
       "context": "Támogató kontextus",
-      "submit": "Kérdés küldése"
+      "submit": "Kérdés küldése",
+      "submitting": "Küldés..."
     },
     "capabilities": {
       "aiEngineering": "AI Engineering",

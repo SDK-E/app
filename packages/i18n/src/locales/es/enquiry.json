@@ -60,7 +60,8 @@
       "timeline": "Línea de tiempo",
       "budgetRange": "Rango de presupuesto",
       "context": "Contexto de apoyo",
-      "submit": "Enviar consulta"
+      "submit": "Enviar consulta",
+      "submitting": "Enviando..."
     },
     "capabilities": {
       "aiEngineering": "Ingeniería de IA",

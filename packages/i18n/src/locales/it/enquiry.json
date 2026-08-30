@@ -60,7 +60,8 @@
       "timeline": "Cronologia",
       "budgetRange": "Gamma di budget",
       "context": "Contesto di supporto",
-      "submit": "Invia richiesta"
+      "submit": "Invia richiesta",
+      "submitting": "Invio..."
     },
     "capabilities": {
       "aiEngineering": "Ingegneria dell'intelligenza artificiale",

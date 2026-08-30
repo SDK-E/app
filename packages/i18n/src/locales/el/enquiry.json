@@ -60,7 +60,8 @@
       "timeline": "Χρονολόγιο",
       "budgetRange": "Εύρος προϋπολογισμού",
       "context": "Υποστηρικτικό πλαίσιο",
-      "submit": "Αποστολή ερωτήματος"
+      "submit": "Αποστολή ερωτήματος",
+      "submitting": "Αποστολή..."
     },
     "capabilities": {
       "aiEngineering": "AI Engineering",
