@@ -4,7 +4,7 @@ import { getCurrentPrincipal } from "@platform/auth/identity";
 import { getPrisma } from "@platform/db";
 import { sendAccessRequestCreatedNotification } from "@platform/email";
 import { requestAccessSchema } from "@platform/schemas/userManagement";
-import { requestCompanyAccess } from "@platform/users";
+import { requestCompanyAccess } from "@platform/users/access-requests";
 import { revalidatePath } from "next/cache";
 
 export interface AccessRequestState {
@@ -18,6 +18,7 @@ export async function requestAccessAction(
   formData: FormData,
 ): Promise<AccessRequestState> {
   void _state;
+  void locale;
   const parsed = requestAccessSchema.safeParse({
     code: formData.get("code"),
     requestedRole: formData.get("requestedRole") || undefined,

@@ -7,7 +7,7 @@ const mocks = vi.hoisted(() => ({
 }));
 
 vi.mock("next-themes", () => ({ useTheme: mocks.useTheme }));
-vi.mock("@/app/[locale]/(app)/app/profile/actions", () => ({
+vi.mock("@platform/users/preferences", () => ({
   updatePreferredThemeAction: mocks.updatePreferredThemeAction,
 }));
 vi.mock("next-intl", () => ({

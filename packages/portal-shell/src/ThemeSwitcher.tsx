@@ -1,11 +1,10 @@
 "use client";
 
+import { updatePreferredThemeAction } from "@platform/users/preferences";
 import { Monitor, Moon, Sun } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-
-import { updatePreferredThemeAction } from "@/app/[locale]/(app)/app/profile/actions";
 
 const themes = ["light", "dark", "system"] as const;
 type Theme = (typeof themes)[number];

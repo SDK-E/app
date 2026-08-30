@@ -11,6 +11,8 @@
     "@platform/auth": "workspace:*",
     "@platform/core": "workspace:*",
     "@platform/db": "workspace:*",
+    "@platform/email": "workspace:*",
+    "@platform/schemas": "workspace:*",
     "@platform/types": "workspace:*"
   },
   "peerDependencies": {

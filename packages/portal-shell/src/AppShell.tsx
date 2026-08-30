@@ -1,9 +1,8 @@
 import type { AssignedPrincipal } from "@platform/types";
 
 import { AppShellFrame } from "@platform/portal-shell/AppShellFrame";
+import { updatePreferredLocaleAction } from "@platform/users/preferences";
 import { getTranslations } from "next-intl/server";
-
-import { updatePreferredLocaleAction } from "@/app/[locale]/(app)/app/profile/actions";
 
 interface AppShellProps {
   children: React.ReactNode;

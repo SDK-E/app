@@ -4,11 +4,9 @@ import { createCompanyAction } from "@platform/portal-shell/app/company/actions"
 import { AccessRequestForm } from "@platform/portal-shell/components/portal/AccessRequestForm";
 import { CompanyCreationForm } from "@platform/portal-shell/components/portal/CompanyCreationForm";
 import { Badge } from "@platform/ui/Badge";
-import { getUserAccessRequests } from "@platform/users";
+import { getUserAccessRequests, requestAccessAction } from "@platform/users";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
-
-import { requestAccessAction } from "@/app/[locale]/(app)/app/access/actions";
 
 export async function AccessPending({
   principal,

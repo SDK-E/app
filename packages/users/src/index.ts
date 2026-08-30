@@ -4,6 +4,7 @@ export {
   createClientMembership,
   validateInvitation,
 } from "@platform/users/acceptance-helpers";
+export { type AccessRequestState, requestAccessAction } from "@platform/users/access-request";
 export {
   approveCompanyAccessRequest,
   declineCompanyAccessRequest,
@@ -36,6 +37,10 @@ export {
   revokeInvitation,
 } from "@platform/users/invitations";
 export { removeMembership, updateMembershipRole } from "@platform/users/memberships";
+export {
+  updatePreferredLocaleAction,
+  updatePreferredThemeAction,
+} from "@platform/users/preferences";
 export { canManageUsers, hashInvitationToken } from "@platform/users/shared";
 export { updateStaffUser } from "@platform/users/staff";
 export {

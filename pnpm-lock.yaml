@@ -101,9 +101,6 @@ importers:
       '@platform/design-system':
         specifier: workspace:*
         version: link:../../packages/design-system
-      '@platform/email':
-        specifier: workspace:*
-        version: link:../../packages/email
       '@platform/env':
         specifier: workspace:*
         version: link:../../packages/env
@@ -128,9 +125,6 @@ importers:
       '@platform/portal-staff':
         specifier: workspace:*
         version: link:../../packages/portal-staff
-      '@platform/schemas':
-        specifier: workspace:*
-        version: link:../../packages/schemas
       '@platform/types':
         specifier: workspace:*
         version: link:../../packages/types
@@ -545,9 +539,6 @@ importers:
       '@platform/users':
         specifier: workspace:*
         version: link:../users
-      '@platform/web':
-        specifier: workspace:*
-        version: link:../../apps/web
       lucide-react:
         specifier: ^0.468.0
         version: 0.468.0(react@19.2.8)
@@ -762,6 +753,12 @@ importers:
       '@platform/db':
         specifier: workspace:*
         version: link:../db
+      '@platform/email':
+        specifier: workspace:*
+        version: link:../email
+      '@platform/schemas':
+        specifier: workspace:*
+        version: link:../schemas
       '@platform/types':
         specifier: workspace:*
         version: link:../types

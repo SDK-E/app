@@ -1,3 +1,5 @@
+"use client";
+
 import { type EnquiryResult, submitEnquiry } from "@platform/marketing/enquiries";
 import { useState, useTransition } from "react";
 
