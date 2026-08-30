@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 
 import { localizePath } from "@platform/i18n";
-import { breadcrumbListJsonLd, buildMetadata, organizationJsonLd } from "@platform/marketing/seo";
+import {
+  breadcrumbListJsonLd,
+  buildMetadata,
+  organizationJsonLd,
+  webPageJsonLd,
+} from "@platform/marketing/seo";
 import { Section } from "@platform/ui/Section";
 import { SectionHeader } from "@platform/ui/SectionHeader";
 import { getTranslations } from "next-intl/server";
@@ -20,14 +25,30 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "meta" });
+  const [t, tPage] = await Promise.all([
+    getTranslations({ locale, namespace: "meta" }),
+    getTranslations({ locale, namespace: "workPage" }),
+  ]);
+  const baseMetadata = buildMetadata({
+    title: t("workTitle"),
+    description: t("workDescription"),
+    path: "/work",
+    locale,
+  });
+
+  const ogImagePath = `/${locale}/opengraph-image`;
+  const twitterImagePath = `/${locale}/twitter-image`;
+
   return {
-    ...buildMetadata({
-      title: t("workTitle"),
-      description: t("workDescription"),
-      path: "/work",
-      locale,
-    }),
+    ...baseMetadata,
+    openGraph: {
+      ...baseMetadata.openGraph,
+      images: [{ url: ogImagePath, width: 1200, height: 630 }],
+    },
+    twitter: {
+      ...baseMetadata.twitter,
+      images: [twitterImagePath],
+    },
     other: {
       [`script:ld+json`]: JSON.stringify([
         breadcrumbListJsonLd([
@@ -35,6 +56,7 @@ export async function generateMetadata({
           { name: t("workTitle"), url: "/work" },
         ]),
         organizationJsonLd(),
+        webPageJsonLd(tPage("hero.title"), tPage("hero.intro")),
       ]),
     },
   };

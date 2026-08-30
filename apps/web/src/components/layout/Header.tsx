@@ -72,7 +72,6 @@ export function Header({
             sizes="(max-width: 768px) 156px, 180px"
             className="hidden h-[26px] w-auto dark:block md:h-[30px]"
             aria-hidden
-            priority
           />
         </Link>
 
