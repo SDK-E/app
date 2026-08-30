@@ -12,6 +12,8 @@ export const siteConfig = {
   },
   analytics: {
     googleAnalyticsId: "G-DDSKTR68M7",
+    googleTagManagerId: "GTM-MVMF2ZQP",
     securePrivacyServiceName: "Google Analytics",
+    securePrivacyGtmServiceName: "Google Tag Manager",
   },
 } as const;
