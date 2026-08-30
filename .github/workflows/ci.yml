@@ -91,7 +91,11 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - id: changed
         run: echo "files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | tr '\n' ',')" >> $GITHUB_OUTPUT
-      - run: node --import tsx packages/tooling/src/ci/agent-pr-eval.ts --body '${{ github.event.pull_request.body }}' --title '${{ github.event.pull_request.title }}' --files '${{ steps.changed.outputs.files }}'
+      - name: agent-pr-eval
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: node --import tsx packages/tooling/src/ci/agent-pr-eval.ts --body "$PR_BODY" --title "$PR_TITLE" --files '${{ steps.changed.outputs.files }}'
 
   coverage:
     runs-on: ubuntu-latest
