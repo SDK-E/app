@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "siteDescription": "Ranskalainen B2B suunnitteluyritys. Rakennamme, modernisoimme ja käytämme ohjelmistoja kaikkialla – taustaalustoja, pilviinfrastruktuuria, tekoälyautomaatiota, reaaliaikaisia ​​järjestelmiä ja sisäisiä työkaluja.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Palvelut",
+    "servicesDescription": "Suunnittelupalvelut ohjelmistojen modernisointiin, taustaympäristöihin, tekoälytyönkulkuihin, pilviinfrastruktuuriin, tietojärjestelmiin ja tuoterajapintoihin.",
+    "workTitle": "Työ",
+    "workDescription": "Suunnitteluskenaariot SDK Enterprises on perustettu tutkimaan modernisoinnista ja alustan luotettavuudesta tekoälyn työnkulkuihin ja tekniseen omistukseen.",
+    "howWeWorkTitle": "Miten toimimme",
+    "howWeWorkDescription": "Kuinka SDK Enterprises siirtyy teknisestä epävarmuudesta dokumentoituihin päätöksiin, tarkistettaviin toimituksiin ja asiakkaan ohjattuun luovutukseen.",
+    "aboutTitle": "Tietoja",
+    "aboutDescription": "Kuinka SDK Enterprises kokoaa riippumattomia suunnitteluasiantuntijoita jokaiseen projektiin ja ylläpitää yhtä vastuullista asiakassuhdetta.",
+    "startAProjectTitle": "Aloita projekti",
+    "startAProjectDescription": "Kerro meille, mitä yrität rakentaa, modernisoida, automatisoida tai korjata. Kerromme sinulle rehellisesti, onko se sopiva ja mitä se vaatisi."
+  },
+  "nav": {
+    "toggleMenu": "Vaihda valikkoa",
+    "home": "SDK Enterprises kotiin",
+    "main": "Main",
+    "services": "Palvelut",
+    "work": "Työ",
+    "process": "Prosessi",
+    "about": "Tietoja",
+    "discussProject": "Keskustele projektista",
+    "signIn": "Kirjaudu sisään",
+    "openPortal": "Avaa portaali",
+    "legal": "Laillinen",
+    "mentionsLegales": "Mainitsee légales",
+    "privacy": "Yksityisyys",
+    "terms": "Ehdot",
+    "cookies": "Evästeet"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "AI · Ohjelmistot · Pilvi · Järjestelmäsuunnittelu"
+  },
+  "auth": {
+    "loginRedirecting": "Uudelleenohjataan kirjautumiseen...",
+    "logoutRedirecting": "Uudelleenohjataan uloskirjautumiseen..."
+  },
+  "errors": {
+    "pageNotFound": "Tätä sivua ei ole olemassa tai se on siirretty.",
+    "backToHome": "Takaisin kotiin",
+    "somethingWentWrong": "Jotain meni pieleen",
+    "tryAgain": "Yritä uudelleen",
+    "contactSupport": "Jos ongelma jatkuu, ota yhteyttä tukeen.",
+    "accessNotGrantedTitle": "Pääsyä ei myönnetty",
+    "accessNotGrantedDescription": "Sinulla ei ole lupaa tarkastella tätä sivua.",
+    "accessNotGrantedBack": "Takaisin portaaliin",
+    "unauthenticatedTitle": "Todennus vaaditaan",
+    "unauthenticatedDescription": "Kirjaudu sisään päästäksesi tälle sivulle.",
+    "unauthenticatedSignIn": "Kirjaudu sisään",
+    "serverErrorDescription": "Tapahtui odottamaton virhe. Jos ongelma jatkuu, ota yhteyttä tukeen.",
+    "pageNotFoundEyebrow": "404 / SIVUA EI LÖYTY",
+    "pageNotFoundHeadline": "Tätä reittiä ei ole olemassa.",
+    "pageNotFoundDescription": "Sivu on saattanut siirtyä tai osoite on väärä.",
+    "goBack": "Mene takaisin",
+    "accessRestrictedEyebrow": "403 / PÄÄSY RAJOITETTU",
+    "accessRestrictedTitle": "Sinulla ei ole pääsyä tälle sivulle.",
+    "accessRestrictedDescription": "Tämä alue on rajoitettu valtuutetuille käyttäjille.",
+    "contactUs": "Ota yhteyttä",
+    "serverErrorEyebrow": "500 / PALVELINVIRHE",
+    "serverErrorTitle": "Jokin epäonnistui meidän puolellamme.",
+    "maintenanceEyebrow": "HUOLTO",
+    "maintenanceTitle": "Teemme muutamia parannuksia.",
+    "maintenanceDescription": "SDK Enterprises tulee takaisin pian.",
+    "refreshPage": "Päivitä sivu",
+    "statusLabel": "Toiminnassa",
+    "connectionEyebrow": "YHTEYS",
+    "connectionTitle": "Emme saa yhteyttä palvelimeen.",
+    "connectionDescription": "Tarkista yhteys ja yritä uudelleen.",
+    "retryConnection": "Yritä muodostaa yhteys uudelleen"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
+  }
+}

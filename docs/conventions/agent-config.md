@@ -40,7 +40,7 @@ Skills load only when relevant (description matching). AGENTS.md is always loade
 ## Evidence Hierarchy
 
 1. Repo docs/ADRs/schemas/TS types (source of truth)
-2. Deterministic checks (`npm run verify`)
+2. Deterministic checks (`pnpm run verify`)
 3. Runtime/browser evidence (playwright snapshots)
 4. Official context7 docs (version-accurate)
 5. gh_grep examples (real code only)

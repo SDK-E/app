@@ -1,0 +1,12 @@
+{
+  "name": "@sdk-e/test-support",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./test-fixtures": "./src/test-fixtures.ts"
+  },
+  "dependencies": {
+    "@sdk-e/types": "workspace:*"
+  }
+}

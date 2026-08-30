@@ -1,0 +1,16 @@
+{
+  "name": "@sdk-e/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*"
+  },
+  "dependencies": {
+    "@sdk-e/db": "workspace:*",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.6.0",
+    "zod": "^4.4.3"
+  }
+}

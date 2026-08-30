@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "siteDescription": "Franskt B2B ingenjörsföretag. Vi bygger, moderniserar och driver programvara över hela stacken - backend-plattformar, molninfrastruktur, AI-automation, realtidssystem och interna verktyg.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Tjänster",
+    "servicesDescription": "Ingenjörstjänster för mjukvarumodernisering, backend-plattformar, AI-arbetsflöden, molninfrastruktur, datasystem och produktgränssnitt.",
+    "workTitle": "Arbete",
+    "workDescription": "Tekniska scenarier SDK Enterprises är inrättat för att undersöka, från modernisering och plattformspålitlighet till AI-arbetsflöden och tekniskt ägande.",
+    "howWeWorkTitle": "Hur vi arbetar",
+    "howWeWorkDescription": "Hur SDK Enterprises går från teknisk osäkerhet till dokumenterade beslut, granskningsbar leverans och kundkontrollerad överlämning.",
+    "aboutTitle": "Om",
+    "aboutDescription": "Hur SDK Enterprises sammansätter oberoende ingenjörsspecialister runt varje projekt och upprätthåller en ansvarig kundrelation.",
+    "startAProjectTitle": "Starta ett projekt",
+    "startAProjectDescription": "Berätta för oss vad du försöker bygga, modernisera, automatisera eller fixa. Vi berättar ärligt om det passar och vad som krävs."
+  },
+  "nav": {
+    "toggleMenu": "Växla meny",
+    "home": "SDK Enterprises hem",
+    "main": "Main",
+    "services": "Tjänster",
+    "work": "Arbete",
+    "process": "Process",
+    "about": "Om",
+    "discussProject": "Diskutera ett projekt",
+    "signIn": "Logga in",
+    "openPortal": "Öppna portalen",
+    "legal": "Lagligt",
+    "mentionsLegales": "Nämner legales",
+    "privacy": "Sekretess",
+    "terms": "Villkor",
+    "cookies": "Cookies"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "AI · Programvara · Moln · Systemteknik"
+  },
+  "auth": {
+    "loginRedirecting": "Omdirigerar till inloggning...",
+    "logoutRedirecting": "Omdirigerar till utloggning..."
+  },
+  "errors": {
+    "pageNotFound": "Den här sidan finns inte eller har flyttats.",
+    "backToHome": "Tillbaka till hemmet",
+    "somethingWentWrong": "Något gick fel",
+    "tryAgain": "Försök igen",
+    "contactSupport": "Kontakta supporten om problemet kvarstår.",
+    "accessNotGrantedTitle": "Tillträde ej beviljad",
+    "accessNotGrantedDescription": "Du har inte behörighet att visa den här sidan.",
+    "accessNotGrantedBack": "Tillbaka till portalen",
+    "unauthenticatedTitle": "Autentisering krävs",
+    "unauthenticatedDescription": "Logga in för att komma åt den här sidan.",
+    "unauthenticatedSignIn": "Logga in",
+    "serverErrorDescription": "Ett oväntat fel inträffade. Kontakta supporten om problemet kvarstår.",
+    "pageNotFoundEyebrow": "404 / SIDAN HITTEN INTE",
+    "pageNotFoundHeadline": "Den här rutten finns inte.",
+    "pageNotFoundDescription": "Sidan kan ha flyttats eller så kan adressen vara fel.",
+    "goBack": "Gå tillbaka",
+    "accessRestrictedEyebrow": "403 / TILLGÅNG BEGRÄNSAD",
+    "accessRestrictedTitle": "Du har inte tillgång till den här sidan.",
+    "accessRestrictedDescription": "Detta område är begränsat till behöriga användare.",
+    "contactUs": "Kontakta oss",
+    "serverErrorEyebrow": "500 / SERVERFEL",
+    "serverErrorTitle": "Något misslyckades på vår sida.",
+    "maintenanceEyebrow": "UNDERHÅLL",
+    "maintenanceTitle": "Vi gör några förbättringar.",
+    "maintenanceDescription": "SDK Enterprises kommer tillbaka inom kort.",
+    "refreshPage": "Uppdatera sidan",
+    "statusLabel": "Operativt",
+    "connectionEyebrow": "ANSLUTNING",
+    "connectionTitle": "Vi kan inte nå servern.",
+    "connectionDescription": "Kontrollera din anslutning och försök igen.",
+    "retryConnection": "Försök att ansluta igen"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
+  }
+}

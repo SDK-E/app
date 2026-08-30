@@ -4,119 +4,140 @@ This document defines the directory layout and development conventions for the
 Client Platform. **Every worker MUST follow this document.** When in doubt,
 refer back here — do not guess.
 
-## 1. Directory Layout
+## 1. Repository Layout (pnpm + Turborepo monorepo)
 
-The project is a Next.js 16 application (App Router) with TypeScript, Tailwind
-CSS, and ESLint. Application code lives under `src/`; the path alias `@/*`
-maps to `./src/*`.
+The repository is a pnpm workspace orchestrated by Turborepo. Application code
+lives in `apps/web`; shared domain and UI code lives in `packages/*` under the
+`@sdk-e/*` scope. Inside `apps/web`, the alias `@/*` maps to `apps/web/src/*`;
+cross-package imports use `@sdk-e/<package>` specifiers.
 
 ```
 .
-├── src/                        # Application source root (alias: @/*)
-│   ├── app/                    # App Router routes & route groups
-│   │   ├── (marketing)/        # Route group (grouped, no URL segment)
-│   │   │   └── page.tsx
-│   │   ├── api/                # Route handlers (server-only)
-│   │   │   └── health/route.ts
-│   │   ├── favicon.ico         # Static route file
-│   │   ├── globals.css         # Global Tailwind/CSS entry
-│   │   ├── layout.tsx          # Root layout (required)
-│   │   ├── page.tsx            # Home route ("/")
-│   │   ├── error.tsx           # Root error boundary
-│   │   ├── not-found.tsx       # 404 UI
-│   │   └── loading.tsx         # Suspense fallback
-│   ├── components/             # Shared React components (non-route)
-│   │   ├── ui/                 # Presentational primitives (Button, Card...)
-│   │   └── layout/             # Layout components (Header, Footer, Nav...)
-│   ├── lib/                    # Server-only shared utilities
-│   │   ├── data/               # Data access (DB queries, repositories)
-│   │   ├── utils.ts            # Pure helper functions
-│   │   ├── auth.ts             # Auth/session helpers (server-only)
-│   │   └── env.ts              # Centralized env var access + validation
-│   ├── hooks/                  # Shared React hooks (useX.ts)
-│   ├── types/                  # Shared TypeScript types & schemas
-│   └── proxy.ts                 # Next.js proxy (formerly middleware) (if needed)
-├── prisma/                     # Prisma ORM (schema + migrations)
-│   ├── schema.prisma
-│   └── migrations/
-├── scripts/                    # Dev tooling (run directly, not app code)
-│   ├── mail-sink.ts            # Local mail sink (SMTP + HTTP API, no UI)
-│   ├── mail-cli.ts             # npm run mail:list / mail:read / mail:wait / ...
-│   ├── mail-mcp.ts             # maildev MCP server for agents
-│   └── humanizer-mcp.ts        # Keyless copy-humanization MCP server
-├── tests/                      # End-to-end tests (Playwright)
-│   ├── e2e/
-│   └── fixtures/
-├── docs/                       # Project documentation
-│   └── conventions/            # Convention docs (this file, env.md)
-├── public/                     # Static assets served at "/"
-│   ├── brand/                  # Approved brand assets (logo + compact mark, see docs/design/brand.md)
-│   ├── file.svg
-│   ├── globe.svg
-│   ├── next.svg
-│   ├── vercel.svg
-│   └── window.svg
-├── .env                        # Local env (gitignored, never commit)
-├── .env.local                  # Local overrides (gitignored, never commit)
-├── eslint.config.mjs           # ESLint flat config
-├── next.config.ts              # Next.js config
-├── package.json                # Dependencies & scripts
-├── postcss.config.mjs          # PostCSS/Tailwind config
-├── tsconfig.json               # TypeScript config
-└── README.md                   # Project overview
+├── apps/
+│   └── web/                       # Next.js 16 app (@sdk-e/web)
+│       ├── src/
+│       │   ├── app/               # App Router routes & route groups
+│       │   │   ├── [locale]/      # Locale-prefixed routes (marketing + portal)
+│       │   │   ├── api/           # Route handlers (server-only)
+│       │   │   ├── globals.css    # Global Tailwind/CSS entry
+│       │   │   ├── layout.tsx     # Root layout (required)
+│       │   │   ├── error.tsx      # Root error boundary
+│       │   │   └── not-found.tsx  # 404 UI
+│       │   ├── components/        # App-owned components (layout, marketing, portal)
+│       │   ├── lib/app/           # App-shell helpers (render-for-page, navigation)
+│       │   ├── test-utils/        # Test stubs (server-only mock, etc.)
+│       │   └── proxy.ts           # Next.js proxy (formerly middleware)
+│       ├── public/                # Static assets served at "/" (brand/, svgs)
+│       ├── next.config.ts         # Next config (intl plugin, transpilePackages)
+│       ├── postcss.config.mjs     # PostCSS/Tailwind config
+│       ├── components.json        # shadcn config
+│       └── tsconfig.json          # Extends root tsconfig; @/* -> ./src/*
+├── packages/
+│   ├── types/                     # @sdk-e/types — RBAC roles, permissions, principals (leaf)
+│   ├── config/                    # @sdk-e/config — siteConfig (leaf)
+│   ├── env/                       # @sdk-e/env — zod-validated server env
+│   ├── db/                        # @sdk-e/db — Prisma schema/migrations + generated client + db singleton
+│   ├── core/                      # @sdk-e/core — audit, money, time, state-machine, utils
+│   ├── i18n/                      # @sdk-e/i18n — routing, messages, src/locales/<locale>/*.json
+│   ├── auth/                      # @sdk-e/auth — Auth0 wiring, identity, authorization
+│   ├── schemas/                   # @sdk-e/schemas — shared zod schemas
+│   ├── users/ · companies/ · email/ · marketing/ · payments/
+│   ├── notifications/ · providers/ · requests/ · opportunities/ · matching/
+│   ├── ui/                        # @sdk-e/ui — presentational primitives (+ Section/Container)
+│   ├── design-system/             # @sdk-e/design-system — design-system page sections
+│   ├── test-support/              # @sdk-e/test-support — shared test fixtures (dev only)
+│   └── tooling/                   # @sdk-e/tooling — mail sink/cli/mcp, portkiller,
+│                                  #   images, CI gate scripts (src/ci), i18n python
+├── docs/                          # Project documentation
+│   └── conventions/               # Convention docs (this file, env.md, commands.md)
+├── .github/workflows/ci.yml       # CI (pnpm install --frozen-lockfile per job)
+├── .env                           # Local env (gitignored, never commit)
+├── .env.local                     # Local overrides (gitignored, never commit)
+├── eslint.config.mjs              # ESLint flat config (whole monorepo)
+├── vitest.config.ts               # Single vitest project for all workspaces
+├── turbo.json                     # Turborepo task graph (build depends on db#generate)
+├── pnpm-workspace.yaml            # Workspace globs, allowBuilds, overrides
+├── package.json                   # Root scripts (verify chain lives here)
+├── tsconfig.json                  # Root TS config with @sdk-e/* path mappings
+└── README.md                      # Project overview
 ```
+
+### Package dependency direction (acyclic)
+
+```
+types, config, i18n, env  →  db  →  core  →  auth  →  users/schemas
+users → companies · requests · notifications(email) · opportunities · matching
+email ⇄ none (depends on config/env only) · marketing → email, schemas, db
+providers → auth, schemas · matching → providers, opportunities, requests
+ui → core · design-system → ui · web → everything above
+```
+
+`EligibilityResult` and the eligibility rule functions live in
+`packages/opportunities/src/eligibility-rules.ts`; `matching` consumes them
+one-way. Never introduce an import from `opportunities` back into `matching`
+beyond that edge, or from `email` into `notifications`.
 
 ### Where does code go?
 
-| Kind of code                      | Location            | Alias             |
-| --------------------------------- | ------------------- | ----------------- |
-| Routes, layouts, pages            | `src/app/**`        | `@/app/**`        |
-| Shared UI components              | `src/components/**` | `@/components/**` |
-| Data access, server utils         | `src/lib/**`        | `@/lib/**`        |
-| React hooks                       | `src/hooks/**`      | `@/hooks/**`      |
-| Shared types/schemas              | `src/types/**`      | `@/types/**`      |
-| Prisma schema & migrations        | `prisma/**`         | —                 |
-| Dev tooling (mail sink, CLI, MCP) | `scripts/**`        | —                 |
-| E2E tests                         | `tests/**`          | —                 |
-| Static assets (images, fonts)     | `public/**`         | `/...`            |
+| Kind of code                       | Location                                                | Import style                  |
+| ---------------------------------- | ------------------------------------------------------- | ----------------------------- |
+| Routes, layouts, pages             | `apps/web/src/app/**`                                   | `@/app/**`                    |
+| App-owned components               | `apps/web/src/components/**`                            | `@/components/**`             |
+| App-shell helpers                  | `apps/web/src/lib/app/**`                               | `@/lib/app/**`                |
+| Presentational primitives          | `packages/ui/src/**`                                    | `@sdk-e/ui/X`                 |
+| Design-system sections             | `packages/design-system/src/**`                         | `@sdk-e/design-system/X`      |
+| Domain logic (auth, requests, ...) | `packages/<domain>/src/**`                              | `@sdk-e/<domain>/...`         |
+| DB schema, migrations, client      | `packages/db/prisma/**`, `packages/db/src/generated/**` | `@sdk-e/db`                   |
+| Shared types/RBAC                  | `packages/types/src/**`                                 | `@sdk-e/types`                |
+| Locales                            | `packages/i18n/src/locales/**`                          | loaded by `@sdk-e/i18n`       |
+| Dev tooling (mail sink, CLI, MCP)  | `packages/tooling/src/**`                               | — (bin scripts)               |
+| CI gate scripts                    | `packages/tooling/src/ci/**`                            | — (run via root pnpm scripts) |
+| Static assets                      | `apps/web/public/**`                                    | `/...`                        |
 
 ### Rules
 
 - **Only** route-related files (`page.tsx`, `layout.tsx`, `route.ts`, etc.)
-  live in `src/app`. Components and utilities go in `src/components` and
-  `src/lib` respectively.
+  live in `apps/web/src/app`. Components and utilities go in
+  `apps/web/src/components` and the relevant `packages/*` workspace.
+- New shared/domain logic goes into the matching `packages/<domain>` workspace;
+  do not grow `apps/web/src/lib`.
+- Cross-package imports must go through the package name (`@sdk-e/users`);
+  never reach across via relative paths or deep internals of another scope's
+  generated output (`@sdk-e/db/client` is the only generated entry).
 - Do NOT create files at the repository root except documented config files.
-- Never edit `src/app/globals.css` for component styles — colocate styles with
-  components or use utility classes.
+- Never edit `apps/web/src/app/globals.css` for component styles — colocate
+  styles with components or use utility classes.
 - Never commit `.env*` files. Env variables are documented in
   [env.md](env.md) — no `.env.example` is committed.
-- `prisma/` and `tests/` are created when needed; do not pre-create empty dirs.
+- Generated Prisma client output (`packages/db/src/generated/`) is gitignored;
+  run `pnpm run generate` after schema changes.
 
 ## 2. Naming Conventions
 
 ### Files & directories
 
-| Type                   | Convention                   | Example                             |
-| ---------------------- | ---------------------------- | ----------------------------------- |
-| Page/route directories | `kebab-case`                 | `src/app/checkout/`                 |
-| Components (React)     | `PascalCase.tsx`             | `Button.tsx`, `UserProfile.tsx`     |
-| Hooks                  | `useX` camelCase             | `useAuth.ts`                        |
-| Utilities / modules    | camelCase                    | `utils.ts`, `formatCurrency.ts`     |
-| Constants              | camelCase (`.ts`)            | `siteConfig.ts`                     |
-| Types                  | `PascalCase`                 | `User.ts`, `Session.ts`             |
-| Styles                 | camelCase `.css`             | `globals.css`                       |
-| Test files             | `*.test.ts(x)` / `*.spec.ts` | `utils.test.ts`, `checkout.spec.ts` |
-| Env docs               | `docs/conventions/env.md`    | —                                   |
+| Type                   | Convention                   | Example                                          |
+| ---------------------- | ---------------------------- | ------------------------------------------------ |
+| Page/route directories | `kebab-case`                 | `apps/web/src/app/[locale]/(app)/app/companies/` |
+| Components (React)     | `PascalCase.tsx`             | `Button.tsx`, `UserProfile.tsx`                  |
+| Hooks                  | `useX` camelCase             | `useAuth.ts`                                     |
+| Utilities / modules    | camelCase                    | `utils.ts`, `formatCurrency.ts`                  |
+| Constants              | camelCase (`.ts`)            | `site.ts`                                        |
+| Types                  | `PascalCase`                 | `User.ts`, `Session.ts`                          |
+| Styles                 | camelCase `.css`             | `globals.css`                                    |
+| Test files             | `*.test.ts(x)` / `*.spec.ts` | `utils.test.ts`, `checkout.spec.ts`              |
+| Env docs               | `docs/conventions/env.md`    | —                                                |
 
 ### Components
 
 - One component per file, `PascalCase` filename matching the component name.
 - **Default export** for route components (`page.tsx`, `layout.tsx`) and
   page-level components.
-- **Named exports** for shared/reusable components in `src/components`.
+- **Named exports** for shared/reusable components in `packages/ui` and
+  `apps/web/src/components`.
 - Keep components composable: prefer function components, no class components.
-- Presentational components in `components/ui/` must be presentational —
-  no data fetching, no side effects. Data fetching lives in `lib/`.
+- Presentational components in `packages/ui` must be presentational — no data
+  fetching, no side effects. Data fetching lives in domain packages.
 
 ### Routes (App Router)
 
@@ -139,11 +160,13 @@ maps to `./src/*`.
 - Variables exposed to the browser must be prefixed `NEXT_PUBLIC_`; none are
   currently required. `DATABASE_URL`, `AUTH0_CLIENT_ID`, and `AUTH0_SECRET`
   remain server-only.
-- Server-only variables are read via `src/lib/env.ts` (single access point,
+- Server-only variables are read via `@sdk-e/env` (single access point,
   validated with schema parsing). Do NOT read `process.env` directly in
-  components or `lib/` modules.
+  components or domain modules.
 - Every variable must be documented in [env.md](env.md) with a description.
-- Never commit real values; `.env*` are gitignored.
+- Never commit real values; `.env*` are gitignored. `.env`/`.env.local` live at
+  the repository root and are loaded by `next.config.ts`, `prisma.config.ts`,
+  and the mail tooling.
 
 ## 3. Commit Message Conventions
 
@@ -176,18 +199,20 @@ docs(structure): document directory conventions
 - Reference the issue ID in the commit body or subject when applicable:
   `fix(checkout): correct tax calc (app-qyf)`.
 - One logical change per commit. Atomic commits only.
-- Do NOT commit generated artifacts, `.env*`, `node_modules`, or `.next/`.
+- Do NOT commit generated artifacts (`packages/db/src/generated/`), `.env*`,
+  `node_modules`, or `.next/`.
 
 ## 4. ESLint & Formatting
 
-- ESLint is the only linter (flat config, `eslint.config.mjs`). Run `npm run lint`.
+- ESLint is the only linter (flat config, `eslint.config.mjs` at the repo
+  root). Run `pnpm run lint`.
 - Follow the recommended Next.js and TypeScript rules. No `any` unless
   explicitly justified with a comment.
 - TypeScript `strict: true` is enabled — do not disable it.
-- Import order: builtin → external → internal `@/` → relative.
+- Import order: builtin → external → internal `@sdk-e/*` / `@/*` → relative.
 - Prettier (devDependency, `.prettierrc.json`, `printWidth: 100`) handles
   mechanical formatting — wrapping long calls, consistent whitespace. Run
-  `npm run format` on the files you touch. Do not reformat unrelated files in
+  `pnpm run format` on the files you touch. Do not reformat unrelated files in
   the same change.
 - Prettier runs automatically on save via the opencode/kilo formatter hook
   (`custom-prettier` command in `opencode.json`). The `verify` chain includes
@@ -200,10 +225,12 @@ docs(structure): document directory conventions
 ## 5. Development Commands
 
 ```bash
-npm run dev       # Start dev server (Turbopack)
-npm run build     # Production build
-npm run start     # Serve production build
-npm run lint      # Run ESLint
+pnpm install      # Install all workspaces
+pnpm run dev      # Start web dev server (Turbopack) + local mail sink
+pnpm run build    # prisma generate + turbo build (production build)
+pnpm run start    # Serve production build
+pnpm run lint     # Run ESLint across the monorepo
+pnpm run generate # Regenerate the Prisma client (packages/db)
 ```
 
-All code must pass `npm run lint` and `npm run build` before submission.
+All code must pass `pnpm run lint` and `pnpm run build` before submission.

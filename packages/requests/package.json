@@ -1,0 +1,23 @@
+{
+  "name": "@sdk-e/requests",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*"
+  },
+  "dependencies": {
+    "@sdk-e/auth": "workspace:*",
+    "@sdk-e/core": "workspace:*",
+    "@sdk-e/db": "workspace:*",
+    "@sdk-e/types": "workspace:*"
+  },
+  "devDependencies": {
+    "@sdk-e/schemas": "workspace:*",
+    "@sdk-e/test-support": "workspace:*"
+  },
+  "peerDependencies": {
+    "next": "*"
+  }
+}

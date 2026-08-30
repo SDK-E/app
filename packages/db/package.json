@@ -1,0 +1,23 @@
+{
+  "name": "@sdk-e/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./client": "./src/generated/prisma/client.ts",
+    "./*": "./src/generated/prisma/*"
+  },
+  "scripts": {
+    "generate": "prisma generate",
+    "db:migrate": "prisma migrate deploy"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.9.1",
+    "@prisma/client": "^7.9.1",
+    "@sdk-e/env": "workspace:*"
+  },
+  "devDependencies": {
+    "prisma": "^7.9.1"
+  }
+}

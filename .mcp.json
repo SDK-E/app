@@ -18,11 +18,15 @@
     },
     "maildev": {
       "command": "node",
-      "args": ["scripts/mail/mail-mcp.ts"]
+      "args": ["node_modules/@sdk-e/mailbox/dist/bin/mailbox-mcp.js"]
     },
     "humanizer": {
       "command": "node",
-      "args": ["--import", "tsx", "scripts/mcp/humanizer-mcp.ts"]
+      "args": ["--import", "tsx", "packages/tooling/src/mcp/humanizer-mcp.ts"]
+    },
+    "bg-remove": {
+      "command": "node",
+      "args": ["--import", "tsx", "packages/tooling/src/mcp/background-remover-mcp.ts"]
     },
     "gh_grep": {
       "url": "https://mcp.grep.app"

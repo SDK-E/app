@@ -70,7 +70,7 @@ Guidelines:
 
 - **In dev, emails are delivered to the local mail sink** (`scripts/mail-sink.ts`, smtp-tester), not Resend. This lets agents see every enquiry email the form sends without a Resend key or a verified domain.
 - **No setup:** the sink auto-starts with `npm run dev` (SMTP on `localhost:1025`). Run it standalone with `npm run mail`.
-- **Checking mail:** use the CLI — `npm run mail:list`, `npm run mail:read -- <id>`, `npm run mail:clear` — or the `maildev` MCP server tools (`list_emails`, `read_email`, `clear_emails`, `wait_for_email`). There is no UI.
+- **Checking mail:** open the local inbox UI — `npm run mail:ui` (serves `http://localhost:1080`, loopback only, while the sink runs) — or use the CLI — `npm run mail:list`, `npm run mail:read -- <id>`, `npm run mail:clear` — or the `maildev` MCP server tools (`list_emails`, `read_email`, `clear_emails`, `wait_for_email`).
 - `sendEnquiryNotification` sends to `MAIL_SMTP_URL` (default `smtp://localhost:1025`) whenever `NODE_ENV !== "production"`.
 - If the sink is down, the send returns `false` and logs "local mail sink unreachable — it auto-starts with `npm run dev` (or run `npm run mail`)". The form must still succeed.
 - In production, an absent `RESEND_API_KEY` is a bug: `sendEnquiryNotification` logs loudly server-side and returns `false` (the user still gets success because the record was stored).

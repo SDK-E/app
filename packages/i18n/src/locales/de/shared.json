@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "siteDescription": "Französisches Ingenieurbüro B2B. Wir entwickeln, modernisieren und betreiben Software im gesamten Stack – Backend-Plattformen, Cloud-Infrastruktur, KI-Automatisierung, Echtzeitsysteme und interne Tools.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Dienstleistungen",
+    "servicesDescription": "Ingenieurdienstleistungen für Softwaremodernisierung, Backend-Plattformen, KI-Workflows, Cloud-Infrastruktur, Datensysteme und Produktschnittstellen.",
+    "workTitle": "Arbeit",
+    "workDescription": "Mit SDK Enterprises sollen technische Szenarien untersucht werden, von Modernisierung und Plattformzuverlässigkeit bis hin zu KI-Workflows und technischem Eigentum.",
+    "howWeWorkTitle": "Wie wir arbeiten",
+    "howWeWorkDescription": "Wie SDK Enterprises von technischer Unsicherheit zu dokumentierten Entscheidungen, überprüfbarer Lieferung und kundengesteuerter Übergabe übergeht.",
+    "aboutTitle": "Über",
+    "aboutDescription": "Wie SDK Enterprises unabhängige Ingenieurspezialisten für jedes Projekt zusammenstellt und eine verantwortungsvolle Kundenbeziehung pflegt.",
+    "startAProjectTitle": "Starten Sie ein Projekt",
+    "startAProjectDescription": "Sagen Sie uns, was Sie bauen, modernisieren, automatisieren oder reparieren möchten. Wir sagen dir ehrlich, ob es passt und was es dafür braucht."
+  },
+  "nav": {
+    "toggleMenu": "Menü umschalten",
+    "home": "SDK Enterprises Startseite",
+    "main": "Hauptsächlich",
+    "services": "Dienstleistungen",
+    "work": "Arbeit",
+    "process": "Prozess",
+    "about": "Über",
+    "discussProject": "Besprechen Sie ein Projekt",
+    "signIn": "Melden Sie sich an",
+    "openPortal": "Portal öffnen",
+    "legal": "Legal",
+    "mentionsLegales": "Erwähnt Rechtsanwälte",
+    "privacy": "Privatsphäre",
+    "terms": "Bedingungen",
+    "cookies": "Kekse"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "KI · Software · Cloud · Systemtechnik"
+  },
+  "auth": {
+    "loginRedirecting": "Weiterleitung zum Login...",
+    "logoutRedirecting": "Weiterleitung zum Abmelden..."
+  },
+  "errors": {
+    "pageNotFound": "Diese Seite existiert nicht oder wurde verschoben.",
+    "backToHome": "Zurück nach Hause",
+    "somethingWentWrong": "Etwas ist schief gelaufen",
+    "tryAgain": "Versuchen Sie es erneut",
+    "contactSupport": "Wenn das Problem weiterhin besteht, wenden Sie sich bitte an den Support.",
+    "accessNotGrantedTitle": "Zugriff nicht gewährt",
+    "accessNotGrantedDescription": "Sie haben keine Berechtigung, diese Seite anzuzeigen.",
+    "accessNotGrantedBack": "Zurück zum Portal",
+    "unauthenticatedTitle": "Authentifizierung erforderlich",
+    "unauthenticatedDescription": "Bitte melden Sie sich an, um auf diese Seite zuzugreifen.",
+    "unauthenticatedSignIn": "Melden Sie sich an",
+    "serverErrorDescription": "Es ist ein unerwarteter Fehler aufgetreten. Wenn das Problem weiterhin besteht, wenden Sie sich bitte an den Support.",
+    "pageNotFoundEyebrow": "404 / SEITE NICHT GEFUNDEN",
+    "pageNotFoundHeadline": "Diese Route existiert nicht.",
+    "pageNotFoundDescription": "Möglicherweise wurde die Seite verschoben oder die Adresse ist falsch.",
+    "goBack": "Geh zurück",
+    "accessRestrictedEyebrow": "403 / ZUGRIFF BESCHRÄNKT",
+    "accessRestrictedTitle": "Sie haben keinen Zugriff auf diese Seite.",
+    "accessRestrictedDescription": "Dieser Bereich ist auf autorisierte Benutzer beschränkt.",
+    "contactUs": "Kontaktieren Sie uns",
+    "serverErrorEyebrow": "500 / SERVERFEHLER",
+    "serverErrorTitle": "Etwas ist auf unserer Seite fehlgeschlagen.",
+    "maintenanceEyebrow": "WARTUNG",
+    "maintenanceTitle": "Wir nehmen ein paar Verbesserungen vor.",
+    "maintenanceDescription": "SDK Enterprises wird in Kürze zurück sein.",
+    "refreshPage": "Seite aktualisieren",
+    "statusLabel": "Betriebsbereit",
+    "connectionEyebrow": "VERBINDUNG",
+    "connectionTitle": "Wir können den Server nicht erreichen.",
+    "connectionDescription": "Überprüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+    "retryConnection": "Verbindung erneut versuchen"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
+  }
+}

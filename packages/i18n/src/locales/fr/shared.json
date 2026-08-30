@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "siteDescription": "Société d'ingénierie française B2B. Nous construisons, modernisons et exploitons des logiciels sur toute la pile : plates-formes back-end, infrastructure cloud, automatisation de l'IA, systèmes en temps réel et outils internes.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Prestations",
+    "servicesDescription": "Services d'ingénierie pour la modernisation des logiciels, les plates-formes back-end, les flux de travail d'IA, l'infrastructure cloud, les systèmes de données et les interfaces de produits.",
+    "workTitle": "Travail",
+    "workDescription": "Scénarios d'ingénierie SDK Enterprises est conçu pour étudier, de la modernisation et de la fiabilité de la plate-forme aux flux de travail d'IA et à la propriété technique.",
+    "howWeWorkTitle": "Comment nous travaillons",
+    "howWeWorkDescription": "Comment SDK Enterprises passe de l'incertitude technique à des décisions documentées, une livraison révisable et un transfert contrôlé par le client.",
+    "aboutTitle": "À propos",
+    "aboutDescription": "Comment SDK Enterprises compose des spécialistes en ingénierie indépendants autour de chaque projet et entretient une relation client responsable.",
+    "startAProjectTitle": "Démarrer un projet",
+    "startAProjectDescription": "Dites-nous ce que vous essayez de créer, de moderniser, d'automatiser ou de réparer. Nous vous dirons honnêtement si cela vous convient et ce que cela prendrait."
+  },
+  "nav": {
+    "toggleMenu": "Basculer le menu",
+    "home": "Accueil SDK Enterprises",
+    "main": "Principal",
+    "services": "Prestations",
+    "work": "Travail",
+    "process": "Processus",
+    "about": "À propos",
+    "discussProject": "Discuter d'un projet",
+    "signIn": "Connectez-vous",
+    "openPortal": "Ouvrir le portail",
+    "legal": "Juridique",
+    "mentionsLegales": "Mentions légales",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "cookies": "Biscuits"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "IA · Logiciels · Cloud · Ingénierie des systèmes"
+  },
+  "auth": {
+    "loginRedirecting": "Redirection vers la connexion...",
+    "logoutRedirecting": "Redirection vers la déconnexion..."
+  },
+  "errors": {
+    "pageNotFound": "Cette page n'existe pas ou a été déplacée.",
+    "backToHome": "Retour à la maison",
+    "somethingWentWrong": "Quelque chose s'est mal passé",
+    "tryAgain": "Réessayez",
+    "contactSupport": "Si le problème persiste, veuillez contacter l'assistance.",
+    "accessNotGrantedTitle": "Accès non accordé",
+    "accessNotGrantedDescription": "Vous n'êtes pas autorisé à afficher cette page.",
+    "accessNotGrantedBack": "Retour au portail",
+    "unauthenticatedTitle": "Authentification requise",
+    "unauthenticatedDescription": "Veuillez vous connecter pour accéder à cette page.",
+    "unauthenticatedSignIn": "Connectez-vous",
+    "serverErrorDescription": "Une erreur inattendue s'est produite. Si le problème persiste, veuillez contacter l'assistance.",
+    "pageNotFoundEyebrow": "404 / PAGE INTROUVABLE",
+    "pageNotFoundHeadline": "Cet itinéraire n'existe pas.",
+    "pageNotFoundDescription": "La page a peut-être été déplacée ou l'adresse est peut-être erronée.",
+    "goBack": "Retourner",
+    "accessRestrictedEyebrow": "403 / ACCÈS RESTREINT",
+    "accessRestrictedTitle": "Vous n'avez pas accès à cette page.",
+    "accessRestrictedDescription": "Cette zone est réservée aux utilisateurs autorisés.",
+    "contactUs": "Contactez-nous",
+    "serverErrorEyebrow": "500 / ERREUR SERVEUR",
+    "serverErrorTitle": "Quelque chose a échoué de notre côté.",
+    "maintenanceEyebrow": "ENTRETIEN",
+    "maintenanceTitle": "Nous apportons quelques améliorations.",
+    "maintenanceDescription": "SDK Enterprises sera de retour sous peu.",
+    "refreshPage": "Actualiser la page",
+    "statusLabel": "Opérationnel",
+    "connectionEyebrow": "CONNEXION",
+    "connectionTitle": "Nous ne pouvons pas accéder au serveur.",
+    "connectionDescription": "Vérifiez votre connexion et réessayez.",
+    "retryConnection": "Réessayer la connexion"
+  },
+  "theme": {
+    "light": "Thème clair",
+    "dark": "Thème sombre",
+    "system": "Thème système"
+  }
+}

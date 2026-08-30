@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "siteDescription": "Francouzská strojírenská společnost B2B. Vytváříme, modernizujeme a provozujeme software napříč zásobníky – backendové platformy, cloudová infrastruktura, automatizace AI, systémy v reálném čase a interní nástroje.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Služby",
+    "servicesDescription": "Inženýrské služby pro modernizaci softwaru, backendové platformy, pracovní postupy AI, cloudovou infrastrukturu, datové systémy a rozhraní produktů.",
+    "workTitle": "Práce",
+    "workDescription": "Inženýrské scénáře SDK Enterprises je nastaven tak, aby zkoumal, od modernizace a spolehlivosti platformy až po pracovní postupy AI a technické vlastnictví.",
+    "howWeWorkTitle": "Jak pracujeme",
+    "howWeWorkDescription": "Jak se SDK Enterprises posouvá od technické nejistoty k dokumentovaným rozhodnutím, kontrolovatelné dodávce a klientem řízenému předání.",
+    "aboutTitle": "O",
+    "aboutDescription": "Jak SDK Enterprises sestavuje nezávislé inženýrské specialisty kolem každého projektu a udržuje jeden odpovědný klientský vztah.",
+    "startAProjectTitle": "Začněte projekt",
+    "startAProjectDescription": "Řekněte nám, co se snažíte vybudovat, modernizovat, automatizovat nebo opravit. Upřímně vám řekneme, zda se to hodí a co by to chtělo."
+  },
+  "nav": {
+    "toggleMenu": "Přepnout nabídku",
+    "home": "SDK Enterprises domů",
+    "main": "Hlavní",
+    "services": "Služby",
+    "work": "Práce",
+    "process": "Proces",
+    "about": "O",
+    "discussProject": "Diskutujte o projektu",
+    "signIn": "Přihlaste se",
+    "openPortal": "Otevřít portál",
+    "legal": "Právní",
+    "mentionsLegales": "Zmiňuje légales",
+    "privacy": "soukromí",
+    "terms": "Podmínky",
+    "cookies": "Soubory cookie"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "AI · Software · Cloud · Systémové inženýrství"
+  },
+  "auth": {
+    "loginRedirecting": "Přesměrování na přihlášení...",
+    "logoutRedirecting": "Přesměrování na odhlášení..."
+  },
+  "errors": {
+    "pageNotFound": "Tato stránka neexistuje nebo byla přesunuta.",
+    "backToHome": "Zpátky domů",
+    "somethingWentWrong": "Něco se pokazilo",
+    "tryAgain": "Zkuste to znovu",
+    "contactSupport": "Pokud problém přetrvává, kontaktujte podporu.",
+    "accessNotGrantedTitle": "Přístup nebyl udělen",
+    "accessNotGrantedDescription": "K zobrazení této stránky nemáte oprávnění.",
+    "accessNotGrantedBack": "Zpět na portál",
+    "unauthenticatedTitle": "Vyžaduje se ověření",
+    "unauthenticatedDescription": "Pro přístup na tuto stránku se prosím přihlaste.",
+    "unauthenticatedSignIn": "Přihlaste se",
+    "serverErrorDescription": "Došlo k neočekávané chybě. Pokud problém přetrvává, kontaktujte podporu.",
+    "pageNotFoundEyebrow": "404 / STRÁNKA NENALEZENA",
+    "pageNotFoundHeadline": "Tato trasa neexistuje.",
+    "pageNotFoundDescription": "Stránka se mohla přesunout nebo adresa může být chybná.",
+    "goBack": "Vraťte se",
+    "accessRestrictedEyebrow": "403 / PŘÍSTUP OMEZEN",
+    "accessRestrictedTitle": "Na tuto stránku nemáte přístup.",
+    "accessRestrictedDescription": "Tato oblast je omezena na oprávněné uživatele.",
+    "contactUs": "Kontaktujte nás",
+    "serverErrorEyebrow": "500 / CHYBA SERVERU",
+    "serverErrorTitle": "Něco se na naší straně nepovedlo.",
+    "maintenanceEyebrow": "ÚDRŽBA",
+    "maintenanceTitle": "Připravujeme několik vylepšení.",
+    "maintenanceDescription": "SDK Enterprises se brzy vrátí.",
+    "refreshPage": "Obnovit stránku",
+    "statusLabel": "Provozní",
+    "connectionEyebrow": "PŘIPOJENÍ",
+    "connectionTitle": "Nemůžeme se spojit se serverem.",
+    "connectionDescription": "Zkontrolujte připojení a zkuste to znovu.",
+    "retryConnection": "Opakujte připojení"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "siteDescription": "Френска инженерна компания B2B. Ние изграждаме, модернизираме и управляваме софтуер в целия стек — бекенд платформи, облачна инфраструктура, AI автоматизация, системи в реално време и вътрешни инструменти.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Услуги",
+    "servicesDescription": "Инженерни услуги за софтуерна модернизация, бекенд платформи, AI работни потоци, облачна инфраструктура, системи за данни и продуктови интерфейси.",
+    "workTitle": "работа",
+    "workDescription": "Инженерни сценарии SDK Enterprises е настроен да проучва, от модернизация и надеждност на платформата до работни процеси на AI и техническа собственост.",
+    "howWeWorkTitle": "Как работим",
+    "howWeWorkDescription": "Как SDK Enterprises преминава от техническа несигурност към документирани решения, прегледна доставка и контролирано от клиента предаване.",
+    "aboutTitle": "За",
+    "aboutDescription": "Как SDK Enterprises съставя независими инженерни специалисти около всеки проект и поддържа една отговорна връзка с клиента.",
+    "startAProjectTitle": "Стартирайте проект",
+    "startAProjectDescription": "Кажете ни какво се опитвате да изградите, модернизирате, автоматизирате или поправите. Ще ви кажем честно дали е подходящо и какво ще отнеме."
+  },
+  "nav": {
+    "toggleMenu": "Превключване на менюто",
+    "home": "SDK Enterprises дом",
+    "main": "Основен",
+    "services": "Услуги",
+    "work": "работа",
+    "process": "Процес",
+    "about": "За",
+    "discussProject": "Обсъдете проект",
+    "signIn": "влезте",
+    "openPortal": "Отвори портала",
+    "legal": "Законни",
+    "mentionsLegales": "Споменава légales",
+    "privacy": "Поверителност",
+    "terms": "Условия",
+    "cookies": "Бисквитки"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "AI · Софтуер · Облак · Системно инженерство"
+  },
+  "auth": {
+    "loginRedirecting": "Пренасочване към вход...",
+    "logoutRedirecting": "Пренасочва се към излизане..."
+  },
+  "errors": {
+    "pageNotFound": "Тази страница не съществува или е преместена.",
+    "backToHome": "Обратно към дома",
+    "somethingWentWrong": "Нещо се обърка",
+    "tryAgain": "Опитайте отново",
+    "contactSupport": "Ако проблемът продължава, моля, свържете се с поддръжката.",
+    "accessNotGrantedTitle": "Достъпът не е предоставен",
+    "accessNotGrantedDescription": "Нямате разрешение да видите тази страница.",
+    "accessNotGrantedBack": "Обратно към портала",
+    "unauthenticatedTitle": "Изисква се удостоверяване",
+    "unauthenticatedDescription": "Моля, влезте за достъп до тази страница.",
+    "unauthenticatedSignIn": "влезте",
+    "serverErrorDescription": "Възникна неочаквана грешка. Ако проблемът продължава, моля, свържете се с поддръжката.",
+    "pageNotFoundEyebrow": "404 / СТРАНИЦАТА НЕ Е НАМЕРЕНА",
+    "pageNotFoundHeadline": "Този маршрут не съществува.",
+    "pageNotFoundDescription": "Страницата може да е преместена или адресът да е грешен.",
+    "goBack": "Върни се назад",
+    "accessRestrictedEyebrow": "403 / ДОСТЪПЪТ ОГРАНИЧЕН",
+    "accessRestrictedTitle": "Нямате достъп до тази страница.",
+    "accessRestrictedDescription": "Тази област е ограничена до оторизирани потребители.",
+    "contactUs": "Свържете се с нас",
+    "serverErrorEyebrow": "500 / ГРЕШКА НА СЪРВЪРА",
+    "serverErrorTitle": "Нещо се провали от наша страна.",
+    "maintenanceEyebrow": "ПОДДРЪЖКА",
+    "maintenanceTitle": "Правим няколко подобрения.",
+    "maintenanceDescription": "SDK Enterprises ще се върне скоро.",
+    "refreshPage": "Опресняване на страницата",
+    "statusLabel": "Оперативен",
+    "connectionEyebrow": "ВРЪЗКА",
+    "connectionTitle": "Не можем да се свържем със сървъра.",
+    "connectionDescription": "Проверете връзката си и опитайте отново.",
+    "retryConnection": "Повторен опит за свързване"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
+  }
+}

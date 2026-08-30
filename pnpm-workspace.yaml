@@ -1,0 +1,24 @@
+packages:
+  - apps/*
+  - packages/*
+
+allowBuilds:
+  "@parcel/watcher": true
+  "@prisma/engines": true
+  "@swc/core": true
+  cbor-extract: true
+  esbuild: true
+  fsevents: true
+  msgpackr-extract: true
+  prisma: true
+  sharp: true
+  unrs-resolver: true
+
+minimumReleaseAgeExclude:
+  - "@sdk-e/mailbox@0.1.0"
+
+overrides:
+  deepmerge-ts: ^8.0.0
+  nanoid: ^5.1.16
+  "@workflow/world-local>undici": ^7.29.0
+  "@workflow/world-vercel>undici": ^7.29.0

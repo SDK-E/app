@@ -5,9 +5,10 @@ node_modules
 .next
 out
 build
+.turbo
 
 # generated
-src/generated/prisma
+packages/db/generated
 
 # misc
 .DS_Store
@@ -18,5 +19,6 @@ coverage
 .env.local
 .env.*.local
 
-# lockfile formatting (npm-owned)
+# lockfile formatting (pnpm-owned)
+pnpm-lock.yaml
 package-lock.json

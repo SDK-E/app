@@ -66,8 +66,10 @@ reading width — recompose the column count instead.
   button. Tapping a link closes the panel.
 - The menu is a `<button>` with `aria-expanded` and `aria-label`; the panel is
   still inside the `<nav>` landmark.
-- Portal: the dark sidebar (250px on desktop) collapses to the same mobile
-  menu pattern.
+- Portal: the dark sidebar (260px on desktop) collapses to a 72px icon rail
+  via a toggle button in the sidebar header (`aria-expanded`, animated width,
+  persisted). Below `lg` it remains a horizontal top bar and the account menu
+  moves to the page header; the collapse toggle is hidden.
 
 ## 6. Touch & interaction
 

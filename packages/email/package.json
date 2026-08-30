@@ -1,0 +1,25 @@
+{
+  "name": "@sdk-e/email",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*"
+  },
+  "dependencies": {
+    "@sdk-e/config": "workspace:*",
+    "@sdk-e/env": "workspace:*",
+    "nodemailer": "^9.0.5",
+    "resend": "^6.20.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^8.0.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19"
+  }
+}

@@ -1,0 +1,217 @@
+enum ClientRole {
+  OWNER
+  ADMINISTRATOR
+  PROJECT_MEMBER
+  BILLING
+  VIEWER
+
+  @@map("client_role")
+}
+
+enum SdkStaffRole {
+  ADMIN
+  DELIVERY
+  FINANCE
+
+  @@map("sdk_staff_role")
+}
+
+enum InvitationKind {
+  CLIENT
+  SDK_STAFF
+
+  @@map("invitation_kind")
+}
+
+enum InvitationDeliveryStatus {
+  PENDING
+  SENT
+  FAILED
+
+  @@map("invitation_delivery_status")
+}
+
+enum CompanyAccessRequestStatus {
+  PENDING
+  APPROVED
+  DECLINED
+  CANCELLED
+
+  @@map("company_access_request_status")
+}
+
+model User {
+  id              String        @id @default(uuid())
+  auth0Sub        String        @unique
+  email           String        @unique @db.VarChar(255)
+  name            String        @db.VarChar(255)
+  avatarUrl       String?       @db.VarChar(1024)
+  preferredLocale String        @default("en") @db.VarChar(5)
+  preferredTheme  String        @default("system") @db.VarChar(10)
+  sdkStaffRole    SdkStaffRole?
+  isActive        Boolean       @default(true)
+  lastLoginAt     DateTime?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  memberships         Membership[]      @relation("UserMemberships")
+  invitedMembers      Membership[]      @relation("MembershipInvitations")
+  requests            Request[]         @relation("RequestSubmittedBy")
+  reviewedRequests    Request[]         @relation("RequestReviewedBy")
+  ownedRequests       Request[]         @relation("RequestOwner")
+  requestActivities   RequestActivity[]
+  projects            Project[]         @relation("ProjectCreatedBy")
+  messages            Message[]
+  invoices            Invoice[]
+  documents           Document[]
+  sentInvitations     Invitation[]      @relation("InvitationInviter")
+  acceptedInvitations Invitation[]      @relation("InvitationAcceptor")
+  accessRequests      CompanyAccessRequest[] @relation("CompanyAccessRequestUser")
+  resolvedAccessRequests CompanyAccessRequest[] @relation("CompanyAccessRequestResolver")
+  provider            Provider?
+  auditEvents         AuditEvent[]
+  providerReviews     ProviderReview[]
+  serviceReviews      ProviderServiceReview[]
+  uploadedServiceMedia ServiceMediaAsset[]
+  verifiedProviders   VerificationRecord[] @relation("VerificationReviewedBy")
+  uploadedEvidence    VerificationEvidence[]
+  opportunities       Opportunity[]        @relation("OpportunityCreatedBy")
+  ownedOpportunities  Opportunity[]        @relation("OpportunityOwner")
+  opportunityInvitationsInvitedBy OpportunityInvitation[] @relation("OpportunityInvitationInviter")
+  opportunityActivities OpportunityActivity[]
+  matchRunsTriggered  MatchRun[]           @relation("MatchRunTriggeredBy")
+  matchOverrides      MatchOverride[]
+
+  @@index([email])
+  @@index([auth0Sub])
+  @@index([createdAt])
+  @@map("user")
+}
+
+model Company {
+  id         String   @id @default(uuid())
+  name       String   @db.VarChar(255)
+  slug       String   @unique @db.VarChar(100)
+  accessCode String?  @unique @db.VarChar(16)
+  isActive   Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  memberships       Membership[]      @relation("CompanyMemberships")
+  requests          Request[]
+  requestActivities RequestActivity[]
+  projects          Project[]
+  milestones        Milestone[]
+  documents         Document[]
+  messages          Message[]
+  invoices          Invoice[]
+  invitations       Invitation[]
+  accessRequests    CompanyAccessRequest[]
+  opportunities     Opportunity[]
+  opportunityPositions OpportunityPosition[] @relation("OpportunityPositionCompany")
+  opportunityActivities OpportunityActivity[]
+  matchRuns         MatchRun[]
+  matchCandidates   MatchCandidate[]
+  matchOverrides    MatchOverride[]
+  matchWeightConfigs MatchWeightConfig[]
+  providers         Provider[]
+  opportunityInvitations OpportunityInvitation[]
+  opportunityPreferences OpportunityProviderPreference[]
+
+  @@index([slug])
+  @@index([createdAt])
+  @@map("company")
+}
+
+model Invitation {
+  id             String                   @id @default(uuid())
+  tokenHash      String                   @unique @db.VarChar(64)
+  email          String                   @db.VarChar(255)
+  kind           InvitationKind
+  companyId      String?
+  clientRole     ClientRole?
+  sdkStaffRole   SdkStaffRole?
+  invitedBy      String
+  expiresAt      DateTime
+  acceptedAt     DateTime?
+  acceptedBy     String?
+  revokedAt      DateTime?
+  deliveryStatus InvitationDeliveryStatus @default(PENDING)
+  lastSentAt     DateTime?
+  deliveryAttempts Int                    @default(0)
+  createdAt      DateTime                 @default(now())
+  updatedAt      DateTime                 @updatedAt
+
+  company  Company? @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  inviter  User     @relation("InvitationInviter", fields: [invitedBy], references: [id], onDelete: Restrict)
+  acceptor User?    @relation("InvitationAcceptor", fields: [acceptedBy], references: [id], onDelete: SetNull)
+
+  @@index([email])
+  @@index([companyId])
+  @@index([companyId, acceptedAt])
+  @@index([invitedBy])
+  @@index([expiresAt])
+  @@index([createdAt])
+  @@map("invitation")
+}
+
+model Membership {
+  id        String     @id @default(uuid())
+  userId    String
+  companyId String
+  role      ClientRole @default(PROJECT_MEMBER)
+  invitedBy String?
+  invitedAt DateTime?
+  joinedAt  DateTime?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  user    User    @relation("UserMemberships", fields: [userId], references: [id], onDelete: Cascade)
+  company Company @relation("CompanyMemberships", fields: [companyId], references: [id], onDelete: Cascade)
+  inviter User?   @relation("MembershipInvitations", fields: [invitedBy], references: [id], onDelete: SetNull)
+
+  @@unique([userId, companyId])
+  @@index([companyId])
+  @@index([userId])
+  @@index([createdAt])
+  @@map("membership")
+}
+
+model CompanyAccessRequest {
+  id            String                     @id @default(uuid())
+  userId        String
+  companyId     String
+  requestedRole ClientRole                 @default(VIEWER)
+  status        CompanyAccessRequestStatus @default(PENDING)
+  resolvedAt    DateTime?
+  resolvedBy    String?
+  createdAt     DateTime                   @default(now())
+  updatedAt     DateTime                   @updatedAt
+
+  user     User   @relation("CompanyAccessRequestUser", fields: [userId], references: [id], onDelete: Cascade)
+  company  Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  resolver User?  @relation("CompanyAccessRequestResolver", fields: [resolvedBy], references: [id], onDelete: SetNull)
+
+  @@index([companyId, status])
+  @@index([userId, status])
+  @@index([companyId, createdAt])
+  @@map("company_access_request")
+}
+
+model Enquiry {
+  id          String   @id @default(uuid())
+  companyName String   @db.VarChar(255)
+  email       String   @db.VarChar(255)
+  website     String?  @db.VarChar(1024)
+  capability  String   @db.VarChar(255)
+  description String   @db.Text
+  environment String?  @db.Text
+  timeline    String?  @db.VarChar(255)
+  budgetRange String?  @db.VarChar(255)
+  context     String?  @db.Text
+  createdAt   DateTime @default(now())
+
+  @@index([email])
+  @@index([createdAt])
+  @@map("enquiry")
+}

@@ -4,20 +4,20 @@ When researching or verifying, use sources in this order. Never skip to lower ti
 
 ## Priority Order
 
-| Tier | Source                             | When to use                              |
-| ---- | ---------------------------------- | ---------------------------------------- |
-| 1    | Repo docs, ADRs, schemas, TS types | Always first. Source of truth.           |
-| 2    | Deterministic checks               | `npm run verify`, `npm run agents:check` |
-| 3    | Runtime/browser evidence           | Playwright snapshots, Next.js devtools   |
-| 4    | Official context7 docs             | Version-accurate library docs            |
-| 5    | gh_grep examples                   | Real code from public repos              |
-| 6    | Model memory                       | Least reliable. Verify before trusting.  |
+| Tier | Source                             | When to use                                |
+| ---- | ---------------------------------- | ------------------------------------------ |
+| 1    | Repo docs, ADRs, schemas, TS types | Always first. Source of truth.             |
+| 2    | Deterministic checks               | `pnpm run verify`, `pnpm run agents:check` |
+| 3    | Runtime/browser evidence           | Playwright snapshots, Next.js devtools     |
+| 4    | Official context7 docs             | Version-accurate library docs              |
+| 5    | gh_grep examples                   | Real code from public repos                |
+| 6    | Model memory                       | Least reliable. Verify before trusting.    |
 
 ## Rules
 
 - **Never websearch** for things already in `docs/`, ADRs, or schema files
 - **Never use gh_grep** when repo docs have the answer
-- **Never claim success** without local checks passing (`npm run verify`)
+- **Never claim success** without local checks passing (`pnpm run verify)
 - **websearch** for current facts (3-5 results max); verify against local context
 - **MCP output** is evidence, not proof — cross-reference with deterministic checks
 - **Sourcing:** Cite the source file/line for every factual claim

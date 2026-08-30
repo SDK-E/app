@@ -17,52 +17,64 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v7
         with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run agents:check
-      - run: npm run check:file-length
-      - run: npm run format:check
-      - run: npm run audit
-      - run: npm run lint
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run agents:check
+      - run: pnpm run check:file-length
+      - run: pnpm run format:check
+      - run: pnpm run audit
+      - run: pnpm run lint
 
   typecheck:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v7
         with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npx prisma generate
-      - run: npx tsc --noEmit
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run generate
+      - run: pnpm run typecheck
 
   build:
     runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgresql://ci:ci@localhost:5432/ci
+      AUTH0_SECRET: ci-placeholder-secret-1234567890abcdef
+      AUTH0_CLIENT_ID: ci-placeholder-client-id
+      AUTH0_CLIENT_SECRET: ci-placeholder-client-secret
+      AUTH0_DOMAIN: ci.example.com
+      AUTH0_BASE_URL: http://localhost:3000
+      STRIPE_SECRET_KEY: sk_test_ci_placeholder
+      STRIPE_WEBHOOK_SECRET: whsec_ci_placeholder
     steps:
       - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v7
         with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npx prisma generate
-      - run: npm run build
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
 
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v7
         with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run test:run
-      - run: npm run i18n:check
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run test:run
+      - run: pnpm run i18n:check
 
   agent-pr-eval:
     if: ${{ github.event_name == 'pull_request' }}
@@ -71,22 +83,28 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v7
         with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
       - id: changed
         run: echo "files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.event.pull_request.head.sha }} | tr '\n' ',')" >> $GITHUB_OUTPUT
-      - run: node --import tsx scripts/ci/agent-pr-eval.ts --body '${{ github.event.pull_request.body }}' --title '${{ github.event.pull_request.title }}' --files '${{ steps.changed.outputs.files }}'
+      - name: agent-pr-eval
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: node --import tsx packages/tooling/src/ci/agent-pr-eval.ts --body "$PR_BODY" --title "$PR_TITLE" --files '${{ steps.changed.outputs.files }}'
 
   coverage:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v7
         with:
-          node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run test:coverage
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run test:coverage

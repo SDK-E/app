@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "siteDescription": "Empresa francesa de engenharia B2B. Construímos, modernizamos e operamos software em toda a pilha – plataformas de back-end, infraestrutura em nuvem, automação de IA, sistemas em tempo real e ferramentas internas.",
+    "title": "SDK Enterprises",
+    "servicesTitle": "Serviços",
+    "servicesDescription": "Serviços de engenharia para modernização de software, plataformas backend, fluxos de trabalho de IA, infraestrutura em nuvem, sistemas de dados e interfaces de produtos.",
+    "workTitle": "Trabalho",
+    "workDescription": "Cenários de engenharia O SDK Enterprises foi configurado para investigar, desde modernização e confiabilidade da plataforma até fluxos de trabalho de IA e propriedade técnica.",
+    "howWeWorkTitle": "Como trabalhamos",
+    "howWeWorkDescription": "Como SDK Enterprises passa da incerteza técnica para decisões documentadas, entrega revisável e transferência controlada pelo cliente.",
+    "aboutTitle": "Sobre",
+    "aboutDescription": "Como a SDK Enterprises reúne especialistas de engenharia independentes em torno de cada projeto e mantém um relacionamento responsável com o cliente.",
+    "startAProjectTitle": "Iniciar um projeto",
+    "startAProjectDescription": "Conte-nos o que você está tentando construir, modernizar, automatizar ou consertar. Diremos honestamente se é adequado e o que seria necessário."
+  },
+  "nav": {
+    "toggleMenu": "Alternar menu",
+    "home": "SDK Enterprises página inicial",
+    "main": "Principal",
+    "services": "Serviços",
+    "work": "Trabalho",
+    "process": "Processo",
+    "about": "Sobre",
+    "discussProject": "Discuta um projeto",
+    "signIn": "Faça login",
+    "openPortal": "Abrir portal",
+    "legal": "Jurídico",
+    "mentionsLegales": "Menções legais",
+    "privacy": "Privacidade",
+    "terms": "Termos",
+    "cookies": "Biscoitos"
+  },
+  "footer": {
+    "copyright": "© SDK Enterprises",
+    "tagline": "IA · Software · Nuvem · Engenharia de Sistemas"
+  },
+  "auth": {
+    "loginRedirecting": "Redirecionando para login...",
+    "logoutRedirecting": "Redirecionando para sair..."
+  },
+  "errors": {
+    "pageNotFound": "Esta página não existe ou foi movida.",
+    "backToHome": "De volta para casa",
+    "somethingWentWrong": "Algo deu errado",
+    "tryAgain": "Tente novamente",
+    "contactSupport": "Se o problema persistir, entre em contato com o suporte.",
+    "accessNotGrantedTitle": "Acesso não concedido",
+    "accessNotGrantedDescription": "Você não tem permissão para visualizar esta página.",
+    "accessNotGrantedBack": "Voltar ao portal",
+    "unauthenticatedTitle": "Autenticação necessária",
+    "unauthenticatedDescription": "Por favor faça login para acessar esta página.",
+    "unauthenticatedSignIn": "Faça login",
+    "serverErrorDescription": "Ocorreu um erro inesperado. Se o problema persistir, entre em contato com o suporte.",
+    "pageNotFoundEyebrow": "404 / PÁGINA NÃO ENCONTRADA",
+    "pageNotFoundHeadline": "Esta rota não existe.",
+    "pageNotFoundDescription": "A página pode ter sido movida ou o endereço pode estar errado.",
+    "goBack": "Volte",
+    "accessRestrictedEyebrow": "403 / ACESSO RESTRITO",
+    "accessRestrictedTitle": "Você não tem acesso a esta página.",
+    "accessRestrictedDescription": "Esta área é restrita a usuários autorizados.",
+    "contactUs": "Contate-nos",
+    "serverErrorEyebrow": "500 / ERRO DO SERVIDOR",
+    "serverErrorTitle": "Algo falhou do nosso lado.",
+    "maintenanceEyebrow": "MANUTENÇÃO",
+    "maintenanceTitle": "Estamos fazendo algumas melhorias.",
+    "maintenanceDescription": "SDK Enterprises estará de volta em breve.",
+    "refreshPage": "Atualizar página",
+    "statusLabel": "Operacional",
+    "connectionEyebrow": "CONEXÃO",
+    "connectionTitle": "Não conseguimos acessar o servidor.",
+    "connectionDescription": "Verifique sua conexão e tente novamente.",
+    "retryConnection": "Tentar novamente a conexão"
+  },
+  "theme": {
+    "light": "Light theme",
+    "dark": "Dark theme",
+    "system": "System theme"
+  }
+}
