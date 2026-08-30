@@ -19,6 +19,14 @@
         {
           "name": "Prisma Postgres",
           "role": "Managed PostgreSQL database"
+        },
+        {
+          "name": "SecurePrivacy",
+          "role": "Cookie-kra vonatkozó hozzájárulás kezelése"
+        },
+        {
+          "name": "Google (Google LLC)",
+          "role": "Közönség-analitika hozzájárulás alapján (Google Analytics)"
         }
       ],
       "controllerTitle": "Adatkezelő",

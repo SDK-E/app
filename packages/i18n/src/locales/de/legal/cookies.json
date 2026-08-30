@@ -6,9 +6,9 @@
       "whatIsTitle": "Was ist ein Cookie?",
       "whatIs": "Ein Cookie ist eine kleine Textdatei, die auf Ihrem Gerät abgelegt wird, wenn Sie eine Website besuchen. Dadurch kann die Website Ihren Browser erkennen und sich Informationen merken.",
       "thisSiteTitle": "Von dieser Website gesetzte Cookies",
-      "thisSite": "Auf dieser Website werden keine Analyse-, Werbe- oder Tracking-Cookies gesetzt. Die verwendete Analyselösung (Vercel Analytics) ist cookielos. Ihr Surfverhalten wird daher nicht nachverfolgt.",
+      "thisSite": "Diese Website verwendet die Consent-Management-Plattform SecurePrivacy. Beim Besuch bittet ein Banner um Ihre Zustimmung, bevor Cookies gesetzt werden. Ihre Auswahl wird in Ihrem Browser gespeichert, sodass das Banner bis zu einer Änderung nicht erneut erscheint. Cookies werden nur für die Zwecke verwendet, denen Sie zustimmen. Google Analytics erfasst den Traffic der Website nur für Besucher, die dem im Banner zustimmen. Die Besucheranalyse der Website (Vercel Analytics) arbeitet ohne Cookies.",
       "consentBannerTitle": "Einwilligungsbanner",
-      "consentBanner": "Es wird kein Einwilligungsbanner angezeigt, da keine Cookies gesetzt sind. Wenn ein Cookie-Setzskript hinzugefügt würde, wäre ein Einwilligungsbanner erforderlich und diese Seite würde aktualisiert.",
+      "consentBanner": "Bei Ihrem ersten Besuch können Sie in einem Banner jede Cookie-Kategorie akzeptieren oder ablehnen. Sie können Ihre Auswahl jederzeit ändern oder widerrufen, indem Sie das Banner auf dieser Seite erneut öffnen.",
       "browserSettingsTitle": "Verwalten von Cookies in Ihrem Browser",
       "browserSettings": "Sie können Ihren Browser jederzeit so konfigurieren, dass Cookies abgelehnt oder gelöscht werden. Die Anweisungen hängen von Ihrem Browser ab (Chrome, Firefox, Safari, Edge). Anleitungen sind unter www.cnil.fr erhältlich."
     }

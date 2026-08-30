@@ -6,9 +6,9 @@
       "whatIsTitle": "¿Qué es una galleta?",
       "whatIs": "Una cookie es un pequeño archivo de texto que se coloca en su dispositivo cuando visita un sitio web. Permite que el sitio reconozca su navegador y recuerde información.",
       "thisSiteTitle": "Cookies establecidas por este sitio",
-      "thisSite": "Este sitio no establece cookies de análisis, publicidad o seguimiento. La solución de análisis utilizada (Vercel Analytics) no utiliza cookies. Por lo tanto, no se realiza un seguimiento de su navegación.",
+      "thisSite": "Este sitio utiliza la plataforma de gestión del consentimiento SecurePrivacy. Al visitarlo, un banner solicita su consentimiento antes de que se establezcan cookies. Su elección se guarda en su navegador para que el banner no vuelva a aparecer hasta que cambie. Las cookies solo se utilizan para las finalidades que usted acepta. Google Analytics mide el tráfico de audiencia del sitio solo para los visitantes que lo consienten en el banner. La analítica de audiencia del sitio (Vercel Analytics) no utiliza cookies.",
       "consentBannerTitle": "Banner de consentimiento",
-      "consentBanner": "No se muestra ningún banner de consentimiento porque no se establecen cookies. Si se agregara un script de configuración de cookies, se requeriría un banner de consentimiento y esta página se actualizaría.",
+      "consentBanner": "En su primera visita, un banner le permite aceptar o rechazar cada categoría de cookies. Puede cambiar o retirar su elección en cualquier momento reabriendo el banner desde esta página.",
       "browserSettingsTitle": "Gestión de cookies en su navegador",
       "browserSettings": "Puede configurar su navegador para rechazar o eliminar cookies en cualquier momento. Las instrucciones dependen de su navegador (Chrome, Firefox, Safari, Edge). Las guías están disponibles en www.cnil.fr."
     }

@@ -6,9 +6,9 @@
       "whatIsTitle": "O que é um biscoito?",
       "whatIs": "Um cookie é um pequeno arquivo de texto colocado no seu dispositivo quando você visita um site. Ele permite que o site reconheça seu navegador e lembre-se de informações.",
       "thisSiteTitle": "Cookies definidos por este site",
-      "thisSite": "Nenhum cookie analítico, publicitário ou de rastreamento é definido por este site. A solução analítica em uso (Vercel Analytics) não contém cookies. Sua navegação, portanto, não é rastreada.",
+      "thisSite": "Este site utiliza a plataforma de gestão de consentimento SecurePrivacy. Quando visita, um banner pede o seu consentimento antes de serem definidos cookies. A sua escolha é guardada no navegador para que o banner não volte a aparecer até que mude. Os cookies são utilizados apenas para as finalidades que aceita. O Google Analytics mede o tráfego de audiência do site apenas para os visitantes que o consentirem no banner. A análise de audiência do site (Vercel Analytics) não utiliza cookies.",
       "consentBannerTitle": "Bandeira de consentimento",
-      "consentBanner": "Nenhum banner de consentimento é mostrado porque nenhum cookie foi definido. Se um script de configuração de cookies fosse adicionado, um banner de consentimento seria necessário e esta página seria atualizada.",
+      "consentBanner": "Na sua primeira visita, um banner permite aceitar ou recusar cada categoria de cookies. Pode alterar ou retirar a sua escolha a qualquer momento, reabrindo o banner a partir desta página.",
       "browserSettingsTitle": "Gerenciando cookies no seu navegador",
       "browserSettings": "Você pode configurar seu navegador para recusar ou excluir cookies a qualquer momento. As instruções dependem do seu navegador (Chrome, Firefox, Safari, Edge). Os guias estão disponíveis em www.cnil.fr."
     }

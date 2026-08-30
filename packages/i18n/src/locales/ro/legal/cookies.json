@@ -6,9 +6,9 @@
       "whatIsTitle": "Ce este un cookie?",
       "whatIs": "Un cookie este un fișier text mic plasat pe dispozitivul dvs. atunci când vizitați un site web. Permite site-ului să vă recunoască browserul și să-și amintească informațiile.",
       "thisSiteTitle": "Cookie-uri setate de acest site",
-      "thisSite": "Nu sunt setate cookie-uri de analiză, publicitate sau de urmărire de către acest site. Soluția de analiză utilizată (Vercel Analytics) este fără cookie-uri. Prin urmare, navigarea dvs. nu este urmărită.",
+      "thisSite": "Acest site utilizează platforma de gestionare a consimțământului SecurePrivacy. La vizită, un banner solicită consimțământul dumneavoastră înainte de setarea cookie-urilor. Alegerea dumneavoastră este salvată în browser, astfel încât bannerul să nu mai apară până când nu se schimbă. Cookie-urile sunt utilizate doar în scopurile pe care le acceptați. Google Analytics măsoară traficul de audiență al site-ului doar pentru vizitatorii care își dau consimțământul în banner. Analiza de audiență a site-ului (Vercel Analytics) nu utilizează cookie-uri.",
       "consentBannerTitle": "Banner de consimțământ",
-      "consentBanner": "Nu este afișat niciun banner de consimțământ deoarece nu sunt setate module cookie. Dacă s-ar adăuga un script de setare a cookie-urilor, va fi necesar un banner de consimțământ și această pagină ar fi actualizată.",
+      "consentBanner": "La prima vizită, un banner vă permite să acceptați sau să refuzați fiecare categorie de cookie-uri. Puteți modifica sau retrage alegerea în orice moment redeschizând bannerul din această pagină.",
       "browserSettingsTitle": "Gestionarea cookie-urilor în browserul dvs",
       "browserSettings": "Vă puteți configura browserul pentru a refuza sau șterge cookie-urile în orice moment. Instrucțiunile depind de browserul dvs. (Chrome, Firefox, Safari, Edge). Ghidurile sunt disponibile la www.cnil.fr."
     }

@@ -33,8 +33,9 @@ in both languages.
 - The actual services used to operate the site, where they are genuinely in
   the stack: **Vercel** (hosting), **Auth0** (authentication), **Resend**
   (transactional email for enquiries), the **Postgres** provider (from
-  `DATABASE_URL`), **Vercel Analytics** (analytics). Do not list any provider
-  that is not actually used.
+  `DATABASE_URL`), **Vercel Analytics** (analytics), **SecurePrivacy**
+  (consent management), **Google Analytics** (consent-gated audience
+  analytics). Do not list any provider that is not actually used.
 
 ## 3. Content that is forbidden
 
@@ -62,6 +63,19 @@ in both languages.
   tracking cookies; the cookie page states this and the trigger condition
   (any cookie-setting script added ⇒ consent banner becomes required, per CNIL
   guidance / ePrivacy Art. 5.3). Do not build a banner unless that changes.
+- **Decision (owner-approved 2026-08-30): the SecurePrivacy consent-management
+  platform is now loaded on every page (cookies/consent install).** This
+  reverses the no-banner decision above: the site now shows a consent banner
+  via SecurePrivacy and stores the visitor's consent choice in the browser.
+  The cookie page, privacy processors list, and this document were updated in
+  that commit; the revised legal pages require re-review under §5.
+- **Google Analytics is consent-gated (2026-08-30).** The GA tag never loads
+  until the visitor accepts the analytics service in the SecurePrivacy banner;
+  the loader in
+  `apps/web/src/components/analytics/GoogleAnalyticsConsent.tsx` waits for the
+  `sp_unblock_Google_Analytics` event (or `sp.checkConsent`) before injecting
+  gtag.js. The service name must stay in sync between the SecurePrivacy
+  dashboard Scan Report and `siteConfig.analytics.securePrivacyServiceName`.
 
 ## 5. Review gate (mandatory)
 
@@ -79,6 +93,10 @@ Until review happens:
 comments and checklist updated to reflect approval. Professional review still
 recommended before public launch if the owner wants a second legal opinion.**
 
+**Status (2026-08-30): owner re-approved.** The cookie/privacy revisions that
+introduced the SecurePrivacy consent banner were reviewed and accepted by the
+owner. The professional-review recommendation above still stands.
+
 This satisfies the project brief's requirement to make professional/legal
 review explicit.
 
@@ -92,56 +110,58 @@ the site footer (see `src/components/marketing/SiteFooter.tsx`).
 - `docs/content/claims-and-evidence.md` — verified company facts (§1)
 - `docs/content/start-a-project.md` — the data the privacy page must describe
 
-## 8. Built pages (draft, awaiting review)
+## 8. Built pages
 
 Implemented under `src/app/(marketing)/` with a shared shell
 (`src/components/marketing/LegalPage.tsx`) and typographic primitives
 (`src/components/marketing/LegalText.tsx`):
 
-| Page                  | Route                     | Notes                                                              |
-| --------------------- | ------------------------- | ------------------------------------------------------------------ |
-| Mentions légales      | `/legal/mentions-legales` | Publisher identity, LCEN art. 6-III.                               |
-| Privacy policy (RGPD) | `/privacy`                | Controller, data from the enquiry form, bases, processors, rights. |
-| Cookie policy         | `/cookies`                | No cookies set; banner not required (owner decision above).        |
-| Terms of use          | `/terms`                  | B2B terms, French law.                                             |
+| Page                  | Route                     | Notes                                                                  |
+| --------------------- | ------------------------- | ---------------------------------------------------------------------- |
+| Mentions légales      | `/legal/mentions-legales` | Publisher identity, LCEN art. 6-III.                                   |
+| Privacy policy (RGPD) | `/privacy`                | Controller, data from the enquiry form, bases, processors, rights.     |
+| Cookie policy         | `/cookies`                | SecurePrivacy consent banner; CMP stores the visitor's consent choice. |
+| Terms of use          | `/terms`                  | B2B terms, French law.                                                 |
 
 All four are added to `PUBLIC_ROUTES` in `src/proxy.ts` and linked in the site
-footer (`src/components/marketing/SiteFooter.tsx`). Every page carries a
-"Legal text pending owner review" note and code comment until §5 review
-passes.
+footer (`src/components/marketing/SiteFooter.tsx`).
 
-Placeholders that only the owner can fill (currently marked `<em>…</em>` on the
-pages): legal form and share capital, publication-director name, retention
-periods, transfer specifics. Derived/verified values now on the page but
-flagged for owner confirmation: RCS entry (`RCS Paris 850 513 912`, derived
-from the verified SIREN + registered address) and the Vercel host address
-(`440 N Barranca Ave #4133, Covina, CA 91723, US`, as stated on
-vercel.com/legal/terms).
+Owner-only values, now provided and owner-approved (2026-08-30):
+
+- Legal form and share capital: Auto-entrepreneur (sole trader,
+  micro-entreprise), no share capital.
+- Publication director: Hicham SADDEK.
+- Retention period: 12 months from last contact (also approved 2026-08-15).
+- Derived/verified values, owner-confirmed: RCS entry
+  (`RCS Paris 850 513 912`, derived from the verified SIREN + registered
+  address) and the Vercel host address
+  (`440 N Barranca Ave #4133, Covina, CA 91723, US`, as stated on
+  vercel.com/legal/terms).
 
 ## 9. France / GDPR requirements checklist
 
 Everything considered while drafting. Each item shows status and where it is
 covered. Keep this list in sync when the site changes.
 
-| Requirement                                                                    | Status                                                                                           | Where covered                 |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ----------------------------- |
-| Mentions légales (LCEN art. 6-III)                                             | Draft on page                                                                                    | `/legal/mentions-legales`     |
-| Publisher identity (name, SIREN/SIRET, address, contact)                       | Done                                                                                             | siteConfig → mentions légales |
-| RCS number + legal form + share capital                                        | **RCS done** (Paris, derived from SIREN, flagged to confirm); **form + capital owner-only**      | mentions légales              |
-| Publication director                                                           | **Placeholder** — owner must provide                                                             | mentions légales              |
-| Host identity (Vercel) + registered address                                    | **Done** — 440 N Barranca Ave #4133, Covina, CA 91723, US (vercel.com/legal/terms)               | mentions légales              |
-| Privacy policy (RGPD arts. 12–14: controller, data, bases, recipients, rights) | Draft on page                                                                                    | `/privacy`                    |
-| Retention period for enquiry data                                              | **12 months** from last contact (owner-approved 2026-08-15)                                      | `/privacy`                    |
-| Data-subject rights (arts. 15–22) incl. CNIL complaint                         | Covered                                                                                          | `/privacy`                    |
-| Lawful bases (6.1.b pre-contractual, 6.1.f legitimate interest, 6.1.c legal)   | Covered                                                                                          | `/privacy`                    |
-| Register of processing activities (art. 30)                                    | Owner task — internal, not a page                                                                | stated on `/privacy`          |
-| Cookie consent (ePrivacy art. 5.3 + CNIL guidance)                             | N/A — no tracking cookies; no banner (owner decision)                                            | `/cookies`                    |
-| Data-breach notification (arts. 33–34, CNIL 72h)                               | Owner task — internal procedure                                                                  | not published                 |
-| International transfers (arts. 44–49, SCCs)                                    | Covered + owner confirmation flagged                                                             | `/privacy`                    |
-| Children (art. 8)                                                              | Covered                                                                                          | `/privacy`                    |
-| DPO designation (arts. 37–39)                                                  | Not required at this scale; contact email used                                                   | `/privacy`                    |
-| No automated decision-making / profiling                                       | Covered                                                                                          | `/privacy`                    |
-| CNIL declaration number                                                        | None claimed, none invented                                                                      | `/privacy`                    |
-| Terms of use (optional, recommended B2B)                                       | Approved draft on page                                                                           | `/terms`                      |
-| Legal language                                                                 | Bilingual FR/EN (owner decision)                                                                 | all pages                     |
-| Review gate                                                                    | **Done** — owner-approved 2026-08-15; professional review still recommended before public launch | §5                            |
+| Requirement                                                                    | Status                                                                                                                                       | Where covered                 |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| Mentions légales (LCEN art. 6-III)                                             | Approved on page                                                                                                                             | `/legal/mentions-legales`     |
+| Publisher identity (name, SIREN/SIRET, address, contact)                       | Done                                                                                                                                         | siteConfig → mentions légales |
+| RCS number + legal form + share capital                                        | **Done** — RCS Paris 850 513 912 (derived from SIREN, owner-confirmed); form + capital: Auto-entrepreneur, no share capital (owner-provided) | mentions légales              |
+| Publication director                                                           | **Done** — Hicham SADDEK (owner-provided)                                                                                                    | mentions légales              |
+| Host identity (Vercel) + registered address                                    | **Done** — 440 N Barranca Ave #4133, Covina, CA 91723, US (vercel.com/legal/terms)                                                           | mentions légales              |
+| Privacy policy (RGPD arts. 12–14: controller, data, bases, recipients, rights) | Approved on page                                                                                                                             | `/privacy`                    |
+| Retention period for enquiry data                                              | **12 months** from last contact (owner-approved 2026-08-15)                                                                                  | `/privacy`                    |
+| Data-subject rights (arts. 15–22) incl. CNIL complaint                         | Covered                                                                                                                                      | `/privacy`                    |
+| Lawful bases (6.1.b pre-contractual, 6.1.f legitimate interest, 6.1.c legal)   | Covered                                                                                                                                      | `/privacy`                    |
+| Register of processing activities (art. 30)                                    | Owner task — internal, not a page                                                                                                            | stated on `/privacy`          |
+| Cookie consent (ePrivacy art. 5.3 + CNIL guidance)                             | **Covered** — SecurePrivacy banner (owner decision 2026-08-30; reverses the 2026-08-15 no-banner decision)                                   | `/cookies`                    |
+| Data-breach notification (arts. 33–34, CNIL 72h)                               | Owner task — internal procedure                                                                                                              | not published                 |
+| International transfers (arts. 44–49, SCCs)                                    | Covered + owner confirmation flagged                                                                                                         | `/privacy`                    |
+| Children (art. 8)                                                              | Covered                                                                                                                                      | `/privacy`                    |
+| DPO designation (arts. 37–39)                                                  | Not required at this scale; contact email used                                                                                               | `/privacy`                    |
+| No automated decision-making / profiling                                       | Covered                                                                                                                                      | `/privacy`                    |
+| CNIL declaration number                                                        | None claimed, none invented                                                                                                                  | `/privacy`                    |
+| Terms of use (optional, recommended B2B)                                       | Approved draft on page                                                                                                                       | `/terms`                      |
+| Legal language                                                                 | Bilingual FR/EN (owner decision)                                                                                                             | all pages                     |
+| Review gate                                                                    | **Done** — owner-approved 2026-08-15, re-approved 2026-08-30; professional review still recommended before public launch                     | §5                            |

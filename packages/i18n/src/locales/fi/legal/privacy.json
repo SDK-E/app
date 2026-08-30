@@ -19,6 +19,14 @@
         {
           "name": "Prisma Postgres",
           "role": "Managed PostgreSQL database"
+        },
+        {
+          "name": "SecurePrivacy",
+          "role": "Evästeiden suostumuksen hallinta"
+        },
+        {
+          "name": "Google (Google LLC)",
+          "role": "Yleisöanalytiikka suostumuksen perusteella (Google Analytics)"
         }
       ],
       "controllerTitle": "Rekisterinpitäjä",

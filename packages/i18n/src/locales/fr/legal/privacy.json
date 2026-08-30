@@ -19,6 +19,14 @@
         {
           "name": "Prisma Postgres",
           "role": "Base de données PostgreSQL gérée"
+        },
+        {
+          "name": "SecurePrivacy",
+          "role": "Gestion du consentement aux cookies"
+        },
+        {
+          "name": "Google (Google LLC)",
+          "role": "Analytique d'audience gérée par consentement (Google Analytics)"
         }
       ],
       "controllerTitle": "Responsable du traitement des données",

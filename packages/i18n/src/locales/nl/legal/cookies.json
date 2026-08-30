@@ -6,9 +6,9 @@
       "whatIsTitle": "Wat is een koekje?",
       "whatIs": "Een cookie is een klein tekstbestand dat op uw apparaat wordt geplaatst wanneer u een website bezoekt. Hierdoor kan de site uw browser herkennen en informatie onthouden.",
       "thisSiteTitle": "Cookies geplaatst door deze site",
-      "thisSite": "Er worden geen analyse-, advertentie- of trackingcookies ingesteld door deze site. De gebruikte analyseoplossing (Vercel Analytics) bevat geen cookies. Uw browsen wordt daarom niet bijgehouden.",
+      "thisSite": "Deze site gebruikt het consentmanagementplatform SecurePrivacy. Wanneer u de site bezoekt, vraagt een banner om uw toestemming voordat cookies worden geplaatst. Uw keuze wordt in uw browser opgeslagen, zodat de banner pas weer verschijnt wanneer deze verandert. Cookies worden alleen gebruikt voor de doeleinden die u accepteert. Google Analytics meet het publieksverkeer van de site alleen voor bezoekers die hiermee instemmen via de banner. De publieksanalyses van de site (Vercel Analytics) zijn cookieloos.",
       "consentBannerTitle": "Toestemmingsbanner",
-      "consentBanner": "Er wordt geen toestemmingsbanner getoond omdat er geen cookies zijn ingesteld. Als er een script voor het instellen van cookies zou worden toegevoegd, zou een toestemmingsbanner vereist zijn en zou deze pagina worden bijgewerkt.",
+      "consentBanner": "Bij uw eerste bezoek kunt u in een banner elke cookiecategorie accepteren of weigeren. U kunt uw keuze op elk moment wijzigen of intrekken door de banner vanaf deze pagina opnieuw te openen.",
       "browserSettingsTitle": "Cookies beheren in uw browser",
       "browserSettings": "U kunt uw browser op elk moment configureren om cookies te weigeren of te verwijderen. Instructies zijn afhankelijk van uw browser (Chrome, Firefox, Safari, Edge). Gidsen zijn beschikbaar op www.cnil.fr."
     }

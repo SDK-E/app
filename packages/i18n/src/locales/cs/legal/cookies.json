@@ -6,9 +6,9 @@
       "whatIsTitle": "Co je to cookie?",
       "whatIs": "Cookie je malý textový soubor umístěný do vašeho zařízení, když navštívíte webovou stránku. Umožňuje webu rozpoznat váš prohlížeč a zapamatovat si informace.",
       "thisSiteTitle": "Soubory cookie nastavené tímto webem",
-      "thisSite": "Tato stránka nenastavuje žádné analytické, reklamní nebo sledovací soubory cookie. Používané analytické řešení (Vercel Analytics) je bez souborů cookie. Vaše procházení proto není sledováno.",
+      "thisSite": "Tyto stránky používají platformu pro správu souhlasu SecurePrivacy. Při návštěvě se zobrazí banner, který před nastavením souborů cookie žádá o váš souhlas. Vaše volba je uložena ve vašem prohlížeči, takže se banner znovu nezobrazí, dokud se nezmění. Soubory cookie se používají pouze pro účely, které přijmete. Google Analytics měří návštěvnost webu pouze pro návštěvníky, kteří s tím v banneru souhlasí. Návštěvnická analytika webu (Vercel Analytics) je bez cookies.",
       "consentBannerTitle": "Banner souhlasu",
-      "consentBanner": "Nezobrazuje se žádný banner souhlasu, protože nejsou nastaveny žádné soubory cookie. Pokud by byl přidán skript pro nastavení souborů cookie, byl by vyžadován banner souhlasu a tato stránka by byla aktualizována.",
+      "consentBanner": "Při první návštěvě vám banner umožní přijmout nebo odmítnout každou kategorii souborů cookie. Svou volbu můžete kdykoli změnit nebo odvolat znovuotevřením banneru z této stránky.",
       "browserSettingsTitle": "Správa cookies ve vašem prohlížeči",
       "browserSettings": "Svůj prohlížeč můžete nakonfigurovat tak, aby cookies kdykoli odmítal nebo smazal. Pokyny závisí na vašem prohlížeči (Chrome, Firefox, Safari, Edge). Návody jsou k dispozici na www.cnil.fr."
     }

@@ -6,9 +6,9 @@
       "whatIsTitle": "Vad är en kaka?",
       "whatIs": "En cookie är en liten textfil som placeras på din enhet när du besöker en webbplats. Det gör att webbplatsen kan känna igen din webbläsare och komma ihåg information.",
       "thisSiteTitle": "Cookies som sätts av denna webbplats",
-      "thisSite": "Inga analyser, reklam eller spårningscookies ställs in av denna webbplats. Analyslösningen som används (Vercel Analytics) är cookiefri. Din surfning spåras därför inte.",
+      "thisSite": "Den här webbplatsen använder plattformen för samtyckeshantering SecurePrivacy. När du besöker webbplatsen frågar en banner om ditt samtycke innan cookies sätts. Ditt val sparas i webbläsaren så att bannern inte visas igen förrän den ändras. Cookies används endast för de ändamål du accepterar. Google Analytics mäter webbplatsens publiktrafik endast för besökare som samtycker till det i bannern. Webbplatsens publikanalys (Vercel Analytics) är cookielös.",
       "consentBannerTitle": "Samtyckesbanner",
-      "consentBanner": "Ingen samtyckesbanner visas eftersom inga cookies är inställda. Om ett cookie-inställningsskript lades till skulle en samtyckesbanner krävas och den här sidan skulle uppdateras.",
+      "consentBanner": "Vid ditt första besök kan du i en banner acceptera eller avvisa varje cookiekategori. Du kan ändra eller återkalla ditt val när som helst genom att öppna bannern igen från den här sidan.",
       "browserSettingsTitle": "Hantera cookies i din webbläsare",
       "browserSettings": "Du kan när som helst konfigurera din webbläsare att vägra eller ta bort cookies. Instruktionerna beror på din webbläsare (Chrome, Firefox, Safari, Edge). Guider finns tillgängliga på www.cnil.fr."
     }

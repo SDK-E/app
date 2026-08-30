@@ -6,9 +6,9 @@
       "whatIsTitle": "Co to jest plik cookie?",
       "whatIs": "Plik cookie to mały plik tekstowy umieszczany na Twoim urządzeniu podczas odwiedzania strony internetowej. Pozwala witrynie rozpoznać Twoją przeglądarkę i zapamiętać informacje.",
       "thisSiteTitle": "Pliki cookie ustawione przez tę witrynę",
-      "thisSite": "Na tej stronie nie są ustawiane żadne analityczne, reklamowe ani śledzące pliki cookie. Stosowane rozwiązanie analityczne (Vercel Analytics) nie wykorzystuje plików cookie. Dlatego Twoje przeglądanie nie jest śledzone.",
+      "thisSite": "Ta strona korzysta z platformy do zarządzania zgodami SecurePrivacy. Podczas wizyty baner prosi o Twoją zgodę przed ustawieniem plików cookie. Twój wybór jest zapisywany w przeglądarce, dzięki czemu baner nie pojawia się ponownie, dopóki się nie zmieni. Pliki cookie są używane wyłącznie do celów, które akceptujesz. Google Analytics mierzy ruch odbiorców witryny tylko dla odwiedzających, którzy wyrażą na to zgodę w banerze. Analityka odbiorców witryny (Vercel Analytics) nie korzysta z plików cookie.",
       "consentBannerTitle": "Baner zgody",
-      "consentBanner": "Nie wyświetla się żaden baner zgody, ponieważ nie ustawiono żadnych plików cookie. Jeśli dodano skrypt ustawiający pliki cookie, wymagany byłby baner zgody, a ta strona zostałaby zaktualizowana.",
+      "consentBanner": "Podczas pierwszej wizyty baner umożliwia zaakceptowanie lub odrzucenie każdej kategorii plików cookie. Możesz w każdej chwili zmienić lub wycofać swój wybór, ponownie otwierając baner z tej strony.",
       "browserSettingsTitle": "Zarządzanie plikami cookies w Twojej przeglądarce",
       "browserSettings": "Możesz skonfigurować swoją przeglądarkę tak, aby w każdej chwili odrzucała lub usuwała pliki cookie. Instrukcje zależą od przeglądarki (Chrome, Firefox, Safari, Edge). Przewodniki są dostępne pod adresem www.cnil.fr."
     }

@@ -6,9 +6,9 @@
       "whatIsTitle": "What is a cookie?",
       "whatIs": "A cookie is a small text file placed on your device when you visit a website. It allows the site to recognise your browser and remember information.",
       "thisSiteTitle": "Cookies set by this site",
-      "thisSite": "No analytics, advertising or tracking cookies are set by this site. The analytics solution in use (Vercel Analytics) is cookieless. Your browsing is therefore not tracked.",
+      "thisSite": "This site uses the consent-management platform SecurePrivacy. When you visit, a banner asks for your consent before cookies are set. Your choice is stored in your browser so the banner does not appear again until it changes. Cookies are only used for the purposes you accept. Google Analytics measures site audience traffic only for visitors who consent to it in the banner. The site's own analytics (Vercel Analytics) is cookieless.",
       "consentBannerTitle": "Consent banner",
-      "consentBanner": "No consent banner is shown because no cookies are set. If a cookie-setting script were added, a consent banner would become required and this page would be updated.",
+      "consentBanner": "On your first visit, a banner lets you accept or refuse each category of cookie. You can change or withdraw your choice at any time by reopening the banner from this page.",
       "browserSettingsTitle": "Managing cookies in your browser",
       "browserSettings": "You can configure your browser to refuse or delete cookies at any time. Instructions depend on your browser (Chrome, Firefox, Safari, Edge). Guides are available at www.cnil.fr."
     }

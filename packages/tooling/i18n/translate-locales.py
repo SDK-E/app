@@ -41,6 +41,8 @@ PROTECTED_TERMS = (
     "Elasticsearch", "TypeScript", "Kubernetes", "MongoDB", "Laravel",
     "Symfony", "Node.js", "Tailwind", "Shadcn", "MySQL", "Redis",
     "Valkey", "Vercel", "Resend", "SIREN", "SIRET", "GDPR", "RGPD",
+    "SecurePrivacy", "app.secureprivacy.ai",
+    "Google Analytics", "Google (Google LLC)",
     "CNIL", "LCEN", "CI/CD", "B2B", "SaaS", "LLM", "RAG", "PHP",
     "Java", "React", "Vue", "Nuxt", "AWS", "GCP", "Azure", "Helm",
     "APIs", "API", "Chrome", "Firefox", "Safari", "Edge", "SDK",

@@ -6,9 +6,9 @@
       "whatIsTitle": "Qu'est-ce qu'un cookie ?",
       "whatIs": "Un cookie est un petit fichier texte déposé sur votre appareil lorsque vous visitez un site Internet. Il permet au site de reconnaître votre navigateur et de mémoriser des informations.",
       "thisSiteTitle": "Cookies définis par ce site",
-      "thisSite": "Aucun cookie d'analyse, de publicité ou de suivi n'est défini par ce site. La solution d'analyse utilisée (Vercel Analytics) est sans cookie. Votre navigation n'est donc pas tracée.",
+      "thisSite": "Ce site utilise la plateforme de gestion du consentement SecurePrivacy. Lors de votre visite, une bannière demande votre consentement avant que des cookies ne soient déposés. Votre choix est mémorisé dans votre navigateur afin que la bannière ne s'affiche plus jusqu'à son évolution. Les cookies ne sont utilisés que pour les finalités que vous acceptez. Google Analytics mesure le trafic d'audience du site uniquement pour les visiteurs qui y consentent dans la bannière. La solution d'analyse du site (Vercel Analytics) est sans cookie.",
       "consentBannerTitle": "Bannière de consentement",
-      "consentBanner": "Aucune bannière de consentement ne s'affiche car aucun cookie n'est défini. Si un script de paramétrage des cookies était ajouté, une bannière de consentement deviendrait requise et cette page serait mise à jour.",
+      "consentBanner": "Lors de votre première visite, une bannière vous permet d'accepter ou de refuser chaque catégorie de cookies. Vous pouvez modifier ou retirer votre choix à tout moment en rouvrant la bannière depuis cette page.",
       "browserSettingsTitle": "Gestion des cookies dans votre navigateur",
       "browserSettings": "Vous pouvez configurer votre navigateur pour refuser ou supprimer les cookies à tout moment. Les instructions dépendent de votre navigateur (Chrome, Firefox, Safari, Edge). Les guides sont disponibles chez www.cnil.fr."
     }

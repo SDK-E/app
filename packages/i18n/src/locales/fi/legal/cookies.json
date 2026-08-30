@@ -6,9 +6,9 @@
       "whatIsTitle": "Mikä on eväste?",
       "whatIs": "Eväste on pieni tekstitiedosto, joka asetetaan laitteellesi, kun vierailet verkkosivustolla. Sen avulla sivusto tunnistaa selaimesi ja muistaa tiedot.",
       "thisSiteTitle": "Tämän sivuston asettamat evästeet",
-      "thisSite": "Tämä sivusto ei aseta analytiikka-, mainonta- tai seurantaevästeitä. Käytössä oleva analytiikkaratkaisu (Vercel Analytics) on evästeetön. Selaustasi ei siksi seurata.",
+      "thisSite": "Tämä sivusto käyttää suostumustenhallinta-alustaa SecurePrivacy. Kun vierailet sivustolla, banneri pyytää suostumustasi ennen evästeiden asettamista. Valintasi tallennetaan selaimeesi, joten banneri ei ilmesty uudelleen ennen kuin se muuttuu. Evästeitä käytetään vain niihin tarkoituksiin, jotka hyväksyt. Google Analytics mittaa sivuston yleisöliikennettä vain vierailijoille, jotka antavat siihen suostumuksen bannerissa. Sivuston yleisöanalytiikka (Vercel Analytics) on evästeetön.",
       "consentBannerTitle": "Suostumusbanneri",
-      "consentBanner": "Suostumusbanneria ei näytetä, koska evästeitä ei ole asetettu. Jos evästeiden asetusskripti lisättäisiin, vaadittaisiin suostumusbanneri ja tämä sivu päivitettäisiin.",
+      "consentBanner": "Ensimmäisellä vierailullasi bannerin avulla voit hyväksyä tai hylätä kunkin evästeluokan. Voit muuttaa tai peruuttaa valintasi milloin tahansa avaamalla bannerin uudelleen tältä sivulta.",
       "browserSettingsTitle": "Evästeiden hallinta selaimessasi",
       "browserSettings": "Voit määrittää selaimesi kieltäytymään tai poistamaan evästeet milloin tahansa. Ohjeet riippuvat selaimesta (Chrome, Firefox, Safari, Edge). Oppaat ovat saatavilla osoitteessa www.cnil.fr."
     }

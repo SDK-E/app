@@ -6,9 +6,9 @@
       "whatIsTitle": "Mi az a süti?",
       "whatIs": "A süti egy kis szöveges fájl, amely akkor kerül az Ön készülékére, amikor meglátogat egy webhelyet. Lehetővé teszi a webhely számára, hogy felismerje böngészőjét, és megjegyezze az információkat.",
       "thisSiteTitle": "Az oldal által beállított cookie-k",
-      "thisSite": "Ez az oldal nem állít be analitikai, hirdetési vagy nyomkövető cookie-kat. A használt analitikai megoldás (Vercel Analytics) cookie-mentes. Ezért a böngészést nem követi nyomon.",
+      "thisSite": "Ez a webhely a SecurePrivacy hozzájáruláskezelő platformot használ. Látogatáskor a banner a cookie-k beállítása előtt kéri a beleegyezését. Választása a böngészőjében kerül tárolásra, így a banner csak annak változásakor jelenik meg újra. A cookie-kat csak az Ön által elfogadott célokra használjuk. A Google Analytics csak azoknak a látogatóknak méri a webhely közönség-forgalmát, akik a bannerben ehhez hozzájárulnak. A webhely látogatottsági elemzése (Vercel Analytics) cookie-mentes.",
       "consentBannerTitle": "Hozzájárulás banner",
-      "consentBanner": "Nem jelenik meg beleegyező szalaghirdetés, mert nincsenek beállítva cookie-k. Ha egy cookie-beállító szkriptet adnának hozzá, akkor szükség lesz egy hozzájárulási szalaghirdetésre, és ez az oldal frissülne.",
+      "consentBanner": "Az első látogatáskor egy banner segítségével elfogadhatja vagy elutasíthatja az egyes cookie-kategóriákat. Választását bármikor módosíthatja vagy visszavonhatja, ha a bannert erről az oldalról újra megnyitja.",
       "browserSettingsTitle": "Cookie-k kezelése a böngészőben",
       "browserSettings": "Böngészőjét bármikor beállíthatja úgy, hogy megtagadja vagy törölje a cookie-kat. Az utasítások a böngészőtől függenek (Chrome, Firefox, Safari, Edge). Az útmutatók a www.cnil.fr címen érhetők el."
     }

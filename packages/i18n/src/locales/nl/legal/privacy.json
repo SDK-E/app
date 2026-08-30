@@ -19,6 +19,14 @@
         {
           "name": "Prisma Postgres",
           "role": "Managed PostgreSQL database"
+        },
+        {
+          "name": "SecurePrivacy",
+          "role": "Beheer van toestemming voor cookies"
+        },
+        {
+          "name": "Google (Google LLC)",
+          "role": "Publieksanalyses met toestemming (Google Analytics)"
         }
       ],
       "controllerTitle": "Gegevensbeheerder",
