@@ -1,10 +1,9 @@
 "use server";
 
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { getPrisma } from "@platform/db";
+import { localeSchema, themeSchema } from "@platform/schemas/userManagement";
 import { cookies } from "next/headers";
-
-import { getPrisma } from "@sdk-e/db";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { localeSchema, themeSchema } from "@sdk-e/schemas/userManagement";
 
 export async function updatePreferredLocaleAction(locale: string): Promise<{ ok: boolean }> {
   const parsed = localeSchema.safeParse(locale);

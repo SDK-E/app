@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-shell/lib/navigation";
+export * from "@platform/portal-shell/lib/navigation";

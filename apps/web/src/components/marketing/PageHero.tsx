@@ -1,6 +1,6 @@
-import { Button } from "@sdk-e/ui/Button";
-import { Container } from "@sdk-e/ui/Container";
-import { Section } from "@sdk-e/ui/Section";
+import { Button } from "@platform/ui/Button";
+import { Container } from "@platform/ui/Container";
+import { Section } from "@platform/ui/Section";
 
 export function PageHero({
   eyebrow,
@@ -18,7 +18,10 @@ export function PageHero({
   signals: string[];
 }) {
   return (
-    <Section tone="light" className="py-12 md:py-16 lg:py-[96px]">
+    <Section
+      tone="light"
+      className="py-12 md:py-16 lg:py-[96px]"
+    >
       <Container>
         <div className="grid gap-10 lg:grid-cols-[1.35fr_0.65fr] lg:gap-[70px]">
           <div>
@@ -32,7 +35,10 @@ export function PageHero({
             <div className="mt-7 flex flex-wrap gap-3">
               <Button href={primaryCta.href}>{primaryCta.label} →</Button>
               {secondaryCta ? (
-                <Button href={secondaryCta.href} variant="outline">
+                <Button
+                  href={secondaryCta.href}
+                  variant="outline"
+                >
                   {secondaryCta.label}
                 </Button>
               ) : null}
@@ -49,7 +55,10 @@ export function PageHero({
                 index > 1 ? "lg:border-l lg:border-line" : ""
               }`}
             >
-              <span className="mr-3 text-section-accent" aria-hidden>
+              <span
+                className="mr-3 text-section-accent"
+                aria-hidden
+              >
                 ●
               </span>
               {signal}

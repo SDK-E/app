@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-shell/AccessPending";
+export * from "@platform/portal-shell/AccessPending";

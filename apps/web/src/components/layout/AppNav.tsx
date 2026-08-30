@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-shell/AppNav";
+export * from "@platform/portal-shell/AppNav";

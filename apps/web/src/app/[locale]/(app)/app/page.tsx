@@ -1,2 +1,2 @@
-export { default } from "@sdk-e/portal-shell/app/page";
-export * from "@sdk-e/portal-shell/app/page";
+export { default } from "@platform/portal-shell/app/page";
+export * from "@platform/portal-shell/app/page";

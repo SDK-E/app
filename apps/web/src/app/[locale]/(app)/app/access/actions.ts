@@ -1,12 +1,11 @@
 "use server";
 
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { getPrisma } from "@platform/db";
+import { sendAccessRequestCreatedNotification } from "@platform/email";
+import { requestAccessSchema } from "@platform/schemas/userManagement";
+import { requestCompanyAccess } from "@platform/users";
 import { revalidatePath } from "next/cache";
-
-import { getPrisma } from "@sdk-e/db";
-import { sendAccessRequestCreatedNotification } from "@sdk-e/email";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { requestAccessSchema } from "@sdk-e/schemas/userManagement";
-import { requestCompanyAccess } from "@sdk-e/users";
 
 export interface AccessRequestState {
   error?: string;
@@ -16,7 +15,7 @@ export interface AccessRequestState {
 export async function requestAccessAction(
   locale: string,
   _state: AccessRequestState,
-  formData: FormData
+  formData: FormData,
 ): Promise<AccessRequestState> {
   void _state;
   const parsed = requestAccessSchema.safeParse({
@@ -37,8 +36,8 @@ export async function requestAccessAction(
           companyName: request.company.name,
           requesterName: principal.name,
           requesterEmail: principal.email,
-        })
-      )
+        }),
+      ),
     );
     revalidatePath("/", "layout");
     return {
@@ -64,7 +63,7 @@ async function getAccessRequestNotifiees(companyId: string) {
     }),
   ]);
   const seen = new Set<string>();
-  const notifiees: Array<{ email: string; name: string }> = [];
+  const notifiees: { email: string; name: string }[] = [];
   for (const { user } of members) {
     if (!seen.has(user.email)) {
       seen.add(user.email);

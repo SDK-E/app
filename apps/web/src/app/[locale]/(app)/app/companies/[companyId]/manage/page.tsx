@@ -1,2 +1,2 @@
-export * from "@sdk-e/portal-staff/app/companies/[companyId]/manage/page";
-export { default } from "@sdk-e/portal-staff/app/companies/[companyId]/manage/page";
+export * from "@platform/portal-staff/app/companies/[companyId]/manage/page";
+export { default } from "@platform/portal-staff/app/companies/[companyId]/manage/page";

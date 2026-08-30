@@ -1,4 +1,4 @@
-import { Button } from "@sdk-e/ui/Button";
+import { Button } from "@platform/ui/Button";
 
 export function ProjectCta({
   eyebrow,
@@ -21,7 +21,11 @@ export function ProjectCta({
       </div>
       <div>
         <p className="max-w-[50ch] text-body md:text-lead">{body}</p>
-        <Button href={cta.href} variant="dark" className="mt-7">
+        <Button
+          href={cta.href}
+          variant="dark"
+          className="mt-7"
+        >
           {cta.label} →
         </Button>
       </div>

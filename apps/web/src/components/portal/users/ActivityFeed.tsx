@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-shell/components/portal/users/ActivityFeed";
+export * from "@platform/portal-shell/components/portal/users/ActivityFeed";

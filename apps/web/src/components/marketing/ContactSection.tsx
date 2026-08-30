@@ -1,12 +1,15 @@
-import { Section } from "@sdk-e/ui/Section";
-import { siteConfig } from "@sdk-e/config/site";
+import { siteConfig } from "@platform/config/site";
+import { Section } from "@platform/ui/Section";
 import { getTranslations } from "next-intl/server";
 
 export default async function ContactSection({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "contact" });
 
   return (
-    <Section id="about" tone="brand">
+    <Section
+      id="about"
+      tone="brand"
+    >
       <div className="grid items-end gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-[70px]">
         <div>
           <p className="text-label font-bold uppercase tracking-eyebrow text-dark">
@@ -32,7 +35,10 @@ export default async function ContactSection({ locale }: { locale: string }) {
               siteConfig.contact.address,
               siteConfig.contact.domain,
             ].map((line) => (
-              <p key={line} className="py-3 text-label">
+              <p
+                key={line}
+                className="py-3 text-label"
+              >
                 {line}
               </p>
             ))}

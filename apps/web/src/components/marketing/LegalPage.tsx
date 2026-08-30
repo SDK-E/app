@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
+
 import { getTranslations } from "next-intl/server";
-import { Header } from "@/components/layout/Header";
+
+import { PublicHeader } from "@/components/layout/PublicHeader";
 import SiteFooter from "@/components/marketing/SiteFooter";
 
 const NAV_LINKS = [
@@ -15,7 +17,7 @@ export async function LegalPage({ locale, children }: { locale: string; children
 
   return (
     <div className="flex min-h-screen flex-col bg-paper text-dark">
-      <Header
+      <PublicHeader
         links={NAV_LINKS.map((link) => ({
           label: t(link.labelKey),
           href: `/${locale}${link.href}`,

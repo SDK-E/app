@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-shell/components/portal/ActionForm";
+export * from "@platform/portal-shell/components/portal/ActionForm";

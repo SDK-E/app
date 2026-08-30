@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
-import Script from "next/script";
-import { JetBrains_Mono } from "next/font/google";
+
+import { siteConfig } from "@platform/config/site";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { HtmlLang } from "@/components/layout/HtmlLang";
-import { siteConfig } from "@sdk-e/config/site";
+import { getLocale } from "next-intl/server";
+import { JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
+
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext", "greek"],
   weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 const gtmHeadSnippet = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${siteConfig.analytics.googleTagManagerId}');`;
@@ -26,13 +29,19 @@ export const metadata: Metadata = {
   description: "Software design & engineering partner for regulated industries.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+
   return (
-    <html lang="en" className={jetbrainsMono.variable} suppressHydrationWarning>
+    <html
+      lang={locale ?? "en"}
+      className={jetbrainsMono.variable}
+      suppressHydrationWarning
+    >
       <body className="antialiased">
         <noscript>
           <iframe
@@ -53,14 +62,13 @@ export default function RootLayout({
         />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.analytics.googleAnalyticsId}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script
           id="google-analytics-config"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{ __html: gaTagSnippet }}
         />
-        <HtmlLang />
         {children}
         <SpeedInsights />
         <Analytics />

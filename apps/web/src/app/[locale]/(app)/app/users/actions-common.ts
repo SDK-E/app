@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-staff/app/users/actions-common";
+export * from "@platform/portal-staff/app/users/actions-common";

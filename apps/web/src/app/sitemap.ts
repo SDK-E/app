@@ -1,6 +1,6 @@
+import { locales } from "@platform/i18n";
+import { getSiteUrl } from "@platform/marketing/seo";
 import { MetadataRoute } from "next";
-import { locales } from "@sdk-e/i18n";
-import { getSiteUrl } from "@sdk-e/marketing/seo";
 
 const PUBLIC_PATHS = [
   "/",
@@ -17,41 +17,24 @@ const PUBLIC_PATHS = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();
-  const translatedLocales = ["en", "fr"];
-  const otherLocales = locales.filter((locale) => !translatedLocales.includes(locale));
-
   const entries: MetadataRoute.Sitemap = [];
 
-  for (const locale of translatedLocales) {
-    for (const path of PUBLIC_PATHS) {
-      const localePath = `/${locale}${path === "/" ? "/" : path}`;
+  for (const path of PUBLIC_PATHS) {
+    const localePath = (locale: string) => `/${locale}${path === "/" ? "/" : path}`;
+
+    const languages: Record<string, string> = {};
+    for (const l of locales) {
+      languages[l] = `${base}${localePath(l)}`;
+    }
+    languages["x-default"] = `${base}${localePath("en")}`;
+
+    for (const locale of locales) {
       entries.push({
-        url: `${base}${localePath}`,
-        lastModified: new Date(),
-        changeFrequency: "monthly",
+        url: `${base}${localePath(locale)}`,
         priority: path === "/" ? 1 : 0.7,
-        alternates: {
-          languages: {
-            en: `${base}/en${path === "/" ? "/" : path}`,
-            fr: `${base}/fr${path === "/" ? "/" : path}`,
-          },
-        },
+        alternates: { languages },
       });
     }
-  }
-
-  for (const locale of otherLocales) {
-    entries.push({
-      url: `${base}/${locale}/`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.5,
-      alternates: {
-        languages: {
-          "x-default": `${base}/en/`,
-        },
-      },
-    });
   }
 
   return entries;

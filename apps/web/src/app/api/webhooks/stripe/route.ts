@@ -1,10 +1,8 @@
 import "server-only";
-
-import Stripe from "stripe";
+import { getPrisma } from "@platform/db";
+import { getServerEnv } from "@platform/env";
 import { NextResponse } from "next/server";
-
-import { getServerEnv } from "@sdk-e/env";
-import { getPrisma } from "@sdk-e/db";
+import Stripe from "stripe";
 
 export const dynamic = "force-dynamic";
 
@@ -28,7 +26,7 @@ export async function POST(request: Request) {
       {
         error: `Webhook signature verification failed: ${error instanceof Error ? error.message : "unknown error"}`,
       },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -155,7 +153,7 @@ export async function POST(request: Request) {
       {
         error: `Webhook handler failed: ${error instanceof Error ? error.message : "unknown error"}`,
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

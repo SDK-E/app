@@ -1,10 +1,10 @@
+import { localizePath } from "@platform/i18n";
+import { ArrowLink } from "@platform/ui/ArrowLink";
+import { Section, sectionToneStyles } from "@platform/ui/Section";
+import { SectionHeader } from "@platform/ui/SectionHeader";
 import { getTranslations } from "next-intl/server";
 
-import { Section, sectionToneStyles } from "@sdk-e/ui/Section";
-import { SectionHeader } from "@sdk-e/ui/SectionHeader";
-import { ArrowLink } from "@sdk-e/ui/ArrowLink";
 import { ScenarioStudy, type ScenarioStudyItem } from "@/components/marketing/ScenarioStudy";
-import { localizePath } from "@sdk-e/i18n";
 
 export async function ScenariosSection({
   locale,
@@ -22,7 +22,10 @@ export async function ScenariosSection({
         title={t("scenarios.heading")}
         intro={t("scenarios.intro")}
       />
-      <div style={sectionToneStyles.light} className="rounded-card p-6 md:p-8">
+      <div
+        style={sectionToneStyles.light}
+        className="rounded-card p-6 md:p-8"
+      >
         {items.map((scenario) => (
           <ScenarioStudy
             key={scenario.number}

@@ -1,34 +1,35 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import nextDynamic from "next/dynamic";
 
-import { Header } from "@/components/layout/Header";
-import { Section } from "@sdk-e/ui/Section";
-import { SectionHeader } from "@sdk-e/ui/SectionHeader";
-import { Button } from "@sdk-e/ui/Button";
+import { Button } from "@platform/ui/Button";
+import { Section } from "@platform/ui/Section";
+import { SectionHeader } from "@platform/ui/SectionHeader";
+import nextDynamic from "next/dynamic";
+import { notFound } from "next/navigation";
+
+import { PublicHeader } from "@/components/layout/PublicHeader";
 
 export const dynamic = "force-dynamic";
 
 const ComponentsSection = nextDynamic(() =>
-  import("@sdk-e/design-system/ComponentsSection").then((mod) => mod.ComponentsSection)
+  import("@platform/design-system/ComponentsSection").then((mod) => mod.ComponentsSection),
 );
 const PaletteSection = nextDynamic(() =>
-  import("@sdk-e/design-system/PaletteSection").then((mod) => mod.PaletteSection)
+  import("@platform/design-system/PaletteSection").then((mod) => mod.PaletteSection),
 );
 const PortalUsersSection = nextDynamic(() =>
-  import("@/components/design-system/PortalUsersSection").then((mod) => mod.PortalUsersSection)
+  import("@/components/design-system/PortalUsersSection").then((mod) => mod.PortalUsersSection),
 );
 const PrimitivesSection = nextDynamic(() =>
-  import("@sdk-e/design-system/PrimitivesSection").then((mod) => mod.PrimitivesSection)
+  import("@platform/design-system/PrimitivesSection").then((mod) => mod.PrimitivesSection),
 );
 const StatesSection = nextDynamic(() =>
-  import("@sdk-e/design-system/StatesSection").then((mod) => mod.StatesSection)
+  import("@platform/design-system/StatesSection").then((mod) => mod.StatesSection),
 );
 const SurfacesSection = nextDynamic(() =>
-  import("@sdk-e/design-system/SurfacesSection").then((mod) => mod.SurfacesSection)
+  import("@platform/design-system/SurfacesSection").then((mod) => mod.SurfacesSection),
 );
 const TypeSection = nextDynamic(() =>
-  import("@sdk-e/design-system/TypeSection").then((mod) => mod.TypeSection)
+  import("@platform/design-system/TypeSection").then((mod) => mod.TypeSection),
 );
 
 export async function generateMetadata({
@@ -67,7 +68,7 @@ export default async function DesignSystemPage({
   const { locale: _locale } = await params;
   return (
     <div className="bg-background text-foreground">
-      <Header
+      <PublicHeader
         links={navLinks}
         cta={{ label: "Discuss a project", href: "#components" }}
         locale={_locale}
@@ -80,7 +81,10 @@ export default async function DesignSystemPage({
           intro="This page renders every token, primitive and state defined in docs/design/design-system.md and docs/design/patterns.md. It is the reference during development. It is intentionally not linked from production navigation."
         />
         <div className="flex flex-wrap gap-3">
-          <Button href="/" variant="dark">
+          <Button
+            href="/"
+            variant="dark"
+          >
             Primary action →
           </Button>
         </div>

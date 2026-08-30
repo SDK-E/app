@@ -1,23 +1,30 @@
-import { Section } from "@sdk-e/ui/Section";
-import { SectionHeader } from "@sdk-e/ui/SectionHeader";
-import { Card } from "@sdk-e/ui/Card";
+import { Card } from "@platform/ui/Card";
+import { Section } from "@platform/ui/Section";
+import { SectionHeader } from "@platform/ui/SectionHeader";
 import { getTranslations } from "next-intl/server";
 
 export default async function ServicesSection({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "services" });
-  const services = t.raw("items") as Array<{
+  const services = t.raw("items") as {
     number: string;
     category: string;
     title: string;
     copy: string;
-  }>;
+  }[];
 
   return (
     <Section id="services">
-      <SectionHeader eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
+      <SectionHeader
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        intro={t("intro")}
+      />
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
-          <Card key={service.title} className="flex min-h-[250px] flex-col justify-between">
+          <Card
+            key={service.title}
+            className="flex min-h-[250px] flex-col justify-between"
+          >
             <p className="text-micro font-bold uppercase tracking-label">
               {service.number} / {service.category.toUpperCase()}
             </p>

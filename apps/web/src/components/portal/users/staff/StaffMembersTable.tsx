@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-staff/components/users/staff/StaffMembersTable";
+export * from "@platform/portal-staff/components/users/staff/StaffMembersTable";

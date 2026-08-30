@@ -1,6 +1,6 @@
+import { Button } from "@platform/ui/Button";
 import { getTranslations } from "next-intl/server";
 
-import { Button } from "@sdk-e/ui/Button";
 import { ErrorPage } from "@/components/layout/ErrorPage";
 
 export default async function UnauthenticatedPage({
@@ -17,7 +17,10 @@ export default async function UnauthenticatedPage({
       headline={t("unauthenticatedTitle")}
       description={t("unauthenticatedDescription")}
       primaryAction={
-        <Button href={`/${locale}/login`} variant="default">
+        <Button
+          href={`/${locale}/login`}
+          variant="default"
+        >
           {t("unauthenticatedSignIn")}
         </Button>
       }

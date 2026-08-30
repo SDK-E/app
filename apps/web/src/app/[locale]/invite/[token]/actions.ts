@@ -1,11 +1,10 @@
 "use server";
 
+import { getAuth0Client } from "@platform/auth/auth0";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { acceptInvitation } from "@platform/users";
 import { redirect } from "next/navigation";
 import { z } from "zod";
-
-import { getAuth0Client } from "@sdk-e/auth/auth0";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { acceptInvitation } from "@sdk-e/users";
 
 export interface InvitationActionState {
   error?: string;
@@ -19,7 +18,7 @@ export async function acceptInvitationAction(
   locale: string,
   token: string,
   _state: InvitationActionState,
-  _formData: FormData
+  _formData: FormData,
 ): Promise<InvitationActionState> {
   void _state;
   void _formData;

@@ -1,8 +1,8 @@
+import { localizePath } from "@platform/i18n";
+import { Section } from "@platform/ui/Section";
 import { getTranslations } from "next-intl/server";
 
-import { Section } from "@sdk-e/ui/Section";
 import { ProjectCta } from "@/components/marketing/ProjectCta";
-import { localizePath } from "@sdk-e/i18n";
 
 export async function CtaSection({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "homePage" });

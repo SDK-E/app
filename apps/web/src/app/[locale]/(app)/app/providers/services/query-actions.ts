@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-providers/app/providers/services/query-actions";
+export * from "@platform/portal-providers/app/providers/services/query-actions";

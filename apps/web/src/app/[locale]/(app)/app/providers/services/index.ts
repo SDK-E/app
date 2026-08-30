@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-providers/app/providers/services/index";
+export * from "@platform/portal-providers/app/providers/services/index";

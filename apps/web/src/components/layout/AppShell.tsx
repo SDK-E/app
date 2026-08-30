@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-shell/AppShell";
+export * from "@platform/portal-shell/AppShell";

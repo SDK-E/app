@@ -1,11 +1,9 @@
 import "server-only";
-
+import { requireSdkStaff } from "@platform/auth/authorization";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { getPrisma } from "@platform/db";
+import { stripe } from "@platform/payments/stripe";
 import { NextResponse } from "next/server";
-
-import { getPrisma } from "@sdk-e/db";
-import { requireSdkStaff } from "@sdk-e/auth/authorization";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { stripe } from "@sdk-e/payments/stripe";
 
 export const dynamic = "force-dynamic";
 
@@ -15,7 +13,7 @@ export async function POST(request: Request) {
     if (!principal) {
       return NextResponse.json(
         { error: "Your session has ended. Sign in and try again." },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
@@ -35,7 +33,7 @@ export async function POST(request: Request) {
     if (!providerAccountId || amount <= 0 || !currency) {
       return NextResponse.json(
         { error: "providerAccountId, amount, and currency are required." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -50,7 +48,7 @@ export async function POST(request: Request) {
     if (!connectedAccount.capabilities || !connectedAccount.detailsSubmitted) {
       return NextResponse.json(
         { error: "Connected account is not fully set up." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -76,7 +74,7 @@ export async function POST(request: Request) {
     if (error instanceof Error && error.message.includes("Authentication is required")) {
       return NextResponse.json(
         { error: "Your session has ended. Sign in and try again." },
-        { status: 401 }
+        { status: 401 },
       );
     }
     if (error instanceof Error && error.message.includes("SDK staff access is required")) {
@@ -84,7 +82,7 @@ export async function POST(request: Request) {
     }
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "Transfer could not be created." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

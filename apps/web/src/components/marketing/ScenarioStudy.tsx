@@ -1,11 +1,11 @@
-export type ScenarioStudyItem = {
+export interface ScenarioStudyItem {
   number: string;
   title: string;
   situation: string;
   signals: string[];
   questions: string[];
   deliverables: string[];
-};
+}
 
 export function ScenarioStudy({
   item,
@@ -45,7 +45,10 @@ export function ScenarioStudy({
               </p>
               <ul className="mt-5 space-y-4">
                 {group.values.map((value) => (
-                  <li key={value} className={`text-body ${index === 2 ? "text-fog" : "text-dark"}`}>
+                  <li
+                    key={value}
+                    className={`text-body ${index === 2 ? "text-fog" : "text-dark"}`}
+                  >
                     {value}
                   </li>
                 ))}

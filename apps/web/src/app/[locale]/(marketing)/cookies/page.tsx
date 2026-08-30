@@ -1,55 +1,11 @@
 import type { Metadata } from "next";
+
+import { siteConfig } from "@platform/config/site";
+import { breadcrumbListJsonLd, buildMetadata, organizationJsonLd } from "@platform/marketing/seo";
+import { getTranslations } from "next-intl/server";
+
 import { LegalPage } from "@/components/marketing/LegalPage";
 import { LegalH2, LegalIntro, LegalParagraph, LegalTitle } from "@/components/marketing/LegalText";
-import { getTranslations } from "next-intl/server";
-import { siteConfig } from "@sdk-e/config/site";
-import { breadcrumbListJsonLd } from "@sdk-e/marketing/seo";
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "legal.cookies" });
-  const title = t("title");
-  const description = t("intro");
-
-  return {
-    title: `${title} — ${siteConfig.name}`,
-    description,
-    alternates: {
-      canonical: `/${locale}/cookies`,
-      languages: {
-        en: "/en/cookies",
-        fr: "/fr/cookies",
-      },
-    },
-    openGraph: {
-      title: `${title} — ${siteConfig.name}`,
-      description,
-      siteName: siteConfig.name,
-      url: `/${locale}/cookies`,
-      images: [{ url: "/brand/sdk-thumbnail-light.png", width: 1200, height: 628 }],
-      locale: locale === "fr" ? "fr_FR" : "en_US",
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${title} — ${siteConfig.name}`,
-      description,
-      images: ["/brand/sdk-thumbnail-light.png"],
-    },
-    other: {
-      "script:ld+json": JSON.stringify(
-        breadcrumbListJsonLd([
-          { name: "Home", url: "/" },
-          { name: title, url: "/cookies" },
-        ])
-      ),
-    },
-  };
-}
 
 export default async function CookiesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -73,4 +29,33 @@ export default async function CookiesPage({ params }: { params: Promise<{ locale
       <LegalParagraph>{t("browserSettings")}</LegalParagraph>
     </LegalPage>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "legal.cookies" });
+  const title = t("title");
+  const description = t("intro");
+
+  return {
+    ...buildMetadata({
+      title: `${title} — ${siteConfig.name}`,
+      description,
+      path: "/cookies",
+      locale,
+    }),
+    other: {
+      [`script:ld+json`]: JSON.stringify([
+        breadcrumbListJsonLd([
+          { name: "Home", url: "/" },
+          { name: title, url: "/cookies" },
+        ]),
+        organizationJsonLd(),
+      ]),
+    },
+  };
 }

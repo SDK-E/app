@@ -1,4 +1,9 @@
 import type { Metadata } from "next";
+
+import { siteConfig } from "@platform/config/site";
+import { breadcrumbListJsonLd, buildMetadata, organizationJsonLd } from "@platform/marketing/seo";
+import { getTranslations } from "next-intl/server";
+
 import { LegalPage } from "@/components/marketing/LegalPage";
 import {
   LegalH2,
@@ -7,9 +12,6 @@ import {
   LegalParagraph,
   LegalTitle,
 } from "@/components/marketing/LegalText";
-import { siteConfig } from "@sdk-e/config/site";
-import { getTranslations } from "next-intl/server";
-import { breadcrumbListJsonLd } from "@sdk-e/marketing/seo";
 
 export async function generateMetadata({
   params,
@@ -22,37 +24,20 @@ export async function generateMetadata({
   const description = t("intro");
 
   return {
-    title: `${title} — ${siteConfig.name}`,
-    description,
-    alternates: {
-      canonical: `/${locale}/legal/mentions-legales`,
-      languages: {
-        en: "/en/legal/mentions-legales",
-        fr: "/fr/legal/mentions-legales",
-      },
-    },
-    openGraph: {
+    ...buildMetadata({
       title: `${title} — ${siteConfig.name}`,
       description,
-      siteName: siteConfig.name,
-      url: `/${locale}/legal/mentions-legales`,
-      images: [{ url: "/brand/sdk-thumbnail-light.png", width: 1200, height: 628 }],
-      locale: locale === "fr" ? "fr_FR" : "en_US",
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${title} — ${siteConfig.name}`,
-      description,
-      images: ["/brand/sdk-thumbnail-light.png"],
-    },
+      path: "/legal/mentions-legales",
+      locale,
+    }),
     other: {
-      "script:ld+json": JSON.stringify(
+      [`script:ld+json`]: JSON.stringify([
         breadcrumbListJsonLd([
           { name: "Home", url: "/" },
           { name: title, url: "/legal/mentions-legales" },
-        ])
-      ),
+        ]),
+        organizationJsonLd(),
+      ]),
     },
   };
 }

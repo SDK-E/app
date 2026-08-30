@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-shell/AccountMenu";
+export * from "@platform/portal-shell/AccountMenu";

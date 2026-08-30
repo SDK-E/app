@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-providers/components/OpportunityCardActions";
+export * from "@platform/portal-providers/components/OpportunityCardActions";

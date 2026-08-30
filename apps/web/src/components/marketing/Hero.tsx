@@ -1,12 +1,15 @@
-import { Section } from "@sdk-e/ui/Section";
-import { Button } from "@sdk-e/ui/Button";
+import { Button } from "@platform/ui/Button";
+import { Section } from "@platform/ui/Section";
 import { getTranslations } from "next-intl/server";
 
 export default async function Hero({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: "hero" });
 
   return (
-    <Section borderTop={false} className="lg:pb-[76px]">
+    <Section
+      borderTop={false}
+      className="lg:pb-[76px]"
+    >
       <p className="text-label font-bold uppercase tracking-eyebrow">{t("eyebrow")}</p>
       <div className="mt-5 grid items-end gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-[70px]">
         <h1 className="text-[40px] font-extrabold leading-[0.95] tracking-display md:text-display">
@@ -16,7 +19,10 @@ export default async function Hero({ locale }: { locale: string }) {
           <p className="text-body md:text-lead">{t("leadParagraph")}</p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Button href="#about">{t("ctaStartProject")} →</Button>
-            <Button href="#services" variant="outline">
+            <Button
+              href="#services"
+              variant="outline"
+            >
               {t("ctaExploreServices")}
             </Button>
           </div>
@@ -24,7 +30,10 @@ export default async function Hero({ locale }: { locale: string }) {
       </div>
       <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {["trustFrance", "trustSenior", "trustAI", "trustClients"].map((key) => (
-          <p key={key} className="border-t border-current pt-3 text-micro text-section-muted">
+          <p
+            key={key}
+            className="border-t border-current pt-3 text-micro text-section-muted"
+          >
             {t(key)}
           </p>
         ))}

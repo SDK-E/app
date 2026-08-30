@@ -1,6 +1,6 @@
+import { Section } from "@platform/ui/Section";
 import { getTranslations } from "next-intl/server";
 
-import { Section } from "@sdk-e/ui/Section";
 import {
   ProblemNavigator,
   type ProblemNavigatorItem,

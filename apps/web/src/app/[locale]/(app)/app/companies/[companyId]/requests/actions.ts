@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-shell/app/companies/[companyId]/requests/actions";
+export * from "@platform/portal-shell/app/companies/[companyId]/requests/actions";

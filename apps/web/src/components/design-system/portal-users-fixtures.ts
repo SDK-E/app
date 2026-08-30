@@ -12,10 +12,12 @@ import type {
   StaffMemberRow,
   StaffRequestRow,
   UserDetailView,
-} from "@sdk-e/users";
+} from "@platform/users";
 
 const now = new Date("2026-08-01T09:00:00.000Z");
 const later = new Date("2026-09-01T09:00:00.000Z");
+const ACME = "Acme Corporation";
+const NORTHWIND = "Northwind Traders";
 
 export const staffMemberRows: StaffMemberRow[] = [
   {
@@ -26,9 +28,7 @@ export const staffMemberRows: StaffMemberRow[] = [
     isActive: true,
     sdkStaffRole: null,
     createdAt: now,
-    memberships: [
-      { id: "membership-1", role: "OWNER", company: { id: "company-1", name: "Acme Industries" } },
-    ],
+    memberships: [{ id: "membership-1", role: "OWNER", company: { id: "company-1", name: ACME } }],
   },
   {
     id: "user-staff",
@@ -49,8 +49,8 @@ export const staffMemberRows: StaffMemberRow[] = [
     sdkStaffRole: null,
     createdAt: now,
     memberships: [
-      { id: "membership-2", role: "VIEWER", company: { id: "company-1", name: "Acme Industries" } },
-      { id: "membership-3", role: "BILLING", company: { id: "company-2", name: "Northwind Ltd" } },
+      { id: "membership-2", role: "VIEWER", company: { id: "company-1", name: ACME } },
+      { id: "membership-3", role: "BILLING", company: { id: "company-2", name: NORTHWIND } },
     ],
   },
 ];
@@ -88,7 +88,7 @@ export const invitationRows: StaffInvitationRow[] = [
     expiresAt: later,
     deliveryStatus: "SENT",
     createdAt: now,
-    company: { id: "company-1", name: "Acme Industries" },
+    company: { id: "company-1", name: ACME },
   },
   {
     id: "invitation-2",
@@ -125,7 +125,7 @@ export const requestRows: StaffRequestRow[] = [
     },
     requestedRole: "VIEWER",
     createdAt: now,
-    company: { id: "company-1", name: "Acme Industries" },
+    company: { id: "company-1", name: ACME },
   },
 ];
 
@@ -189,7 +189,7 @@ export const fixtureUserDetail: UserDetailView = {
       id: "membership-2",
       role: "VIEWER",
       joinedAt: now,
-      company: { id: "company-1", name: "Acme Industries", isActive: true },
+      company: { id: "company-1", name: ACME, isActive: true },
     },
   ],
   pendingInvitations: [],
@@ -199,12 +199,12 @@ export const fixtureUserDetail: UserDetailView = {
       status: "DECLINED",
       requestedRole: "VIEWER",
       createdAt: now,
-      company: { id: "company-2", name: "Northwind Ltd" },
+      company: { id: "company-2", name: NORTHWIND },
     },
   ],
   activity: activityEvents,
   companies: [
-    { id: "company-1", name: "Acme Industries" },
-    { id: "company-2", name: "Northwind Ltd" },
+    { id: "company-1", name: ACME },
+    { id: "company-2", name: NORTHWIND },
   ],
 };

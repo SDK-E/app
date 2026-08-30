@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
+
+import { localizePath } from "@platform/i18n";
+import { breadcrumbListJsonLd, buildMetadata, organizationJsonLd } from "@platform/marketing/seo";
+import { Section } from "@platform/ui/Section";
+import { SectionHeader } from "@platform/ui/SectionHeader";
 import { getTranslations } from "next-intl/server";
 
-import { Header } from "@/components/layout/Header";
-import { Section } from "@sdk-e/ui/Section";
-import { SectionHeader } from "@sdk-e/ui/SectionHeader";
+import { PublicHeader } from "@/components/layout/PublicHeader";
 import { FitMatrix } from "@/components/marketing/FitMatrix";
+import { getWorkPageData } from "@/components/marketing/getWorkPageData";
 import { PageHero } from "@/components/marketing/PageHero";
 import { ProjectCta } from "@/components/marketing/ProjectCta";
-import { ScenarioStudy, type ScenarioStudyItem } from "@/components/marketing/ScenarioStudy";
+import { ScenariosSection } from "@/components/marketing/ScenariosSection";
 import SiteFooter from "@/components/marketing/SiteFooter";
-import { localizePath } from "@sdk-e/i18n";
-import { buildMetadata } from "@sdk-e/marketing/seo";
 
 export async function generateMetadata({
   params,
@@ -19,25 +21,32 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  return buildMetadata({
-    title: t("workTitle"),
-    description: t("workDescription"),
-    path: "/work",
-    locale,
-  });
+  return {
+    ...buildMetadata({
+      title: t("workTitle"),
+      description: t("workDescription"),
+      path: "/work",
+      locale,
+    }),
+    other: {
+      [`script:ld+json`]: JSON.stringify([
+        breadcrumbListJsonLd([
+          { name: "SDK Enterprises", url: "/" },
+          { name: t("workTitle"), url: "/work" },
+        ]),
+        organizationJsonLd(),
+      ]),
+    },
+  };
 }
 
 export default async function WorkPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const [t, tNav] = await Promise.all([
-    getTranslations({ locale, namespace: "workPage" }),
-    getTranslations({ locale, namespace: "nav" }),
-  ]);
-  const scenarios = t.raw("scenarios.items") as ScenarioStudyItem[];
+  const { t, tNav, scenarios } = await getWorkPageData(locale);
 
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
-      <Header
+      <PublicHeader
         links={[
           { label: tNav("services"), href: "/services" },
           { label: tNav("work"), href: "/work" },
@@ -45,7 +54,7 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
           { label: tNav("about"), href: "/about" },
         ]}
         cta={{ label: tNav("discussProject"), href: "/start-a-project" }}
-        secondaryCta={{ label: tNav("signIn"), href: `/${locale}/login` }}
+        secondaryCta={{ label: tNav("signIn"), href: `${locale}/login` }}
         activeLabel={tNav("work")}
         translationsNamespace="nav"
         locale={locale}
@@ -62,24 +71,10 @@ export default async function WorkPage({ params }: { params: Promise<{ locale: s
           secondaryCta={{ label: t("hero.secondaryCta"), href: "#scenarios" }}
           signals={t.raw("hero.signals") as string[]}
         />
-        <Section id="scenarios">
-          <SectionHeader
-            eyebrow={t("scenarios.eyebrow")}
-            title={t("scenarios.heading")}
-            intro={t("scenarios.intro")}
-          />
-          {scenarios.map((scenario) => (
-            <ScenarioStudy
-              key={scenario.number}
-              item={scenario}
-              labels={{
-                signals: t("scenarios.labels.signals"),
-                questions: t("scenarios.labels.questions"),
-                deliverables: t("scenarios.labels.deliverables"),
-              }}
-            />
-          ))}
-        </Section>
+        <ScenariosSection
+          t={t}
+          scenarios={scenarios}
+        />
         <Section tone="dark">
           <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-[70px]">
             <p className="text-label font-bold uppercase tracking-eyebrow text-section-accent">

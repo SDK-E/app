@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-shell/components/portal/users/FilterSelect";
+export * from "@platform/portal-shell/components/portal/users/FilterSelect";

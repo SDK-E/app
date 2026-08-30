@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-shell/ActiveCompanyLabel";
+export * from "@platform/portal-shell/ActiveCompanyLabel";

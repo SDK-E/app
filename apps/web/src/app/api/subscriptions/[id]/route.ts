@@ -1,75 +1,11 @@
 import "server-only";
-
+import { requireCompanyContext } from "@platform/auth/authorization";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { getPrisma } from "@platform/db";
+import { stripe } from "@platform/payments/stripe";
 import { NextResponse } from "next/server";
 
-import { getPrisma } from "@sdk-e/db";
-import { requireCompanyContext } from "@sdk-e/auth/authorization";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { stripe } from "@sdk-e/payments/stripe";
-
 export const dynamic = "force-dynamic";
-
-export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
-  try {
-    const principal = await getCurrentPrincipal();
-    if (!principal) {
-      return NextResponse.json(
-        { error: "Your session has ended. Sign in and try again." },
-        { status: 401 }
-      );
-    }
-
-    const { id } = await params;
-
-    const subscription = await getPrisma().subscription.findFirst({
-      where: { id },
-    });
-
-    if (!subscription) {
-      return NextResponse.json({ error: "Subscription not found." }, { status: 404 });
-    }
-
-    requireCompanyContext(principal, subscription.companyId, "invoice:view");
-
-    let live: Record<string, unknown> | null = null;
-    try {
-      const stripeSubscription = await stripe.subscriptions.retrieve(
-        subscription.stripeSubscriptionId
-      );
-      live = {
-        id: stripeSubscription.id,
-        status: stripeSubscription.status,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        currentPeriodStart: (stripeSubscription as any).current_period_start,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        currentPeriodEnd: (stripeSubscription as any).current_period_end,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        cancelAtPeriodEnd: (stripeSubscription as any).cancel_at_period_end,
-      };
-    } catch {
-      live = null;
-    }
-
-    return NextResponse.json({ subscription, live }, { status: 200 });
-  } catch (error) {
-    if (error instanceof Error && error.message.includes("Authentication is required")) {
-      return NextResponse.json(
-        { error: "Your session has ended. Sign in and try again." },
-        { status: 401 }
-      );
-    }
-    if (error instanceof Error && error.message.includes("Cross-company access is denied")) {
-      return NextResponse.json({ error: "Cross-company access is denied." }, { status: 403 });
-    }
-    if (error instanceof Error && error.message.includes("Missing permission:")) {
-      return NextResponse.json({ error: error.message }, { status: 403 });
-    }
-    return NextResponse.json(
-      { error: error instanceof Error ? error.message : "Subscription could not be fetched." },
-      { status: 500 }
-    );
-  }
-}
 
 export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
@@ -77,7 +13,7 @@ export async function DELETE(request: Request, { params }: { params: Promise<{ i
     if (!principal) {
       return NextResponse.json(
         { error: "Your session has ended. Sign in and try again." },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
@@ -107,7 +43,7 @@ export async function DELETE(request: Request, { params }: { params: Promise<{ i
     if (error instanceof Error && error.message.includes("Authentication is required")) {
       return NextResponse.json(
         { error: "Your session has ended. Sign in and try again." },
-        { status: 401 }
+        { status: 401 },
       );
     }
     if (error instanceof Error && error.message.includes("Cross-company access is denied")) {
@@ -118,7 +54,69 @@ export async function DELETE(request: Request, { params }: { params: Promise<{ i
     }
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "Subscription could not be cancelled." },
-      { status: 500 }
+      { status: 500 },
+    );
+  }
+}
+
+export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
+  try {
+    const principal = await getCurrentPrincipal();
+    if (!principal) {
+      return NextResponse.json(
+        { error: "Your session has ended. Sign in and try again." },
+        { status: 401 },
+      );
+    }
+
+    const { id } = await params;
+
+    const subscription = await getPrisma().subscription.findFirst({
+      where: { id },
+    });
+
+    if (!subscription) {
+      return NextResponse.json({ error: "Subscription not found." }, { status: 404 });
+    }
+
+    requireCompanyContext(principal, subscription.companyId, "invoice:view");
+
+    let live: null | Record<string, unknown> = null;
+    try {
+      const stripeSubscription = await stripe.subscriptions.retrieve(
+        subscription.stripeSubscriptionId,
+      );
+      live = {
+        id: stripeSubscription.id,
+        status: stripeSubscription.status,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        currentPeriodStart: (stripeSubscription as any).current_period_start,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        currentPeriodEnd: (stripeSubscription as any).current_period_end,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        cancelAtPeriodEnd: (stripeSubscription as any).cancel_at_period_end,
+      };
+    } catch {
+      live = null;
+    }
+
+    return NextResponse.json({ subscription, live }, { status: 200 });
+  } catch (error) {
+    if (error instanceof Error && error.message.includes("Authentication is required")) {
+      return NextResponse.json(
+        { error: "Your session has ended. Sign in and try again." },
+        { status: 401 },
+      );
+    }
+    if (error instanceof Error && error.message.includes("Cross-company access is denied")) {
+      return NextResponse.json({ error: "Cross-company access is denied." }, { status: 403 });
+    }
+    if (error instanceof Error && error.message.includes("Missing permission:")) {
+      return NextResponse.json({ error: error.message }, { status: 403 });
+    }
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : "Subscription could not be fetched." },
+      { status: 500 },
     );
   }
 }

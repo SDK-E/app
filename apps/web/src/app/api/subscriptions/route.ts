@@ -1,12 +1,10 @@
 import "server-only";
-
+import { requireCompanyContext } from "@platform/auth/authorization";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { getPrisma } from "@platform/db";
+import { getServerEnv } from "@platform/env";
+import { stripe } from "@platform/payments/stripe";
 import { NextResponse } from "next/server";
-
-import { getServerEnv } from "@sdk-e/env";
-import { getPrisma } from "@sdk-e/db";
-import { requireCompanyContext } from "@sdk-e/auth/authorization";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { stripe } from "@sdk-e/payments/stripe";
 
 export const dynamic = "force-dynamic";
 
@@ -16,7 +14,7 @@ export async function POST(request: Request) {
     if (!principal) {
       return NextResponse.json(
         { error: "Your session has ended. Sign in and try again." },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
@@ -36,7 +34,7 @@ export async function POST(request: Request) {
     if (!invoiceId || !productName) {
       return NextResponse.json(
         { error: "invoiceId and productName are required." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -72,9 +70,13 @@ export async function POST(request: Request) {
 
     const baseUrl = (getServerEnv().AUTH0_BASE_URL ?? "http://localhost:3000").replace(/\/$/, "");
 
+    if (!customer) {
+      return NextResponse.json({ error: "Customer not found." }, { status: 404 });
+    }
+
     const session = await stripe.checkout.sessions.create({
       mode: "subscription",
-      customer: customer!.stripeCustomerId,
+      customer: customer.stripeCustomerId,
       metadata: { invoiceId: invoice.id },
       success_url: `${baseUrl}/app/invoices/${invoice.id}?status=paid`,
       cancel_url: `${baseUrl}/app/invoices/${invoice.id}?status=cancelled`,
@@ -97,7 +99,7 @@ export async function POST(request: Request) {
     if (error instanceof Error && error.message.includes("Authentication is required")) {
       return NextResponse.json(
         { error: "Your session has ended. Sign in and try again." },
-        { status: 401 }
+        { status: 401 },
       );
     }
     if (error instanceof Error && error.message.includes("Cross-company access is denied")) {
@@ -108,7 +110,7 @@ export async function POST(request: Request) {
     }
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "Subscription could not be created." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

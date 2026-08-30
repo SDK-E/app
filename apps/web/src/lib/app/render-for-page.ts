@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-shell/lib/render-for-page";
+export * from "@platform/portal-shell/lib/render-for-page";

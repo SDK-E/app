@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-companies/components/users/client/ClientMembersTable";
+export * from "@platform/portal-companies/components/users/client/ClientMembersTable";

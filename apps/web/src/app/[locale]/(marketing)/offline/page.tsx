@@ -1,6 +1,6 @@
+import { Button } from "@platform/ui/Button";
 import { getTranslations } from "next-intl/server";
 
-import { Button } from "@sdk-e/ui/Button";
 import { ErrorPage } from "@/components/layout/ErrorPage";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -25,8 +25,20 @@ export default async function OfflinePage({ params }: { params: Promise<{ locale
       className="text-muted-foreground opacity-50"
       aria-hidden="true"
     >
-      <circle cx="80" cy="100" r="4" fill="currentColor" opacity="0.4" />
-      <circle cx="160" cy="60" r="4" fill="currentColor" opacity="0.4" />
+      <circle
+        cx="80"
+        cy="100"
+        r="4"
+        fill="currentColor"
+        opacity="0.4"
+      />
+      <circle
+        cx="160"
+        cy="60"
+        r="4"
+        fill="currentColor"
+        opacity="0.4"
+      />
       <path
         d="M80 100 L160 60"
         stroke="currentColor"
@@ -43,12 +55,18 @@ export default async function OfflinePage({ params }: { params: Promise<{ locale
       headline={t("connectionTitle")}
       description={t("connectionDescription")}
       primaryAction={
-        <Button href={`/${locale}/`} variant="default">
+        <Button
+          href={`/${locale}/`}
+          variant="default"
+        >
           {t("retryConnection")}
         </Button>
       }
       secondaryAction={
-        <Button href={`/${locale}/`} variant="outline">
+        <Button
+          href={`/${locale}/`}
+          variant="outline"
+        >
           {t("backToHome")}
         </Button>
       }

@@ -1,4 +1,4 @@
-export type ServiceChapterItem = {
+export interface ServiceChapterItem {
   number: string;
   id: string;
   title: string;
@@ -7,7 +7,7 @@ export type ServiceChapterItem = {
   delivery: string[];
   evidence: string[];
   firstStep: string;
-};
+}
 
 export function ServiceChapter({
   item,
@@ -41,8 +41,14 @@ export function ServiceChapter({
             </p>
             <ul className="mt-4 space-y-3">
               {item.investigation.map((line) => (
-                <li key={line} className="flex gap-3 text-body">
-                  <span className="font-bold text-section-accent" aria-hidden>
+                <li
+                  key={line}
+                  className="flex gap-3 text-body"
+                >
+                  <span
+                    className="font-bold text-section-accent"
+                    aria-hidden
+                  >
                     —
                   </span>
                   {line}
@@ -54,8 +60,14 @@ export function ServiceChapter({
             <p className="text-label font-bold uppercase tracking-eyebrow">{labels.delivery}</p>
             <ul className="mt-4 space-y-3">
               {item.delivery.map((line) => (
-                <li key={line} className="flex gap-3 text-body">
-                  <span className="font-bold text-section-accent" aria-hidden>
+                <li
+                  key={line}
+                  className="flex gap-3 text-body"
+                >
+                  <span
+                    className="font-bold text-section-accent"
+                    aria-hidden
+                  >
                     —
                   </span>
                   {line}

@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-providers/app/opportunities/actions";
+export * from "@platform/portal-providers/app/opportunities/actions";

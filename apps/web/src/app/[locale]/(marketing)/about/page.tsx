@@ -1,44 +1,29 @@
 import type { Metadata } from "next";
+
+import { siteConfig } from "@platform/config/site";
+import { localizePath } from "@platform/i18n";
+import {
+  aboutPageJsonLd,
+  breadcrumbListJsonLd,
+  buildMetadata,
+  organizationJsonLd,
+} from "@platform/marketing/seo";
+import { Section } from "@platform/ui/Section";
+import { SectionHeader } from "@platform/ui/SectionHeader";
 import { getTranslations } from "next-intl/server";
 
-import { Header } from "@/components/layout/Header";
-import { Section } from "@sdk-e/ui/Section";
-import { SectionHeader } from "@sdk-e/ui/SectionHeader";
+import { PublicHeader } from "@/components/layout/PublicHeader";
+import { FactsSection } from "@/components/marketing/FactsSection";
+import { getAboutPageData } from "@/components/marketing/getAboutPageData";
 import { PageHero } from "@/components/marketing/PageHero";
 import { ProjectCta } from "@/components/marketing/ProjectCta";
-import {
-  QualityFramework,
-  type QualityFrameworkItem,
-} from "@/components/marketing/QualityFramework";
+import { QualityFramework } from "@/components/marketing/QualityFramework";
+import { ResponsibilitySection } from "@/components/marketing/ResponsibilitySection";
 import SiteFooter from "@/components/marketing/SiteFooter";
-import { localizePath } from "@sdk-e/i18n";
-import { siteConfig } from "@sdk-e/config/site";
-import { buildMetadata } from "@sdk-e/marketing/seo";
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "meta" });
-  return buildMetadata({
-    title: t("aboutTitle"),
-    description: t("aboutDescription"),
-    path: "/about",
-    locale,
-  });
-}
 
 export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const [t, tNav] = await Promise.all([
-    getTranslations({ locale, namespace: "aboutPage" }),
-    getTranslations({ locale, namespace: "nav" }),
-  ]);
-  const modelItems = t.raw("model.items") as QualityFrameworkItem[];
-  const selectionItems = t.raw("selection.items") as QualityFrameworkItem[];
-  const responsibilities = t.raw("responsibility.items") as string[];
+  const { t, tNav, modelItems, selectionItems, responsibilities } = await getAboutPageData(locale);
   const facts = [
     { label: t("facts.name"), value: siteConfig.contact.company },
     { label: t("facts.tradingName"), value: "SDK Enterprises" },
@@ -51,7 +36,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
-      <Header
+      <PublicHeader
         links={[
           { label: tNav("services"), href: "/services" },
           { label: tNav("work"), href: "/work" },
@@ -76,7 +61,10 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           secondaryCta={{ label: t("hero.secondaryCta"), href: "#company-model" }}
           signals={t.raw("hero.signals") as string[]}
         />
-        <Section id="company-model" tone="dark">
+        <Section
+          id="company-model"
+          tone="dark"
+        >
           <SectionHeader
             eyebrow={t("model.eyebrow")}
             title={t("model.heading")}
@@ -92,34 +80,14 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
           />
           <QualityFramework items={selectionItems} />
         </Section>
-        <Section tone="dark">
-          <SectionHeader
-            eyebrow={t("responsibility.eyebrow")}
-            title={t("responsibility.heading")}
-            intro={t("responsibility.body")}
-          />
-          <ul className="grid gap-px overflow-hidden rounded-card border border-dark-deep bg-dark-deep sm:grid-cols-2 lg:grid-cols-3">
-            {responsibilities.map((item, index) => (
-              <li key={item} className="min-h-32 bg-dark p-6">
-                <span className="text-label font-bold text-brand">0{index + 1}</span>
-                <p className="mt-5 text-body font-bold text-light">{item}</p>
-              </li>
-            ))}
-          </ul>
-        </Section>
-        <Section>
-          <SectionHeader eyebrow={t("facts.eyebrow")} title={t("facts.heading")} />
-          <dl className="grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
-            {facts.map((fact) => (
-              <div key={fact.label} className="bg-paper p-6">
-                <dt className="text-label font-bold uppercase tracking-eyebrow text-dark">
-                  {fact.label}
-                </dt>
-                <dd className="mt-3 break-words text-body text-dark">{fact.value}</dd>
-              </div>
-            ))}
-          </dl>
-        </Section>
+        <ResponsibilitySection
+          t={t}
+          items={responsibilities}
+        />
+        <FactsSection
+          t={t}
+          items={facts}
+        />
         <Section tone="brand">
           <ProjectCta
             eyebrow={t("cta.eyebrow")}
@@ -132,4 +100,31 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
       <SiteFooter locale={locale} />
     </div>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "meta" });
+  return {
+    ...buildMetadata({
+      title: t("aboutTitle"),
+      description: t("aboutDescription"),
+      path: "/about",
+      locale,
+    }),
+    other: {
+      [`script:ld+json`]: JSON.stringify([
+        aboutPageJsonLd(),
+        organizationJsonLd(),
+        breadcrumbListJsonLd([
+          { name: "SDK Enterprises", url: "/" },
+          { name: t("aboutTitle"), url: "/about" },
+        ]),
+      ]),
+    },
+  };
 }

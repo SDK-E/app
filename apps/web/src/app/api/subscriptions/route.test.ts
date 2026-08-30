@@ -10,13 +10,13 @@ const mocks = vi.hoisted(() => ({
   stripe: { customers: { create: vi.fn() }, checkout: { sessions: { create: vi.fn() } } },
 }));
 
-vi.mock("@sdk-e/env", () => ({ getServerEnv: mocks.getServerEnv }));
-vi.mock("@sdk-e/db", () => ({ getPrisma: mocks.getPrisma }));
-vi.mock("@sdk-e/auth/identity", () => ({ getCurrentPrincipal: mocks.getCurrentPrincipal }));
-vi.mock("@sdk-e/auth/authorization", () => ({
+vi.mock("@platform/env", () => ({ getServerEnv: mocks.getServerEnv }));
+vi.mock("@platform/db", () => ({ getPrisma: mocks.getPrisma }));
+vi.mock("@platform/auth/identity", () => ({ getCurrentPrincipal: mocks.getCurrentPrincipal }));
+vi.mock("@platform/auth/authorization", () => ({
   requireCompanyContext: mocks.requireCompanyContext,
 }));
-vi.mock("@sdk-e/payments/stripe", () => ({ stripe: mocks.stripe }));
+vi.mock("@platform/payments/stripe", () => ({ stripe: mocks.stripe }));
 
 import { POST } from "@/app/api/subscriptions/route";
 
@@ -50,7 +50,6 @@ describe("subscriptions route", () => {
         findUnique: vi.fn().mockResolvedValue(null),
         create: vi.fn().mockResolvedValue({}),
       },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } as any);
     mocks.stripe.customers.create.mockResolvedValue({ id: "cus_1", email: "user@example.test" });
     mocks.stripe.checkout.sessions.create.mockResolvedValue({
@@ -65,7 +64,7 @@ describe("subscriptions route", () => {
         interval: "month",
         intervalCount: 1,
         productName: "Pro",
-      })
+      }),
     );
     const data = await response.json();
     expect(response.status).toBe(200);

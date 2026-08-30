@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-staff/components/users/staff/UserIdentityCard";
+export * from "@platform/portal-staff/components/users/staff/UserIdentityCard";

@@ -1,4 +1,4 @@
 "use client";
 
-export * from "@sdk-e/portal-shell/app/error";
-export { default } from "@sdk-e/portal-shell/app/error";
+export * from "@platform/portal-shell/app/error";
+export { default } from "@platform/portal-shell/app/error";

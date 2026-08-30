@@ -1,12 +1,12 @@
 import "server-only";
 
-import { NextResponse } from "next/server";
+import type { ProviderPrincipal } from "@platform/types";
 
-import { getPrisma } from "@sdk-e/db";
-import { requireProviderPrincipal } from "@sdk-e/auth/authorization";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import type { ProviderPrincipal } from "@sdk-e/types";
-import { stripe } from "@sdk-e/payments/stripe";
+import { requireProviderPrincipal } from "@platform/auth/authorization";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { getPrisma } from "@platform/db";
+import { stripe } from "@platform/payments/stripe";
+import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
 
@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     if (!principal) {
       return NextResponse.json(
         { error: "Your session has ended. Sign in and try again." },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     if (!returnUrl || !refreshUrl) {
       return NextResponse.json(
         { error: "returnUrl and refreshUrl are required." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -44,7 +44,7 @@ export async function POST(request: Request) {
     if (!connectedAccount) {
       return NextResponse.json(
         { error: "No connected account found for this provider." },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -60,7 +60,7 @@ export async function POST(request: Request) {
     if (error instanceof Error && error.message.includes("Authentication is required")) {
       return NextResponse.json(
         { error: "Your session has ended. Sign in and try again." },
-        { status: 401 }
+        { status: 401 },
       );
     }
     if (error instanceof Error && error.message.includes("Provider access is required")) {
@@ -68,7 +68,7 @@ export async function POST(request: Request) {
     }
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "Onboarding link could not be created." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

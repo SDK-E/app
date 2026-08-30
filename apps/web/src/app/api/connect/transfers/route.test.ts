@@ -7,10 +7,10 @@ const mocks = vi.hoisted(() => ({
   stripe: { transfers: { create: vi.fn() } },
 }));
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: mocks.getPrisma }));
-vi.mock("@sdk-e/auth/identity", () => ({ getCurrentPrincipal: mocks.getCurrentPrincipal }));
-vi.mock("@sdk-e/auth/authorization", () => ({ requireSdkStaff: mocks.requireSdkStaff }));
-vi.mock("@sdk-e/payments/stripe", () => ({ stripe: mocks.stripe }));
+vi.mock("@platform/db", () => ({ getPrisma: mocks.getPrisma }));
+vi.mock("@platform/auth/identity", () => ({ getCurrentPrincipal: mocks.getCurrentPrincipal }));
+vi.mock("@platform/auth/authorization", () => ({ requireSdkStaff: mocks.requireSdkStaff }));
+vi.mock("@platform/payments/stripe", () => ({ stripe: mocks.stripe }));
 
 import { POST } from "@/app/api/connect/transfers/route";
 
@@ -37,17 +37,16 @@ describe("connect transfers route", () => {
           .mockResolvedValue({ accountId: "acct_1", capabilities: {}, detailsSubmitted: true }),
       },
       payment: { create: vi.fn().mockResolvedValue({ id: "pay_1" }) },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } as any);
     mocks.stripe.transfers.create.mockResolvedValue({ id: "tr_1" });
 
     const response = await POST(
-      makeRequest({ providerAccountId: "acct_1", amount: 100, currency: "USD" })
+      makeRequest({ providerAccountId: "acct_1", amount: 100, currency: "USD" }),
     );
     const data = await response.json();
     expect(response.status).toBe(201);
     expect(mocks.stripe.transfers.create).toHaveBeenCalledWith(
-      expect.objectContaining({ destination: "acct_1", amount: 10000, currency: "usd" })
+      expect.objectContaining({ destination: "acct_1", amount: 10000, currency: "usd" }),
     );
     expect(data.transfer.id).toBe("tr_1");
   });
@@ -61,11 +60,10 @@ describe("connect transfers route", () => {
           .fn()
           .mockResolvedValue({ accountId: "acct_1", capabilities: null, detailsSubmitted: false }),
       },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } as any);
 
     const response = await POST(
-      makeRequest({ providerAccountId: "acct_1", amount: 100, currency: "USD" })
+      makeRequest({ providerAccountId: "acct_1", amount: 100, currency: "USD" }),
     );
     expect(response.status).toBe(400);
     expect(mocks.stripe.transfers.create).not.toHaveBeenCalled();

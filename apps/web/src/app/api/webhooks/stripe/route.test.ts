@@ -12,10 +12,10 @@ const mocks = vi.hoisted(() => {
   return { getServerEnv, getCurrentPrincipal, getPrisma, stripe, constructEvent, requireSdkStaff };
 });
 
-vi.mock("@sdk-e/env", () => ({ getServerEnv: mocks.getServerEnv }));
-vi.mock("@sdk-e/db", () => ({ getPrisma: mocks.getPrisma }));
-vi.mock("@sdk-e/auth/identity", () => ({ getCurrentPrincipal: mocks.getCurrentPrincipal }));
-vi.mock("@sdk-e/auth/authorization", () => ({ requireSdkStaff: mocks.requireSdkStaff }));
+vi.mock("@platform/env", () => ({ getServerEnv: mocks.getServerEnv }));
+vi.mock("@platform/db", () => ({ getPrisma: mocks.getPrisma }));
+vi.mock("@platform/auth/identity", () => ({ getCurrentPrincipal: mocks.getCurrentPrincipal }));
+vi.mock("@platform/auth/authorization", () => ({ requireSdkStaff: mocks.requireSdkStaff }));
 vi.mock("stripe", () => ({
   default: function Stripe() {
     return mocks.stripe;
@@ -68,20 +68,19 @@ describe("stripe webhook handler", () => {
       data: {
         object: { metadata: { invoiceId: "invoice-1" }, amount_paid: 5000, currency: "usd" },
       },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } as any);
 
     const tx = {
       invoice: { updateMany: vi.fn(), findFirst: vi.fn() },
       payment: { findFirst: vi.fn(), create: vi.fn() },
     };
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
     mocks.getPrisma.mockReturnValue({ $transaction: vi.fn((fn: any) => fn(tx)) } as any);
 
     const response = await POST(makeRequest(JSON.stringify({ type: "invoice.paid" })));
     expect(response.status).toBe(200);
     expect(tx.invoice.updateMany).toHaveBeenCalledWith(
-      expect.objectContaining({ data: expect.objectContaining({ status: "PAID" }) })
+      expect.objectContaining({ data: expect.objectContaining({ status: "PAID" }) }),
     );
     expect(tx.payment.create).toHaveBeenCalled();
   });

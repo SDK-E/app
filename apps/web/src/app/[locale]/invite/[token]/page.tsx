@@ -1,39 +1,24 @@
+import type { AppPrincipal } from "@platform/types";
 import type { Metadata } from "next";
-import { headers } from "next/headers";
+
+import { getCurrentPrincipal, IdentityError } from "@platform/auth/identity";
+import { maskEmail, normalizeEmail } from "@platform/core/utils";
+import { getServerEnv } from "@platform/env";
+import { InvitationAcceptForm } from "@platform/portal-shell/components/portal/InvitationAcceptForm";
+import { Button } from "@platform/ui/Button";
+import { Card } from "@platform/ui/Card";
+import { getInvitationPreview } from "@platform/users";
 import { getTranslations } from "next-intl/server";
+import { headers } from "next/headers";
 
 import { acceptInvitationAction } from "@/app/[locale]/invite/[token]/actions";
-import { InvitationAcceptForm } from "@sdk-e/portal-shell/components/portal/InvitationAcceptForm";
-import { Button } from "@sdk-e/ui/Button";
-import { Card } from "@sdk-e/ui/Card";
-import { getServerEnv } from "@sdk-e/env";
-import { getCurrentPrincipal, IdentityError } from "@sdk-e/auth/identity";
-import { getInvitationPreview } from "@sdk-e/users";
-import { maskEmail, normalizeEmail } from "@sdk-e/core/utils";
-import type { AppPrincipal } from "@sdk-e/types";
 
 export const metadata: Metadata = {
   title: "Invitation | SDK Enterprises",
   robots: { index: false, follow: false },
 };
 
-async function origin() {
-  const configured = getServerEnv().AUTH0_BASE_URL;
-  if (configured) return configured.replace(/\/$/, "");
-  const values = await headers();
-  return `${values.get("x-forwarded-proto") ?? "http"}://${values.get("host")}`;
-}
-
 type InvitationPreview = NonNullable<Awaited<ReturnType<typeof getInvitationPreview>>>;
-
-function unavailableKind(
-  invitation: InvitationPreview
-): "expired" | "revoked" | "used" | "unknown" {
-  if (invitation.revokedAt) return "revoked";
-  if (invitation.acceptedAt) return "used";
-  if (invitation.expiresAt <= new Date()) return "expired";
-  return "unknown";
-}
 
 export default async function InvitationPage({
   params,
@@ -70,7 +55,7 @@ export default async function InvitationPage({
     ? {
         expired: t("unavailableExpired", {
           date: new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(
-            invitation.expiresAt
+            invitation.expiresAt,
           ),
         }),
         revoked: t("unavailableRevoked"),
@@ -102,7 +87,7 @@ export default async function InvitationPage({
             <p className="mt-3 text-body text-dark-muted">
               {t("expires", {
                 date: new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(
-                  invitation.expiresAt
+                  invitation.expiresAt,
                 ),
               })}
             </p>
@@ -129,16 +114,25 @@ export default async function InvitationPage({
               />
             ) : matchesInvitee ? (
               <div className="mt-8 space-y-3">
-                <p role="alert" className="text-body">
+                <p
+                  role="alert"
+                  className="text-body"
+                >
                   {t("alreadyAssigned")}
                 </p>
-                <Button href={`/${locale}/app`} className="w-full">
+                <Button
+                  href={`/${locale}/app`}
+                  className="w-full"
+                >
                   {t("openPortal")}
                 </Button>
               </div>
             ) : (
               <div className="mt-8 space-y-3">
-                <p role="alert" className="text-body">
+                <p
+                  role="alert"
+                  className="text-body"
+                >
                   {t("mismatch", { signedin: principal.email })}
                 </p>
                 <Button
@@ -157,4 +151,20 @@ export default async function InvitationPage({
       </Card>
     </main>
   );
+}
+
+async function origin() {
+  const configured = getServerEnv().AUTH0_BASE_URL;
+  if (configured) return configured.replace(/\/$/, "");
+  const values = await headers();
+  return `${values.get("x-forwarded-proto") ?? "http"}://${values.get("host")}`;
+}
+
+function unavailableKind(
+  invitation: InvitationPreview,
+): "expired" | "revoked" | "unknown" | "used" {
+  if (invitation.revokedAt) return "revoked";
+  if (invitation.acceptedAt) return "used";
+  if (invitation.expiresAt <= new Date()) return "expired";
+  return "unknown";
 }

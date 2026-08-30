@@ -1,11 +1,11 @@
 import Link from "next/link";
 
-export type ProblemNavigatorItem = {
+export interface ProblemNavigatorItem {
   number: string;
   title: string;
   copy: string;
   href: string;
-};
+}
 
 export function ProblemNavigator({
   heading,
@@ -26,7 +26,10 @@ export function ProblemNavigator({
       </div>
       <ol className="border-t-2 border-current">
         {items.map((item) => (
-          <li key={item.number} className="border-b border-line">
+          <li
+            key={item.number}
+            className="border-b border-line"
+          >
             <Link
               href={item.href}
               className="group grid gap-3 py-6 transition-opacity motion-reduce:transition-none hover:opacity-70 sm:grid-cols-[48px_0.75fr_1.25fr_24px] sm:items-start"

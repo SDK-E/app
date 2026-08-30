@@ -1,15 +1,41 @@
+import { locales } from "@platform/i18n";
+import { getSiteUrl } from "@platform/marketing/seo";
 import { MetadataRoute } from "next";
-import { getSiteUrl } from "@sdk-e/marketing/seo";
 
 export default function robots(): MetadataRoute.Robots {
   const base = getSiteUrl();
+
+  const disallow: string[] = [];
+  for (const locale of locales) {
+    disallow.push(`/${locale}/app/`);
+    disallow.push(`/${locale}/auth/`);
+  }
+  disallow.push("/design-system");
 
   return {
     rules: [
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/app/", "/auth/", "/design-system"],
+        disallow,
+        other: {
+          [`Content-Signal`]: ["ai-train=allow", "search=yes", "ai-input=allow"],
+        },
+      },
+      {
+        userAgent: "GPTBot",
+        allow: "/",
+        disallow,
+      },
+      {
+        userAgent: "Google-Extended",
+        allow: "/",
+        disallow,
+      },
+      {
+        userAgent: "CCBot",
+        allow: "/",
+        disallow,
       },
     ],
     sitemap: `${base}/sitemap.xml`,

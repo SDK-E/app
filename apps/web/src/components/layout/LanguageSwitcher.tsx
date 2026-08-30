@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-shell/LanguageSwitcher";
+export * from "@platform/portal-shell/LanguageSwitcher";

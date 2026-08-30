@@ -1,6 +1,6 @@
+import { Button } from "@platform/ui/Button";
 import { getTranslations } from "next-intl/server";
 
-import { Button } from "@sdk-e/ui/Button";
 import { ErrorPage } from "@/components/layout/ErrorPage";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -25,9 +25,30 @@ export default async function MaintenancePage({ params }: { params: Promise<{ lo
       className="text-fog opacity-60"
       aria-hidden="true"
     >
-      <circle cx="120" cy="70" r="8" fill="#2cdb16" />
-      <rect x="40" y="110" width="160" height="8" rx="1" fill="currentColor" opacity="0.3" />
-      <rect x="40" y="130" width="100" height="8" rx="1" fill="currentColor" opacity="0.3" />
+      <circle
+        cx="120"
+        cy="70"
+        r="8"
+        fill="#2cdb16"
+      />
+      <rect
+        x="40"
+        y="110"
+        width="160"
+        height="8"
+        rx="1"
+        fill="currentColor"
+        opacity="0.3"
+      />
+      <rect
+        x="40"
+        y="130"
+        width="100"
+        height="8"
+        rx="1"
+        fill="currentColor"
+        opacity="0.3"
+      />
     </svg>
   );
 
@@ -37,7 +58,10 @@ export default async function MaintenancePage({ params }: { params: Promise<{ lo
       headline={t("maintenanceTitle")}
       description={t("maintenanceDescription")}
       primaryAction={
-        <Button href={`/${locale}/`} variant="default">
+        <Button
+          href={`/${locale}/`}
+          variant="default"
+        >
           {t("refreshPage")}
         </Button>
       }

@@ -1,2 +1,2 @@
-export * from "@sdk-e/portal-providers/app/providers/[userId]/connect/page";
-export { default } from "@sdk-e/portal-providers/app/providers/[userId]/connect/page";
+export * from "@platform/portal-providers/app/providers/[userId]/connect/page";
+export { default } from "@platform/portal-providers/app/providers/[userId]/connect/page";

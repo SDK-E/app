@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-shell/ThemeSwitcher";
+export * from "@platform/portal-shell/ThemeSwitcher";

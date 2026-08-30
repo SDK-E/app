@@ -1,18 +1,21 @@
 import type { Metadata } from "next";
+
+import {
+  breadcrumbListJsonLd,
+  buildMetadata,
+  contactPageJsonLd,
+  organizationJsonLd,
+} from "@platform/marketing/seo";
+import { Section } from "@platform/ui/Section";
+import { SectionHeader } from "@platform/ui/SectionHeader";
 import { getTranslations } from "next-intl/server";
 
-import { Header } from "@/components/layout/Header";
-import { Section } from "@sdk-e/ui/Section";
-import { SectionHeader } from "@sdk-e/ui/SectionHeader";
-import { EnquiryForm } from "@/components/marketing/EnquiryForm";
+import { PublicHeader } from "@/components/layout/PublicHeader";
+import { EnquirySection } from "@/components/marketing/EnquirySection";
+import { getStartAProjectPageData } from "@/components/marketing/getStartAProjectPageData";
 import { PageHero } from "@/components/marketing/PageHero";
-import {
-  QualityFramework,
-  type QualityFrameworkItem,
-} from "@/components/marketing/QualityFramework";
+import { QualityFramework } from "@/components/marketing/QualityFramework";
 import SiteFooter from "@/components/marketing/SiteFooter";
-import { buildMetadata } from "@sdk-e/marketing/seo";
-import { siteConfig } from "@sdk-e/config/site";
 
 export async function generateMetadata({
   params,
@@ -21,12 +24,24 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  return buildMetadata({
-    title: t("startAProjectTitle"),
-    description: t("startAProjectDescription"),
-    path: "/start-a-project",
-    locale,
-  });
+  return {
+    ...buildMetadata({
+      title: t("startAProjectTitle"),
+      description: t("startAProjectDescription"),
+      path: "/start-a-project",
+      locale,
+    }),
+    other: {
+      [`script:ld+json`]: JSON.stringify([
+        contactPageJsonLd(),
+        organizationJsonLd(),
+        breadcrumbListJsonLd([
+          { name: "SDK Enterprises", url: "/" },
+          { name: t("startAProjectTitle"), url: "/start-a-project" },
+        ]),
+      ]),
+    },
+  };
 }
 
 export default async function StartAProjectPage({
@@ -35,20 +50,11 @@ export default async function StartAProjectPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const [t, tNav] = await Promise.all([
-    getTranslations({ locale, namespace: "enquiry" }),
-    getTranslations({ locale, namespace: "nav" }),
-  ]);
-  const reasons = t.raw("reasons") as QualityFrameworkItem[];
-  const nextSteps: QualityFrameworkItem[] = [1, 2, 3, 4].map((number) => ({
-    number: `0${number}`,
-    title: t(`nextStep${number}Title`),
-    copy: t(`nextStep${number}Body`),
-  }));
+  const { t, tNav, reasons, nextSteps } = await getStartAProjectPageData(locale);
 
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
-      <Header
+      <PublicHeader
         links={[
           { label: tNav("services"), href: "/services" },
           { label: tNav("work"), href: "/work" },
@@ -56,7 +62,7 @@ export default async function StartAProjectPage({
           { label: tNav("about"), href: "/about" },
         ]}
         cta={{ label: tNav("discussProject"), href: "/start-a-project" }}
-        secondaryCta={{ label: tNav("signIn"), href: `/${locale}/login` }}
+        secondaryCta={{ label: tNav("signIn"), href: `${locale}/login` }}
         activeLabel={tNav("discussProject")}
         translationsNamespace="nav"
         locale={locale}
@@ -69,7 +75,6 @@ export default async function StartAProjectPage({
           primaryCta={{ label: t("form.submit"), href: "#project-form" }}
           signals={t.raw("heroSignals") as string[]}
         />
-
         <Section>
           <SectionHeader
             eyebrow={t("reasonsEyebrow")}
@@ -78,42 +83,7 @@ export default async function StartAProjectPage({
           />
           <QualityFramework items={reasons} />
         </Section>
-
-        <Section id="project-form" tone="dark">
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-[70px]">
-            <div>
-              <p className="text-label font-bold uppercase tracking-eyebrow text-section-accent">
-                {t("formEyebrow")}
-              </p>
-              <h2 className="mt-4 max-w-[15ch] text-[36px] font-extrabold tracking-title md:text-title">
-                {t("formHeading")}
-              </h2>
-              <p className="mt-5 max-w-[52ch] text-body text-section-muted">{t("formIntro")}</p>
-              <div className="mt-8 border-t border-dark-deep pt-6 text-body text-section-muted">
-                <p>{t("body")}</p>
-                <p className="mt-4">
-                  <a
-                    className="font-bold underline underline-offset-4"
-                    href={`mailto:${siteConfig.contact.email}`}
-                  >
-                    {siteConfig.contact.email}
-                  </a>
-                  <br />
-                  <a
-                    className="font-bold underline underline-offset-4"
-                    href={`tel:${siteConfig.contact.phone.replaceAll(" ", "")}`}
-                  >
-                    {siteConfig.contact.phone}
-                  </a>
-                </p>
-              </div>
-            </div>
-            <div className="rounded-card border border-line bg-light p-5 text-dark md:p-8">
-              <EnquiryForm />
-            </div>
-          </div>
-        </Section>
-
+        <EnquirySection t={t} />
         <Section>
           <SectionHeader
             eyebrow={t("nextStepsEyebrow")}

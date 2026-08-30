@@ -1,20 +1,21 @@
+import type { UsersListQuery } from "@platform/users/list-links";
+
+import { ClientInvitationsTable } from "@platform/portal-companies/components/users/client/ClientInvitationsTable";
+import { ClientInviteCards } from "@platform/portal-companies/components/users/client/ClientInviteCards";
+import { ClientMembersTable } from "@platform/portal-companies/components/users/client/ClientMembersTable";
+import { ClientRequestsTable } from "@platform/portal-companies/components/users/client/ClientRequestsTable";
+import { ActivityFeed } from "@platform/portal-shell/components/portal/users/ActivityFeed";
+import { FilterSelect } from "@platform/portal-shell/components/portal/users/FilterSelect";
+import { SearchInput } from "@platform/portal-shell/components/portal/users/SearchInput";
+import { UsersTabNav } from "@platform/portal-shell/components/portal/users/UsersTabNav";
+import { StaffInvitationsTable } from "@platform/portal-staff/components/users/staff/StaffInvitationsTable";
+import { StaffInviteCards } from "@platform/portal-staff/components/users/staff/StaffInviteCards";
+import { StaffMembersTable } from "@platform/portal-staff/components/users/staff/StaffMembersTable";
+import { StaffRequestsTable } from "@platform/portal-staff/components/users/staff/StaffRequestsTable";
+import { UserIdentityCard } from "@platform/portal-staff/components/users/staff/UserIdentityCard";
+import { UserMembershipsCard } from "@platform/portal-staff/components/users/staff/UserMembershipsCard";
 import { getTranslations } from "next-intl/server";
 
-import { ActivityFeed } from "@sdk-e/portal-shell/components/portal/users/ActivityFeed";
-import { FilterSelect } from "@sdk-e/portal-shell/components/portal/users/FilterSelect";
-import { SearchInput } from "@sdk-e/portal-shell/components/portal/users/SearchInput";
-import { UsersTabNav } from "@sdk-e/portal-shell/components/portal/users/UsersTabNav";
-import { ClientInviteCards } from "@sdk-e/portal-companies/components/users/client/ClientInviteCards";
-import { ClientInvitationsTable } from "@sdk-e/portal-companies/components/users/client/ClientInvitationsTable";
-import { ClientMembersTable } from "@sdk-e/portal-companies/components/users/client/ClientMembersTable";
-import { ClientRequestsTable } from "@sdk-e/portal-companies/components/users/client/ClientRequestsTable";
-import { StaffInviteCards } from "@sdk-e/portal-staff/components/users/staff/StaffInviteCards";
-import { StaffInvitationsTable } from "@sdk-e/portal-staff/components/users/staff/StaffInvitationsTable";
-import { StaffMembersTable } from "@sdk-e/portal-staff/components/users/staff/StaffMembersTable";
-import { StaffRequestsTable } from "@sdk-e/portal-staff/components/users/staff/StaffRequestsTable";
-import { UserIdentityCard } from "@sdk-e/portal-staff/components/users/staff/UserIdentityCard";
-import { UserMembershipsCard } from "@sdk-e/portal-staff/components/users/staff/UserMembershipsCard";
-import type { UsersListQuery } from "@sdk-e/users/list-links";
 import {
   activityEvents,
   clientInvitationRows,
@@ -27,15 +28,6 @@ import {
 } from "./portal-users-fixtures";
 
 const QUERY: UsersListQuery = { tab: "members" };
-
-function SectionBlock({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <div className="mt-12">
-      <h3 className="text-h3 font-extrabold">{title}</h3>
-      <div className="mt-4">{children}</div>
-    </div>
-  );
-}
 
 export async function PortalUsersSection() {
   const t = await getTranslations({ locale: "en", namespace: "portal.users" });
@@ -160,9 +152,15 @@ export async function PortalUsersSection() {
       </SectionBlock>
 
       <SectionBlock title="User detail cards">
-        <UserIdentityCard locale="en" detail={fixtureUserDetail} />
+        <UserIdentityCard
+          locale="en"
+          detail={fixtureUserDetail}
+        />
         <div className="mt-6">
-          <UserMembershipsCard locale="en" detail={fixtureUserDetail} />
+          <UserMembershipsCard
+            locale="en"
+            detail={fixtureUserDetail}
+          />
         </div>
       </SectionBlock>
 
@@ -189,5 +187,14 @@ export async function PortalUsersSection() {
         />
       </SectionBlock>
     </section>
+  );
+}
+
+function SectionBlock({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div className="mt-12">
+      <h3 className="text-h3 font-extrabold">{title}</h3>
+      <div className="mt-4">{children}</div>
+    </div>
   );
 }

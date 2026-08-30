@@ -1,11 +1,11 @@
-export type ProcessTimelineItem = {
+export interface ProcessTimelineItem {
   number: string;
   title: string;
   purpose: string;
   activities: string[];
   output: string;
   decision: string;
-};
+}
 
 export function ProcessTimeline({
   items,
@@ -28,8 +28,14 @@ export function ProcessTimeline({
           </div>
           <ul className="space-y-3">
             {item.activities.map((activity) => (
-              <li key={activity} className="flex gap-3 text-body text-section-muted">
-                <span className="text-section-accent" aria-hidden>
+              <li
+                key={activity}
+                className="flex gap-3 text-body text-section-muted"
+              >
+                <span
+                  className="text-section-accent"
+                  aria-hidden
+                >
                   —
                 </span>
                 {activity}

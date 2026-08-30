@@ -1,7 +1,7 @@
-import Link from "next/link";
+import { localizePath } from "@platform/i18n";
+import { Container } from "@platform/ui/Container";
 import { getTranslations } from "next-intl/server";
-import { Container } from "@sdk-e/ui/Container";
-import { localizePath } from "@sdk-e/i18n";
+import Link from "next/link";
 
 const LEGAL_LINKS = [
   { href: "/legal/mentions-legales", key: "mentionsLegales" },

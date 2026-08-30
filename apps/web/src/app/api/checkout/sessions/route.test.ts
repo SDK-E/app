@@ -10,13 +10,13 @@ const mocks = vi.hoisted(() => ({
   stripe: { customers: { create: vi.fn() }, checkout: { sessions: { create: vi.fn() } } },
 }));
 
-vi.mock("@sdk-e/env", () => ({ getServerEnv: mocks.getServerEnv }));
-vi.mock("@sdk-e/db", () => ({ getPrisma: mocks.getPrisma }));
-vi.mock("@sdk-e/auth/identity", () => ({ getCurrentPrincipal: mocks.getCurrentPrincipal }));
-vi.mock("@sdk-e/auth/authorization", () => ({
+vi.mock("@platform/env", () => ({ getServerEnv: mocks.getServerEnv }));
+vi.mock("@platform/db", () => ({ getPrisma: mocks.getPrisma }));
+vi.mock("@platform/auth/identity", () => ({ getCurrentPrincipal: mocks.getCurrentPrincipal }));
+vi.mock("@platform/auth/authorization", () => ({
   requireCompanyContext: mocks.requireCompanyContext,
 }));
-vi.mock("@sdk-e/payments/stripe", () => ({ stripe: mocks.stripe }));
+vi.mock("@platform/payments/stripe", () => ({ stripe: mocks.stripe }));
 
 import { POST } from "@/app/api/checkout/sessions/route";
 
@@ -56,7 +56,6 @@ describe("checkout sessions route", () => {
         findUnique: vi.fn().mockResolvedValue(null),
         create: vi.fn().mockResolvedValue({}),
       },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } as any);
     mocks.stripe.customers.create.mockResolvedValue({ id: "cus_1", email: "user@example.test" });
     mocks.stripe.checkout.sessions.create.mockResolvedValue({
@@ -74,7 +73,6 @@ describe("checkout sessions route", () => {
     mocks.requireCompanyContext.mockReturnValue({ principal: {}, companyId: "company-1" });
     mocks.getPrisma.mockReturnValue({
       invoice: { findFirst: vi.fn().mockResolvedValue(null) },
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } as any);
     const response = await POST(makeRequest({ invoiceId: "missing" }));
     expect(response.status).toBe(404);

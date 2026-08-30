@@ -1,9 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
 import type { ReactNode } from "react";
 
-import { Container } from "@sdk-e/ui/Container";
-import { Section, sectionToneStyles, type SectionTone } from "@sdk-e/ui/Section";
+import { Container } from "@platform/ui/Container";
+import { Section, type SectionTone, sectionToneStyles } from "@platform/ui/Section";
+import Image from "next/image";
+import Link from "next/link";
+
 import SiteFooter from "@/components/marketing/SiteFooter";
 
 const logoByTone: Record<SectionTone, string> = {
@@ -41,19 +42,26 @@ export async function ErrorPage({
   const homeHref = locale ? `/${locale}/` : "/";
 
   return (
-    <div style={sectionToneStyles[tone]} className="flex min-h-screen flex-col">
+    <div
+      style={sectionToneStyles[tone]}
+      className="flex min-h-screen flex-col"
+    >
       <header className={`border-b ${borderByTone[tone]}`}>
         <Container>
           <div className="flex h-[78px] items-center">
-            <Link href={homeHref} className="block leading-none" aria-label="SDK Enterprises home">
+            <Link
+              href={homeHref}
+              className="block leading-none"
+              aria-label="SDK Enterprises home"
+            >
               <Image
                 src={logoSrc}
                 alt="SDK Enterprises logo"
-                width={1429}
-                height={495}
+                width={300}
+                height={104}
+                sizes="(max-width: 768px) 156px, 180px"
                 className="h-[26px] w-auto md:h-[30px]"
                 priority
-                unoptimized
               />
             </Link>
           </div>
@@ -61,7 +69,11 @@ export async function ErrorPage({
       </header>
 
       <main className="flex-1">
-        <Section tone={tone} borderTop={false} className="min-h-[60vh]">
+        <Section
+          tone={tone}
+          borderTop={false}
+          className="min-h-[60vh]"
+        >
           <div className="grid items-center gap-10 lg:grid-cols-[1fr_1fr] lg:gap-[70px]">
             <div>
               <p className="text-label font-bold uppercase tracking-eyebrow">{eyebrow}</p>
@@ -78,7 +90,10 @@ export async function ErrorPage({
             </div>
 
             {motif ? (
-              <div className="hidden lg:flex items-center justify-center" aria-hidden="true">
+              <div
+                className="hidden lg:flex items-center justify-center"
+                aria-hidden="true"
+              >
                 {motif}
               </div>
             ) : null}

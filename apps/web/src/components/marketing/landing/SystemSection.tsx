@@ -1,10 +1,10 @@
+import { localizePath } from "@platform/i18n";
+import { ArrowLink } from "@platform/ui/ArrowLink";
+import { Section } from "@platform/ui/Section";
+import { SectionHeader } from "@platform/ui/SectionHeader";
 import { getTranslations } from "next-intl/server";
 
-import { Section } from "@sdk-e/ui/Section";
-import { SectionHeader } from "@sdk-e/ui/SectionHeader";
-import { ArrowLink } from "@sdk-e/ui/ArrowLink";
 import { HomeSystemMap, type HomeSystemMapItem } from "@/components/marketing/HomeSystemMap";
-import { localizePath } from "@sdk-e/i18n";
 
 export async function SystemSection({
   locale,

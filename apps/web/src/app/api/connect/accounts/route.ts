@@ -1,11 +1,9 @@
 import "server-only";
-
+import { requireSdkStaff } from "@platform/auth/authorization";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { getPrisma } from "@platform/db";
+import { stripe } from "@platform/payments/stripe";
 import { NextResponse } from "next/server";
-
-import { getPrisma } from "@sdk-e/db";
-import { requireSdkStaff } from "@sdk-e/auth/authorization";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { stripe } from "@sdk-e/payments/stripe";
 
 export const dynamic = "force-dynamic";
 
@@ -15,7 +13,7 @@ export async function POST(request: Request) {
     if (!principal) {
       return NextResponse.json(
         { error: "Your session has ended. Sign in and try again." },
-        { status: 401 }
+        { status: 401 },
       );
     }
 
@@ -34,7 +32,7 @@ export async function POST(request: Request) {
     if (!userId || !email || !country) {
       return NextResponse.json(
         { error: "userId, email, and country are required." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -53,14 +51,14 @@ export async function POST(request: Request) {
     if (existing) {
       return NextResponse.json(
         { error: "Connected account already exists for this user." },
-        { status: 409 }
+        { status: 409 },
       );
     }
 
     const account = await stripe.v2.core.accounts.create({
       country: body.country as string,
       contact_email: email,
-      type: type as "express" | "custom",
+      type: type as "custom" | "express",
       dashboard: "express",
       defaults: {
         responsibilities: {
@@ -94,13 +92,13 @@ export async function POST(request: Request) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         detailsSubmitted: (account as any).details_submitted,
       },
-      { status: 201 }
+      { status: 201 },
     );
   } catch (error) {
     if (error instanceof Error && error.message.includes("Authentication is required")) {
       return NextResponse.json(
         { error: "Your session has ended. Sign in and try again." },
-        { status: 401 }
+        { status: 401 },
       );
     }
     if (error instanceof Error && error.message.includes("SDK staff access is required")) {
@@ -108,7 +106,7 @@ export async function POST(request: Request) {
     }
     return NextResponse.json(
       { error: error instanceof Error ? error.message : "Connected account could not be created." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

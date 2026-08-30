@@ -1,9 +1,9 @@
-export type HomeSystemMapItem = {
+export interface HomeSystemMapItem {
   number: string;
   title: string;
   copy: string;
   systems: string[];
-};
+}
 
 export function HomeSystemMap({ items }: { items: HomeSystemMapItem[] }) {
   return (

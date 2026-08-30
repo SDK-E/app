@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from "next/server";
+import { getAuth0Client } from "@platform/auth";
+import { routing } from "@platform/i18n/routing";
 import createMiddleware from "next-intl/middleware";
-import { getAuth0Client } from "@sdk-e/auth";
-import { routing } from "@sdk-e/i18n/routing";
+import { NextRequest, NextResponse } from "next/server";
 
 const PUBLIC_ROUTES = [
   "/",
@@ -21,36 +21,15 @@ const PUBLIC_ROUTES = [
   "/robots.txt",
   "/sitemap.xml",
   "/llms.txt",
+  "/index.md",
 ];
-const STATIC_PUBLIC_ROUTES = ["/robots.txt", "/sitemap.xml", "/llms.txt"];
+const STATIC_PUBLIC_ROUTES = ["/robots.txt", "/sitemap.xml", "/llms.txt", "/index.md"];
 
 function isProductionDeployment(): boolean {
   return process.env.NODE_ENV === "production" && process.env.VERCEL_ENV !== "preview";
 }
 
 const i18nMiddleware = createMiddleware(routing);
-
-function stripLocale(pathname: string): string {
-  const segments = pathname.split("/");
-  if (
-    segments.length > 1 &&
-    routing.locales.includes(segments[1] as (typeof routing.locales)[number])
-  ) {
-    return "/" + segments.slice(2).join("/");
-  }
-  return pathname;
-}
-
-function matchesRoute(pathname: string, patterns: string[]): boolean {
-  const normalized = stripLocale(pathname);
-  return patterns.some((pattern) => {
-    if (pattern.endsWith("/*")) {
-      const prefix = pattern.slice(0, -1);
-      return normalized.startsWith(prefix);
-    }
-    return normalized === pattern;
-  });
-}
 
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -83,6 +62,28 @@ export async function proxy(request: NextRequest) {
   }
 
   return NextResponse.next();
+}
+
+function matchesRoute(pathname: string, patterns: string[]): boolean {
+  const normalized = stripLocale(pathname);
+  return patterns.some((pattern) => {
+    if (pattern.endsWith("/*")) {
+      const prefix = pattern.slice(0, -1);
+      return normalized.startsWith(prefix);
+    }
+    return normalized === pattern;
+  });
+}
+
+function stripLocale(pathname: string): string {
+  const segments = pathname.split("/");
+  if (
+    segments.length > 1 &&
+    routing.locales.includes(segments[1] as (typeof routing.locales)[number])
+  ) {
+    return "/" + segments.slice(2).join("/");
+  }
+  return pathname;
 }
 
 export const config = {

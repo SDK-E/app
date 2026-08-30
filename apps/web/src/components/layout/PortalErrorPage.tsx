@@ -1,1 +1,1 @@
-export * from "@sdk-e/portal-shell/PortalErrorPage";
+export * from "@platform/portal-shell/PortalErrorPage";

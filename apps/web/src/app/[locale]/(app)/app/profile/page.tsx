@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { getTranslations } from "next-intl/server";
 
-import { Card } from "@sdk-e/ui/Card";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { Card } from "@platform/ui/Card";
+import { getTranslations } from "next-intl/server";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Profile | SDK Enterprises",

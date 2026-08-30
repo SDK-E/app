@@ -1,5 +1,6 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { NextRequest } from "next/server";
+
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { proxy } from "@/proxy";
 
@@ -20,7 +21,7 @@ vi.mock("next/server", () => ({
   NextRequest: vi.fn(),
   NextResponse: mocks.nextResponse,
 }));
-vi.mock("@sdk-e/auth", () => ({ getAuth0Client: mocks.getAuth0Client }));
+vi.mock("@platform/auth", () => ({ getAuth0Client: mocks.getAuth0Client }));
 
 function makeRequest(pathname: string): NextRequest {
   return {
