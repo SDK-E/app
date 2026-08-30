@@ -214,6 +214,16 @@ export function professionalServiceJsonLd(): Record<string, unknown> {
   };
 }
 
+export function webPageJsonLd(name: string, description: string): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name,
+    description,
+    url: getSiteUrl(),
+  };
+}
+
 export function websiteJsonLd(): Record<string, unknown> {
   return {
     "@context": "https://schema.org",

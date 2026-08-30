@@ -5,6 +5,7 @@ import {
   defaultRobots,
   getSiteUrl,
   organizationJsonLd,
+  webPageJsonLd,
   websiteJsonLd,
 } from "@platform/marketing/seo";
 import { describe, expect, it } from "vitest";
@@ -140,6 +141,15 @@ describe("structured data", () => {
         { "@type": "ListItem", position: 1, name: "Home", item: "https://sdk.enterprises/" },
         { "@type": "ListItem", position: 2, name: "Work", item: "https://sdk.enterprises/work" },
       ],
+    });
+  });
+
+  it("publishes the web page JSON-LD", () => {
+    expect(webPageJsonLd("Work", "Engineering case studies")).toMatchObject({
+      "@type": "WebPage",
+      name: "Work",
+      description: "Engineering case studies",
+      url: "https://sdk.enterprises",
     });
   });
 });
