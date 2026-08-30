@@ -115,6 +115,12 @@ export async function validateInvitation(
       "This invitation email is linked to more than one account. Sign in with the account that registered it and request a new invitation.",
     );
 
+  const claimed = await db.invitation.updateMany({
+    where: { id: invitation.id, acceptedAt: null, revokedAt: null },
+    data: { acceptedAt: new Date(), acceptedBy: user.id },
+  });
+  if (claimed.count === 0) forbidden("This invitation has already been used.");
+
   return {
     invitation,
     user,
