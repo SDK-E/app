@@ -10,4 +10,8 @@ export const siteConfig = {
     address: "44 Rue Pasquier, 75008 Paris, France",
     domain: "sdk.enterprises",
   },
+  analytics: {
+    googleAnalyticsId: "G-DDSKTR68M7",
+    securePrivacyServiceName: "Google Analytics",
+  },
 } as const;

@@ -4,6 +4,7 @@ import { JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { HtmlLang } from "@/components/layout/HtmlLang";
+import { GoogleAnalyticsConsent } from "@/components/analytics/GoogleAnalyticsConsent";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -29,6 +30,7 @@ export default function RootLayout({
           src="https://app.secureprivacy.ai/script/6a93a2f7c62d5b186f5b65bd.js"
           strategy="afterInteractive"
         />
+        <GoogleAnalyticsConsent />
         <HtmlLang />
         {children}
         <SpeedInsights />
