@@ -33,8 +33,9 @@ vi.mock("@sdk-e/db", () => ({
   getPrisma: () => mocks.prisma,
 }));
 
-const now = new Date("2026-08-17T00:00:00.000Z");
-const later = new Date("2026-08-24T00:00:00.000Z");
+const base = Date.now();
+const now = new Date(base - 24 * 60 * 60 * 1000);
+const later = new Date(base + 7 * 24 * 60 * 60 * 1000);
 const clientInvite = {
   id: "inv-1",
   tokenHash: "abc123",
