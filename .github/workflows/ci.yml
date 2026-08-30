@@ -23,6 +23,7 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - run: pnpm run generate
       - run: pnpm run agents:check
       - run: pnpm run format:check
       - run: pnpm run audit
@@ -72,6 +73,7 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - run: pnpm run generate
       - run: pnpm run test:run
       - run: pnpm run i18n:check
 
@@ -106,4 +108,5 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - run: pnpm run generate
       - run: pnpm run test:coverage
