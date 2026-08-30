@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@platform/ui/Button";
 import { useTranslations } from "next-intl";
 
