@@ -6,10 +6,6 @@ type JsonObject = Record<string, unknown>;
 const root = process.cwd();
 const failures: string[] = [];
 
-function readJson(path: string): JsonObject {
-  return JSON.parse(readFileSync(resolve(root, path), "utf8")) as JsonObject;
-}
-
 function fail(message: string): void {
   failures.push(message);
 }
@@ -29,8 +25,12 @@ function normalizeMcpConfig(path: string): Record<string, string[]> {
         }
         return [name, []];
       })
-      .sort(([left], [right]) => left.localeCompare(right))
+      .sort(([left], [right]) => left.localeCompare(right)),
   );
+}
+
+function readJson(path: string): JsonObject {
+  return JSON.parse(readFileSync(resolve(root, path), "utf8")) as JsonObject;
 }
 
 const canonicalMcp = normalizeMcpConfig(".mcp.json");

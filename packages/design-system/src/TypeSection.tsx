@@ -1,5 +1,5 @@
-import { Section } from "@sdk-e/ui/Section";
-import { SectionHeader } from "@sdk-e/ui/SectionHeader";
+import { Section } from "@platform/ui/Section";
+import { SectionHeader } from "@platform/ui/SectionHeader";
 
 const typeRamp: { token: string; className: string; sample: string }[] = [
   { token: "display", className: "text-display tracking-display", sample: "display — 76px" },
@@ -14,7 +14,10 @@ const typeRamp: { token: string; className: string; sample: string }[] = [
 
 export function TypeSection() {
   return (
-    <Section id="type" tone="dark">
+    <Section
+      id="type"
+      tone="dark"
+    >
       <SectionHeader
         eyebrow="02 · Typography"
         title="JetBrains Mono, tuned like an editorial type system."
@@ -22,7 +25,10 @@ export function TypeSection() {
       />
       <div className="grid gap-px overflow-hidden rounded-card border border-dark-deep bg-dark-deep">
         {typeRamp.map((row) => (
-          <div key={row.token} className="bg-dark px-6 py-5">
+          <div
+            key={row.token}
+            className="bg-dark px-6 py-5"
+          >
             <p className={`text-light ${row.className}`}>{row.sample}</p>
           </div>
         ))}

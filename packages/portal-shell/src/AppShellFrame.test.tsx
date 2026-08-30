@@ -1,7 +1,7 @@
+import type { ClientPrincipal } from "@platform/types";
+
 import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-
-import type { ClientPrincipal } from "@sdk-e/types";
 
 const mocks = vi.hoisted(() => ({
   AppNav: vi.fn(),
@@ -9,13 +9,13 @@ const mocks = vi.hoisted(() => ({
   ActiveCompanyLabel: vi.fn(),
 }));
 
-vi.mock("@sdk-e/portal-shell/AppNav", () => ({ AppNav: mocks.AppNav }));
-vi.mock("@sdk-e/portal-shell/AccountMenu", () => ({ AccountMenu: mocks.AccountMenu }));
-vi.mock("@sdk-e/portal-shell/ActiveCompanyLabel", () => ({
+vi.mock("@platform/portal-shell/AppNav", () => ({ AppNav: mocks.AppNav }));
+vi.mock("@platform/portal-shell/AccountMenu", () => ({ AccountMenu: mocks.AccountMenu }));
+vi.mock("@platform/portal-shell/ActiveCompanyLabel", () => ({
   ActiveCompanyLabel: mocks.ActiveCompanyLabel,
 }));
 
-import { AppShellFrame } from "@sdk-e/portal-shell/AppShellFrame";
+import { AppShellFrame } from "@platform/portal-shell/AppShellFrame";
 
 const STORAGE_KEY = "sdk.portal.sidebar.collapsed";
 
@@ -48,18 +48,6 @@ const labels = {
   expandSidebar: "Expand sidebar",
 };
 
-function installStorage(): Map<string, string> {
-  const store = new Map<string, string>();
-  Object.defineProperty(window, "localStorage", {
-    value: {
-      getItem: (key: string) => (store.has(key) ? (store.get(key) as string) : null),
-      setItem: (key: string, value: string) => void store.set(key, value),
-    },
-    configurable: true,
-  });
-  return store;
-}
-
 function arrange() {
   mocks.AppNav.mockReturnValue(<nav>Navigation</nav>);
   mocks.ActiveCompanyLabel.mockReturnValue(<span>Acme</span>);
@@ -76,8 +64,20 @@ function arrange() {
       updateLocale={async () => ({ ok: true })}
     >
       <p>Page content</p>
-    </AppShellFrame>
+    </AppShellFrame>,
   );
+}
+
+function installStorage(): Map<string, string> {
+  const store = new Map<string, string>();
+  Object.defineProperty(window, "localStorage", {
+    value: {
+      getItem: (key: string) => (store.has(key) ? (store.get(key) as string) : null),
+      setItem: (key: string, value: string) => void store.set(key, value),
+    },
+    configurable: true,
+  });
+  return store;
 }
 
 describe("AppShellFrame sidebar collapse", () => {
@@ -107,7 +107,7 @@ describe("AppShellFrame sidebar collapse", () => {
     fireEvent.click(collapsed);
 
     expect(
-      screen.getByRole("button", { name: "Collapse sidebar" }).getAttribute("aria-expanded")
+      screen.getByRole("button", { name: "Collapse sidebar" }).getAttribute("aria-expanded"),
     ).toBe("true");
     expect(window.localStorage.getItem(STORAGE_KEY)).toBe("0");
   });
@@ -125,7 +125,7 @@ describe("AppShellFrame sidebar collapse", () => {
     arrange();
 
     expect(
-      screen.getByRole("button", { name: "Collapse sidebar" }).getAttribute("aria-expanded")
+      screen.getByRole("button", { name: "Collapse sidebar" }).getAttribute("aria-expanded"),
     ).toBe("true");
   });
 
@@ -133,11 +133,11 @@ describe("AppShellFrame sidebar collapse", () => {
     arrange();
     fireEvent.click(screen.getByRole("button", { name: "Collapse sidebar" }));
     expect(
-      screen.getByRole("button", { name: "Expand sidebar" }).getAttribute("aria-expanded")
+      screen.getByRole("button", { name: "Expand sidebar" }).getAttribute("aria-expanded"),
     ).toBe("false");
 
     const sidebarMenuCall = mocks.AccountMenu.mock.calls.find(
-      ([props]) => (props as { variant?: string }).variant === "sidebar"
+      ([props]) => (props as { variant?: string }).variant === "sidebar",
     );
     const menuProps = sidebarMenuCall?.[0] as { onExpand?: () => void };
     act(() => {
@@ -145,7 +145,7 @@ describe("AppShellFrame sidebar collapse", () => {
     });
 
     expect(
-      screen.getByRole("button", { name: "Collapse sidebar" }).getAttribute("aria-expanded")
+      screen.getByRole("button", { name: "Collapse sidebar" }).getAttribute("aria-expanded"),
     ).toBe("true");
     expect(window.localStorage.getItem(STORAGE_KEY)).toBe("0");
   });

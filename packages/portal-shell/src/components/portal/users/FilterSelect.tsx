@@ -35,7 +35,10 @@ export function FilterSelect({
       className="rounded-control border border-input bg-card px-4 py-2 text-body outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
     >
       {options.map((option) => (
-        <option key={option.value} value={option.value}>
+        <option
+          key={option.value}
+          value={option.value}
+        >
           {option.label}
         </option>
       ))}

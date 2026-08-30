@@ -1,7 +1,7 @@
-import Link from "next/link";
+import type { RequestDetail, Translator } from "@platform/requests/types";
 
-import { Badge } from "@sdk-e/ui/Badge";
-import type { RequestDetail, Translator } from "@sdk-e/requests/types";
+import { Badge } from "@platform/ui/Badge";
+import Link from "next/link";
 
 export async function RequestHeader({
   locale,

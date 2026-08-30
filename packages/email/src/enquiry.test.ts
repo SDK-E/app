@@ -1,10 +1,9 @@
+import { sendEnquiryNotification } from "@platform/email/enquiry";
+import { sendMessage } from "@platform/email/transport";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { sendEnquiryNotification } from "@sdk-e/email/enquiry";
-import { sendMessage } from "@sdk-e/email/transport";
-
-vi.mock("@sdk-e/email/transport", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("@sdk-e/email/transport")>()),
+vi.mock("@platform/email/transport", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@platform/email/transport")>()),
   sendMessage: vi.fn(),
 }));
 
@@ -24,7 +23,7 @@ describe("sendEnquiryNotification", () => {
     vi.mocked(sendMessage).mockResolvedValue(true);
 
     await expect(
-      sendEnquiryNotification({ ...baseEnquiry, companyName: "  Acme   Corp  " })
+      sendEnquiryNotification({ ...baseEnquiry, companyName: "  Acme   Corp  " }),
     ).resolves.toBe(true);
 
     expect(vi.mocked(sendMessage)).toHaveBeenCalledWith(
@@ -32,7 +31,7 @@ describe("sendEnquiryNotification", () => {
         to: "hello@sdk.enterprises",
         subject: "New project enquiry — Acme Corp",
       }),
-      "enquiry email"
+      "enquiry email",
     );
   });
 

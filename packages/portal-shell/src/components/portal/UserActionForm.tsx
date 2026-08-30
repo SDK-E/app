@@ -1,10 +1,10 @@
 "use client";
 
-import { useActionState } from "react";
+import type { UserActionState } from "@platform/portal-staff/app/users/actions";
 
-import { Button } from "@sdk-e/ui/Button";
-import type { UserActionState } from "@sdk-e/portal-staff/app/users/actions";
-import { ConfirmButton } from "@sdk-e/portal-shell/components/portal/users/ConfirmButton";
+import { ConfirmButton } from "@platform/portal-shell/components/portal/users/ConfirmButton";
+import { Button } from "@platform/ui/Button";
+import { useActionState } from "react";
 
 export function UserActionForm({
   action,
@@ -17,26 +17,45 @@ export function UserActionForm({
   label: string;
   confirmLabel?: string;
   children?: React.ReactNode;
-  variant?: "default" | "outline" | "dark" | "destructive";
+  variant?: "dark" | "default" | "destructive" | "outline";
 }) {
   const [state, formAction, pending] = useActionState(action, {});
   return (
-    <form action={formAction} className="space-y-3">
+    <form
+      action={formAction}
+      className="space-y-3"
+    >
       {children}
       {state.error ? (
-        <p role="alert" className="text-body">
+        <p
+          role="alert"
+          className="text-body"
+        >
           {state.error}
         </p>
       ) : null}
       {state.success ? (
-        <p role="status" className="text-body">
+        <p
+          role="status"
+          className="text-body"
+        >
           {state.success}
         </p>
       ) : null}
       {confirmLabel ? (
-        <ConfirmButton label={label} confirmLabel={confirmLabel} variant={variant} size="sm" />
+        <ConfirmButton
+          label={label}
+          confirmLabel={confirmLabel}
+          variant={variant}
+          size="sm"
+        />
       ) : (
-        <Button type="submit" variant={variant} size="sm" disabled={pending}>
+        <Button
+          type="submit"
+          variant={variant}
+          size="sm"
+          disabled={pending}
+        >
           {label}
         </Button>
       )}

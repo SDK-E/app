@@ -1,16 +1,23 @@
+import type { RequestActivityType, RequestStatus } from "@platform/db/client";
+import type { AppPrincipal, AssignedPrincipal, Permission } from "@platform/types";
+
 import {
+  type CompanyContext,
   notFound,
   requireCompanyAccess,
   requireCompanyContext,
   requirePermission,
-  type CompanyContext,
-} from "@sdk-e/auth/authorization";
-import { getPrisma } from "@sdk-e/db";
-import type { RequestActivityType, RequestStatus } from "@sdk-e/db/client";
-import type { AppPrincipal, AssignedPrincipal, Permission } from "@sdk-e/types";
+} from "@platform/auth/authorization";
+import { getPrisma } from "@platform/db";
 
-export function scope(principal: AppPrincipal, permission: Permission, companyId?: string) {
-  return requirePermission(principal, permission, companyId);
+export function activity(
+  companyId: string,
+  actorId: string,
+  type: RequestActivityType,
+  fromStatus?: RequestStatus,
+  toStatus?: RequestStatus,
+) {
+  return { companyId, actorId, type, fromStatus, toStatus };
 }
 
 export function companyScope(principal: AssignedPrincipal, companyId?: string) {
@@ -29,19 +36,13 @@ export async function requireActiveCompany(principal: AssignedPrincipal, company
 export async function resolveCompanyContext(
   principal: AppPrincipal,
   companyId: string,
-  permission: Permission
+  permission: Permission,
 ): Promise<CompanyContext> {
   const ctx = requireCompanyContext(principal, companyId, permission);
   await requireActiveCompany(ctx.principal, ctx.companyId);
   return ctx;
 }
 
-export function activity(
-  companyId: string,
-  actorId: string,
-  type: RequestActivityType,
-  fromStatus?: RequestStatus,
-  toStatus?: RequestStatus
-) {
-  return { companyId, actorId, type, fromStatus, toStatus };
+export function scope(principal: AppPrincipal, permission: Permission, companyId?: string) {
+  return requirePermission(principal, permission, companyId);
 }

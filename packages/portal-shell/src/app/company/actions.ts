@@ -1,8 +1,8 @@
 "use server";
 
-import { createOwnedCompany } from "@sdk-e/companies";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { companyCreationSchema } from "@sdk-e/schemas/company";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { createOwnedCompany } from "@platform/companies";
+import { companyCreationSchema } from "@platform/schemas/company";
 
 export interface CompanyCreationState {
   error?: string;
@@ -12,7 +12,7 @@ export interface CompanyCreationState {
 export async function createCompanyAction(
   locale: string,
   _state: CompanyCreationState,
-  formData: FormData
+  formData: FormData,
 ): Promise<CompanyCreationState> {
   void _state;
   const parsed = companyCreationSchema.safeParse({ name: formData.get("name") });

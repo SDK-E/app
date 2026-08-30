@@ -1,10 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-
-import { LanguageSwitcher } from "@sdk-e/portal-shell/LanguageSwitcher";
-import { ThemeSwitcher } from "@sdk-e/portal-shell/ThemeSwitcher";
+import { LanguageSwitcher } from "@platform/portal-shell/LanguageSwitcher";
+import { ThemeSwitcher } from "@platform/portal-shell/ThemeSwitcher";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,7 +9,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@sdk-e/ui/DropdownMenu";
+} from "@platform/ui/DropdownMenu";
+import Image from "next/image";
+import Link from "next/link";
 
 export function AccountMenu({
   locale,
@@ -31,7 +30,7 @@ export function AccountMenu({
   locale: string;
   name: string;
   email: string;
-  avatarUrl: string | null;
+  avatarUrl: null | string;
   profileLabel: string;
   logoutLabel: string;
   languageLabel: string;
@@ -53,7 +52,10 @@ export function AccountMenu({
         title={name}
         className="flex min-h-11 w-full items-center justify-center rounded-control focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current"
       >
-        <Avatar avatarUrl={avatarUrl} name={name} />
+        <Avatar
+          avatarUrl={avatarUrl}
+          name={name}
+        />
       </button>
     );
   }
@@ -66,8 +68,14 @@ export function AccountMenu({
           collapsed ? "lg:justify-center lg:gap-0 lg:px-0" : ""
         } ${inSidebar ? "" : "border border-border bg-card shadow-sm hover:bg-accent"}`}
       >
-        <button type="button" aria-label={name}>
-          <Avatar avatarUrl={avatarUrl} name={name} />
+        <button
+          type="button"
+          aria-label={name}
+        >
+          <Avatar
+            avatarUrl={avatarUrl}
+            name={name}
+          />
           {!collapsed && (
             <span className={`min-w-0 flex-1 ${inSidebar ? "block" : "hidden sm:block"}`}>
               <span
@@ -120,7 +128,7 @@ export function AccountMenu({
   );
 }
 
-function Avatar({ avatarUrl, name }: { avatarUrl: string | null; name: string }) {
+function Avatar({ avatarUrl, name }: { avatarUrl: null | string; name: string }) {
   if (avatarUrl) {
     return (
       <Image

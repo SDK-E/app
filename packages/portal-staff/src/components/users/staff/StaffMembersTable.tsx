@@ -1,12 +1,12 @@
+import type { StaffMemberRow } from "@platform/users";
+
+import { PaginationNav } from "@platform/portal-shell/components/portal/users/PaginationNav";
+import { SortHeader } from "@platform/portal-shell/components/portal/users/SortHeader";
+import { Badge } from "@platform/ui/Badge";
+import { Table, TBody, TD, TH, THead, TR } from "@platform/ui/Table";
+import { usersListHref, type UsersListQuery } from "@platform/users/list-links";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
-
-import { PaginationNav } from "@sdk-e/portal-shell/components/portal/users/PaginationNav";
-import { SortHeader } from "@sdk-e/portal-shell/components/portal/users/SortHeader";
-import { Badge } from "@sdk-e/ui/Badge";
-import { TBody, TD, TH, THead, TR, Table } from "@sdk-e/ui/Table";
-import { usersListHref, type UsersListQuery } from "@sdk-e/users/list-links";
-import type { StaffMemberRow } from "@sdk-e/users";
 
 export async function StaffMembersTable({
   locale,
@@ -18,8 +18,8 @@ export async function StaffMembersTable({
 }: {
   locale: string;
   rows: StaffMemberRow[];
-  nextCursor: string | null;
-  prevCursor: string | null;
+  nextCursor: null | string;
+  prevCursor: null | string;
   basePath: string;
   query: UsersListQuery;
 }) {
@@ -60,7 +60,10 @@ export async function StaffMembersTable({
               <TD>
                 <span className="font-semibold">{row.name}</span>
                 {row.sdkStaffRole ? (
-                  <Badge tone="live" className="ml-2">
+                  <Badge
+                    tone="live"
+                    className="ml-2"
+                  >
                     {`SDK ${row.sdkStaffRole}`}
                   </Badge>
                 ) : null}

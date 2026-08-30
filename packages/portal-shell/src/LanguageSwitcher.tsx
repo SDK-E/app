@@ -23,14 +23,6 @@ const LOCALES = [
   { code: "el", label: "Ελληνικά", country: "GR" },
 ];
 
-function getFlagEmoji(countryCode: string): string {
-  const codePoints = countryCode
-    .toUpperCase()
-    .split("")
-    .map((char) => 127397 + char.charCodeAt(0));
-  return String.fromCodePoint(...codePoints);
-}
-
 export function LanguageSwitcher({
   updateLocale,
 }: {
@@ -77,7 +69,10 @@ export function LanguageSwitcher({
   };
 
   return (
-    <div className="relative" ref={ref}>
+    <div
+      className="relative"
+      ref={ref}
+    >
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -96,7 +91,12 @@ export function LanguageSwitcher({
           aria-hidden
           className={`transition-transform motion-reduce:transition-none ${open ? "rotate-180" : ""}`}
         >
-          <path d="M2 4l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" />
+          <path
+            d="M2 4l3 3 3-3"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="square"
+          />
         </svg>
       </button>
 
@@ -125,4 +125,12 @@ export function LanguageSwitcher({
       )}
     </div>
   );
+}
+
+function getFlagEmoji(countryCode: string): string {
+  const codePoints = countryCode
+    .toUpperCase()
+    .split("")
+    .map((char) => 127397 + char.charCodeAt(0));
+  return String.fromCodePoint(...codePoints);
 }

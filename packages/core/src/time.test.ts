@@ -1,6 +1,5 @@
+import { formatInTimeZone, isValidTimeZone } from "@platform/core/time";
 import { describe, expect, it } from "vitest";
-
-import { formatInTimeZone, isValidTimeZone } from "@sdk-e/core/time";
 
 describe("time", () => {
   describe("isValidTimeZone", () => {
@@ -8,14 +7,14 @@ describe("time", () => {
       "returns true for valid IANA zone %s",
       (tz) => {
         expect(isValidTimeZone(tz)).toBe(true);
-      }
+      },
     );
 
     it.each([["Not/A_Zone"], [""], ["US/Eastern/Extra"]])(
       "returns false for invalid zone %s",
       (tz) => {
         expect(isValidTimeZone(tz)).toBe(false);
-      }
+      },
     );
   });
 

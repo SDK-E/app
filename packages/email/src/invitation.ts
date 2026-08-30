@@ -1,5 +1,5 @@
-import { escapeHtml, sendMessage } from "@sdk-e/email/transport";
-import { siteConfig } from "@sdk-e/config/site";
+import { siteConfig } from "@platform/config/site";
+import { escapeHtml, sendMessage } from "@platform/email/transport";
 
 export interface InvitationNotification {
   email: string;
@@ -8,6 +8,20 @@ export interface InvitationNotification {
   role: string;
   acceptUrl: string;
   expiresAt: Date;
+}
+
+export async function sendInvitationNotification(
+  invitation: InvitationNotification,
+): Promise<boolean> {
+  return sendMessage(
+    {
+      from: `SDK Enterprises <no-reply@${siteConfig.contact.domain}>`,
+      to: invitation.email,
+      subject: `Invitation to ${invitation.destination}`,
+      html: renderInvitationHtml(invitation),
+    },
+    "invitation email",
+  );
 }
 
 function renderInvitationHtml(invitation: InvitationNotification): string {
@@ -19,18 +33,4 @@ function renderInvitationHtml(invitation: InvitationNotification): string {
     `<p>This single-use link expires ${escapeHtml(invitation.expiresAt.toISOString())}.</p>`,
     "</div>",
   ].join("\n");
-}
-
-export async function sendInvitationNotification(
-  invitation: InvitationNotification
-): Promise<boolean> {
-  return sendMessage(
-    {
-      from: `SDK Enterprises <no-reply@${siteConfig.contact.domain}>`,
-      to: invitation.email,
-      subject: `Invitation to ${invitation.destination}`,
-      html: renderInvitationHtml(invitation),
-    },
-    "invitation email"
-  );
 }

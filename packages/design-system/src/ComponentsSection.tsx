@@ -1,9 +1,9 @@
-import { Section } from "@sdk-e/ui/Section";
-import { SectionHeader } from "@sdk-e/ui/SectionHeader";
-import { ArrowLink } from "@sdk-e/ui/ArrowLink";
-import { Badge } from "@sdk-e/ui/Badge";
-import { Button } from "@sdk-e/ui/Button";
-import { Card } from "@sdk-e/ui/Card";
+import { ArrowLink } from "@platform/ui/ArrowLink";
+import { Badge } from "@platform/ui/Badge";
+import { Button } from "@platform/ui/Button";
+import { Card } from "@platform/ui/Card";
+import { Section } from "@platform/ui/Section";
+import { SectionHeader } from "@platform/ui/SectionHeader";
 
 const metrics: [string, string][] = [
   ["Active projects", "03"],
@@ -80,7 +80,10 @@ export function ComponentsSection() {
           <h3 className="mb-4 text-h3">Metrics grid (responsive: 4 → 2 → 1)</h3>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {metrics.map(([label, value]) => (
-              <Card key={label} className="p-4">
+              <Card
+                key={label}
+                className="p-4"
+              >
                 <p className="text-micro font-bold uppercase tracking-label">{label}</p>
                 <p className="mt-4 text-h1 tracking-h1">{value}</p>
               </Card>

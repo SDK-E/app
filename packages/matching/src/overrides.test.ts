@@ -1,6 +1,7 @@
+import type { MatchCandidateResult, OverrideInput } from "@platform/matching/types";
+
+import { applyOverrides } from "@platform/matching/overrides";
 import { describe, expect, it } from "vitest";
-import { applyOverrides } from "@sdk-e/matching/overrides";
-import type { MatchCandidateResult, OverrideInput } from "@sdk-e/matching/types";
 
 describe("applyOverrides", () => {
   const baseCandidate: MatchCandidateResult = {

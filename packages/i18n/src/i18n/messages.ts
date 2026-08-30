@@ -1,7 +1,9 @@
-import type { Locale } from "@sdk-e/i18n";
+import type { Locale } from "@platform/i18n";
 
+interface MessageModule {
+  default: Messages;
+}
 type Messages = Record<string, unknown>;
-type MessageModule = { default: Messages };
 
 export const messageShardPaths = [
   "shared.json",
@@ -18,7 +20,7 @@ export const messageShardPaths = [
   "legal/cookies.json",
 ] as const;
 
-const messageShardLoaders: ReadonlyArray<(locale: Locale) => Promise<MessageModule>> = [
+const messageShardLoaders: readonly ((locale: Locale) => Promise<MessageModule>)[] = [
   (locale) => import(`../locales/${locale}/shared.json`),
   (locale) => import(`../locales/${locale}/home.json`),
   (locale) => import(`../locales/${locale}/enquiry.json`),
@@ -32,6 +34,12 @@ const messageShardLoaders: ReadonlyArray<(locale: Locale) => Promise<MessageModu
   (locale) => import(`../locales/${locale}/legal/terms.json`),
   (locale) => import(`../locales/${locale}/legal/cookies.json`),
 ];
+
+export async function loadMessages(locale: Locale): Promise<Messages> {
+  const shards = await Promise.all(messageShardLoaders.map((loadShard) => loadShard(locale)));
+
+  return shards.reduce((messages, shard) => mergeMessages(messages, shard.default), {});
+}
 
 export function mergeMessages(target: Messages, source: Messages): Messages {
   const result = { ...target };
@@ -53,10 +61,4 @@ export function mergeMessages(target: Messages, source: Messages): Messages {
   }
 
   return result;
-}
-
-export async function loadMessages(locale: Locale): Promise<Messages> {
-  const shards = await Promise.all(messageShardLoaders.map((loadShard) => loadShard(locale)));
-
-  return shards.reduce((messages, shard) => mergeMessages(messages, shard.default), {});
 }

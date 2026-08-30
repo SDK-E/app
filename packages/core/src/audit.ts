@@ -1,9 +1,9 @@
-import { getPrisma } from "@sdk-e/db";
+import { getPrisma } from "@platform/db";
 
 export interface CreateAuditEventInput {
   companyId?: string;
   actorId?: string;
-  actorKind?: "USER" | "PROVIDER" | "SDK_STAFF" | "SYSTEM";
+  actorKind?: "PROVIDER" | "SDK_STAFF" | "SYSTEM" | "USER";
   action: string;
   targetType: string;
   targetId: string;

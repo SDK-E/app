@@ -1,7 +1,6 @@
+import { Progress } from "@platform/ui/Progress";
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-
-import { Progress } from "@sdk-e/ui/Progress";
 
 describe("Progress", () => {
   afterEach(() => cleanup());

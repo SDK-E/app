@@ -1,13 +1,14 @@
-import { ActionForm } from "@sdk-e/portal-shell/components/portal/ActionForm";
-import { Card } from "@sdk-e/ui/Card";
+import type { RequestDetail, Translator } from "@platform/requests/types";
+import type { AssignedPrincipal } from "@platform/types";
+
 import {
   acceptProposalAction,
   convertAction,
   replyAction,
   sdkDecisionAction,
-} from "@sdk-e/portal-shell/app/companies/[companyId]/requests/actions";
-import type { AssignedPrincipal } from "@sdk-e/types";
-import type { RequestDetail, Translator } from "@sdk-e/requests/types";
+} from "@platform/portal-shell/app/companies/[companyId]/requests/actions";
+import { ActionForm } from "@platform/portal-shell/components/portal/ActionForm";
+import { Card } from "@platform/ui/Card";
 
 const control =
   "mt-2 min-h-12 w-full rounded-control border border-line bg-paper px-4 py-3 text-body text-dark outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current";
@@ -39,7 +40,12 @@ export async function RequestActionPanels({
             >
               <label className="block text-label font-extrabold uppercase tracking-eyebrow">
                 {clientT("reply")}
-                <textarea className={control} name="content" rows={5} required />
+                <textarea
+                  className={control}
+                  name="content"
+                  rows={5}
+                  required
+                />
               </label>
             </ActionForm>
           </Card>
@@ -64,7 +70,11 @@ export async function RequestActionPanels({
             action={sdkDecisionAction.bind(null, locale, companyId, request.id)}
             buttonLabel={staffT("startReview")}
           >
-            <input type="hidden" name="decision" value="start-review" />
+            <input
+              type="hidden"
+              name="decision"
+              value="start-review"
+            />
           </ActionForm>
         </Card>
       ) : null}
@@ -75,10 +85,19 @@ export async function RequestActionPanels({
               action={sdkDecisionAction.bind(null, locale, companyId, request.id)}
               buttonLabel={staffT("requestInformation")}
             >
-              <input type="hidden" name="decision" value="request-information" />
+              <input
+                type="hidden"
+                name="decision"
+                value="request-information"
+              />
               <label className="block text-label font-extrabold uppercase tracking-eyebrow">
                 {staffT("response")}
-                <textarea className={control} name="content" rows={5} required />
+                <textarea
+                  className={control}
+                  name="content"
+                  rows={5}
+                  required
+                />
               </label>
             </ActionForm>
           </Card>
@@ -87,17 +106,26 @@ export async function RequestActionPanels({
               action={sdkDecisionAction.bind(null, locale, companyId, request.id)}
               buttonLabel={staffT("proposalReady")}
             >
-              <input type="hidden" name="decision" value="proposal-ready" />
+              <input
+                type="hidden"
+                name="decision"
+                value="proposal-ready"
+              />
               <label className="block text-label font-extrabold uppercase tracking-eyebrow">
                 {staffT("response")}
-                <textarea className={control} name="content" rows={5} required />
+                <textarea
+                  className={control}
+                  name="content"
+                  rows={5}
+                  required
+                />
               </label>
             </ActionForm>
           </Card>
         </>
       ) : null}
       {["SUBMITTED", "IN_REVIEW", "INFORMATION_REQUIRED", "PROPOSAL_READY"].includes(
-        request.status
+        request.status,
       ) ? (
         <Card>
           <ActionForm
@@ -105,10 +133,19 @@ export async function RequestActionPanels({
             buttonLabel={staffT("reject")}
             variant="destructive"
           >
-            <input type="hidden" name="decision" value="reject" />
+            <input
+              type="hidden"
+              name="decision"
+              value="reject"
+            />
             <label className="block text-label font-extrabold uppercase tracking-eyebrow">
               {staffT("response")}
-              <textarea className={control} name="content" rows={4} required />
+              <textarea
+                className={control}
+                name="content"
+                rows={4}
+                required
+              />
             </label>
           </ActionForm>
         </Card>
@@ -123,11 +160,20 @@ export async function RequestActionPanels({
             >
               <label className="block text-label font-extrabold uppercase tracking-eyebrow">
                 {staffT("projectName")}
-                <input className={control} name="name" required />
+                <input
+                  className={control}
+                  name="name"
+                  required
+                />
               </label>
               <label className="block text-label font-extrabold uppercase tracking-eyebrow">
                 {staffT("projectDescription")}
-                <textarea className={control} name="description" rows={5} required />
+                <textarea
+                  className={control}
+                  name="description"
+                  rows={5}
+                  required
+                />
               </label>
             </ActionForm>
           </div>

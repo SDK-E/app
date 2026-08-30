@@ -1,4 +1,5 @@
-import type { MatchWeightConfig } from "@sdk-e/db/client";
+import type { MatchWeightConfig } from "@platform/db/client";
+
 import type { EffectiveWeights } from "./types";
 
 export const DEFAULT_WEIGHTS: EffectiveWeights = {
@@ -37,6 +38,19 @@ export function normalizeWeights(weights: Partial<EffectiveWeights>): EffectiveW
   };
 }
 
+export function prismaWeightsToEffective(weights: MatchWeightConfig): EffectiveWeights {
+  return normalizeWeights({
+    skillMatch: weights.skillMatchWeight,
+    seniority: weights.seniorityWeight,
+    rate: weights.rateWeight,
+    availability: weights.availabilityWeight,
+    location: weights.locationWeight,
+    language: weights.languageWeight,
+    completeness: weights.completenessWeight,
+    serviceFit: weights.serviceFitWeight,
+  });
+}
+
 export function validateWeights(weights: EffectiveWeights): string[] {
   const errors: string[] = [];
   const values = Object.values(weights) as number[];
@@ -50,17 +64,4 @@ export function validateWeights(weights: EffectiveWeights): string[] {
     }
   }
   return errors;
-}
-
-export function prismaWeightsToEffective(weights: MatchWeightConfig): EffectiveWeights {
-  return normalizeWeights({
-    skillMatch: weights.skillMatchWeight,
-    seniority: weights.seniorityWeight,
-    rate: weights.rateWeight,
-    availability: weights.availabilityWeight,
-    location: weights.locationWeight,
-    language: weights.languageWeight,
-    completeness: weights.completenessWeight,
-    serviceFit: weights.serviceFitWeight,
-  });
 }

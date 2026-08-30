@@ -20,33 +20,33 @@ describe("service request validation", () => {
   it("allows partial descriptive content in a draft", () => {
     expect(
       requestDraftSchema.safeParse({ ...valid, description: "Early notes", businessContext: "" })
-        .success
+        .success,
     ).toBe(true);
   });
 
   it("requires complete context for submission", () => {
     expect(requestSubmissionSchema.safeParse({ ...valid, description: "Too short" }).success).toBe(
-      false
+      false,
     );
     expect(requestSubmissionSchema.safeParse(valid).success).toBe(true);
   });
 
   it("accepts only HTTP(S) supporting links", () => {
     expect(
-      requestDraftSchema.safeParse({ ...valid, supportingLinks: ["javascript:alert(1)"] }).success
+      requestDraftSchema.safeParse({ ...valid, supportingLinks: ["javascript:alert(1)"] }).success,
     ).toBe(false);
   });
 
   it("requires meaningful SDK decision content", () => {
     expect(
       sdkRequestDecisionSchema.safeParse({ decision: "request-information", content: "Short" })
-        .success
+        .success,
     ).toBe(false);
     expect(
       sdkRequestDecisionSchema.safeParse({
         decision: "request-information",
         content: "Which deployment constraint is fixed?",
-      }).success
+      }).success,
     ).toBe(true);
   });
 });

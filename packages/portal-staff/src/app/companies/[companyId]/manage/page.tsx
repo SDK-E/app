@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+
+import { hasPermission } from "@platform/auth/authorization";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { getCompanyForManagement } from "@platform/companies";
+import { UserActionForm } from "@platform/portal-shell/components/portal/UserActionForm";
+import { Badge } from "@platform/ui/Badge";
+import { Card } from "@platform/ui/Card";
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { getTranslations } from "next-intl/server";
 
 import { regenerateAccessCodeAction, setCompanyActiveAction } from "../../actions";
-import { Badge } from "@sdk-e/ui/Badge";
-import { Card } from "@sdk-e/ui/Card";
-import { UserActionForm } from "@sdk-e/portal-shell/components/portal/UserActionForm";
-import { getCompanyForManagement } from "@sdk-e/companies";
-import { hasPermission } from "@sdk-e/auth/authorization";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
 
 export const metadata: Metadata = {
   title: "Company | SDK Enterprises",
@@ -55,7 +56,7 @@ export default async function ManageCompanyPage({
           {" · "}
           {t("created", {
             date: new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(
-              company.createdAt
+              company.createdAt,
             ),
           })}
         </p>
@@ -93,7 +94,11 @@ export default async function ManageCompanyPage({
                 label={company.isActive ? t("deactivate") : t("activate")}
                 variant={company.isActive ? "destructive" : "outline"}
               >
-                <input type="hidden" name="isActive" value={String(!company.isActive)} />
+                <input
+                  type="hidden"
+                  name="isActive"
+                  value={String(!company.isActive)}
+                />
               </UserActionForm>
               <UserActionForm
                 action={regenerateAccessCodeAction.bind(null, locale, companyId)}

@@ -1,6 +1,5 @@
+import { defineStateMachine } from "@platform/core/state-machine";
 import { describe, expect, it } from "vitest";
-
-import { defineStateMachine } from "@sdk-e/core/state-machine";
 
 describe("state-machine", () => {
   const machine = defineStateMachine({
@@ -37,7 +36,7 @@ describe("state-machine", () => {
 
     it("assertTransition throws for undeclared transitions", () => {
       expect(() => machine.assertTransition("DRAFT", "APPROVED")).toThrow(
-        "Invalid state transition"
+        "Invalid state transition",
       );
     });
 

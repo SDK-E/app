@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
+
+import { hasPermission } from "@platform/auth/authorization";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { listCompaniesForManagement } from "@platform/companies";
+import { Badge } from "@platform/ui/Badge";
+import { Card } from "@platform/ui/Card";
+import { EmptyState } from "@platform/ui/EmptyState";
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { getTranslations } from "next-intl/server";
-
-import { Badge } from "@sdk-e/ui/Badge";
-import { Card } from "@sdk-e/ui/Card";
-import { EmptyState } from "@sdk-e/ui/EmptyState";
-import { listCompaniesForManagement } from "@sdk-e/companies";
-import { hasPermission } from "@sdk-e/auth/authorization";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
 
 export const metadata: Metadata = {
   title: "Companies | SDK Enterprises",
@@ -51,7 +51,10 @@ export default async function CompaniesDirectoryPage({
       </div>
       <div className="mt-10 space-y-4">
         {companies.map((company) => (
-          <Card key={company.id} className="flex flex-wrap items-center justify-between gap-4">
+          <Card
+            key={company.id}
+            className="flex flex-wrap items-center justify-between gap-4"
+          >
             <div>
               <div className="flex flex-wrap items-center gap-3">
                 <h2 className="text-h3 font-extrabold">{company.name}</h2>
@@ -66,7 +69,7 @@ export default async function CompaniesDirectoryPage({
                 {" · "}
                 {t("created", {
                   date: new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(
-                    company.createdAt
+                    company.createdAt,
                   ),
                 })}
               </p>
@@ -80,7 +83,10 @@ export default async function CompaniesDirectoryPage({
           </Card>
         ))}
         {!companies.length ? (
-          <EmptyState title={t("emptyTitle")} description={t("emptyBody")} />
+          <EmptyState
+            title={t("emptyTitle")}
+            description={t("emptyBody")}
+          />
         ) : null}
       </div>
     </section>

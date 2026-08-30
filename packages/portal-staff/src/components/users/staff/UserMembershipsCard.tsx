@@ -1,15 +1,15 @@
-import { getTranslations } from "next-intl/server";
+import type { UserDetailView } from "@platform/users";
 
-import { assignUserToCompanyAction } from "@sdk-e/portal-staff/app/users/assignment-actions";
+import { UserActionForm } from "@platform/portal-shell/components/portal/UserActionForm";
+import { fieldClass } from "@platform/portal-shell/components/portal/users/styles";
+import { assignUserToCompanyAction } from "@platform/portal-staff/app/users/assignment-actions";
 import {
   removeMembershipAction,
   updateMembershipAction,
-} from "@sdk-e/portal-staff/app/users/membership-actions";
-import { Card } from "@sdk-e/ui/Card";
-import { Badge } from "@sdk-e/ui/Badge";
-import { UserActionForm } from "@sdk-e/portal-shell/components/portal/UserActionForm";
-import { fieldClass } from "@sdk-e/portal-shell/components/portal/users/styles";
-import type { UserDetailView } from "@sdk-e/users";
+} from "@platform/portal-staff/app/users/membership-actions";
+import { Badge } from "@platform/ui/Badge";
+import { Card } from "@platform/ui/Card";
+import { getTranslations } from "next-intl/server";
 
 const assignableRoles = ["OWNER", "ADMINISTRATOR", "PROJECT_MEMBER", "BILLING", "VIEWER"];
 const changeableRoles = ["ADMINISTRATOR", "PROJECT_MEMBER", "BILLING", "VIEWER"];
@@ -24,7 +24,7 @@ export async function UserMembershipsCard({
   const t = await getTranslations({ locale, namespace: "portal.users" });
   const memberCompanyIds = new Set(detail.memberships.map((membership) => membership.company.id));
   const availableCompanies = detail.companies.filter(
-    (company) => !memberCompanyIds.has(company.id)
+    (company) => !memberCompanyIds.has(company.id),
   );
 
   return (
@@ -41,7 +41,10 @@ export async function UserMembershipsCard({
               <p className="text-body font-semibold">
                 {membership.company.name}
                 {!membership.company.isActive ? (
-                  <Badge tone="neutral" className="ml-2">
+                  <Badge
+                    tone="neutral"
+                    className="ml-2"
+                  >
                     {t("inactive")}
                   </Badge>
                 ) : null}
@@ -49,7 +52,7 @@ export async function UserMembershipsCard({
               <p className="mt-1 text-micro uppercase tracking-eyebrow text-muted-foreground">
                 {t("joinedOn", {
                   date: new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(
-                    membership.joinedAt
+                    membership.joinedAt,
                   ),
                 })}
               </p>
@@ -58,7 +61,11 @@ export async function UserMembershipsCard({
               action={updateMembershipAction.bind(null, locale, null)}
               label={t("updateRole")}
             >
-              <input type="hidden" name="membershipId" value={membership.id} />
+              <input
+                type="hidden"
+                name="membershipId"
+                value={membership.id}
+              />
               <select
                 key={membership.role}
                 className={fieldClass}
@@ -70,7 +77,10 @@ export async function UserMembershipsCard({
                   <option value="OWNER">OWNER</option>
                 ) : (
                   changeableRoles.map((role) => (
-                    <option key={role} value={role}>
+                    <option
+                      key={role}
+                      value={role}
+                    >
                       {role.replaceAll("_", " ")}
                     </option>
                   ))
@@ -83,7 +93,11 @@ export async function UserMembershipsCard({
               confirmLabel={membership.role === "OWNER" ? undefined : t("confirmRemove")}
               variant="destructive"
             >
-              <input type="hidden" name="membershipId" value={membership.id} />
+              <input
+                type="hidden"
+                name="membershipId"
+                value={membership.id}
+              />
             </UserActionForm>
           </div>
         ))}
@@ -103,12 +117,23 @@ export async function UserMembershipsCard({
               label={t("assign")}
               variant="default"
             >
-              <input type="hidden" name="userId" value={detail.user.id} />
+              <input
+                type="hidden"
+                name="userId"
+                value={detail.user.id}
+              />
               <label className="block text-label font-extrabold uppercase tracking-eyebrow">
                 {t("company")}
-                <select className={`${fieldClass} mt-2`} name="companyId" required>
+                <select
+                  className={`${fieldClass} mt-2`}
+                  name="companyId"
+                  required
+                >
                   {availableCompanies.map((company) => (
-                    <option key={company.id} value={company.id}>
+                    <option
+                      key={company.id}
+                      value={company.id}
+                    >
                       {company.name}
                     </option>
                   ))}
@@ -116,9 +141,16 @@ export async function UserMembershipsCard({
               </label>
               <label className="block text-label font-extrabold uppercase tracking-eyebrow">
                 {t("role")}
-                <select className={`${fieldClass} mt-2`} name="role" defaultValue="PROJECT_MEMBER">
+                <select
+                  className={`${fieldClass} mt-2`}
+                  name="role"
+                  defaultValue="PROJECT_MEMBER"
+                >
                   {assignableRoles.map((role) => (
-                    <option key={role} value={role}>
+                    <option
+                      key={role}
+                      value={role}
+                    >
                       {role.replaceAll("_", " ")}
                     </option>
                   ))}

@@ -1,15 +1,15 @@
-import { getTranslations } from "next-intl/server";
+import type { UserDetailView } from "@platform/users";
 
-import { updateStaffAction } from "@sdk-e/portal-staff/app/users/membership-actions";
+import { UserActionForm } from "@platform/portal-shell/components/portal/UserActionForm";
+import { fieldClass } from "@platform/portal-shell/components/portal/users/styles";
 import {
   setAccountActiveAction,
   updateUserNameAction,
-} from "@sdk-e/portal-staff/app/users/assignment-actions";
-import { Card } from "@sdk-e/ui/Card";
-import { Badge } from "@sdk-e/ui/Badge";
-import { UserActionForm } from "@sdk-e/portal-shell/components/portal/UserActionForm";
-import { fieldClass } from "@sdk-e/portal-shell/components/portal/users/styles";
-import type { UserDetailView } from "@sdk-e/users";
+} from "@platform/portal-staff/app/users/assignment-actions";
+import { updateStaffAction } from "@platform/portal-staff/app/users/membership-actions";
+import { Badge } from "@platform/ui/Badge";
+import { Card } from "@platform/ui/Card";
+import { getTranslations } from "next-intl/server";
 
 const staffRoles = ["ADMIN", "DELIVERY", "FINANCE"];
 
@@ -41,7 +41,7 @@ export async function UserIdentityCard({
             <p className="mt-3 text-micro uppercase tracking-eyebrow text-muted-foreground">
               {t("lastLogin", {
                 date: new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(
-                  user.lastLoginAt
+                  user.lastLoginAt,
                 ),
               })}
             </p>
@@ -54,7 +54,11 @@ export async function UserIdentityCard({
             label={t("saveName")}
             variant="outline"
           >
-            <input type="hidden" name="userId" value={user.id} />
+            <input
+              type="hidden"
+              name="userId"
+              value={user.id}
+            />
             <label className="block text-label font-extrabold uppercase tracking-eyebrow">
               {t("colName")}
               <input
@@ -72,8 +76,16 @@ export async function UserIdentityCard({
             confirmLabel={user.isActive ? t("confirmDeactivate") : undefined}
             variant={user.isActive ? "destructive" : "default"}
           >
-            <input type="hidden" name="userId" value={user.id} />
-            <input type="hidden" name="isActive" value={String(!user.isActive)} />
+            <input
+              type="hidden"
+              name="userId"
+              value={user.id}
+            />
+            <input
+              type="hidden"
+              name="isActive"
+              value={String(!user.isActive)}
+            />
           </UserActionForm>
 
           {user.sdkStaffRole ? (
@@ -82,7 +94,11 @@ export async function UserIdentityCard({
               label={t("updateRole")}
               variant="outline"
             >
-              <input type="hidden" name="userId" value={user.id} />
+              <input
+                type="hidden"
+                name="userId"
+                value={user.id}
+              />
               <select
                 key={user.sdkStaffRole}
                 className={fieldClass}
@@ -90,7 +106,10 @@ export async function UserIdentityCard({
                 defaultValue={user.sdkStaffRole}
               >
                 {staffRoles.map((role) => (
-                  <option key={role} value={role}>
+                  <option
+                    key={role}
+                    value={role}
+                  >
                     {role}
                   </option>
                 ))}

@@ -1,11 +1,11 @@
 "use client";
 
+import type { AssignedPrincipal, ClientMembership } from "@platform/types";
+
+import { resolveActiveCompanyId } from "@platform/portal-shell/lib/navigation";
 import { Building2, FileText, LayoutDashboard, Mail, Target, Users } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-import { resolveActiveCompanyId } from "@sdk-e/portal-shell/lib/navigation";
-import type { AssignedPrincipal, ClientMembership } from "@sdk-e/types";
 
 interface AppNavLabels {
   dashboard: string;
@@ -43,7 +43,12 @@ export function AppNav({
     ];
     if (principal.role === "ADMIN")
       links.push({ href: `/${locale}/app/users`, label: labels.users, icon: Users });
-    return <NavLinks links={links} collapsed={collapsed} />;
+    return (
+      <NavLinks
+        links={links}
+        collapsed={collapsed}
+      />
+    );
   }
   if (principal.kind === "provider") {
     const links: AppNavLink[] = [
@@ -54,7 +59,12 @@ export function AppNav({
         icon: Mail,
       },
     ];
-    return <NavLinks links={links} collapsed={collapsed} />;
+    return (
+      <NavLinks
+        links={links}
+        collapsed={collapsed}
+      />
+    );
   }
   if (principal.kind !== "client") return null;
   const activeCompanyId = resolveActiveCompanyId(pathname);
@@ -75,7 +85,7 @@ export function AppNav({
         href: `/${locale}/app/companies/${active.companyId}/requests`,
         label: labels.requests,
         icon: FileText,
-      }
+      },
     );
     if (["OWNER", "ADMINISTRATOR"].includes(active.role))
       links.push({
@@ -103,28 +113,11 @@ export function AppNav({
           ))}
         </div>
       ) : null}
-      <NavLinks links={links} collapsed={collapsed} />
+      <NavLinks
+        links={links}
+        collapsed={collapsed}
+      />
     </>
-  );
-}
-
-function NavLinks({ links, collapsed }: { links: AppNavLink[]; collapsed?: boolean }) {
-  return (
-    <div className="flex gap-2 overflow-x-auto lg:block lg:space-y-2">
-      {links.map((link) => (
-        <Link
-          key={link.href}
-          href={link.href}
-          {...(collapsed ? { title: link.label } : {})}
-          className={`flex min-h-11 items-center gap-3 whitespace-nowrap rounded-nav px-4 py-3 text-label font-extrabold uppercase tracking-eyebrow text-light transition-colors hover:bg-dark-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${
-            collapsed ? "lg:justify-center lg:gap-0 lg:px-0" : ""
-          }`}
-        >
-          <link.icon className="h-4 w-4 shrink-0" aria-hidden />
-          <span className={collapsed ? "lg:hidden" : ""}>{link.label}</span>
-        </Link>
-      ))}
-    </div>
   );
 }
 
@@ -149,5 +142,28 @@ function CompanyLink({
     >
       {label}
     </Link>
+  );
+}
+
+function NavLinks({ links, collapsed }: { links: AppNavLink[]; collapsed?: boolean }) {
+  return (
+    <div className="flex gap-2 overflow-x-auto lg:block lg:space-y-2">
+      {links.map((link) => (
+        <Link
+          key={link.href}
+          href={link.href}
+          {...(collapsed ? { title: link.label } : {})}
+          className={`flex min-h-11 items-center gap-3 whitespace-nowrap rounded-nav px-4 py-3 text-label font-extrabold uppercase tracking-eyebrow text-light transition-colors hover:bg-dark-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${
+            collapsed ? "lg:justify-center lg:gap-0 lg:px-0" : ""
+          }`}
+        >
+          <link.icon
+            className="h-4 w-4 shrink-0"
+            aria-hidden
+          />
+          <span className={collapsed ? "lg:hidden" : ""}>{link.label}</span>
+        </Link>
+      ))}
+    </div>
   );
 }

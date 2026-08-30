@@ -1,17 +1,14 @@
 "use client";
 
-import { ActionForm } from "@sdk-e/portal-shell/components/portal/ActionForm";
+import type { OpportunityInvitationStatus, OpportunityProviderAction } from "@platform/db/client";
+
 import {
   acceptOpportunityInvitationAction,
   declineOpportunityInvitationAction,
   hideOpportunityAction,
   saveOpportunityAction,
-} from "@sdk-e/portal-providers/app/opportunities/actions";
-import type { OpportunityInvitationStatus, OpportunityProviderAction } from "@sdk-e/db/client";
-
-function HiddenId({ name, value }: { name: string; value: string }) {
-  return <input type="hidden" name={name} value={value} />;
-}
+} from "@platform/portal-providers/app/opportunities/actions";
+import { ActionForm } from "@platform/portal-shell/components/portal/ActionForm";
 
 export function OpportunityCardActions({
   opportunityId,
@@ -26,8 +23,8 @@ export function OpportunityCardActions({
 }: {
   opportunityId: string;
   invitationId?: string;
-  invitationStatus?: OpportunityInvitationStatus | null;
-  providerAction?: OpportunityProviderAction | null;
+  invitationStatus?: null | OpportunityInvitationStatus;
+  providerAction?: null | OpportunityProviderAction;
   saveLabel: string;
   savedLabel: string;
   hideLabel: string;
@@ -43,7 +40,10 @@ export function OpportunityCardActions({
           variant="default"
           formClassName=""
         >
-          <HiddenId name="invitationId" value={invitationId} />
+          <HiddenId
+            name="invitationId"
+            value={invitationId}
+          />
         </ActionForm>
         <ActionForm
           action={declineOpportunityInvitationAction}
@@ -51,7 +51,10 @@ export function OpportunityCardActions({
           variant="outline"
           formClassName=""
         >
-          <HiddenId name="invitationId" value={invitationId} />
+          <HiddenId
+            name="invitationId"
+            value={invitationId}
+          />
         </ActionForm>
       </div>
     );
@@ -68,7 +71,10 @@ export function OpportunityCardActions({
           variant="outline"
           formClassName=""
         >
-          <HiddenId name="opportunityId" value={opportunityId} />
+          <HiddenId
+            name="opportunityId"
+            value={opportunityId}
+          />
         </ActionForm>
       )}
       <ActionForm
@@ -77,8 +83,21 @@ export function OpportunityCardActions({
         variant="ghost"
         formClassName=""
       >
-        <HiddenId name="opportunityId" value={opportunityId} />
+        <HiddenId
+          name="opportunityId"
+          value={opportunityId}
+        />
       </ActionForm>
     </div>
+  );
+}
+
+function HiddenId({ name, value }: { name: string; value: string }) {
+  return (
+    <input
+      type="hidden"
+      name={name}
+      value={value}
+    />
   );
 }

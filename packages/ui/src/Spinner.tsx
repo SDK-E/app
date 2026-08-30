@@ -1,18 +1,20 @@
+import { cn } from "@platform/core/utils";
 import * as React from "react";
-
-import { cn } from "@sdk-e/core/utils";
 
 function Spinner({
   className,
   label = "Loading",
   size = "default",
   ...props
-}: React.ComponentProps<"svg"> & {
+}: {
   label?: string;
-  size?: "sm" | "default" | "lg";
-}) {
+  size?: "default" | "lg" | "sm";
+} & React.ComponentProps<"svg">) {
   return (
-    <span role="status" className="inline-flex">
+    <span
+      role="status"
+      className="inline-flex"
+    >
       <span className="sr-only">{label}</span>
       <svg
         data-slot="spinner"
@@ -27,7 +29,7 @@ function Spinner({
           size === "sm" && "size-4",
           size === "default" && "size-5",
           size === "lg" && "size-6",
-          className
+          className,
         )}
         {...props}
       >

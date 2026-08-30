@@ -1,8 +1,9 @@
-import type { Prisma } from "@sdk-e/db/client";
-import { getPrisma } from "@sdk-e/db";
-import { notFound, requireCompanyPageContext, tenantWhere } from "@sdk-e/auth/authorization";
-import { requireActiveCompany } from "@sdk-e/requests/guards";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { Prisma } from "@platform/db/client";
+import type { AppPrincipal } from "@platform/types";
+
+import { notFound, requireCompanyPageContext, tenantWhere } from "@platform/auth/authorization";
+import { getPrisma } from "@platform/db";
+import { requireActiveCompany } from "@platform/requests/guards";
 
 export const requestDetailInclude = {
   submittedByUser: { select: { id: true, name: true } },
@@ -31,6 +32,16 @@ export const requestDetailInclude = {
   },
 } satisfies Prisma.RequestInclude;
 
+export async function getRequest(principal: AppPrincipal, id: string, companyId: string) {
+  const ctx = requireCompanyPageContext(principal, companyId, "request:view");
+  await requireActiveCompany(ctx.principal, ctx.companyId);
+  const request = await getPrisma().request.findFirst({
+    where: tenantWhere(ctx.principal, { id }, companyId),
+    include: requestDetailInclude,
+  });
+  return request ?? notFound("Request not found.");
+}
+
 export async function listRequests(principal: AppPrincipal, companyId?: string) {
   const ctx = requireCompanyPageContext(principal, companyId ?? "", "request:view");
   await requireActiveCompany(ctx.principal, ctx.companyId);
@@ -48,14 +59,4 @@ export async function listRequests(principal: AppPrincipal, companyId?: string) 
     },
     orderBy: { updatedAt: "desc" },
   });
-}
-
-export async function getRequest(principal: AppPrincipal, id: string, companyId: string) {
-  const ctx = requireCompanyPageContext(principal, companyId, "request:view");
-  await requireActiveCompany(ctx.principal, ctx.companyId);
-  const request = await getPrisma().request.findFirst({
-    where: tenantWhere(ctx.principal, { id }, companyId),
-    include: requestDetailInclude,
-  });
-  return request ?? notFound("Request not found.");
 }

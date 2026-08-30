@@ -1,5 +1,6 @@
-import { Card } from "@sdk-e/ui/Card";
-import type { RequestDetail, Translator } from "@sdk-e/requests/types";
+import type { RequestDetail, Translator } from "@platform/requests/types";
+
+import { Card } from "@platform/ui/Card";
 
 export async function RequestHistoryCard({
   locale,
@@ -15,7 +16,10 @@ export async function RequestHistoryCard({
       <h2 className="text-h3 font-extrabold">{t("history")}</h2>
       <ol className="mt-5 space-y-4">
         {request.activities.map((item) => (
-          <li key={item.id} className="border-l border-line pl-4 text-body">
+          <li
+            key={item.id}
+            className="border-l border-line pl-4 text-body"
+          >
             <p className="font-semibold">{item.type.replaceAll("_", " ").toLowerCase()}</p>
             <p className="text-body">
               {item.actor.name} ·{" "}

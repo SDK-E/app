@@ -1,8 +1,6 @@
+import { assignRequestOwner } from "@platform/requests/ownership";
+import { common, principal } from "@platform/test-support/test-fixtures";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { assignRequestOwner } from "@sdk-e/requests/ownership";
-import { common } from "@sdk-e/test-support/test-fixtures";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const request = { findFirst: vi.fn(), update: vi.fn() };
@@ -16,7 +14,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({
+vi.mock("@platform/db", () => ({
   getPrisma: () => mocks.prisma,
 }));
 
@@ -40,7 +38,7 @@ describe("assignRequestOwner", () => {
       principal("sdk-admin"),
       "company-1",
       "request-1",
-      "user-2"
+      "user-2",
     );
 
     expect(mocks.request.update).toHaveBeenCalledWith({
@@ -76,7 +74,7 @@ describe("assignRequestOwner", () => {
     mocks.request.findFirst.mockResolvedValue(null);
 
     await expect(
-      assignRequestOwner(principal("sdk-admin"), "company-1", "request-missing", "user-2")
+      assignRequestOwner(principal("sdk-admin"), "company-1", "request-missing", "user-2"),
     ).rejects.toThrow("Request not found.");
     expect(mocks.request.update).not.toHaveBeenCalled();
   });
@@ -85,7 +83,7 @@ describe("assignRequestOwner", () => {
     mocks.company.findFirst.mockResolvedValue(null);
 
     await expect(
-      assignRequestOwner(principal("sdk-admin"), "company-1", "request-1", "user-2")
+      assignRequestOwner(principal("sdk-admin"), "company-1", "request-1", "user-2"),
     ).rejects.toThrow("Company not found.");
     expect(mocks.request.update).not.toHaveBeenCalled();
   });
@@ -94,7 +92,7 @@ describe("assignRequestOwner", () => {
     const finance = { ...common, kind: "sdk-staff", role: "FINANCE" } as const;
 
     await expect(assignRequestOwner(finance, "company-1", "request-1", "user-2")).rejects.toThrow(
-      "SDK staff access is required."
+      "SDK staff access is required.",
     );
     expect(mocks.request.update).not.toHaveBeenCalled();
   });

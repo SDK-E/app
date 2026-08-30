@@ -1,34 +1,26 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
-
-import { regenerateCompanyAccessCode } from "@sdk-e/companies";
-import { sendAccessRequestResolvedNotification } from "@sdk-e/email";
+import { regenerateCompanyAccessCode } from "@platform/companies";
+import { sendAccessRequestResolvedNotification } from "@platform/email";
 import {
   approveAccessRequestSchema,
   declineAccessRequestSchema,
   idSchema,
-} from "@sdk-e/schemas/userManagement";
-import { approveCompanyAccessRequest, declineCompanyAccessRequest } from "@sdk-e/users";
+} from "@platform/schemas/userManagement";
+import { approveCompanyAccessRequest, declineCompanyAccessRequest } from "@platform/users";
+import { revalidatePath } from "next/cache";
+
 import type { UserActionState } from "./actions-common";
+
 import { errorMessage, principalOrThrow } from "./actions-common";
 
 export type { UserActionState };
 
-function usersPath(locale: string, companyId?: string | null) {
-  return companyId ? `/${locale}/app/companies/${companyId}/users` : `/${locale}/app/users`;
-}
-
-function revalidateUserViews(locale: string, companyId?: string | null) {
-  revalidatePath(usersPath(locale, companyId));
-  revalidatePath(`/${locale}/app/users/[userId]`, "page");
-}
-
 export async function approveAccessRequestAction(
   locale: string,
-  companyId: string | null,
+  companyId: null | string,
   _state: UserActionState,
-  formData: FormData
+  formData: FormData,
 ): Promise<UserActionState> {
   const parsed = approveAccessRequestSchema.safeParse({
     requestId: formData.get("requestId"),
@@ -56,9 +48,9 @@ export async function approveAccessRequestAction(
 
 export async function declineAccessRequestAction(
   locale: string,
-  companyId: string | null,
+  companyId: null | string,
   _state: UserActionState,
-  formData: FormData
+  formData: FormData,
 ): Promise<UserActionState> {
   const parsed = declineAccessRequestSchema.safeParse({ requestId: formData.get("requestId") });
   if (!parsed.success) return { error: parsed.error.issues[0]?.message };
@@ -80,9 +72,9 @@ export async function declineAccessRequestAction(
 
 export async function regenerateAccessCodeAction(
   locale: string,
-  companyId: string | null,
+  companyId: null | string,
   _state: UserActionState,
-  formData: FormData
+  formData: FormData,
 ): Promise<UserActionState> {
   const id = idSchema.safeParse(formData.get("companyId") || companyId || undefined);
   if (!id.success) return { error: "Invalid company." };
@@ -93,4 +85,13 @@ export async function regenerateAccessCodeAction(
   } catch (error) {
     return { error: errorMessage(error) };
   }
+}
+
+function revalidateUserViews(locale: string, companyId?: null | string) {
+  revalidatePath(usersPath(locale, companyId));
+  revalidatePath(`/${locale}/app/users/[userId]`, "page");
+}
+
+function usersPath(locale: string, companyId?: null | string) {
+  return companyId ? `/${locale}/app/companies/${companyId}/users` : `/${locale}/app/users`;
 }

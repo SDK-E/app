@@ -1,5 +1,4 @@
-import { describe, expect, it } from "vitest";
-
+import { companyCreationSchema } from "@platform/schemas/company";
 import {
   approveAccessRequestSchema,
   clientInvitationSchema,
@@ -10,8 +9,8 @@ import {
   requestAccessSchema,
   staffInvitationSchema,
   staffUpdateSchema,
-} from "@sdk-e/schemas/userManagement";
-import { companyCreationSchema } from "@sdk-e/schemas/company";
+} from "@platform/schemas/userManagement";
+import { describe, expect, it } from "vitest";
 
 const uuid = "123e4567-e89b-12d3-a456-426614174000";
 
@@ -41,7 +40,7 @@ describe("clientInvitationSchema", () => {
   it("rejects invalid emails and non-manageable roles", () => {
     expect(clientInvitationSchema.safeParse({ email: "nope", role: "OWNER" }).success).toBe(false);
     expect(clientInvitationSchema.safeParse({ email: "a@b.com", role: "OWNER" }).success).toBe(
-      false
+      false,
     );
   });
 });
@@ -49,19 +48,19 @@ describe("clientInvitationSchema", () => {
 describe("manageable role schemas", () => {
   it("accepts client and staff roles in invitations", () => {
     expect(staffInvitationSchema.safeParse({ email: "a@b.com", role: "DELIVERY" }).success).toBe(
-      true
+      true,
     );
     expect(staffInvitationSchema.safeParse({ email: "a@b.com", role: "OWNER" }).success).toBe(
-      false
+      false,
     );
   });
 
   it("validates membership updates against client roles", () => {
     expect(
-      membershipUpdateSchema.safeParse({ membershipId: uuid, role: "PROJECT_MEMBER" }).success
+      membershipUpdateSchema.safeParse({ membershipId: uuid, role: "PROJECT_MEMBER" }).success,
     ).toBe(true);
     expect(membershipUpdateSchema.safeParse({ membershipId: "nope", role: "OWNER" }).success).toBe(
-      false
+      false,
     );
   });
 });
@@ -93,11 +92,11 @@ describe("access request schemas", () => {
 
   it("validates access request resolution", () => {
     expect(approveAccessRequestSchema.safeParse({ requestId: uuid, role: "VIEWER" }).success).toBe(
-      true
+      true,
     );
     expect(declineAccessRequestSchema.safeParse({ requestId: uuid }).success).toBe(true);
     expect(approveAccessRequestSchema.safeParse({ requestId: "nope", role: "OWNER" }).success).toBe(
-      false
+      false,
     );
   });
 });

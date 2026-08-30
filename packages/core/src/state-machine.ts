@@ -12,10 +12,9 @@ export function defineStateMachine<S extends string>(config: {
   const allowed = new Map<S, Set<S>>();
 
   for (const { from, to } of config.transitions) {
-    if (!allowed.has(from)) {
-      allowed.set(from, new Set());
-    }
-    allowed.get(from)!.add(to);
+    const set = allowed.get(from) ?? new Set<S>();
+    set.add(to);
+    allowed.set(from, set);
   }
 
   return {
@@ -26,7 +25,7 @@ export function defineStateMachine<S extends string>(config: {
     assertTransition(from, to) {
       if (!this.canTransition(from, to)) {
         throw new Error(
-          `Invalid state transition from ${from} to ${to}. Allowed transitions from ${from}: ${Array.from(allowed.get(from) ?? []).join(", ")}`
+          `Invalid state transition from ${from} to ${to}. Allowed transitions from ${from}: ${Array.from(allowed.get(from) ?? []).join(", ")}`,
         );
       }
     },

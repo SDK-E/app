@@ -1,12 +1,11 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
-
 import {
   getCompanyForManagement,
   listCompaniesForManagement,
   regenerateCompanyAccessCode,
   setCompanyActive,
-} from "@sdk-e/companies";
-import { principal } from "@sdk-e/test-support/test-fixtures";
+} from "@platform/companies";
+import { principal } from "@platform/test-support/test-fixtures";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => {
   const company = {
@@ -20,7 +19,7 @@ const mocks = vi.hoisted(() => {
   return { prisma, company, auditEvent };
 });
 
-vi.mock("@sdk-e/db", () => ({
+vi.mock("@platform/db", () => ({
   getPrisma: () => mocks.prisma,
 }));
 
@@ -47,7 +46,7 @@ describe("setCompanyActive", () => {
 
   it("rejects delivery staff without company update permission", async () => {
     await expect(setCompanyActive(principal("delivery"), "company-1", false)).rejects.toThrow(
-      "Missing permission: company:update"
+      "Missing permission: company:update",
     );
     expect(mocks.company.update).not.toHaveBeenCalled();
   });
@@ -56,7 +55,7 @@ describe("setCompanyActive", () => {
     mocks.company.findUnique.mockResolvedValue({ id: "company-1" });
 
     await expect(setCompanyActive(principal("owner"), "company-1", false)).rejects.toThrow(
-      "SDK administrator access is required."
+      "SDK administrator access is required.",
     );
     expect(mocks.company.update).not.toHaveBeenCalled();
   });
@@ -65,7 +64,7 @@ describe("setCompanyActive", () => {
     mocks.company.findUnique.mockResolvedValue(null);
 
     await expect(setCompanyActive(principal("sdk-admin"), "company-9", false)).rejects.toThrow(
-      "Company not found."
+      "Company not found.",
     );
     expect(mocks.company.update).not.toHaveBeenCalled();
   });
@@ -105,14 +104,14 @@ describe("regenerateCompanyAccessCode", () => {
 
   it("rejects delivery staff without company update permission", async () => {
     await expect(regenerateCompanyAccessCode(principal("delivery"), "company-1")).rejects.toThrow(
-      "Missing permission: company:update"
+      "Missing permission: company:update",
     );
     expect(mocks.company.findUnique).not.toHaveBeenCalled();
   });
 
   it("rejects a client rotating another company's code", async () => {
     await expect(regenerateCompanyAccessCode(principal("owner"), "company-2")).rejects.toThrow(
-      "Cross-company access is denied."
+      "Cross-company access is denied.",
     );
     expect(mocks.company.findUnique).not.toHaveBeenCalled();
   });
@@ -129,7 +128,7 @@ describe("listCompaniesForManagement", () => {
         where: {},
         select: expect.objectContaining({ accessCode: true }),
         orderBy: { name: "asc" },
-      })
+      }),
     );
   });
 
@@ -142,13 +141,13 @@ describe("listCompaniesForManagement", () => {
       expect.objectContaining({
         where: { isActive: true },
         select: expect.objectContaining({ accessCode: false }),
-      })
+      }),
     );
   });
 
   it("requires an SDK staff principal", async () => {
     await expect(listCompaniesForManagement(principal("owner"))).rejects.toThrow(
-      "SDK staff access is required."
+      "SDK staff access is required.",
     );
     expect(mocks.company.findMany).not.toHaveBeenCalled();
   });
@@ -172,7 +171,7 @@ describe("getCompanyForManagement", () => {
     mocks.company.findUnique.mockResolvedValue(null);
 
     await expect(getCompanyForManagement(principal("sdk-admin"), "company-9")).rejects.toThrow(
-      "Company not found."
+      "Company not found.",
     );
   });
 });

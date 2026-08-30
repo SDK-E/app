@@ -20,21 +20,41 @@ export interface TextPair {
 
 export interface Violation extends TextPair {
   urlPath: string;
-  theme: "light" | "dark";
+  theme: "dark" | "light";
   ratio: number;
   required: number;
   fgHex: string;
 }
 
+export async function auditTheme(
+  page: Page,
+  theme: "dark" | "light",
+  baseUrl: string,
+  urlPath: string,
+): Promise<Violation[]> {
+  await page.goto(`${baseUrl}${urlPath}`, { waitUntil: "networkidle" });
+  // Off-origin landings (Auth0 hosted login) are outside this audit.
+  if (!page.url().startsWith(baseUrl)) return [];
+  const rootClass = (await page.evaluate("document.documentElement.className")) as string;
+  const wantsDark = rootClass.split(/\s+/).includes("dark");
+  if (wantsDark !== (theme === "dark")) {
+    console.log(
+      `WARN ${urlPath}: expected ${theme} but page resolved to ${wantsDark ? "dark" : "light"}`,
+    );
+  }
+  const pairs = await collectPairs(page);
+  return judgePairs(page.url(), urlPath, theme, pairs);
+}
+
 export async function collectPairs(page: Page): Promise<TextPair[]> {
-  const rows = (await page.evaluate(COLLECT_PAIRS_SCRIPT)) as Array<{
+  const rows = (await page.evaluate(COLLECT_PAIRS_SCRIPT)) as {
     text: unknown;
     tag: unknown;
     color: unknown;
     bg: unknown;
     fontSize: unknown;
     fontWeight: unknown;
-  }>;
+  }[];
   return rows.map((row) => ({
     text: String(row.text),
     tag: String(row.tag),
@@ -48,8 +68,8 @@ export async function collectPairs(page: Page): Promise<TextPair[]> {
 export function judgePairs(
   pageUrl: string,
   urlPath: string,
-  theme: "light" | "dark",
-  pairs: TextPair[]
+  theme: "dark" | "light",
+  pairs: TextPair[],
 ): Violation[] {
   const violations: Violation[] = [];
   for (const pair of pairs) {
@@ -78,7 +98,7 @@ export function judgePairs(
         entry.bg.toLowerCase() === format(bg).toLowerCase() &&
         (!entry.theme || entry.theme === theme) &&
         (!entry.urlContains || pageUrl.includes(entry.urlContains)) &&
-        (!entry.textContains || pair.text.includes(entry.textContains))
+        (!entry.textContains || pair.text.includes(entry.textContains)),
     );
     if (exempt) continue;
     violations.push({
@@ -92,24 +112,4 @@ export function judgePairs(
     });
   }
   return violations;
-}
-
-export async function auditTheme(
-  page: Page,
-  theme: "light" | "dark",
-  baseUrl: string,
-  urlPath: string
-): Promise<Violation[]> {
-  await page.goto(`${baseUrl}${urlPath}`, { waitUntil: "networkidle" });
-  // Off-origin landings (Auth0 hosted login) are outside this audit.
-  if (!page.url().startsWith(baseUrl)) return [];
-  const rootClass = (await page.evaluate("document.documentElement.className")) as string;
-  const wantsDark = rootClass.split(/\s+/).includes("dark");
-  if (wantsDark !== (theme === "dark")) {
-    console.log(
-      `WARN ${urlPath}: expected ${theme} but page resolved to ${wantsDark ? "dark" : "light"}`
-    );
-  }
-  const pairs = await collectPairs(page);
-  return judgePairs(page.url(), urlPath, theme, pairs);
 }

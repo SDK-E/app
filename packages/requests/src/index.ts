@@ -1,7 +1,7 @@
-export { decideRequest } from "./decisions";
 export { getClientDashboard } from "./dashboard";
-export { getRequest, listRequests } from "./queries";
+export { decideRequest } from "./decisions";
 export { convertRequestToProject, listActiveCompanies } from "./projects";
+export { getRequest, listRequests } from "./queries";
 export {
   acceptProposal,
   createRequestDraft,

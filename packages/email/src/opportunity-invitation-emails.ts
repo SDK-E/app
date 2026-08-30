@@ -1,4 +1,4 @@
-import { escapeHtml } from "@sdk-e/email/transport";
+import { escapeHtml } from "@platform/email/transport";
 
 export interface OpportunityInvitationEmailProps {
   providerName: string;
@@ -24,7 +24,7 @@ export function renderOpportunityInvitationEmail(props: OpportunityInvitationEma
 }
 
 export function renderOpportunityInvitationExpiryEmail(
-  props: OpportunityInvitationExpiryEmailProps
+  props: OpportunityInvitationExpiryEmailProps,
 ): string {
   return [
     '<div style="font-family: sans-serif; line-height: 1.5; color: #111;">',

@@ -1,5 +1,5 @@
-import { escapeHtml, sendMessage } from "@sdk-e/email/transport";
-import { siteConfig } from "@sdk-e/config/site";
+import { siteConfig } from "@platform/config/site";
+import { escapeHtml, sendMessage } from "@platform/email/transport";
 
 export interface MembershipAssignedNotification {
   to: string;
@@ -11,7 +11,7 @@ export interface MembershipAssignedNotification {
 const from = `SDK Enterprises <no-reply@${siteConfig.contact.domain}>`;
 
 export async function sendMembershipAssignedNotification(
-  notification: MembershipAssignedNotification
+  notification: MembershipAssignedNotification,
 ): Promise<boolean> {
   const html = [
     '<div style="font-family: sans-serif; line-height: 1.5; color: #111;">',
@@ -27,6 +27,6 @@ export async function sendMembershipAssignedNotification(
       subject: `You now have access to ${notification.companyName}`,
       html,
     },
-    "membership assignment email"
+    "membership assignment email",
   );
 }

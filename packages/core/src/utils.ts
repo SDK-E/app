@@ -1,4 +1,4 @@
-import { clsx, type ClassValue } from "clsx";
+import { type ClassValue, clsx } from "clsx";
 import { extendTailwindMerge } from "tailwind-merge";
 
 const twMerge = extendTailwindMerge({
@@ -60,8 +60,8 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatDate(
-  date: Date | string | number,
-  options?: Intl.DateTimeFormatOptions
+  date: Date | number | string,
+  options?: Intl.DateTimeFormatOptions,
 ): string {
   const d = typeof date === "string" || typeof date === "number" ? new Date(date) : date;
   return d.toLocaleDateString("en-US", {
@@ -72,15 +72,15 @@ export function formatDate(
   });
 }
 
-export function normalizeEmail(email: string): string {
-  return email.trim().toLowerCase();
-}
-
 export function maskEmail(email: string): string {
   const [local, domain] = normalizeEmail(email).split("@");
   if (!domain) return email;
   const first = local.slice(0, 1);
   return `${first}${"*".repeat(Math.max(local.length - 1, 3))}@${domain}`;
+}
+
+export function normalizeEmail(email: string): string {
+  return email.trim().toLowerCase();
 }
 
 export function slugify(text: string): string {

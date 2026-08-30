@@ -1,23 +1,25 @@
-import type { EffectiveWeights } from "./types";
-import type { Opportunity, Provider, ProviderService } from "@sdk-e/db/client";
+import type { Opportunity, Provider, ProviderService } from "@platform/db/client";
+
 import {
-  checkProviderStatus,
-  checkCommercialReadiness,
-  checkBudgetOverlap,
   checkAvailabilityWindow,
-  checkTimezoneOverlap,
+  checkBudgetOverlap,
+  checkCommercialReadiness,
   checkLanguageOverlap,
+  checkProviderStatus,
   checkSkillOverlap,
-} from "@sdk-e/opportunities/eligibility-rules";
-import { scoreCandidate } from "./scoring";
+  checkTimezoneOverlap,
+} from "@platform/opportunities/eligibility-rules";
+
+import type { CandidateScore, EffectiveWeights } from "./types";
+
 import { buildExplanation } from "./explanation";
-import type { CandidateScore } from "./types";
+import { scoreCandidate } from "./scoring";
 
 export function scoreProvider(
   provider: Provider,
   opportunity: Opportunity,
-  weights: EffectiveWeights
-): CandidateScore & { eligibilityWarnings: string[] } {
+  weights: EffectiveWeights,
+): { eligibilityWarnings: string[] } & CandidateScore {
   const eligibilityWarnings: string[] = [];
   let eligibilityPassed = true;
 
@@ -45,7 +47,7 @@ export function scoreProvider(
     provider,
     opportunity,
     weeklyCapacity as unknown as Parameters<typeof checkAvailabilityWindow>[2],
-    absences as unknown as Parameters<typeof checkAvailabilityWindow>[3]
+    absences as unknown as Parameters<typeof checkAvailabilityWindow>[3],
   );
   if (!availabilityResult.passed) eligibilityPassed = false;
   eligibilityWarnings.push(...availabilityResult.warnings);
@@ -68,10 +70,10 @@ export function scoreProvider(
     eligibilityWarnings,
     publishedServices,
     weeklyCapacity,
-    absences
+    absences,
   );
 
-  const overallScore = scoreDimensions.reduce((sum, dim) => sum + dim.weighted!, 0);
+  const overallScore = scoreDimensions.reduce((sum, dim) => sum + (dim.weighted ?? 0), 0);
   const { explanation } = buildExplanation({
     dimensions: scoreDimensions,
     eligibilityWarnings,

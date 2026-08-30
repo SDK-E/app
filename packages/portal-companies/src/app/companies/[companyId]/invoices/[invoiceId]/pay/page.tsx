@@ -1,9 +1,8 @@
+import { requireCompanyContext } from "@platform/auth/authorization";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { getPrisma } from "@platform/db";
+import { renderForPage } from "@platform/portal-shell/lib/render-for-page";
 import { redirect } from "next/navigation";
-
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { requireCompanyContext } from "@sdk-e/auth/authorization";
-import { renderForPage } from "@sdk-e/portal-shell/lib/render-for-page";
-import { getPrisma } from "@sdk-e/db";
 
 interface PageProps {
   params: Promise<{ locale: string; companyId: string; invoiceId: string }>;
@@ -19,7 +18,7 @@ export default async function InvoicePayPage({ params }: PageProps) {
     async () => {
       return requireCompanyContext(principal, (await params).companyId, "invoice:view");
     },
-    (await params).locale
+    (await params).locale,
   );
 
   const invoice = await getPrisma().invoice.findFirst({
@@ -37,12 +36,12 @@ export default async function InvoicePayPage({ params }: PageProps) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ invoiceId: invoice.id }),
       cache: "no-store",
-    }
+    },
   );
 
   if (!response.ok) {
     redirect(
-      `/${(await params).locale}/app/companies/${(await params).companyId}/invoices/${(await params).invoiceId}`
+      `/${(await params).locale}/app/companies/${(await params).companyId}/invoices/${(await params).invoiceId}`,
     );
   }
 
@@ -53,6 +52,6 @@ export default async function InvoicePayPage({ params }: PageProps) {
   }
 
   redirect(
-    `/${(await params).locale}/app/companies/${(await params).companyId}/invoices/${(await params).invoiceId}`
+    `/${(await params).locale}/app/companies/${(await params).companyId}/invoices/${(await params).invoiceId}`,
   );
 }

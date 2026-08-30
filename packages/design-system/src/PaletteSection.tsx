@@ -1,6 +1,6 @@
-import { Section } from "@sdk-e/ui/Section";
-import { SectionHeader } from "@sdk-e/ui/SectionHeader";
-import { Card } from "@sdk-e/ui/Card";
+import { Card } from "@platform/ui/Card";
+import { Section } from "@platform/ui/Section";
+import { SectionHeader } from "@platform/ui/SectionHeader";
 
 const palette: { token: string; value: string; className: string }[] = [
   { token: "dark", value: "#082003", className: "bg-dark" },
@@ -22,7 +22,10 @@ export function PaletteSection() {
       />
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {palette.map((color) => (
-          <Card key={color.token} className="flex min-h-40 flex-col justify-between gap-8">
+          <Card
+            key={color.token}
+            className="flex min-h-40 flex-col justify-between gap-8"
+          >
             <div className={`h-16 w-full rounded-control ${color.className}`} />
             <div>
               <p className="text-label font-bold uppercase tracking-eyebrow">{color.token}</p>

@@ -1,13 +1,12 @@
-import { getTranslations } from "next-intl/server";
-
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { saveRequestAction } from "@platform/portal-shell/app/companies/[companyId]/requests/actions";
 import {
   RequestForm,
   type RequestFormCopy,
-} from "@sdk-e/portal-shell/components/portal/RequestForm";
-import { getRequest } from "@sdk-e/requests";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { renderForPage } from "@sdk-e/portal-shell/lib/render-for-page";
-import { saveRequestAction } from "@sdk-e/portal-shell/app/companies/[companyId]/requests/actions";
+} from "@platform/portal-shell/components/portal/RequestForm";
+import { renderForPage } from "@platform/portal-shell/lib/render-for-page";
+import { getRequest } from "@platform/requests";
+import { getTranslations } from "next-intl/server";
 
 export default async function EditRequestPage({
   params,

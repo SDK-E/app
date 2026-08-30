@@ -1,9 +1,9 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import type { AssignedPrincipal } from "@platform/types";
 
-import { resolveActiveCompanyId } from "@sdk-e/portal-shell/lib/navigation";
-import type { AssignedPrincipal } from "@sdk-e/types";
+import { resolveActiveCompanyId } from "@platform/portal-shell/lib/navigation";
+import { usePathname } from "next/navigation";
 
 export function ActiveCompanyLabel({
   principal,
@@ -16,7 +16,7 @@ export function ActiveCompanyLabel({
   if (principal.kind !== "client") return <>{fallback}</>;
   const activeCompanyId = resolveActiveCompanyId(pathname);
   const active = principal.memberships.find(
-    (membership) => membership.companyId === activeCompanyId
+    (membership) => membership.companyId === activeCompanyId,
   );
   return <>{active ? active.companyName : fallback}</>;
 }

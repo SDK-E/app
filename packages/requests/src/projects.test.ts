@@ -1,8 +1,6 @@
+import { convertRequestToProject, listActiveCompanies } from "@platform/requests/projects";
+import { common, principal } from "@platform/test-support/test-fixtures";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { convertRequestToProject, listActiveCompanies } from "@sdk-e/requests/projects";
-import { common } from "@sdk-e/test-support/test-fixtures";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const request = { findFirst: vi.fn() };
@@ -18,7 +16,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({
+vi.mock("@platform/db", () => ({
   getPrisma: () => mocks.prisma,
 }));
 
@@ -81,7 +79,7 @@ describe("convertRequestToProject", () => {
       convertRequestToProject(principal("sdk-admin"), "company-1", "request-1", {
         name: "Automation",
         description: "Handover scope",
-      })
+      }),
     ).rejects.toThrow("Only accepted requests can become projects.");
     expect(mocks.project.create).not.toHaveBeenCalled();
   });
@@ -98,7 +96,7 @@ describe("convertRequestToProject", () => {
       convertRequestToProject(principal("sdk-admin"), "company-1", "request-1", {
         name: "Automation",
         description: "Handover scope",
-      })
+      }),
     ).rejects.toThrow("This request is already linked to a project.");
   });
 
@@ -110,7 +108,7 @@ describe("convertRequestToProject", () => {
       convertRequestToProject(principal("sdk-admin"), "company-1", "request-missing", {
         name: "Automation",
         description: "Handover scope",
-      })
+      }),
     ).rejects.toThrow("Request not found.");
   });
 
@@ -121,7 +119,7 @@ describe("convertRequestToProject", () => {
       convertRequestToProject(principal("sdk-admin"), "company-1", "request-1", {
         name: "Automation",
         description: "Handover scope",
-      })
+      }),
     ).rejects.toThrow("Company not found.");
   });
 
@@ -132,7 +130,7 @@ describe("convertRequestToProject", () => {
       convertRequestToProject(finance, "company-1", "request-1", {
         name: "Automation",
         description: "Handover scope",
-      })
+      }),
     ).rejects.toThrow("SDK staff access is required.");
     expect(mocks.project.create).not.toHaveBeenCalled();
   });

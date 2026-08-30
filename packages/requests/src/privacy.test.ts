@@ -1,9 +1,8 @@
+import { convertRequestToOpportunity } from "@platform/requests/opportunities";
+import { assignRequestOwner } from "@platform/requests/ownership";
+import { getRequest, listRequests } from "@platform/requests/queries";
+import { principal } from "@platform/test-support/test-fixtures";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { assignRequestOwner } from "@sdk-e/requests/ownership";
-import { convertRequestToOpportunity } from "@sdk-e/requests/opportunities";
-import { getRequest, listRequests } from "@sdk-e/requests/queries";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const request = { findMany: vi.fn(), findFirst: vi.fn(), update: vi.fn() };
@@ -19,7 +18,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({
+vi.mock("@platform/db", () => ({
   getPrisma: () => mocks.prisma,
 }));
 
@@ -37,28 +36,28 @@ beforeEach(() => {
 describe("privacy boundary", () => {
   it("listRequests throws for provider principals", async () => {
     await expect(listRequests(principal("provider"), "company-1")).rejects.toThrow(
-      "Company not found."
+      "Company not found.",
     );
     expect(mocks.request.findMany).not.toHaveBeenCalled();
   });
 
   it("getRequest throws for provider principals", async () => {
     await expect(getRequest(principal("provider"), "request-1", "company-1")).rejects.toThrow(
-      "Company not found."
+      "Company not found.",
     );
     expect(mocks.request.findFirst).not.toHaveBeenCalled();
   });
 
   it("assignRequestOwner throws for provider principals", async () => {
     await expect(
-      assignRequestOwner(principal("provider"), "company-1", "request-1", "user-2")
+      assignRequestOwner(principal("provider"), "company-1", "request-1", "user-2"),
     ).rejects.toThrow("SDK staff access is required.");
     expect(mocks.request.update).not.toHaveBeenCalled();
   });
 
   it("convertRequestToOpportunity throws for provider principals", async () => {
     await expect(
-      convertRequestToOpportunity(principal("provider"), "company-1", "request-1")
+      convertRequestToOpportunity(principal("provider"), "company-1", "request-1"),
     ).rejects.toThrow("SDK staff access is required.");
     expect(mocks.opportunity.create).not.toHaveBeenCalled();
   });

@@ -1,26 +1,22 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
-
-import { sendMembershipAssignedNotification } from "@sdk-e/email";
+import { sendMembershipAssignedNotification } from "@platform/email";
 import {
   accountActiveSchema,
   directAssignmentSchema,
   userNameUpdateSchema,
-} from "@sdk-e/schemas/userManagement";
-import { assignCompanyMemberDirectly, setAccountActive, updateUserName } from "@sdk-e/users";
-import type { UserActionState } from "./actions-common";
-import { errorMessage, principalOrThrow } from "./actions-common";
+} from "@platform/schemas/userManagement";
+import { assignCompanyMemberDirectly, setAccountActive, updateUserName } from "@platform/users";
+import { revalidatePath } from "next/cache";
 
-function revalidateUserViews(locale: string, companyId?: string) {
-  revalidatePath(`/${locale}/app/users`);
-  if (companyId) revalidatePath(`/${locale}/app/companies/${companyId}/users`);
-}
+import type { UserActionState } from "./actions-common";
+
+import { errorMessage, principalOrThrow } from "./actions-common";
 
 export async function assignUserToCompanyAction(
   locale: string,
   _state: UserActionState,
-  formData: FormData
+  formData: FormData,
 ): Promise<UserActionState> {
   const parsed = directAssignmentSchema.safeParse({
     userId: formData.get("userId"),
@@ -49,10 +45,30 @@ export async function assignUserToCompanyAction(
   }
 }
 
+export async function setAccountActiveAction(
+  locale: string,
+  _state: UserActionState,
+  formData: FormData,
+): Promise<UserActionState> {
+  const parsed = accountActiveSchema.safeParse({
+    userId: formData.get("userId"),
+    isActive: formData.get("isActive"),
+  });
+  if (!parsed.success) return { error: parsed.error.issues[0]?.message };
+  try {
+    await setAccountActive(await principalOrThrow(), parsed.data.userId, parsed.data.isActive);
+    revalidatePath(`/${locale}/app/users/${parsed.data.userId}`);
+    revalidateUserViews(locale);
+    return { success: parsed.data.isActive ? "Account activated." : "Account deactivated." };
+  } catch (error) {
+    return { error: errorMessage(error) };
+  }
+}
+
 export async function updateUserNameAction(
   locale: string,
   _state: UserActionState,
-  formData: FormData
+  formData: FormData,
 ): Promise<UserActionState> {
   const parsed = userNameUpdateSchema.safeParse({
     userId: formData.get("userId"),
@@ -69,22 +85,7 @@ export async function updateUserNameAction(
   }
 }
 
-export async function setAccountActiveAction(
-  locale: string,
-  _state: UserActionState,
-  formData: FormData
-): Promise<UserActionState> {
-  const parsed = accountActiveSchema.safeParse({
-    userId: formData.get("userId"),
-    isActive: formData.get("isActive"),
-  });
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message };
-  try {
-    await setAccountActive(await principalOrThrow(), parsed.data.userId, parsed.data.isActive);
-    revalidatePath(`/${locale}/app/users/${parsed.data.userId}`);
-    revalidateUserViews(locale);
-    return { success: parsed.data.isActive ? "Account activated." : "Account deactivated." };
-  } catch (error) {
-    return { error: errorMessage(error) };
-  }
+function revalidateUserViews(locale: string, companyId?: string) {
+  revalidatePath(`/${locale}/app/users`);
+  if (companyId) revalidatePath(`/${locale}/app/companies/${companyId}/users`);
 }

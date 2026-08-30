@@ -1,8 +1,7 @@
-import * as React from "react";
+import { cn } from "@platform/core/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Slot } from "radix-ui";
-
-import { cn } from "@sdk-e/core/utils";
+import * as React from "react";
 
 const buttonVariants = cva(
   "group/button inline-flex shrink-0 items-center justify-center gap-2 rounded-control text-label font-extrabold uppercase tracking-eyebrow whitespace-nowrap transition-colors motion-reduce:transition-none outline-none select-none disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
@@ -24,16 +23,16 @@ const buttonVariants = cva(
         sm: "h-auto px-3 py-1.5",
         lg: "h-auto px-5 py-4",
         icon: "size-8",
-        "icon-xs": "size-6",
-        "icon-sm": "size-7",
-        "icon-lg": "size-9",
+        ["icon-xs"]: "size-6",
+        ["icon-sm"]: "size-7",
+        ["icon-lg"]: "size-9",
       },
     },
     defaultVariants: {
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
 function Button({
@@ -43,11 +42,11 @@ function Button({
   asChild = false,
   href,
   ...props
-}: React.ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean;
-    href?: string;
-  }) {
+}: {
+  asChild?: boolean;
+  href?: string;
+} & React.ComponentProps<"button"> &
+  VariantProps<typeof buttonVariants>) {
   let Comp: React.ElementType = "button";
   if (href) Comp = "a";
   else if (asChild) Comp = Slot.Root;

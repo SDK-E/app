@@ -1,9 +1,9 @@
-import { Section } from "@sdk-e/ui/Section";
-import { SectionHeader } from "@sdk-e/ui/SectionHeader";
-import { Button } from "@sdk-e/ui/Button";
-import { EmptyState } from "@sdk-e/ui/EmptyState";
-import { ErrorState } from "@sdk-e/ui/ErrorState";
-import { Skeleton } from "@sdk-e/ui/Skeleton";
+import { Button } from "@platform/ui/Button";
+import { EmptyState } from "@platform/ui/EmptyState";
+import { ErrorState } from "@platform/ui/ErrorState";
+import { Section } from "@platform/ui/Section";
+import { SectionHeader } from "@platform/ui/SectionHeader";
+import { Skeleton } from "@platform/ui/Skeleton";
 
 export function StatesSection() {
   return (

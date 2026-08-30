@@ -1,9 +1,8 @@
 import { readdir } from "node:fs/promises";
 import path from "node:path";
-
 import { describe, expect, it } from "vitest";
 
-import { loadMessages, messageShardPaths, mergeMessages } from "./messages";
+import { loadMessages, mergeMessages, messageShardPaths } from "./messages";
 
 async function findJsonFiles(directory: string, root = directory): Promise<string[]> {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -14,7 +13,7 @@ async function findJsonFiles(directory: string, root = directory): Promise<strin
         return findJsonFiles(entryPath, root);
       }
       return entry.name.endsWith(".json") ? [path.relative(root, entryPath)] : [];
-    })
+    }),
   );
 
   return files.flat().sort();
@@ -31,8 +30,8 @@ describe("message shards", () => {
     expect(
       mergeMessages(
         { legal: { privacy: { title: "Privacy", items: ["one"] } } },
-        { legal: { privacy: { title: "Confidentialité", items: ["un"] } } }
-      )
+        { legal: { privacy: { title: "Confidentialité", items: ["un"] } } },
+      ),
     ).toEqual({
       legal: {
         privacy: { title: "Confidentialité", items: ["un"] },
@@ -44,7 +43,7 @@ describe("message shards", () => {
     const messages = await loadMessages("en");
 
     expect(Object.keys(messages)).toEqual(
-      expect.arrayContaining(["meta", "nav", "homePage", "legal", "servicesPage", "enquiry"])
+      expect.arrayContaining(["meta", "nav", "homePage", "legal", "servicesPage", "enquiry"]),
     );
     expect(messages).toHaveProperty("legal.privacy.title", "Privacy policy");
   });

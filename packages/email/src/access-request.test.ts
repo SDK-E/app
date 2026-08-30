@@ -1,13 +1,12 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
-
 import {
   sendAccessRequestCreatedNotification,
   sendAccessRequestResolvedNotification,
-} from "@sdk-e/email/access-request";
-import { sendMessage } from "@sdk-e/email/transport";
+} from "@platform/email/access-request";
+import { sendMessage } from "@platform/email/transport";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
-vi.mock("@sdk-e/email/transport", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("@sdk-e/email/transport")>()),
+vi.mock("@platform/email/transport", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@platform/email/transport")>()),
   sendMessage: vi.fn(),
 }));
 
@@ -26,7 +25,7 @@ describe("sendAccessRequestCreatedNotification", () => {
         companyName: "Acme Corp",
         requesterName: "Jo",
         requesterEmail: "jo@acme.example",
-      })
+      }),
     ).resolves.toBe(true);
 
     expect(vi.mocked(sendMessage)).toHaveBeenCalledWith(
@@ -35,7 +34,7 @@ describe("sendAccessRequestCreatedNotification", () => {
         to: "owner@acme.example",
         subject: "Access request for Acme Corp",
       }),
-      "access request email"
+      "access request email",
     );
     const html = vi.mocked(sendMessage).mock.calls[0][0].html;
     expect(html).toContain("Access request for Acme Corp");
@@ -60,7 +59,7 @@ describe("sendAccessRequestResolvedNotification", () => {
         to: "jo@acme.example",
         subject: "Access request approved for Acme Corp",
       }),
-      "access request email"
+      "access request email",
     );
     const html = vi.mocked(sendMessage).mock.calls[0][0].html;
     expect(html).toContain("<h2>Access request approved</h2>");
@@ -95,7 +94,7 @@ describe("sendAccessRequestResolvedNotification", () => {
       expect.objectContaining({
         subject: "Access request declined for Acme Corp",
       }),
-      "access request email"
+      "access request email",
     );
     const html = vi.mocked(sendMessage).mock.calls[0][0].html;
     expect(html).toContain("<h2>Access request declined</h2>");

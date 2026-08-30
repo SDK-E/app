@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { getTranslations } from "next-intl/server";
 
-import { Badge } from "@sdk-e/ui/Badge";
-import { Card } from "@sdk-e/ui/Card";
-import { renderForPage } from "@sdk-e/portal-shell/lib/render-for-page";
-import { hasPermission } from "@sdk-e/auth/authorization";
-import { getClientDashboard } from "@sdk-e/requests";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
+import { hasPermission } from "@platform/auth/authorization";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { renderForPage } from "@platform/portal-shell/lib/render-for-page";
+import { getClientDashboard } from "@platform/requests";
+import { Badge } from "@platform/ui/Badge";
+import { Card } from "@platform/ui/Card";
+import { getTranslations } from "next-intl/server";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Dashboard | SDK Enterprises",
@@ -59,7 +59,10 @@ export default async function CompanyDashboardPage({
           <h2 className="text-h3 font-extrabold">{t("dashboard.activeWork")}</h2>
           <div className="mt-5 space-y-4">
             {data.projects.map((project) => (
-              <div key={project.id} className="border-t border-line pt-3">
+              <div
+                key={project.id}
+                className="border-t border-line pt-3"
+              >
                 <div className="flex items-center justify-between gap-3">
                   <p className="text-body font-semibold">{project.name}</p>
                   <Badge>{project.status.replaceAll("_", " ")}</Badge>
@@ -106,17 +109,20 @@ export default async function CompanyDashboardPage({
           <h2 className="text-h3 font-extrabold">{t("dashboard.invoices")}</h2>
           <div className="mt-5 space-y-3">
             {Object.entries(data.invoiceTotals).map(([currency, totals]) => (
-              <div key={currency} className="border-t border-line pt-3 text-body">
+              <div
+                key={currency}
+                className="border-t border-line pt-3 text-body"
+              >
                 <p className="font-semibold">
                   {currency}{" "}
                   {new Intl.NumberFormat(locale, { minimumFractionDigits: 2 }).format(
-                    totals.sent + totals.overdue
+                    totals.sent + totals.overdue,
                   )}
                 </p>
                 <p className="">
                   {t("dashboard.overdue")}: {currency}{" "}
                   {new Intl.NumberFormat(locale, { minimumFractionDigits: 2 }).format(
-                    totals.overdue
+                    totals.overdue,
                   )}
                 </p>
               </div>

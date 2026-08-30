@@ -1,13 +1,14 @@
-import { notFound } from "@sdk-e/auth/authorization";
-import { getPrisma } from "@sdk-e/db";
-import { Prisma } from "@sdk-e/db/client";
 import type {
   Notification,
   NotificationCategory,
   NotificationChannel,
   NotificationDelivery,
   NotificationType,
-} from "@sdk-e/db/client";
+} from "@platform/db/client";
+
+import { notFound } from "@platform/auth/authorization";
+import { getPrisma } from "@platform/db";
+import { Prisma } from "@platform/db/client";
 
 export interface CreateNotificationInput {
   recipientId: string;
@@ -20,11 +21,6 @@ export interface CreateNotificationInput {
   eventKey: string;
 }
 
-export interface NotificationPageOptions {
-  take?: number;
-  skip?: number;
-}
-
 export interface NotificationPage {
   items: Notification[];
   total: number;
@@ -32,8 +28,36 @@ export interface NotificationPage {
   skip: number;
 }
 
+export interface NotificationPageOptions {
+  take?: number;
+  skip?: number;
+}
+
+export async function createNotificationDelivery(
+  notificationId: string,
+  channel: NotificationChannel,
+): Promise<NotificationDelivery> {
+  try {
+    return await getPrisma().notificationDelivery.create({
+      data: {
+        notificationId,
+        channel,
+        status: "PENDING",
+        attempts: 0,
+      },
+    });
+  } catch (error) {
+    if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2002") {
+      return await getPrisma().notificationDelivery.findFirstOrThrow({
+        where: { notificationId, channel },
+      });
+    }
+    throw error;
+  }
+}
+
 export async function createNotificationIdempotent(
-  input: CreateNotificationInput
+  input: CreateNotificationInput,
 ): Promise<Notification | null> {
   try {
     return await getPrisma().notification.create({
@@ -58,7 +82,7 @@ export async function createNotificationIdempotent(
 
 export async function getNotificationsForRecipient(
   recipientId: string,
-  options: NotificationPageOptions = {}
+  options: NotificationPageOptions = {},
 ): Promise<NotificationPage> {
   const take = Math.min(Math.max(options.take ?? 20, 1), 100);
   const skip = Math.max(options.skip ?? 0, 0);
@@ -78,7 +102,7 @@ export async function getNotificationsForRecipient(
 
 export async function markNotificationRead(
   notificationId: string,
-  recipientId: string
+  recipientId: string,
 ): Promise<Notification> {
   try {
     return await getPrisma().notification.update({
@@ -88,30 +112,6 @@ export async function markNotificationRead(
   } catch (error) {
     if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2025") {
       notFound("Notification not found.");
-    }
-    throw error;
-  }
-}
-
-export async function createNotificationDelivery(
-  notificationId: string,
-  channel: NotificationChannel
-): Promise<NotificationDelivery> {
-  try {
-    return await getPrisma().notificationDelivery.create({
-      data: {
-        notificationId,
-        channel,
-        status: "PENDING",
-        attempts: 0,
-      },
-    });
-  } catch (error) {
-    if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2002") {
-      const existing = await getPrisma().notificationDelivery.findFirstOrThrow({
-        where: { notificationId, channel },
-      });
-      return existing;
     }
     throw error;
   }

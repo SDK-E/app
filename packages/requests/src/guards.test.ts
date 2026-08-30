@@ -1,8 +1,8 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import type { ClientPrincipal, SdkStaffPrincipal } from "@platform/types";
 
-import { activity, companyScope, requireActiveCompany, scope } from "@sdk-e/requests/guards";
-import { principal } from "@sdk-e/test-support/test-fixtures";
-import type { ClientPrincipal, SdkStaffPrincipal } from "@sdk-e/types";
+import { activity, companyScope, requireActiveCompany, scope } from "@platform/requests/guards";
+import { principal } from "@platform/test-support/test-fixtures";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const owner = principal("owner") as ClientPrincipal;
 const staff = principal("sdk-admin") as SdkStaffPrincipal;
@@ -11,7 +11,7 @@ const mocks = vi.hoisted(() => ({
   company: { findFirst: vi.fn() },
 }));
 
-vi.mock("@sdk-e/db", () => ({
+vi.mock("@platform/db", () => ({
   getPrisma: () => ({ company: mocks.company }),
 }));
 
@@ -25,13 +25,13 @@ describe("request guards", () => {
       kind: "client",
     });
     expect(() => scope(principal("owner"), "request:update")).toThrow(
-      "Client permission checks require a company scope."
+      "Client permission checks require a company scope.",
     );
     expect(() => scope(principal("unassigned"), "request:view")).toThrow(
-      "Application access has not been assigned."
+      "Application access has not been assigned.",
     );
     expect(() => scope(principal("delivery"), "staff:update")).toThrow(
-      "Missing permission: staff:update"
+      "Missing permission: staff:update",
     );
   });
 

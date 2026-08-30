@@ -1,9 +1,6 @@
-import { EmptyState } from "@sdk-e/ui/EmptyState";
-import type { ActivityRow } from "@sdk-e/users/activity";
+import type { ActivityRow } from "@platform/users/activity";
 
-function formatDate(locale: string, date: Date) {
-  return new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeStyle: "short" }).format(date);
-}
+import { EmptyState } from "@platform/ui/EmptyState";
 
 export async function ActivityFeed({
   locale,
@@ -31,7 +28,12 @@ export async function ActivityFeed({
   };
 }) {
   if (!events.length) {
-    return <EmptyState title={labels.emptyTitle} description={labels.emptyDescription} />;
+    return (
+      <EmptyState
+        title={labels.emptyTitle}
+        description={labels.emptyDescription}
+      />
+    );
   }
 
   return (
@@ -73,7 +75,7 @@ function describeEvent(
     nameCorrected?: string;
     staffRoleChanged?: string;
     accessCodeRegenerated?: string;
-  }
+  },
 ): string {
   switch (event.action) {
     case "membership.role_changed":
@@ -105,4 +107,8 @@ function describeEvent(
     default:
       return event.action;
   }
+}
+
+function formatDate(locale: string, date: Date) {
+  return new Intl.DateTimeFormat(locale, { dateStyle: "medium", timeStyle: "short" }).format(date);
 }

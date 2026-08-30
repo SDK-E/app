@@ -1,11 +1,10 @@
 "use client";
 
+import { cn } from "@platform/core/utils";
+import { Button } from "@platform/ui/Button";
 import * as React from "react";
 
-import { Button } from "@sdk-e/ui/Button";
-import { cn } from "@sdk-e/core/utils";
-
-type IconButtonSize = "sm" | "default";
+type IconButtonSize = "default" | "sm";
 
 function IconButton({
   className,
@@ -14,9 +13,9 @@ function IconButton({
   "aria-labelledby": ariaLabelledBy,
   children,
   ...props
-}: Omit<React.ComponentProps<typeof Button>, "size" | "variant"> & {
+}: {
   size?: IconButtonSize;
-}) {
+} & Omit<React.ComponentProps<typeof Button>, "size" | "variant">) {
   if (!ariaLabel && !ariaLabelledBy) {
     console.warn("IconButton requires an accessible name via `aria-label`.");
   }
@@ -29,7 +28,7 @@ function IconButton({
       className={cn(
         "relative rounded-control px-0 after:absolute after:-inset-1.5 after:content-['']",
         size === "default" ? "size-11 after:content-none" : "size-9",
-        className
+        className,
       )}
       {...props}
     >

@@ -2,8 +2,8 @@
 
 import { Monitor, Moon, Sun } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 import { updatePreferredThemeAction } from "@/app/[locale]/(app)/app/profile/actions";
 
@@ -52,7 +52,10 @@ export function ThemeSwitcher() {
                 : "text-muted-foreground hover:bg-muted hover:text-foreground"
             }`}
           >
-            <Icon className="h-4 w-4" aria-hidden />
+            <Icon
+              className="h-4 w-4"
+              aria-hidden
+            />
           </button>
         );
       })}

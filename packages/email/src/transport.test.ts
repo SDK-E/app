@@ -1,6 +1,5 @@
+import { escapeHtml, sendMessage } from "@platform/email/transport";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-
-import { escapeHtml, sendMessage } from "@sdk-e/email/transport";
 
 const mocks = vi.hoisted(() => {
   const getServerEnv = vi.fn();
@@ -9,7 +8,7 @@ const mocks = vi.hoisted(() => {
   return { getServerEnv, createTransport, Resend };
 });
 
-vi.mock("@sdk-e/env", () => ({ getServerEnv: mocks.getServerEnv }));
+vi.mock("@platform/env", () => ({ getServerEnv: mocks.getServerEnv }));
 vi.mock("nodemailer", () => ({ createTransport: mocks.createTransport }));
 vi.mock("resend", () => ({ Resend: mocks.Resend }));
 
@@ -26,7 +25,7 @@ describe("escapeHtml", () => {
 
   it("escapes every character in one pass", () => {
     expect(escapeHtml(`<a href="x&y">'z'</a>`)).toBe(
-      "&lt;a href=&quot;x&amp;y&quot;&gt;&#39;z&#39;&lt;/a&gt;"
+      "&lt;a href=&quot;x&amp;y&quot;&gt;&#39;z&#39;&lt;/a&gt;",
     );
   });
 });
@@ -131,7 +130,7 @@ describe("sendMessage", () => {
     expect(errorSpy).toHaveBeenCalledWith(
       "test email: resend send failed",
       "RateLimitError",
-      "too fast"
+      "too fast",
     );
     errorSpy.mockRestore();
   });

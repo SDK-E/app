@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
-import { getTranslations } from "next-intl/server";
 
-import { CompanyCreateForm } from "@sdk-e/portal-staff/components/portal/companies/CompanyCreateForm";
-import { hasPermission } from "@sdk-e/auth/authorization";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
+import { hasPermission } from "@platform/auth/authorization";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { CompanyCreateForm } from "@platform/portal-staff/components/portal/companies/CompanyCreateForm";
+import { getTranslations } from "next-intl/server";
+import { redirect } from "next/navigation";
+
 import { createSdkCompanyAction } from "./actions";
 
 export const metadata: Metadata = {

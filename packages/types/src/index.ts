@@ -1,12 +1,12 @@
+export interface ApiResponse<T> {
+  data: T;
+  message?: string;
+}
+
 export interface BaseEntity {
   id: string;
   createdAt: Date;
   updatedAt: Date;
-}
-
-export interface ApiResponse<T> {
-  data: T;
-  message?: string;
 }
 
 export interface PaginatedResult<T> {
@@ -17,7 +17,7 @@ export interface PaginatedResult<T> {
   totalPages: number;
 }
 
-export type Result<T, E = Error> = { ok: true; value: T } | { ok: false; error: E };
+export type Result<T, E = Error> = { ok: false; error: E } | { ok: true; value: T };
 
 export const clientRoles = [
   "OWNER",
@@ -76,21 +76,9 @@ export const permissions = [
   "match:override",
 ] as const;
 
-export type Permission = (typeof permissions)[number];
+export type AppPrincipal = AssignedPrincipal | UnassignedPrincipal;
 
-interface PrincipalUser {
-  id: string;
-  auth0Sub: string;
-  email: string;
-  name: string;
-  avatarUrl: string | null;
-  preferredLocale: string;
-  preferredTheme: string;
-}
-
-export interface UnassignedPrincipal extends PrincipalUser {
-  kind: "unassigned";
-}
+export type AssignedPrincipal = ClientPrincipal | ProviderPrincipal | SdkStaffPrincipal;
 
 export interface ClientMembership {
   companyId: string;
@@ -103,15 +91,27 @@ export interface ClientPrincipal extends PrincipalUser {
   memberships: ClientMembership[];
 }
 
-export interface SdkStaffPrincipal extends PrincipalUser {
-  kind: "sdk-staff";
-  role: SdkStaffRole;
-}
+export type Permission = (typeof permissions)[number];
 
 export interface ProviderPrincipal extends PrincipalUser {
   kind: "provider";
   providerId: string;
 }
 
-export type AssignedPrincipal = ClientPrincipal | SdkStaffPrincipal | ProviderPrincipal;
-export type AppPrincipal = UnassignedPrincipal | AssignedPrincipal;
+export interface SdkStaffPrincipal extends PrincipalUser {
+  kind: "sdk-staff";
+  role: SdkStaffRole;
+}
+
+export interface UnassignedPrincipal extends PrincipalUser {
+  kind: "unassigned";
+}
+interface PrincipalUser {
+  id: string;
+  auth0Sub: string;
+  email: string;
+  name: string;
+  avatarUrl: null | string;
+  preferredLocale: string;
+  preferredTheme: string;
+}

@@ -1,16 +1,16 @@
-import type { Prisma } from "@sdk-e/db/client";
-import type { requestDetailInclude } from "@sdk-e/requests/queries";
+import type { Prisma } from "@platform/db/client";
+import type { requestDetailInclude } from "@platform/requests/queries";
 
 export type RequestDetail = Prisma.RequestGetPayload<{
   include: typeof requestDetailInclude;
 }>;
 
-export type RequestListEntry = {
+export interface RequestListEntry {
   id: string;
   title: string;
   capability: string;
   status: string;
-  projects: Array<{ id: string }>;
-};
+  projects: { id: string }[];
+}
 
-export type Translator = (key: string, values?: Record<string, string | number | Date>) => string;
+export type Translator = (key: string, values?: Record<string, Date | number | string>) => string;

@@ -1,4 +1,4 @@
-import { randomBytes } from "node:crypto";
+import type { AppPrincipal } from "@platform/types";
 
 import {
   AuthorizationError,
@@ -6,26 +6,21 @@ import {
   requireCompanyAccess,
   requirePermission,
   requireSdkStaff,
-} from "@sdk-e/auth";
-import { getPrisma } from "@sdk-e/db";
-import { recordUserManagementEvent } from "@sdk-e/users/audit";
-import { slugify } from "@sdk-e/core/utils";
+} from "@platform/auth";
+import { slugify } from "@platform/core/utils";
+import { getPrisma } from "@platform/db";
+import { recordUserManagementEvent } from "@platform/users/audit";
 import {
   forbidden,
   hashInvitationToken,
   INVITATION_TTL_MS,
   normalizeEmail,
-} from "@sdk-e/users/shared";
-import type { AppPrincipal } from "@sdk-e/types";
+} from "@platform/users/shared";
+import { randomBytes } from "node:crypto";
 
 export function buildCompanySlug(name: string, suffix = randomBytes(3).toString("hex")): string {
   const base = slugify(name).slice(0, 80) || "company";
   return `${base}-${suffix}`;
-}
-
-export function generateAccessCode(): string {
-  const raw = randomBytes(4).toString("hex").toUpperCase();
-  return `${raw.slice(0, 4)}-${raw.slice(4)}`;
 }
 
 export async function createOwnedCompany(principal: AppPrincipal, name: string) {
@@ -33,7 +28,7 @@ export async function createOwnedCompany(principal: AppPrincipal, name: string) 
     throw new AuthorizationError(
       403,
       "FORBIDDEN",
-      "Only client users or unassigned users can create a company."
+      "Only client users or unassigned users can create a company.",
     );
   }
   return getPrisma().$transaction(async (transaction) => {
@@ -45,7 +40,7 @@ export async function createOwnedCompany(principal: AppPrincipal, name: string) 
       throw new AuthorizationError(
         403,
         "FORBIDDEN",
-        "This account is SDK staff or inactive and cannot create a company."
+        "This account is SDK staff or inactive and cannot create a company.",
       );
     }
     return transaction.company.create({
@@ -64,7 +59,7 @@ export async function createOwnedCompany(principal: AppPrincipal, name: string) 
 
 export async function createSdkCompany(
   principal: AppPrincipal,
-  input: { name: string; ownerEmail: string }
+  input: { name: string; ownerEmail: string },
 ) {
   const assigned = requirePermission(principal, "company:create");
   if (assigned.kind !== "sdk-staff" || assigned.role !== "ADMIN")
@@ -109,36 +104,9 @@ export async function createSdkCompany(
   });
 }
 
-export async function setCompanyActive(
-  principal: AppPrincipal,
-  companyId: string,
-  isActive: boolean
-) {
-  const assigned = requirePermission(principal, "company:update", companyId);
-  requireCompanyAccess(assigned, companyId);
-  if (assigned.kind !== "sdk-staff" || assigned.role !== "ADMIN")
-    forbidden("SDK administrator access is required.");
-  const company = await getPrisma().company.findUnique({ where: { id: companyId } });
-  if (!company) notFound("Company not found.");
-  return getPrisma().company.update({ where: { id: companyId }, data: { isActive } });
-}
-
-export async function listCompaniesForManagement(principal: AppPrincipal) {
-  const staff = requireSdkStaff(principal);
-  const isAdmin = staff.role === "ADMIN";
-  return getPrisma().company.findMany({
-    where: isAdmin ? {} : { isActive: true },
-    select: {
-      id: true,
-      name: true,
-      slug: true,
-      isActive: true,
-      createdAt: true,
-      accessCode: isAdmin,
-      _count: { select: { memberships: true } },
-    },
-    orderBy: { name: "asc" },
-  });
+export function generateAccessCode(): string {
+  const raw = randomBytes(4).toString("hex").toUpperCase();
+  return `${raw.slice(0, 4)}-${raw.slice(4)}`;
 }
 
 export async function getCompanyForManagement(principal: AppPrincipal, companyId: string) {
@@ -159,6 +127,24 @@ export async function getCompanyForManagement(principal: AppPrincipal, companyId
   return company;
 }
 
+export async function listCompaniesForManagement(principal: AppPrincipal) {
+  const staff = requireSdkStaff(principal);
+  const isAdmin = staff.role === "ADMIN";
+  return getPrisma().company.findMany({
+    where: isAdmin ? {} : { isActive: true },
+    select: {
+      id: true,
+      name: true,
+      slug: true,
+      isActive: true,
+      createdAt: true,
+      accessCode: isAdmin,
+      _count: { select: { memberships: true } },
+    },
+    orderBy: { name: "asc" },
+  });
+}
+
 export async function regenerateCompanyAccessCode(principal: AppPrincipal, companyId: string) {
   const assigned = requirePermission(principal, "company:update", companyId);
   const targetCompanyId = requireCompanyAccess(assigned, companyId);
@@ -175,4 +161,18 @@ export async function regenerateCompanyAccessCode(principal: AppPrincipal, compa
     targetId: targetCompanyId,
   });
   return updated;
+}
+
+export async function setCompanyActive(
+  principal: AppPrincipal,
+  companyId: string,
+  isActive: boolean,
+) {
+  const assigned = requirePermission(principal, "company:update", companyId);
+  requireCompanyAccess(assigned, companyId);
+  if (assigned.kind !== "sdk-staff" || assigned.role !== "ADMIN")
+    forbidden("SDK administrator access is required.");
+  const company = await getPrisma().company.findUnique({ where: { id: companyId } });
+  if (!company) notFound("Company not found.");
+  return getPrisma().company.update({ where: { id: companyId }, data: { isActive } });
 }

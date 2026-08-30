@@ -10,7 +10,7 @@ export const patterns = [
 export const supportedFileExtensions = new Set([".adoc", ".md", ".mdx", ".rst", ".txt"]);
 export const maxFileBytes = 200_000;
 
-export const lightEdits: ReadonlyArray<readonly [RegExp, string]> = [
+export const lightEdits: readonly (readonly [RegExp, string])[] = [
   [/\bit is important to note that\s+/giu, ""],
   [/\bit should be noted that\s+/giu, ""],
   [/\bin order to\b/giu, "to"],
@@ -21,7 +21,7 @@ export const lightEdits: ReadonlyArray<readonly [RegExp, string]> = [
   [/\butili[sz]e\b/giu, "use"],
 ];
 
-export const standardEdits: ReadonlyArray<readonly [RegExp, string]> = [
+export const standardEdits: readonly (readonly [RegExp, string])[] = [
   [/\bfurthermore,?\s*/giu, ""],
   [/\bmoreover,?\s*/giu, ""],
   [/\badditionally,?\s*/giu, ""],
@@ -37,6 +37,63 @@ export const standardEdits: ReadonlyArray<readonly [RegExp, string]> = [
   [/\bgame-changing\b/giu, "significant"],
   [/\bbest-in-class\b/giu, "well-designed"],
 ];
+
+export function changedProtectedValues(
+  original: string,
+  rewritten: string,
+  explicit: string[] = [],
+): string[] {
+  return protectedValues(original, explicit).filter(
+    (value) => original.split(value).length !== rewritten.split(value).length,
+  );
+}
+
+export function humanizeChecked(
+  text: string,
+  intensity: "light" | "standard",
+  protectedTerms: string[],
+): { text: string; changed: string[] } {
+  const rewritten = humanizeLocally(text, intensity, protectedTerms);
+  return {
+    text: rewritten,
+    changed: changedProtectedValues(text, rewritten, protectedTerms),
+  };
+}
+
+export function humanizeLocally(
+  text: string,
+  intensity: "light" | "standard" = "standard",
+  explicit: string[] = [],
+): string {
+  const guarded = protect(text, protectedValues(text, explicit));
+  const edits = intensity === "light" ? lightEdits : [...lightEdits, ...standardEdits];
+  let edited = guarded.masked;
+  for (const [pattern, replacement] of edits) edited = edited.replace(pattern, replacement);
+  edited = edited
+    .split(/(\n{2,})/u)
+    .map((part) => (part.startsWith("\n") ? part : tidyParagraph(part)))
+    .join("");
+  return guarded.restore(edited);
+}
+
+export function processingError(scope: string, error: unknown): string {
+  return `Unable to humanize ${scope}: ${error instanceof Error ? error.message : "unknown error"}`;
+}
+
+export function protectedError(changed: string[]): string {
+  return `Humanization rejected because protected values changed: ${changed.map((value) => JSON.stringify(value)).join(", ")}. Keep the original and revise manually.`;
+}
+
+export function protectedValues(text: string, explicit: string[] = []): string[] {
+  const values = [...explicit, ...fencedBlocks(text)];
+  patterns.forEach((pattern, index) => {
+    const matches = text.match(pattern) ?? [];
+    values.push(
+      ...(index === 0 ? matches.map((value) => value.replace(/[.,;:!?]+$/u, "")) : matches),
+    );
+  });
+  return [...new Set(values.filter(Boolean))];
+}
 
 function fencedBlocks(text: string): string[] {
   const blocks: string[] = [];
@@ -71,30 +128,9 @@ function fencedBlocks(text: string): string[] {
   return blocks;
 }
 
-export function protectedValues(text: string, explicit: string[] = []): string[] {
-  const values = [...explicit, ...fencedBlocks(text)];
-  patterns.forEach((pattern, index) => {
-    const matches = text.match(pattern) ?? [];
-    values.push(
-      ...(index === 0 ? matches.map((value) => value.replace(/[.,;:!?]+$/u, "")) : matches)
-    );
-  });
-  return [...new Set(values.filter(Boolean))];
-}
-
-export function changedProtectedValues(
-  original: string,
-  rewritten: string,
-  explicit: string[] = []
-): string[] {
-  return protectedValues(original, explicit).filter(
-    (value) => original.split(value).length !== rewritten.split(value).length
-  );
-}
-
 function protect(
   text: string,
-  terms: string[]
+  terms: string[],
 ): { masked: string; restore: (value: string) => string } {
   const replacements = [...terms].sort((left, right) => right.length - left.length);
   let masked = text;
@@ -123,42 +159,6 @@ function tidyParagraph(paragraph: string): string {
     .trim();
   return tidied.replace(
     /(^|[.!?]\s+)([a-z])/gu,
-    (_match, boundary: string, letter: string) => `${boundary}${letter.toUpperCase()}`
+    (_match, boundary: string, letter: string) => `${boundary}${letter.toUpperCase()}`,
   );
-}
-
-export function humanizeLocally(
-  text: string,
-  intensity: "light" | "standard" = "standard",
-  explicit: string[] = []
-): string {
-  const guarded = protect(text, protectedValues(text, explicit));
-  const edits = intensity === "light" ? lightEdits : [...lightEdits, ...standardEdits];
-  let edited = guarded.masked;
-  for (const [pattern, replacement] of edits) edited = edited.replace(pattern, replacement);
-  edited = edited
-    .split(/(\n{2,})/u)
-    .map((part) => (part.startsWith("\n") ? part : tidyParagraph(part)))
-    .join("");
-  return guarded.restore(edited);
-}
-
-export function humanizeChecked(
-  text: string,
-  intensity: "light" | "standard",
-  protectedTerms: string[]
-): { text: string; changed: string[] } {
-  const rewritten = humanizeLocally(text, intensity, protectedTerms);
-  return {
-    text: rewritten,
-    changed: changedProtectedValues(text, rewritten, protectedTerms),
-  };
-}
-
-export function protectedError(changed: string[]): string {
-  return `Humanization rejected because protected values changed: ${changed.map((value) => JSON.stringify(value)).join(", ")}. Keep the original and revise manually.`;
-}
-
-export function processingError(scope: string, error: unknown): string {
-  return `Unable to humanize ${scope}: ${error instanceof Error ? error.message : "unknown error"}`;
 }

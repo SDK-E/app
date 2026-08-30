@@ -1,4 +1,4 @@
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
+import { getCurrentPrincipal } from "@platform/auth/identity";
 
 export interface UserActionState {
   error?: string;

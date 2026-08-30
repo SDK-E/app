@@ -1,8 +1,6 @@
+import { convertRequestToOpportunity } from "@platform/requests/opportunities";
+import { common, principal } from "@platform/test-support/test-fixtures";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { convertRequestToOpportunity } from "@sdk-e/requests/opportunities";
-import { common } from "@sdk-e/test-support/test-fixtures";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const request = { findFirst: vi.fn() };
@@ -18,7 +16,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({
+vi.mock("@platform/db", () => ({
   getPrisma: () => mocks.prisma,
 }));
 
@@ -54,7 +52,7 @@ describe("convertRequestToOpportunity", () => {
     const result = await convertRequestToOpportunity(
       principal("sdk-admin"),
       "company-1",
-      "request-1"
+      "request-1",
     );
 
     expect(mocks.opportunity.create).toHaveBeenCalledWith({
@@ -101,7 +99,7 @@ describe("convertRequestToOpportunity", () => {
     });
 
     await expect(
-      convertRequestToOpportunity(principal("sdk-admin"), "company-1", "request-1")
+      convertRequestToOpportunity(principal("sdk-admin"), "company-1", "request-1"),
     ).rejects.toThrow("Only approved requests can become opportunities.");
     expect(mocks.opportunity.create).not.toHaveBeenCalled();
   });
@@ -115,7 +113,7 @@ describe("convertRequestToOpportunity", () => {
     });
 
     await expect(
-      convertRequestToOpportunity(principal("sdk-admin"), "company-1", "request-1")
+      convertRequestToOpportunity(principal("sdk-admin"), "company-1", "request-1"),
     ).rejects.toThrow("This request is already linked to an opportunity.");
     expect(mocks.opportunity.create).not.toHaveBeenCalled();
   });
@@ -125,7 +123,7 @@ describe("convertRequestToOpportunity", () => {
     mocks.request.findFirst.mockResolvedValue(null);
 
     await expect(
-      convertRequestToOpportunity(principal("sdk-admin"), "company-1", "request-missing")
+      convertRequestToOpportunity(principal("sdk-admin"), "company-1", "request-missing"),
     ).rejects.toThrow("Request not found.");
     expect(mocks.opportunity.create).not.toHaveBeenCalled();
   });
@@ -134,7 +132,7 @@ describe("convertRequestToOpportunity", () => {
     mocks.company.findFirst.mockResolvedValue(null);
 
     await expect(
-      convertRequestToOpportunity(principal("sdk-admin"), "company-1", "request-1")
+      convertRequestToOpportunity(principal("sdk-admin"), "company-1", "request-1"),
     ).rejects.toThrow("Company not found.");
     expect(mocks.opportunity.create).not.toHaveBeenCalled();
   });
@@ -143,7 +141,7 @@ describe("convertRequestToOpportunity", () => {
     const finance = { ...common, kind: "sdk-staff", role: "FINANCE" } as const;
 
     await expect(convertRequestToOpportunity(finance, "company-1", "request-1")).rejects.toThrow(
-      "SDK staff access is required."
+      "SDK staff access is required.",
     );
     expect(mocks.opportunity.create).not.toHaveBeenCalled();
   });

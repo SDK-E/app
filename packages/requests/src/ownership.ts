@@ -1,13 +1,14 @@
-import { notFound, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { getPrisma } from "@sdk-e/db";
-import { activity, requireActiveCompany, scope } from "@sdk-e/requests/guards";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { AppPrincipal } from "@platform/types";
+
+import { notFound, requireSdkStaff } from "@platform/auth/authorization";
+import { getPrisma } from "@platform/db";
+import { activity, requireActiveCompany, scope } from "@platform/requests/guards";
 
 export async function assignRequestOwner(
   principal: AppPrincipal,
   companyId: string,
   id: string,
-  ownerId: string
+  ownerId: string,
 ) {
   const staff = requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
   scope(staff, "request:update");

@@ -1,7 +1,6 @@
+import { Checkbox } from "@platform/ui/Checkbox";
 import { cleanup, fireEvent, render } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-
-import { Checkbox } from "@sdk-e/ui/Checkbox";
 
 describe("Checkbox", () => {
   afterEach(() => cleanup());
@@ -18,7 +17,12 @@ describe("Checkbox", () => {
   });
 
   it("starts checked when defaultChecked", () => {
-    const { getByRole } = render(<Checkbox defaultChecked aria-label="Include staging" />);
+    const { getByRole } = render(
+      <Checkbox
+        defaultChecked
+        aria-label="Include staging"
+      />,
+    );
     expect(getByRole("checkbox").getAttribute("data-state")).toBe("checked");
   });
 });

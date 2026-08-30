@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
 
-import { ActivityFeed } from "@sdk-e/portal-shell/components/portal/users/ActivityFeed";
-import { UserIdentityCard } from "@sdk-e/portal-staff/components/users/staff/UserIdentityCard";
-import { UserMembershipsCard } from "@sdk-e/portal-staff/components/users/staff/UserMembershipsCard";
-import { Card } from "@sdk-e/ui/Card";
-import { Badge } from "@sdk-e/ui/Badge";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { getUserDetail } from "@sdk-e/users";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { ActivityFeed } from "@platform/portal-shell/components/portal/users/ActivityFeed";
+import { UserIdentityCard } from "@platform/portal-staff/components/users/staff/UserIdentityCard";
+import { UserMembershipsCard } from "@platform/portal-staff/components/users/staff/UserMembershipsCard";
+import { Badge } from "@platform/ui/Badge";
+import { Card } from "@platform/ui/Card";
+import { getUserDetail } from "@platform/users";
+import { getTranslations } from "next-intl/server";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "User | SDK Enterprises",
@@ -38,15 +38,24 @@ export default async function UserDetailPage({
       <h1 className="mt-4 text-[32px] font-extrabold md:text-h1">{t("detailTitle")}</h1>
 
       <div className="mt-10 space-y-6">
-        <UserIdentityCard locale={locale} detail={detail} />
-        <UserMembershipsCard locale={locale} detail={detail} />
+        <UserIdentityCard
+          locale={locale}
+          detail={detail}
+        />
+        <UserMembershipsCard
+          locale={locale}
+          detail={detail}
+        />
 
         <div className="grid gap-6 xl:grid-cols-2">
           <Card>
             <h2 className="text-h3 font-extrabold">{t("pendingInvitations")}</h2>
             <ul className="mt-4 space-y-3">
               {detail.pendingInvitations.map((invitation) => (
-                <li key={invitation.id} className="rounded-card border border-line px-4 py-3">
+                <li
+                  key={invitation.id}
+                  className="rounded-card border border-line px-4 py-3"
+                >
                   <p className="text-body font-semibold">
                     {invitation.company?.name ?? t("staffWorkspace")}
                   </p>
@@ -54,7 +63,7 @@ export default async function UserDetailPage({
                     {(invitation.clientRole ?? "—").replaceAll("_", " ")} ·{" "}
                     {t("expires", {
                       date: new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(
-                        invitation.expiresAt
+                        invitation.expiresAt,
                       ),
                     })}
                   </p>
@@ -76,7 +85,10 @@ export default async function UserDetailPage({
             <h2 className="text-h3 font-extrabold">{t("requestHistory")}</h2>
             <ul className="mt-4 space-y-3">
               {detail.accessRequests.map((request) => (
-                <li key={request.id} className="rounded-card border border-line px-4 py-3">
+                <li
+                  key={request.id}
+                  className="rounded-card border border-line px-4 py-3"
+                >
                   <p className="text-body font-semibold">{request.company.name}</p>
                   <p className="mt-1 text-body">
                     {request.requestedRole.replaceAll("_", " ")} · {request.status}

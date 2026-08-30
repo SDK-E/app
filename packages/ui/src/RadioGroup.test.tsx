@@ -1,19 +1,24 @@
+import { Label } from "@platform/ui/Label";
+import { RadioGroup, RadioGroupItem } from "@platform/ui/RadioGroup";
 import { cleanup, fireEvent, render } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-
-import { Label } from "@sdk-e/ui/Label";
-import { RadioGroup, RadioGroupItem } from "@sdk-e/ui/RadioGroup";
 
 function renderGroup() {
   return render(
     <RadioGroup defaultValue="viewer">
       {["viewer", "member", "billing"].map((role) => (
-        <div key={role} className="flex items-center gap-2">
-          <RadioGroupItem id={`role-${role}`} value={role} />
+        <div
+          key={role}
+          className="flex items-center gap-2"
+        >
+          <RadioGroupItem
+            id={`role-${role}`}
+            value={role}
+          />
           <Label htmlFor={`role-${role}`}>{role}</Label>
         </div>
       ))}
-    </RadioGroup>
+    </RadioGroup>,
   );
 }
 

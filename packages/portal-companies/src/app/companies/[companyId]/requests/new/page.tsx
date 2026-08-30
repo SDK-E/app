@@ -1,13 +1,12 @@
-import { redirect } from "next/navigation";
-import { getTranslations } from "next-intl/server";
-
+import { hasPermission } from "@platform/auth/authorization";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { saveRequestAction } from "@platform/portal-shell/app/companies/[companyId]/requests/actions";
 import {
   RequestForm,
   type RequestFormCopy,
-} from "@sdk-e/portal-shell/components/portal/RequestForm";
-import { hasPermission } from "@sdk-e/auth/authorization";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { saveRequestAction } from "@sdk-e/portal-shell/app/companies/[companyId]/requests/actions";
+} from "@platform/portal-shell/components/portal/RequestForm";
+import { getTranslations } from "next-intl/server";
+import { redirect } from "next/navigation";
 
 export default async function NewRequestPage({
   params,
@@ -32,7 +31,10 @@ export default async function NewRequestPage({
       <p className="text-label font-extrabold uppercase tracking-eyebrow">{t("eyebrow")}</p>
       <h1 className="mt-4 text-h1 font-extrabold">{t("new")}</h1>
       <div className="mt-10">
-        <RequestForm action={saveRequestAction.bind(null, locale, companyId, null)} copy={copy} />
+        <RequestForm
+          action={saveRequestAction.bind(null, locale, companyId, null)}
+          copy={copy}
+        />
       </div>
     </section>
   );

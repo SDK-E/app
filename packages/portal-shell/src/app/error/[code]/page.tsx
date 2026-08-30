@@ -1,6 +1,5 @@
+import { PortalErrorPage } from "@platform/portal-shell/PortalErrorPage";
 import { getTranslations } from "next-intl/server";
-
-import { PortalErrorPage } from "@sdk-e/portal-shell/PortalErrorPage";
 
 const errorConfig: Record<
   string,

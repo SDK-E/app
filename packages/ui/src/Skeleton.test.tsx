@@ -1,7 +1,6 @@
+import { Skeleton } from "@platform/ui/Skeleton";
 import { cleanup, render } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-
-import { Skeleton } from "@sdk-e/ui/Skeleton";
 
 describe("Skeleton", () => {
   afterEach(() => cleanup());

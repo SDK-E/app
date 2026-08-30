@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
-import { getTranslations } from "next-intl/server";
 
-import { ActivityFeed } from "@sdk-e/portal-shell/components/portal/users/ActivityFeed";
-import { ClientInviteCards } from "@sdk-e/portal-companies/components/users/client/ClientInviteCards";
-import { ClientInvitationsTable } from "@sdk-e/portal-companies/components/users/client/ClientInvitationsTable";
-import { ClientMembersTable } from "@sdk-e/portal-companies/components/users/client/ClientMembersTable";
-import { ClientRequestsTable } from "@sdk-e/portal-companies/components/users/client/ClientRequestsTable";
-import { SearchInput } from "@sdk-e/portal-shell/components/portal/users/SearchInput";
-import { UsersTabNav } from "@sdk-e/portal-shell/components/portal/users/UsersTabNav";
-import { getClientMembership } from "@sdk-e/auth/authorization";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { parseUsersListQuery, usersListHref } from "@sdk-e/users/list-links";
-import { getClientTeamView, listUserManagementActivity } from "@sdk-e/users";
+import { getClientMembership } from "@platform/auth/authorization";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { ClientInvitationsTable } from "@platform/portal-companies/components/users/client/ClientInvitationsTable";
+import { ClientInviteCards } from "@platform/portal-companies/components/users/client/ClientInviteCards";
+import { ClientMembersTable } from "@platform/portal-companies/components/users/client/ClientMembersTable";
+import { ClientRequestsTable } from "@platform/portal-companies/components/users/client/ClientRequestsTable";
+import { ActivityFeed } from "@platform/portal-shell/components/portal/users/ActivityFeed";
+import { SearchInput } from "@platform/portal-shell/components/portal/users/SearchInput";
+import { UsersTabNav } from "@platform/portal-shell/components/portal/users/UsersTabNav";
+import { getClientTeamView, listUserManagementActivity } from "@platform/users";
+import { parseUsersListQuery, usersListHref } from "@platform/users/list-links";
+import { getTranslations } from "next-intl/server";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Team | SDK Enterprises",
@@ -81,7 +81,10 @@ export default async function CompanyUsersPage({
         canGrantAdministrator={canGrantAdministrator}
       />
 
-      <UsersTabNav tabs={tabs} active={query.tab} />
+      <UsersTabNav
+        tabs={tabs}
+        active={query.tab}
+      />
 
       <div className="mt-5">
         <SearchInput placeholder={t("searchPlaceholder")} />

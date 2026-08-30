@@ -1,8 +1,7 @@
+import { AuthorizationError } from "@platform/auth/authorization";
+import { IdentityError } from "@platform/auth/identity";
+import { renderForPage } from "@platform/portal-shell/lib/render-for-page";
 import { afterEach, describe, expect, it, vi } from "vitest";
-
-import { renderForPage } from "@sdk-e/portal-shell/lib/render-for-page";
-import { AuthorizationError } from "@sdk-e/auth/authorization";
-import { IdentityError } from "@sdk-e/auth/identity";
 
 const mocks = vi.hoisted(() => ({
   redirect: vi.fn(() => {
@@ -27,7 +26,7 @@ describe("renderForPage", () => {
     await expect(
       renderForPage(() => {
         throw error;
-      }, "en")
+      }, "en"),
     ).rejects.toMatchObject({ digest: "NEXT_REDIRECT" });
     expect(redirectMock).toHaveBeenCalledOnce();
     expect(redirectMock).toHaveBeenCalledWith("/en/unauthenticated");
@@ -38,7 +37,7 @@ describe("renderForPage", () => {
     await expect(
       renderForPage(() => {
         throw error;
-      }, "en")
+      }, "en"),
     ).rejects.toMatchObject({ digest: "NEXT_REDIRECT" });
     expect(redirectMock).toHaveBeenCalledOnce();
     expect(redirectMock).toHaveBeenCalledWith("/en/app/error/access-not-granted");
@@ -48,12 +47,12 @@ describe("renderForPage", () => {
     const error = new AuthorizationError(
       403,
       "UNASSIGNED",
-      "Application access has not been assigned."
+      "Application access has not been assigned.",
     );
     await expect(
       renderForPage(() => {
         throw error;
-      }, "en")
+      }, "en"),
     ).rejects.toMatchObject({ digest: "NEXT_REDIRECT" });
     expect(redirectMock).toHaveBeenCalledOnce();
     expect(redirectMock).toHaveBeenCalledWith("/en/app/error/access-not-granted");
@@ -63,12 +62,12 @@ describe("renderForPage", () => {
     const error = new AuthorizationError(
       403,
       "COMPANY_REQUIRED",
-      "A target company is required for resource access."
+      "A target company is required for resource access.",
     );
     await expect(
       renderForPage(() => {
         throw error;
-      }, "en")
+      }, "en"),
     ).rejects.toMatchObject({ digest: "NEXT_REDIRECT" });
     expect(redirectMock).toHaveBeenCalledOnce();
     expect(redirectMock).toHaveBeenCalledWith("/en/app/error/access-not-granted");
@@ -79,7 +78,7 @@ describe("renderForPage", () => {
     await expect(
       renderForPage(() => {
         throw error;
-      }, "en")
+      }, "en"),
     ).rejects.toMatchObject({ digest: "NEXT_REDIRECT" });
     expect(redirectMock).toHaveBeenCalledOnce();
     expect(redirectMock).toHaveBeenCalledWith("/en/app/error/access-not-granted");
@@ -88,12 +87,12 @@ describe("renderForPage", () => {
   it("redirects to server-error for identity errors", async () => {
     const error = new IdentityError(
       "INVALID_IDENTITY",
-      "The Auth0 identity is missing required claims."
+      "The Auth0 identity is missing required claims.",
     );
     await expect(
       renderForPage(() => {
         throw error;
-      }, "en")
+      }, "en"),
     ).rejects.toMatchObject({ digest: "NEXT_REDIRECT" });
     expect(redirectMock).toHaveBeenCalledOnce();
     expect(redirectMock).toHaveBeenCalledWith("/en/app/error/server-error");
@@ -104,7 +103,7 @@ describe("renderForPage", () => {
     await expect(
       renderForPage(() => {
         throw error;
-      }, "en")
+      }, "en"),
     ).rejects.toBe(error);
     expect(redirectMock).not.toHaveBeenCalled();
   });

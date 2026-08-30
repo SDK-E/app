@@ -1,14 +1,13 @@
+import { sendEnquiryNotification } from "@platform/email";
+import { submitEnquiry } from "@platform/marketing/enquiries";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { sendEnquiryNotification } from "@sdk-e/email";
-import { submitEnquiry } from "@sdk-e/marketing/enquiries";
 
 const mocks = vi.hoisted(() => ({
   prisma: { enquiry: { create: vi.fn() } },
 }));
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
-vi.mock("@sdk-e/email", () => ({ sendEnquiryNotification: vi.fn() }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/email", () => ({ sendEnquiryNotification: vi.fn() }));
 
 const validInput = {
   companyName: "Acme Corp",
@@ -39,7 +38,7 @@ describe("submitEnquiry", () => {
       data: expect.objectContaining({ companyName: "Acme Corp", email: "owner@acme.example" }),
     });
     expect(vi.mocked(sendEnquiryNotification)).toHaveBeenCalledWith(
-      expect.objectContaining({ companyName: "Acme Corp", email: "owner@acme.example" })
+      expect.objectContaining({ companyName: "Acme Corp", email: "owner@acme.example" }),
     );
   });
 

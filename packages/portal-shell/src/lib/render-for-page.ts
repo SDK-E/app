@@ -1,8 +1,8 @@
-import { redirect } from "next/navigation";
+import type { AuthorizationErrorCode } from "@platform/auth/authorization";
 
-import type { AuthorizationErrorCode } from "@sdk-e/auth/authorization";
-import { AuthorizationError } from "@sdk-e/auth/authorization";
-import { IdentityError } from "@sdk-e/auth/identity";
+import { AuthorizationError } from "@platform/auth/authorization";
+import { IdentityError } from "@platform/auth/identity";
+import { redirect } from "next/navigation";
 
 const authRedirects = new Map<AuthorizationErrorCode, string>([
   ["UNAUTHENTICATED", "/unauthenticated"],
@@ -12,7 +12,7 @@ const authRedirects = new Map<AuthorizationErrorCode, string>([
   ["NOT_FOUND", "/app/error/access-not-granted"],
 ]);
 
-export async function renderForPage<T>(compute: () => T | Promise<T>, locale: string): Promise<T> {
+export async function renderForPage<T>(compute: () => Promise<T> | T, locale: string): Promise<T> {
   try {
     return await compute();
   } catch (error) {

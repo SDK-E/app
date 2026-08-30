@@ -1,9 +1,16 @@
+import { getServerEnv } from "@platform/env";
 import { PrismaPg } from "@prisma/adapter-pg";
 
 import { PrismaClient } from "./generated/prisma/client";
-import { getServerEnv } from "@sdk-e/env";
 
 const globalForPrisma = globalThis as unknown as { prisma?: PrismaClient };
+
+export function getPrisma(): PrismaClient {
+  if (!globalForPrisma.prisma) {
+    globalForPrisma.prisma = createPrismaClient();
+  }
+  return globalForPrisma.prisma;
+}
 
 export function isClosedConnectionError(error: unknown): boolean {
   return (
@@ -30,11 +37,4 @@ function createPrismaClient() {
     connectionTimeoutMillis: 5_000,
   });
   return new PrismaClient({ adapter });
-}
-
-export function getPrisma(): PrismaClient {
-  if (!globalForPrisma.prisma) {
-    globalForPrisma.prisma = createPrismaClient();
-  }
-  return globalForPrisma.prisma;
 }

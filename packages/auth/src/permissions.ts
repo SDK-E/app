@@ -1,4 +1,4 @@
-import type { ClientRole, Permission, SdkStaffRole } from "@sdk-e/types";
+import type { ClientRole, Permission, SdkStaffRole } from "@platform/types";
 
 const readPermissions: Permission[] = [
   "company:view",

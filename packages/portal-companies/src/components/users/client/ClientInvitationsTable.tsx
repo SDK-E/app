@@ -1,16 +1,16 @@
-import { getTranslations } from "next-intl/server";
+import type { ClientInvitationRow } from "@platform/users";
 
+import { UserActionForm } from "@platform/portal-shell/components/portal/UserActionForm";
+import { PaginationNav } from "@platform/portal-shell/components/portal/users/PaginationNav";
+import { SortHeader } from "@platform/portal-shell/components/portal/users/SortHeader";
 import {
   resendInvitationAction,
   revokeInvitationAction,
-} from "@sdk-e/portal-staff/app/users/actions";
-import { PaginationNav } from "@sdk-e/portal-shell/components/portal/users/PaginationNav";
-import { SortHeader } from "@sdk-e/portal-shell/components/portal/users/SortHeader";
-import { UserActionForm } from "@sdk-e/portal-shell/components/portal/UserActionForm";
-import { Badge } from "@sdk-e/ui/Badge";
-import { TBody, TD, TH, THead, TR, Table } from "@sdk-e/ui/Table";
-import { usersListHref, type UsersListQuery } from "@sdk-e/users/list-links";
-import type { ClientInvitationRow } from "@sdk-e/users";
+} from "@platform/portal-staff/app/users/actions";
+import { Badge } from "@platform/ui/Badge";
+import { Table, TBody, TD, TH, THead, TR } from "@platform/ui/Table";
+import { usersListHref, type UsersListQuery } from "@platform/users/list-links";
+import { getTranslations } from "next-intl/server";
 
 export async function ClientInvitationsTable({
   locale,
@@ -24,8 +24,8 @@ export async function ClientInvitationsTable({
   locale: string;
   companyId: string;
   rows: ClientInvitationRow[];
-  nextCursor: string | null;
-  prevCursor: string | null;
+  nextCursor: null | string;
+  prevCursor: null | string;
   basePath: string;
   query: UsersListQuery;
 }) {
@@ -80,7 +80,11 @@ export async function ClientInvitationsTable({
                     action={resendInvitationAction.bind(null, locale, companyId)}
                     label={t("resend")}
                   >
-                    <input type="hidden" name="invitationId" value={row.id} />
+                    <input
+                      type="hidden"
+                      name="invitationId"
+                      value={row.id}
+                    />
                   </UserActionForm>
                   <UserActionForm
                     action={revokeInvitationAction.bind(null, locale, companyId)}
@@ -88,7 +92,11 @@ export async function ClientInvitationsTable({
                     confirmLabel={t("confirmRevoke")}
                     variant="destructive"
                   >
-                    <input type="hidden" name="invitationId" value={row.id} />
+                    <input
+                      type="hidden"
+                      name="invitationId"
+                      value={row.id}
+                    />
                   </UserActionForm>
                 </div>
               </TD>

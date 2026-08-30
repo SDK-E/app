@@ -1,7 +1,7 @@
-export { getAuth0Client } from "@sdk-e/auth/auth0";
+export { getAuth0Client } from "@platform/auth/auth0";
 export {
-  type AuthorizationErrorCode,
   AuthorizationError,
+  type AuthorizationErrorCode,
   hasPermission,
   notFound,
   requireAssignedPrincipal,
@@ -12,7 +12,7 @@ export {
   requirePermission,
   requireSdkStaff,
   tenantWhere,
-} from "@sdk-e/auth/authorization";
-export { IdentityError, getCurrentPrincipal, resolveAppPrincipal } from "@sdk-e/auth/identity";
-export { assignCompanyMembership, assignSdkStaffRole } from "@sdk-e/auth/identity-management";
-export { clientRolePermissions, sdkRolePermissions } from "@sdk-e/auth/permissions";
+} from "@platform/auth/authorization";
+export { getCurrentPrincipal, IdentityError, resolveAppPrincipal } from "@platform/auth/identity";
+export { assignCompanyMembership, assignSdkStaffRole } from "@platform/auth/identity-management";
+export { clientRolePermissions, sdkRolePermissions } from "@platform/auth/permissions";

@@ -5,7 +5,7 @@ function usage(): never {
     "Usage: npm run bg:remove -- <image> [image...] [--border-tolerance <n>] [--uniform-tolerance <n>]\n\n" +
       "Removes a flat, uniform background from raster images in place by flood-filling\n" +
       "from the borders, then clearing any remaining near-background pixels.\n" +
-      "Supported outputs: .png, .webp, .avif, .tiff, .gif (formats with an alpha channel)."
+      "Supported outputs: .png, .webp, .avif, .tiff, .gif (formats with an alpha channel).",
   );
   process.exit(1);
 }
@@ -44,7 +44,7 @@ for (const file of files) {
     console.log(
       `${file}: ${result.width}x${result.height} ` +
         `background rgb(${result.background.join(", ")}) → ` +
-        `${result.removedPixels}/${result.totalPixels} px (${percent}%) made transparent`
+        `${result.removedPixels}/${result.totalPixels} px (${percent}%) made transparent`,
     );
   } catch (error) {
     failures += 1;

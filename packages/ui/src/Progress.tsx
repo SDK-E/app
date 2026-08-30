@@ -1,9 +1,8 @@
 "use client";
 
-import * as React from "react";
+import { cn } from "@platform/core/utils";
 import { Progress as ProgressPrimitive } from "radix-ui";
-
-import { cn } from "@sdk-e/core/utils";
+import * as React from "react";
 
 function Progress({
   className,
@@ -16,7 +15,7 @@ function Progress({
       value={value}
       className={cn(
         "relative flex h-1 w-full items-center overflow-hidden rounded-full bg-border/60",
-        className
+        className,
       )}
       {...props}
     >

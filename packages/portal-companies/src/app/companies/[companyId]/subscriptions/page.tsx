@@ -1,7 +1,7 @@
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { requireCompanyContext } from "@sdk-e/auth/authorization";
-import { renderForPage } from "@sdk-e/portal-shell/lib/render-for-page";
-import { getPrisma } from "@sdk-e/db";
+import { requireCompanyContext } from "@platform/auth/authorization";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { getPrisma } from "@platform/db";
+import { renderForPage } from "@platform/portal-shell/lib/render-for-page";
 
 interface PageProps {
   params: Promise<{ locale: string; companyId: string }>;
@@ -21,7 +21,7 @@ export default async function SubscriptionsPage({ params }: PageProps) {
         orderBy: { createdAt: "desc" },
       });
     },
-    (await params).locale
+    (await params).locale,
   );
 
   return (
@@ -36,7 +36,10 @@ export default async function SubscriptionsPage({ params }: PageProps) {
       ) : (
         <div className="space-y-4">
           {subscriptions.map((subscription) => (
-            <div key={subscription.id} className="rounded-lg border p-4">
+            <div
+              key={subscription.id}
+              className="rounded-lg border p-4"
+            >
               <div className="flex items-center justify-between">
                 <div>
                   <p className="font-medium">{subscription.stripeSubscriptionId}</p>

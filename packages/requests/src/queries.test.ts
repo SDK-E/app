@@ -1,7 +1,6 @@
+import { getRequest, listRequests, requestDetailInclude } from "@platform/requests/queries";
+import { principal } from "@platform/test-support/test-fixtures";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { getRequest, listRequests, requestDetailInclude } from "@sdk-e/requests/queries";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const request = { findMany: vi.fn(), findFirst: vi.fn() };
@@ -9,7 +8,7 @@ const mocks = vi.hoisted(() => {
   return { prisma: { request, company }, request, company };
 });
 
-vi.mock("@sdk-e/db", () => ({
+vi.mock("@platform/db", () => ({
   getPrisma: () => mocks.prisma,
 }));
 
@@ -29,7 +28,7 @@ describe("request queries", () => {
       expect.objectContaining({
         where: { companyId: "company-1" },
         orderBy: { updatedAt: "desc" },
-      })
+      }),
     );
     expect(result).toEqual([{ id: "request-1", title: "Modernize" }]);
   });
@@ -38,14 +37,14 @@ describe("request queries", () => {
     mocks.company.findFirst.mockResolvedValue(null);
 
     await expect(listRequests(principal("sdk-admin"), "company-1")).rejects.toThrow(
-      "Company not found."
+      "Company not found.",
     );
     expect(mocks.request.findMany).not.toHaveBeenCalled();
   });
 
   it("requires an explicit company for SDK staff listings", async () => {
     await expect(listRequests(principal("sdk-admin"))).rejects.toThrow(
-      "A target company is required for resource access."
+      "A target company is required for resource access.",
     );
   });
 
@@ -63,7 +62,7 @@ describe("request queries", () => {
 
   it("returns a not-found error for a cross-company detail request", async () => {
     await expect(getRequest(principal("owner"), "request-1", "company-2")).rejects.toThrow(
-      "Company not found."
+      "Company not found.",
     );
     expect(mocks.request.findFirst).not.toHaveBeenCalled();
   });
@@ -72,7 +71,7 @@ describe("request queries", () => {
     mocks.request.findFirst.mockResolvedValue(null);
 
     await expect(getRequest(principal("owner"), "request-missing", "company-1")).rejects.toThrow(
-      "Request not found."
+      "Request not found.",
     );
   });
 });

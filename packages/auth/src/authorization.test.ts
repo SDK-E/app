@@ -1,4 +1,11 @@
-import { describe, expect, it } from "vitest";
+import type {
+  AppPrincipal,
+  ClientMembership,
+  ClientPrincipal,
+  ClientRole,
+  ProviderPrincipal,
+  SdkStaffPrincipal,
+} from "@platform/types";
 
 import {
   AuthorizationError,
@@ -11,15 +18,8 @@ import {
   requireProviderPrincipal,
   requireSdkStaff,
   tenantWhere,
-} from "@sdk-e/auth/authorization";
-import type {
-  AppPrincipal,
-  ClientMembership,
-  ClientPrincipal,
-  ClientRole,
-  ProviderPrincipal,
-  SdkStaffPrincipal,
-} from "@sdk-e/types";
+} from "@platform/auth/authorization";
+import { describe, expect, it } from "vitest";
 
 const membership = (role: ClientRole, companyId = "company-a"): ClientMembership => ({
   companyId,
@@ -29,7 +29,7 @@ const membership = (role: ClientRole, companyId = "company-a"): ClientMembership
 
 const client = (
   role: ClientRole,
-  memberships: ClientMembership[] = [membership(role)]
+  memberships: ClientMembership[] = [membership(role)],
 ): ClientPrincipal => ({
   kind: "client",
   id: "user-client",
@@ -133,7 +133,7 @@ describe("authorization boundaries", () => {
   it("requires an explicit company scope for client permission checks", () => {
     expect(() => hasPermission(client("OWNER"), "company:update")).toThrowError(AuthorizationError);
     expect(() => requirePermission(client("OWNER"), "company:update")).toThrowError(
-      AuthorizationError
+      AuthorizationError,
     );
   });
 
@@ -145,7 +145,7 @@ describe("authorization boundaries", () => {
       companyId: "company-a",
     });
     expect(() => requireCompanyAccess(principal, "company-b")).toThrow(
-      "Cross-company access is denied."
+      "Cross-company access is denied.",
     );
     expect(() => requireCompanyAccess(principal)).toThrowError(AuthorizationError);
   });
@@ -167,20 +167,20 @@ describe("authorization boundaries", () => {
   it("returns a not-found error for cross-company page access", () => {
     const principal = client("OWNER", [membership("OWNER", "company-a")]);
     expect(() => requireCompanyPageContext(principal, "company-b", "company:view")).toThrowError(
-      "Company not found."
+      "Company not found.",
     );
   });
 
   it("returns a not-found error for page access without the required permission", () => {
     const principal = client("VIEWER", [membership("VIEWER", "company-a")]);
     expect(() => requireCompanyPageContext(principal, "company-a", "company:update")).toThrowError(
-      "Company not found."
+      "Company not found.",
     );
   });
 
   it("keeps a missing target company as a required-company error for page access", () => {
     expect(() => requireCompanyPageContext(staff("DELIVERY"), "", "request:view")).toThrowError(
-      "A target company is required for resource access."
+      "A target company is required for resource access.",
     );
   });
 

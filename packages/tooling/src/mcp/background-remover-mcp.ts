@@ -1,8 +1,7 @@
-import { realpath, stat } from "node:fs/promises";
-import { isAbsolute, relative, resolve } from "node:path";
-
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { realpath, stat } from "node:fs/promises";
+import { isAbsolute, relative, resolve } from "node:path";
 import { z } from "zod";
 
 import { assertAlphaCapable, stripBackground } from "../images/remove-background-core.js";
@@ -34,7 +33,7 @@ server.registerTool(
         .min(1)
         .max(20)
         .describe(
-          "Image files to process, workspace-relative or absolute; every file is overwritten in place."
+          "Image files to process, workspace-relative or absolute; every file is overwritten in place.",
         ),
       border_tolerance: z
         .number()
@@ -50,7 +49,7 @@ server.registerTool(
         .max(64)
         .optional()
         .describe(
-          "Color distance for the final sweep that clears leftover background pixels (default 12)."
+          "Color distance for the final sweep that clears leftover background pixels (default 12).",
         ),
     },
   },
@@ -68,7 +67,7 @@ server.registerTool(
         lines.push(
           `${path}: ${result.width}x${result.height} ` +
             `background rgb(${result.background.join(", ")}) → ` +
-            `${result.removedPixels}/${result.totalPixels} px (${percent}%) made transparent`
+            `${result.removedPixels}/${result.totalPixels} px (${percent}%) made transparent`,
         );
       } catch (error) {
         failures += 1;
@@ -79,7 +78,7 @@ server.registerTool(
       content: [{ type: "text" as const, text: lines.join("\n") }],
       isError: failures > 0,
     };
-  }
+  },
 );
 
 await server.connect(new StdioServerTransport());

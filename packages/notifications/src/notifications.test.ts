@@ -1,12 +1,11 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
-import { Prisma } from "@sdk-e/db/client";
-
+import { Prisma } from "@platform/db/client";
 import {
   createNotificationDelivery,
   createNotificationIdempotent,
   getNotificationsForRecipient,
   markNotificationRead,
-} from "@sdk-e/notifications";
+} from "@platform/notifications";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 function p2002() {
   return new Prisma.PrismaClientKnownRequestError("duplicate", {
@@ -34,7 +33,7 @@ const prisma = vi.hoisted(() => {
       create: vi.fn(async (args) => {
         if (
           mocks.notifications.some(
-            (n) => n.eventKey === args.data.eventKey && n.recipientId === args.data.recipientId
+            (n) => n.eventKey === args.data.eventKey && n.recipientId === args.data.recipientId,
           )
         ) {
           throw p2002();
@@ -55,7 +54,7 @@ const prisma = vi.hoisted(() => {
       }),
       update: vi.fn(async (args) => {
         const found = mocks.notifications.find(
-          (n) => n.id === args.where.id && n.recipientId === args.where.recipientId
+          (n) => n.id === args.where.id && n.recipientId === args.where.recipientId,
         );
         if (!found) throw p2025();
         Object.assign(found, args.data);
@@ -65,7 +64,7 @@ const prisma = vi.hoisted(() => {
     notificationDelivery: {
       create: vi.fn(async (args) => {
         const dup = mocks.deliveries.find(
-          (d) => d.notificationId === args.data.notificationId && d.channel === args.data.channel
+          (d) => d.notificationId === args.data.notificationId && d.channel === args.data.channel,
         );
         if (dup) throw p2002();
         const created = { id: `d-${mocks.deliveries.length + 1}`, ...args.data };
@@ -74,7 +73,7 @@ const prisma = vi.hoisted(() => {
       }),
       findFirstOrThrow: vi.fn(async (args) => {
         const found = mocks.deliveries.find(
-          (d) => d.notificationId === args.where.notificationId && d.channel === args.where.channel
+          (d) => d.notificationId === args.where.notificationId && d.channel === args.where.channel,
         );
         if (!found) throw p2025();
         return found;
@@ -83,7 +82,7 @@ const prisma = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => prisma }));
 
 const baseInput = {
   recipientId: "recipient-1",

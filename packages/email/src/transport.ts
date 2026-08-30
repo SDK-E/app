@@ -1,4 +1,4 @@
-import { getServerEnv } from "@sdk-e/env";
+import { getServerEnv } from "@platform/env";
 
 export function escapeHtml(value: string): string {
   return value
@@ -11,7 +11,7 @@ export function escapeHtml(value: string): string {
 
 export async function sendMessage(
   message: { from: string; to: string; subject: string; html: string },
-  label: string
+  label: string,
 ): Promise<boolean> {
   if (getServerEnv().NODE_ENV !== "production") {
     const env = getServerEnv();
@@ -24,7 +24,7 @@ export async function sendMessage(
     } catch (error) {
       console.error(
         `${label}: local mail sink unreachable`,
-        error instanceof Error ? error.message : "unknown error"
+        error instanceof Error ? error.message : "unknown error",
       );
       return false;
     } finally {

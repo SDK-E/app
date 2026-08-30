@@ -1,5 +1,4 @@
 import { extname } from "node:path";
-
 import sharp from "sharp";
 
 export const DEFAULT_BORDER_TOLERANCE = 32;
@@ -29,18 +28,14 @@ export function alphaCapableExtensions(): string[] {
 export function assertAlphaCapable(file: string): void {
   if (!ALPHA_CAPABLE_EXTENSIONS.has(extname(file).toLowerCase())) {
     throw new Error(
-      `${file}: format does not support transparency — write to ${alphaCapableExtensions().join(", ")}`
+      `${file}: format does not support transparency — write to ${alphaCapableExtensions().join(", ")}`,
     );
   }
 }
 
-function distance(a: Rgb, b: Rgb): number {
-  return Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
-}
-
 export async function stripBackground(
   file: string,
-  options: StripBackgroundOptions = {}
+  options: StripBackgroundOptions = {},
 ): Promise<StripBackgroundResult> {
   assertAlphaCapable(file);
   const borderTolerance = options.borderTolerance ?? DEFAULT_BORDER_TOLERANCE;
@@ -115,4 +110,8 @@ export async function stripBackground(
     removedPixels: removed,
     totalPixels: width * height,
   };
+}
+
+function distance(a: Rgb, b: Rgb): number {
+  return Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
 }

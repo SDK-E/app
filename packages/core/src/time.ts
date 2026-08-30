@@ -1,16 +1,7 @@
-export function isValidTimeZone(tz: string): boolean {
-  try {
-    new Intl.DateTimeFormat("en-US", { timeZone: tz });
-    return true;
-  } catch {
-    return false;
-  }
-}
-
 export function formatInTimeZone(
   date: Date,
   tz: string,
-  options?: Intl.DateTimeFormatOptions
+  options?: Intl.DateTimeFormatOptions,
 ): string {
   if (!isValidTimeZone(tz)) {
     throw new Error(`Invalid IANA timezone: ${tz}`);
@@ -26,4 +17,13 @@ export function formatInTimeZone(
     timeZone: tz,
   };
   return new Intl.DateTimeFormat("en-US", { ...defaultOptions, ...options }).format(date);
+}
+
+export function isValidTimeZone(tz: string): boolean {
+  try {
+    new Intl.DateTimeFormat("en-US", { timeZone: tz });
+    return true;
+  } catch {
+    return false;
+  }
 }

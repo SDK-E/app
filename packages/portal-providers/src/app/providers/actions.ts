@@ -1,20 +1,19 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
-
+import { getCurrentPrincipal } from "@platform/auth/identity";
 import {
   getProviderApplication,
   getProviderApplicationsForReview,
   reviewProviderApplication,
   saveProviderApplicationDraft,
   submitProviderApplication,
-} from "@sdk-e/providers";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
+} from "@platform/providers";
 import {
   providerDraftSchema,
   providerReviewDecisionSchema,
   providerSubmissionSchema,
-} from "@sdk-e/providers/schemas";
+} from "@platform/providers/schemas";
+import { revalidatePath } from "next/cache";
 
 export interface ProviderActionState {
   error?: string;
@@ -25,13 +24,41 @@ export interface ProviderReviewActionState extends ProviderActionState {
   success?: boolean;
 }
 
-function message(error: unknown) {
-  return error instanceof Error ? error.message : "The action could not be completed.";
+export async function getProviderApplicationAction() {
+  const principal = await getCurrentPrincipal();
+  if (!principal) return null;
+  return getProviderApplication(principal);
+}
+
+export async function getProviderApplicationsForReviewAction() {
+  const principal = await getCurrentPrincipal();
+  if (!principal) return [];
+  return getProviderApplicationsForReview(principal);
+}
+
+export async function reviewProviderApplicationAction(
+  _state: ProviderReviewActionState,
+  formData: FormData,
+): Promise<ProviderReviewActionState> {
+  const principal = await getCurrentPrincipal();
+  if (!principal) return { error: "Your session has ended. Sign in and try again." };
+  const parsed = providerReviewDecisionSchema.safeParse({
+    decision: formData.get("decision"),
+    reason: formData.get("reason"),
+  });
+  if (!parsed.success) return { error: parsed.error.issues[0]?.message };
+  try {
+    await reviewProviderApplication(principal, formData.get("providerId") as string, parsed.data);
+  } catch (error) {
+    return { error: message(error) };
+  }
+  revalidatePath("/app/providers");
+  return { success: true };
 }
 
 export async function saveProviderApplicationAction(
   _state: ProviderActionState,
-  formData: FormData
+  formData: FormData,
 ): Promise<ProviderActionState> {
   const principal = await getCurrentPrincipal();
   if (!principal) return { error: "Your session has ended. Sign in and try again." };
@@ -69,7 +96,7 @@ export async function saveProviderApplicationAction(
 
 export async function submitProviderApplicationAction(
   _state: ProviderActionState,
-  formData: FormData
+  formData: FormData,
 ): Promise<ProviderActionState> {
   const principal = await getCurrentPrincipal();
   if (!principal) return { error: "Your session has ended. Sign in and try again." };
@@ -107,34 +134,6 @@ export async function submitProviderApplicationAction(
   return { success: true };
 }
 
-export async function reviewProviderApplicationAction(
-  _state: ProviderReviewActionState,
-  formData: FormData
-): Promise<ProviderReviewActionState> {
-  const principal = await getCurrentPrincipal();
-  if (!principal) return { error: "Your session has ended. Sign in and try again." };
-  const parsed = providerReviewDecisionSchema.safeParse({
-    decision: formData.get("decision"),
-    reason: formData.get("reason"),
-  });
-  if (!parsed.success) return { error: parsed.error.issues[0]?.message };
-  try {
-    await reviewProviderApplication(principal, formData.get("providerId") as string, parsed.data);
-  } catch (error) {
-    return { error: message(error) };
-  }
-  revalidatePath("/app/providers");
-  return { success: true };
-}
-
-export async function getProviderApplicationAction() {
-  const principal = await getCurrentPrincipal();
-  if (!principal) return null;
-  return getProviderApplication(principal);
-}
-
-export async function getProviderApplicationsForReviewAction() {
-  const principal = await getCurrentPrincipal();
-  if (!principal) return [];
-  return getProviderApplicationsForReview(principal);
+function message(error: unknown) {
+  return error instanceof Error ? error.message : "The action could not be completed.";
 }

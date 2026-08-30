@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 
-import { StaffInviteCards } from "@sdk-e/portal-staff/components/users/staff/StaffInviteCards";
-import { StaffInvitationsTable } from "@sdk-e/portal-staff/components/users/staff/StaffInvitationsTable";
-import { StaffMembersTable } from "@sdk-e/portal-staff/components/users/staff/StaffMembersTable";
-import { StaffRequestsTable } from "@sdk-e/portal-staff/components/users/staff/StaffRequestsTable";
-import { FilterSelect } from "@sdk-e/portal-shell/components/portal/users/FilterSelect";
-import { SearchInput } from "@sdk-e/portal-shell/components/portal/users/SearchInput";
-import { UsersTabNav } from "@sdk-e/portal-shell/components/portal/users/UsersTabNav";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { parseUsersListQuery, usersListHref } from "@sdk-e/users/list-links";
-import { getStaffDirectoryView } from "@sdk-e/users";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { FilterSelect } from "@platform/portal-shell/components/portal/users/FilterSelect";
+import { SearchInput } from "@platform/portal-shell/components/portal/users/SearchInput";
+import { UsersTabNav } from "@platform/portal-shell/components/portal/users/UsersTabNav";
+import { StaffInvitationsTable } from "@platform/portal-staff/components/users/staff/StaffInvitationsTable";
+import { StaffInviteCards } from "@platform/portal-staff/components/users/staff/StaffInviteCards";
+import { StaffMembersTable } from "@platform/portal-staff/components/users/staff/StaffMembersTable";
+import { StaffRequestsTable } from "@platform/portal-staff/components/users/staff/StaffRequestsTable";
+import { getStaffDirectoryView } from "@platform/users";
+import { parseUsersListQuery, usersListHref } from "@platform/users/list-links";
+import { getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Users | SDK Enterprises",
@@ -69,9 +69,15 @@ export default async function UsersPage({
       <h1 className="mt-4 text-[32px] font-extrabold md:text-h1">{t("title")}</h1>
       <p className="mt-5 max-w-[65ch] text-body text-muted-foreground">{t("intro")}</p>
 
-      <StaffInviteCards locale={locale} companies={view.companies} />
+      <StaffInviteCards
+        locale={locale}
+        companies={view.companies}
+      />
 
-      <UsersTabNav tabs={tabs} active={query.tab} />
+      <UsersTabNav
+        tabs={tabs}
+        active={query.tab}
+      />
 
       <div className="mt-5 flex flex-wrap items-center gap-3">
         <SearchInput placeholder={t("searchPlaceholder")} />

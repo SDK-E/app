@@ -1,6 +1,5 @@
+import { getAuth0Client } from "@platform/auth/auth0";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { getAuth0Client } from "@sdk-e/auth/auth0";
 
 const mocks = vi.hoisted(() => {
   const getServerEnv = vi.fn();
@@ -9,7 +8,7 @@ const mocks = vi.hoisted(() => {
   return { getServerEnv, Auth0Client, instance };
 });
 
-vi.mock("@sdk-e/env", () => ({ getServerEnv: mocks.getServerEnv }));
+vi.mock("@platform/env", () => ({ getServerEnv: mocks.getServerEnv }));
 vi.mock("@auth0/nextjs-auth0/server", () => ({ Auth0Client: mocks.Auth0Client }));
 
 beforeEach(() => {
@@ -45,7 +44,7 @@ describe("getAuth0Client", () => {
       return mocks.instance;
     });
     vi.resetModules();
-    const fresh = await import("@sdk-e/auth/auth0");
+    const fresh = await import("@platform/auth/auth0");
 
     expect(fresh.getAuth0Client()).toBe(mocks.instance);
     expect(fresh.getAuth0Client()).toBe(mocks.instance);

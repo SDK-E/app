@@ -1,7 +1,40 @@
+import { cn } from "@platform/core/utils";
+import { buttonVariants } from "@platform/ui/Button";
 import Link from "next/link";
 
-import { buttonVariants } from "@sdk-e/ui/Button";
-import { cn } from "@sdk-e/core/utils";
+export function PaginationNav({
+  nextHref,
+  prevHref,
+  prevVisible,
+  label,
+}: {
+  nextHref?: null | string;
+  prevHref?: null | string;
+  prevVisible?: boolean;
+  label: string;
+}) {
+  return (
+    <nav
+      aria-label={label}
+      className="mt-4 flex items-center justify-end gap-3"
+    >
+      <Arrow
+        href={prevHref}
+        disabled={!prevVisible || !prevHref}
+        ariaLabel="Previous page"
+      >
+        ←
+      </Arrow>
+      <Arrow
+        href={nextHref}
+        disabled={!nextHref}
+        ariaLabel="Next page"
+      >
+        →
+      </Arrow>
+    </nav>
+  );
+}
 
 function Arrow({
   href,
@@ -9,7 +42,7 @@ function Arrow({
   children,
   ariaLabel,
 }: {
-  href?: string | null;
+  href?: null | string;
   disabled?: boolean;
   children: React.ReactNode;
   ariaLabel: string;
@@ -31,33 +64,10 @@ function Arrow({
       aria-hidden="true"
       className={cn(
         buttonVariants({ variant: "outline", size: "sm" }),
-        "pointer-events-none opacity-50"
+        "pointer-events-none opacity-50",
       )}
     >
       {children}
     </span>
-  );
-}
-
-export function PaginationNav({
-  nextHref,
-  prevHref,
-  prevVisible,
-  label,
-}: {
-  nextHref?: string | null;
-  prevHref?: string | null;
-  prevVisible?: boolean;
-  label: string;
-}) {
-  return (
-    <nav aria-label={label} className="mt-4 flex items-center justify-end gap-3">
-      <Arrow href={prevHref} disabled={!prevVisible || !prevHref} ariaLabel="Previous page">
-        ←
-      </Arrow>
-      <Arrow href={nextHref} disabled={!nextHref} ariaLabel="Next page">
-        →
-      </Arrow>
-    </nav>
   );
 }

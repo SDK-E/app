@@ -17,11 +17,6 @@ function exec(command: string): string {
   }
 }
 
-function parsePortFromName(name: string): number | null {
-  const match = name.match(/:(\d+)\s*\(/);
-  return match ? Number(match[1]) : null;
-}
-
 function getListeningPorts(): ProcessInfo[] {
   const results: ProcessInfo[] = [];
 
@@ -78,7 +73,7 @@ function getProcessesOnPorts(ports: number[]): Map<number, ProcessInfo[]> {
   for (const port of ports) {
     map.set(
       port,
-      all.filter((p) => p.port === port)
+      all.filter((p) => p.port === port),
     );
   }
   return map;
@@ -93,10 +88,9 @@ function killProcess(pid: number, signal: NodeJS.Signals = "SIGTERM"): boolean {
   }
 }
 
-function usage(): void {
-  console.error(
-    `usage: portkiller <list|find <port...>|pid <port...>|check <port...>|kill <port...>|kill-force <port...>>`
-  );
+function parsePortFromName(name: string): null | number {
+  const match = name.match(/:(\d+)\s*\(/);
+  return match ? Number(match[1]) : null;
 }
 
 async function run(): Promise<number> {
@@ -146,7 +140,7 @@ async function run(): Promise<number> {
         for (const proc of procs) {
           if (cmd === "find") {
             console.log(
-              `${proc.port}\t${proc.pid}\t${proc.user}\t${proc.command}\t${proc.protocol}`
+              `${proc.port}\t${proc.pid}\t${proc.user}\t${proc.command}\t${proc.protocol}`,
             );
           } else if (cmd === "pid") {
             console.log(proc.pid);
@@ -158,7 +152,7 @@ async function run(): Promise<number> {
             console.log(
               ok
                 ? `killed pid ${proc.pid} on port ${port}`
-                : `failed to kill pid ${proc.pid} on port ${port}`
+                : `failed to kill pid ${proc.pid} on port ${port}`,
             );
             if (!ok) hasError = true;
           } else if (cmd === "kill-force") {
@@ -166,7 +160,7 @@ async function run(): Promise<number> {
             console.log(
               ok
                 ? `force killed pid ${proc.pid} on port ${port}`
-                : `failed to force kill pid ${proc.pid} on port ${port}`
+                : `failed to force kill pid ${proc.pid} on port ${port}`,
             );
             if (!ok) hasError = true;
           }
@@ -181,6 +175,12 @@ async function run(): Promise<number> {
       return 2;
     }
   }
+}
+
+function usage(): void {
+  console.error(
+    `usage: portkiller <list|find <port...>|pid <port...>|check <port...>|kill <port...>|kill-force <port...>>`,
+  );
 }
 
 run()

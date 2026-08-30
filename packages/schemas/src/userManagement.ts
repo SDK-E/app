@@ -1,7 +1,6 @@
+import { routing } from "@platform/i18n/routing";
+import { clientRoles, sdkStaffRoles } from "@platform/types";
 import { z } from "zod";
-
-import { routing } from "@sdk-e/i18n/routing";
-import { clientRoles, sdkStaffRoles } from "@sdk-e/types";
 
 export const localeSchema = z.enum(routing.locales);
 export const themeSchema = z.enum(["light", "dark", "system"]);
@@ -41,7 +40,7 @@ export const staffUpdateSchema = z
   })
   .refine(
     (value) => value.role !== undefined || value.isActive !== undefined,
-    "Choose a staff update."
+    "Choose a staff update.",
   );
 
 export const requestAccessSchema = z.object({

@@ -1,6 +1,5 @@
+import { cn } from "@platform/core/utils";
 import * as React from "react";
-
-import { cn } from "@sdk-e/core/utils";
 
 function Skeleton({ className, ...props }: React.ComponentProps<"div">) {
   return (

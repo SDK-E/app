@@ -1,4 +1,5 @@
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
+
 import { cn, formatDate, maskEmail, normalizeEmail, slugify } from "./utils";
 
 describe("utils", () => {

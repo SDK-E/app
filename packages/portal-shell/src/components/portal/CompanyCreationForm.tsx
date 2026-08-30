@@ -1,10 +1,10 @@
 "use client";
 
-import { useActionState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import type { CompanyCreationState } from "@platform/portal-shell/app/company/actions";
 
-import type { CompanyCreationState } from "@sdk-e/portal-shell/app/company/actions";
-import { Button } from "@sdk-e/ui/Button";
+import { Button } from "@platform/ui/Button";
+import { useRouter } from "next/navigation";
+import { useActionState, useEffect } from "react";
 
 export function CompanyCreationForm({
   action,
@@ -25,7 +25,10 @@ export function CompanyCreationForm({
   }, [state.success, router]);
 
   return (
-    <form action={formAction} className="mt-8 space-y-4">
+    <form
+      action={formAction}
+      className="mt-8 space-y-4"
+    >
       <label className="block text-label font-extrabold uppercase tracking-eyebrow">
         {nameLabel}
         <input
@@ -38,11 +41,17 @@ export function CompanyCreationForm({
         />
       </label>
       {state.error ? (
-        <p role="alert" className="text-body">
+        <p
+          role="alert"
+          className="text-body"
+        >
           {state.error}
         </p>
       ) : null}
-      <Button type="submit" disabled={pending}>
+      <Button
+        type="submit"
+        disabled={pending}
+      >
         {label}
       </Button>
     </form>

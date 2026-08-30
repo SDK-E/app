@@ -1,4 +1,4 @@
-export type BadgeTone = "live" | "review" | "neutral";
+export type BadgeTone = "live" | "neutral" | "review";
 
 const tones: Record<BadgeTone, string> = {
   live: "bg-brand text-dark",

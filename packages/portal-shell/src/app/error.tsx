@@ -1,13 +1,12 @@
 "use client";
 
+import { PortalErrorPage } from "@platform/portal-shell/PortalErrorPage";
 import { useTranslations } from "next-intl";
-
-import { PortalErrorPage } from "@sdk-e/portal-shell/PortalErrorPage";
 
 export default function AppError({
   reset,
 }: {
-  error: Error & { digest?: string };
+  error: { digest?: string } & Error;
   reset: () => void;
 }) {
   const t = useTranslations("portal.states");
@@ -20,7 +19,11 @@ export default function AppError({
       title={t("errorTitle")}
       description={t("errorBody")}
       action={
-        <button type="button" className="underline" onClick={reset}>
+        <button
+          type="button"
+          className="underline"
+          onClick={reset}
+        >
           {t("tryAgain")}
         </button>
       }

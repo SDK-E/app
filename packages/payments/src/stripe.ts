@@ -1,9 +1,8 @@
 import "server-only";
-
+import { getServerEnv } from "@platform/env";
 import Stripe from "stripe";
-import { getServerEnv } from "@sdk-e/env";
 
-let _stripe: Stripe | null = null;
+let _stripe: null | Stripe = null;
 
 export function getStripe(): Stripe {
   if (!_stripe) {

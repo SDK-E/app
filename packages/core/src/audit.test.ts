@@ -1,10 +1,9 @@
+import { createAuditEvent } from "@platform/core/audit";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { createAuditEvent } from "@sdk-e/core/audit";
 
 const mockCreate = vi.fn();
 
-vi.mock("@sdk-e/db", () => ({
+vi.mock("@platform/db", () => ({
   getPrisma: () => ({
     auditEvent: {
       create: mockCreate,
@@ -57,7 +56,7 @@ describe("audit", () => {
           actorId: undefined,
           companyId: undefined,
         }),
-      })
+      }),
     );
   });
 
@@ -77,7 +76,7 @@ describe("audit", () => {
           actorId: "user-1",
           actorKind: "USER",
         }),
-      })
+      }),
     );
   });
 
@@ -97,7 +96,7 @@ describe("audit", () => {
           actorId: "provider-1",
           actorKind: "PROVIDER",
         }),
-      })
+      }),
     );
   });
 
@@ -119,7 +118,7 @@ describe("audit", () => {
           toState: "SUBMITTED",
           metadata: { note: "Application submitted" },
         }),
-      })
+      }),
     );
   });
 });

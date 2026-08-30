@@ -1,13 +1,14 @@
-import Image from "next/image";
+import type { UnassignedPrincipal } from "@platform/types";
+
+import { createCompanyAction } from "@platform/portal-shell/app/company/actions";
+import { AccessRequestForm } from "@platform/portal-shell/components/portal/AccessRequestForm";
+import { CompanyCreationForm } from "@platform/portal-shell/components/portal/CompanyCreationForm";
+import { Badge } from "@platform/ui/Badge";
+import { getUserAccessRequests } from "@platform/users";
 import { getTranslations } from "next-intl/server";
+import Image from "next/image";
 
 import { requestAccessAction } from "@/app/[locale]/(app)/app/access/actions";
-import { createCompanyAction } from "@sdk-e/portal-shell/app/company/actions";
-import { AccessRequestForm } from "@sdk-e/portal-shell/components/portal/AccessRequestForm";
-import { CompanyCreationForm } from "@sdk-e/portal-shell/components/portal/CompanyCreationForm";
-import { Badge } from "@sdk-e/ui/Badge";
-import { getUserAccessRequests } from "@sdk-e/users";
-import type { UnassignedPrincipal } from "@sdk-e/types";
 
 export async function AccessPending({
   principal,
@@ -67,7 +68,7 @@ export async function AccessPending({
                   <p className="mt-1 text-micro uppercase tracking-eyebrow text-dark-muted">
                     {request.requestedRole.replaceAll("_", " ")} ·{" "}
                     {new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(
-                      request.createdAt
+                      request.createdAt,
                     )}
                   </p>
                 </div>

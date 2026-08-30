@@ -1,25 +1,20 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { getTranslations } from "next-intl/server";
 
-import { Badge } from "@sdk-e/ui/Badge";
-import { Card } from "@sdk-e/ui/Card";
-import { EmptyState } from "@sdk-e/ui/EmptyState";
-import { OpportunityCardActions } from "@sdk-e/portal-providers/components/OpportunityCardActions";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { requireProviderPrincipal } from "@sdk-e/auth/authorization";
-import { renderForPage } from "@sdk-e/portal-shell/lib/render-for-page";
-import { listProviderInvitations } from "@sdk-e/opportunities/invitations";
+import { requireProviderPrincipal } from "@platform/auth/authorization";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { listProviderInvitations } from "@platform/opportunities/invitations";
+import { OpportunityCardActions } from "@platform/portal-providers/components/OpportunityCardActions";
+import { renderForPage } from "@platform/portal-shell/lib/render-for-page";
+import { Badge } from "@platform/ui/Badge";
+import { Card } from "@platform/ui/Card";
+import { EmptyState } from "@platform/ui/EmptyState";
+import { getTranslations } from "next-intl/server";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Invitations | SDK Enterprises",
   robots: { index: false, follow: false },
 };
-
-function formatDate(locale: string, value: Date | null | undefined) {
-  if (!value) return null;
-  return new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(new Date(value));
-}
 
 export default async function InvitationsPage({ params }: { params: Promise<{ locale: string }> }) {
   const [{ locale }, principal] = await Promise.all([params, getCurrentPrincipal()]);
@@ -59,7 +54,10 @@ export default async function InvitationsPage({ params }: { params: Promise<{ lo
       ) : (
         <div className="mt-10 grid gap-5">
           {pending.map((invitation) => (
-            <Card key={invitation.id} className="flex flex-col">
+            <Card
+              key={invitation.id}
+              className="flex flex-col"
+            >
               <div className="flex flex-wrap items-center gap-2">
                 <Badge tone="live">{t("invitations.status.PENDING")}</Badge>
                 <span className="text-body">
@@ -111,4 +109,9 @@ export default async function InvitationsPage({ params }: { params: Promise<{ lo
       ) : null}
     </section>
   );
+}
+
+function formatDate(locale: string, value: Date | null | undefined) {
+  if (!value) return null;
+  return new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(new Date(value));
 }

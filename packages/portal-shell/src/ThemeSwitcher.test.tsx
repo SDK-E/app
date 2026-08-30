@@ -15,7 +15,7 @@ vi.mock("next-intl", () => ({
     ({ light: "Light theme", dark: "Dark theme", system: "System theme" })[key] ?? key,
 }));
 
-import { ThemeSwitcher } from "@sdk-e/portal-shell/ThemeSwitcher";
+import { ThemeSwitcher } from "@platform/portal-shell/ThemeSwitcher";
 
 function arrange(theme: string) {
   const setTheme = vi.fn();
@@ -35,13 +35,13 @@ describe("ThemeSwitcher", () => {
     render(<ThemeSwitcher />);
 
     expect(screen.getByRole("button", { name: "Light theme" }).getAttribute("aria-label")).toBe(
-      "Light theme"
+      "Light theme",
     );
     expect(screen.getByRole("button", { name: "Dark theme" }).getAttribute("aria-label")).toBe(
-      "Dark theme"
+      "Dark theme",
     );
     expect(screen.getByRole("button", { name: "System theme" }).getAttribute("aria-label")).toBe(
-      "System theme"
+      "System theme",
     );
   });
 

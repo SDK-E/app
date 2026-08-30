@@ -7,12 +7,12 @@ export interface Money {
 
 const ISO_4217_REGEX = /^[A-Z]{3}$/;
 
-export function isValidCurrency(code: string): boolean {
-  return ISO_4217_REGEX.test(code);
-}
-
-export function isSameCurrency(a: Money, b: Money): boolean {
-  return a.currency === b.currency;
+export function addMoney(a: Money, b: Money): Money {
+  assertSameCurrency(a, b);
+  return {
+    amount: roundCurrency(a.amount + b.amount),
+    currency: a.currency,
+  };
 }
 
 export function assertSameCurrency(a: Money, b: Money): void {
@@ -21,12 +21,12 @@ export function assertSameCurrency(a: Money, b: Money): void {
   }
 }
 
-export function addMoney(a: Money, b: Money): Money {
-  assertSameCurrency(a, b);
-  return {
-    amount: roundCurrency(a.amount + b.amount),
-    currency: a.currency,
-  };
+export function isSameCurrency(a: Money, b: Money): boolean {
+  return a.currency === b.currency;
+}
+
+export function isValidCurrency(code: string): boolean {
+  return ISO_4217_REGEX.test(code);
 }
 
 export function subtractMoney(a: Money, b: Money): Money {

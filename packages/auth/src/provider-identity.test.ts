@@ -1,15 +1,16 @@
 import type { SessionData } from "@auth0/nextjs-auth0/types";
+
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({ upsert: vi.fn(), findUnique: vi.fn(), update: vi.fn() }));
 
-vi.mock("@sdk-e/db", () => ({
+vi.mock("@platform/db", () => ({
   getPrisma: () => ({
     user: { upsert: mocks.upsert, findUnique: mocks.findUnique, update: mocks.update },
   }),
 }));
 
-import { IdentityError, resolveAppPrincipal } from "@sdk-e/auth/identity";
+import { IdentityError, resolveAppPrincipal } from "@platform/auth/identity";
 
 function session(user: SessionData["user"]): SessionData {
   return {
@@ -43,7 +44,7 @@ describe("resolveAppPrincipal — provider identity", () => {
   it("resolves a provider principal when the User has a Provider profile", async () => {
     mocks.upsert.mockResolvedValue(providerUser);
     await expect(
-      resolveAppPrincipal(session({ sub: "auth0|user-1", email: "person@example.test" }))
+      resolveAppPrincipal(session({ sub: "auth0|user-1", email: "person@example.test" })),
     ).resolves.toMatchObject({ kind: "provider", providerId: "provider-1" });
   });
 
@@ -55,7 +56,7 @@ describe("resolveAppPrincipal — provider identity", () => {
       ],
     });
     await expect(
-      resolveAppPrincipal(session({ sub: "auth0|user-1", email: "person@example.test" }))
+      resolveAppPrincipal(session({ sub: "auth0|user-1", email: "person@example.test" })),
     ).rejects.toBeInstanceOf(IdentityError);
   });
 
@@ -65,14 +66,14 @@ describe("resolveAppPrincipal — provider identity", () => {
       sdkStaffRole: "ADMIN",
     });
     await expect(
-      resolveAppPrincipal(session({ sub: "auth0|user-1", email: "person@example.test" }))
+      resolveAppPrincipal(session({ sub: "auth0|user-1", email: "person@example.test" })),
     ).resolves.toMatchObject({ kind: "provider", providerId: "provider-1" });
   });
 
   it("refreshes email on login without overwriting the provider profile", async () => {
     mocks.upsert.mockResolvedValue({ ...providerUser, name: "New Name" });
     await resolveAppPrincipal(
-      session({ sub: "auth0|user-1", email: "person@example.test", name: "New Name" })
+      session({ sub: "auth0|user-1", email: "person@example.test", name: "New Name" }),
     );
 
     const input = mocks.upsert.mock.calls[0][0];

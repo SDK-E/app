@@ -1,13 +1,13 @@
 "use client";
 
+import type { AssignedPrincipal } from "@platform/types";
+
+import { AccountMenu } from "@platform/portal-shell/AccountMenu";
+import { ActiveCompanyLabel } from "@platform/portal-shell/ActiveCompanyLabel";
+import { AppNav } from "@platform/portal-shell/AppNav";
 import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-
-import { AccountMenu } from "@sdk-e/portal-shell/AccountMenu";
-import { ActiveCompanyLabel } from "@sdk-e/portal-shell/ActiveCompanyLabel";
-import { AppNav } from "@sdk-e/portal-shell/AppNav";
-import type { AssignedPrincipal } from "@sdk-e/types";
 
 const STORAGE_KEY = "sdk.portal.sidebar.collapsed";
 
@@ -26,22 +26,6 @@ interface AppShellFrameLabels {
   theme: string;
   collapseSidebar: string;
   expandSidebar: string;
-}
-
-function readStoredCollapsed(): boolean {
-  try {
-    return window.localStorage.getItem(STORAGE_KEY) === "1";
-  } catch {
-    return false;
-  }
-}
-
-function persistCollapsed(value: boolean): void {
-  try {
-    window.localStorage.setItem(STORAGE_KEY, value ? "1" : "0");
-  } catch {
-    return;
-  }
 }
 
 export function AppShellFrame({
@@ -120,7 +104,10 @@ export function AppShellFrame({
               title={toggleLabel}
               className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-nav text-light transition-colors hover:bg-dark-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand motion-reduce:transition-none lg:inline-flex"
             >
-              <ToggleIcon className="h-5 w-5" aria-hidden />
+              <ToggleIcon
+                className="h-5 w-5"
+                aria-hidden
+              />
             </button>
           </div>
           <span
@@ -135,7 +122,12 @@ export function AppShellFrame({
           aria-label="Application"
           className="border-t border-dark-deep px-3 py-3 lg:flex-1 lg:px-4"
         >
-          <AppNav locale={locale} principal={principal} labels={labels} collapsed={collapsed} />
+          <AppNav
+            locale={locale}
+            principal={principal}
+            labels={labels}
+            collapsed={collapsed}
+          />
         </nav>
         <div className="relative hidden border-t border-dark-deep px-3 py-3 lg:block lg:px-4">
           <AccountMenu
@@ -159,7 +151,10 @@ export function AppShellFrame({
         <header className="flex min-h-20 items-center justify-between gap-6 border-b border-line px-6 lg:px-10">
           <div>
             <p className="text-micro uppercase tracking-eyebrow text-muted-foreground">
-              <ActiveCompanyLabel principal={principal} fallback={fallbackLabel} />
+              <ActiveCompanyLabel
+                principal={principal}
+                fallback={fallbackLabel}
+              />
             </p>
             <p className="mt-1 text-body font-semibold">{principal.name}</p>
           </div>
@@ -182,4 +177,20 @@ export function AppShellFrame({
       </div>
     </div>
   );
+}
+
+function persistCollapsed(value: boolean): void {
+  try {
+    window.localStorage.setItem(STORAGE_KEY, value ? "1" : "0");
+  } catch {
+    return;
+  }
+}
+
+function readStoredCollapsed(): boolean {
+  try {
+    return window.localStorage.getItem(STORAGE_KEY) === "1";
+  } catch {
+    return false;
+  }
 }

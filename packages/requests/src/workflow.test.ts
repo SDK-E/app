@@ -1,12 +1,12 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   acceptProposal,
   createRequestDraft,
   respondToInformationRequest,
   submitRequest,
   updateRequestDraft,
-} from "@sdk-e/requests/workflow";
-import { principal } from "@sdk-e/test-support/test-fixtures";
+} from "@platform/requests/workflow";
+import { principal } from "@platform/test-support/test-fixtures";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => {
   const request = { create: vi.fn(), findFirst: vi.fn(), update: vi.fn() };
@@ -20,7 +20,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 mocks.prisma.$transaction.mockImplementation(async (callback) => callback(mocks.prisma));
 const input = {
   title: "AI support automation",
@@ -59,7 +59,7 @@ describe("createRequestDraft", () => {
   });
   it("rejects SDK staff who lack a client company", async () => {
     await expect(createRequestDraft(principal("sdk-admin"), "company-1", input)).rejects.toThrow(
-      "Client-company access is required."
+      "Client-company access is required.",
     );
     expect(mocks.request.create).not.toHaveBeenCalled();
   });
@@ -77,13 +77,13 @@ describe("updateRequestDraft", () => {
   });
   it("throws when the draft does not exist", async () => {
     await expect(
-      updateRequestDraft(principal("owner"), "company-1", "request-missing", input)
+      updateRequestDraft(principal("owner"), "company-1", "request-missing", input),
     ).rejects.toThrow("Request not found.");
   });
   it("throws when the request was already submitted", async () => {
     mocks.request.findFirst.mockResolvedValue({ id: "request-1", status: "SUBMITTED" });
     await expect(
-      updateRequestDraft(principal("owner"), "company-1", "request-1", input)
+      updateRequestDraft(principal("owner"), "company-1", "request-1", input),
     ).rejects.toThrow("Only draft requests can be edited.");
   });
 });
@@ -107,12 +107,12 @@ describe("submitRequest", () => {
   it("throws when a non-draft request is submitted", async () => {
     mocks.request.findFirst.mockResolvedValue({ id: "request-1", status: "IN_REVIEW" });
     await expect(
-      submitRequest(principal("owner"), "company-1", "request-1", input)
+      submitRequest(principal("owner"), "company-1", "request-1", input),
     ).rejects.toThrow("This request has already been submitted.");
   });
   it("throws when the request does not exist", async () => {
     await expect(
-      submitRequest(principal("owner"), "company-1", "request-missing", input)
+      submitRequest(principal("owner"), "company-1", "request-missing", input),
     ).rejects.toThrow("Request not found.");
   });
 });
@@ -124,7 +124,7 @@ describe("respondToInformationRequest", () => {
       principal("owner"),
       "company-1",
       "request-1",
-      "Here is the answer."
+      "Here is the answer.",
     );
     expect(mocks.message.create).toHaveBeenCalledWith({
       data: {
@@ -153,8 +153,8 @@ describe("respondToInformationRequest", () => {
         principal("owner"),
         "company-1",
         "request-1",
-        "Here is the answer."
-      )
+        "Here is the answer.",
+      ),
     ).rejects.toThrow("This request is not waiting for information.");
   });
   it("throws when the request does not exist", async () => {
@@ -163,8 +163,8 @@ describe("respondToInformationRequest", () => {
         principal("owner"),
         "company-1",
         "request-missing",
-        "Here is the answer."
-      )
+        "Here is the answer.",
+      ),
     ).rejects.toThrow("Request not found.");
   });
 });
@@ -188,12 +188,12 @@ describe("acceptProposal", () => {
   it("throws when the proposal is no longer accepting", async () => {
     mocks.request.findFirst.mockResolvedValue({ id: "request-1", status: "REJECTED" });
     await expect(acceptProposal(principal("owner"), "company-1", "request-1")).rejects.toThrow(
-      "This proposal is no longer available to accept."
+      "This proposal is no longer available to accept.",
     );
   });
   it("throws when the request does not exist", async () => {
     await expect(
-      acceptProposal(principal("owner"), "company-1", "request-missing")
+      acceptProposal(principal("owner"), "company-1", "request-missing"),
     ).rejects.toThrow("Request not found.");
   });
 });

@@ -1,11 +1,11 @@
 import { existsSync, statSync } from "node:fs";
 import { resolve } from "node:path";
 
-type EvalArgs = {
+interface EvalArgs {
   body: string;
   files: string[];
   title: string;
-};
+}
 
 function parseArgs(): EvalArgs {
   const args = process.argv.slice(2);

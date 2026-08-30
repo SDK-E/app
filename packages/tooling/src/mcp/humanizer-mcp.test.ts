@@ -1,9 +1,8 @@
+import { Client } from "@modelcontextprotocol/sdk/client/index.js";
+import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
 import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-
-import { Client } from "@modelcontextprotocol/sdk/client/index.js";
-import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
 import { afterEach, describe, expect, it } from "vitest";
 
 const TOOLING_DIR = dirname(fileURLToPath(import.meta.url));
@@ -102,7 +101,7 @@ describe("humanizer MCP", () => {
     const filePath = join(directory, "copy.md");
     await writeFile(
       filePath,
-      'Furthermore, this documentation has the ability to utilize Prisma 7.9.1.\n\n```ts\nconst message = "Furthermore, keep this exact.";\n```\n'
+      'Furthermore, this documentation has the ability to utilize Prisma 7.9.1.\n\n```ts\nconst message = "Furthermore, keep this exact.";\n```\n',
     );
     const client = await connect();
     const result = await client.callTool({

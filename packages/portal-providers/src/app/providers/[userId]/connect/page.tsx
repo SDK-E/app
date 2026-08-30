@@ -1,7 +1,7 @@
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { requireProviderPrincipal } from "@sdk-e/auth/authorization";
-import { renderForPage } from "@sdk-e/portal-shell/lib/render-for-page";
-import { getPrisma } from "@sdk-e/db";
+import { requireProviderPrincipal } from "@platform/auth/authorization";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { getPrisma } from "@platform/db";
+import { renderForPage } from "@platform/portal-shell/lib/render-for-page";
 
 interface PageProps {
   params: Promise<{ locale: string; userId: string }>;
@@ -20,7 +20,7 @@ export default async function ProviderConnectPage({ params }: PageProps) {
         where: { userId: (await params).userId },
       });
     },
-    (await params).locale
+    (await params).locale,
   );
 
   return (
@@ -40,7 +40,10 @@ export default async function ProviderConnectPage({ params }: PageProps) {
             <p className="text-sm">Type: {connectedAccount.type ?? "express"}</p>
           </div>
 
-          <form action={`/${(await params).locale}/api/connect/onboarding`} method="post">
+          <form
+            action={`/${(await params).locale}/api/connect/onboarding`}
+            method="post"
+          >
             <input
               type="hidden"
               name="returnUrl"

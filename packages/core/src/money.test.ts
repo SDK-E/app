@@ -1,12 +1,11 @@
-import { describe, expect, it } from "vitest";
-
 import {
   addMoney,
   assertSameCurrency,
   isValidCurrency,
   moneySchema,
   subtractMoney,
-} from "@sdk-e/core/money";
+} from "@platform/core/money";
+import { describe, expect, it } from "vitest";
 
 describe("money", () => {
   describe("isValidCurrency", () => {
@@ -22,13 +21,13 @@ describe("money", () => {
   describe("assertSameCurrency", () => {
     it("passes for matching currencies", () => {
       expect(() =>
-        assertSameCurrency({ amount: 10, currency: "USD" }, { amount: 5, currency: "USD" })
+        assertSameCurrency({ amount: 10, currency: "USD" }, { amount: 5, currency: "USD" }),
       ).not.toThrow();
     });
 
     it("throws for mismatched currencies", () => {
       expect(() =>
-        assertSameCurrency({ amount: 10, currency: "USD" }, { amount: 5, currency: "EUR" })
+        assertSameCurrency({ amount: 10, currency: "USD" }, { amount: 5, currency: "EUR" }),
       ).toThrow("Currency mismatch");
     });
   });
@@ -50,7 +49,7 @@ describe("money", () => {
 
     it("throws on currency mismatch", () => {
       expect(() =>
-        addMoney({ amount: 10, currency: "USD" }, { amount: 5, currency: "EUR" })
+        addMoney({ amount: 10, currency: "USD" }, { amount: 5, currency: "EUR" }),
       ).toThrow();
     });
   });
@@ -58,7 +57,7 @@ describe("money", () => {
   describe("subtractMoney", () => {
     it("subtracts amounts with matching currency", () => {
       expect(
-        subtractMoney({ amount: 10, currency: "USD" }, { amount: 3, currency: "USD" })
+        subtractMoney({ amount: 10, currency: "USD" }, { amount: 3, currency: "USD" }),
       ).toEqual({
         amount: 7,
         currency: "USD",
@@ -67,7 +66,7 @@ describe("money", () => {
 
     it("throws on currency mismatch", () => {
       expect(() =>
-        subtractMoney({ amount: 10, currency: "USD" }, { amount: 5, currency: "EUR" })
+        subtractMoney({ amount: 10, currency: "USD" }, { amount: 5, currency: "EUR" }),
       ).toThrow();
     });
   });
@@ -76,25 +75,25 @@ describe("money", () => {
     it("validates valid inputs", () => {
       expect(moneySchema.safeParse({ amount: 10.5, currency: "USD" })).toHaveProperty(
         "success",
-        true
+        true,
       );
     });
 
     it("rejects invalid currency codes", () => {
       expect(moneySchema.safeParse({ amount: 10, currency: "US" })).toHaveProperty(
         "success",
-        false
+        false,
       );
       expect(moneySchema.safeParse({ amount: 10, currency: "usd" })).toHaveProperty(
         "success",
-        false
+        false,
       );
     });
 
     it("rejects non-finite amounts", () => {
       expect(moneySchema.safeParse({ amount: Infinity, currency: "USD" })).toHaveProperty(
         "success",
-        false
+        false,
       );
     });
   });

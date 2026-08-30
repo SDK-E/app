@@ -1,9 +1,9 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import type { RequestActionState } from "@platform/portal-shell/app/companies/[companyId]/requests/actions";
 
-import { Button } from "@sdk-e/ui/Button";
-import type { RequestActionState } from "@sdk-e/portal-shell/app/companies/[companyId]/requests/actions";
+import { Button } from "@platform/ui/Button";
+import { useActionState, useState } from "react";
 
 const field =
   "mt-2 min-h-12 w-full rounded-control border border-line bg-paper px-4 py-3 text-body text-dark outline-none focus-visible:border-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current";
@@ -31,12 +31,15 @@ export function RequestForm({
 }: {
   action: (state: RequestActionState, formData: FormData) => Promise<RequestActionState>;
   copy: RequestFormCopy;
-  initial?: Record<string, string | string[] | null>;
+  initial?: Record<string, null | string | string[]>;
 }) {
   const [state, formAction, pending] = useActionState(action, {});
   const [reviewing, setReviewing] = useState(false);
   return (
-    <form action={formAction} className="max-w-3xl space-y-6">
+    <form
+      action={formAction}
+      className="max-w-3xl space-y-6"
+    >
       {reviewing ? (
         <div className="rounded-card border border-line bg-paper p-6">
           <h2 className="text-h3 font-extrabold">{copy.reviewHeading}</h2>
@@ -63,11 +66,17 @@ export function RequestForm({
           required
           defaultValue={String(initial?.capability ?? "")}
         >
-          <option value="" disabled>
+          <option
+            value=""
+            disabled
+          >
             —
           </option>
           {Object.entries(copy.capabilities).map(([value, label]) => (
-            <option key={value} value={value}>
+            <option
+              key={value}
+              value={value}
+            >
               {label}
             </option>
           ))}
@@ -116,25 +125,44 @@ export function RequestForm({
         />
       </label>
       {state.error ? (
-        <p role="alert" className="text-body text-destructive">
+        <p
+          role="alert"
+          className="text-body text-destructive"
+        >
           {state.error}
         </p>
       ) : null}
       <div className="flex flex-wrap gap-3">
-        <Button name="intent" value="draft" variant="outline" disabled={pending}>
+        <Button
+          name="intent"
+          value="draft"
+          variant="outline"
+          disabled={pending}
+        >
           {pending ? copy.working : copy.saveDraft}
         </Button>
         {reviewing ? (
           <>
-            <Button type="button" variant="outline" onClick={() => setReviewing(false)}>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setReviewing(false)}
+            >
               {copy.back}
             </Button>
-            <Button name="intent" value="submit" disabled={pending}>
+            <Button
+              name="intent"
+              value="submit"
+              disabled={pending}
+            >
               {pending ? copy.working : copy.submit}
             </Button>
           </>
         ) : (
-          <Button type="button" onClick={() => setReviewing(true)}>
+          <Button
+            type="button"
+            onClick={() => setReviewing(true)}
+          >
             {copy.review}
           </Button>
         )}

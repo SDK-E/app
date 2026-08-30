@@ -1,27 +1,22 @@
+import type { OpportunityPublicRecord } from "@platform/opportunities/safe";
 import type { Metadata } from "next";
-import Link from "next/link";
-import { getTranslations } from "next-intl/server";
 
-import { Badge } from "@sdk-e/ui/Badge";
-import { Card } from "@sdk-e/ui/Card";
-import { EmptyState } from "@sdk-e/ui/EmptyState";
-import { OpportunityCardActions } from "@sdk-e/portal-providers/components/OpportunityCardActions";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { requireProviderPrincipal } from "@sdk-e/auth/authorization";
-import { renderForPage } from "@sdk-e/portal-shell/lib/render-for-page";
-import { listOpportunities } from "@sdk-e/opportunities/queries";
-import { listProviderInvitations } from "@sdk-e/opportunities/invitations";
-import type { OpportunityPublicRecord } from "@sdk-e/opportunities/safe";
+import { requireProviderPrincipal } from "@platform/auth/authorization";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { listProviderInvitations } from "@platform/opportunities/invitations";
+import { listOpportunities } from "@platform/opportunities/queries";
+import { OpportunityCardActions } from "@platform/portal-providers/components/OpportunityCardActions";
+import { renderForPage } from "@platform/portal-shell/lib/render-for-page";
+import { Badge } from "@platform/ui/Badge";
+import { Card } from "@platform/ui/Card";
+import { EmptyState } from "@platform/ui/EmptyState";
+import { getTranslations } from "next-intl/server";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Opportunities | SDK Enterprises",
   robots: { index: false, follow: false },
 };
-
-function formatDate(locale: string, value: Date | null | undefined) {
-  if (!value) return null;
-  return new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(new Date(value));
-}
 
 export default async function OpportunitiesPage({
   params,
@@ -44,7 +39,7 @@ export default async function OpportunitiesPage({
   const pendingByOpportunity = new Map(
     invitations
       .filter((invitation) => invitation.status === "PENDING")
-      .map((invitation) => [invitation.opportunityId, invitation])
+      .map((invitation) => [invitation.opportunityId, invitation]),
   );
 
   return (
@@ -73,7 +68,10 @@ export default async function OpportunitiesPage({
             const invitation = pendingByOpportunity.get(opportunity.id);
             const visibilityLabel = t(`visibility.${opportunity.visibilityMode}`);
             return (
-              <Card key={opportunity.id} className="flex flex-col">
+              <Card
+                key={opportunity.id}
+                className="flex flex-col"
+              >
                 <div className="flex flex-wrap items-center gap-2">
                   <Badge tone={invitation ? "live" : "neutral"}>
                     {invitation ? t("browse.invited") : visibilityLabel}
@@ -96,13 +94,13 @@ export default async function OpportunitiesPage({
                 ) : null}
                 <dl className="mt-4 space-y-1 text-body">
                   {opportunity.clientIdentityVisible &&
-                  (opportunity as OpportunityPublicRecord & { clientName?: string | null })
+                  (opportunity as { clientName?: null | string } & OpportunityPublicRecord)
                     .clientName ? (
                     <div className="flex gap-2">
                       <dt className="font-semibold">{t("browse.client")}:</dt>
                       <dd>
                         {
-                          (opportunity as OpportunityPublicRecord & { clientName?: string | null })
+                          (opportunity as { clientName?: null | string } & OpportunityPublicRecord)
                             .clientName
                         }
                       </dd>
@@ -133,4 +131,9 @@ export default async function OpportunitiesPage({
       )}
     </section>
   );
+}
+
+function formatDate(locale: string, value: Date | null | undefined) {
+  if (!value) return null;
+  return new Intl.DateTimeFormat(locale, { dateStyle: "medium" }).format(new Date(value));
 }

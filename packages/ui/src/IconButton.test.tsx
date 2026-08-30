@@ -1,7 +1,6 @@
+import { IconButton } from "@platform/ui/IconButton";
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
-
-import { IconButton } from "@sdk-e/ui/IconButton";
 
 describe("IconButton", () => {
   afterEach(() => {
@@ -13,7 +12,7 @@ describe("IconButton", () => {
     render(
       <IconButton aria-label="Settings">
         <span>icon</span>
-      </IconButton>
+      </IconButton>,
     );
     expect(screen.getByRole("button", { name: "Settings" })).not.toBeNull();
   });
@@ -23,7 +22,7 @@ describe("IconButton", () => {
     render(
       <IconButton>
         <span>icon</span>
-      </IconButton>
+      </IconButton>,
     );
     expect(warn).toHaveBeenCalledOnce();
     expect(warn.mock.calls[0][0]).toContain("aria-label");

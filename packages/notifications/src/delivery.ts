@@ -1,12 +1,18 @@
-import { getPrisma } from "@sdk-e/db";
-import type { Notification, NotificationDelivery } from "@sdk-e/db/client";
+import type { Notification, NotificationDelivery } from "@platform/db/client";
+
+import { getPrisma } from "@platform/db";
+import { sendOpportunityInvitationNotification } from "@platform/email/opportunity-invitation";
+import { sendOpportunityInvitationExpiryNotification } from "@platform/email/opportunity-invitation-expiry";
 
 import { createNotificationDelivery } from "./notifications";
-import { sendOpportunityInvitationNotification } from "@sdk-e/email/opportunity-invitation";
-import { sendOpportunityInvitationExpiryNotification } from "@sdk-e/email/opportunity-invitation-expiry";
 
-export async function deliverInApp(notification: Notification): Promise<NotificationDelivery> {
-  return createNotificationDelivery(notification.id, "IN_APP");
+export async function deliver(notification: Notification): Promise<{
+  inApp: NotificationDelivery;
+  email: boolean;
+}> {
+  const inApp = await deliverInApp(notification);
+  const email = await deliverEmail(notification);
+  return { inApp, email };
 }
 
 export async function deliverEmail(notification: Notification): Promise<boolean> {
@@ -53,11 +59,6 @@ export async function deliverEmail(notification: Notification): Promise<boolean>
   return sent;
 }
 
-export async function deliver(notification: Notification): Promise<{
-  inApp: NotificationDelivery;
-  email: boolean;
-}> {
-  const inApp = await deliverInApp(notification);
-  const email = await deliverEmail(notification);
-  return { inApp, email };
+export async function deliverInApp(notification: Notification): Promise<NotificationDelivery> {
+  return createNotificationDelivery(notification.id, "IN_APP");
 }

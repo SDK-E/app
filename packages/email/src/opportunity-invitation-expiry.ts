@@ -1,12 +1,13 @@
-import { sendMessage } from "@sdk-e/email/transport";
-import { siteConfig } from "@sdk-e/config/site";
+import { siteConfig } from "@platform/config/site";
+import { sendMessage } from "@platform/email/transport";
+
 import {
-  renderOpportunityInvitationExpiryEmail,
   type OpportunityInvitationExpiryEmailProps,
+  renderOpportunityInvitationExpiryEmail,
 } from "./opportunity-invitation-emails";
 
 export async function sendOpportunityInvitationExpiryNotification(
-  props: OpportunityInvitationExpiryEmailProps & { to: string }
+  props: { to: string } & OpportunityInvitationExpiryEmailProps,
 ): Promise<boolean> {
   return sendMessage(
     {
@@ -15,6 +16,6 @@ export async function sendOpportunityInvitationExpiryNotification(
       subject: `Invitation to ${props.opportunityTitle} has expired`,
       html: renderOpportunityInvitationExpiryEmail(props),
     },
-    "opportunity invitation expiry email"
+    "opportunity invitation expiry email",
   );
 }

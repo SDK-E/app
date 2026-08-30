@@ -1,7 +1,6 @@
+import { Switch } from "@platform/ui/Switch";
 import { cleanup, fireEvent, render } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-
-import { Switch } from "@sdk-e/ui/Switch";
 
 describe("Switch", () => {
   afterEach(() => cleanup());

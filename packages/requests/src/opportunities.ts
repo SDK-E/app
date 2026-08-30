@@ -1,23 +1,13 @@
-import { notFound, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { getPrisma } from "@sdk-e/db";
-import { activity, requireActiveCompany, scope } from "@sdk-e/requests/guards";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { AppPrincipal } from "@platform/types";
 
-function composeOpportunityDescription(request: {
-  description: string;
-  businessContext: string | null;
-  desiredOutcomes: string | null;
-}) {
-  const parts = [request.description];
-  if (request.businessContext) parts.push(request.businessContext);
-  if (request.desiredOutcomes) parts.push(request.desiredOutcomes);
-  return parts.join("\n\n");
-}
+import { notFound, requireSdkStaff } from "@platform/auth/authorization";
+import { getPrisma } from "@platform/db";
+import { activity, requireActiveCompany, scope } from "@platform/requests/guards";
 
 export async function convertRequestToOpportunity(
   principal: AppPrincipal,
   companyId: string,
-  id: string
+  id: string,
 ) {
   const staff = requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
   scope(staff, "request:update");
@@ -55,4 +45,15 @@ export async function convertRequestToOpportunity(
     });
     return opportunity;
   });
+}
+
+function composeOpportunityDescription(request: {
+  description: string;
+  businessContext: null | string;
+  desiredOutcomes: null | string;
+}) {
+  const parts = [request.description];
+  if (request.businessContext) parts.push(request.businessContext);
+  if (request.desiredOutcomes) parts.push(request.desiredOutcomes);
+  return parts.join("\n\n");
 }

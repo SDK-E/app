@@ -1,26 +1,11 @@
+import type { AppPrincipal } from "@platform/types";
+
 import {
   hasPermission,
   requireClientPrincipal,
   requireCompanyPageContext,
-} from "@sdk-e/auth/authorization";
-import { getPrisma } from "@sdk-e/db";
-import type { AppPrincipal } from "@sdk-e/types";
-
-export function groupInvoiceTotals(
-  invoices: ReadonlyArray<{
-    amount: { toString(): string } | number;
-    currency: string;
-    status: string;
-  }>
-) {
-  return invoices.reduce<Record<string, { sent: number; overdue: number }>>((totals, invoice) => {
-    const row = totals[invoice.currency] ?? { sent: 0, overdue: 0 };
-    if (invoice.status === "OVERDUE") row.overdue += Number(invoice.amount);
-    else if (invoice.status === "SENT") row.sent += Number(invoice.amount);
-    totals[invoice.currency] = row;
-    return totals;
-  }, {});
-}
+} from "@platform/auth/authorization";
+import { getPrisma } from "@platform/db";
 
 export async function getClientDashboard(principal: AppPrincipal, companyId: string) {
   requireClientPrincipal(principal);
@@ -71,4 +56,20 @@ export async function getClientDashboard(principal: AppPrincipal, companyId: str
   ]);
   const invoiceTotals = groupInvoiceTotals(invoices);
   return { requests, projects, invoices, invoiceTotals, recentActivity };
+}
+
+export function groupInvoiceTotals(
+  invoices: readonly {
+    amount: { toString(): string } | number;
+    currency: string;
+    status: string;
+  }[],
+) {
+  return invoices.reduce<Record<string, { sent: number; overdue: number }>>((totals, invoice) => {
+    const row = totals[invoice.currency] ?? { sent: 0, overdue: 0 };
+    if (invoice.status === "OVERDUE") row.overdue += Number(invoice.amount);
+    else if (invoice.status === "SENT") row.sent += Number(invoice.amount);
+    totals[invoice.currency] = row;
+    return totals;
+  }, {});
 }

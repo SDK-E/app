@@ -1,6 +1,6 @@
 import { cleanup, render } from "@testing-library/react";
-import { afterEach, describe, expect, it } from "vitest";
 import { NextIntlClientProvider } from "next-intl";
+import { afterEach, describe, expect, it } from "vitest";
 
 import AppError from "./error";
 
@@ -25,9 +25,15 @@ describe("AppError boundary", () => {
 
   it("renders inside the locale intl provider", () => {
     const { getByText } = render(
-      <NextIntlClientProvider messages={messages} locale="en">
-        <AppError error={new Error("boom")} reset={() => {}} />
-      </NextIntlClientProvider>
+      <NextIntlClientProvider
+        messages={messages}
+        locale="en"
+      >
+        <AppError
+          error={new Error("boom")}
+          reset={() => {}}
+        />
+      </NextIntlClientProvider>,
     );
 
     expect(getByText("Something went wrong")).toBeTruthy();

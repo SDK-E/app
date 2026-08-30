@@ -1,7 +1,6 @@
+import { decideRequest, resolveSdkTransition } from "@platform/requests/decisions";
+import { common, principal } from "@platform/test-support/test-fixtures";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { decideRequest, resolveSdkTransition } from "@sdk-e/requests/decisions";
-import { common, principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const request = { findFirst: vi.fn(), update: vi.fn() };
@@ -17,7 +16,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
 describe("resolveSdkTransition", () => {
   it.each([
@@ -47,7 +46,7 @@ describe("resolveSdkTransition", () => {
       resolveSdkTransition("IN_REVIEW", {
         decision: "request-information",
         content: "Clarify budget.",
-      })
+      }),
     ).toEqual({
       toStatus: "INFORMATION_REQUIRED",
       event: "INFORMATION_REQUESTED",
@@ -57,13 +56,13 @@ describe("resolveSdkTransition", () => {
 
   it("carries proposal content through to the transition", () => {
     expect(
-      resolveSdkTransition("IN_REVIEW", { decision: "proposal-ready", content: "Fixed scope." })
+      resolveSdkTransition("IN_REVIEW", { decision: "proposal-ready", content: "Fixed scope." }),
     ).toEqual({ toStatus: "PROPOSAL_READY", event: "PROPOSAL_READY", content: "Fixed scope." });
   });
 
   it("rejects with the decision's content as the message", () => {
     expect(
-      resolveSdkTransition("SUBMITTED", { decision: "reject", content: "Out of scope." })
+      resolveSdkTransition("SUBMITTED", { decision: "reject", content: "Out of scope." }),
     ).toEqual({ toStatus: "REJECTED", event: "REJECTED", content: "Out of scope." });
   });
 });
@@ -141,7 +140,7 @@ describe("decideRequest", () => {
       }),
     });
     expect(mocks.message.create).toHaveBeenCalledWith(
-      expect.objectContaining({ data: expect.objectContaining({ content: "Out of scope." }) })
+      expect.objectContaining({ data: expect.objectContaining({ content: "Out of scope." }) }),
     );
     expect(mocks.requestActivity.create).toHaveBeenCalledWith({
       data: expect.objectContaining({
@@ -156,7 +155,7 @@ describe("decideRequest", () => {
     mocks.request.findFirst.mockResolvedValue({ ...submitted, status: "APPROVED" });
 
     await expect(
-      decideRequest(principal("sdk-admin"), "company-1", "request-1", { decision: "start-review" })
+      decideRequest(principal("sdk-admin"), "company-1", "request-1", { decision: "start-review" }),
     ).rejects.toThrow("That workflow action is no longer available.");
     expect(mocks.request.update).not.toHaveBeenCalled();
   });
@@ -167,7 +166,7 @@ describe("decideRequest", () => {
     await expect(
       decideRequest(principal("sdk-admin"), "company-1", "request-missing", {
         decision: "start-review",
-      })
+      }),
     ).rejects.toThrow("Request not found.");
   });
 
@@ -175,7 +174,7 @@ describe("decideRequest", () => {
     mocks.company.findFirst.mockResolvedValue(null);
 
     await expect(
-      decideRequest(principal("sdk-admin"), "company-1", "request-1", { decision: "start-review" })
+      decideRequest(principal("sdk-admin"), "company-1", "request-1", { decision: "start-review" }),
     ).rejects.toThrow("Company not found.");
     expect(mocks.request.findFirst).not.toHaveBeenCalled();
   });
@@ -184,14 +183,14 @@ describe("decideRequest", () => {
     const finance = { ...common, kind: "sdk-staff", role: "FINANCE" } as const;
 
     await expect(
-      decideRequest(finance, "company-1", "request-1", { decision: "start-review" })
+      decideRequest(finance, "company-1", "request-1", { decision: "start-review" }),
     ).rejects.toThrow("SDK staff access is required.");
     expect(mocks.request.findFirst).not.toHaveBeenCalled();
   });
 
   it("rejects a client principal entirely", async () => {
     await expect(
-      decideRequest(principal("owner"), "company-1", "request-1", { decision: "start-review" })
+      decideRequest(principal("owner"), "company-1", "request-1", { decision: "start-review" }),
     ).rejects.toThrow("SDK staff access is required.");
   });
 });

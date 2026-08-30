@@ -1,7 +1,6 @@
+import { getClientDashboard, groupInvoiceTotals } from "@platform/requests/dashboard";
+import { principal } from "@platform/test-support/test-fixtures";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { getClientDashboard, groupInvoiceTotals } from "@sdk-e/requests/dashboard";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const request = { findMany: vi.fn() };
@@ -17,7 +16,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({
+vi.mock("@platform/db", () => ({
   getPrisma: () => mocks.prisma,
 }));
 
@@ -49,7 +48,7 @@ describe("groupInvoiceTotals", () => {
       groupInvoiceTotals([
         { amount: 100, currency: "USD", status: "OVERDUE" },
         { amount: 200, currency: "USD", status: "SENT" },
-      ])
+      ]),
     ).toEqual({ USD: { sent: 200, overdue: 100 } });
   });
 });
@@ -75,16 +74,16 @@ describe("getClientDashboard", () => {
           status: { notIn: ["CLOSED", "REJECTED"] },
         }),
         take: 6,
-      })
+      }),
     );
     expect(mocks.project.findMany).toHaveBeenCalledWith(
       expect.objectContaining({
         where: expect.objectContaining({ status: { in: ["PLANNING", "ACTIVE", "ON_HOLD"] } }),
         take: 5,
-      })
+      }),
     );
     expect(mocks.requestActivity.findMany).toHaveBeenCalledWith(
-      expect.objectContaining({ where: { companyId: "company-1" }, take: 8 })
+      expect.objectContaining({ where: { companyId: "company-1" }, take: 8 }),
     );
     expect(mocks.invoice.findMany).toHaveBeenCalled();
     expect(result).toMatchObject({
@@ -110,7 +109,7 @@ describe("getClientDashboard", () => {
 
   it("rejects SDK staff principals", async () => {
     await expect(getClientDashboard(principal("sdk-admin"), "company-1")).rejects.toThrow(
-      "Client-company access is required."
+      "Client-company access is required.",
     );
     expect(mocks.request.findMany).not.toHaveBeenCalled();
   });

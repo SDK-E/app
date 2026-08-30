@@ -4,9 +4,9 @@ const { getServerEnv } = vi.hoisted(() => ({
   getServerEnv: vi.fn().mockReturnValue({ STRIPE_SECRET_KEY: "sk_test" }),
 }));
 
-vi.mock("@sdk-e/env", () => ({ getServerEnv }));
+vi.mock("@platform/env", () => ({ getServerEnv }));
 
-import { stripe } from "@sdk-e/payments/stripe";
+import { stripe } from "@platform/payments/stripe";
 
 describe("stripe client", () => {
   it("is configured from the server environment secret", () => {

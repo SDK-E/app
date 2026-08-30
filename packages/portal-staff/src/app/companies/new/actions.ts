@@ -1,29 +1,22 @@
 "use server";
 
+import type { UserActionState } from "@platform/portal-staff/app/users/actions-common";
+
+import { createSdkCompany } from "@platform/companies";
+import { sendInvitationNotification } from "@platform/email";
+import { getServerEnv } from "@platform/env";
+import { errorMessage, principalOrThrow } from "@platform/portal-staff/app/users/actions-common";
+import { sdkCompanyCreationSchema } from "@platform/schemas/company";
+import { markInvitationDelivery } from "@platform/users";
 import { revalidatePath } from "next/cache";
 import { headers } from "next/headers";
 
-import { createSdkCompany } from "@sdk-e/companies";
-import { getServerEnv } from "@sdk-e/env";
-import { sendInvitationNotification } from "@sdk-e/email";
-import { sdkCompanyCreationSchema } from "@sdk-e/schemas/company";
-import { markInvitationDelivery } from "@sdk-e/users";
-import type { UserActionState } from "@sdk-e/portal-staff/app/users/actions-common";
-import { errorMessage, principalOrThrow } from "@sdk-e/portal-staff/app/users/actions-common";
-
 export type { UserActionState };
-
-async function origin() {
-  const configured = getServerEnv().AUTH0_BASE_URL;
-  if (configured) return configured.replace(/\/$/, "");
-  const values = await headers();
-  return `${values.get("x-forwarded-proto") ?? "http"}://${values.get("host")}`;
-}
 
 export async function createSdkCompanyAction(
   locale: string,
   _state: UserActionState,
-  formData: FormData
+  formData: FormData,
 ): Promise<UserActionState> {
   const parsed = sdkCompanyCreationSchema.safeParse({
     name: formData.get("name"),
@@ -52,4 +45,11 @@ export async function createSdkCompanyAction(
   } catch (error) {
     return { error: errorMessage(error) };
   }
+}
+
+async function origin() {
+  const configured = getServerEnv().AUTH0_BASE_URL;
+  if (configured) return configured.replace(/\/$/, "");
+  const values = await headers();
+  return `${values.get("x-forwarded-proto") ?? "http"}://${values.get("host")}`;
 }

@@ -1,41 +1,16 @@
-import { notFound, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { getPrisma } from "@sdk-e/db";
-import { activity, requireActiveCompany, scope } from "@sdk-e/requests/guards";
-import type { SdkRequestDecision } from "@sdk-e/schemas/serviceRequest";
-import type { RequestActivityType, RequestStatus } from "@sdk-e/db/client";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { RequestActivityType, RequestStatus } from "@platform/db/client";
+import type { SdkRequestDecision } from "@platform/schemas/serviceRequest";
+import type { AppPrincipal } from "@platform/types";
 
-export function resolveSdkTransition(
-  current: RequestStatus,
-  decision: SdkRequestDecision
-): {
-  toStatus: RequestStatus;
-  event: RequestActivityType;
-  content?: string;
-} | null {
-  if (decision.decision === "start-review" && current === "SUBMITTED")
-    return { toStatus: "IN_REVIEW", event: "REVIEW_STARTED" };
-  if (decision.decision === "request-information" && current === "IN_REVIEW")
-    return {
-      toStatus: "INFORMATION_REQUIRED",
-      event: "INFORMATION_REQUESTED",
-      content: decision.content,
-    };
-  if (decision.decision === "proposal-ready" && current === "IN_REVIEW")
-    return { toStatus: "PROPOSAL_READY", event: "PROPOSAL_READY", content: decision.content };
-  if (
-    decision.decision === "reject" &&
-    ["SUBMITTED", "IN_REVIEW", "INFORMATION_REQUIRED", "PROPOSAL_READY"].includes(current)
-  )
-    return { toStatus: "REJECTED", event: "REJECTED", content: decision.content };
-  return null;
-}
+import { notFound, requireSdkStaff } from "@platform/auth/authorization";
+import { getPrisma } from "@platform/db";
+import { activity, requireActiveCompany, scope } from "@platform/requests/guards";
 
 export async function decideRequest(
   principal: AppPrincipal,
   companyId: string,
   id: string,
-  decision: SdkRequestDecision
+  decision: SdkRequestDecision,
 ) {
   const staff = requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
   scope(staff, "request:update");
@@ -61,4 +36,30 @@ export async function decideRequest(
       data: { requestId: id, ...activity(companyId, staff.id, event, current.status, toStatus) },
     });
   });
+}
+
+export function resolveSdkTransition(
+  current: RequestStatus,
+  decision: SdkRequestDecision,
+): {
+  toStatus: RequestStatus;
+  event: RequestActivityType;
+  content?: string;
+} | null {
+  if (decision.decision === "start-review" && current === "SUBMITTED")
+    return { toStatus: "IN_REVIEW", event: "REVIEW_STARTED" };
+  if (decision.decision === "request-information" && current === "IN_REVIEW")
+    return {
+      toStatus: "INFORMATION_REQUIRED",
+      event: "INFORMATION_REQUESTED",
+      content: decision.content,
+    };
+  if (decision.decision === "proposal-ready" && current === "IN_REVIEW")
+    return { toStatus: "PROPOSAL_READY", event: "PROPOSAL_READY", content: decision.content };
+  if (
+    decision.decision === "reject" &&
+    ["SUBMITTED", "IN_REVIEW", "INFORMATION_REQUIRED", "PROPOSAL_READY"].includes(current)
+  )
+    return { toStatus: "REJECTED", event: "REJECTED", content: decision.content };
+  return null;
 }

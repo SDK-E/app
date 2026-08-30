@@ -1,9 +1,9 @@
 "use client";
 
+import { Button } from "@platform/ui/Button";
 import { useActionState } from "react";
 
 import type { AccessRequestState } from "@/app/[locale]/(app)/app/access/actions";
-import { Button } from "@sdk-e/ui/Button";
 
 const fieldClass =
   "mt-2 min-h-11 w-full rounded-control border border-dark/40 bg-paper px-3 text-body text-dark normal-case tracking-normal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current";
@@ -21,7 +21,10 @@ export function AccessRequestForm({
 }) {
   const [state, formAction, pending] = useActionState(action, {});
   return (
-    <form action={formAction} className="mt-6 space-y-4">
+    <form
+      action={formAction}
+      className="mt-6 space-y-4"
+    >
       <label className="block text-label font-extrabold uppercase tracking-eyebrow">
         {codeLabel}
         <input
@@ -37,23 +40,36 @@ export function AccessRequestForm({
       </label>
       <label className="block text-label font-extrabold uppercase tracking-eyebrow">
         {roleLabel}
-        <select name="requestedRole" className={fieldClass} defaultValue="VIEWER">
+        <select
+          name="requestedRole"
+          className={fieldClass}
+          defaultValue="VIEWER"
+        >
           <option value="VIEWER">VIEWER</option>
           <option value="PROJECT_MEMBER">PROJECT_MEMBER</option>
           <option value="BILLING">BILLING</option>
         </select>
       </label>
       {state.error ? (
-        <p role="alert" className="text-body">
+        <p
+          role="alert"
+          className="text-body"
+        >
           {state.error}
         </p>
       ) : null}
       {state.success ? (
-        <p role="status" className="text-body">
+        <p
+          role="status"
+          className="text-body"
+        >
           {state.success}
         </p>
       ) : null}
-      <Button type="submit" disabled={pending}>
+      <Button
+        type="submit"
+        disabled={pending}
+      >
         {submitLabel}
       </Button>
     </form>

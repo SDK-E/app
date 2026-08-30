@@ -1,12 +1,11 @@
-import Link from "next/link";
+import { hasPermission } from "@platform/auth/authorization";
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { listRequests } from "@platform/requests";
+import { Badge } from "@platform/ui/Badge";
+import { Card } from "@platform/ui/Card";
+import { EmptyState } from "@platform/ui/EmptyState";
 import { getTranslations } from "next-intl/server";
-
-import { Badge } from "@sdk-e/ui/Badge";
-import { Card } from "@sdk-e/ui/Card";
-import { EmptyState } from "@sdk-e/ui/EmptyState";
-import { hasPermission } from "@sdk-e/auth/authorization";
-import { listRequests } from "@sdk-e/requests";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
+import Link from "next/link";
 
 export default async function CompanyRequestsPage({
   params,

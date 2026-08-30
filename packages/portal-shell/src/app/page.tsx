@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
+
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { listActiveCompanies } from "@platform/requests";
+import { Card } from "@platform/ui/Card";
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { getTranslations } from "next-intl/server";
-
-import { Card } from "@sdk-e/ui/Card";
-import { listActiveCompanies } from "@sdk-e/requests";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
 
 export const metadata: Metadata = {
   title: "Portal | SDK Enterprises",
@@ -33,7 +33,10 @@ export default async function AppHomePage({ params }: { params: Promise<{ locale
       <p className="mt-4 max-w-[65ch] text-body text-muted-foreground">{t("operations.intro")}</p>
       <div className="mt-8 grid gap-4 md:grid-cols-2">
         {companies.map((company) => (
-          <Link key={company.id} href={`/${locale}/app/companies/${company.id}/requests`}>
+          <Link
+            key={company.id}
+            href={`/${locale}/app/companies/${company.id}/requests`}
+          >
             <Card className="transition-colors hover:border-dark">
               <h2 className="text-h3 font-extrabold">{company.name}</h2>
               <p className="mt-2 text-body">{t("operations.companies")}</p>

@@ -1,4 +1,4 @@
-import { ErrorState } from "@sdk-e/ui/ErrorState";
+import { ErrorState } from "@platform/ui/ErrorState";
 
 export function PortalErrorPage({
   label,
@@ -15,7 +15,12 @@ export function PortalErrorPage({
 }) {
   return (
     <div className="flex min-h-[60vh] flex-col items-center justify-center">
-      <ErrorState label={label} title={title} description={description} action={action} />
+      <ErrorState
+        label={label}
+        title={title}
+        description={description}
+        action={action}
+      />
       <footer className="mt-auto pt-8 text-micro text-muted-foreground">
         <span>{copyright}</span>
       </footer>

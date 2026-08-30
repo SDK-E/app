@@ -1,13 +1,12 @@
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { RequestActionPanels } from "@platform/portal-shell/components/portal/requests/RequestActionPanels";
+import { RequestConversationCard } from "@platform/portal-shell/components/portal/requests/RequestConversationCard";
+import { RequestDetailsCard } from "@platform/portal-shell/components/portal/requests/RequestDetailsCard";
+import { RequestHeader } from "@platform/portal-shell/components/portal/requests/RequestHeader";
+import { RequestHistoryCard } from "@platform/portal-shell/components/portal/requests/RequestHistoryCard";
+import { renderForPage } from "@platform/portal-shell/lib/render-for-page";
+import { getRequest } from "@platform/requests";
 import { getTranslations } from "next-intl/server";
-
-import { RequestActionPanels } from "@sdk-e/portal-shell/components/portal/requests/RequestActionPanels";
-import { RequestConversationCard } from "@sdk-e/portal-shell/components/portal/requests/RequestConversationCard";
-import { RequestDetailsCard } from "@sdk-e/portal-shell/components/portal/requests/RequestDetailsCard";
-import { RequestHeader } from "@sdk-e/portal-shell/components/portal/requests/RequestHeader";
-import { RequestHistoryCard } from "@sdk-e/portal-shell/components/portal/requests/RequestHistoryCard";
-import { getRequest } from "@sdk-e/requests";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { renderForPage } from "@sdk-e/portal-shell/lib/render-for-page";
 
 export default async function CompanyRequestDetailPage({
   params,
@@ -35,9 +34,19 @@ export default async function CompanyRequestDetailPage({
       />
       <div className="mt-10 grid gap-6 xl:grid-cols-[1.2fr_.8fr]">
         <div className="space-y-6">
-          <RequestDetailsCard request={request} t={tr} />
-          <RequestConversationCard request={request} t={tr} />
-          <RequestHistoryCard locale={locale} request={request} t={tr} />
+          <RequestDetailsCard
+            request={request}
+            t={tr}
+          />
+          <RequestConversationCard
+            request={request}
+            t={tr}
+          />
+          <RequestHistoryCard
+            locale={locale}
+            request={request}
+            t={tr}
+          />
         </div>
         <aside>
           <RequestActionPanels

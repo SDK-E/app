@@ -1,7 +1,6 @@
+import { Spinner } from "@platform/ui/Spinner";
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
-
-import { Spinner } from "@sdk-e/ui/Spinner";
 
 describe("Spinner", () => {
   afterEach(() => cleanup());

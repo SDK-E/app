@@ -1,12 +1,13 @@
-import { sendMessage } from "@sdk-e/email/transport";
-import { siteConfig } from "@sdk-e/config/site";
+import { siteConfig } from "@platform/config/site";
+import { sendMessage } from "@platform/email/transport";
+
 import {
-  renderOpportunityInvitationEmail,
   type OpportunityInvitationEmailProps,
+  renderOpportunityInvitationEmail,
 } from "./opportunity-invitation-emails";
 
 export async function sendOpportunityInvitationNotification(
-  props: OpportunityInvitationEmailProps & { to: string }
+  props: { to: string } & OpportunityInvitationEmailProps,
 ): Promise<boolean> {
   return sendMessage(
     {
@@ -15,6 +16,6 @@ export async function sendOpportunityInvitationNotification(
       subject: `Invitation to ${props.opportunityTitle}`,
       html: renderOpportunityInvitationEmail(props),
     },
-    "opportunity invitation email"
+    "opportunity invitation email",
   );
 }

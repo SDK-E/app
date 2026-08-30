@@ -6,20 +6,20 @@ const mocks = vi.hoisted(() => ({
   ThemeSwitcher: vi.fn(),
 }));
 
-vi.mock("@sdk-e/portal-shell/LanguageSwitcher", () => ({
+vi.mock("@platform/portal-shell/LanguageSwitcher", () => ({
   LanguageSwitcher: mocks.LanguageSwitcher,
 }));
-vi.mock("@sdk-e/portal-shell/ThemeSwitcher", () => ({
+vi.mock("@platform/portal-shell/ThemeSwitcher", () => ({
   ThemeSwitcher: mocks.ThemeSwitcher,
 }));
 
-import { AccountMenu } from "@sdk-e/portal-shell/AccountMenu";
+import { AccountMenu } from "@platform/portal-shell/AccountMenu";
 
 const baseProps = {
   locale: "en",
   name: "Ada Lovelace",
   email: "ada@example.com",
-  avatarUrl: null as string | null,
+  avatarUrl: null as null | string,
   profileLabel: "Profile",
   logoutLabel: "Log out",
   languageLabel: "Language",
@@ -41,7 +41,14 @@ describe("AccountMenu", () => {
 
   it("expands the sidebar instead of opening a menu when collapsed on the rail", () => {
     const onExpand = vi.fn();
-    render(<AccountMenu {...baseProps} variant="sidebar" collapsed onExpand={onExpand} />);
+    render(
+      <AccountMenu
+        {...baseProps}
+        variant="sidebar"
+        collapsed
+        onExpand={onExpand}
+      />,
+    );
 
     fireEvent.click(screen.getByRole("button", { name: "Ada Lovelace" }));
 
@@ -60,10 +67,10 @@ describe("AccountMenu", () => {
     expect(screen.getByText("Language")).toBeTruthy();
     expect(screen.getByText("Theme")).toBeTruthy();
     expect(screen.getAllByRole("menuitem", { name: "Profile" })[0].getAttribute("href")).toBe(
-      "/en/app/profile"
+      "/en/app/profile",
     );
     expect(screen.getAllByRole("menuitem", { name: "Log out" })[0].getAttribute("href")).toBe(
-      "/auth/logout"
+      "/auth/logout",
     );
   });
 });

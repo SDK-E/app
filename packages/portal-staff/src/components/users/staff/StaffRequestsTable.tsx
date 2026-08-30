@@ -1,16 +1,16 @@
-import { getTranslations } from "next-intl/server";
+import type { StaffRequestRow } from "@platform/users";
 
+import { UserActionForm } from "@platform/portal-shell/components/portal/UserActionForm";
+import { PaginationNav } from "@platform/portal-shell/components/portal/users/PaginationNav";
+import { SortHeader } from "@platform/portal-shell/components/portal/users/SortHeader";
+import { fieldClass } from "@platform/portal-shell/components/portal/users/styles";
 import {
   approveAccessRequestAction,
   declineAccessRequestAction,
-} from "@sdk-e/portal-staff/app/users/access-request-actions";
-import { PaginationNav } from "@sdk-e/portal-shell/components/portal/users/PaginationNav";
-import { SortHeader } from "@sdk-e/portal-shell/components/portal/users/SortHeader";
-import { UserActionForm } from "@sdk-e/portal-shell/components/portal/UserActionForm";
-import { TBody, TD, TH, THead, TR, Table } from "@sdk-e/ui/Table";
-import { fieldClass } from "@sdk-e/portal-shell/components/portal/users/styles";
-import { usersListHref, type UsersListQuery } from "@sdk-e/users/list-links";
-import type { StaffRequestRow } from "@sdk-e/users";
+} from "@platform/portal-staff/app/users/access-request-actions";
+import { Table, TBody, TD, TH, THead, TR } from "@platform/ui/Table";
+import { usersListHref, type UsersListQuery } from "@platform/users/list-links";
+import { getTranslations } from "next-intl/server";
 
 const assignableRoles = ["ADMINISTRATOR", "PROJECT_MEMBER", "BILLING", "VIEWER"];
 
@@ -24,8 +24,8 @@ export async function StaffRequestsTable({
 }: {
   locale: string;
   rows: StaffRequestRow[];
-  nextCursor: string | null;
-  prevCursor: string | null;
+  nextCursor: null | string;
+  prevCursor: null | string;
   basePath: string;
   query: UsersListQuery;
 }) {
@@ -79,10 +79,21 @@ export async function StaffRequestsTable({
                     label={t("approve")}
                     variant="default"
                   >
-                    <input type="hidden" name="requestId" value={row.id} />
-                    <select className={fieldClass} name="role" defaultValue="VIEWER">
+                    <input
+                      type="hidden"
+                      name="requestId"
+                      value={row.id}
+                    />
+                    <select
+                      className={fieldClass}
+                      name="role"
+                      defaultValue="VIEWER"
+                    >
                       {assignableRoles.map((role) => (
-                        <option key={role} value={role}>
+                        <option
+                          key={role}
+                          value={role}
+                        >
                           {role.replaceAll("_", " ")}
                         </option>
                       ))}
@@ -94,7 +105,11 @@ export async function StaffRequestsTable({
                     confirmLabel={t("confirmDecline")}
                     variant="destructive"
                   >
-                    <input type="hidden" name="requestId" value={row.id} />
+                    <input
+                      type="hidden"
+                      name="requestId"
+                      value={row.id}
+                    />
                   </UserActionForm>
                 </div>
               </TD>

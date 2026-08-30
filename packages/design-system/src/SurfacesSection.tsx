@@ -1,12 +1,15 @@
-import { Section } from "@sdk-e/ui/Section";
-import { SectionHeader } from "@sdk-e/ui/SectionHeader";
-import { Badge } from "@sdk-e/ui/Badge";
-import { Button } from "@sdk-e/ui/Button";
+import { Badge } from "@platform/ui/Badge";
+import { Button } from "@platform/ui/Button";
+import { Section } from "@platform/ui/Section";
+import { SectionHeader } from "@platform/ui/SectionHeader";
 
 export function SurfacesSection() {
   return (
     <>
-      <Section tone="dark" borderTop>
+      <Section
+        tone="dark"
+        borderTop
+      >
         <SectionHeader
           eyebrow="05 · Dark surface"
           title="Dark sections carry the same system."
@@ -18,7 +21,10 @@ export function SurfacesSection() {
         </div>
       </Section>
 
-      <Section tone="brand" borderTop>
+      <Section
+        tone="brand"
+        borderTop
+      >
         <SectionHeader
           eyebrow="06 · Brand surface"
           title="One brand section per page, at most."

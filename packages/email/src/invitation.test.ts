@@ -1,10 +1,9 @@
+import { sendInvitationNotification } from "@platform/email/invitation";
+import { sendMessage } from "@platform/email/transport";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import { sendInvitationNotification } from "@sdk-e/email/invitation";
-import { sendMessage } from "@sdk-e/email/transport";
-
-vi.mock("@sdk-e/email/transport", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("@sdk-e/email/transport")>()),
+vi.mock("@platform/email/transport", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("@platform/email/transport")>()),
   sendMessage: vi.fn(),
 }));
 
@@ -33,7 +32,7 @@ describe("sendInvitationNotification", () => {
         to: "jo@acme.example",
         subject: "Invitation to Acme Corp",
       }),
-      "invitation email"
+      "invitation email",
     );
   });
 

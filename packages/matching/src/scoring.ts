@@ -1,15 +1,17 @@
-import type { Opportunity, Provider, ProviderService } from "@sdk-e/db/client";
+import type { Opportunity, Provider, ProviderService } from "@platform/db/client";
+
 import type { EffectiveWeights, ScoreDimension } from "./types";
+
 import {
-  scoreSkills,
-  scoreSeniority,
-  scoreRate,
-  scoreAvailability,
-  scoreLocation,
-  scoreLanguage,
-  scoreCompleteness,
-  scoreServiceFit,
   qualityLabel,
+  scoreAvailability,
+  scoreCompleteness,
+  scoreLanguage,
+  scoreLocation,
+  scoreRate,
+  scoreSeniority,
+  scoreServiceFit,
+  scoreSkills,
 } from "./scoring-helpers";
 
 export function scoreCandidate(
@@ -19,7 +21,7 @@ export function scoreCandidate(
   eligibilityWarnings: string[],
   services: ProviderService[],
   weeklyCapacity: { weekday: number; hoursPerDay: number }[],
-  absences: { status: string; startDate: Date; endDate: Date }[]
+  absences: { status: string; startDate: Date; endDate: Date }[],
 ): ScoreDimension[] {
   const dimensions: ScoreDimension[] = [];
 

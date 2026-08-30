@@ -1,16 +1,16 @@
-import { getTranslations } from "next-intl/server";
+import type { ClientRequestRow } from "@platform/users";
 
+import { UserActionForm } from "@platform/portal-shell/components/portal/UserActionForm";
+import { PaginationNav } from "@platform/portal-shell/components/portal/users/PaginationNav";
+import { SortHeader } from "@platform/portal-shell/components/portal/users/SortHeader";
+import { fieldClass } from "@platform/portal-shell/components/portal/users/styles";
 import {
   approveAccessRequestAction,
   declineAccessRequestAction,
-} from "@sdk-e/portal-staff/app/users/access-request-actions";
-import { PaginationNav } from "@sdk-e/portal-shell/components/portal/users/PaginationNav";
-import { SortHeader } from "@sdk-e/portal-shell/components/portal/users/SortHeader";
-import { UserActionForm } from "@sdk-e/portal-shell/components/portal/UserActionForm";
-import { TBody, TD, TH, THead, TR, Table } from "@sdk-e/ui/Table";
-import { fieldClass } from "@sdk-e/portal-shell/components/portal/users/styles";
-import { usersListHref, type UsersListQuery } from "@sdk-e/users/list-links";
-import type { ClientRequestRow } from "@sdk-e/users";
+} from "@platform/portal-staff/app/users/access-request-actions";
+import { Table, TBody, TD, TH, THead, TR } from "@platform/ui/Table";
+import { usersListHref, type UsersListQuery } from "@platform/users/list-links";
+import { getTranslations } from "next-intl/server";
 
 export async function ClientRequestsTable({
   locale,
@@ -25,8 +25,8 @@ export async function ClientRequestsTable({
   locale: string;
   companyId: string;
   rows: ClientRequestRow[];
-  nextCursor: string | null;
-  prevCursor: string | null;
+  nextCursor: null | string;
+  prevCursor: null | string;
   basePath: string;
   query: UsersListQuery;
   canGrantAdministrator: boolean;
@@ -82,10 +82,21 @@ export async function ClientRequestsTable({
                     label={t("approve")}
                     variant="default"
                   >
-                    <input type="hidden" name="requestId" value={row.id} />
-                    <select className={`${fieldClass} min-w-40`} name="role" defaultValue="VIEWER">
+                    <input
+                      type="hidden"
+                      name="requestId"
+                      value={row.id}
+                    />
+                    <select
+                      className={`${fieldClass} min-w-40`}
+                      name="role"
+                      defaultValue="VIEWER"
+                    >
                       {roles.map((role) => (
-                        <option key={role} value={role}>
+                        <option
+                          key={role}
+                          value={role}
+                        >
                           {role.replaceAll("_", " ")}
                         </option>
                       ))}
@@ -97,7 +108,11 @@ export async function ClientRequestsTable({
                     confirmLabel={t("confirmDecline")}
                     variant="destructive"
                   >
-                    <input type="hidden" name="requestId" value={row.id} />
+                    <input
+                      type="hidden"
+                      name="requestId"
+                      value={row.id}
+                    />
                   </UserActionForm>
                 </div>
               </TD>

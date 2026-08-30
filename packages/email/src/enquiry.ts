@@ -1,23 +1,36 @@
-import { escapeHtml, sendMessage } from "@sdk-e/email/transport";
-import { siteConfig } from "@sdk-e/config/site";
+import { siteConfig } from "@platform/config/site";
+import { escapeHtml, sendMessage } from "@platform/email/transport";
 
 export interface EnquiryNotification {
   companyName: string;
   email: string;
-  website?: string | null;
+  website?: null | string;
   capability: string;
   description: string;
-  environment?: string | null;
-  timeline?: string | null;
-  budgetRange?: string | null;
-  context?: string | null;
+  environment?: null | string;
+  timeline?: null | string;
+  budgetRange?: null | string;
+  context?: null | string;
 }
 
 const from = `SDK Enterprises <no-reply@${siteConfig.contact.domain}>`;
 
+export async function sendEnquiryNotification(enquiry: EnquiryNotification): Promise<boolean> {
+  const company = enquiry.companyName.replace(/\s+/g, " ").trim();
+  return sendMessage(
+    {
+      from,
+      to: siteConfig.contact.email,
+      subject: `New project enquiry — ${company}`,
+      html: renderEnquiryHtml(enquiry),
+    },
+    "enquiry email",
+  );
+}
+
 function renderEnquiryHtml(enquiry: EnquiryNotification): string {
-  const rows: Array<[string, string]> = [];
-  const push = (label: string, value?: string | null) => {
+  const rows: [string, string][] = [];
+  const push = (label: string, value?: null | string) => {
     if (value) rows.push([label, value]);
   };
   push("Company", enquiry.companyName);
@@ -33,7 +46,7 @@ function renderEnquiryHtml(enquiry: EnquiryNotification): string {
   const body = rows
     .map(
       ([label, value]) =>
-        `<p><strong>${escapeHtml(label)}</strong><br>${escapeHtml(value).replace(/\n/g, "<br>")}</p>`
+        `<p><strong>${escapeHtml(label)}</strong><br>${escapeHtml(value).replace(/\n/g, "<br>")}</p>`,
     )
     .join("\n");
 
@@ -43,17 +56,4 @@ function renderEnquiryHtml(enquiry: EnquiryNotification): string {
     body,
     "</div>",
   ].join("\n");
-}
-
-export async function sendEnquiryNotification(enquiry: EnquiryNotification): Promise<boolean> {
-  const company = enquiry.companyName.replace(/\s+/g, " ").trim();
-  return sendMessage(
-    {
-      from,
-      to: siteConfig.contact.email,
-      subject: `New project enquiry — ${company}`,
-      html: renderEnquiryHtml(enquiry),
-    },
-    "enquiry email"
-  );
 }

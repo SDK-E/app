@@ -1,7 +1,6 @@
+import { cn } from "@platform/core/utils";
+import { TH } from "@platform/ui/Table";
 import Link from "next/link";
-
-import { cn } from "@sdk-e/core/utils";
-import { TH } from "@sdk-e/ui/Table";
 
 export function SortHeader({
   label,
@@ -26,7 +25,7 @@ export function SortHeader({
         aria-label={`Sort by ${label}`}
         className={cn(
           "inline-flex items-center gap-1 outline-none hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current",
-          isActive && "text-foreground"
+          isActive && "text-foreground",
         )}
       >
         {label}

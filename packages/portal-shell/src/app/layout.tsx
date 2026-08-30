@@ -1,9 +1,8 @@
+import { getCurrentPrincipal } from "@platform/auth/identity";
+import { AccessPending } from "@platform/portal-shell/AccessPending";
+import { AppShell } from "@platform/portal-shell/AppShell";
 import { redirect } from "next/navigation";
 import { z } from "zod";
-
-import { AccessPending } from "@sdk-e/portal-shell/AccessPending";
-import { AppShell } from "@sdk-e/portal-shell/AppShell";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
 
 export const dynamic = "force-dynamic";
 
@@ -18,15 +17,24 @@ export default async function ProtectedAppLayout({
   const principal = await getCurrentPrincipal();
 
   if (!principal) {
-    redirect(`/${locale}/login?returnTo=${encodeURIComponent(`/${locale}/app`)}`);
+    const target = encodeURIComponent(`/${locale}/app`);
+    redirect(`/${locale}/login?returnTo=${target}`);
   }
 
   if (principal.kind === "unassigned") {
-    return <AccessPending principal={principal} locale={locale} />;
+    return (
+      <AccessPending
+        principal={principal}
+        locale={locale}
+      />
+    );
   }
 
   return (
-    <AppShell locale={locale} principal={principal}>
+    <AppShell
+      locale={locale}
+      principal={principal}
+    >
       {children}
     </AppShell>
   );

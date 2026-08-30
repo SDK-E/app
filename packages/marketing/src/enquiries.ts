@@ -1,11 +1,11 @@
 "use server";
 
-import { enquirySchema, type EnquiryInput } from "@sdk-e/schemas/enquiry";
-import { sendEnquiryNotification } from "@sdk-e/email";
-import { getPrisma } from "@sdk-e/db";
+import { getPrisma } from "@platform/db";
+import { sendEnquiryNotification } from "@platform/email";
+import { type EnquiryInput, enquirySchema } from "@platform/schemas/enquiry";
 
 export type EnquiryResult =
-  { success: true } | { success: false; errors: Record<string, string>; formError?: string };
+  { success: false; errors: Record<string, string>; formError?: string } | { success: true };
 
 export async function submitEnquiry(input: EnquiryInput): Promise<EnquiryResult> {
   const parsed = enquirySchema.safeParse(input);

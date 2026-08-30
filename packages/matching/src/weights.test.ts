@@ -1,5 +1,5 @@
+import { DEFAULT_WEIGHTS, normalizeWeights, validateWeights } from "@platform/matching/weights";
 import { describe, expect, it } from "vitest";
-import { DEFAULT_WEIGHTS, normalizeWeights, validateWeights } from "@sdk-e/matching/weights";
 
 describe("normalizeWeights", () => {
   it("returns defaults when no overrides provided", () => {

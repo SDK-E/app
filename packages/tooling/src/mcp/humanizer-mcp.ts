@@ -1,8 +1,7 @@
-import { readFile, realpath, stat } from "node:fs/promises";
-import { extname, isAbsolute, relative, resolve } from "node:path";
-
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
+import { readFile, realpath, stat } from "node:fs/promises";
+import { extname, isAbsolute, relative, resolve } from "node:path";
 import { z } from "zod";
 
 import {
@@ -60,7 +59,7 @@ server.registerTool(
         isError: true,
       };
     }
-  }
+  },
 );
 
 server.registerTool(
@@ -81,7 +80,7 @@ server.registerTool(
         isError: true,
       };
     }
-    const results: Array<{ text: string; changed: string[] }> = [];
+    const results: { text: string; changed: string[] }[] = [];
     for (const [index, text] of texts.entries()) {
       try {
         results.push(humanizeChecked(text, intensity, protected_terms));
@@ -114,7 +113,7 @@ server.registerTool(
         { type: "text" as const, text: JSON.stringify(results.map((result) => result.text)) },
       ],
     };
-  }
+  },
 );
 
 server.registerTool(
@@ -150,7 +149,7 @@ server.registerTool(
         isError: true,
       };
     }
-  }
+  },
 );
 
 await server.connect(new StdioServerTransport());

@@ -1,27 +1,22 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
-
+import { getCurrentPrincipal } from "@platform/auth/identity";
 import {
   createServiceDraft,
   saveServiceDraft,
   submitServiceForReview,
-} from "@sdk-e/providers/services/draft";
-import { getCurrentPrincipal } from "@sdk-e/auth/identity";
-import { serviceDraftSchema } from "@sdk-e/providers/services/schemas";
+} from "@platform/providers/services/draft";
+import { serviceDraftSchema } from "@platform/providers/services/schemas";
+import { revalidatePath } from "next/cache";
 
 export interface ServiceActionState {
   error?: string;
   success?: boolean;
 }
 
-function message(error: unknown) {
-  return error instanceof Error ? error.message : "The action could not be completed.";
-}
-
 export async function createServiceDraftAction(
   _state: ServiceActionState,
-  formData: FormData
+  formData: FormData,
 ): Promise<ServiceActionState> {
   const principal = await getCurrentPrincipal();
   if (!principal) return { error: "Your session has ended. Sign in and try again." };
@@ -52,7 +47,7 @@ export async function createServiceDraftAction(
 
 export async function saveServiceDraftAction(
   _state: ServiceActionState,
-  formData: FormData
+  formData: FormData,
 ): Promise<ServiceActionState> {
   const principal = await getCurrentPrincipal();
   if (!principal) return { error: "Your session has ended. Sign in and try again." };
@@ -83,7 +78,7 @@ export async function saveServiceDraftAction(
 
 export async function submitServiceForReviewAction(
   _state: ServiceActionState,
-  formData: FormData
+  formData: FormData,
 ): Promise<ServiceActionState> {
   const principal = await getCurrentPrincipal();
   if (!principal) return { error: "Your session has ended. Sign in and try again." };
@@ -94,4 +89,8 @@ export async function submitServiceForReviewAction(
   }
   revalidatePath("/app/providers/services");
   return { success: true };
+}
+
+function message(error: unknown) {
+  return error instanceof Error ? error.message : "The action could not be completed.";
 }

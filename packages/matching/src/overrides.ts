@@ -2,7 +2,7 @@ import type { MatchCandidateResult, OverrideInput } from "./types";
 
 export function applyOverrides(
   candidates: MatchCandidateResult[],
-  overrides: OverrideInput[]
+  overrides: OverrideInput[],
 ): MatchCandidateResult[] {
   const activeOverrides = overrides.filter((o) => o.active);
   const overrideMap = new Map<string, OverrideInput>();

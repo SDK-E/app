@@ -1,7 +1,6 @@
+import { IdentityError } from "@platform/auth/identity";
+import { assignCompanyMembership, assignSdkStaffRole } from "@platform/auth/identity-management";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { assignCompanyMembership, assignSdkStaffRole } from "@sdk-e/auth/identity-management";
-import { IdentityError } from "@sdk-e/auth/identity";
 
 const mocks = vi.hoisted(() => {
   const user = { findUniqueOrThrow: vi.fn(), update: vi.fn() };
@@ -9,7 +8,7 @@ const mocks = vi.hoisted(() => {
   return { prisma: { user, membership, $transaction: vi.fn() }, user, membership };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
 beforeEach(() => {
   mocks.user.findUniqueOrThrow.mockReset();
@@ -72,7 +71,7 @@ describe("assignCompanyMembership", () => {
     mocks.user.findUniqueOrThrow.mockResolvedValue({ id: "user-9", sdkStaffRole: "DELIVERY" });
 
     await expect(
-      assignCompanyMembership({ userId: "user-9", companyId: "company-1", role: "VIEWER" })
+      assignCompanyMembership({ userId: "user-9", companyId: "company-1", role: "VIEWER" }),
     ).rejects.toThrow(IdentityError);
     expect(mocks.membership.create).not.toHaveBeenCalled();
   });
@@ -96,7 +95,7 @@ describe("assignSdkStaffRole", () => {
     mocks.membership.findFirst.mockResolvedValue({ id: "membership-1" });
 
     await expect(assignSdkStaffRole("user-9", "FINANCE")).rejects.toThrow(
-      "Company members cannot receive SDK staff roles."
+      "Company members cannot receive SDK staff roles.",
     );
     expect(mocks.user.update).not.toHaveBeenCalled();
   });

@@ -1,5 +1,3 @@
-import { describe, expect, it } from "vitest";
-
 import {
   absoluteUrl,
   breadcrumbListJsonLd,
@@ -8,7 +6,8 @@ import {
   getSiteUrl,
   organizationJsonLd,
   websiteJsonLd,
-} from "@sdk-e/marketing/seo";
+} from "@platform/marketing/seo";
+import { describe, expect, it } from "vitest";
 
 describe("URL helpers", () => {
   it("exposes the site URL from the contact domain", () => {
@@ -31,13 +30,41 @@ describe("buildMetadata", () => {
 
     expect(metadata.title).toBe("Services");
     expect(metadata.description).toBe("What we do");
-    expect(metadata.alternates).toEqual({
-      canonical: "https://sdk.enterprises/en/services",
-      languages: {
-        en: "https://sdk.enterprises/en/services",
-        fr: "https://sdk.enterprises/fr/services",
-      },
-    });
+    expect(metadata.alternates?.canonical).toBe("https://sdk.enterprises/en/services");
+    expect(metadata.alternates?.languages?.en).toBe("https://sdk.enterprises/en/services");
+    expect(metadata.alternates?.languages?.fr).toBe("https://sdk.enterprises/fr/services");
+    expect(metadata.alternates?.languages?.["x-default"]).toBe(
+      "https://sdk.enterprises/en/services",
+    );
+  });
+
+  it("publishes hreflang for all supported locales", () => {
+    const metadata = buildMetadata({ path: "/work", locale: "de" });
+    const languages = metadata.alternates?.languages ?? {};
+
+    expect(Object.keys(languages).sort()).toEqual(
+      [
+        "bg",
+        "cs",
+        "da",
+        "de",
+        "el",
+        "en",
+        "es",
+        "fi",
+        "fr",
+        "hu",
+        "it",
+        "nl",
+        "no",
+        "pl",
+        "pt",
+        "ro",
+        "sv",
+        "x-default",
+      ].sort(),
+    );
+    expect(languages.de).toBe("https://sdk.enterprises/de/work");
   });
 
   it("routes the root path through the locale prefix", () => {
@@ -60,7 +87,7 @@ describe("buildMetadata", () => {
     });
 
     expect(metadata.robots).toEqual({ index: false, follow: true });
-    expect(metadata.alternates?.languages).toEqual({
+    expect(metadata.alternates?.languages).toMatchObject({
       en: "https://sdk.enterprises/en/",
       fr: "https://sdk.enterprises/fr/",
       de: "https://sdk.enterprises/de",
@@ -73,7 +100,7 @@ describe("buildMetadata", () => {
     });
 
     expect(metadata.alternates?.canonical).toBe("https://sdk.enterprises/en/services/");
-    expect(metadata.alternates?.languages).toEqual({
+    expect(metadata.alternates?.languages).toMatchObject({
       en: "https://sdk.enterprises/en/",
       fr: "https://sdk.enterprises/fr/",
     });
@@ -92,10 +119,12 @@ describe("structured data", () => {
   });
 
   it("publishes the website JSON-LD with supported languages", () => {
-    expect(websiteJsonLd()).toMatchObject({
+    const jsonLd = websiteJsonLd();
+    expect(jsonLd).toMatchObject({
       "@type": "WebSite",
-      inLanguage: ["en", "fr"],
+      description: expect.any(String),
     });
+    expect((jsonLd.inLanguage as string[]).length).toBeGreaterThanOrEqual(2);
   });
 
   it("numbers breadcrumbs from one and absolutizes item URLs", () => {
@@ -103,7 +132,7 @@ describe("structured data", () => {
       breadcrumbListJsonLd([
         { name: "Home", url: "/" },
         { name: "Work", url: "/work" },
-      ])
+      ]),
     ).toEqual({
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",

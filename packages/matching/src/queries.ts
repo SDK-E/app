@@ -1,36 +1,8 @@
-import { getPrisma } from "@sdk-e/db";
+import type { MatchRunStatus } from "@platform/db/client";
+
+import { getPrisma } from "@platform/db";
+
 import type { MatchRunInput, OverrideInput } from "./types";
-import type { MatchRunStatus } from "@sdk-e/db/client";
-
-export async function createMatchRun(input: MatchRunInput) {
-  return getPrisma().matchRun.create({
-    data: {
-      companyId: input.companyId,
-      opportunityId: input.opportunityId,
-      triggeredById: input.triggeredById,
-      status: "PENDING",
-      configSnapshot: {},
-    },
-  });
-}
-
-export async function updateMatchRun(
-  id: string,
-  data: {
-    status?: MatchRunStatus;
-    startedAt?: Date;
-    completedAt?: Date;
-    totalCandidates?: number;
-    eligibleCandidates?: number;
-    warningsCount?: number;
-    errorMessage?: string;
-  }
-) {
-  return getPrisma().matchRun.update({
-    where: { id },
-    data,
-  });
-}
 
 export async function createMatchCandidate(data: {
   matchRunId: string;
@@ -60,6 +32,18 @@ export async function createMatchCandidate(data: {
   });
 }
 
+export async function createMatchRun(input: MatchRunInput) {
+  return getPrisma().matchRun.create({
+    data: {
+      companyId: input.companyId,
+      opportunityId: input.opportunityId,
+      triggeredById: input.triggeredById,
+      status: "PENDING",
+      configSnapshot: {},
+    },
+  });
+}
+
 export async function createOverride(input: OverrideInput) {
   return getPrisma().matchOverride.create({
     data: {
@@ -75,17 +59,19 @@ export async function createOverride(input: OverrideInput) {
   });
 }
 
-export async function listOverrides(companyId: string, opportunityId: string) {
-  return getPrisma().matchOverride.findMany({
-    where: { companyId, opportunityId, active: true },
-    orderBy: { createdAt: "desc" },
-  });
-}
-
-export async function getMatchRuns(companyId: string, opportunityId: string) {
-  return getPrisma().matchRun.findMany({
-    where: { companyId, opportunityId },
-    orderBy: { createdAt: "desc" },
+export async function deactivatePreviousOverrides(
+  companyId: string,
+  opportunityId: string,
+  providerId: string,
+) {
+  return getPrisma().matchOverride.updateMany({
+    where: {
+      companyId,
+      opportunityId,
+      providerId,
+      active: true,
+    },
+    data: { active: false },
   });
 }
 
@@ -96,10 +82,17 @@ export async function getMatchCandidates(matchRunId: string) {
   });
 }
 
+export async function getMatchRuns(companyId: string, opportunityId: string) {
+  return getPrisma().matchRun.findMany({
+    where: { companyId, opportunityId },
+    orderBy: { createdAt: "desc" },
+  });
+}
+
 export async function getWeightConfig(
   companyId: string,
   opportunityId?: string,
-  positionId?: string
+  positionId?: string,
 ) {
   return getPrisma().matchWeightConfig.findFirst({
     where: {
@@ -112,18 +105,27 @@ export async function getWeightConfig(
   });
 }
 
-export async function deactivatePreviousOverrides(
-  companyId: string,
-  opportunityId: string,
-  providerId: string
+export async function listOverrides(companyId: string, opportunityId: string) {
+  return getPrisma().matchOverride.findMany({
+    where: { companyId, opportunityId, active: true },
+    orderBy: { createdAt: "desc" },
+  });
+}
+
+export async function updateMatchRun(
+  id: string,
+  data: {
+    status?: MatchRunStatus;
+    startedAt?: Date;
+    completedAt?: Date;
+    totalCandidates?: number;
+    eligibleCandidates?: number;
+    warningsCount?: number;
+    errorMessage?: string;
+  },
 ) {
-  return getPrisma().matchOverride.updateMany({
-    where: {
-      companyId,
-      opportunityId,
-      providerId,
-      active: true,
-    },
-    data: { active: false },
+  return getPrisma().matchRun.update({
+    where: { id },
+    data,
   });
 }

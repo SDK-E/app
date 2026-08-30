@@ -1,13 +1,12 @@
+import { getPrisma } from "@platform/db";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { getPrisma } from "@sdk-e/db";
 
 const mocks = vi.hoisted(() => {
   const getServerEnv = vi.fn();
   return { getServerEnv };
 });
 
-vi.mock("@sdk-e/env", () => ({ getServerEnv: mocks.getServerEnv }));
+vi.mock("@platform/env", () => ({ getServerEnv: mocks.getServerEnv }));
 vi.mock("@prisma/adapter-pg", () => ({
   PrismaPg: class {
     connectionString: string;

@@ -1,17 +1,17 @@
-import { getTranslations } from "next-intl/server";
+import type { ClientMemberRow } from "@platform/users";
 
+import { UserActionForm } from "@platform/portal-shell/components/portal/UserActionForm";
+import { PaginationNav } from "@platform/portal-shell/components/portal/users/PaginationNav";
+import { SortHeader } from "@platform/portal-shell/components/portal/users/SortHeader";
+import { fieldClass } from "@platform/portal-shell/components/portal/users/styles";
 import {
   removeMembershipAction,
   updateMembershipAction,
-} from "@sdk-e/portal-staff/app/users/membership-actions";
-import { PaginationNav } from "@sdk-e/portal-shell/components/portal/users/PaginationNav";
-import { SortHeader } from "@sdk-e/portal-shell/components/portal/users/SortHeader";
-import { UserActionForm } from "@sdk-e/portal-shell/components/portal/UserActionForm";
-import { Badge } from "@sdk-e/ui/Badge";
-import { TBody, TD, TH, THead, TR, Table } from "@sdk-e/ui/Table";
-import { fieldClass } from "@sdk-e/portal-shell/components/portal/users/styles";
-import { usersListHref, type UsersListQuery } from "@sdk-e/users/list-links";
-import type { ClientMemberRow } from "@sdk-e/users";
+} from "@platform/portal-staff/app/users/membership-actions";
+import { Badge } from "@platform/ui/Badge";
+import { Table, TBody, TD, TH, THead, TR } from "@platform/ui/Table";
+import { usersListHref, type UsersListQuery } from "@platform/users/list-links";
+import { getTranslations } from "next-intl/server";
 
 export async function ClientMembersTable({
   locale,
@@ -26,8 +26,8 @@ export async function ClientMembersTable({
   locale: string;
   companyId: string;
   rows: ClientMemberRow[];
-  nextCursor: string | null;
-  prevCursor: string | null;
+  nextCursor: null | string;
+  prevCursor: null | string;
   basePath: string;
   query: UsersListQuery;
   canGrantAdministrator: boolean;
@@ -84,7 +84,11 @@ export async function ClientMembersTable({
                   action={updateMembershipAction.bind(null, locale, companyId)}
                   label={t("updateRole")}
                 >
-                  <input type="hidden" name="membershipId" value={row.id} />
+                  <input
+                    type="hidden"
+                    name="membershipId"
+                    value={row.id}
+                  />
                   {row.role === "OWNER" ? (
                     <Badge tone="live">{row.role}</Badge>
                   ) : (
@@ -95,7 +99,10 @@ export async function ClientMembersTable({
                       defaultValue={row.role}
                     >
                       {roles.map((role) => (
-                        <option key={role} value={role}>
+                        <option
+                          key={role}
+                          value={role}
+                        >
                           {role.replaceAll("_", " ")}
                         </option>
                       ))}
@@ -119,7 +126,11 @@ export async function ClientMembersTable({
                     confirmLabel={t("confirmRemove")}
                     variant="destructive"
                   >
-                    <input type="hidden" name="membershipId" value={row.id} />
+                    <input
+                      type="hidden"
+                      name="membershipId"
+                      value={row.id}
+                    />
                   </UserActionForm>
                 )}
               </TD>

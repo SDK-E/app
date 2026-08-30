@@ -1,9 +1,11 @@
 import { Auth0Client } from "@auth0/nextjs-auth0/server";
-import { getServerEnv } from "@sdk-e/env";
+import { getServerEnv } from "@platform/env";
 
 function createAuth0Client() {
   const env = getServerEnv();
-  const auth0Domain = env.AUTH0_ISSUER_BASE_URL!.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  const auth0Domain = (env.AUTH0_ISSUER_BASE_URL ?? "")
+    .replace(/^https?:\/\//, "")
+    .replace(/\/$/, "");
 
   return new Auth0Client({
     domain: auth0Domain,

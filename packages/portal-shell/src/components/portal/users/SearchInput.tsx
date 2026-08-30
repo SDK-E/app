@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 export function SearchInput({
   placeholder,
@@ -17,7 +17,7 @@ export function SearchInput({
   const searchParams = useSearchParams();
   const initial = searchParams.get(paramName) ?? "";
   const [value, setValue] = useState(initial);
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const timer = useRef<null | ReturnType<typeof setTimeout>>(null);
 
   useEffect(() => {
     setValue(searchParams.get(paramName) ?? "");

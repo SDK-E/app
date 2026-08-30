@@ -1,8 +1,4 @@
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
-import { afterEach, describe, expect, it } from "vitest";
-import * as React from "react";
-
-import { Button } from "@sdk-e/ui/Button";
+import { Button } from "@platform/ui/Button";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -10,14 +6,20 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuTrigger,
-} from "@sdk-e/ui/DropdownMenu";
+} from "@platform/ui/DropdownMenu";
+import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import * as React from "react";
+import { afterEach, describe, expect, it } from "vitest";
 
 function MenuHarness() {
   const [digests, setDigests] = React.useState(true);
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm">
+        <Button
+          variant="outline"
+          size="sm"
+        >
           Account
         </Button>
       </DropdownMenuTrigger>
@@ -35,14 +37,14 @@ function MenuHarness() {
   );
 }
 
-function renderMenu() {
-  return render(<MenuHarness />);
-}
-
 function openMenu() {
   const trigger = screen.getByRole("button", { name: "Account" });
   fireEvent.pointerDown(trigger, { pointerType: "mouse" });
   fireEvent.click(trigger);
+}
+
+function renderMenu() {
+  return render(<MenuHarness />);
 }
 
 describe("DropdownMenu", () => {

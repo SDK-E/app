@@ -1,13 +1,14 @@
-import { notFound, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { getPrisma } from "@sdk-e/db";
-import { activity, requireActiveCompany, scope } from "@sdk-e/requests/guards";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { AppPrincipal } from "@platform/types";
+
+import { notFound, requireSdkStaff } from "@platform/auth/authorization";
+import { getPrisma } from "@platform/db";
+import { activity, requireActiveCompany, scope } from "@platform/requests/guards";
 
 export async function convertRequestToProject(
   principal: AppPrincipal,
   companyId: string,
   id: string,
-  input: { name: string; description: string }
+  input: { name: string; description: string },
 ) {
   const staff = requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
   scope(staff, "project:create");

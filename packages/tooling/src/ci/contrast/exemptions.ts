@@ -15,7 +15,7 @@ export interface ContrastExemption {
   textContains?: string;
   fg: string;
   bg: string;
-  theme?: "light" | "dark";
+  theme?: "dark" | "light";
 }
 
 export const EXEMPTIONS: ContrastExemption[] = [

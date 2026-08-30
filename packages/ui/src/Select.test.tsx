@@ -1,8 +1,7 @@
+import { Label } from "@platform/ui/Label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@platform/ui/Select";
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
-
-import { Label } from "@sdk-e/ui/Label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@sdk-e/ui/Select";
 
 beforeAll(() => {
   Element.prototype.scrollIntoView = vi.fn();
@@ -14,7 +13,7 @@ beforeAll(() => {
       observe() {}
       unobserve() {}
       disconnect() {}
-    }
+    },
   );
 });
 
@@ -32,7 +31,7 @@ function renderSelect() {
           <SelectItem value="billing">Billing</SelectItem>
         </SelectContent>
       </Select>
-    </div>
+    </div>,
   );
 }
 

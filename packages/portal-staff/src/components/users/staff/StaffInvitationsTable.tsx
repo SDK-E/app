@@ -1,16 +1,16 @@
-import { getTranslations } from "next-intl/server";
+import type { StaffInvitationRow } from "@platform/users";
 
+import { UserActionForm } from "@platform/portal-shell/components/portal/UserActionForm";
+import { PaginationNav } from "@platform/portal-shell/components/portal/users/PaginationNav";
+import { SortHeader } from "@platform/portal-shell/components/portal/users/SortHeader";
 import {
   resendInvitationAction,
   revokeInvitationAction,
-} from "@sdk-e/portal-staff/app/users/actions";
-import { PaginationNav } from "@sdk-e/portal-shell/components/portal/users/PaginationNav";
-import { SortHeader } from "@sdk-e/portal-shell/components/portal/users/SortHeader";
-import { UserActionForm } from "@sdk-e/portal-shell/components/portal/UserActionForm";
-import { Badge } from "@sdk-e/ui/Badge";
-import { TBody, TD, TH, THead, TR, Table } from "@sdk-e/ui/Table";
-import { usersListHref, type UsersListQuery } from "@sdk-e/users/list-links";
-import type { StaffInvitationRow } from "@sdk-e/users";
+} from "@platform/portal-staff/app/users/actions";
+import { Badge } from "@platform/ui/Badge";
+import { Table, TBody, TD, TH, THead, TR } from "@platform/ui/Table";
+import { usersListHref, type UsersListQuery } from "@platform/users/list-links";
+import { getTranslations } from "next-intl/server";
 
 export async function StaffInvitationsTable({
   locale,
@@ -22,8 +22,8 @@ export async function StaffInvitationsTable({
 }: {
   locale: string;
   rows: StaffInvitationRow[];
-  nextCursor: string | null;
-  prevCursor: string | null;
+  nextCursor: null | string;
+  prevCursor: null | string;
   basePath: string;
   query: UsersListQuery;
 }) {
@@ -61,7 +61,10 @@ export async function StaffInvitationsTable({
               </TD>
               <TD>
                 {(row.clientRole ?? row.sdkStaffRole ?? "—").replaceAll("_", " ")}
-                <Badge tone="neutral" className="ml-2">
+                <Badge
+                  tone="neutral"
+                  className="ml-2"
+                >
                   {row.kind === "SDK_STAFF" ? "SDK" : t("clientKind")}
                 </Badge>
               </TD>
@@ -80,7 +83,11 @@ export async function StaffInvitationsTable({
                     action={resendInvitationAction.bind(null, boundLocale, null)}
                     label={t("resend")}
                   >
-                    <input type="hidden" name="invitationId" value={row.id} />
+                    <input
+                      type="hidden"
+                      name="invitationId"
+                      value={row.id}
+                    />
                   </UserActionForm>
                   <UserActionForm
                     action={revokeInvitationAction.bind(null, boundLocale, null)}
@@ -88,7 +95,11 @@ export async function StaffInvitationsTable({
                     confirmLabel={t("confirmRevoke")}
                     variant="destructive"
                   >
-                    <input type="hidden" name="invitationId" value={row.id} />
+                    <input
+                      type="hidden"
+                      name="invitationId"
+                      value={row.id}
+                    />
                   </UserActionForm>
                 </div>
               </TD>

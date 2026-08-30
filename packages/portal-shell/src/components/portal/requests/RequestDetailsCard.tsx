@@ -1,5 +1,6 @@
-import { Card } from "@sdk-e/ui/Card";
-import type { RequestDetail, Translator } from "@sdk-e/requests/types";
+import type { RequestDetail, Translator } from "@platform/requests/types";
+
+import { Card } from "@platform/ui/Card";
 
 export async function RequestDetailsCard({
   request,

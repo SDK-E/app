@@ -1,10 +1,10 @@
 import type { SessionData } from "@auth0/nextjs-auth0/types";
+import type { AppPrincipal, ClientRole, ProviderPrincipal, SdkStaffRole } from "@platform/types";
+
+import { getPrisma } from "@platform/db";
+import { Prisma } from "@platform/db/client";
 import { cache } from "react";
 import { z } from "zod";
-
-import { Prisma } from "@sdk-e/db/client";
-import { getPrisma } from "@sdk-e/db";
-import type { AppPrincipal, ClientRole, ProviderPrincipal, SdkStaffRole } from "@sdk-e/types";
 
 const auth0IdentitySchema = z.object({
   sub: z.string().min(1),
@@ -13,18 +13,18 @@ const auth0IdentitySchema = z.object({
   picture: z.string().url().optional(),
 });
 
-function normalizeEmail(email: string): string {
-  return email.trim().toLowerCase();
-}
-
 export class IdentityError extends Error {
   constructor(
-    public readonly code: "INVALID_IDENTITY" | "INACTIVE_USER" | "IDENTITY_CONFLICT",
-    message: string
+    public readonly code: "IDENTITY_CONFLICT" | "INACTIVE_USER" | "INVALID_IDENTITY",
+    message: string,
   ) {
     super(message);
     this.name = "IdentityError";
   }
+}
+
+function normalizeEmail(email: string): string {
+  return email.trim().toLowerCase();
 }
 
 const principalSelect = {
@@ -45,33 +45,6 @@ const principalSelect = {
     },
   },
 } as const;
-
-function isUniqueConstraintViolation(
-  error: unknown
-): error is Prisma.PrismaClientKnownRequestError {
-  return error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2002";
-}
-
-function identityConflict(): IdentityError {
-  return new IdentityError(
-    "IDENTITY_CONFLICT",
-    "This email is already registered to another SDK account. Sign in with the account that originally registered it."
-  );
-}
-
-function staffMemberConflict(): IdentityError {
-  return new IdentityError(
-    "IDENTITY_CONFLICT",
-    "An SDK staff user cannot also have a client-company membership."
-  );
-}
-
-function providerMemberConflict(): IdentityError {
-  return new IdentityError(
-    "IDENTITY_CONFLICT",
-    "A provider profile cannot also have a client-company membership."
-  );
-}
 
 export async function resolveAppPrincipal(session: SessionData): Promise<AppPrincipal> {
   const parsed = auth0IdentitySchema.safeParse(session.user);
@@ -174,8 +147,35 @@ export async function resolveAppPrincipal(session: SessionData): Promise<AppPrin
   return { ...common, kind: "unassigned" };
 }
 
+function identityConflict(): IdentityError {
+  return new IdentityError(
+    "IDENTITY_CONFLICT",
+    "This email is already registered to another SDK account. Sign in with the account that originally registered it.",
+  );
+}
+
+function isUniqueConstraintViolation(
+  error: unknown,
+): error is Prisma.PrismaClientKnownRequestError {
+  return error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2002";
+}
+
+function providerMemberConflict(): IdentityError {
+  return new IdentityError(
+    "IDENTITY_CONFLICT",
+    "A provider profile cannot also have a client-company membership.",
+  );
+}
+
+function staffMemberConflict(): IdentityError {
+  return new IdentityError(
+    "IDENTITY_CONFLICT",
+    "An SDK staff user cannot also have a client-company membership.",
+  );
+}
+
 export const getCurrentPrincipal = cache(async (): Promise<AppPrincipal | null> => {
-  const { getAuth0Client } = await import("@sdk-e/auth");
+  const { getAuth0Client } = await import("@platform/auth/auth0");
   const session = await getAuth0Client().getSession();
   return session ? resolveAppPrincipal(session) : null;
 });

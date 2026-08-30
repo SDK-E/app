@@ -1,5 +1,5 @@
+import { buildExplanation } from "@platform/matching/explanation";
 import { describe, expect, it } from "vitest";
-import { buildExplanation } from "@sdk-e/matching/explanation";
 
 describe("buildExplanation", () => {
   it("generates explanation fragments for each dimension", () => {

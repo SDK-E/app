@@ -1,19 +1,22 @@
-import { getPrisma } from "@sdk-e/db";
-import { createAuditEvent } from "@sdk-e/core/audit";
-import { opportunityMachine } from "@sdk-e/opportunities/machine";
-import { requireSdkStaff } from "@sdk-e/auth/authorization";
-import { requireActiveCompany } from "@sdk-e/requests/guards";
-import { normalizeWeights } from "./weights";
-import { createMatchRun, updateMatchRun, createMatchCandidate, listOverrides } from "./queries";
-import { applyOverrides } from "./overrides";
-import { scoreProvider } from "./workflow.scoring";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { AppPrincipal } from "@platform/types";
+
+import { requireSdkStaff } from "@platform/auth/authorization";
+import { createAuditEvent } from "@platform/core/audit";
+import { getPrisma } from "@platform/db";
+import { opportunityMachine } from "@platform/opportunities/machine";
+import { requireActiveCompany } from "@platform/requests/guards";
+
 import type { CandidateScore, MatchRunResult } from "./types";
+
+import { applyOverrides } from "./overrides";
+import { createMatchCandidate, createMatchRun, listOverrides, updateMatchRun } from "./queries";
+import { normalizeWeights } from "./weights";
+import { scoreProvider } from "./workflow.scoring";
 
 export async function executeMatchRun(
   principal: AppPrincipal,
   companyId: string,
-  opportunityId: string
+  opportunityId: string,
 ): Promise<MatchRunResult> {
   const staff = requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
   await requireActiveCompany(staff, companyId);

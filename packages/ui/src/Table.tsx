@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { cn } from "@sdk-e/core/utils";
+import { cn } from "@platform/core/utils";
 
 export function Table({ className, children }: { className?: string; children: ReactNode }) {
   return (
@@ -10,16 +10,12 @@ export function Table({ className, children }: { className?: string; children: R
   );
 }
 
-export function THead({ children }: { children: ReactNode }) {
-  return <thead className="border-b border-line">{children}</thead>;
-}
-
 export function TBody({ children }: { children: ReactNode }) {
   return <tbody>{children}</tbody>;
 }
 
-export function TR({ className, children }: { className?: string; children: ReactNode }) {
-  return <tr className={cn("border-b border-line last:border-b-0", className)}>{children}</tr>;
+export function TD({ className, children }: { className?: string; children: ReactNode }) {
+  return <td className={cn("px-4 py-3 align-middle text-body", className)}>{children}</td>;
 }
 
 export function TH({
@@ -37,7 +33,7 @@ export function TH({
       style={width ? { width } : undefined}
       className={cn(
         "px-4 py-3 text-micro font-extrabold uppercase tracking-eyebrow text-muted-foreground",
-        className
+        className,
       )}
     >
       {children}
@@ -45,6 +41,10 @@ export function TH({
   );
 }
 
-export function TD({ className, children }: { className?: string; children: ReactNode }) {
-  return <td className={cn("px-4 py-3 align-middle text-body", className)}>{children}</td>;
+export function THead({ children }: { children: ReactNode }) {
+  return <thead className="border-b border-line">{children}</thead>;
+}
+
+export function TR({ className, children }: { className?: string; children: ReactNode }) {
+  return <tr className={cn("border-b border-line last:border-b-0", className)}>{children}</tr>;
 }

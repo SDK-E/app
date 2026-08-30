@@ -1,7 +1,8 @@
 import type { CSSProperties, ReactNode } from "react";
+
 import { Container } from "./Container";
 
-export type SectionTone = "light" | "dark" | "brand";
+export type SectionTone = "brand" | "dark" | "light";
 
 /**
  * Single source of truth for surface theming.
@@ -17,20 +18,20 @@ export const sectionToneStyles: Record<SectionTone, CSSProperties> = {
   light: {
     backgroundColor: "var(--section-light-bg)",
     color: "var(--section-light-fg)",
-    "--section-muted": "var(--section-light-muted)",
-    "--section-accent": "var(--section-light-muted)",
+    ["--section-muted"]: "var(--section-light-muted)",
+    ["--section-accent"]: "var(--section-light-muted)",
   } as CSSProperties,
   dark: {
     backgroundColor: "var(--section-dark-bg)",
     color: "var(--section-dark-fg)",
-    "--section-muted": "var(--section-dark-muted)",
-    "--section-accent": "var(--section-dark-accent)",
+    ["--section-muted"]: "var(--section-dark-muted)",
+    ["--section-accent"]: "var(--section-dark-accent)",
   } as CSSProperties,
   brand: {
     backgroundColor: "var(--section-brand-bg)",
     color: "var(--section-brand-fg)",
-    "--section-muted": "var(--section-brand-muted)",
-    "--section-accent": "var(--section-brand-fg)",
+    ["--section-muted"]: "var(--section-brand-muted)",
+    ["--section-accent"]: "var(--section-brand-fg)",
   } as CSSProperties,
 };
 

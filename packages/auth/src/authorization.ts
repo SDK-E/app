@@ -1,4 +1,3 @@
-import { clientRolePermissions, sdkRolePermissions } from "@sdk-e/auth/permissions";
 import type {
   AppPrincipal,
   AssignedPrincipal,
@@ -8,37 +7,50 @@ import type {
   ProviderPrincipal,
   SdkStaffPrincipal,
   SdkStaffRole,
-} from "@sdk-e/types";
+} from "@platform/types";
+
+import { clientRolePermissions, sdkRolePermissions } from "@platform/auth/permissions";
 
 export type AuthorizationErrorCode =
-  "UNAUTHENTICATED" | "UNASSIGNED" | "FORBIDDEN" | "COMPANY_REQUIRED" | "NOT_FOUND";
-
-export class AuthorizationError extends Error {
-  constructor(
-    public readonly statusCode: 401 | 403 | 404,
-    public readonly code: AuthorizationErrorCode,
-    message: string
-  ) {
-    super(message);
-    this.name = "AuthorizationError";
-  }
-}
+  "COMPANY_REQUIRED" | "FORBIDDEN" | "NOT_FOUND" | "UNASSIGNED" | "UNAUTHENTICATED";
 
 export interface CompanyContext {
   principal: AssignedPrincipal;
   companyId: string;
 }
 
-export function requireAuthenticatedUser(principal: AppPrincipal | null): AppPrincipal {
-  if (!principal) {
-    throw new AuthorizationError(401, "UNAUTHENTICATED", "Authentication is required.");
+export class AuthorizationError extends Error {
+  constructor(
+    public readonly statusCode: 401 | 403 | 404,
+    public readonly code: AuthorizationErrorCode,
+    message: string,
+  ) {
+    super(message);
+    this.name = "AuthorizationError";
   }
-  return principal;
+}
+
+export function getClientMembership(
+  principal: ClientPrincipal,
+  companyId: string,
+): ClientMembership {
+  const membership = principal.memberships.find((entry) => entry.companyId === companyId);
+  if (!membership) {
+    throw new AuthorizationError(403, "FORBIDDEN", "Cross-company access is denied.");
+  }
+  return membership;
 }
 
 export function requireAssignedPrincipal(principal: AppPrincipal): AssignedPrincipal {
   if (principal.kind === "unassigned") {
     throw new AuthorizationError(403, "UNASSIGNED", "Application access has not been assigned.");
+  }
+  return principal;
+}
+
+export function requireAuthenticatedUser(principal: AppPrincipal | null): AppPrincipal {
+  if (!principal) {
+    throw new AuthorizationError(401, "UNAUTHENTICATED", "Authentication is required.");
   }
   return principal;
 }
@@ -50,16 +62,6 @@ export function requireClientPrincipal(principal: AppPrincipal): ClientPrincipal
   return principal;
 }
 
-export function requireSdkStaff(
-  principal: AppPrincipal,
-  allowedRoles?: readonly SdkStaffRole[]
-): SdkStaffPrincipal {
-  if (principal.kind !== "sdk-staff" || (allowedRoles && !allowedRoles.includes(principal.role))) {
-    throw new AuthorizationError(403, "FORBIDDEN", "SDK staff access is required.");
-  }
-  return principal;
-}
-
 export function requireProviderPrincipal(principal: AppPrincipal): ProviderPrincipal {
   if (principal.kind !== "provider") {
     throw new AuthorizationError(403, "FORBIDDEN", "Provider access is required.");
@@ -67,25 +69,24 @@ export function requireProviderPrincipal(principal: AppPrincipal): ProviderPrinc
   return principal;
 }
 
-export function getClientMembership(
-  principal: ClientPrincipal,
-  companyId: string
-): ClientMembership {
-  const membership = principal.memberships.find((entry) => entry.companyId === companyId);
-  if (!membership) {
-    throw new AuthorizationError(403, "FORBIDDEN", "Cross-company access is denied.");
+export function requireSdkStaff(
+  principal: AppPrincipal,
+  allowedRoles?: readonly SdkStaffRole[],
+): SdkStaffPrincipal {
+  if (principal.kind !== "sdk-staff" || (allowedRoles && !allowedRoles.includes(principal.role))) {
+    throw new AuthorizationError(403, "FORBIDDEN", "SDK staff access is required.");
   }
-  return membership;
+  return principal;
 }
 
 const clientScopedPermissions = new Set(
-  Object.values(clientRolePermissions).flatMap((permissions) => [...permissions])
+  Object.values(clientRolePermissions).flatMap((permissions) => [...permissions]),
 );
 
 export function hasPermission(
   principal: AppPrincipal,
   permission: Permission,
-  companyId?: string
+  companyId?: string,
 ): boolean {
   if (principal.kind === "unassigned") return false;
   if (principal.kind === "provider") return false;
@@ -95,7 +96,7 @@ export function hasPermission(
       throw new AuthorizationError(
         403,
         "COMPANY_REQUIRED",
-        "Client permission checks require a company scope."
+        "Client permission checks require a company scope.",
       );
     }
     const membership = getClientMembership(principal, companyId);
@@ -104,27 +105,19 @@ export function hasPermission(
   return sdkRolePermissions[principal.role].has(permission);
 }
 
-export function requirePermission(
-  principal: AppPrincipal,
-  permission: Permission,
-  companyId?: string
-): AssignedPrincipal {
-  const assigned = requireAssignedPrincipal(principal);
-  if (!hasPermission(assigned, permission, companyId)) {
-    throw new AuthorizationError(403, "FORBIDDEN", `Missing permission: ${permission}`);
-  }
-  return assigned;
+export function notFound(message = "Resource not found."): never {
+  throw new AuthorizationError(404, "NOT_FOUND", message);
 }
 
 export function requireCompanyAccess(
   principal: AssignedPrincipal,
-  requestedCompanyId?: string
+  requestedCompanyId?: string,
 ): string {
   if (!requestedCompanyId) {
     throw new AuthorizationError(
       403,
       "COMPANY_REQUIRED",
-      "A target company is required for resource access."
+      "A target company is required for resource access.",
     );
   }
   if (principal.kind === "client") {
@@ -136,7 +129,7 @@ export function requireCompanyAccess(
 export function requireCompanyContext(
   principal: AppPrincipal,
   companyId: string,
-  permission: Permission
+  permission: Permission,
 ): CompanyContext {
   const assigned = requireAssignedPrincipal(principal);
   requireCompanyAccess(assigned, companyId);
@@ -149,7 +142,7 @@ export function requireCompanyContext(
 export function requireCompanyPageContext(
   principal: AppPrincipal,
   companyId: string,
-  permission: Permission
+  permission: Permission,
 ): CompanyContext {
   try {
     return requireCompanyContext(principal, companyId, permission);
@@ -161,14 +154,22 @@ export function requireCompanyPageContext(
   }
 }
 
+export function requirePermission(
+  principal: AppPrincipal,
+  permission: Permission,
+  companyId?: string,
+): AssignedPrincipal {
+  const assigned = requireAssignedPrincipal(principal);
+  if (!hasPermission(assigned, permission, companyId)) {
+    throw new AuthorizationError(403, "FORBIDDEN", `Missing permission: ${permission}`);
+  }
+  return assigned;
+}
+
 export function tenantWhere<T extends object>(
   principal: AssignedPrincipal,
   where: T,
-  companyId?: string
-): T & { companyId: string } {
+  companyId?: string,
+): { companyId: string } & T {
   return { ...where, companyId: requireCompanyAccess(principal, companyId) };
-}
-
-export function notFound(message = "Resource not found."): never {
-  throw new AuthorizationError(404, "NOT_FOUND", message);
 }

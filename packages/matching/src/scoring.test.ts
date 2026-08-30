@@ -1,7 +1,8 @@
+import type { Opportunity, Provider, ProviderService } from "@platform/db/client";
+
+import { scoreCandidate } from "@platform/matching/scoring";
+import { DEFAULT_WEIGHTS } from "@platform/matching/weights";
 import { describe, expect, it } from "vitest";
-import type { Opportunity, Provider, ProviderService } from "@sdk-e/db/client";
-import { scoreCandidate } from "@sdk-e/matching/scoring";
-import { DEFAULT_WEIGHTS } from "@sdk-e/matching/weights";
 
 const baseProvider = {
   id: "provider-1",
@@ -37,7 +38,7 @@ describe("scoreCandidate", () => {
       [],
       [],
       [],
-      []
+      [],
     );
     expect(dimensions).toHaveLength(8);
   });
@@ -56,7 +57,7 @@ describe("scoreCandidate", () => {
       [],
       [],
       [],
-      []
+      [],
     );
     const senior = scoreCandidate(
       { ...baseProvider, yearsOfExperience: 8 } as unknown as Provider,
@@ -65,7 +66,7 @@ describe("scoreCandidate", () => {
       [],
       [],
       [],
-      []
+      [],
     );
     const juniorSeniority = junior.find((d) => d.name === "seniority");
     const seniorSeniority = senior.find((d) => d.name === "seniority");
@@ -102,7 +103,7 @@ describe("scoreCandidate", () => {
       [],
       services,
       [],
-      []
+      [],
     );
     const serviceFit = dimensions.find((d) => d.name === "serviceFit");
     expect(serviceFit?.raw).toBe(100);
@@ -138,7 +139,7 @@ describe("scoreCandidate", () => {
       [],
       services,
       [],
-      []
+      [],
     );
     const serviceFit = dimensions.find((d) => d.name === "serviceFit");
     expect(serviceFit?.raw).toBe(0);

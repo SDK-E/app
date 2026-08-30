@@ -1,5 +1,5 @@
-import { escapeHtml, sendMessage } from "@sdk-e/email/transport";
-import { siteConfig } from "@sdk-e/config/site";
+import { siteConfig } from "@platform/config/site";
+import { escapeHtml, sendMessage } from "@platform/email/transport";
 
 export interface AccessRequestCreatedNotification {
   to: string;
@@ -20,7 +20,7 @@ export interface AccessRequestResolvedNotification {
 const from = `SDK Enterprises <no-reply@${siteConfig.contact.domain}>`;
 
 export async function sendAccessRequestCreatedNotification(
-  notification: AccessRequestCreatedNotification
+  notification: AccessRequestCreatedNotification,
 ): Promise<boolean> {
   const html = [
     '<div style="font-family: sans-serif; line-height: 1.5; color: #111;">',
@@ -36,12 +36,12 @@ export async function sendAccessRequestCreatedNotification(
       subject: `Access request for ${notification.companyName}`,
       html,
     },
-    "access request email"
+    "access request email",
   );
 }
 
 export async function sendAccessRequestResolvedNotification(
-  notification: AccessRequestResolvedNotification
+  notification: AccessRequestResolvedNotification,
 ): Promise<boolean> {
   const outcome =
     notification.outcome === "APPROVED"
@@ -60,6 +60,6 @@ export async function sendAccessRequestResolvedNotification(
       subject: `Access request ${notification.outcome === "APPROVED" ? "approved" : "declined"} for ${notification.companyName}`,
       html,
     },
-    "access request email"
+    "access request email",
   );
 }

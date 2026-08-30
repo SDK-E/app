@@ -1,10 +1,9 @@
+import { UserActionForm } from "@platform/portal-shell/components/portal/UserActionForm";
+import { fieldClass } from "@platform/portal-shell/components/portal/users/styles";
+import { regenerateAccessCodeAction } from "@platform/portal-staff/app/users/access-request-actions";
+import { inviteClientAction, inviteStaffAction } from "@platform/portal-staff/app/users/actions";
+import { Card } from "@platform/ui/Card";
 import { getTranslations } from "next-intl/server";
-
-import { inviteClientAction, inviteStaffAction } from "@sdk-e/portal-staff/app/users/actions";
-import { regenerateAccessCodeAction } from "@sdk-e/portal-staff/app/users/access-request-actions";
-import { Card } from "@sdk-e/ui/Card";
-import { UserActionForm } from "@sdk-e/portal-shell/components/portal/UserActionForm";
-import { fieldClass } from "@sdk-e/portal-shell/components/portal/users/styles";
 
 const clientRoles = ["ADMINISTRATOR", "PROJECT_MEMBER", "BILLING", "VIEWER"];
 const staffRoles = ["ADMIN", "DELIVERY", "FINANCE"];
@@ -29,13 +28,25 @@ export async function StaffInviteCards({
           >
             <label className="block text-label font-extrabold uppercase tracking-eyebrow">
               {t("email")}
-              <input className={`${fieldClass} mt-2`} name="email" type="email" required />
+              <input
+                className={`${fieldClass} mt-2`}
+                name="email"
+                type="email"
+                required
+              />
             </label>
             <label className="block text-label font-extrabold uppercase tracking-eyebrow">
               {t("company")}
-              <select className={`${fieldClass} mt-2`} name="companyId" required>
+              <select
+                className={`${fieldClass} mt-2`}
+                name="companyId"
+                required
+              >
                 {companies.map((company) => (
-                  <option key={company.id} value={company.id}>
+                  <option
+                    key={company.id}
+                    value={company.id}
+                  >
                     {company.name}
                   </option>
                 ))}
@@ -50,7 +61,10 @@ export async function StaffInviteCards({
                 required
               >
                 {clientRoles.map((role) => (
-                  <option key={role} value={role}>
+                  <option
+                    key={role}
+                    value={role}
+                  >
                     {role.replaceAll("_", " ")}
                   </option>
                 ))}
@@ -70,13 +84,26 @@ export async function StaffInviteCards({
           >
             <label className="block text-label font-extrabold uppercase tracking-eyebrow">
               {t("email")}
-              <input className={`${fieldClass} mt-2`} name="email" type="email" required />
+              <input
+                className={`${fieldClass} mt-2`}
+                name="email"
+                type="email"
+                required
+              />
             </label>
             <label className="block text-label font-extrabold uppercase tracking-eyebrow">
               {t("role")}
-              <select className={`${fieldClass} mt-2`} name="role" defaultValue="DELIVERY" required>
+              <select
+                className={`${fieldClass} mt-2`}
+                name="role"
+                defaultValue="DELIVERY"
+                required
+              >
                 {staffRoles.map((role) => (
-                  <option key={role} value={role}>
+                  <option
+                    key={role}
+                    value={role}
+                  >
                     {role}
                   </option>
                 ))}
@@ -95,9 +122,16 @@ export async function StaffInviteCards({
             label={t("regenerate")}
             confirmLabel={t("confirmRegenerate")}
           >
-            <select className={fieldClass} name="companyId" required>
+            <select
+              className={fieldClass}
+              name="companyId"
+              required
+            >
               {companies.map((company) => (
-                <option key={company.id} value={company.id}>
+                <option
+                  key={company.id}
+                  value={company.id}
+                >
                   {company.name}
                 </option>
               ))}

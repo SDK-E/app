@@ -1,7 +1,6 @@
+import { executeMatchRun } from "@platform/matching/workflow.run";
+import { principal } from "@platform/test-support/test-fixtures";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { executeMatchRun } from "@sdk-e/matching/workflow.run";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const make = () => ({
@@ -42,7 +41,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
 mocks.prisma.$transaction.mockImplementation(async (callback) => callback(mocks.prisma));
 
@@ -105,7 +104,7 @@ describe("executeMatchRun", () => {
     mocks.opportunity.findFirst.mockResolvedValue(null);
 
     await expect(executeMatchRun(principal("sdk-admin"), "company-1", "opp-1")).rejects.toThrow(
-      "Opportunity not found"
+      "Opportunity not found",
     );
   });
 

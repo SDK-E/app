@@ -1,6 +1,7 @@
-import { getPrisma } from "@sdk-e/db";
-import { IdentityError } from "@sdk-e/auth/identity";
-import type { ClientRole, SdkStaffRole } from "@sdk-e/types";
+import type { ClientRole, SdkStaffRole } from "@platform/types";
+
+import { IdentityError } from "@platform/auth/identity";
+import { getPrisma } from "@platform/db";
 
 export async function assignCompanyMembership(input: {
   userId: string;
@@ -35,7 +36,7 @@ export async function assignSdkStaffRole(userId: string, role: SdkStaffRole) {
     if (membership) {
       throw new IdentityError(
         "IDENTITY_CONFLICT",
-        "Company members cannot receive SDK staff roles."
+        "Company members cannot receive SDK staff roles.",
       );
     }
     return transaction.user.update({ where: { id: userId }, data: { sdkStaffRole: role } });

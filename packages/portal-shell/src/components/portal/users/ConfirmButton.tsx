@@ -1,8 +1,7 @@
 "use client";
 
+import { Button } from "@platform/ui/Button";
 import { useEffect, useRef, useState } from "react";
-
-import { Button } from "@sdk-e/ui/Button";
 
 export function ConfirmButton({
   label,
@@ -12,17 +11,17 @@ export function ConfirmButton({
 }: {
   label: string;
   confirmLabel: string;
-  variant?: "default" | "outline" | "dark" | "destructive";
-  size?: "default" | "xs" | "sm" | "lg" | "icon" | "icon-xs" | "icon-sm" | "icon-lg";
+  variant?: "dark" | "default" | "destructive" | "outline";
+  size?: "default" | "icon-lg" | "icon-sm" | "icon-xs" | "icon" | "lg" | "sm" | "xs";
 }) {
   const [confirming, setConfirming] = useState(false);
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const timer = useRef<null | ReturnType<typeof setTimeout>>(null);
 
   useEffect(
     () => () => {
       if (timer.current) clearTimeout(timer.current);
     },
-    []
+    [],
   );
 
   function onClick(event: React.MouseEvent<HTMLButtonElement>) {

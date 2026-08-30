@@ -1,7 +1,6 @@
+import { buildCompanySlug, createSdkCompany, generateAccessCode } from "@platform/companies";
+import { principal } from "@platform/test-support/test-fixtures";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { buildCompanySlug, createSdkCompany, generateAccessCode } from "@sdk-e/companies";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const company = {
@@ -22,7 +21,7 @@ const mocks = vi.hoisted(() => {
   return { prisma, company, invitation, user, transaction };
 });
 
-vi.mock("@sdk-e/db", () => ({
+vi.mock("@platform/db", () => ({
   getPrisma: () => mocks.prisma,
 }));
 
@@ -90,7 +89,7 @@ describe("createSdkCompany", () => {
       createSdkCompany(principal("delivery"), {
         name: "Acme Ltd",
         ownerEmail: "owner@example.com",
-      })
+      }),
     ).rejects.toThrow("Missing permission: company:create");
     expect(mocks.company.create).not.toHaveBeenCalled();
   });
@@ -100,7 +99,7 @@ describe("createSdkCompany", () => {
       createSdkCompany(principal("owner"), {
         name: "Acme Ltd",
         ownerEmail: "owner@example.com",
-      })
+      }),
     ).rejects.toThrow("Missing permission: company:create");
   });
 
@@ -115,7 +114,7 @@ describe("createSdkCompany", () => {
       createSdkCompany(principal("sdk-admin"), {
         name: "Acme Ltd",
         ownerEmail: "member@example.com",
-      })
+      }),
     ).rejects.toThrow("already belongs to a company");
     expect(mocks.company.create).not.toHaveBeenCalled();
   });
@@ -131,7 +130,7 @@ describe("createSdkCompany", () => {
       createSdkCompany(principal("sdk-admin"), {
         name: "Acme Ltd",
         ownerEmail: "staff@example.com",
-      })
+      }),
     ).rejects.toThrow("SDK staff accounts cannot become company owners.");
     expect(mocks.company.create).not.toHaveBeenCalled();
   });
@@ -144,7 +143,7 @@ describe("createSdkCompany", () => {
       createSdkCompany(principal("sdk-admin"), {
         name: "Acme Ltd",
         ownerEmail: "owner@example.com",
-      })
+      }),
     ).rejects.toThrow("already pending");
     expect(mocks.company.create).not.toHaveBeenCalled();
   });

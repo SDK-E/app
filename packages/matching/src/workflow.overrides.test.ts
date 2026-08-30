@@ -1,7 +1,6 @@
+import { applyMatchOverride } from "@platform/matching/workflow.overrides";
+import { principal } from "@platform/test-support/test-fixtures";
 import { describe, expect, it, vi } from "vitest";
-
-import { applyMatchOverride } from "@sdk-e/matching/workflow.overrides";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const make = () => ({
@@ -27,7 +26,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
 mocks.prisma.$transaction.mockImplementation(async (callback) => callback(mocks.prisma));
 

@@ -1,4 +1,4 @@
-import type { AppPrincipal, ProviderPrincipal } from "@sdk-e/types";
+import type { AppPrincipal, ProviderPrincipal } from "@platform/types";
 
 export const common = {
   id: "user-1",
@@ -11,20 +11,20 @@ export const common = {
 };
 
 export type PrincipalKind =
-  | "owner"
   | "administrator"
-  | "member"
-  | "virtual-billing"
-  | "viewer"
-  | "sdk-admin"
   | "delivery"
+  | "member"
+  | "owner"
   | "provider"
-  | "unassigned";
+  | "sdk-admin"
+  | "unassigned"
+  | "viewer"
+  | "virtual-billing";
 
 export function principal(
   kind: PrincipalKind,
   companyId = "company-1",
-  companyName = "Company"
+  companyName = "Company",
 ): AppPrincipal {
   if (kind === "unassigned") return { ...common, kind: "unassigned" };
   if (kind === "sdk-admin" || kind === "delivery")
