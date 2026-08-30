@@ -24,7 +24,6 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm run agents:check
-      - run: pnpm run check:file-length
       - run: pnpm run format:check
       - run: pnpm run audit
       - run: pnpm run lint

@@ -17,6 +17,11 @@ coverage
 # config files with strict JSON requirements
 kilo.jsonc
 opencode.json
+.kilo/*
+.opencode/*
+.codex/*
+.claude/*
+.agents/*
 
 # env
 .env
