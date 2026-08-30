@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -24,6 +25,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={jetbrainsMono.variable} suppressHydrationWarning>
       <body className="antialiased">
+        <Script
+          src="https://app.secureprivacy.ai/script/6a93a2f7c62d5b186f5b65bd.js"
+          strategy="afterInteractive"
+        />
         <HtmlLang />
         {children}
         <SpeedInsights />
