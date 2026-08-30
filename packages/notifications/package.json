@@ -10,8 +10,7 @@
   "dependencies": {
     "@platform/auth": "workspace:*",
     "@platform/db": "workspace:*",
-    "@platform/email": "workspace:*",
-    "@platform/types": "workspace:*"
+    "@platform/email": "workspace:*"
   },
   "peerDependencies": {
     "next": "*"

@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@platform/auth": "workspace:*",
-    "@platform/core": "workspace:*",
     "@platform/db": "workspace:*",
     "@platform/types": "workspace:*"
   },

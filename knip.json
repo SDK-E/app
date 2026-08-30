@@ -5,6 +5,9 @@
   },
   "includeEntryExports": true,
   "treatConfigHintsAsErrors": false,
+  "ignoreFiles": ["packages/db/src/generated/**", ".kilo/**", ".opencode/**"],
+  "ignoreUnresolved": ["next"],
+  "ignoreDependencies": ["@prisma/client", "typescript-eslint"],
   "ignoreIssues": {
     "apps/web/src/components/layout/HeaderNavLinks.tsx": ["exports"],
     "apps/web/src/components/marketing/ContactSection.tsx": ["exports"],
