@@ -83,7 +83,6 @@ for (const path of [
   "packages/auth/src/auth0.ts",
   "packages/auth/src/identity.ts",
   "packages/auth/src/authorization.ts",
-  "node_modules/@sdk-e/mailbox/dist/bin/mailbox-mcp.js",
   "packages/tooling/src/mcp/humanizer-mcp.ts",
 ]) {
   try {
