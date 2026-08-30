@@ -18,7 +18,10 @@ function Search({ items }: { items: Item[] }) {
 
   return (
     <>
-      <input value={query} onChange={(e) => setQuery(e.target.value)} />
+      <input
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
       <ResultsList results={filtered} />
     </>
   );
@@ -33,13 +36,16 @@ function Search({ items }: { items: Item[] }) {
   const deferredQuery = useDeferredValue(query);
   const filtered = useMemo(
     () => items.filter((item) => fuzzyMatch(item, deferredQuery)),
-    [items, deferredQuery]
+    [items, deferredQuery],
   );
   const isStale = query !== deferredQuery;
 
   return (
     <>
-      <input value={query} onChange={(e) => setQuery(e.target.value)} />
+      <input
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
       <div style={{ opacity: isStale ? 0.7 : 1 }}>
         <ResultsList results={filtered} />
       </div>

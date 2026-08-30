@@ -48,7 +48,7 @@ export async function refundWorkflow(refundId: string) {
 
 async function emitStatus(
   writable: WritableStream<{ stage: string }>,
-  chunk: { stage: string }
+  chunk: { stage: string },
 ): Promise<void> {
   "use step";
 

@@ -24,7 +24,7 @@ export const refundWorkflow = inngest.createFunction(
     }
 
     return { refundId: event.data.refundId, status: "approved" as const };
-  }
+  },
 );
 ```
 

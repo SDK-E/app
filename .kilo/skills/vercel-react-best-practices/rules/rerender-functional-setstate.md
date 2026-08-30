@@ -20,7 +20,7 @@ function TodoList() {
     (newItems: Item[]) => {
       setItems([...items, ...newItems]);
     },
-    [items]
+    [items],
   ); // ❌ items dependency causes recreations
 
   // Risk of stale closure if dependency is forgotten
@@ -28,7 +28,13 @@ function TodoList() {
     setItems(items.filter((item) => item.id !== id));
   }, []); // ❌ Missing items dependency - will use stale items!
 
-  return <ItemsEditor items={items} onAdd={addItems} onRemove={removeItem} />;
+  return (
+    <ItemsEditor
+      items={items}
+      onAdd={addItems}
+      onRemove={removeItem}
+    />
+  );
 }
 ```
 
@@ -50,7 +56,13 @@ function TodoList() {
     setItems((curr) => curr.filter((item) => item.id !== id));
   }, []); // ✅ Safe and stable
 
-  return <ItemsEditor items={items} onAdd={addItems} onRemove={removeItem} />;
+  return (
+    <ItemsEditor
+      items={items}
+      onAdd={addItems}
+      onRemove={removeItem}
+    />
+  );
 }
 ```
 

@@ -169,7 +169,7 @@ const withAuthor = db.query
         local: local.authorId,
         foreign: foreign._id,
       }))
-      .as("author")
+      .as("author"),
   )
   .build();
 const rows = await runtime.execute(withAuthor);
@@ -181,21 +181,21 @@ const rows = await runtime.execute(withAuthor);
 
 ```typescript
 await runtime.execute(
-  db.query.from("users").insertOne({ name: "Alice", email: "a@e.com", bio: null })
+  db.query.from("users").insertOne({ name: "Alice", email: "a@e.com", bio: null }),
 );
 
 await runtime.execute(
   db.query
     .from("users")
     .match((f) => f.name.eq("Alice"))
-    .updateMany((f) => [f.bio.set("filled")])
+    .updateMany((f) => [f.bio.set("filled")]),
 );
 
 await runtime.execute(
   db.query
     .from("users")
     .match((f) => f.email.eq("a@e.com"))
-    .findOneAndUpdate((f) => [f.bio.set("updated")], { returnDocument: "after" })
+    .findOneAndUpdate((f) => [f.bio.set("updated")], { returnDocument: "after" }),
 );
 ```
 

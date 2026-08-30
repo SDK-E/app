@@ -644,7 +644,7 @@ await resumeWebhook(
   new Request("https://example.com/webhook", {
     method: "POST",
     body: JSON.stringify({ event: "order.created" }),
-  })
+  }),
 );
 ```
 

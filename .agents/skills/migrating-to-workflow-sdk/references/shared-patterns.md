@@ -185,7 +185,7 @@ async function submitForVerification(documentId: string, callbackUrl: string): P
 
 async function acknowledgeVerification(
   request: RequestWithResponse,
-  approved: boolean
+  approved: boolean,
 ): Promise<void> {
   "use step";
 
@@ -320,7 +320,7 @@ export async function refundWorkflow(refundId: string) {
 
 async function emitStatus(
   writable: WritableStream<{ stage: string }>,
-  chunk: { stage: string }
+  chunk: { stage: string },
 ): Promise<void> {
   "use step";
 

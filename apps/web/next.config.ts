@@ -1,5 +1,6 @@
-import { config as loadEnv } from "dotenv";
 import type { NextConfig } from "next";
+
+import { config as loadEnv } from "dotenv";
 import createNextIntlPlugin from "next-intl/plugin";
 
 // Env files live at the workspace root; replicate @next/env precedence
@@ -15,30 +16,30 @@ const nextConfig: NextConfig = {
   compress: true,
   output: process.env.VERCEL ? undefined : "standalone",
   transpilePackages: [
-    "@sdk-e/types",
-    "@sdk-e/config",
-    "@sdk-e/env",
-    "@sdk-e/db",
-    "@sdk-e/core",
-    "@sdk-e/i18n",
-    "@sdk-e/auth",
-    "@sdk-e/schemas",
-    "@sdk-e/users",
-    "@sdk-e/companies",
-    "@sdk-e/email",
-    "@sdk-e/marketing",
-    "@sdk-e/payments",
-    "@sdk-e/notifications",
-    "@sdk-e/providers",
-    "@sdk-e/requests",
-    "@sdk-e/opportunities",
-    "@sdk-e/matching",
-    "@sdk-e/ui",
-    "@sdk-e/design-system",
-    "@sdk-e/portal-shell",
-    "@sdk-e/portal-staff",
-    "@sdk-e/portal-companies",
-    "@sdk-e/portal-providers",
+    "@platform/types",
+    "@platform/config",
+    "@platform/env",
+    "@platform/db",
+    "@platform/core",
+    "@platform/i18n",
+    "@platform/auth",
+    "@platform/schemas",
+    "@platform/users",
+    "@platform/companies",
+    "@platform/email",
+    "@platform/marketing",
+    "@platform/payments",
+    "@platform/notifications",
+    "@platform/providers",
+    "@platform/requests",
+    "@platform/opportunities",
+    "@platform/matching",
+    "@platform/ui",
+    "@platform/design-system",
+    "@platform/portal-shell",
+    "@platform/portal-staff",
+    "@platform/portal-companies",
+    "@platform/portal-providers",
   ],
   images: {
     remotePatterns: [

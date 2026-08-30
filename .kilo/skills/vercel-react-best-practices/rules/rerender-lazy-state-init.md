@@ -18,14 +18,24 @@ function FilteredList({ items }: { items: Item[] }) {
   const [query, setQuery] = useState("");
 
   // When query changes, buildSearchIndex runs again unnecessarily
-  return <SearchResults index={searchIndex} query={query} />;
+  return (
+    <SearchResults
+      index={searchIndex}
+      query={query}
+    />
+  );
 }
 
 function UserProfile() {
   // JSON.parse runs on every render
   const [settings, setSettings] = useState(JSON.parse(localStorage.getItem("settings") || "{}"));
 
-  return <SettingsForm settings={settings} onChange={setSettings} />;
+  return (
+    <SettingsForm
+      settings={settings}
+      onChange={setSettings}
+    />
+  );
 }
 ```
 
@@ -37,7 +47,12 @@ function FilteredList({ items }: { items: Item[] }) {
   const [searchIndex, setSearchIndex] = useState(() => buildSearchIndex(items));
   const [query, setQuery] = useState("");
 
-  return <SearchResults index={searchIndex} query={query} />;
+  return (
+    <SearchResults
+      index={searchIndex}
+      query={query}
+    />
+  );
 }
 
 function UserProfile() {
@@ -47,7 +62,12 @@ function UserProfile() {
     return stored ? JSON.parse(stored) : {};
   });
 
-  return <SettingsForm settings={settings} onChange={setSettings} />;
+  return (
+    <SettingsForm
+      settings={settings}
+      onChange={setSettings}
+    />
+  );
 }
 ```
 

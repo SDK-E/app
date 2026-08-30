@@ -20,7 +20,11 @@ function EditorButton({ onClick }: { onClick: () => void }) {
   };
 
   return (
-    <button onMouseEnter={preload} onFocus={preload} onClick={onClick}>
+    <button
+      onMouseEnter={preload}
+      onFocus={preload}
+      onClick={onClick}
+    >
       Open Editor
     </button>
   );

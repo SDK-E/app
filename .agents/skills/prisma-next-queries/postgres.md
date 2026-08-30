@@ -82,8 +82,8 @@ import { and, or, not } from "@prisma-next/sql-orm-client";
 await db.orm.User.where((u) =>
   and(
     or(u.kind.eq("admin"), u.email.ilike("%@example.com")),
-    not(u.posts.none((p) => p.title.ilike("%draft%")))
-  )
+    not(u.posts.none((p) => p.title.ilike("%draft%"))),
+  ),
 ).all();
 ```
 
@@ -124,7 +124,7 @@ await db.orm.User.select("id", "email")
     post
       .select("id", "title", "createdAt")
       .orderBy((p) => p.createdAt.desc())
-      .take(5)
+      .take(5),
   )
   .take(10)
   .all();

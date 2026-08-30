@@ -649,7 +649,11 @@ function EditorButton({ onClick }: { onClick: () => void }) {
   };
 
   return (
-    <button onMouseEnter={preload} onFocus={preload} onClick={onClick}>
+    <button
+      onMouseEnter={preload}
+      onFocus={preload}
+      onClick={onClick}
+    >
       Open Editor
     </button>
   );
@@ -780,7 +784,10 @@ RSC→client serialization deduplicates by object reference, not value. Same ref
 
 ```tsx
 // RSC: sends 6 strings (2 arrays × 3 items)
-<ClientList usernames={usernames} usernamesOrdered={usernames.toSorted()} />
+<ClientList
+  usernames={usernames}
+  usernamesOrdered={usernames.toSorted()}
+/>
 ```
 
 **Correct: sends 3 strings**
@@ -1192,7 +1199,7 @@ If one `getChat(id)` out of 100 is extremely slow, the authors of the other 99 c
 
 ```tsx
 const chatAuthors = await Promise.all(
-  chatIds.map((id) => getChat(id).then((chat) => getUser(chat.author)))
+  chatIds.map((id) => getChat(id).then((chat) => getUser(chat.author))),
 );
 ```
 
@@ -1576,7 +1583,7 @@ function cachePrefs(user: FullUser) {
       JSON.stringify({
         theme: user.preferences.theme,
         notifications: user.preferences.notifications,
-      })
+      }),
     );
   } catch {}
 }
@@ -1711,7 +1718,10 @@ A common reason developers do this is to access parent variables without passing
 function UserProfile({ user, theme }) {
   // Defined inside to access `theme` - BAD
   const Avatar = () => (
-    <img src={user.avatarUrl} className={theme === "dark" ? "avatar-dark" : "avatar-light"} />
+    <img
+      src={user.avatarUrl}
+      className={theme === "dark" ? "avatar-dark" : "avatar-light"}
+    />
   );
 
   // Defined inside to access `user` - BAD
@@ -1737,7 +1747,12 @@ Every time `UserProfile` renders, `Avatar` and `Stats` are new component types. 
 
 ```tsx
 function Avatar({ src, theme }: { src: string; theme: string }) {
-  return <img src={src} className={theme === "dark" ? "avatar-dark" : "avatar-light"} />;
+  return (
+    <img
+      src={src}
+      className={theme === "dark" ? "avatar-dark" : "avatar-light"}
+    />
+  );
 }
 
 function Stats({ followers, posts }: { followers: number; posts: number }) {
@@ -1752,8 +1767,14 @@ function Stats({ followers, posts }: { followers: number; posts: number }) {
 function UserProfile({ user, theme }) {
   return (
     <div>
-      <Avatar src={user.avatarUrl} theme={theme} />
-      <Stats followers={user.followers} posts={user.posts} />
+      <Avatar
+        src={user.avatarUrl}
+        theme={theme}
+      />
+      <Stats
+        followers={user.followers}
+        posts={user.posts}
+      />
     </div>
   );
 }
@@ -1935,7 +1956,7 @@ When a hook contains multiple independent tasks with different dependencies, spl
 const sortedProducts = useMemo(() => {
   const filtered = products.filter((p) => p.category === category);
   const sorted = filtered.toSorted((a, b) =>
-    sortOrder === "asc" ? a.price - b.price : b.price - a.price
+    sortOrder === "asc" ? a.price - b.price : b.price - a.price,
   );
   return sorted;
 }, [products, category, sortOrder]);
@@ -1946,15 +1967,15 @@ const sortedProducts = useMemo(() => {
 ```tsx
 const filteredProducts = useMemo(
   () => products.filter((p) => p.category === category),
-  [products, category]
+  [products, category],
 );
 
 const sortedProducts = useMemo(
   () =>
     filteredProducts.toSorted((a, b) =>
-      sortOrder === "asc" ? a.price - b.price : b.price - a.price
+      sortOrder === "asc" ? a.price - b.price : b.price - a.price,
     ),
-  [filteredProducts, sortOrder]
+  [filteredProducts, sortOrder],
 );
 ```
 
@@ -2025,7 +2046,7 @@ function TodoList() {
     (newItems: Item[]) => {
       setItems([...items, ...newItems]);
     },
-    [items]
+    [items],
   ); // ❌ items dependency causes recreations
 
   // Risk of stale closure if dependency is forgotten
@@ -2033,7 +2054,13 @@ function TodoList() {
     setItems(items.filter((item) => item.id !== id));
   }, []); // ❌ Missing items dependency - will use stale items!
 
-  return <ItemsEditor items={items} onAdd={addItems} onRemove={removeItem} />;
+  return (
+    <ItemsEditor
+      items={items}
+      onAdd={addItems}
+      onRemove={removeItem}
+    />
+  );
 }
 ```
 
@@ -2055,7 +2082,13 @@ function TodoList() {
     setItems((curr) => curr.filter((item) => item.id !== id));
   }, []); // ✅ Safe and stable
 
-  return <ItemsEditor items={items} onAdd={addItems} onRemove={removeItem} />;
+  return (
+    <ItemsEditor
+      items={items}
+      onAdd={addItems}
+      onRemove={removeItem}
+    />
+  );
 }
 ```
 
@@ -2104,14 +2137,24 @@ function FilteredList({ items }: { items: Item[] }) {
   const [query, setQuery] = useState("");
 
   // When query changes, buildSearchIndex runs again unnecessarily
-  return <SearchResults index={searchIndex} query={query} />;
+  return (
+    <SearchResults
+      index={searchIndex}
+      query={query}
+    />
+  );
 }
 
 function UserProfile() {
   // JSON.parse runs on every render
   const [settings, setSettings] = useState(JSON.parse(localStorage.getItem("settings") || "{}"));
 
-  return <SettingsForm settings={settings} onChange={setSettings} />;
+  return (
+    <SettingsForm
+      settings={settings}
+      onChange={setSettings}
+    />
+  );
 }
 ```
 
@@ -2123,7 +2166,12 @@ function FilteredList({ items }: { items: Item[] }) {
   const [searchIndex, setSearchIndex] = useState(() => buildSearchIndex(items));
   const [query, setQuery] = useState("");
 
-  return <SearchResults index={searchIndex} query={query} />;
+  return (
+    <SearchResults
+      index={searchIndex}
+      query={query}
+    />
+  );
 }
 
 function UserProfile() {
@@ -2133,7 +2181,12 @@ function UserProfile() {
     return stored ? JSON.parse(stored) : {};
   });
 
-  return <SettingsForm settings={settings} onChange={setSettings} />;
+  return (
+    <SettingsForm
+      settings={settings}
+      onChange={setSettings}
+    />
+  );
 }
 ```
 
@@ -2192,7 +2245,10 @@ function Search({ items }: { items: Item[] }) {
 
   return (
     <>
-      <input value={query} onChange={(e) => setQuery(e.target.value)} />
+      <input
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
       <ResultsList results={filtered} />
     </>
   );
@@ -2207,13 +2263,16 @@ function Search({ items }: { items: Item[] }) {
   const deferredQuery = useDeferredValue(query);
   const filtered = useMemo(
     () => items.filter((item) => fuzzyMatch(item, deferredQuery)),
-    [items, deferredQuery]
+    [items, deferredQuery],
   );
   const isStale = query !== deferredQuery;
 
   return (
     <>
-      <input value={query} onChange={(e) => setQuery(e.target.value)} />
+      <input
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
       <div style={{ opacity: isStale ? 0.7 : 1 }}>
         <ResultsList results={filtered} />
       </div>
@@ -2322,8 +2381,18 @@ Many browsers don't have hardware acceleration for CSS3 animations on SVG elemen
 ```tsx
 function LoadingSpinner() {
   return (
-    <svg className="animate-spin" width="24" height="24" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="10" stroke="currentColor" />
+    <svg
+      className="animate-spin"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+    >
+      <circle
+        cx="12"
+        cy="12"
+        r="10"
+        stroke="currentColor"
+      />
     </svg>
   );
 }
@@ -2335,8 +2404,17 @@ function LoadingSpinner() {
 function LoadingSpinner() {
   return (
     <div className="animate-spin">
-      <svg width="24" height="24" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" stroke="currentColor" />
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+          stroke="currentColor"
+        />
       </svg>
     </div>
   );
@@ -2367,7 +2445,10 @@ function MessageList({ messages }: { messages: Message[] }) {
   return (
     <div className="overflow-y-auto h-screen">
       {messages.map((msg) => (
-        <div key={msg.id} className="message-item">
+        <div
+          key={msg.id}
+          className="message-item"
+        >
           <Avatar user={msg.author} />
           <div>{msg.content}</div>
         </div>
@@ -2583,8 +2664,14 @@ import Script from "next/script";
 export default function Page() {
   return (
     <>
-      <Script src="https://example.com/analytics.js" strategy="afterInteractive" />
-      <Script src="/scripts/utils.js" strategy="beforeInteractive" />
+      <Script
+        src="https://example.com/analytics.js"
+        strategy="afterInteractive"
+      />
+      <Script
+        src="/scripts/utils.js"
+        strategy="beforeInteractive"
+      />
     </>
   );
 }
@@ -2685,7 +2772,10 @@ function Navigation() {
 
   return (
     <nav>
-      <a href="/dashboard" onMouseEnter={preloadDashboard}>
+      <a
+        href="/dashboard"
+        onMouseEnter={preloadDashboard}
+      >
         Dashboard
       </a>
     </nav>
