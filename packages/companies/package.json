@@ -1,5 +1,5 @@
 {
-  "name": "@sdk-e/companies",
+  "name": "@platform/companies",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -7,12 +7,12 @@
     ".": "./src/index.ts"
   },
   "dependencies": {
-    "@sdk-e/auth": "workspace:*",
-    "@sdk-e/core": "workspace:*",
-    "@sdk-e/db": "workspace:*",
-    "@sdk-e/users": "workspace:*"
+    "@platform/auth": "workspace:*",
+    "@platform/core": "workspace:*",
+    "@platform/db": "workspace:*",
+    "@platform/users": "workspace:*"
   },
   "devDependencies": {
-    "@sdk-e/test-support": "workspace:*"
+    "@platform/test-support": "workspace:*"
   }
 }

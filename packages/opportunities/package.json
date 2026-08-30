@@ -1,5 +1,5 @@
 {
-  "name": "@sdk-e/opportunities",
+  "name": "@platform/opportunities",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -8,18 +8,18 @@
     "./*": "./src/*"
   },
   "dependencies": {
-    "@sdk-e/auth": "workspace:*",
-    "@sdk-e/core": "workspace:*",
-    "@sdk-e/db": "workspace:*",
-    "@sdk-e/notifications": "workspace:*",
-    "@sdk-e/requests": "workspace:*",
-    "@sdk-e/types": "workspace:*",
-    "@sdk-e/users": "workspace:*"
+    "@platform/auth": "workspace:*",
+    "@platform/core": "workspace:*",
+    "@platform/db": "workspace:*",
+    "@platform/notifications": "workspace:*",
+    "@platform/requests": "workspace:*",
+    "@platform/types": "workspace:*",
+    "@platform/users": "workspace:*"
   },
   "peerDependencies": {
     "next": "*"
   },
   "devDependencies": {
-    "@sdk-e/test-support": "workspace:*"
+    "@platform/test-support": "workspace:*"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@sdk-e/providers",
+  "name": "@platform/providers",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -8,11 +8,11 @@
     "./*": "./src/*"
   },
   "dependencies": {
-    "@sdk-e/auth": "workspace:*",
-    "@sdk-e/core": "workspace:*",
-    "@sdk-e/db": "workspace:*",
-    "@sdk-e/schemas": "workspace:*",
-    "@sdk-e/types": "workspace:*",
+    "@platform/auth": "workspace:*",
+    "@platform/core": "workspace:*",
+    "@platform/db": "workspace:*",
+    "@platform/schemas": "workspace:*",
+    "@platform/types": "workspace:*",
     "zod": "^4.4.3"
   },
   "peerDependencies": {
@@ -20,6 +20,6 @@
   },
   "devDependencies": {
     "@prisma/client": "^7.9.1",
-    "@sdk-e/test-support": "workspace:*"
+    "@platform/test-support": "workspace:*"
   }
 }

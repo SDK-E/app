@@ -1,5 +1,5 @@
 {
-  "name": "@sdk-e/email",
+  "name": "@platform/email",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -8,8 +8,8 @@
     "./*": "./src/*"
   },
   "dependencies": {
-    "@sdk-e/config": "workspace:*",
-    "@sdk-e/env": "workspace:*",
+    "@platform/config": "workspace:*",
+    "@platform/env": "workspace:*",
     "nodemailer": "^9.0.5",
     "resend": "^6.20.0"
   },

@@ -1,5 +1,5 @@
 {
-  "name": "@sdk-e/marketing",
+  "name": "@platform/marketing",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -7,10 +7,11 @@
     "./*": "./src/*"
   },
   "dependencies": {
-    "@sdk-e/config": "workspace:*",
-    "@sdk-e/db": "workspace:*",
-    "@sdk-e/email": "workspace:*",
-    "@sdk-e/schemas": "workspace:*"
+    "@platform/config": "workspace:*",
+    "@platform/db": "workspace:*",
+    "@platform/email": "workspace:*",
+    "@platform/i18n": "workspace:*",
+    "@platform/schemas": "workspace:*"
   },
   "peerDependencies": {
     "next": "*"

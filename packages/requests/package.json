@@ -1,5 +1,5 @@
 {
-  "name": "@sdk-e/requests",
+  "name": "@platform/requests",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -8,14 +8,14 @@
     "./*": "./src/*"
   },
   "dependencies": {
-    "@sdk-e/auth": "workspace:*",
-    "@sdk-e/core": "workspace:*",
-    "@sdk-e/db": "workspace:*",
-    "@sdk-e/types": "workspace:*"
+    "@platform/auth": "workspace:*",
+    "@platform/core": "workspace:*",
+    "@platform/db": "workspace:*",
+    "@platform/types": "workspace:*"
   },
   "devDependencies": {
-    "@sdk-e/schemas": "workspace:*",
-    "@sdk-e/test-support": "workspace:*"
+    "@platform/schemas": "workspace:*",
+    "@platform/test-support": "workspace:*"
   },
   "peerDependencies": {
     "next": "*"

@@ -1,5 +1,5 @@
 {
-  "name": "@sdk-e/env",
+  "name": "@platform/env",
   "version": "0.1.0",
   "private": true,
   "type": "module",

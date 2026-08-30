@@ -1,5 +1,5 @@
 {
-  "name": "@sdk-e/portal-shell",
+  "name": "@platform/portal-shell",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -7,11 +7,15 @@
     "./*": "./src/*"
   },
   "dependencies": {
-    "@sdk-e/auth": "workspace:*",
-    "@sdk-e/core": "workspace:*",
-    "@sdk-e/requests": "workspace:*",
-    "@sdk-e/types": "workspace:*",
-    "@sdk-e/ui": "workspace:*",
+    "@platform/auth": "workspace:*",
+    "@platform/companies": "workspace:*",
+    "@platform/core": "workspace:*",
+    "@platform/requests": "workspace:*",
+    "@platform/schemas": "workspace:*",
+    "@platform/types": "workspace:*",
+    "@platform/ui": "workspace:*",
+    "@platform/users": "workspace:*",
+    "@platform/web": "workspace:*",
     "lucide-react": "^0.468.0",
     "next-themes": "^0.4.6",
     "zod": "^3.23.8"

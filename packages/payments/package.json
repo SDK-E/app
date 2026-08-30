@@ -1,5 +1,5 @@
 {
-  "name": "@sdk-e/payments",
+  "name": "@platform/payments",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -8,7 +8,7 @@
     "./*": "./src/*"
   },
   "dependencies": {
-    "@sdk-e/env": "workspace:*",
+    "@platform/env": "workspace:*",
     "stripe": "^22.5.0"
   }
 }

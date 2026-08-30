@@ -1,5 +1,5 @@
 {
-  "name": "@sdk-e/types",
+  "name": "@platform/types",
   "version": "0.1.0",
   "private": true,
   "type": "module",

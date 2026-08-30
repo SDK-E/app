@@ -1,5 +1,5 @@
 {
-  "name": "@sdk-e/auth",
+  "name": "@platform/auth",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -9,9 +9,9 @@
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^4.26.0",
-    "@sdk-e/db": "workspace:*",
-    "@sdk-e/env": "workspace:*",
-    "@sdk-e/types": "workspace:*",
+    "@platform/db": "workspace:*",
+    "@platform/env": "workspace:*",
+    "@platform/types": "workspace:*",
     "zod": "^4.4.3"
   },
   "peerDependencies": {

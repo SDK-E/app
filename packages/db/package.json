@@ -1,5 +1,5 @@
 {
-  "name": "@sdk-e/db",
+  "name": "@platform/db",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -15,9 +15,10 @@
   "dependencies": {
     "@prisma/adapter-pg": "^7.9.1",
     "@prisma/client": "^7.9.1",
-    "@sdk-e/env": "workspace:*"
+    "@platform/env": "workspace:*"
   },
   "devDependencies": {
+    "dotenv": "^16.6.1",
     "prisma": "^7.9.1"
   }
 }

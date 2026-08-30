@@ -1,5 +1,5 @@
 {
-  "name": "@sdk-e/core",
+  "name": "@platform/core",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -8,7 +8,7 @@
     "./*": "./src/*"
   },
   "dependencies": {
-    "@sdk-e/db": "workspace:*",
+    "@platform/db": "workspace:*",
     "clsx": "^2.1.1",
     "tailwind-merge": "^3.6.0",
     "zod": "^4.4.3"

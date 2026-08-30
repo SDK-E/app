@@ -1,5 +1,5 @@
 {
-  "name": "@sdk-e/schemas",
+  "name": "@platform/schemas",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -7,8 +7,8 @@
     "./*": "./src/*"
   },
   "dependencies": {
-    "@sdk-e/i18n": "workspace:*",
-    "@sdk-e/types": "workspace:*",
+    "@platform/i18n": "workspace:*",
+    "@platform/types": "workspace:*",
     "zod": "^4.4.3"
   }
 }
