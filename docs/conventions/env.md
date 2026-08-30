@@ -7,7 +7,7 @@ used. No `.env.example` file is committed; keep this document in sync instead.
 ## Server-only variables
 
 Server-only variables are read through the validated access point in
-`@sdk-e/env` (packages/env). Code must **never** read `process.env` directly. Missing or
+`@platform/env` (packages/env). Code must **never** read `process.env` directly. Missing or
 invalid variables cause the application to fail at startup in every environment.
 
 | Variable                | Required   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -28,8 +28,16 @@ invalid variables cause the application to fail at startup in every environment.
 
 ## Public variables
 
-No environment variables are currently exposed to browser code. Auth0 client
-configuration remains server-side. No test or CI fallback credentials are
+Public variables are prefixed `NEXT_PUBLIC_` and are inlined into the client
+bundle at build time. Keep values that are genuinely public (URLs, IDs that
+need no secrecy).
+
+| Variable                          | Required | Description                                                                                             |
+| --------------------------------- | -------- | ------------------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SOCIAL_LINKEDIN_URL` | no       | LinkedIn company URL for the `sameAs` JSON-LD (Organization schema). Read in `organizationJsonLd()`.    |
+| `NEXT_PUBLIC_SOCIAL_GITHUB_URL`   | no       | GitHub organization URL for the `sameAs` JSON-LD (Organization schema). Read in `organizationJsonLd()`. |
+
+Auth0 client configuration remains server-side. No test or CI fallback credentials are
 embedded in application code; each runtime environment injects its own values.
 
 ## Environment files
@@ -105,4 +113,4 @@ destructive (e.g. `prisma migrate reset`).
 - Format: `SCREAMING_SNAKE_CASE`.
 - Variables exposed to the browser must be prefixed `NEXT_PUBLIC_`. Server-only
   variables must never use that prefix.
-- Reference: `@sdk-e/env` (packages/env) (single access point with zod schema validation).
+- Reference: `@platform/env` (packages/env) (single access point with zod schema validation).

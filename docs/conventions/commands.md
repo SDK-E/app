@@ -33,15 +33,15 @@ pnpm run i18n:check    # Validate all 17 locale catalogs
 ## Prisma
 
 Prisma config lives in `packages/db` (`packages/db/prisma.config.ts`). Run the
-root scripts; they delegate into the `@sdk-e/db` workspace.
+root scripts; they delegate into the `@platform/db` workspace.
 
 ```bash
 pnpm run generate            # Generate client (root script)
-pnpm --filter @sdk-e/db exec prisma migrate dev       # Create migration (ask)
+pnpm --filter @platform/db exec prisma migrate dev       # Create migration (ask)
 pnpm run db:migrate          # Deploy migrations (deny for prod targets)
-pnpm --filter @sdk-e/db exec prisma migrate reset     # Reset DB (deny)
-pnpm --filter @sdk-e/db exec prisma db push           # Push schema (ask)
-pnpm --filter @sdk-e/db exec prisma migrate status    # Check status (ask)
+pnpm --filter @platform/db exec prisma migrate reset     # Reset DB (deny)
+pnpm --filter @platform/db exec prisma db push           # Push schema (ask)
+pnpm --filter @platform/db exec prisma migrate status    # Check status (ask)
 ```
 
 ## Mail

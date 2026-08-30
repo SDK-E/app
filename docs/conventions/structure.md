@@ -14,7 +14,7 @@ cross-package imports use `@sdk-e/<package>` specifiers.
 ```
 .
 ├── apps/
-│   └── web/                       # Next.js 16 app (@sdk-e/web)
+│   └── web/                       # Next.js 16 app (@platform/web)
 │       ├── src/
 │       │   ├── app/               # App Router routes & route groups
 │       │   │   ├── [locale]/      # Locale-prefixed routes (marketing + portal)
@@ -33,20 +33,20 @@ cross-package imports use `@sdk-e/<package>` specifiers.
 │       ├── components.json        # shadcn config
 │       └── tsconfig.json          # Extends root tsconfig; @/* -> ./src/*
 ├── packages/
-│   ├── types/                     # @sdk-e/types — RBAC roles, permissions, principals (leaf)
-│   ├── config/                    # @sdk-e/config — siteConfig (leaf)
-│   ├── env/                       # @sdk-e/env — zod-validated server env
-│   ├── db/                        # @sdk-e/db — Prisma schema/migrations + generated client + db singleton
-│   ├── core/                      # @sdk-e/core — audit, money, time, state-machine, utils
-│   ├── i18n/                      # @sdk-e/i18n — routing, messages, src/locales/<locale>/*.json
-│   ├── auth/                      # @sdk-e/auth — Auth0 wiring, identity, authorization
-│   ├── schemas/                   # @sdk-e/schemas — shared zod schemas
+│   ├── types/                     # @platform/types — RBAC roles, permissions, principals (leaf)
+│   ├── config/                    # @platform/config — siteConfig (leaf)
+│   ├── env/                       # @platform/env — zod-validated server env
+│   ├── db/                        # @platform/db — Prisma schema/migrations + generated client + db singleton
+│   ├── core/                      # @platform/core — audit, money, time, state-machine, utils
+│   ├── i18n/                      # @platform/i18n — routing, messages, src/locales/<locale>/*.json
+│   ├── auth/                      # @platform/auth — Auth0 wiring, identity, authorization
+│   ├── schemas/                   # @platform/schemas — shared zod schemas
 │   ├── users/ · companies/ · email/ · marketing/ · payments/
 │   ├── notifications/ · providers/ · requests/ · opportunities/ · matching/
-│   ├── ui/                        # @sdk-e/ui — presentational primitives (+ Section/Container)
-│   ├── design-system/             # @sdk-e/design-system — design-system page sections
-│   ├── test-support/              # @sdk-e/test-support — shared test fixtures (dev only)
-│   └── tooling/                   # @sdk-e/tooling — mail sink/cli/mcp, portkiller,
+│   ├── ui/                        # @platform/ui — presentational primitives (+ Section/Container)
+│   ├── design-system/             # @platform/design-system — design-system page sections
+│   ├── test-support/              # @platform/test-support — shared test fixtures (dev only)
+│   └── tooling/                   # @platform/tooling — mail sink/cli/mcp, portkiller,
 │                                  #   images, CI gate scripts (src/ci), i18n python
 ├── docs/                          # Project documentation
 │   └── conventions/               # Convention docs (this file, env.md, commands.md)
@@ -84,12 +84,12 @@ beyond that edge, or from `email` into `notifications`.
 | Routes, layouts, pages             | `apps/web/src/app/**`                                   | `@/app/**`                    |
 | App-owned components               | `apps/web/src/components/**`                            | `@/components/**`             |
 | App-shell helpers                  | `apps/web/src/lib/app/**`                               | `@/lib/app/**`                |
-| Presentational primitives          | `packages/ui/src/**`                                    | `@sdk-e/ui/X`                 |
-| Design-system sections             | `packages/design-system/src/**`                         | `@sdk-e/design-system/X`      |
+| Presentational primitives          | `packages/ui/src/**`                                    | `@platform/ui/X`              |
+| Design-system sections             | `packages/design-system/src/**`                         | `@platform/design-system/X`   |
 | Domain logic (auth, requests, ...) | `packages/<domain>/src/**`                              | `@sdk-e/<domain>/...`         |
-| DB schema, migrations, client      | `packages/db/prisma/**`, `packages/db/src/generated/**` | `@sdk-e/db`                   |
-| Shared types/RBAC                  | `packages/types/src/**`                                 | `@sdk-e/types`                |
-| Locales                            | `packages/i18n/src/locales/**`                          | loaded by `@sdk-e/i18n`       |
+| DB schema, migrations, client      | `packages/db/prisma/**`, `packages/db/src/generated/**` | `@platform/db`                |
+| Shared types/RBAC                  | `packages/types/src/**`                                 | `@platform/types`             |
+| Locales                            | `packages/i18n/src/locales/**`                          | loaded by `@platform/i18n`    |
 | Dev tooling (mail sink, CLI, MCP)  | `packages/tooling/src/**`                               | — (bin scripts)               |
 | CI gate scripts                    | `packages/tooling/src/ci/**`                            | — (run via root pnpm scripts) |
 | Static assets                      | `apps/web/public/**`                                    | `/...`                        |
@@ -101,9 +101,9 @@ beyond that edge, or from `email` into `notifications`.
   `apps/web/src/components` and the relevant `packages/*` workspace.
 - New shared/domain logic goes into the matching `packages/<domain>` workspace;
   do not grow `apps/web/src/lib`.
-- Cross-package imports must go through the package name (`@sdk-e/users`);
+- Cross-package imports must go through the package name (`@platform/users`);
   never reach across via relative paths or deep internals of another scope's
-  generated output (`@sdk-e/db/client` is the only generated entry).
+  generated output (`@platform/db/client` is the only generated entry).
 - Do NOT create files at the repository root except documented config files.
 - Never edit `apps/web/src/app/globals.css` for component styles — colocate
   styles with components or use utility classes.
@@ -160,7 +160,7 @@ beyond that edge, or from `email` into `notifications`.
 - Variables exposed to the browser must be prefixed `NEXT_PUBLIC_`; none are
   currently required. `DATABASE_URL`, `AUTH0_CLIENT_ID`, and `AUTH0_SECRET`
   remain server-only.
-- Server-only variables are read via `@sdk-e/env` (single access point,
+- Server-only variables are read via `@platform/env` (single access point,
   validated with schema parsing). Do NOT read `process.env` directly in
   components or domain modules.
 - Every variable must be documented in [env.md](env.md) with a description.

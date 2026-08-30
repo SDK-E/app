@@ -27,8 +27,23 @@
 
 ## Structured Data
 
-- JSON-LD for Organization, WebPage, BreadcrumbList
+- JSON-LD for Organization, WebSite, BreadcrumbList, and page-specific types
+  (AboutPage, ContactPage, ProfessionalService, CollectionPage).
+- `sameAs` populated from env vars: `NEXT_PUBLIC_SOCIAL_LINKEDIN_URL`,
+  `NEXT_PUBLIC_SOCIAL_GITHUB_URL`. Omit X/Twitter links.
 - Validate with Google Rich Results Test
+- Each page's `generateMetadata` returns a JSON-LD array in `other["script:ld+json"]`
+
+## AI-readiness
+
+- `llms.txt` at `/llms.txt` — Markdown index with all public pages (all locales),
+  one-line descriptions, and links to `.md` fallback versions.
+- `/[locale]/index.md` route — serves clean Markdown on `Accept: text/markdown`,
+  with `Link` headers for canonical + hreflang.
+- `robots.txt` Content Signals: `ai-train=allow`, `search=yes`, `ai-input=allow`.
+- AI crawler rules: explicitly allowed (GPTBot, Google-Extended, CCBot) with the
+  same disallow paths as general crawlers.
+- `security.txt` and `humans.txt` at `/.well-known/` — standard discovery artifacts.
 
 ## Meta Tags
 

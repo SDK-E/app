@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "apps/web/src/app/.well-known/**/*.ts",
+    "apps/web/src/app/.well-known/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/node_modules",
+    "**/.next",
+    ".next",
+    "dist",
+    "build",
+    ".turbo",
+    "coverage",
+    "packages/db/generated",
+    "packages/i18n/src/locales"
+  ]
+}
