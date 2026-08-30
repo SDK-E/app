@@ -1,4 +1,4 @@
-import type { ProviderService } from "@sdk-e/db/client";
+import type { ProviderService } from "@platform/db/client";
 
 export function calculateServiceCompletenessScore(service: ProviderService): number {
   const requiredFields = [

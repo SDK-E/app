@@ -1,48 +1,14 @@
-import { requireCompanyAccess, requirePermission } from "@sdk-e/auth/authorization";
-import { getPrisma } from "@sdk-e/db";
-import { recordUserManagementEvent } from "@sdk-e/users/audit";
-import { assertClientRoleGrant, forbidden } from "@sdk-e/users/shared";
-import type { AppPrincipal, ClientRole } from "@sdk-e/types";
+import type { AppPrincipal, ClientRole } from "@platform/types";
 
-export async function updateMembershipRole(
-  principal: AppPrincipal,
-  membershipId: string,
-  role: ClientRole,
-  companyId?: string
-) {
-  requirePermission(principal, "membership:update", companyId);
-  const membership = await getPrisma().membership.findUniqueOrThrow({
-    where: { id: membershipId },
-  });
-  if (membership.role === "OWNER" && role === "OWNER") return membership;
-  assertClientRoleGrant(principal, role, companyId);
-  if (principal.kind === "client") {
-    requireCompanyAccess(principal, companyId);
-    if (membership.companyId !== companyId) forbidden("Cross-company access is denied.");
-    if (membership.userId === principal.id) forbidden("You cannot change your own role.");
-  }
-  if (principal.kind === "sdk-staff" && principal.role !== "ADMIN")
-    forbidden("SDK administrator access is required.");
-  if (membership.role === "OWNER" && role !== "OWNER")
-    forbidden("Ownership transfer is not available from user management.");
-  const updated = await getPrisma().membership.update({
-    where: { id: membershipId },
-    data: { role },
-  });
-  await recordUserManagementEvent(principal, {
-    action: "membership.role_changed",
-    companyId: membership.companyId,
-    targetType: "membership",
-    targetId: membership.id,
-    fromState: membership.role,
-    toState: role,
-  });
-  return updated;
-}
+import { requireCompanyAccess, requirePermission } from "@platform/auth/authorization";
+import { getPrisma } from "@platform/db";
+import { recordUserManagementEvent } from "@platform/users/audit";
+import { assertClientRoleGrant, forbidden } from "@platform/users/shared";
+
 export async function removeMembership(
   principal: AppPrincipal,
   membershipId: string,
-  companyId?: string
+  companyId?: string,
 ) {
   requirePermission(principal, "membership:remove", companyId);
   const membership = await getPrisma().membership.findUniqueOrThrow({
@@ -71,4 +37,49 @@ export async function removeMembership(
     fromState: membership.role,
   });
   return { removed: membership, hasNoMemberships: remaining === 0 };
+}
+export async function updateMembershipRole(
+  principal: AppPrincipal,
+  membershipId: string,
+  role: ClientRole,
+  companyId?: string,
+) {
+  requirePermission(principal, "membership:update", companyId);
+  const membership = await getPrisma().membership.findUniqueOrThrow({
+    where: { id: membershipId },
+  });
+  if (membership.role === "OWNER" && role === "OWNER") return membership;
+  assertClientRoleGrant(principal, role, companyId);
+  assertMembershipEditable(principal, membership, companyId, role);
+
+  const updated = await getPrisma().membership.update({
+    where: { id: membershipId },
+    data: { role },
+  });
+  await recordUserManagementEvent(principal, {
+    action: "membership.role_changed",
+    companyId: membership.companyId,
+    targetType: "membership",
+    targetId: membership.id,
+    fromState: membership.role,
+    toState: role,
+  });
+  return updated;
+}
+
+function assertMembershipEditable(
+  principal: AppPrincipal,
+  membership: { role: string; userId: string; companyId: string },
+  companyId: string | undefined,
+  newRole: ClientRole,
+) {
+  if (principal.kind === "client") {
+    requireCompanyAccess(principal, companyId);
+    if (membership.companyId !== companyId) forbidden("Cross-company access is denied.");
+    if (membership.userId === principal.id) forbidden("You cannot change your own role.");
+  }
+  if (principal.kind === "sdk-staff" && principal.role !== "ADMIN")
+    forbidden("SDK administrator access is required.");
+  if (membership.role === "OWNER" && newRole !== "OWNER")
+    forbidden("Ownership transfer is not available from user management.");
 }

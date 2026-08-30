@@ -1,35 +1,21 @@
-import { getClientMembership, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { forbidden } from "@sdk-e/users/shared";
-import { getPrisma } from "@sdk-e/db";
-import { emitNotification } from "@sdk-e/opportunities/invitations";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { AppPrincipal } from "@platform/types";
+
+import { getClientMembership, requireSdkStaff } from "@platform/auth/authorization";
+import { getPrisma } from "@platform/db";
+import { deliver } from "@platform/notifications/delivery";
+import {
+  createNotificationIdempotent,
+  type CreateNotificationInput,
+} from "@platform/notifications/notifications";
+import { forbidden } from "@platform/users/shared";
 
 const DEFAULT_TTL_DAYS = 7;
-
-function ttlMs(ttlDays: number): number {
-  return ttlDays * 24 * 60 * 60 * 1000;
-}
-
-async function authorizeInvitationCreator(principal: AppPrincipal, companyId: string) {
-  if (principal.kind === "sdk-staff") {
-    requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
-    return;
-  }
-  if (principal.kind === "client") {
-    const membership = getClientMembership(principal, companyId);
-    if (membership.role !== "OWNER" && membership.role !== "ADMINISTRATOR") {
-      forbidden("Only a company owner or administrator can invite providers.");
-    }
-    return;
-  }
-  forbidden("Only SDK staff or client owners can invite providers.");
-}
 
 export async function createOpportunityInvitation(
   principal: AppPrincipal,
   opportunityId: string,
   providerId: string,
-  ttlDays: number = DEFAULT_TTL_DAYS
+  ttlDays: number = DEFAULT_TTL_DAYS,
 ) {
   const opportunity = await getPrisma().opportunity.findFirst({
     where: { id: opportunityId },
@@ -87,4 +73,31 @@ export async function createOpportunityInvitation(
   });
 
   return invitation;
+}
+
+export async function emitNotification(input: CreateNotificationInput) {
+  const notification = await createNotificationIdempotent(input);
+  if (notification) {
+    await deliver(notification);
+  }
+  return notification;
+}
+
+async function authorizeInvitationCreator(principal: AppPrincipal, companyId: string) {
+  if (principal.kind === "sdk-staff") {
+    requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
+    return;
+  }
+  if (principal.kind === "client") {
+    const membership = getClientMembership(principal, companyId);
+    if (membership.role !== "OWNER" && membership.role !== "ADMINISTRATOR") {
+      forbidden("Only a company owner or administrator can invite providers.");
+    }
+    return;
+  }
+  forbidden("Only SDK staff or client owners can invite providers.");
+}
+
+function ttlMs(ttlDays: number): number {
+  return ttlDays * 24 * 60 * 60 * 1000;
 }

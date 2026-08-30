@@ -1,37 +1,69 @@
-import type { Opportunity, OpportunityPosition, OpportunityVisibilityMode } from "@sdk-e/db/client";
-import type { AppPrincipal } from "@sdk-e/types";
-
-export type OpportunityInternalRecord = Opportunity;
+import type {
+  Opportunity,
+  OpportunityPosition,
+  OpportunityVisibilityMode,
+} from "@platform/db/client";
+import type { AppPrincipal } from "@platform/types";
 
 export type OpportunityClientRecord = Omit<
   Opportunity,
-  "internalNotes" | "rejectionFeedback" | "ownerId"
+  "internalNotes" | "ownerId" | "rejectionFeedback"
 >;
 
-export type OpportunityPublicRecord = Omit<
+export type OpportunityInternalRecord = Opportunity;
+
+export type OpportunityPositionClientRecord = Omit<OpportunityPosition, "internalNotes">;
+
+export type OpportunityPositionPublicRecord = Omit<
+  OpportunityPositionClientRecord,
+  "budgetMax" | "budgetMin"
+>;
+
+export type OpportunityPublicRecord = { providerAction?: "HIDDEN" | "SAVED" | null } & Omit<
   OpportunityClientRecord,
-  "clientName" | "budgetMin" | "budgetMax"
-> & { providerAction?: "SAVED" | "HIDDEN" | null };
+  "budgetMax" | "budgetMin" | "clientName"
+>;
 
 export type OpportunitySafeRecord =
-  OpportunityInternalRecord | OpportunityClientRecord | OpportunityPublicRecord;
+  OpportunityClientRecord | OpportunityInternalRecord | OpportunityPublicRecord;
 
-function omit<T extends object, K extends keyof T>(obj: T, keys: readonly K[]): Omit<T, K> {
-  const result = { ...obj } as Record<string, unknown>;
-  for (const key of keys) delete result[key as string];
-  return result as Omit<T, K>;
+export function canViewOpportunity(
+  principal: AppPrincipal,
+  visibilityMode: OpportunityVisibilityMode,
+  hasActiveInvitation?: boolean,
+): boolean {
+  if (isPrivileged(principal)) return true;
+  if (principal.kind === "client") return visibilityMode === "ELIGIBLE_NETWORK";
+  if (principal.kind === "provider") {
+    if (visibilityMode === "ELIGIBLE_NETWORK") return true;
+    if ((visibilityMode === "DIRECT" || visibilityMode === "INVITE_ONLY") && hasActiveInvitation)
+      return true;
+    return false;
+  }
+  return false;
 }
 
-function isPrivileged(principal: AppPrincipal): boolean {
-  return (
-    principal.kind === "sdk-staff" && (principal.role === "ADMIN" || principal.role === "DELIVERY")
-  );
+export function selectOpportunityPositionSafe(
+  principal: AppPrincipal,
+  position: OpportunityPosition,
+): OpportunityPositionClientRecord | OpportunityPositionPublicRecord {
+  if (isPrivileged(principal)) {
+    return position;
+  }
+
+  const clientRecord = omit(position, ["internalNotes"]);
+
+  if (principal.kind === "provider") {
+    return omit(clientRecord, ["budgetMin", "budgetMax"]) as OpportunityPositionPublicRecord;
+  }
+
+  return clientRecord as OpportunityPositionClientRecord;
 }
 
 export function selectOpportunitySafe(
   principal: AppPrincipal,
   opportunity: Opportunity,
-  providerAction?: "SAVED" | "HIDDEN" | null
+  providerAction?: "HIDDEN" | "SAVED" | null,
 ): OpportunitySafeRecord {
   if (isPrivileged(principal)) {
     return opportunity;
@@ -53,42 +85,18 @@ export function selectOpportunitySafe(
   return clientRecord as OpportunityClientRecord;
 }
 
-export type OpportunityPositionClientRecord = Omit<OpportunityPosition, "internalNotes">;
-
-export type OpportunityPositionPublicRecord = Omit<
-  OpportunityPositionClientRecord,
-  "budgetMin" | "budgetMax"
->;
-
-export function selectOpportunityPositionSafe(
-  principal: AppPrincipal,
-  position: OpportunityPosition
-): OpportunityPositionClientRecord | OpportunityPositionPublicRecord {
-  if (isPrivileged(principal)) {
-    return position;
-  }
-
-  const clientRecord = omit(position, ["internalNotes"]);
-
-  if (principal.kind === "provider") {
-    return omit(clientRecord, ["budgetMin", "budgetMax"]) as OpportunityPositionPublicRecord;
-  }
-
-  return clientRecord as OpportunityPositionClientRecord;
+function isPrivileged(principal: AppPrincipal): boolean {
+  return (
+    principal.kind === "sdk-staff" && (principal.role === "ADMIN" || principal.role === "DELIVERY")
+  );
 }
 
-export function canViewOpportunity(
-  principal: AppPrincipal,
-  visibilityMode: OpportunityVisibilityMode,
-  hasActiveInvitation?: boolean
-): boolean {
-  if (isPrivileged(principal)) return true;
-  if (principal.kind === "client") return visibilityMode === "ELIGIBLE_NETWORK";
-  if (principal.kind === "provider") {
-    if (visibilityMode === "ELIGIBLE_NETWORK") return true;
-    if ((visibilityMode === "DIRECT" || visibilityMode === "INVITE_ONLY") && hasActiveInvitation)
-      return true;
-    return false;
+function omit<T extends object, K extends keyof T>(obj: T, keys: readonly K[]): Omit<T, K> {
+  const result: Record<string, unknown> = {};
+  for (const key of Object.keys(obj)) {
+    if (!keys.includes(key as K)) {
+      result[key] = obj[key as keyof T];
+    }
   }
-  return false;
+  return result as Omit<T, K>;
 }

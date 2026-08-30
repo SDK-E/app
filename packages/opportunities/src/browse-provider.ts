@@ -1,10 +1,11 @@
-import { getPrisma } from "@sdk-e/db";
-import { isProviderEligibleForOpportunity } from "@sdk-e/opportunities/eligibility-browse";
-import { selectOpportunitySafe } from "@sdk-e/opportunities/safe";
-import { Prisma } from "@sdk-e/db/client";
-import type { OpportunityInvitation, OpportunityVisibilityMode } from "@sdk-e/db/client";
-import type { ProviderPrincipal } from "@sdk-e/types";
-import type { ListOpportunitiesFilters } from "@sdk-e/opportunities/queries";
+import type { OpportunityInvitation, OpportunityVisibilityMode } from "@platform/db/client";
+import type { ListOpportunitiesFilters } from "@platform/opportunities/queries";
+import type { ProviderPrincipal } from "@platform/types";
+
+import { getPrisma } from "@platform/db";
+import { Prisma } from "@platform/db/client";
+import { isProviderEligibleForOpportunity } from "@platform/opportunities/eligibility-browse";
+import { selectOpportunitySafe } from "@platform/opportunities/safe";
 
 const BROWSE_VISIBILITY_MODES: OpportunityVisibilityMode[] = [
   "ELIGIBLE_NETWORK",
@@ -14,7 +15,7 @@ const BROWSE_VISIBILITY_MODES: OpportunityVisibilityMode[] = [
 
 export async function listOpportunitiesForProvider(
   principal: ProviderPrincipal,
-  filters: ListOpportunitiesFilters
+  filters: ListOpportunitiesFilters,
 ) {
   const provider = await getPrisma().provider.findFirst({
     where: { id: principal.providerId },
@@ -42,10 +43,10 @@ export async function listOpportunitiesForProvider(
   ]);
 
   const hiddenIds = new Set(
-    preferences.filter((p) => p.action === "HIDDEN").map((p) => p.opportunityId)
+    preferences.filter((p) => p.action === "HIDDEN").map((p) => p.opportunityId),
   );
   const savedIds = new Set(
-    preferences.filter((p) => p.action === "SAVED").map((p) => p.opportunityId)
+    preferences.filter((p) => p.action === "SAVED").map((p) => p.opportunityId),
   );
 
   const invitationsByOpportunity = new Map<string, OpportunityInvitation[]>();
@@ -65,13 +66,13 @@ export async function listOpportunitiesForProvider(
         ?.find(
           (invitation) =>
             (invitation.status === "PENDING" || invitation.status === "ACCEPTED") &&
-            invitation.expiresAt > now
+            invitation.expiresAt > now,
         );
 
       if (opportunity.visibilityMode === "ELIGIBLE_NETWORK") {
         const eligibility = await isProviderEligibleForOpportunity(
           principal.providerId,
-          opportunity.id
+          opportunity.id,
         );
         if (!eligibility.eligible) return null;
       } else if (!activeInvitation) {
@@ -85,7 +86,7 @@ export async function listOpportunitiesForProvider(
           : null;
 
       return selectOpportunitySafe(principal, opportunity, providerAction);
-    })
+    }),
   );
 
   const visible = annotated.filter((record) => record !== null);

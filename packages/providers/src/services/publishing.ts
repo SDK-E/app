@@ -1,13 +1,15 @@
-import { notFound, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { createAuditEvent } from "@sdk-e/core/audit";
-import { getPrisma } from "@sdk-e/db";
+import type { ProviderService } from "@platform/db/client";
+import type { AppPrincipal } from "@platform/types";
+
+import { notFound, requireSdkStaff } from "@platform/auth/authorization";
+import { createAuditEvent } from "@platform/core/audit";
+import { getPrisma } from "@platform/db";
+
 import { providerServiceMachine } from "./machine";
-import type { ProviderService } from "@sdk-e/db/client";
-import type { AppPrincipal } from "@sdk-e/types";
 
 export async function publishService(
   principal: AppPrincipal,
-  serviceId: string
+  serviceId: string,
 ): Promise<ProviderService> {
   const staff = requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
   const service = await getPrisma().providerService.findFirst({
@@ -37,7 +39,7 @@ export async function publishService(
 
 export async function unpublishService(
   principal: AppPrincipal,
-  serviceId: string
+  serviceId: string,
 ): Promise<ProviderService> {
   const staff = requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
   const service = await getPrisma().providerService.findFirst({

@@ -1,75 +1,40 @@
-import { Prisma } from "@sdk-e/db/client";
 import type {
   OpportunityActivityType,
   OpportunityStatus,
   OpportunityVisibilityMode,
-} from "@sdk-e/db/client";
+} from "@platform/db/client";
 
-export function toDecimal(
-  value: Prisma.Decimal | number | string | null | undefined
-): Prisma.Decimal | null | undefined {
-  if (value === undefined) return undefined;
-  if (value === null) return null;
-  return value instanceof Prisma.Decimal ? value : new Prisma.Decimal(value);
-}
+import { Prisma } from "@platform/db/client";
 
-export function opportunityActivity(
-  companyId: string,
-  actorId: string,
-  type: OpportunityActivityType,
-  extra: Partial<{
-    fromStatus: OpportunityStatus;
-    toStatus: OpportunityStatus;
-    fromVisibility: OpportunityVisibilityMode;
-    toVisibility: OpportunityVisibilityMode;
-  }> = {}
-) {
-  return { companyId, actorId, type, ...extra };
+export interface AddAttachmentInput {
+  name: string;
+  storageKey: string;
+  mimeType: string;
+  sizeBytes: number;
+  opportunityPositionId?: null | string;
 }
 
 export interface CreateOpportunityInput {
   title: string;
   description: string;
-  clientName?: string | null;
+  clientName?: null | string;
   ndaRequired?: boolean;
   clientIdentityVisible?: boolean;
   requiredSkills?: string[];
   preferredSkills?: string[];
-  seniority?: string | null;
-  engagementType?: string | null;
-  budgetMin?: Prisma.Decimal | number | string | null;
-  budgetMax?: Prisma.Decimal | number | string | null;
+  seniority?: null | string;
+  engagementType?: null | string;
+  budgetMin?: null | number | Prisma.Decimal | string;
+  budgetMax?: null | number | Prisma.Decimal | string;
   currency?: string;
-  duration?: string | null;
+  duration?: null | string;
   startDate?: Date | null;
   deadline?: Date | null;
-  locationTimezone?: string | null;
+  locationTimezone?: null | string;
   languages?: string[];
-  deliverables?: string | null;
+  deliverables?: null | string;
   providerCount?: number;
   visibilityMode?: OpportunityVisibilityMode;
-}
-
-export interface UpdateOpportunityDraftInput {
-  title?: string;
-  description?: string;
-  clientName?: string | null;
-  ndaRequired?: boolean;
-  clientIdentityVisible?: boolean;
-  requiredSkills?: string[];
-  preferredSkills?: string[];
-  seniority?: string | null;
-  engagementType?: string | null;
-  budgetMin?: Prisma.Decimal | number | string | null;
-  budgetMax?: Prisma.Decimal | number | string | null;
-  currency?: string;
-  duration?: string | null;
-  startDate?: Date | null;
-  deadline?: Date | null;
-  locationTimezone?: string | null;
-  languages?: string[];
-  deliverables?: string | null;
-  providerCount?: number;
 }
 
 export interface OpportunityPositionInput {
@@ -77,28 +42,42 @@ export interface OpportunityPositionInput {
   description: string;
   requiredSkills?: string[];
   preferredSkills?: string[];
-  seniority?: string | null;
-  engagementType?: string | null;
-  budgetMin?: Prisma.Decimal | number | string | null;
-  budgetMax?: Prisma.Decimal | number | string | null;
+  seniority?: null | string;
+  engagementType?: null | string;
+  budgetMin?: null | number | Prisma.Decimal | string;
+  budgetMax?: null | number | Prisma.Decimal | string;
   currency?: string;
-  duration?: string | null;
+  duration?: null | string;
   startDate?: Date | null;
   deadline?: Date | null;
-  locationTimezone?: string | null;
+  locationTimezone?: null | string;
   languages?: string[];
-  deliverables?: string | null;
+  deliverables?: null | string;
   providerCount?: number;
-  internalNotes?: string | null;
+  internalNotes?: null | string;
   sortOrder?: number;
 }
 
-export interface AddAttachmentInput {
-  name: string;
-  storageKey: string;
-  mimeType: string;
-  sizeBytes: number;
-  opportunityPositionId?: string | null;
+export interface UpdateOpportunityDraftInput {
+  title?: string;
+  description?: string;
+  clientName?: null | string;
+  ndaRequired?: boolean;
+  clientIdentityVisible?: boolean;
+  requiredSkills?: string[];
+  preferredSkills?: string[];
+  seniority?: null | string;
+  engagementType?: null | string;
+  budgetMin?: null | number | Prisma.Decimal | string;
+  budgetMax?: null | number | Prisma.Decimal | string;
+  currency?: string;
+  duration?: null | string;
+  startDate?: Date | null;
+  deadline?: Date | null;
+  locationTimezone?: null | string;
+  languages?: string[];
+  deliverables?: null | string;
+  providerCount?: number;
 }
 
 export function buildOpportunityData(input: CreateOpportunityInput) {
@@ -147,4 +126,26 @@ export function buildPositionData(input: OpportunityPositionInput) {
     internalNotes: input.internalNotes ?? null,
     sortOrder: input.sortOrder ?? 0,
   };
+}
+
+export function opportunityActivity(
+  companyId: string,
+  actorId: string,
+  type: OpportunityActivityType,
+  extra: Partial<{
+    fromStatus: OpportunityStatus;
+    toStatus: OpportunityStatus;
+    fromVisibility: OpportunityVisibilityMode;
+    toVisibility: OpportunityVisibilityMode;
+  }> = {},
+) {
+  return { companyId, actorId, type, ...extra };
+}
+
+export function toDecimal(
+  value: null | number | Prisma.Decimal | string | undefined,
+): null | Prisma.Decimal | undefined {
+  if (value === undefined) return undefined;
+  if (value === null) return null;
+  return value instanceof Prisma.Decimal ? value : new Prisma.Decimal(value);
 }

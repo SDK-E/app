@@ -1,14 +1,16 @@
-import { notFound, requireProviderPrincipal } from "@sdk-e/auth/authorization";
-import { createAuditEvent } from "@sdk-e/core/audit";
-import { getPrisma } from "@sdk-e/db";
-import type { ServiceMediaAsset } from "@sdk-e/db/client";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { ServiceMediaAsset } from "@platform/db/client";
+import type { AppPrincipal } from "@platform/types";
+
+import { notFound, requireProviderPrincipal } from "@platform/auth/authorization";
+import { createAuditEvent } from "@platform/core/audit";
+import { getPrisma } from "@platform/db";
+
 import type { AddMediaAssetInput } from "./schemas";
 
 export async function addServiceMediaAsset(
   principal: AppPrincipal,
   serviceId: string,
-  input: AddMediaAssetInput
+  input: AddMediaAssetInput,
 ): Promise<ServiceMediaAsset> {
   requireProviderPrincipal(principal);
   const service = await getPrisma().providerService.findFirst({
@@ -46,9 +48,34 @@ export async function addServiceMediaAsset(
   return asset;
 }
 
+export async function getServiceMediaAssets(
+  principal: AppPrincipal,
+  serviceId: string,
+): Promise<ServiceMediaAsset[]> {
+  const service = await getPrisma().providerService.findFirst({
+    where: { id: serviceId },
+    include: { provider: { select: { userId: true } } },
+  });
+  if (!service) notFound("Service not found.");
+
+  if (principal.kind === "provider") {
+    requireProviderPrincipal(principal);
+    if (service.provider.userId !== principal.id) notFound("Service not found.");
+  } else if (principal.kind === "sdk-staff") {
+    // SDK staff can view any service's media
+  } else {
+    notFound("Service not found.");
+  }
+
+  return getPrisma().serviceMediaAsset.findMany({
+    where: { serviceId },
+    orderBy: { sortOrder: "asc" },
+  });
+}
+
 export async function removeServiceMediaAsset(
   principal: AppPrincipal,
-  mediaAssetId: string
+  mediaAssetId: string,
 ): Promise<void> {
   requireProviderPrincipal(principal);
   const asset = await getPrisma().serviceMediaAsset.findFirst({
@@ -74,30 +101,5 @@ export async function removeServiceMediaAsset(
     targetType: "ServiceMediaAsset",
     targetId: mediaAssetId,
     metadata: { serviceId: asset.serviceId, name: asset.name },
-  });
-}
-
-export async function getServiceMediaAssets(
-  principal: AppPrincipal,
-  serviceId: string
-): Promise<ServiceMediaAsset[]> {
-  const service = await getPrisma().providerService.findFirst({
-    where: { id: serviceId },
-    include: { provider: { select: { userId: true } } },
-  });
-  if (!service) notFound("Service not found.");
-
-  if (principal.kind === "provider") {
-    requireProviderPrincipal(principal);
-    if (service.provider.userId !== principal.id) notFound("Service not found.");
-  } else if (principal.kind === "sdk-staff") {
-    // SDK staff can view any service's media
-  } else {
-    notFound("Service not found.");
-  }
-
-  return getPrisma().serviceMediaAsset.findMany({
-    where: { serviceId },
-    orderBy: { sortOrder: "asc" },
   });
 }

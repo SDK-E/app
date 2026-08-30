@@ -1,8 +1,8 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import type { Opportunity } from "@platform/db/client";
 
-import { getOpportunity, getOpportunityAttachments } from "@sdk-e/opportunities/queries";
-import { principal } from "@sdk-e/test-support/test-fixtures";
-import type { Opportunity } from "@sdk-e/db/client";
+import { getOpportunity, getOpportunityAttachments } from "@platform/opportunities/queries";
+import { principal } from "@platform/test-support/test-fixtures";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 function makeOpportunity(overrides: Partial<Opportunity>): Opportunity {
   return {
@@ -55,7 +55,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
 beforeEach(() => {
   for (const mock of [
@@ -73,7 +73,7 @@ describe("getOpportunity", () => {
   it("returns the opportunity for SDK staff including internal notes", async () => {
     mocks.company.findFirst.mockResolvedValue({ id: "company-1" });
     mocks.opportunity.findFirst.mockResolvedValue(
-      makeOpportunity({ id: "opp-1", visibilityMode: "DIRECT" })
+      makeOpportunity({ id: "opp-1", visibilityMode: "DIRECT" }),
     );
 
     const result = await getOpportunity(principal("sdk-admin"), "company-1", "opp-1");
@@ -85,7 +85,7 @@ describe("getOpportunity", () => {
   it("throws for non-SDK callers (unauthorized visibility)", async () => {
     mocks.company.findFirst.mockResolvedValue({ id: "company-1" });
     await expect(getOpportunity(principal("provider"), "company-1", "opp-1")).rejects.toThrow(
-      "SDK staff access is required."
+      "SDK staff access is required.",
     );
   });
 
@@ -93,7 +93,7 @@ describe("getOpportunity", () => {
     mocks.company.findFirst.mockResolvedValue({ id: "company-1" });
     mocks.opportunity.findFirst.mockResolvedValue(null);
     await expect(getOpportunity(principal("sdk-admin"), "company-1", "opp-1")).rejects.toThrow(
-      "Opportunity not found."
+      "Opportunity not found.",
     );
   });
 });

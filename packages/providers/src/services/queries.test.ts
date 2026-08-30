@@ -1,10 +1,10 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
-  getService,
   getProviderServices,
+  getService,
   getServicesForReview,
-} from "@sdk-e/providers/services/queries";
-import { principal } from "@sdk-e/test-support/test-fixtures";
+} from "@platform/providers/services/queries";
+import { principal } from "@platform/test-support/test-fixtures";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => {
   const providerService = {
@@ -22,7 +22,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
 const baseService = {
   id: "svc-1",
@@ -118,7 +118,7 @@ describe("getServicesForReview", () => {
 
   it("blocks provider from accessing review queue", async () => {
     await expect(getServicesForReview(principal("provider"))).rejects.toThrow(
-      "SDK staff access is required."
+      "SDK staff access is required.",
     );
   });
 });

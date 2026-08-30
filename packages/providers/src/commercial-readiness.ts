@@ -1,59 +1,17 @@
-import { notFound, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { createAuditEvent } from "@sdk-e/core/audit";
-import { getPrisma } from "@sdk-e/db";
-import type { Provider, ProviderCommercialReadiness } from "@sdk-e/db/client";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { Provider, ProviderCommercialReadiness } from "@platform/db/client";
+import type { AppPrincipal } from "@platform/types";
+
+import { notFound, requireSdkStaff } from "@platform/auth/authorization";
+import { createAuditEvent } from "@platform/core/audit";
+import { getPrisma } from "@platform/db";
+
 import type { UpdateReadinessComponentInput } from "./verification.schemas";
 
 const APPROVED_STATUSES = ["APPROVED", "ACTIVE"] as const;
 
-function resolveEffectiveVerificationStatus(status: string, expiresAt: Date | null): string {
-  if (status === "VERIFIED" && expiresAt && expiresAt < new Date()) {
-    return "EXPIRED";
-  }
-  return status;
-}
-
-export async function getCommercialReadiness(
-  principal: AppPrincipal,
-  providerId: string
-): Promise<ProviderCommercialReadiness & { commercialStatus: Provider["commercialStatus"] }> {
-  if (principal.kind === "provider") {
-    const provider = await getPrisma().provider.findFirst({
-      where: { id: providerId },
-      select: { userId: true },
-    });
-    if (!provider || provider.userId !== principal.id) {
-      notFound("Commercial readiness not found.");
-    }
-  } else if (principal.kind === "sdk-staff") {
-    requireSdkStaff(principal, ["ADMIN", "DELIVERY", "FINANCE"]);
-  } else {
-    throw new Error("Unauthorized.");
-  }
-
-  const provider = await getPrisma().provider.findFirst({
-    where: { id: providerId },
-    select: { commercialStatus: true },
-  });
-  if (!provider) notFound("Provider not found.");
-
-  let readiness = await getPrisma().providerCommercialReadiness.findFirst({
-    where: { providerId },
-  });
-
-  if (!readiness) {
-    readiness = await getPrisma().providerCommercialReadiness.create({
-      data: { providerId },
-    });
-  }
-
-  return { ...readiness, commercialStatus: provider.commercialStatus };
-}
-
 export async function evaluateCommercialReadiness(
   principal: AppPrincipal,
-  providerId: string
+  providerId: string,
 ): Promise<ProviderCommercialReadiness> {
   requireSdkStaff(principal, ["ADMIN"]);
 
@@ -65,7 +23,7 @@ export async function evaluateCommercialReadiness(
 
   if (!APPROVED_STATUSES.includes(provider.status as (typeof APPROVED_STATUSES)[number])) {
     throw new Error(
-      `Cannot evaluate commercial readiness for a provider in ${provider.status} status. Provider must be APPROVED or ACTIVE.`
+      `Cannot evaluate commercial readiness for a provider in ${provider.status} status. Provider must be APPROVED or ACTIVE.`,
     );
   }
 
@@ -150,10 +108,47 @@ export async function evaluateCommercialReadiness(
   return updated;
 }
 
+export async function getCommercialReadiness(
+  principal: AppPrincipal,
+  providerId: string,
+): Promise<{ commercialStatus: Provider["commercialStatus"] } & ProviderCommercialReadiness> {
+  if (principal.kind === "provider") {
+    const provider = await getPrisma().provider.findFirst({
+      where: { id: providerId },
+      select: { userId: true },
+    });
+    if (!provider || provider.userId !== principal.id) {
+      notFound("Commercial readiness not found.");
+    }
+  } else if (principal.kind === "sdk-staff") {
+    requireSdkStaff(principal, ["ADMIN", "DELIVERY", "FINANCE"]);
+  } else {
+    throw new Error("Unauthorized.");
+  }
+
+  const provider = await getPrisma().provider.findFirst({
+    where: { id: providerId },
+    select: { commercialStatus: true },
+  });
+  if (!provider) notFound("Provider not found.");
+
+  let readiness = await getPrisma().providerCommercialReadiness.findFirst({
+    where: { providerId },
+  });
+
+  if (!readiness) {
+    readiness = await getPrisma().providerCommercialReadiness.create({
+      data: { providerId },
+    });
+  }
+
+  return { ...readiness, commercialStatus: provider.commercialStatus };
+}
+
 export async function updateReadinessComponent(
   principal: AppPrincipal,
   providerId: string,
-  input: UpdateReadinessComponentInput
+  input: UpdateReadinessComponentInput,
 ): Promise<ProviderCommercialReadiness> {
   requireSdkStaff(principal, ["ADMIN"]);
 
@@ -187,4 +182,11 @@ export async function updateReadinessComponent(
   });
 
   return updated;
+}
+
+function resolveEffectiveVerificationStatus(status: string, expiresAt: Date | null): string {
+  if (status === "VERIFIED" && expiresAt && expiresAt < new Date()) {
+    return "EXPIRED";
+  }
+  return status;
 }

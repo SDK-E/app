@@ -1,8 +1,9 @@
+import type { Opportunity, OpportunityPosition } from "@platform/db/client";
+
+import { Prisma } from "@platform/db/client";
+import { selectOpportunityPositionSafe, selectOpportunitySafe } from "@platform/opportunities/safe";
+import { principal } from "@platform/test-support/test-fixtures";
 import { describe, expect, it } from "vitest";
-import { selectOpportunitySafe, selectOpportunityPositionSafe } from "@sdk-e/opportunities/safe";
-import { principal } from "@sdk-e/test-support/test-fixtures";
-import { Prisma } from "@sdk-e/db/client";
-import type { Opportunity, OpportunityPosition } from "@sdk-e/db/client";
 
 const SENSITIVE_OPPORTUNITY: Opportunity = {
   id: "opp-1",

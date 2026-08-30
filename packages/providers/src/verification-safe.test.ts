@@ -1,9 +1,10 @@
-import { describe, expect, it } from "vitest";
-import { selectVerificationSafe } from "@sdk-e/providers/verification";
-import { principal } from "@sdk-e/test-support/test-fixtures";
-import type { VerificationRecord, VerificationEvidence } from "@sdk-e/db/client";
+import type { VerificationEvidence, VerificationRecord } from "@platform/db/client";
 
-const SENSITIVE_RECORD: VerificationRecord & { evidence: VerificationEvidence[] } = {
+import { selectVerificationSafe } from "@platform/providers/verification";
+import { principal } from "@platform/test-support/test-fixtures";
+import { describe, expect, it } from "vitest";
+
+const SENSITIVE_RECORD: { evidence: VerificationEvidence[] } & VerificationRecord = {
   id: "vr-1",
   providerId: "provider-1",
   type: "IDENTITY",

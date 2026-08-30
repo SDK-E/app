@@ -1,21 +1,22 @@
-import type { Prisma } from "@sdk-e/db/client";
-import {
-  dateSeek,
-  relationTextSeek,
-  textSeek,
-  type SeekSpec,
-  type SortDir,
-} from "@sdk-e/users/list";
+import type { Prisma } from "@platform/db/client";
 import type {
   StaffInvitationRow,
   StaffMemberRow,
   StaffRequestRow,
-} from "@sdk-e/users/staff-directory";
+} from "@platform/users/staff-directory";
+
+import {
+  dateSeek,
+  relationTextSeek,
+  type SeekSpec,
+  type SortDir,
+  textSeek,
+} from "@platform/users/list";
 
 interface SortDef<Row, Order> {
   orderBy: (dir: SortDir) => Order;
   spec: SeekSpec;
-  valueOf: (row: Row) => string | Date;
+  valueOf: (row: Row) => Date | string;
 }
 
 export const staffMemberSorts: Record<

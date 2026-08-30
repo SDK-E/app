@@ -1,6 +1,6 @@
+import { reviewProviderApplication } from "@platform/providers/review";
+import { principal } from "@platform/test-support/test-fixtures";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { reviewProviderApplication } from "@sdk-e/providers/review";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const provider = {
@@ -25,7 +25,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 mocks.prisma.$transaction.mockImplementation(async (callback) => callback(mocks.prisma));
 
 const baseProvider = {
@@ -82,7 +82,7 @@ describe("reviewProviderApplication", () => {
       data: { status: "APPROVED" },
     });
     expect(mocks.providerReview.create).toHaveBeenCalledWith(
-      expect.objectContaining({ data: expect.objectContaining({ action: "APPROVED" }) })
+      expect.objectContaining({ data: expect.objectContaining({ action: "APPROVED" }) }),
     );
     expect(mocks.auditEvent.create).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -91,7 +91,7 @@ describe("reviewProviderApplication", () => {
           fromState: "UNDER_REVIEW",
           toState: "APPROVED",
         }),
-      })
+      }),
     );
   });
 
@@ -108,7 +108,7 @@ describe("reviewProviderApplication", () => {
     expect(mocks.providerReview.create).toHaveBeenCalledWith(
       expect.objectContaining({
         data: expect.objectContaining({ action: "REJECTED", reason: "Missing details" }),
-      })
+      }),
     );
   });
 
@@ -125,14 +125,14 @@ describe("reviewProviderApplication", () => {
     expect(mocks.providerReview.create).toHaveBeenCalledWith(
       expect.objectContaining({
         data: expect.objectContaining({ action: "CHANGES_REQUESTED", reason: "Need more details" }),
-      })
+      }),
     );
   });
 
   it("throws on self-approval", async () => {
     mocks.provider.findFirst.mockResolvedValue({ ...baseProvider, userId: "user-1" });
     await expect(
-      reviewProviderApplication(principal("sdk-admin"), "provider-1", { decision: "approve" })
+      reviewProviderApplication(principal("sdk-admin"), "provider-1", { decision: "approve" }),
     ).rejects.toThrow("You cannot review your own application.");
   });
 
@@ -143,7 +143,7 @@ describe("reviewProviderApplication", () => {
       userId: "user-2",
     });
     await expect(
-      reviewProviderApplication(principal("sdk-admin"), "provider-1", { decision: "approve" })
+      reviewProviderApplication(principal("sdk-admin"), "provider-1", { decision: "approve" }),
     ).rejects.toThrow("Invalid state transition from DRAFT to APPROVED");
   });
 });

@@ -1,7 +1,6 @@
+import { principal } from "@platform/test-support/test-fixtures";
+import { removeMembership, updateMembershipRole } from "@platform/users";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { removeMembership, updateMembershipRole } from "@sdk-e/users";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const membership = {
@@ -14,7 +13,7 @@ const mocks = vi.hoisted(() => {
   return { prisma: { membership, auditEvent }, membership, auditEvent };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
 const membership = (role: string, overrides: Record<string, unknown> = {}) => ({
   id: "membership-1",
@@ -38,7 +37,7 @@ describe("updateMembershipRole", () => {
     mocks.membership.update.mockResolvedValue({ id: "membership-1", role: "PROJECT_MEMBER" });
 
     await expect(
-      updateMembershipRole(principal("owner"), "membership-1", "PROJECT_MEMBER", "company-1")
+      updateMembershipRole(principal("owner"), "membership-1", "PROJECT_MEMBER", "company-1"),
     ).resolves.toEqual({ id: "membership-1", role: "PROJECT_MEMBER" });
 
     expect(mocks.membership.update).toHaveBeenCalledWith({
@@ -59,7 +58,7 @@ describe("updateMembershipRole", () => {
     mocks.membership.update.mockResolvedValue({ id: "membership-1", role: "ADMINISTRATOR" });
 
     await expect(
-      updateMembershipRole(principal("owner"), "membership-1", "ADMINISTRATOR", "company-1")
+      updateMembershipRole(principal("owner"), "membership-1", "ADMINISTRATOR", "company-1"),
     ).resolves.toEqual({ id: "membership-1", role: "ADMINISTRATOR" });
     expect(mocks.membership.update).toHaveBeenCalled();
   });
@@ -68,7 +67,7 @@ describe("updateMembershipRole", () => {
     mocks.membership.findUniqueOrThrow.mockResolvedValue(membership("OWNER"));
 
     await expect(
-      updateMembershipRole(principal("owner"), "membership-1", "OWNER", "company-1")
+      updateMembershipRole(principal("owner"), "membership-1", "OWNER", "company-1"),
     ).resolves.toEqual(membership("OWNER"));
     expect(mocks.membership.update).not.toHaveBeenCalled();
   });
@@ -77,7 +76,12 @@ describe("updateMembershipRole", () => {
     mocks.membership.findUniqueOrThrow.mockResolvedValue(membership("VIEWER"));
 
     await expect(
-      updateMembershipRole(principal("administrator"), "membership-1", "ADMINISTRATOR", "company-1")
+      updateMembershipRole(
+        principal("administrator"),
+        "membership-1",
+        "ADMINISTRATOR",
+        "company-1",
+      ),
     ).rejects.toThrow("Only a company owner can grant administrator access.");
   });
 
@@ -85,27 +89,27 @@ describe("updateMembershipRole", () => {
     mocks.membership.findUniqueOrThrow.mockResolvedValue(membership("VIEWER"));
 
     await expect(
-      updateMembershipRole(principal("owner"), "membership-1", "OWNER", "company-1")
+      updateMembershipRole(principal("owner"), "membership-1", "OWNER", "company-1"),
     ).rejects.toThrow("Ownership cannot be granted from user management.");
   });
 
   it("blocks cross-company membership changes", async () => {
     mocks.membership.findUniqueOrThrow.mockResolvedValue(
-      membership("VIEWER", { companyId: "company-9" })
+      membership("VIEWER", { companyId: "company-9" }),
     );
 
     await expect(
-      updateMembershipRole(principal("owner"), "membership-1", "PROJECT_MEMBER", "company-1")
+      updateMembershipRole(principal("owner"), "membership-1", "PROJECT_MEMBER", "company-1"),
     ).rejects.toThrow("Cross-company access is denied.");
   });
 
   it("blocks a user from changing their own role", async () => {
     mocks.membership.findUniqueOrThrow.mockResolvedValue(
-      membership("VIEWER", { userId: "user-1" })
+      membership("VIEWER", { userId: "user-1" }),
     );
 
     await expect(
-      updateMembershipRole(principal("owner"), "membership-1", "PROJECT_MEMBER", "company-1")
+      updateMembershipRole(principal("owner"), "membership-1", "PROJECT_MEMBER", "company-1"),
     ).rejects.toThrow("You cannot change your own role.");
   });
 
@@ -113,7 +117,7 @@ describe("updateMembershipRole", () => {
     mocks.membership.findUniqueOrThrow.mockResolvedValue(membership("OWNER"));
 
     await expect(
-      updateMembershipRole(principal("owner"), "membership-1", "PROJECT_MEMBER", "company-1")
+      updateMembershipRole(principal("owner"), "membership-1", "PROJECT_MEMBER", "company-1"),
     ).rejects.toThrow("Ownership transfer is not available from user management.");
   });
 
@@ -122,14 +126,14 @@ describe("updateMembershipRole", () => {
     mocks.membership.update.mockResolvedValue({ id: "membership-1", role: "VIEWER" });
 
     await expect(
-      updateMembershipRole(principal("sdk-admin"), "membership-1", "VIEWER", "company-1")
+      updateMembershipRole(principal("sdk-admin"), "membership-1", "VIEWER", "company-1"),
     ).resolves.toBeDefined();
     expect(mocks.membership.update).toHaveBeenCalled();
   });
 
   it("rejects principals without the membership update permission", async () => {
     await expect(
-      updateMembershipRole(principal("member"), "membership-1", "VIEWER", "company-1")
+      updateMembershipRole(principal("member"), "membership-1", "VIEWER", "company-1"),
     ).rejects.toThrow("Missing permission: membership:update");
     expect(mocks.membership.findUniqueOrThrow).not.toHaveBeenCalled();
   });
@@ -142,7 +146,7 @@ describe("removeMembership", () => {
     mocks.membership.delete.mockResolvedValue({ id: "membership-1" });
 
     await expect(
-      removeMembership(principal("owner"), "membership-1", "company-1")
+      removeMembership(principal("owner"), "membership-1", "company-1"),
     ).resolves.toMatchObject({
       removed: { id: "membership-1" },
       hasNoMemberships: true,
@@ -158,21 +162,21 @@ describe("removeMembership", () => {
 
   it("rejects removing your own access", async () => {
     mocks.membership.findUniqueOrThrow.mockResolvedValue(
-      membership("VIEWER", { userId: "user-1" })
+      membership("VIEWER", { userId: "user-1" }),
     );
 
     await expect(removeMembership(principal("owner"), "membership-1", "company-1")).rejects.toThrow(
-      "You cannot remove your own access."
+      "You cannot remove your own access.",
     );
   });
 
   it("blocks cross-company removals", async () => {
     mocks.membership.findUniqueOrThrow.mockResolvedValue(
-      membership("VIEWER", { companyId: "company-9" })
+      membership("VIEWER", { companyId: "company-9" }),
     );
 
     await expect(removeMembership(principal("owner"), "membership-1", "company-1")).rejects.toThrow(
-      "Cross-company access is denied."
+      "Cross-company access is denied.",
     );
   });
 
@@ -181,7 +185,7 @@ describe("removeMembership", () => {
     mocks.membership.count.mockResolvedValue(1);
 
     await expect(removeMembership(principal("owner"), "membership-1", "company-1")).rejects.toThrow(
-      "The last company owner cannot be removed."
+      "The last company owner cannot be removed.",
     );
     expect(mocks.membership.delete).not.toHaveBeenCalled();
   });
@@ -192,7 +196,7 @@ describe("removeMembership", () => {
     mocks.membership.delete.mockResolvedValue({ id: "membership-1" });
 
     await expect(
-      removeMembership(principal("owner"), "membership-1", "company-1")
+      removeMembership(principal("owner"), "membership-1", "company-1"),
     ).resolves.toBeDefined();
     expect(mocks.membership.count).toHaveBeenCalledWith({
       where: { companyId: "company-1", role: "OWNER" },
@@ -201,7 +205,7 @@ describe("removeMembership", () => {
 
   it("rejects principals without the membership remove permission", async () => {
     await expect(
-      removeMembership(principal("member"), "membership-1", "company-1")
+      removeMembership(principal("member"), "membership-1", "company-1"),
     ).rejects.toThrow("Missing permission: membership:remove");
   });
 });

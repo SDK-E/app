@@ -1,27 +1,16 @@
-import { notFound, requireProviderPrincipal, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { createAuditEvent } from "@sdk-e/core/audit";
-import { getPrisma } from "@sdk-e/db";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { AppPrincipal } from "@platform/types";
+
+import { notFound, requireProviderPrincipal, requireSdkStaff } from "@platform/auth/authorization";
+import { createAuditEvent } from "@platform/core/audit";
+import { getPrisma } from "@platform/db";
+
 import type { WeeklyCapacityInput } from "./schemas";
 
 export {
+  getCapacityRange,
   getDefaultDailyHours,
   setDefaultDailyHours,
-  getCapacityRange,
 } from "./availability-defaults";
-
-function assertProviderOwnership(principal: AppPrincipal, providerId: string) {
-  if (principal.kind === "provider") {
-    requireProviderPrincipal(principal);
-    if (principal.providerId !== providerId) {
-      notFound("Provider capacity not found.");
-    }
-  } else if (principal.kind === "sdk-staff") {
-    requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
-  } else {
-    throw new Error("Unauthorized.");
-  }
-}
 
 export async function getWeeklyCapacity(principal: AppPrincipal, providerId: string) {
   assertProviderOwnership(principal, providerId);
@@ -43,7 +32,7 @@ export async function getWeeklyCapacity(principal: AppPrincipal, providerId: str
 export async function upsertWeeklyCapacity(
   principal: AppPrincipal,
   providerId: string,
-  entries: WeeklyCapacityInput
+  entries: WeeklyCapacityInput,
 ) {
   assertProviderOwnership(principal, providerId);
 
@@ -59,7 +48,7 @@ export async function upsertWeeklyCapacity(
   await getPrisma().$transaction(async (tx) => {
     for (const entry of entries) {
       await tx.providerWeeklyCapacity.upsert({
-        where: { providerId_weekday: { providerId, weekday: entry.weekday } },
+        where: { ["providerId_weekday"]: { providerId, weekday: entry.weekday } },
         create: { providerId, weekday: entry.weekday, hoursPerDay: entry.hoursPerDay },
         update: { hoursPerDay: entry.hoursPerDay },
       });
@@ -104,12 +93,12 @@ export async function upsertWeeklyCapacity(
       endDate: r.endDate,
       status: r.status,
     })),
-    provider.defaultDailyHours ? Number(provider.defaultDailyHours) : null
+    provider.defaultDailyHours ? Number(provider.defaultDailyHours) : null,
   );
 
   const warnings: {
     reservationId: string;
-    engagementId: string | null;
+    engagementId: null | string;
     weekStart: Date;
     available: number;
   }[] = [];
@@ -123,7 +112,7 @@ export async function upsertWeeklyCapacity(
           (Math.min(resEnd.getTime(), weekEnd.getTime()) -
             Math.max(resStart.getTime(), week.weekStart.getTime()) +
             86_400_000) /
-            86_400_000
+            86_400_000,
         );
         const requested = resDaysInRange * Number(res.hoursPerDay);
         if (requested > week.available) {
@@ -148,4 +137,17 @@ export async function upsertWeeklyCapacity(
   });
 
   return { entries: updated, warnings };
+}
+
+function assertProviderOwnership(principal: AppPrincipal, providerId: string) {
+  if (principal.kind === "provider") {
+    requireProviderPrincipal(principal);
+    if (principal.providerId !== providerId) {
+      notFound("Provider capacity not found.");
+    }
+  } else if (principal.kind === "sdk-staff") {
+    requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
+  } else {
+    throw new Error("Unauthorized.");
+  }
 }

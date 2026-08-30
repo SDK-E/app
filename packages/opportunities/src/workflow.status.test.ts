@@ -1,12 +1,11 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
-
+import { addInternalNote } from "@platform/opportunities/workflow/notes";
+import { addPosition } from "@platform/opportunities/workflow/positions";
 import {
   setVisibilityMode,
   transitionOpportunityStatus,
-} from "@sdk-e/opportunities/workflow/status";
-import { addPosition } from "@sdk-e/opportunities/workflow/positions";
-import { addInternalNote } from "@sdk-e/opportunities/workflow/notes";
-import { principal } from "@sdk-e/test-support/test-fixtures";
+} from "@platform/opportunities/workflow/status";
+import { principal } from "@platform/test-support/test-fixtures";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => {
   const make = () => ({ create: vi.fn(), findFirst: vi.fn(), update: vi.fn(), delete: vi.fn() });
@@ -35,7 +34,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
 mocks.prisma.$transaction.mockImplementation(async (callback) => callback(mocks.prisma));
 
@@ -82,7 +81,7 @@ describe("transitionOpportunityStatus", () => {
     mocks.opportunity.findFirst.mockResolvedValue({ id: "opp-1", status: "DRAFT" });
 
     await expect(
-      transitionOpportunityStatus(principal("sdk-admin"), "company-1", "opp-1", "OPEN")
+      transitionOpportunityStatus(principal("sdk-admin"), "company-1", "opp-1", "OPEN"),
     ).rejects.toThrow("Invalid state transition from DRAFT to OPEN");
     expect(mocks.opportunity.update).not.toHaveBeenCalled();
   });
@@ -92,7 +91,7 @@ describe("transitionOpportunityStatus", () => {
     mocks.opportunity.findFirst.mockResolvedValue(null);
 
     await expect(
-      transitionOpportunityStatus(principal("sdk-admin"), "company-1", "opp-1", "READY")
+      transitionOpportunityStatus(principal("sdk-admin"), "company-1", "opp-1", "READY"),
     ).rejects.toThrow("Opportunity not found.");
   });
 });
@@ -139,12 +138,12 @@ describe("setVisibilityMode", () => {
           toVisibility: mode,
         }),
       });
-    }
+    },
   );
 
   it("rejects setting visibility mode for non-SDK staff", async () => {
     await expect(
-      setVisibilityMode(principal("provider"), "company-1", "opp-1", "ELIGIBLE_NETWORK")
+      setVisibilityMode(principal("provider"), "company-1", "opp-1", "ELIGIBLE_NETWORK"),
     ).rejects.toThrow("SDK staff access is required.");
     expect(mocks.opportunity.update).not.toHaveBeenCalled();
   });

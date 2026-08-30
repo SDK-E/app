@@ -1,7 +1,6 @@
+import { principal } from "@platform/test-support/test-fixtures";
+import { assignCompanyMemberDirectly } from "@platform/users";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { assignCompanyMemberDirectly } from "@sdk-e/users";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const company = { findFirst: vi.fn() };
@@ -21,9 +20,9 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
-vi.mock("@sdk-e/auth/identity-management", () => ({
+vi.mock("@platform/auth/identity-management", () => ({
   assignCompanyMembership: mocks.assignCompanyMembership,
 }));
 
@@ -74,7 +73,7 @@ describe("assignCompanyMemberDirectly", () => {
     expect(mocks.companyAccessRequest.updateMany).toHaveBeenCalledWith(
       expect.objectContaining({
         where: { status: "PENDING", userId: "user-9", companyId: "company-2" },
-      })
+      }),
     );
     expect(mocks.auditEvent.create).toHaveBeenCalledWith({
       data: expect.objectContaining({
@@ -121,7 +120,7 @@ describe("assignCompanyMemberDirectly", () => {
     });
 
     expect(mocks.assignCompanyMembership).toHaveBeenCalledWith(
-      expect.objectContaining({ role: "OWNER" })
+      expect.objectContaining({ role: "OWNER" }),
     );
   });
 
@@ -137,7 +136,7 @@ describe("assignCompanyMemberDirectly", () => {
         userId: "user-9",
         companyId: "company-2",
         role: "OWNER",
-      })
+      }),
     ).rejects.toThrow("This company already has an owner.");
     expect(mocks.assignCompanyMembership).not.toHaveBeenCalled();
   });
@@ -153,14 +152,14 @@ describe("assignCompanyMemberDirectly", () => {
         userId: "user-9",
         companyId: "company-2",
         role: "VIEWER",
-      })
+      }),
     ).rejects.toThrow("SDK staff accounts cannot receive company memberships.");
     await expect(
       assignCompanyMemberDirectly(principal("sdk-admin"), {
         userId: "user-9",
         companyId: "company-2",
         role: "VIEWER",
-      })
+      }),
     ).rejects.toThrow("Provider accounts cannot receive company memberships.");
     expect(mocks.assignCompanyMembership).not.toHaveBeenCalled();
   });
@@ -175,7 +174,7 @@ describe("assignCompanyMemberDirectly", () => {
         userId: "user-9",
         companyId: "company-2",
         role: "VIEWER",
-      })
+      }),
     ).rejects.toThrow("This user is already a member of this company.");
   });
 
@@ -185,14 +184,14 @@ describe("assignCompanyMemberDirectly", () => {
         userId: "user-9",
         companyId: "company-2",
         role: "VIEWER",
-      })
+      }),
     ).rejects.toThrow("Missing permission: membership:create");
     await expect(
       assignCompanyMemberDirectly(principal("owner"), {
         userId: "user-9",
         companyId: "company-1",
         role: "VIEWER",
-      })
+      }),
     ).rejects.toThrow("Missing permission: membership:create");
     expect(mocks.company.findFirst).not.toHaveBeenCalled();
   });

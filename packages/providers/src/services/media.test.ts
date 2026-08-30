@@ -1,10 +1,10 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   addServiceMediaAsset,
   getServiceMediaAssets,
   removeServiceMediaAsset,
-} from "@sdk-e/providers/services/media";
-import { principal } from "@sdk-e/test-support/test-fixtures";
+} from "@platform/providers/services/media";
+import { principal } from "@platform/test-support/test-fixtures";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => {
   const providerService = {
@@ -29,7 +29,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
 const baseService = {
   id: "svc-1",
@@ -106,7 +106,7 @@ describe("addServiceMediaAsset", () => {
         sizeBytes: 1024,
         kind: "IMAGE",
         sortOrder: 0,
-      })
+      }),
     ).rejects.toThrow("Media can only be added to draft or rejected services.");
   });
 });
@@ -132,7 +132,7 @@ describe("removeServiceMediaAsset", () => {
     });
 
     await expect(removeServiceMediaAsset(principal("provider"), "asset-1")).rejects.toThrow(
-      "Media can only be removed from draft or rejected services."
+      "Media can only be removed from draft or rejected services.",
     );
   });
 });
@@ -164,7 +164,7 @@ describe("getServiceMediaAssets", () => {
     mocks.providerService.findFirst.mockResolvedValue(baseService);
 
     await expect(getServiceMediaAssets(principal("owner"), "svc-1")).rejects.toThrow(
-      "Service not found."
+      "Service not found.",
     );
   });
 });

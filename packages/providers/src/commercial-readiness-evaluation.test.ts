@@ -1,6 +1,6 @@
+import { evaluateCommercialReadiness } from "@platform/providers/commercial-readiness";
+import { principal } from "@platform/test-support/test-fixtures";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { evaluateCommercialReadiness } from "@sdk-e/providers/commercial-readiness";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const provider = { findFirst: vi.fn(), update: vi.fn() };
@@ -27,7 +27,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 mocks.prisma.$transaction.mockImplementation(async (cb) => cb(mocks.prisma));
 
 const baseReadiness = {
@@ -41,14 +41,6 @@ const baseReadiness = {
   updatedAt: new Date(),
 };
 
-function setupProviderApproved() {
-  mocks.provider.findFirst.mockResolvedValue({
-    id: "provider-1",
-    status: "APPROVED",
-    commercialStatus: "NOT_READY",
-  });
-}
-
 function setupAllReady(overrides: Partial<typeof baseReadiness> = {}) {
   setupProviderApproved();
   mocks.providerCommercialReadiness.findFirst.mockResolvedValue({
@@ -59,6 +51,14 @@ function setupAllReady(overrides: Partial<typeof baseReadiness> = {}) {
     ...overrides,
   });
   mocks.providerCommercialReadiness.update.mockResolvedValue(baseReadiness);
+}
+
+function setupProviderApproved() {
+  mocks.provider.findFirst.mockResolvedValue({
+    id: "provider-1",
+    status: "APPROVED",
+    commercialStatus: "NOT_READY",
+  });
 }
 
 beforeEach(() => {
@@ -158,19 +158,19 @@ describe("evaluateCommercialReadiness", () => {
     });
 
     await expect(evaluateCommercialReadiness(principal("sdk-admin"), "provider-1")).rejects.toThrow(
-      /Cannot evaluate commercial readiness/
+      /Cannot evaluate commercial readiness/,
     );
   });
 
   it("throws for provider principal", async () => {
     await expect(
-      evaluateCommercialReadiness(principal("provider"), "provider-1")
+      evaluateCommercialReadiness(principal("provider"), "provider-1"),
     ).rejects.toThrow();
   });
 
   it("throws for DELIVERY role", async () => {
     await expect(
-      evaluateCommercialReadiness(principal("delivery"), "provider-1")
+      evaluateCommercialReadiness(principal("delivery"), "provider-1"),
     ).rejects.toThrow();
   });
 });

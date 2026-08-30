@@ -1,5 +1,5 @@
+import { requestCapabilities } from "@platform/schemas/serviceRequest";
 import { z } from "zod";
-import { requestCapabilities } from "@sdk-e/schemas/serviceRequest";
 
 const optionalText = (maximum: number) =>
   z
@@ -71,7 +71,7 @@ export const addMediaAssetSchema = z.object({
   sortOrder: z.number().int().nonnegative().default(0),
 });
 
-export type ServiceDraftInput = z.infer<typeof serviceDraftSchema>;
-export type ServiceSubmissionInput = z.infer<typeof serviceSubmissionSchema>;
-export type ServiceReviewDecision = z.infer<typeof serviceReviewDecisionSchema>;
 export type AddMediaAssetInput = z.infer<typeof addMediaAssetSchema>;
+export type ServiceDraftInput = z.infer<typeof serviceDraftSchema>;
+export type ServiceReviewDecision = z.infer<typeof serviceReviewDecisionSchema>;
+export type ServiceSubmissionInput = z.infer<typeof serviceSubmissionSchema>;

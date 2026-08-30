@@ -1,12 +1,27 @@
-import { requireProviderPrincipal, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { getPrisma } from "@sdk-e/db";
-import type { ProviderService } from "@sdk-e/db/client";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { ProviderService } from "@platform/db/client";
+import type { AppPrincipal } from "@platform/types";
+
+import { requireProviderPrincipal, requireSdkStaff } from "@platform/auth/authorization";
+import { getPrisma } from "@platform/db";
+
+export async function getProviderServices(principal: AppPrincipal): Promise<ProviderService[]> {
+  requireProviderPrincipal(principal);
+  const provider = await getPrisma().provider.findFirst({
+    where: { userId: principal.id },
+    select: { id: true },
+  });
+  if (!provider) return [];
+
+  return getPrisma().providerService.findMany({
+    where: { providerId: provider.id },
+    orderBy: { createdAt: "desc" },
+  });
+}
 
 export async function getService(
   principal: AppPrincipal,
-  serviceId: string
-): Promise<ProviderService | null> {
+  serviceId: string,
+): Promise<null | ProviderService> {
   const service = await getPrisma().providerService.findFirst({
     where: { id: serviceId },
   });
@@ -26,20 +41,6 @@ export async function getService(
   }
 
   return service;
-}
-
-export async function getProviderServices(principal: AppPrincipal): Promise<ProviderService[]> {
-  requireProviderPrincipal(principal);
-  const provider = await getPrisma().provider.findFirst({
-    where: { userId: principal.id },
-    select: { id: true },
-  });
-  if (!provider) return [];
-
-  return getPrisma().providerService.findMany({
-    where: { providerId: provider.id },
-    orderBy: { createdAt: "desc" },
-  });
 }
 
 export async function getServicesForReview(principal: AppPrincipal): Promise<ProviderService[]> {

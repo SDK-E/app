@@ -1,49 +1,25 @@
-import { notFound, requirePermission } from "@sdk-e/auth/authorization";
-import { assignCompanyMembership } from "@sdk-e/auth/identity-management";
-import { getPrisma } from "@sdk-e/db";
-import { recordUserManagementEvent } from "@sdk-e/users/audit";
-import { forbidden } from "@sdk-e/users/shared";
-import type { AppPrincipal, ClientRole } from "@sdk-e/types";
+import type { AppPrincipal, ClientRole } from "@platform/types";
+
+import { notFound, requirePermission } from "@platform/auth/authorization";
+import { assignCompanyMembership } from "@platform/auth/identity-management";
+import { getPrisma } from "@platform/db";
+import { recordUserManagementEvent } from "@platform/users/audit";
+import { forbidden } from "@platform/users/shared";
 
 export async function assignCompanyMemberDirectly(
   principal: AppPrincipal,
-  input: { userId: string; companyId: string; role: ClientRole }
+  input: { userId: string; companyId: string; role: ClientRole },
 ) {
   requirePermission(principal, "membership:create", input.companyId);
   if (principal.kind !== "sdk-staff" || principal.role !== "ADMIN")
     forbidden("SDK administrator access is required.");
 
-  const company = await getPrisma().company.findFirst({
-    where: { id: input.companyId, isActive: true },
-  });
-  if (!company) notFound("Company not found.");
-
-  const user = await getPrisma().user.findUnique({
-    where: { id: input.userId },
-    select: {
-      id: true,
-      email: true,
-      name: true,
-      sdkStaffRole: true,
-      provider: { select: { id: true } },
-    },
-  });
-  if (!user) notFound("User not found.");
-  if (user.sdkStaffRole) forbidden("SDK staff accounts cannot receive company memberships.");
-  if (user.provider) forbidden("Provider accounts cannot receive company memberships.");
-
-  const existingMembership = await getPrisma().membership.findFirst({
-    where: { userId: input.userId, companyId: input.companyId },
-    select: { id: true },
-  });
-  if (existingMembership) forbidden("This user is already a member of this company.");
+  const { company, user } = await fetchCompanyAndUser(input);
+  assertUserEligibleForMembership(user);
+  await assertNoExistingMembership(input);
 
   if (input.role === "OWNER") {
-    const owner = await getPrisma().membership.findFirst({
-      where: { companyId: input.companyId, role: "OWNER" },
-      select: { id: true },
-    });
-    if (owner) forbidden("This company already has an owner.");
+    await assertNoExistingOwner(input.companyId);
   } else if (input.role === "ADMINISTRATOR" && principal.role !== "ADMIN") {
     forbidden("SDK administrator access is required.");
   }
@@ -125,4 +101,48 @@ export async function updateUserName(principal: AppPrincipal, userId: string, na
     toState: trimmed,
   });
   return updated;
+}
+
+async function assertNoExistingMembership(input: { userId: string; companyId: string }) {
+  const existing = await getPrisma().membership.findFirst({
+    where: { userId: input.userId, companyId: input.companyId },
+    select: { id: true },
+  });
+  if (existing) forbidden("This user is already a member of this company.");
+}
+
+async function assertNoExistingOwner(companyId: string) {
+  const owner = await getPrisma().membership.findFirst({
+    where: { companyId, role: "OWNER" },
+    select: { id: true },
+  });
+  if (owner) forbidden("This company already has an owner.");
+}
+
+function assertUserEligibleForMembership(user: {
+  sdkStaffRole: null | string;
+  provider: { id: string } | null;
+}) {
+  if (user.sdkStaffRole) forbidden("SDK staff accounts cannot receive company memberships.");
+  if (user.provider) forbidden("Provider accounts cannot receive company memberships.");
+}
+
+async function fetchCompanyAndUser(input: { userId: string; companyId: string }) {
+  const company = await getPrisma().company.findFirst({
+    where: { id: input.companyId, isActive: true },
+  });
+  if (!company) notFound("Company not found.");
+
+  const user = await getPrisma().user.findUnique({
+    where: { id: input.userId },
+    select: {
+      id: true,
+      email: true,
+      name: true,
+      sdkStaffRole: true,
+      provider: { select: { id: true } },
+    },
+  });
+  if (!user) notFound("User not found.");
+  return { company, user };
 }

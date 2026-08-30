@@ -1,35 +1,31 @@
-export { acceptInvitation } from "@sdk-e/users/acceptance";
-export { recordUserManagementEvent } from "@sdk-e/users/audit";
-export type { ActivityRow } from "@sdk-e/users/activity";
-export { listUserManagementActivity } from "@sdk-e/users/activity";
+export { acceptInvitation } from "@platform/users/acceptance";
 export {
-  assignCompanyMemberDirectly,
-  setAccountActive,
-  updateUserName,
-} from "@sdk-e/users/assignment";
-export {
-  getClientTeamView,
-  type ClientInvitationRow,
-  type ClientMemberRow,
-  type ClientRequestRow,
-  type ClientTeamView,
-} from "@sdk-e/users/client-team";
-export {
-  getStaffDirectoryView,
-  type StaffDirectoryView,
-  type StaffInvitationRow,
-  type StaffMemberRow,
-  type StaffRequestRow,
-} from "@sdk-e/users/staff-directory";
-export { getUserDetail, type UserDetailView } from "@sdk-e/users/user-detail";
-export { isUsersTab, usersTabs, type TabCounts, type UsersTab } from "@sdk-e/users/tabs";
+  applySdkStaffRole,
+  createClientMembership,
+  validateInvitation,
+} from "@platform/users/acceptance-helpers";
 export {
   approveCompanyAccessRequest,
   declineCompanyAccessRequest,
   getUserAccessRequests,
   listCompanyAccessRequests,
   requestCompanyAccess,
-} from "@sdk-e/users/access-requests";
+} from "@platform/users/access-requests";
+export type { ActivityRow } from "@platform/users/activity";
+export { listUserManagementActivity } from "@platform/users/activity";
+export {
+  assignCompanyMemberDirectly,
+  setAccountActive,
+  updateUserName,
+} from "@platform/users/assignment";
+export { recordUserManagementEvent } from "@platform/users/audit";
+export {
+  type ClientInvitationRow,
+  type ClientMemberRow,
+  type ClientRequestRow,
+  type ClientTeamView,
+  getClientTeamView,
+} from "@platform/users/client-team";
 export {
   createClientInvitation,
   createStaffInvitation,
@@ -38,7 +34,16 @@ export {
   renewInvitation,
   restoreInvitationDelivery,
   revokeInvitation,
-} from "@sdk-e/users/invitations";
-export { removeMembership, updateMembershipRole } from "@sdk-e/users/memberships";
-export { canManageUsers, hashInvitationToken } from "@sdk-e/users/shared";
-export { updateStaffUser } from "@sdk-e/users/staff";
+} from "@platform/users/invitations";
+export { removeMembership, updateMembershipRole } from "@platform/users/memberships";
+export { canManageUsers, hashInvitationToken } from "@platform/users/shared";
+export { updateStaffUser } from "@platform/users/staff";
+export {
+  getStaffDirectoryView,
+  type StaffDirectoryView,
+  type StaffInvitationRow,
+  type StaffMemberRow,
+  type StaffRequestRow,
+} from "@platform/users/staff-directory";
+export { isUsersTab, type TabCounts, type UsersTab, usersTabs } from "@platform/users/tabs";
+export { getUserDetail, type UserDetailView } from "@platform/users/user-detail";

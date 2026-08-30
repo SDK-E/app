@@ -1,24 +1,61 @@
-import { requireProviderPrincipal } from "@sdk-e/auth/authorization";
-import { getPrisma } from "@sdk-e/db";
-import { deliver } from "@sdk-e/notifications/delivery";
-import { createNotificationIdempotent } from "@sdk-e/notifications/notifications";
-import type { AppPrincipal, ProviderPrincipal } from "@sdk-e/types";
-import type { Opportunity } from "@sdk-e/db/client";
+import type { Opportunity } from "@platform/db/client";
+import type { AppPrincipal, ProviderPrincipal } from "@platform/types";
+
+import { requireProviderPrincipal } from "@platform/auth/authorization";
+import { getPrisma } from "@platform/db";
+import { deliver } from "@platform/notifications/delivery";
+import { createNotificationIdempotent } from "@platform/notifications/notifications";
 
 export interface ProviderPreferences {
   saved: Opportunity[];
   hidden: Opportunity[];
 }
 
-async function loadProvider(principal: ProviderPrincipal) {
-  const provider = await getPrisma().provider.findFirst({
-    where: { id: principal.providerId },
-    select: { id: true, companyId: true },
+export async function getProviderPreferences(
+  principal: AppPrincipal,
+): Promise<ProviderPreferences> {
+  const provider = requireProviderPrincipal(principal);
+
+  const [saved, hidden] = await Promise.all([
+    getPrisma().opportunityProviderPreference.findMany({
+      where: { providerId: provider.providerId, action: "SAVED" },
+      include: { opportunity: true },
+    }),
+    getPrisma().opportunityProviderPreference.findMany({
+      where: { providerId: provider.providerId, action: "HIDDEN" },
+      include: { opportunity: true },
+    }),
+  ]);
+
+  return {
+    saved: saved.map((p) => p.opportunity),
+    hidden: hidden.map((p) => p.opportunity),
+  };
+}
+
+export async function hideOpportunity(principal: AppPrincipal, opportunityId: string) {
+  const provider = requireProviderPrincipal(principal);
+  const record = await loadProvider(provider);
+
+  const existing = await getPrisma().opportunityProviderPreference.findFirst({
+    where: { opportunityId, providerId: provider.providerId },
   });
-  if (!provider) {
-    throw new Error("Provider record not found.");
+
+  if (!existing) {
+    return getPrisma().opportunityProviderPreference.create({
+      data: {
+        opportunityId,
+        providerId: provider.providerId,
+        companyId: record.companyId ?? "",
+        action: "HIDDEN",
+      },
+    });
   }
-  return provider;
+
+  return getPrisma().opportunityProviderPreference.update({
+    where: { id: existing.id },
+    data: { action: "HIDDEN" },
+  });
 }
 
 export async function saveOpportunity(principal: AppPrincipal, opportunityId: string) {
@@ -59,49 +96,13 @@ export async function saveOpportunity(principal: AppPrincipal, opportunityId: st
   return preference;
 }
 
-export async function hideOpportunity(principal: AppPrincipal, opportunityId: string) {
-  const provider = requireProviderPrincipal(principal);
-  const record = await loadProvider(provider);
-
-  const existing = await getPrisma().opportunityProviderPreference.findFirst({
-    where: { opportunityId, providerId: provider.providerId },
+async function loadProvider(principal: ProviderPrincipal) {
+  const provider = await getPrisma().provider.findFirst({
+    where: { id: principal.providerId },
+    select: { id: true, companyId: true },
   });
-
-  if (!existing) {
-    return getPrisma().opportunityProviderPreference.create({
-      data: {
-        opportunityId,
-        providerId: provider.providerId,
-        companyId: record.companyId ?? "",
-        action: "HIDDEN",
-      },
-    });
+  if (!provider) {
+    throw new Error("Provider record not found.");
   }
-
-  return getPrisma().opportunityProviderPreference.update({
-    where: { id: existing.id },
-    data: { action: "HIDDEN" },
-  });
-}
-
-export async function getProviderPreferences(
-  principal: AppPrincipal
-): Promise<ProviderPreferences> {
-  const provider = requireProviderPrincipal(principal);
-
-  const [saved, hidden] = await Promise.all([
-    getPrisma().opportunityProviderPreference.findMany({
-      where: { providerId: provider.providerId, action: "SAVED" },
-      include: { opportunity: true },
-    }),
-    getPrisma().opportunityProviderPreference.findMany({
-      where: { providerId: provider.providerId, action: "HIDDEN" },
-      include: { opportunity: true },
-    }),
-  ]);
-
-  return {
-    saved: saved.map((p) => p.opportunity),
-    hidden: hidden.map((p) => p.opportunity),
-  };
+  return provider;
 }

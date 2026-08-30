@@ -1,9 +1,9 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   getCommercialReadiness,
   updateReadinessComponent,
-} from "@sdk-e/providers/commercial-readiness";
-import { principal } from "@sdk-e/test-support/test-fixtures";
+} from "@platform/providers/commercial-readiness";
+import { principal } from "@platform/test-support/test-fixtures";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => {
   const provider = { findFirst: vi.fn() };
@@ -23,7 +23,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
 const baseReadiness = {
   id: "pcr-1",
@@ -145,7 +145,7 @@ describe("updateReadinessComponent", () => {
       updateReadinessComponent(principal("delivery"), "provider-1", {
         component: "contractReady",
         ready: true,
-      })
+      }),
     ).rejects.toThrow();
   });
 
@@ -154,7 +154,7 @@ describe("updateReadinessComponent", () => {
       updateReadinessComponent(principal("provider"), "provider-1", {
         component: "contractReady",
         ready: true,
-      })
+      }),
     ).rejects.toThrow();
   });
 });

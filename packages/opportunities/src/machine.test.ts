@@ -1,5 +1,5 @@
+import { opportunityMachine } from "@platform/opportunities/machine";
 import { describe, expect, it } from "vitest";
-import { opportunityMachine } from "@sdk-e/opportunities/machine";
 
 describe("opportunity state machine", () => {
   it("allows the linear happy path", () => {
@@ -16,7 +16,7 @@ describe("opportunity state machine", () => {
     ];
     for (const [from, to] of path) {
       expect(opportunityMachine.canTransition(from as never, to as never), `${from} -> ${to}`).toBe(
-        true
+        true,
       );
     }
   });
@@ -85,7 +85,7 @@ describe("opportunity state machine", () => {
 
   it("throws on invalid transitions", () => {
     expect(() => opportunityMachine.assertTransition("DRAFT", "OPEN")).toThrow(
-      "Invalid state transition from DRAFT to OPEN"
+      "Invalid state transition from DRAFT to OPEN",
     );
   });
 

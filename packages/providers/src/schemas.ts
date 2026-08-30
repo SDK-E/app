@@ -59,5 +59,5 @@ export const providerReviewDecisionSchema = z.discriminatedUnion("decision", [
 ]);
 
 export type ProviderDraftInput = z.infer<typeof providerDraftSchema>;
-export type ProviderSubmissionInput = z.infer<typeof providerSubmissionSchema>;
 export type ProviderReviewDecision = z.infer<typeof providerReviewDecisionSchema>;
+export type ProviderSubmissionInput = z.infer<typeof providerSubmissionSchema>;

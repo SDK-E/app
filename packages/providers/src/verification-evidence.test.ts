@@ -1,10 +1,10 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
-  submitEvidence,
-  reviewVerification,
   getVerificationEvidence,
-} from "@sdk-e/providers/verification-evidence";
-import { principal } from "@sdk-e/test-support/test-fixtures";
+  reviewVerification,
+  submitEvidence,
+} from "@platform/providers/verification-evidence";
+import { principal } from "@platform/test-support/test-fixtures";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => {
   const verificationRecord = { findFirst: vi.fn(), update: vi.fn() };
@@ -24,7 +24,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 mocks.prisma.$transaction.mockImplementation(async (cb) => cb(mocks.prisma));
 
 const baseRecord = {
@@ -100,7 +100,7 @@ describe("submitEvidence", () => {
         storageKey: "evidence/passport.pdf",
         mimeType: "application/pdf",
         sizeBytes: 1024,
-      })
+      }),
     ).rejects.toThrow();
   });
 
@@ -117,7 +117,7 @@ describe("submitEvidence", () => {
         storageKey: "evidence/passport.pdf",
         mimeType: "application/pdf",
         sizeBytes: 1024,
-      })
+      }),
     ).rejects.toThrow(/Cannot submit evidence/);
   });
 });
@@ -159,7 +159,7 @@ describe("reviewVerification", () => {
     mocks.verificationRecord.findFirst.mockResolvedValue({ ...baseRecord, status: "WAIVED" });
 
     await expect(
-      reviewVerification(principal("sdk-admin"), "vr-1", { decision: "approve" })
+      reviewVerification(principal("sdk-admin"), "vr-1", { decision: "approve" }),
     ).rejects.toThrow(/Invalid verification transition/);
   });
 

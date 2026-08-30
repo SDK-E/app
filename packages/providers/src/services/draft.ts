@@ -1,15 +1,18 @@
-import { notFound, requireProviderPrincipal } from "@sdk-e/auth/authorization";
-import { createAuditEvent } from "@sdk-e/core/audit";
-import { getPrisma } from "@sdk-e/db";
+import type { ProviderService } from "@platform/db/client";
+import type { AppPrincipal } from "@platform/types";
+
+import { notFound, requireProviderPrincipal } from "@platform/auth/authorization";
+import { createAuditEvent } from "@platform/core/audit";
+import { getPrisma } from "@platform/db";
+
+import type { ServiceDraftInput } from "./schemas";
+
 import { providerServiceMachine } from "./machine";
 import { calculateServiceCompletenessScore } from "./score";
-import type { ProviderService } from "@sdk-e/db/client";
-import type { AppPrincipal } from "@sdk-e/types";
-import type { ServiceDraftInput } from "./schemas";
 
 export async function createServiceDraft(
   principal: AppPrincipal,
-  input: ServiceDraftInput
+  input: ServiceDraftInput,
 ): Promise<ProviderService> {
   requireProviderPrincipal(principal);
   const provider = await getPrisma().provider.findFirst({
@@ -59,7 +62,7 @@ export async function createServiceDraft(
 export async function saveServiceDraft(
   principal: AppPrincipal,
   serviceId: string,
-  input: Partial<ServiceDraftInput>
+  input: Partial<ServiceDraftInput>,
 ): Promise<ProviderService> {
   requireProviderPrincipal(principal);
   const service = await getPrisma().providerService.findFirst({
@@ -89,7 +92,7 @@ export async function saveServiceDraft(
 
 export async function submitServiceForReview(
   principal: AppPrincipal,
-  serviceId: string
+  serviceId: string,
 ): Promise<ProviderService> {
   requireProviderPrincipal(principal);
   const service = await getPrisma().providerService.findFirst({

@@ -61,7 +61,7 @@ export const updateReadinessComponentSchema = z.object({
 
 export type ReviewVerificationDecision = z.infer<typeof reviewVerificationDecisionSchema>;
 export type SubmitEvidenceInput = z.infer<typeof submitEvidenceSchema>;
+export type UpdateReadinessComponentInput = z.infer<typeof updateReadinessComponentSchema>;
 export type UpsertVerificationRequirementInput = z.infer<
   typeof upsertVerificationRequirementSchema
 >;
-export type UpdateReadinessComponentInput = z.infer<typeof updateReadinessComponentSchema>;

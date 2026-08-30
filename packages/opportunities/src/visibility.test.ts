@@ -1,7 +1,8 @@
+import type { AppPrincipal } from "@platform/types";
+
+import { canViewOpportunity } from "@platform/opportunities/safe";
+import { principal } from "@platform/test-support/test-fixtures";
 import { describe, expect, it } from "vitest";
-import { canViewOpportunity } from "@sdk-e/opportunities/safe";
-import { principal } from "@sdk-e/test-support/test-fixtures";
-import type { AppPrincipal } from "@sdk-e/types";
 
 const MODES = ["DIRECT", "INVITE_ONLY", "ELIGIBLE_NETWORK"] as const;
 

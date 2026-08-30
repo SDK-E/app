@@ -1,12 +1,12 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
-  createAbsence,
   approveAbsence,
-  rejectAbsence,
   cancelAbsence,
+  createAbsence,
   getAbsences,
-} from "@sdk-e/providers/availability/absences";
-import { principal } from "@sdk-e/test-support/test-fixtures";
+  rejectAbsence,
+} from "@platform/providers/availability/absences";
+import { principal } from "@platform/test-support/test-fixtures";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => {
   const providerAbsence = {
@@ -25,7 +25,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
 const baseAbsence = {
   id: "absence-1",
@@ -74,7 +74,7 @@ describe("createAbsence", () => {
       createAbsence(principal("provider"), "provider-1", {
         startDate: new Date("2025-02-05"),
         endDate: new Date("2025-02-10"),
-      })
+      }),
     ).rejects.toThrow("overlaps");
   });
 
@@ -83,7 +83,7 @@ describe("createAbsence", () => {
       createAbsence(principal("sdk-admin"), "provider-1", {
         startDate: new Date("2025-02-03"),
         endDate: new Date("2025-02-07"),
-      })
+      }),
     ).rejects.toThrow();
   });
 });
@@ -102,7 +102,7 @@ describe("approveAbsence", () => {
     mocks.providerAbsence.findFirst.mockResolvedValue({ ...baseAbsence, status: "APPROVED" });
 
     await expect(approveAbsence(principal("sdk-admin"), "absence-1")).rejects.toThrow(
-      "Cannot approve absence in APPROVED status"
+      "Cannot approve absence in APPROVED status",
     );
   });
 
@@ -141,7 +141,7 @@ describe("cancelAbsence", () => {
     mocks.providerAbsence.findFirst.mockResolvedValue({ ...baseAbsence, status: "APPROVED" });
 
     await expect(cancelAbsence(principal("provider"), "absence-1")).rejects.toThrow(
-      "Providers can only cancel pending absences"
+      "Providers can only cancel pending absences",
     );
   });
 
@@ -162,7 +162,7 @@ describe("cancelAbsence", () => {
     mocks.providerAbsence.findFirst.mockResolvedValue({ ...baseAbsence, status: "CANCELLED" });
 
     await expect(cancelAbsence(principal("sdk-admin"), "absence-1")).rejects.toThrow(
-      "already cancelled"
+      "already cancelled",
     );
   });
 
@@ -175,7 +175,7 @@ describe("cancelAbsence", () => {
     mocks.providerAbsence.findFirst.mockResolvedValue(pastAbsence);
 
     await expect(cancelAbsence(principal("sdk-admin"), "absence-1")).rejects.toThrow(
-      "past absence"
+      "past absence",
     );
   });
 });

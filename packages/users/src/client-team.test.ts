@@ -1,7 +1,6 @@
+import { principal } from "@platform/test-support/test-fixtures";
+import { getClientTeamView } from "@platform/users/client-team";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { getClientTeamView } from "@sdk-e/users/client-team";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const make = () => ({
@@ -16,7 +15,7 @@ const mocks = vi.hoisted(() => {
   return { prisma: { membership, invitation, companyAccessRequest, company }, membership };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
 beforeEach(() => {
   vi.resetAllMocks();
@@ -32,7 +31,7 @@ beforeEach(() => {
 describe("getClientTeamView", () => {
   it("rejects roles that cannot manage users", async () => {
     await expect(
-      getClientTeamView(principal("member"), "company-1", "members", {})
+      getClientTeamView(principal("member"), "company-1", "members", {}),
     ).rejects.toThrow("User management is not available for this role.");
     expect(mocks.membership.findMany).not.toHaveBeenCalled();
   });
@@ -109,7 +108,7 @@ describe("getClientTeamView", () => {
       principal("administrator"),
       "company-1",
       "invitations",
-      {}
+      {},
     );
 
     expect(view.invitations.rows).toHaveLength(25);

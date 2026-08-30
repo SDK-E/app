@@ -1,10 +1,11 @@
-import { describe, expect, it } from "vitest";
 import {
   calculateAvailableCapacity,
   calculateCapacityRange,
   checkReservationFeasibility,
-} from "@sdk-e/providers/availability/capacity";
-import { absence, reservation, MON_FRI_8H } from "./test-utils";
+} from "@platform/providers/availability/capacity";
+import { describe, expect, it } from "vitest";
+
+import { absence, MON_FRI_8H, reservation } from "./test-utils";
 
 describe("calculateAvailableCapacity", () => {
   it("returns full capacity with no absences or reservations", () => {
@@ -24,7 +25,7 @@ describe("calculateAvailableCapacity", () => {
       MON_FRI_8H,
       [absence("2025-01-15", "2025-01-17")],
       [reservation(4, "2025-01-13", "2025-01-14")],
-      null
+      null,
     );
     expect(result.base).toBe(40);
     expect(result.absenceHours).toBe(24);
@@ -39,7 +40,7 @@ describe("calculateAvailableCapacity", () => {
       MON_FRI_8H,
       [],
       [reservation(4, "2025-01-13", "2025-01-17", "PENDING")],
-      null
+      null,
     );
     expect(result.pendingReservationHours).toBe(20);
     expect(result.available).toBe(40);
@@ -59,7 +60,7 @@ describe("calculateAvailableCapacity", () => {
       MON_FRI_8H,
       [absence("2025-01-13", "2025-01-17")],
       [],
-      null
+      null,
     );
     expect(result.available).toBe(0);
   });
@@ -73,7 +74,7 @@ describe("calculateCapacityRange", () => {
       MON_FRI_8H,
       [],
       [],
-      null
+      null,
     );
     expect(results).toHaveLength(2);
     expect(results[0].base).toBe(40);
@@ -90,7 +91,7 @@ describe("checkReservationFeasibility", () => {
       MON_FRI_8H,
       [],
       [],
-      null
+      null,
     );
     expect(result.feasible).toBe(true);
     expect(result.conflictingWeeks).toHaveLength(0);
@@ -104,7 +105,7 @@ describe("checkReservationFeasibility", () => {
       MON_FRI_8H,
       [],
       [],
-      null
+      null,
     );
     expect(result.feasible).toBe(false);
     expect(result.conflictingWeeks).toHaveLength(1);
@@ -121,7 +122,7 @@ describe("checkReservationFeasibility", () => {
       MON_FRI_8H,
       [],
       existing,
-      null
+      null,
     );
     expect(result.feasible).toBe(false);
   });
@@ -136,7 +137,7 @@ describe("checkReservationFeasibility", () => {
       [],
       existing as Parameters<typeof checkReservationFeasibility>[5],
       null,
-      "res-1"
+      "res-1",
     );
     expect(result.feasible).toBe(true);
   });
@@ -149,7 +150,7 @@ describe("checkReservationFeasibility", () => {
       MON_FRI_8H,
       [],
       [],
-      null
+      null,
     );
     expect(result.feasible).toBe(true);
   });

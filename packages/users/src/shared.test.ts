@@ -1,7 +1,6 @@
+import { principal } from "@platform/test-support/test-fixtures";
+import { canManageUsers, hashInvitationToken } from "@platform/users";
 import { describe, expect, it } from "vitest";
-
-import { canManageUsers, hashInvitationToken } from "@sdk-e/users";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 describe("user management policies", () => {
   it.each([

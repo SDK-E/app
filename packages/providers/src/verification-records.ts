@@ -1,17 +1,47 @@
-import { notFound, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { createAuditEvent } from "@sdk-e/core/audit";
-import { getPrisma } from "@sdk-e/db";
-import type { VerificationRecord } from "@sdk-e/db/client";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { VerificationRecord } from "@platform/db/client";
+import type { AppPrincipal } from "@platform/types";
+
+import { notFound, requireSdkStaff } from "@platform/auth/authorization";
+import { createAuditEvent } from "@platform/core/audit";
+import { getPrisma } from "@platform/db";
+
 import {
   resolveEffectiveStatus,
   selectVerificationSafe,
   type VerificationSummaryRecord,
 } from "./verification";
 
+export async function getProviderVerificationSummary(
+  principal: AppPrincipal,
+  providerId: string,
+): Promise<VerificationSummaryRecord[]> {
+  if (principal.kind === "provider") {
+    const { requireProviderPrincipal } = await import("@platform/auth/authorization");
+    requireProviderPrincipal(principal);
+    if (principal.providerId !== providerId) {
+      notFound("Provider verification records not found.");
+    }
+  } else if (principal.kind === "sdk-staff") {
+    requireSdkStaff(principal, ["ADMIN", "DELIVERY", "FINANCE"]);
+  } else {
+    throw new Error("Unauthorized.");
+  }
+
+  const records = await getPrisma().verificationRecord.findMany({
+    where: { providerId },
+    include: { evidence: { orderBy: { createdAt: "desc" } } },
+    orderBy: { createdAt: "asc" },
+  });
+
+  return records.map((record) => {
+    const effectiveStatus = { ...record, status: resolveEffectiveStatus(record) };
+    return selectVerificationSafe(principal, effectiveStatus);
+  });
+}
+
 export async function initializeVerificationRecords(
   principal: AppPrincipal,
-  providerId: string
+  providerId: string,
 ): Promise<VerificationRecord[]> {
   requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
 
@@ -55,32 +85,4 @@ export async function initializeVerificationRecords(
   }
 
   return created;
-}
-
-export async function getProviderVerificationSummary(
-  principal: AppPrincipal,
-  providerId: string
-): Promise<VerificationSummaryRecord[]> {
-  if (principal.kind === "provider") {
-    const { requireProviderPrincipal } = await import("@sdk-e/auth/authorization");
-    requireProviderPrincipal(principal);
-    if (principal.providerId !== providerId) {
-      notFound("Provider verification records not found.");
-    }
-  } else if (principal.kind === "sdk-staff") {
-    requireSdkStaff(principal, ["ADMIN", "DELIVERY", "FINANCE"]);
-  } else {
-    throw new Error("Unauthorized.");
-  }
-
-  const records = await getPrisma().verificationRecord.findMany({
-    where: { providerId },
-    include: { evidence: { orderBy: { createdAt: "desc" } } },
-    orderBy: { createdAt: "asc" },
-  });
-
-  return records.map((record) => {
-    const effectiveStatus = { ...record, status: resolveEffectiveStatus(record) };
-    return selectVerificationSafe(principal, effectiveStatus);
-  });
 }

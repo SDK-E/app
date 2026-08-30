@@ -1,9 +1,9 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import type { Opportunity } from "@platform/db/client";
 
-import { listOpportunities } from "@sdk-e/opportunities/queries";
-import { selectOpportunitySafe } from "@sdk-e/opportunities/safe";
-import { principal } from "@sdk-e/test-support/test-fixtures";
-import type { Opportunity } from "@sdk-e/db/client";
+import { listOpportunities } from "@platform/opportunities/queries";
+import { selectOpportunitySafe } from "@platform/opportunities/safe";
+import { principal } from "@platform/test-support/test-fixtures";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const ELIGIBLE_OPP = {
   id: "opp-eligible",
@@ -41,8 +41,8 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
-vi.mock("@sdk-e/opportunities/eligibility-browse", () => ({
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/opportunities/eligibility-browse", () => ({
   isProviderEligibleForOpportunity: vi.fn(async () => ({ eligible: true })),
 }));
 

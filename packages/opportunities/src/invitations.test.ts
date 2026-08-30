@@ -1,12 +1,11 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
-
 import {
   acceptOpportunityInvitation,
   createOpportunityInvitation,
   declineOpportunityInvitation,
   expireOpportunityInvitations,
-} from "@sdk-e/opportunities/invitations";
-import { principal } from "@sdk-e/test-support/test-fixtures";
+} from "@platform/opportunities/invitations";
+import { principal } from "@platform/test-support/test-fixtures";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const prisma = vi.hoisted(() => ({
   opportunity: { findFirst: vi.fn() },
@@ -26,8 +25,8 @@ const prisma = vi.hoisted(() => ({
   },
 }));
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => prisma }));
-vi.mock("@sdk-e/notifications/delivery", () => ({
+vi.mock("@platform/db", () => ({ getPrisma: () => prisma }));
+vi.mock("@platform/notifications/delivery", () => ({
   deliver: vi.fn(async () => ({ inApp: {}, email: true })),
 }));
 
@@ -51,7 +50,7 @@ describe("createOpportunityInvitation", () => {
       principal("sdk-admin"),
       "opp-1",
       "provider-1",
-      14
+      14,
     );
     expect(invitation.status).toBe("PENDING");
     expect(invitation.expiresAt.getTime()).toBeGreaterThanOrEqual(before + 14 * 86_400_000 - 1000);
@@ -63,7 +62,7 @@ describe("createOpportunityInvitation", () => {
     const invitation = await createOpportunityInvitation(
       principal("sdk-admin"),
       "opp-1",
-      "provider-1"
+      "provider-1",
     );
     expect(invitation.expiresAt.getTime()).toBeGreaterThanOrEqual(before + 7 * 86_400_000 - 1000);
   });
@@ -71,7 +70,7 @@ describe("createOpportunityInvitation", () => {
   it("fails fast when the provider has no user account", async () => {
     prisma.provider.findFirst.mockResolvedValue({ id: "provider-1", user: null });
     await expect(
-      createOpportunityInvitation(principal("sdk-admin"), "opp-1", "provider-1")
+      createOpportunityInvitation(principal("sdk-admin"), "opp-1", "provider-1"),
     ).rejects.toThrow("no associated user");
     expect(prisma.opportunityInvitation.create).not.toHaveBeenCalled();
   });
@@ -84,7 +83,7 @@ describe("createOpportunityInvitation", () => {
     const invitation = await createOpportunityInvitation(
       principal("sdk-admin"),
       "opp-1",
-      "provider-1"
+      "provider-1",
     );
     expect(invitation.id).toBe("inv-existing");
     expect(prisma.opportunityInvitation.create).not.toHaveBeenCalled();
@@ -115,7 +114,7 @@ describe("acceptOpportunityInvitation", () => {
       opportunity: { id: "opp-1", title: "Build a dashboard" },
     });
     await expect(acceptOpportunityInvitation(principal("provider"), "inv-1")).rejects.toThrow(
-      "already accepted"
+      "already accepted",
     );
   });
 });
@@ -143,7 +142,7 @@ describe("declineOpportunityInvitation", () => {
       opportunity: { id: "opp-1", title: "Build a dashboard" },
     });
     await expect(declineOpportunityInvitation(principal("provider"), "inv-1")).rejects.toThrow(
-      "already expired"
+      "already expired",
     );
   });
 });

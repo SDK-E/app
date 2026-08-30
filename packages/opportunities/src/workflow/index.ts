@@ -1,19 +1,19 @@
-export { createOpportunity } from "@sdk-e/opportunities/workflow/create";
-export { updateOpportunityDraft } from "@sdk-e/opportunities/workflow/draft";
-export {
-  transitionOpportunityStatus,
-  setVisibilityMode,
-} from "@sdk-e/opportunities/workflow/status";
+export { addAttachment } from "@platform/opportunities/workflow/attachments";
+export { createOpportunity } from "@platform/opportunities/workflow/create";
+export { updateOpportunityDraft } from "@platform/opportunities/workflow/draft";
+export { addInternalNote } from "@platform/opportunities/workflow/notes";
 export {
   addPosition,
-  updatePosition,
   removePosition,
-} from "@sdk-e/opportunities/workflow/positions";
-export { addInternalNote } from "@sdk-e/opportunities/workflow/notes";
-export { addAttachment } from "@sdk-e/opportunities/workflow/attachments";
+  updatePosition,
+} from "@platform/opportunities/workflow/positions";
 export type {
-  CreateOpportunityInput,
-  UpdateOpportunityDraftInput,
-  OpportunityPositionInput,
   AddAttachmentInput,
-} from "@sdk-e/opportunities/workflow/shared";
+  CreateOpportunityInput,
+  OpportunityPositionInput,
+  UpdateOpportunityDraftInput,
+} from "@platform/opportunities/workflow/shared";
+export {
+  setVisibilityMode,
+  transitionOpportunityStatus,
+} from "@platform/opportunities/workflow/status";

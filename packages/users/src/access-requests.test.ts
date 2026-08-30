@@ -1,7 +1,6 @@
+import { principal } from "@platform/test-support/test-fixtures";
+import { listCompanyAccessRequests, requestCompanyAccess } from "@platform/users";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { listCompanyAccessRequests, requestCompanyAccess } from "@sdk-e/users";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => ({
   company: { findFirst: vi.fn() },
@@ -13,7 +12,7 @@ const mocks = vi.hoisted(() => ({
   },
 }));
 
-vi.mock("@sdk-e/db", () => ({
+vi.mock("@platform/db", () => ({
   getPrisma: () => ({
     company: mocks.company,
     membership: mocks.membership,
@@ -32,20 +31,20 @@ beforeEach(() => {
 describe("requestCompanyAccess", () => {
   it("only allows unassigned users to request access", async () => {
     await expect(requestCompanyAccess(principal("owner"), { code: "A1B2-C3D4" })).rejects.toThrow(
-      "Only unassigned users"
+      "Only unassigned users",
     );
     expect(mocks.company.findFirst).not.toHaveBeenCalled();
   });
 
   it("rejects owner and administrator role requests", async () => {
     await expect(
-      requestCompanyAccess(principal("unassigned"), { code: "A1B2-C3D4", requestedRole: "OWNER" })
+      requestCompanyAccess(principal("unassigned"), { code: "A1B2-C3D4", requestedRole: "OWNER" }),
     ).rejects.toThrow("cannot be requested");
     await expect(
       requestCompanyAccess(principal("unassigned"), {
         code: "A1B2-C3D4",
         requestedRole: "ADMINISTRATOR",
-      })
+      }),
     ).rejects.toThrow("cannot be requested");
     expect(mocks.company.findFirst).not.toHaveBeenCalled();
   });
@@ -53,7 +52,7 @@ describe("requestCompanyAccess", () => {
   it("rejects an unknown code without disclosing the company", async () => {
     mocks.company.findFirst.mockResolvedValue(null);
     await expect(
-      requestCompanyAccess(principal("unassigned"), { code: "Z9Y8-X7W6" })
+      requestCompanyAccess(principal("unassigned"), { code: "Z9Y8-X7W6" }),
     ).rejects.toThrow("was not found");
     expect(mocks.companyAccessRequest.create).not.toHaveBeenCalled();
   });
@@ -72,7 +71,7 @@ describe("requestCompanyAccess", () => {
     expect(mocks.companyAccessRequest.create).toHaveBeenCalledWith(
       expect.objectContaining({
         data: { userId: "user-1", companyId: "company-1", requestedRole: "VIEWER" },
-      })
+      }),
     );
   });
 
@@ -80,7 +79,7 @@ describe("requestCompanyAccess", () => {
     mocks.company.findFirst.mockResolvedValue({ id: "company-1", name: "Company" });
     mocks.companyAccessRequest.findFirst.mockResolvedValue({ id: "request-1", status: "PENDING" });
     await expect(
-      requestCompanyAccess(principal("unassigned"), { code: "A1B2-C3D4" })
+      requestCompanyAccess(principal("unassigned"), { code: "A1B2-C3D4" }),
     ).rejects.toThrow("pending access request");
     expect(mocks.companyAccessRequest.create).not.toHaveBeenCalled();
   });
@@ -91,13 +90,13 @@ describe("listCompanyAccessRequests", () => {
     mocks.companyAccessRequest.findMany.mockResolvedValue([]);
     await listCompanyAccessRequests(principal("owner"), { companyId: "company-1" });
     expect(mocks.companyAccessRequest.findMany).toHaveBeenCalledWith(
-      expect.objectContaining({ where: { companyId: "company-1", status: "PENDING" } })
+      expect.objectContaining({ where: { companyId: "company-1", status: "PENDING" } }),
     );
   });
 
   it("rejects delivery staff without membership management", async () => {
     await expect(listCompanyAccessRequests(principal("delivery"))).rejects.toThrow(
-      "Missing permission: membership:update"
+      "Missing permission: membership:update",
     );
   });
 
@@ -105,7 +104,7 @@ describe("listCompanyAccessRequests", () => {
     mocks.companyAccessRequest.findMany.mockResolvedValue([]);
     await listCompanyAccessRequests(principal("sdk-admin"), { companyId: "company-2" });
     expect(mocks.companyAccessRequest.findMany).toHaveBeenCalledWith(
-      expect.objectContaining({ where: { companyId: "company-2", status: "PENDING" } })
+      expect.objectContaining({ where: { companyId: "company-2", status: "PENDING" } }),
     );
   });
 });

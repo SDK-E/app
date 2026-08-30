@@ -1,7 +1,6 @@
+import { createOpportunity } from "@platform/opportunities/workflow/create";
+import { principal } from "@platform/test-support/test-fixtures";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { createOpportunity } from "@sdk-e/opportunities/workflow/create";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const make = () => ({ create: vi.fn(), findFirst: vi.fn(), update: vi.fn(), delete: vi.fn() });
@@ -30,7 +29,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
 mocks.prisma.$transaction.mockImplementation(async (callback) => callback(mocks.prisma));
 
@@ -84,13 +83,13 @@ describe("createOpportunity", () => {
     expect(mocks.auditEvent.create).toHaveBeenCalledWith(
       expect.objectContaining({
         data: expect.objectContaining({ action: "opportunity.created", targetType: "Opportunity" }),
-      })
+      }),
     );
   });
 
   it("rejects non-SDK staff", async () => {
     await expect(
-      createOpportunity(principal("provider"), "company-1", { title: "x", description: "y" })
+      createOpportunity(principal("provider"), "company-1", { title: "x", description: "y" }),
     ).rejects.toThrow("SDK staff access is required.");
     expect(mocks.opportunity.create).not.toHaveBeenCalled();
   });
@@ -98,7 +97,7 @@ describe("createOpportunity", () => {
   it("rejects an inactive company", async () => {
     mocks.company.findFirst.mockResolvedValue(null);
     await expect(
-      createOpportunity(principal("sdk-admin"), "company-1", { title: "x", description: "y" })
+      createOpportunity(principal("sdk-admin"), "company-1", { title: "x", description: "y" }),
     ).rejects.toThrow("Company not found.");
     expect(mocks.opportunity.create).not.toHaveBeenCalled();
   });

@@ -1,13 +1,13 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
 import type {
   Opportunity,
   Provider,
   ProviderAbsence,
   ProviderWeeklyCapacity,
-} from "@sdk-e/db/client";
-import { Prisma } from "@sdk-e/db/client";
+} from "@platform/db/client";
 
-import { isProviderEligibleForOpportunity } from "@sdk-e/opportunities/eligibility-browse";
+import { Prisma } from "@platform/db/client";
+import { isProviderEligibleForOpportunity } from "@platform/opportunities/eligibility-browse";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => {
   const make = () => ({
@@ -22,7 +22,7 @@ const mocks = vi.hoisted(() => {
   return { prisma, provider, opportunity, providerWeeklyCapacity, providerAbsence };
 });
 
-vi.mock("@sdk-e/db", () => ({
+vi.mock("@platform/db", () => ({
   getPrisma: () => mocks.prisma,
 }));
 

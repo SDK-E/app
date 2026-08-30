@@ -1,6 +1,7 @@
+import type { Provider } from "@platform/db/client";
+
+import { calculateCompletenessScore } from "@platform/providers/score";
 import { describe, expect, it } from "vitest";
-import { calculateCompletenessScore } from "@sdk-e/providers/score";
-import type { Provider } from "@sdk-e/db/client";
 
 const baseProvider = {
   id: "provider-1",

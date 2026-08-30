@@ -1,12 +1,14 @@
-import { requireSdkStaff } from "@sdk-e/auth/authorization";
-import { createAuditEvent } from "@sdk-e/core/audit";
-import { getPrisma } from "@sdk-e/db";
-import type { VerificationRequirement } from "@sdk-e/db/client";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { VerificationRequirement } from "@platform/db/client";
+import type { AppPrincipal } from "@platform/types";
+
+import { requireSdkStaff } from "@platform/auth/authorization";
+import { createAuditEvent } from "@platform/core/audit";
+import { getPrisma } from "@platform/db";
+
 import type { UpsertVerificationRequirementInput } from "./verification.schemas";
 
 export async function getVerificationRequirements(
-  principal: AppPrincipal
+  principal: AppPrincipal,
 ): Promise<VerificationRequirement[]> {
   requireSdkStaff(principal, ["ADMIN"]);
   return getPrisma().verificationRequirement.findMany({
@@ -16,7 +18,7 @@ export async function getVerificationRequirements(
 
 export async function upsertVerificationRequirement(
   principal: AppPrincipal,
-  input: UpsertVerificationRequirementInput
+  input: UpsertVerificationRequirementInput,
 ): Promise<VerificationRequirement> {
   requireSdkStaff(principal, ["ADMIN"]);
 

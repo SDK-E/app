@@ -1,10 +1,12 @@
-import { getPrisma } from "@sdk-e/db";
-import type { ProviderPrincipal } from "@sdk-e/types";
+import type { ProviderPrincipal } from "@platform/types";
+
+import { getPrisma } from "@platform/db";
+
 import {
-  checkProviderStatus,
-  checkCommercialReadiness,
-  checkBudgetOverlap,
   checkAvailabilityWindow,
+  checkBudgetOverlap,
+  checkCommercialReadiness,
+  checkProviderStatus,
   type EligibilityResult,
 } from "./eligibility-rules";
 
@@ -13,9 +15,16 @@ export interface EligibilityOutcome {
   warnings: string[];
 }
 
+export async function isProviderEligible(
+  principal: ProviderPrincipal,
+  opportunityId: string,
+): Promise<EligibilityOutcome> {
+  return isProviderEligibleForOpportunity(principal.providerId, opportunityId);
+}
+
 export async function isProviderEligibleForOpportunity(
   providerId: string,
-  opportunityId: string
+  opportunityId: string,
 ): Promise<EligibilityOutcome> {
   const [provider, opportunity, weeklyCapacity, absences] = await Promise.all([
     getPrisma().provider.findFirst({ where: { id: providerId } }),
@@ -56,11 +65,4 @@ export async function isProviderEligibleForOpportunity(
   }
 
   return { eligible, warnings };
-}
-
-export async function isProviderEligible(
-  principal: ProviderPrincipal,
-  opportunityId: string
-): Promise<EligibilityOutcome> {
-  return isProviderEligibleForOpportunity(principal.providerId, opportunityId);
 }

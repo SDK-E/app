@@ -1,13 +1,14 @@
-import { describe, expect, it } from "vitest";
 import {
   calculateAbsenceHoursForWeek,
-  calculateReservationHoursForWeek,
-  getWeekStart,
-  getLocalDaysInRange,
-  groupDaysByWeek,
   calculateBaseCapacity,
-} from "@sdk-e/providers/availability/capacity";
-import { entry, absence, reservation, MON_FRI_8H } from "./test-utils";
+  calculateReservationHoursForWeek,
+  getLocalDaysInRange,
+  getWeekStart,
+  groupDaysByWeek,
+} from "@platform/providers/availability/capacity";
+import { describe, expect, it } from "vitest";
+
+import { absence, entry, MON_FRI_8H, reservation } from "./test-utils";
 
 describe("getWeekStart", () => {
   it("returns Sunday for a mid-week date in US/Eastern", () => {
@@ -30,7 +31,7 @@ describe("getLocalDaysInRange", () => {
   it("returns correct weekdays for Mon-Fri range", () => {
     const days = getLocalDaysInRange(
       new Date("2025-01-13T00:00:00Z"),
-      new Date("2025-01-17T00:00:00Z")
+      new Date("2025-01-17T00:00:00Z"),
     );
     expect(days).toHaveLength(5);
     expect(days.map((d) => d.weekday)).toEqual([1, 2, 3, 4, 5]);
@@ -39,7 +40,7 @@ describe("getLocalDaysInRange", () => {
   it("returns single day when start equals end", () => {
     const days = getLocalDaysInRange(
       new Date("2025-01-15T00:00:00Z"),
-      new Date("2025-01-15T00:00:00Z")
+      new Date("2025-01-15T00:00:00Z"),
     );
     expect(days).toHaveLength(1);
     expect(days[0].weekday).toBe(3);
@@ -50,7 +51,7 @@ describe("groupDaysByWeek", () => {
   it("groups days within same week", () => {
     const days = getLocalDaysInRange(
       new Date("2025-01-13T00:00:00Z"),
-      new Date("2025-01-18T00:00:00Z")
+      new Date("2025-01-18T00:00:00Z"),
     );
     const groups = groupDaysByWeek(days);
     expect(groups.size).toBe(1);
@@ -59,7 +60,7 @@ describe("groupDaysByWeek", () => {
   it("splits days across week boundary", () => {
     const days = getLocalDaysInRange(
       new Date("2025-01-15T00:00:00Z"),
-      new Date("2025-01-21T00:00:00Z")
+      new Date("2025-01-21T00:00:00Z"),
     );
     const groups = groupDaysByWeek(days);
     expect(groups.size).toBe(2);
@@ -149,7 +150,7 @@ describe("calculateReservationHoursForWeek", () => {
       reservations,
       "CONFIRMED",
       MON_FRI_8H,
-      null
+      null,
     );
     expect(hours).toBe(20);
   });
@@ -162,7 +163,7 @@ describe("calculateReservationHoursForWeek", () => {
       reservations,
       "CONFIRMED",
       MON_FRI_8H,
-      null
+      null,
     );
     expect(hours).toBe(0);
   });
@@ -175,7 +176,7 @@ describe("calculateReservationHoursForWeek", () => {
       reservations,
       "CONFIRMED",
       MON_FRI_8H,
-      null
+      null,
     );
     expect(hours).toBe(18);
   });

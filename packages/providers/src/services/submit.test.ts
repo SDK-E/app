@@ -1,6 +1,6 @@
+import { submitServiceForReview } from "@platform/providers/services/draft";
+import { principal } from "@platform/test-support/test-fixtures";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { submitServiceForReview } from "@sdk-e/providers/services/draft";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const providerService = {
@@ -19,7 +19,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 mocks.prisma.$transaction.mockImplementation(async (callback) => callback(mocks.prisma));
 
 const baseService = {
@@ -70,7 +70,7 @@ describe("submitServiceForReview", () => {
           fromState: "DRAFT",
           toState: "SUBMITTED",
         }),
-      })
+      }),
     );
   });
 
@@ -81,7 +81,7 @@ describe("submitServiceForReview", () => {
       provider: { userId: "user-1" },
     });
     await expect(submitServiceForReview(principal("provider"), "svc-1")).rejects.toThrow(
-      "Invalid state transition from SUBMITTED to SUBMITTED"
+      "Invalid state transition from SUBMITTED to SUBMITTED",
     );
   });
 
@@ -96,7 +96,7 @@ describe("submitServiceForReview", () => {
       provider: { userId: "user-1" },
     });
     await expect(submitServiceForReview(principal("provider"), "svc-1")).rejects.toThrow(
-      /Service is incomplete/
+      /Service is incomplete/,
     );
   });
 });

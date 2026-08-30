@@ -1,38 +1,38 @@
-export { opportunityMachine } from "@sdk-e/opportunities/machine";
+export { opportunityMachine } from "@platform/opportunities/machine";
 export {
-  selectOpportunitySafe,
-  selectOpportunityPositionSafe,
+  getOpportunity,
+  getOpportunityAttachments,
+  getOpportunityPositions,
+  listOpportunities,
+} from "@platform/opportunities/queries";
+export type { ListOpportunitiesFilters } from "@platform/opportunities/queries";
+export {
   canViewOpportunity,
-} from "@sdk-e/opportunities/safe";
+  selectOpportunityPositionSafe,
+  selectOpportunitySafe,
+} from "@platform/opportunities/safe";
 export type {
-  OpportunityInternalRecord,
   OpportunityClientRecord,
-  OpportunityPublicRecord,
-  OpportunitySafeRecord,
+  OpportunityInternalRecord,
   OpportunityPositionClientRecord,
   OpportunityPositionPublicRecord,
-} from "@sdk-e/opportunities/safe";
+  OpportunityPublicRecord,
+  OpportunitySafeRecord,
+} from "@platform/opportunities/safe";
 export {
-  createOpportunity,
-  updateOpportunityDraft,
-  transitionOpportunityStatus,
-  setVisibilityMode,
-  addPosition,
-  updatePosition,
-  removePosition,
-  addInternalNote,
   addAttachment,
-} from "@sdk-e/opportunities/workflow";
+  addInternalNote,
+  addPosition,
+  createOpportunity,
+  removePosition,
+  setVisibilityMode,
+  transitionOpportunityStatus,
+  updateOpportunityDraft,
+  updatePosition,
+} from "@platform/opportunities/workflow";
 export type {
-  CreateOpportunityInput,
-  UpdateOpportunityDraftInput,
-  OpportunityPositionInput,
   AddAttachmentInput,
-} from "@sdk-e/opportunities/workflow";
-export {
-  listOpportunities,
-  getOpportunity,
-  getOpportunityPositions,
-  getOpportunityAttachments,
-} from "@sdk-e/opportunities/queries";
-export type { ListOpportunitiesFilters } from "@sdk-e/opportunities/queries";
+  CreateOpportunityInput,
+  OpportunityPositionInput,
+  UpdateOpportunityDraftInput,
+} from "@platform/opportunities/workflow";

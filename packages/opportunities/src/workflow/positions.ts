@@ -1,19 +1,20 @@
-import { notFound, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { getPrisma } from "@sdk-e/db";
-import { requireActiveCompany } from "@sdk-e/requests/guards";
-import { createAuditEvent } from "@sdk-e/core/audit";
+import type { AppPrincipal } from "@platform/types";
+
+import { notFound, requireSdkStaff } from "@platform/auth/authorization";
+import { createAuditEvent } from "@platform/core/audit";
+import { getPrisma } from "@platform/db";
 import {
   buildPositionData,
   opportunityActivity,
   type OpportunityPositionInput,
-} from "@sdk-e/opportunities/workflow/shared";
-import type { AppPrincipal } from "@sdk-e/types";
+} from "@platform/opportunities/workflow/shared";
+import { requireActiveCompany } from "@platform/requests/guards";
 
 export async function addPosition(
   principal: AppPrincipal,
   companyId: string,
   opportunityId: string,
-  input: OpportunityPositionInput
+  input: OpportunityPositionInput,
 ) {
   const staff = requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
   await requireActiveCompany(staff, companyId);
@@ -42,12 +43,42 @@ export async function addPosition(
   });
 }
 
+export async function removePosition(
+  principal: AppPrincipal,
+  companyId: string,
+  opportunityId: string,
+  positionId: string,
+) {
+  const staff = requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
+  await requireActiveCompany(staff, companyId);
+  return getPrisma().$transaction(async (tx) => {
+    const parent = await tx.opportunity.findFirst({ where: { id: opportunityId, companyId } });
+    if (!parent) notFound("Opportunity not found.");
+    const existing = await tx.opportunityPosition.findFirst({
+      where: { id: positionId, opportunityId, companyId },
+    });
+    if (!existing) notFound("Opportunity position not found.");
+    await tx.opportunityPosition.delete({ where: { id: positionId } });
+    await tx.opportunityActivity.create({
+      data: { opportunityId, ...opportunityActivity(companyId, staff.id, "POSITION_REMOVED") },
+    });
+    await createAuditEvent({
+      companyId,
+      actorId: staff.id,
+      actorKind: "SDK_STAFF",
+      action: "opportunity.position_removed",
+      targetType: "OpportunityPosition",
+      targetId: positionId,
+    });
+  });
+}
+
 export async function updatePosition(
   principal: AppPrincipal,
   companyId: string,
   opportunityId: string,
   positionId: string,
-  input: OpportunityPositionInput
+  input: OpportunityPositionInput,
 ) {
   const staff = requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
   await requireActiveCompany(staff, companyId);
@@ -74,35 +105,5 @@ export async function updatePosition(
       targetId: positionId,
     });
     return updated;
-  });
-}
-
-export async function removePosition(
-  principal: AppPrincipal,
-  companyId: string,
-  opportunityId: string,
-  positionId: string
-) {
-  const staff = requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
-  await requireActiveCompany(staff, companyId);
-  return getPrisma().$transaction(async (tx) => {
-    const parent = await tx.opportunity.findFirst({ where: { id: opportunityId, companyId } });
-    if (!parent) notFound("Opportunity not found.");
-    const existing = await tx.opportunityPosition.findFirst({
-      where: { id: positionId, opportunityId, companyId },
-    });
-    if (!existing) notFound("Opportunity position not found.");
-    await tx.opportunityPosition.delete({ where: { id: positionId } });
-    await tx.opportunityActivity.create({
-      data: { opportunityId, ...opportunityActivity(companyId, staff.id, "POSITION_REMOVED") },
-    });
-    await createAuditEvent({
-      companyId,
-      actorId: staff.id,
-      actorKind: "SDK_STAFF",
-      action: "opportunity.position_removed",
-      targetType: "OpportunityPosition",
-      targetId: positionId,
-    });
   });
 }

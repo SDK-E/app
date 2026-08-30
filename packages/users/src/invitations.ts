@@ -1,36 +1,25 @@
-import { randomBytes } from "node:crypto";
+import type { AppPrincipal, ClientRole, SdkStaffRole } from "@platform/types";
 
-import { requirePermission } from "@sdk-e/auth/authorization";
-import { getPrisma } from "@sdk-e/db";
-import { recordUserManagementEvent } from "@sdk-e/users/audit";
+import { requirePermission } from "@platform/auth/authorization";
+import { getPrisma } from "@platform/db";
+import { recordUserManagementEvent } from "@platform/users/audit";
 import {
   assertClientRoleGrant,
+  forbidden,
   hashInvitationToken,
   INVITATION_TTL_MS,
   normalizeEmail,
-  forbidden,
-} from "@sdk-e/users/shared";
-import type { AppPrincipal, ClientRole, SdkStaffRole } from "@sdk-e/types";
+} from "@platform/users/shared";
+import { randomBytes } from "node:crypto";
 
 export async function createClientInvitation(
   principal: AppPrincipal,
   input: { email: string; role: ClientRole },
-  companyId: string
+  companyId: string,
 ) {
   requirePermission(principal, "membership:invite", companyId);
-  if (principal.kind === "sdk-staff" && principal.role !== "ADMIN")
-    forbidden("SDK administrator access is required.");
-  if (input.role === "OWNER") {
-    if (principal.kind !== "sdk-staff" || principal.role !== "ADMIN")
-      forbidden("Only SDK administrators can invite a company owner.");
-    const owner = await getPrisma().membership.findFirst({
-      where: { companyId, role: "OWNER" },
-      select: { id: true },
-    });
-    if (owner) forbidden("This company already has an owner.");
-  } else {
-    assertClientRoleGrant(principal, input.role, companyId);
-  }
+  await validateInvitationEligibility(principal, input.role, companyId);
+
   const company = await getPrisma().company.findFirst({ where: { id: companyId, isActive: true } });
   if (!company) forbidden("The company is not available.");
   const email = normalizeEmail(input.email);
@@ -75,7 +64,7 @@ export async function createClientInvitation(
 
 export async function createStaffInvitation(
   principal: AppPrincipal,
-  input: { email: string; role: SdkStaffRole }
+  input: { email: string; role: SdkStaffRole },
 ) {
   requirePermission(principal, "staff:create");
   if (principal.kind !== "sdk-staff" || principal.role !== "ADMIN")
@@ -112,6 +101,23 @@ export async function createStaffInvitation(
   return { invitation, token };
 }
 
+export async function getInvitationPreview(token: string) {
+  return getPrisma().invitation.findUnique({
+    where: { tokenHash: hashInvitationToken(token) },
+    select: {
+      email: true,
+      kind: true,
+      clientRole: true,
+      sdkStaffRole: true,
+      expiresAt: true,
+      acceptedAt: true,
+      revokedAt: true,
+      company: { select: { name: true } },
+      inviter: { select: { name: true } },
+    },
+  });
+}
+
 export async function markInvitationDelivery(id: string, sent: boolean) {
   if (sent) {
     return getPrisma().invitation.update({
@@ -127,26 +133,6 @@ export async function markInvitationDelivery(id: string, sent: boolean) {
     where: { id, deliveryStatus: { not: "SENT" } },
     data: { deliveryStatus: "FAILED", deliveryAttempts: { increment: 1 } },
   });
-}
-
-export async function revokeInvitation(principal: AppPrincipal, id: string, companyId?: string) {
-  const invitation = await getPrisma().invitation.findUniqueOrThrow({ where: { id } });
-  if (principal.kind === "client") {
-    requirePermission(principal, "membership:invite", companyId);
-    if (invitation.companyId !== companyId) forbidden("Cross-company access is denied.");
-  } else if (principal.kind !== "sdk-staff" || principal.role !== "ADMIN")
-    forbidden("SDK administrator access is required.");
-  const revoked = await getPrisma().invitation.update({
-    where: { id },
-    data: { revokedAt: new Date() },
-  });
-  await recordUserManagementEvent(principal, {
-    action: "invitation.revoked",
-    companyId: invitation.companyId,
-    targetType: "invitation",
-    targetId: invitation.id,
-  });
-  return revoked;
 }
 
 export async function renewInvitation(principal: AppPrincipal, id: string, companyId?: string) {
@@ -187,7 +173,7 @@ export async function renewInvitation(principal: AppPrincipal, id: string, compa
 
 export async function restoreInvitationDelivery(
   id: string,
-  previous: { tokenHash: string; expiresAt: Date }
+  previous: { tokenHash: string; expiresAt: Date },
 ) {
   return getPrisma().invitation.update({
     where: { id },
@@ -199,19 +185,42 @@ export async function restoreInvitationDelivery(
   });
 }
 
-export async function getInvitationPreview(token: string) {
-  return getPrisma().invitation.findUnique({
-    where: { tokenHash: hashInvitationToken(token) },
-    select: {
-      email: true,
-      kind: true,
-      clientRole: true,
-      sdkStaffRole: true,
-      expiresAt: true,
-      acceptedAt: true,
-      revokedAt: true,
-      company: { select: { name: true } },
-      inviter: { select: { name: true } },
-    },
+export async function revokeInvitation(principal: AppPrincipal, id: string, companyId?: string) {
+  const invitation = await getPrisma().invitation.findUniqueOrThrow({ where: { id } });
+  if (principal.kind === "client") {
+    requirePermission(principal, "membership:invite", companyId);
+    if (invitation.companyId !== companyId) forbidden("Cross-company access is denied.");
+  } else if (principal.kind !== "sdk-staff" || principal.role !== "ADMIN")
+    forbidden("SDK administrator access is required.");
+  const revoked = await getPrisma().invitation.update({
+    where: { id },
+    data: { revokedAt: new Date() },
   });
+  await recordUserManagementEvent(principal, {
+    action: "invitation.revoked",
+    companyId: invitation.companyId,
+    targetType: "invitation",
+    targetId: invitation.id,
+  });
+  return revoked;
+}
+
+async function validateInvitationEligibility(
+  principal: AppPrincipal,
+  role: ClientRole,
+  companyId: string,
+) {
+  if (principal.kind === "sdk-staff" && principal.role !== "ADMIN")
+    forbidden("SDK administrator access is required.");
+  if (role === "OWNER") {
+    if (principal.kind !== "sdk-staff" || principal.role !== "ADMIN")
+      forbidden("Only SDK administrators can invite a company owner.");
+    const owner = await getPrisma().membership.findFirst({
+      where: { companyId, role: "OWNER" },
+      select: { id: true },
+    });
+    if (owner) forbidden("This company already has an owner.");
+  } else {
+    assertClientRoleGrant(principal, role, companyId);
+  }
 }

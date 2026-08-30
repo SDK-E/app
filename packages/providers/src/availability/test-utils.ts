@@ -1,15 +1,15 @@
-import type { WeeklyCapacityEntry, AbsenceRecord, ReservationRecord } from "./capacity";
+import type { AbsenceRecord, ReservationRecord, WeeklyCapacityEntry } from "./capacity";
 
 export const TZ_US = "America/New_York";
 export const TZ_NZ = "Pacific/Auckland";
 export const TZ_IST = "Asia/Kolkata";
 
-export function entry(weekday: number, hours: number): WeeklyCapacityEntry {
-  return { weekday, hoursPerDay: hours };
-}
-
 export function absence(start: string, end: string, status = "APPROVED"): AbsenceRecord {
   return { startDate: new Date(start), endDate: new Date(end), status };
+}
+
+export function entry(weekday: number, hours: number): WeeklyCapacityEntry {
+  return { weekday, hoursPerDay: hours };
 }
 
 export function reservation(
@@ -17,9 +17,9 @@ export function reservation(
   start: string,
   end: string,
   status = "CONFIRMED",
-  id?: string
+  id?: string,
 ): ReservationRecord {
-  const r: ReservationRecord & { id?: string } = {
+  const r: { id?: string } & ReservationRecord = {
     hoursPerDay,
     startDate: new Date(start),
     endDate: new Date(end),

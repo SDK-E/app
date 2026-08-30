@@ -1,11 +1,11 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
-  createReservation,
-  confirmReservation,
   cancelReservation,
+  confirmReservation,
+  createReservation,
   getReservations,
-} from "@sdk-e/providers/availability/reservations";
-import { principal } from "@sdk-e/test-support/test-fixtures";
+} from "@platform/providers/availability/reservations";
+import { principal } from "@platform/test-support/test-fixtures";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => {
   const capacityReservation = {
@@ -35,7 +35,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
 const monFri8h = [1, 2, 3, 4, 5].map((w) => ({ weekday: w, hoursPerDay: 8 }));
 
@@ -51,7 +51,7 @@ const baseReservation = {
   updatedAt: new Date(),
 };
 
-function setupProvider(timeZone = "America/New_York", defaultDailyHours: number | null = null) {
+function setupProvider(timeZone = "America/New_York", defaultDailyHours: null | number = null) {
   mocks.provider.findFirst.mockResolvedValue({ id: "provider-1", timeZone, defaultDailyHours });
   mocks.providerWeeklyCapacity.findMany.mockResolvedValue(monFri8h);
   mocks.providerAbsence.findMany.mockResolvedValue([]);
@@ -98,7 +98,7 @@ describe("createReservation", () => {
         hoursPerDay: 6,
         startDate: new Date("2025-02-03"),
         endDate: new Date("2025-02-07"),
-      })
+      }),
     ).rejects.toThrow("not feasible");
   });
 
@@ -108,7 +108,7 @@ describe("createReservation", () => {
         hoursPerDay: 4,
         startDate: new Date("2025-02-03"),
         endDate: new Date("2025-02-07"),
-      })
+      }),
     ).rejects.toThrow();
   });
 });
@@ -130,7 +130,7 @@ describe("confirmReservation", () => {
       { ...baseReservation, id: "res-other", hoursPerDay: 8, status: "CONFIRMED" },
     ]);
     await expect(confirmReservation(principal("sdk-admin"), "res-1")).rejects.toThrow(
-      "capacity no longer available"
+      "capacity no longer available",
     );
   });
 
@@ -140,7 +140,7 @@ describe("confirmReservation", () => {
       status: "CONFIRMED",
     });
     await expect(confirmReservation(principal("sdk-admin"), "res-1")).rejects.toThrow(
-      "Cannot confirm reservation in CONFIRMED status"
+      "Cannot confirm reservation in CONFIRMED status",
     );
   });
 });
@@ -175,7 +175,7 @@ describe("cancelReservation", () => {
     });
 
     await expect(cancelReservation(principal("sdk-admin"), "res-1")).rejects.toThrow(
-      "already cancelled"
+      "already cancelled",
     );
   });
 });

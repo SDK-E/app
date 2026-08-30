@@ -1,7 +1,6 @@
+import { AuthorizationError } from "@platform/auth/authorization";
+import { acceptInvitation } from "@platform/users";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { AuthorizationError } from "@sdk-e/auth/authorization";
-import { acceptInvitation } from "@sdk-e/users";
 
 const mocks = vi.hoisted(() => {
   const make = () => ({
@@ -29,7 +28,7 @@ const mocks = vi.hoisted(() => {
   return { prisma, invitation, user, membership, company, auditEvent };
 });
 
-vi.mock("@sdk-e/db", () => ({
+vi.mock("@platform/db", () => ({
   getPrisma: () => mocks.prisma,
 }));
 
@@ -94,7 +93,7 @@ describe("acceptInvitation", () => {
           companyId: "company-1",
           role: "PROJECT_MEMBER",
         }),
-      })
+      }),
     );
     expect(result).toMatchObject({ id: "inv-1", acceptedBy: "user-1" });
   });

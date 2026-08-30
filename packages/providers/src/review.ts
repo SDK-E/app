@@ -1,15 +1,18 @@
-import { notFound, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { createAuditEvent } from "@sdk-e/core/audit";
-import { getPrisma } from "@sdk-e/db";
-import { providerApplicationMachine } from "./machine";
-import type { Provider, ProviderReviewAction, ProviderStatus } from "@sdk-e/db/client";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { Provider, ProviderReviewAction, ProviderStatus } from "@platform/db/client";
+import type { AppPrincipal } from "@platform/types";
+
+import { notFound, requireSdkStaff } from "@platform/auth/authorization";
+import { createAuditEvent } from "@platform/core/audit";
+import { getPrisma } from "@platform/db";
+
 import type { ProviderReviewDecision } from "./schemas";
+
+import { providerApplicationMachine } from "./machine";
 
 export async function reviewProviderApplication(
   principal: AppPrincipal,
   providerId: string,
-  decision: ProviderReviewDecision
+  decision: ProviderReviewDecision,
 ): Promise<Provider> {
   const staff = requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
   const current = await getPrisma().provider.findFirst({
@@ -37,7 +40,7 @@ export async function reviewProviderApplication(
     action = "CHANGES_REQUESTED";
   }
 
-  const updated = await getPrisma().$transaction(async (tx) => {
+  return await getPrisma().$transaction(async (tx) => {
     const provider = await tx.provider.update({
       where: { id: providerId },
       data: { status: toStatus },
@@ -65,6 +68,4 @@ export async function reviewProviderApplication(
 
     return provider;
   });
-
-  return updated;
 }

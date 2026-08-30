@@ -1,9 +1,9 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   getVerificationRequirements,
   upsertVerificationRequirement,
-} from "@sdk-e/providers/verification-queries";
-import { principal } from "@sdk-e/test-support/test-fixtures";
+} from "@platform/providers/verification-queries";
+import { principal } from "@platform/test-support/test-fixtures";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => {
   const verificationRequirement = {
@@ -20,7 +20,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
 beforeEach(() => {
   mocks.verificationRequirement.findMany.mockReset();
@@ -95,7 +95,7 @@ describe("upsertVerificationRequirement", () => {
         name: "Test",
         required: true,
         enabled: true,
-      })
+      }),
     ).rejects.toThrow();
   });
 });

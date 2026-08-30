@@ -1,8 +1,40 @@
-import { notFound, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { createAuditEvent } from "@sdk-e/core/audit";
-import { getPrisma } from "@sdk-e/db";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { AppPrincipal } from "@platform/types";
+
+import { notFound, requireSdkStaff } from "@platform/auth/authorization";
+import { createAuditEvent } from "@platform/core/audit";
+import { getPrisma } from "@platform/db";
+
 import { checkReservationFeasibility } from "./capacity";
+
+export async function cancelReservation(principal: AppPrincipal, reservationId: string) {
+  requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
+
+  const reservation = await getPrisma().capacityReservation.findFirst({
+    where: { id: reservationId },
+  });
+  if (!reservation) notFound("Reservation not found.");
+  if (reservation.status === "CANCELLED") {
+    throw new Error("Reservation is already cancelled.");
+  }
+
+  const updated = await getPrisma().capacityReservation.update({
+    where: { id: reservationId },
+    data: { status: "CANCELLED" },
+  });
+
+  await createAuditEvent({
+    actorId: principal.id,
+    actorKind: "SDK_STAFF",
+    action: "provider.reservation.cancelled",
+    targetType: "CapacityReservation",
+    targetId: reservationId,
+    fromState: reservation.status,
+    toState: "CANCELLED",
+    metadata: { providerId: reservation.providerId, engagementId: reservation.engagementId },
+  });
+
+  return updated;
+}
 
 export async function confirmReservation(principal: AppPrincipal, reservationId: string) {
   requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
@@ -58,14 +90,14 @@ export async function confirmReservation(principal: AppPrincipal, reservationId:
       endDate: r.endDate,
       status: r.status,
     })),
-    provider.defaultDailyHours ? Number(provider.defaultDailyHours) : null
+    provider.defaultDailyHours ? Number(provider.defaultDailyHours) : null,
   );
 
   if (!feasibility.feasible) {
     const details = feasibility.conflictingWeeks
       .map(
         (w) =>
-          `Week of ${w.weekStart.toISOString().slice(0, 10)}: ${w.requested}h requested, ${w.available}h available`
+          `Week of ${w.weekStart.toISOString().slice(0, 10)}: ${w.requested}h requested, ${w.available}h available`,
       )
       .join("; ");
     throw new Error(`Cannot confirm reservation — capacity no longer available: ${details}`);
@@ -84,36 +116,6 @@ export async function confirmReservation(principal: AppPrincipal, reservationId:
     targetId: reservationId,
     fromState: "PENDING",
     toState: "CONFIRMED",
-    metadata: { providerId: reservation.providerId, engagementId: reservation.engagementId },
-  });
-
-  return updated;
-}
-
-export async function cancelReservation(principal: AppPrincipal, reservationId: string) {
-  requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
-
-  const reservation = await getPrisma().capacityReservation.findFirst({
-    where: { id: reservationId },
-  });
-  if (!reservation) notFound("Reservation not found.");
-  if (reservation.status === "CANCELLED") {
-    throw new Error("Reservation is already cancelled.");
-  }
-
-  const updated = await getPrisma().capacityReservation.update({
-    where: { id: reservationId },
-    data: { status: "CANCELLED" },
-  });
-
-  await createAuditEvent({
-    actorId: principal.id,
-    actorKind: "SDK_STAFF",
-    action: "provider.reservation.cancelled",
-    targetType: "CapacityReservation",
-    targetId: reservationId,
-    fromState: reservation.status,
-    toState: "CANCELLED",
     metadata: { providerId: reservation.providerId, engagementId: reservation.engagementId },
   });
 

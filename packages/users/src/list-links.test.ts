@@ -1,6 +1,5 @@
+import { parseUsersListQuery, usersListHref } from "@platform/users/list-links";
 import { describe, expect, it } from "vitest";
-
-import { parseUsersListQuery, usersListHref } from "@sdk-e/users/list-links";
 
 describe("parseUsersListQuery", () => {
   it("parses tab, search, sort and pagination state", () => {
@@ -51,7 +50,7 @@ describe("usersListHref", () => {
     const href = usersListHref(
       "/en/app/users",
       { tab: "members", q: "bob" },
-      { cursor: "next-1", back: false }
+      { cursor: "next-1", back: false },
     );
     expect(href).toBe("/en/app/users?q=bob&cursor=next-1");
   });
@@ -60,7 +59,7 @@ describe("usersListHref", () => {
     const href = usersListHref(
       "/en/app/users",
       { tab: "members" },
-      { cursor: "prev-1", back: true }
+      { cursor: "prev-1", back: true },
     );
     expect(href).toBe("/en/app/users?cursor=prev-1&back=1");
   });

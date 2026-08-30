@@ -1,31 +1,17 @@
-import { getClientMembership, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { forbidden } from "@sdk-e/users/shared";
-import { getPrisma } from "@sdk-e/db";
-import type { AppPrincipal, ProviderPrincipal } from "@sdk-e/types";
-import type { OpportunityInvitation } from "@sdk-e/db/client";
+import type { OpportunityInvitation } from "@platform/db/client";
+import type { AppPrincipal, ProviderPrincipal } from "@platform/types";
 
-type InvitationWithOpportunity = OpportunityInvitation & {
+import { getClientMembership, requireSdkStaff } from "@platform/auth/authorization";
+import { getPrisma } from "@platform/db";
+import { forbidden } from "@platform/users/shared";
+
+type InvitationWithOpportunity = {
   opportunity: { id: string; title: string; companyId: string };
-};
-
-export async function loadOwnedInvitation(
-  principal: ProviderPrincipal,
-  invitationId: string
-): Promise<InvitationWithOpportunity> {
-  const invitation = await getPrisma().opportunityInvitation.findFirst({
-    where: { id: invitationId },
-    include: { opportunity: { select: { id: true, title: true, companyId: true } } },
-  });
-  if (!invitation) forbidden("Invitation not found.");
-  if (invitation.providerId !== principal.providerId) {
-    forbidden("You do not have access to this invitation.");
-  }
-  return invitation;
-}
+} & OpportunityInvitation;
 
 export async function getOpportunityInvitation(
   principal: AppPrincipal,
-  invitationId: string
+  invitationId: string,
 ): Promise<InvitationWithOpportunity> {
   const invitation = await getPrisma().opportunityInvitation.findFirst({
     where: { id: invitationId },
@@ -51,4 +37,19 @@ export async function getOpportunityInvitation(
     return invitation;
   }
   forbidden("You do not have access to this invitation.");
+}
+
+export async function loadOwnedInvitation(
+  principal: ProviderPrincipal,
+  invitationId: string,
+): Promise<InvitationWithOpportunity> {
+  const invitation = await getPrisma().opportunityInvitation.findFirst({
+    where: { id: invitationId },
+    include: { opportunity: { select: { id: true, title: true, companyId: true } } },
+  });
+  if (!invitation) forbidden("Invitation not found.");
+  if (invitation.providerId !== principal.providerId) {
+    forbidden("You do not have access to this invitation.");
+  }
+  return invitation;
 }

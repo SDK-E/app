@@ -1,7 +1,6 @@
+import { principal } from "@platform/test-support/test-fixtures";
+import { updateStaffUser } from "@platform/users";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { updateStaffUser } from "@sdk-e/users";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const user = { findUniqueOrThrow: vi.fn(), count: vi.fn(), update: vi.fn() };
@@ -9,7 +8,7 @@ const mocks = vi.hoisted(() => {
   return { prisma: { user, auditEvent }, user, auditEvent };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
 beforeEach(() => {
   mocks.user.findUniqueOrThrow.mockReset();
@@ -29,7 +28,7 @@ describe("updateStaffUser", () => {
     mocks.user.update.mockResolvedValue({ id: "user-2", sdkStaffRole: "FINANCE" });
 
     await expect(
-      updateStaffUser(principal("sdk-admin"), "user-2", { role: "FINANCE" })
+      updateStaffUser(principal("sdk-admin"), "user-2", { role: "FINANCE" }),
     ).resolves.toEqual({ id: "user-2", sdkStaffRole: "FINANCE" });
 
     expect(mocks.user.update).toHaveBeenCalledWith({
@@ -56,7 +55,7 @@ describe("updateStaffUser", () => {
     mocks.user.update.mockResolvedValue({ id: "user-2", isActive: false });
 
     await expect(
-      updateStaffUser(principal("sdk-admin"), "user-2", { isActive: false })
+      updateStaffUser(principal("sdk-admin"), "user-2", { isActive: false }),
     ).resolves.toBeDefined();
 
     expect(mocks.user.update).toHaveBeenCalledWith({
@@ -87,7 +86,7 @@ describe("updateStaffUser", () => {
 
   it("rejects deactivating your own account", async () => {
     await expect(
-      updateStaffUser(principal("sdk-admin"), "user-1", { isActive: false })
+      updateStaffUser(principal("sdk-admin"), "user-1", { isActive: false }),
     ).rejects.toThrow("You cannot deactivate your own account.");
     expect(mocks.user.findUniqueOrThrow).not.toHaveBeenCalled();
   });
@@ -100,7 +99,7 @@ describe("updateStaffUser", () => {
     });
 
     await expect(
-      updateStaffUser(principal("sdk-admin"), "user-2", { role: "FINANCE" })
+      updateStaffUser(principal("sdk-admin"), "user-2", { role: "FINANCE" }),
     ).rejects.toThrow("Company members cannot receive SDK staff roles.");
   });
 
@@ -113,7 +112,7 @@ describe("updateStaffUser", () => {
     mocks.user.count.mockResolvedValue(1);
 
     await expect(
-      updateStaffUser(principal("sdk-admin"), "user-2", { isActive: false })
+      updateStaffUser(principal("sdk-admin"), "user-2", { isActive: false }),
     ).rejects.toThrow("The last active SDK administrator cannot be changed.");
   });
 
@@ -126,7 +125,7 @@ describe("updateStaffUser", () => {
     mocks.user.count.mockResolvedValue(1);
 
     await expect(
-      updateStaffUser(principal("sdk-admin"), "user-2", { role: "DELIVERY" })
+      updateStaffUser(principal("sdk-admin"), "user-2", { role: "DELIVERY" }),
     ).rejects.toThrow("The last active SDK administrator cannot be changed.");
   });
 
@@ -140,7 +139,7 @@ describe("updateStaffUser", () => {
     mocks.user.update.mockResolvedValue({ id: "user-2", isActive: false });
 
     await expect(
-      updateStaffUser(principal("sdk-admin"), "user-2", { isActive: false })
+      updateStaffUser(principal("sdk-admin"), "user-2", { isActive: false }),
     ).resolves.toBeDefined();
     expect(mocks.user.count).toHaveBeenCalledWith({
       where: { sdkStaffRole: "ADMIN", isActive: true },
@@ -149,13 +148,13 @@ describe("updateStaffUser", () => {
 
   it("rejects staff without the staff update permission", async () => {
     await expect(
-      updateStaffUser(principal("delivery"), "user-2", { role: "FINANCE" })
+      updateStaffUser(principal("delivery"), "user-2", { role: "FINANCE" }),
     ).rejects.toThrow("Missing permission: staff:update");
   });
 
   it("rejects client principals entirely", async () => {
     await expect(
-      updateStaffUser(principal("administrator"), "user-2", { role: "FINANCE" })
+      updateStaffUser(principal("administrator"), "user-2", { role: "FINANCE" }),
     ).rejects.toThrow("Missing permission: staff:update");
   });
 });

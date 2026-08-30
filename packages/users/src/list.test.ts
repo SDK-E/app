@@ -1,12 +1,11 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
-
 import {
+  buildSeekWhere,
   decodeCursor,
   encodeCursor,
-  buildSeekWhere,
-  toPageResult,
   type SeekSpec,
-} from "@sdk-e/users/list";
+  toPageResult,
+} from "@platform/users/list";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 describe("cursor encoding", () => {
   it("round-trips string values", () => {
@@ -74,7 +73,7 @@ describe("toPageResult", () => {
     const page = toPageResult(
       [...rows, { id: "c", v: 3 }],
       (row) => ({ v: String(row.v), id: row.id }),
-      2
+      2,
     );
     expect(page.rows).toHaveLength(2);
     expect(decodeCursor(page.nextCursor ?? undefined)).toEqual({ v: "2", id: "b" });

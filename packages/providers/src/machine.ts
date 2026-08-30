@@ -1,5 +1,6 @@
-import { defineStateMachine } from "@sdk-e/core/state-machine";
-import type { ProviderStatus } from "@sdk-e/db/client";
+import type { ProviderStatus } from "@platform/db/client";
+
+import { defineStateMachine } from "@platform/core/state-machine";
 
 export const providerApplicationMachine = defineStateMachine<ProviderStatus>({
   initial: "DRAFT",

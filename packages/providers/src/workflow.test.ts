@@ -1,12 +1,12 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   createProviderProfile,
   getProviderApplication,
   getProviderApplicationsForReview,
   saveProviderApplicationDraft,
   submitProviderApplication,
-} from "@sdk-e/providers/workflow";
-import { principal } from "@sdk-e/test-support/test-fixtures";
+} from "@platform/providers/workflow";
+import { principal } from "@platform/test-support/test-fixtures";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => {
   const provider = {
@@ -31,7 +31,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 mocks.prisma.$transaction.mockImplementation(async (callback) => callback(mocks.prisma));
 
 const baseProvider = {
@@ -112,14 +112,14 @@ describe("saveProviderApplicationDraft", () => {
   it("throws when the provider does not exist", async () => {
     mocks.provider.findFirst.mockResolvedValue(null);
     await expect(
-      saveProviderApplicationDraft(principal("provider"), { professionalTitle: "Engineer" })
+      saveProviderApplicationDraft(principal("provider"), { professionalTitle: "Engineer" }),
     ).rejects.toThrow("Provider profile not found.");
   });
 
   it("throws when the application is already submitted", async () => {
     mocks.provider.findFirst.mockResolvedValue({ ...baseProvider, status: "SUBMITTED" });
     await expect(
-      saveProviderApplicationDraft(principal("provider"), { professionalTitle: "Engineer" })
+      saveProviderApplicationDraft(principal("provider"), { professionalTitle: "Engineer" }),
     ).rejects.toThrow("Only draft applications can be edited.");
   });
 });
@@ -147,7 +147,7 @@ describe("submitProviderApplication", () => {
           fromState: "DRAFT",
           toState: "SUBMITTED",
         }),
-      })
+      }),
     );
   });
 
@@ -155,14 +155,14 @@ describe("submitProviderApplication", () => {
     const incompleteProvider = { ...baseProvider, professionalTitle: "Engineer" };
     mocks.provider.findFirst.mockResolvedValue(incompleteProvider);
     await expect(submitProviderApplication(principal("provider"))).rejects.toThrow(
-      /Application is incomplete/
+      /Application is incomplete/,
     );
   });
 
   it("blocks submission when not in DRAFT status", async () => {
     mocks.provider.findFirst.mockResolvedValue({ ...baseProvider, status: "SUBMITTED" });
     await expect(submitProviderApplication(principal("provider"))).rejects.toThrow(
-      "Invalid state transition from SUBMITTED to SUBMITTED"
+      "Invalid state transition from SUBMITTED to SUBMITTED",
     );
   });
 });

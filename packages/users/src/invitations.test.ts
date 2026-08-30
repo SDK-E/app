@@ -1,13 +1,12 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
-
+import { principal } from "@platform/test-support/test-fixtures";
 import {
   createClientInvitation,
   createStaffInvitation,
   markInvitationDelivery,
   renewInvitation,
   restoreInvitationDelivery,
-} from "@sdk-e/users";
-import { principal } from "@sdk-e/test-support/test-fixtures";
+} from "@platform/users";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => {
   const make = () => ({
@@ -25,7 +24,7 @@ const mocks = vi.hoisted(() => {
   return { prisma, invitation, user, company, auditEvent };
 });
 
-vi.mock("@sdk-e/db", () => ({
+vi.mock("@platform/db", () => ({
   getPrisma: () => mocks.prisma,
 }));
 
@@ -67,8 +66,8 @@ describe("createClientInvitation", () => {
       createClientInvitation(
         principal("owner"),
         { email: "taken@example.com", role: "PROJECT_MEMBER" },
-        "company-1"
-      )
+        "company-1",
+      ),
     ).rejects.toThrow("already a member of this company");
     expect(mocks.invitation.create).not.toHaveBeenCalled();
   });
@@ -82,8 +81,8 @@ describe("createClientInvitation", () => {
       createClientInvitation(
         principal("owner"),
         { email: "new.user@example.com", role: "PROJECT_MEMBER" },
-        "company-1"
-      )
+        "company-1",
+      ),
     ).rejects.toThrow("already pending");
     expect(mocks.invitation.create).not.toHaveBeenCalled();
   });
@@ -97,7 +96,7 @@ describe("createClientInvitation", () => {
     await createClientInvitation(
       principal("owner"),
       { email: "new.user@example.com", role: "PROJECT_MEMBER" },
-      "company-1"
+      "company-1",
     );
 
     expect(mocks.auditEvent.create).toHaveBeenCalledWith({
@@ -127,7 +126,7 @@ describe("createStaffInvitation", () => {
       createStaffInvitation(principal("sdk-admin"), {
         email: "staff@example.com",
         role: "DELIVERY",
-      })
+      }),
     ).rejects.toThrow("already has an account with application access");
     expect(mocks.invitation.create).not.toHaveBeenCalled();
   });
@@ -140,7 +139,7 @@ describe("createStaffInvitation", () => {
       createStaffInvitation(principal("sdk-admin"), {
         email: "staff@example.com",
         role: "DELIVERY",
-      })
+      }),
     ).rejects.toThrow("already pending");
     expect(mocks.invitation.create).not.toHaveBeenCalled();
   });

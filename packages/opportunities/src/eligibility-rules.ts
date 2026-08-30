@@ -4,62 +4,18 @@ import type {
   ProviderAbsence,
   ProviderService,
   ProviderWeeklyCapacity,
-} from "@sdk-e/db/client";
+} from "@platform/db/client";
 
 export interface EligibilityResult {
   passed: boolean;
   warnings: string[];
 }
 
-export function checkProviderStatus(provider: Provider): EligibilityResult {
-  if (provider.status === "ACTIVE") {
-    return { passed: true, warnings: [] };
-  }
-  return { passed: false, warnings: [`Provider status is ${provider.status}, expected ACTIVE`] };
-}
-
-export function checkCommercialReadiness(provider: Provider): EligibilityResult {
-  if (provider.commercialStatus === "READY") {
-    return { passed: true, warnings: [] };
-  }
-  return {
-    passed: false,
-    warnings: [`Provider commercial status is ${provider.commercialStatus}, expected READY`],
-  };
-}
-
-export function checkBudgetOverlap(
-  provider: Provider,
-  opportunity: Opportunity
-): EligibilityResult {
-  const warnings: string[] = [];
-  if (provider.expectedRateMin == null || provider.expectedRateMax == null) {
-    warnings.push("Provider expected rate range is incomplete");
-    return { passed: true, warnings };
-  }
-  if (opportunity.budgetMin == null || opportunity.budgetMax == null) {
-    warnings.push("Opportunity budget range is incomplete");
-    return { passed: true, warnings };
-  }
-  const providerMin = Number(provider.expectedRateMin);
-  const providerMax = Number(provider.expectedRateMax);
-  const oppMin = Number(opportunity.budgetMin);
-  const oppMax = Number(opportunity.budgetMax);
-  const overlaps = providerMax >= oppMin && providerMin <= oppMax;
-  if (overlaps) {
-    return { passed: true, warnings };
-  }
-  return {
-    passed: false,
-    warnings: ["Provider rate range does not overlap with opportunity budget"],
-  };
-}
-
 export function checkAvailabilityWindow(
   provider: Provider,
   opportunity: Opportunity,
   weeklyCapacity: ProviderWeeklyCapacity[],
-  absences: ProviderAbsence[]
+  absences: ProviderAbsence[],
 ): EligibilityResult {
   const warnings: string[] = [];
   if (!opportunity.startDate || !opportunity.deadline) {
@@ -101,34 +57,46 @@ export function checkAvailabilityWindow(
   return { passed: false, warnings: ["Provider has no available hours during opportunity window"] };
 }
 
-export function checkTimezoneOverlap(
+export function checkBudgetOverlap(
   provider: Provider,
-  opportunity: Opportunity
+  opportunity: Opportunity,
 ): EligibilityResult {
   const warnings: string[] = [];
-  if (!provider.timeZone || !opportunity.locationTimezone) {
-    warnings.push("Provider or opportunity timezone is missing");
+  if (provider.expectedRateMin == null || provider.expectedRateMax == null) {
+    warnings.push("Provider expected rate range is incomplete");
     return { passed: true, warnings };
   }
-  const providerOffset = getUtcOffsetHours(provider.timeZone);
-  const opportunityOffset = getUtcOffsetHours(opportunity.locationTimezone);
-  if (providerOffset == null || opportunityOffset == null) {
-    warnings.push("Could not determine UTC offset for timezone overlap");
+  if (opportunity.budgetMin == null || opportunity.budgetMax == null) {
+    warnings.push("Opportunity budget range is incomplete");
     return { passed: true, warnings };
   }
-  const diff = Math.abs(providerOffset - opportunityOffset);
-  if (diff <= 3) {
+  const providerMin = Number(provider.expectedRateMin);
+  const providerMax = Number(provider.expectedRateMax);
+  const oppMin = Number(opportunity.budgetMin);
+  const oppMax = Number(opportunity.budgetMax);
+  const overlaps = providerMax >= oppMin && providerMin <= oppMax;
+  if (overlaps) {
     return { passed: true, warnings };
   }
   return {
-    passed: true,
-    warnings: [`Timezone offset difference is ${diff} hours, exceeds ±3 hours`],
+    passed: false,
+    warnings: ["Provider rate range does not overlap with opportunity budget"],
+  };
+}
+
+export function checkCommercialReadiness(provider: Provider): EligibilityResult {
+  if (provider.commercialStatus === "READY") {
+    return { passed: true, warnings: [] };
+  }
+  return {
+    passed: false,
+    warnings: [`Provider commercial status is ${provider.commercialStatus}, expected READY`],
   };
 }
 
 export function checkLanguageOverlap(
   provider: Provider,
-  opportunity: Opportunity
+  opportunity: Opportunity,
 ): EligibilityResult {
   const warnings: string[] = [];
   if (opportunity.languages.length === 0) {
@@ -142,14 +110,21 @@ export function checkLanguageOverlap(
   return { passed: true, warnings: [`Provider missing required languages: ${missing.join(", ")}`] };
 }
 
+export function checkProviderStatus(provider: Provider): EligibilityResult {
+  if (provider.status === "ACTIVE") {
+    return { passed: true, warnings: [] };
+  }
+  return { passed: false, warnings: [`Provider status is ${provider.status}, expected ACTIVE`] };
+}
+
 export function checkSkillOverlap(
   provider: Provider,
   opportunity: Opportunity,
-  services: ProviderService[]
+  services: ProviderService[],
 ): EligibilityResult {
   const warnings: string[] = [];
   const oppSkills = new Set(
-    [...opportunity.requiredSkills, ...opportunity.preferredSkills].map((s) => s.toLowerCase())
+    [...opportunity.requiredSkills, ...opportunity.preferredSkills].map((s) => s.toLowerCase()),
   );
   if (oppSkills.size === 0) {
     return { passed: true, warnings };
@@ -173,7 +148,32 @@ export function checkSkillOverlap(
   return { passed: true, warnings: ["No skill overlap detected between provider and opportunity"] };
 }
 
-function getUtcOffsetHours(timeZone: string): number | null {
+export function checkTimezoneOverlap(
+  provider: Provider,
+  opportunity: Opportunity,
+): EligibilityResult {
+  const warnings: string[] = [];
+  if (!provider.timeZone || !opportunity.locationTimezone) {
+    warnings.push("Provider or opportunity timezone is missing");
+    return { passed: true, warnings };
+  }
+  const providerOffset = getUtcOffsetHours(provider.timeZone);
+  const opportunityOffset = getUtcOffsetHours(opportunity.locationTimezone);
+  if (providerOffset == null || opportunityOffset == null) {
+    warnings.push("Could not determine UTC offset for timezone overlap");
+    return { passed: true, warnings };
+  }
+  const diff = Math.abs(providerOffset - opportunityOffset);
+  if (diff <= 3) {
+    return { passed: true, warnings };
+  }
+  return {
+    passed: true,
+    warnings: [`Timezone offset difference is ${diff} hours, exceeds ±3 hours`],
+  };
+}
+
+function getUtcOffsetHours(timeZone: string): null | number {
   try {
     const now = new Date();
     const formatter = new Intl.DateTimeFormat("en-US", {

@@ -1,6 +1,7 @@
+import type { ProviderStatus } from "@platform/db/client";
+
+import { defineStateMachine } from "@platform/core/state-machine";
 import { describe, expect, it } from "vitest";
-import { defineStateMachine } from "@sdk-e/core/state-machine";
-import type { ProviderStatus } from "@sdk-e/db/client";
 
 const providerApplicationMachine = defineStateMachine<ProviderStatus>({
   initial: "DRAFT",
@@ -22,7 +23,7 @@ describe("provider application state machine", () => {
 
   it("allows request-changes from UNDER_REVIEW", () => {
     expect(providerApplicationMachine.canTransition("UNDER_REVIEW", "CHANGES_REQUESTED")).toBe(
-      true
+      true,
     );
   });
 
@@ -67,13 +68,13 @@ describe("provider application state machine", () => {
 
   it("asserts valid transitions", () => {
     expect(() =>
-      providerApplicationMachine.assertTransition("SUBMITTED", "UNDER_REVIEW")
+      providerApplicationMachine.assertTransition("SUBMITTED", "UNDER_REVIEW"),
     ).not.toThrow();
   });
 
   it("throws on invalid transition", () => {
     expect(() => providerApplicationMachine.assertTransition("DRAFT", "APPROVED")).toThrow(
-      "Invalid state transition from DRAFT to APPROVED"
+      "Invalid state transition from DRAFT to APPROVED",
     );
   });
 });

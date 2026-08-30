@@ -1,7 +1,6 @@
+import { principal } from "@platform/test-support/test-fixtures";
+import { setAccountActive, updateUserName } from "@platform/users";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { setAccountActive, updateUserName } from "@sdk-e/users";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const user = { findUniqueOrThrow: vi.fn(), update: vi.fn() };
@@ -9,7 +8,7 @@ const mocks = vi.hoisted(() => {
   return { prisma: { user, auditEvent }, user, auditEvent };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
 beforeEach(() => {
   mocks.user.findUniqueOrThrow.mockReset();
@@ -53,16 +52,16 @@ describe("setAccountActive", () => {
       .mockResolvedValueOnce({ id: "user-9", isActive: true, sdkStaffRole: null });
 
     await expect(setAccountActive(principal("sdk-admin"), "user-9", false)).rejects.toThrow(
-      "Use SDK staff management for staff accounts."
+      "Use SDK staff management for staff accounts.",
     );
     await expect(setAccountActive(principal("sdk-admin"), "user-1", false)).rejects.toThrow(
-      "You cannot deactivate your own account."
+      "You cannot deactivate your own account.",
     );
   });
 
   it("rejects principals without the activation permission", async () => {
     await expect(setAccountActive(principal("delivery"), "user-9", true)).rejects.toThrow(
-      "Missing permission: user:activate"
+      "Missing permission: user:activate",
     );
   });
 });
@@ -89,14 +88,14 @@ describe("updateUserName", () => {
 
   it("rejects blank names", async () => {
     await expect(updateUserName(principal("sdk-admin"), "user-9", "   ")).rejects.toThrow(
-      "Enter a name."
+      "Enter a name.",
     );
     expect(mocks.user.findUniqueOrThrow).not.toHaveBeenCalled();
   });
 
   it("rejects principals without the user update permission", async () => {
     await expect(updateUserName(principal("viewer"), "user-9", "Name")).rejects.toThrow(
-      "Missing permission: user:update"
+      "Missing permission: user:update",
     );
   });
 });

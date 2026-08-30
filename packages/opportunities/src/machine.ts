@@ -1,5 +1,6 @@
-import { defineStateMachine } from "@sdk-e/core/state-machine";
-import type { OpportunityStatus } from "@sdk-e/db/client";
+import type { OpportunityStatus } from "@platform/db/client";
+
+import { defineStateMachine } from "@platform/core/state-machine";
 
 const ACTIVE_STATES: OpportunityStatus[] = [
   "READY",

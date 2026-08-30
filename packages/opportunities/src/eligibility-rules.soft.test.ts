@@ -1,8 +1,9 @@
+import type { Opportunity, Provider, ProviderService } from "@platform/db/client";
+
+import { Prisma } from "@platform/db/client";
 import { describe, expect, it } from "vitest";
-import type { Opportunity, Provider } from "@sdk-e/db/client";
-import type { ProviderService } from "@sdk-e/db/client";
-import { Prisma } from "@sdk-e/db/client";
-import { checkTimezoneOverlap, checkLanguageOverlap, checkSkillOverlap } from "./eligibility-rules";
+
+import { checkLanguageOverlap, checkSkillOverlap, checkTimezoneOverlap } from "./eligibility-rules";
 
 const baseProvider = {
   status: "ACTIVE" as const,
@@ -37,7 +38,7 @@ describe("checkTimezoneOverlap", () => {
   it("warns when timezone is missing", () => {
     const result = checkTimezoneOverlap(
       { ...baseProvider, timeZone: null } as unknown as Provider,
-      baseOpportunity
+      baseOpportunity,
     );
     expect(result.warnings.some((w) => w.includes("missing"))).toBe(true);
   });

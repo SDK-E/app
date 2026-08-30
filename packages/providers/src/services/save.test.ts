@@ -1,6 +1,6 @@
+import { saveServiceDraft } from "@platform/providers/services/draft";
+import { principal } from "@platform/test-support/test-fixtures";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { saveServiceDraft } from "@sdk-e/providers/services/draft";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const providerService = {
@@ -17,7 +17,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 mocks.prisma.$transaction.mockImplementation(async (callback) => callback(mocks.prisma));
 
 const baseService = {
@@ -70,7 +70,7 @@ describe("saveServiceDraft", () => {
   it("throws when service not found", async () => {
     mocks.providerService.findFirst.mockResolvedValue(null);
     await expect(
-      saveServiceDraft(principal("provider"), "svc-1", { title: "Test" })
+      saveServiceDraft(principal("provider"), "svc-1", { title: "Test" }),
     ).rejects.toThrow("Service not found.");
   });
 
@@ -80,7 +80,7 @@ describe("saveServiceDraft", () => {
       provider: { userId: "user-other" },
     });
     await expect(
-      saveServiceDraft(principal("provider"), "svc-1", { title: "Test" })
+      saveServiceDraft(principal("provider"), "svc-1", { title: "Test" }),
     ).rejects.toThrow("Service not found.");
   });
 
@@ -91,7 +91,7 @@ describe("saveServiceDraft", () => {
       provider: { userId: "user-1" },
     });
     await expect(
-      saveServiceDraft(principal("provider"), "svc-1", { title: "Test" })
+      saveServiceDraft(principal("provider"), "svc-1", { title: "Test" }),
     ).rejects.toThrow("Only draft or rejected services can be edited.");
   });
 

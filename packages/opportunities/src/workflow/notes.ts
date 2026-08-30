@@ -1,15 +1,16 @@
-import { notFound, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { getPrisma } from "@sdk-e/db";
-import { requireActiveCompany } from "@sdk-e/requests/guards";
-import { createAuditEvent } from "@sdk-e/core/audit";
-import { opportunityActivity } from "@sdk-e/opportunities/workflow/shared";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { AppPrincipal } from "@platform/types";
+
+import { notFound, requireSdkStaff } from "@platform/auth/authorization";
+import { createAuditEvent } from "@platform/core/audit";
+import { getPrisma } from "@platform/db";
+import { opportunityActivity } from "@platform/opportunities/workflow/shared";
+import { requireActiveCompany } from "@platform/requests/guards";
 
 export async function addInternalNote(
   principal: AppPrincipal,
   companyId: string,
   id: string,
-  note: string
+  note: string,
 ) {
   const staff = requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
   await requireActiveCompany(staff, companyId);

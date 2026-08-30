@@ -1,7 +1,6 @@
+import { principal } from "@platform/test-support/test-fixtures";
+import { createClientInvitation } from "@platform/users";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { createClientInvitation } from "@sdk-e/users";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const make = () => ({
@@ -17,7 +16,7 @@ const mocks = vi.hoisted(() => {
   return { prisma, invitation, user, company, membership, auditEvent };
 });
 
-vi.mock("@sdk-e/db", () => ({
+vi.mock("@platform/db", () => ({
   getPrisma: () => mocks.prisma,
 }));
 
@@ -34,7 +33,7 @@ describe("createClientInvitation (owner)", () => {
     const result = await createClientInvitation(
       principal("sdk-admin"),
       { email: "owner@example.com", role: "OWNER" },
-      "company-2"
+      "company-2",
     );
 
     expect(mocks.membership.findFirst).toHaveBeenCalledWith({
@@ -49,7 +48,7 @@ describe("createClientInvitation (owner)", () => {
           clientRole: "OWNER",
           email: "owner@example.com",
         }),
-      })
+      }),
     );
     expect(result.invitation.clientRole).toBe("OWNER");
   });
@@ -62,8 +61,8 @@ describe("createClientInvitation (owner)", () => {
       createClientInvitation(
         principal("sdk-admin"),
         { email: "other@example.com", role: "OWNER" },
-        "company-1"
-      )
+        "company-1",
+      ),
     ).rejects.toThrow("already has an owner");
     expect(mocks.invitation.create).not.toHaveBeenCalled();
   });
@@ -76,8 +75,8 @@ describe("createClientInvitation (owner)", () => {
       createClientInvitation(
         principal("owner"),
         { email: "client@example.com", role: "OWNER" },
-        "company-1"
-      )
+        "company-1",
+      ),
     ).rejects.toThrow("Only SDK administrators can invite a company owner.");
     expect(mocks.invitation.create).not.toHaveBeenCalled();
   });
@@ -89,8 +88,8 @@ describe("createClientInvitation (owner)", () => {
       createClientInvitation(
         principal("delivery"),
         { email: "client@example.com", role: "OWNER" },
-        "company-1"
-      )
+        "company-1",
+      ),
     ).rejects.toThrow("Missing permission: membership:invite");
     expect(mocks.invitation.create).not.toHaveBeenCalled();
   });

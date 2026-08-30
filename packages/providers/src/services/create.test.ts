@@ -1,7 +1,8 @@
+import type { ServiceDraftInput } from "@platform/providers/services/schemas";
+
+import { createServiceDraft } from "@platform/providers/services/draft";
+import { principal } from "@platform/test-support/test-fixtures";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { createServiceDraft } from "@sdk-e/providers/services/draft";
-import type { ServiceDraftInput } from "@sdk-e/providers/services/schemas";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const providerService = {
@@ -24,7 +25,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 mocks.prisma.$transaction.mockImplementation(async (callback) => callback(mocks.prisma));
 
 const baseService = {
@@ -103,7 +104,7 @@ describe("createServiceDraft", () => {
         deliverables: null,
         rateMin: null,
         rateMax: null,
-      } as ServiceDraftInput)
+      } as ServiceDraftInput),
     ).rejects.toThrow("Only approved providers can create services.");
   });
 
@@ -121,7 +122,7 @@ describe("createServiceDraft", () => {
         deliverables: null,
         rateMin: null,
         rateMax: null,
-      } as ServiceDraftInput)
+      } as ServiceDraftInput),
     ).rejects.toThrow("Provider profile not found.");
   });
 });

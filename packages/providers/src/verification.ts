@@ -1,5 +1,5 @@
-import type { VerificationRecord, VerificationEvidence } from "@sdk-e/db/client";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { VerificationEvidence, VerificationRecord } from "@platform/db/client";
+import type { AppPrincipal } from "@platform/types";
 
 export const VERIFICATION_TRANSITIONS: Record<string, string[]> = {
   NOT_STARTED: ["PENDING"],
@@ -11,28 +11,32 @@ export const VERIFICATION_TRANSITIONS: Record<string, string[]> = {
   VERIFIED: ["EXPIRED"],
 };
 
+export type VerificationSummaryRecord = {
+  internalNotes?: null | string;
+  rejectionReason?: null | string;
+  verifiedById?: null | string;
+  evidence: VerificationEvidence[];
+} & Pick<VerificationRecord, "createdAt" | "expiresAt" | "id" | "status" | "type" | "verifiedAt">;
+
 export function assertVerificationTransition(from: string, to: string): void {
   const allowed = VERIFICATION_TRANSITIONS[from];
   if (!allowed || !allowed.includes(to)) {
     throw new Error(
-      `Invalid verification transition from ${from} to ${to}. Allowed: ${allowed?.join(", ") ?? "none"}.`
+      `Invalid verification transition from ${from} to ${to}. Allowed: ${allowed?.join(", ") ?? "none"}.`,
     );
   }
 }
 
-export type VerificationSummaryRecord = Pick<
-  VerificationRecord,
-  "id" | "type" | "status" | "verifiedAt" | "expiresAt" | "createdAt"
-> & {
-  internalNotes?: string | null;
-  rejectionReason?: string | null;
-  verifiedById?: string | null;
-  evidence: VerificationEvidence[];
-};
+export function resolveEffectiveStatus(record: VerificationRecord): VerificationRecord["status"] {
+  if (record.status === "VERIFIED" && record.expiresAt && record.expiresAt < new Date()) {
+    return "EXPIRED";
+  }
+  return record.status;
+}
 
 export function selectVerificationSafe(
   principal: AppPrincipal,
-  record: VerificationRecord & { evidence?: VerificationEvidence[] }
+  record: { evidence?: VerificationEvidence[] } & VerificationRecord,
 ): VerificationSummaryRecord {
   const base: VerificationSummaryRecord = {
     id: record.id,
@@ -57,11 +61,4 @@ export function selectVerificationSafe(
   }
 
   return base;
-}
-
-export function resolveEffectiveStatus(record: VerificationRecord): VerificationRecord["status"] {
-  if (record.status === "VERIFIED" && record.expiresAt && record.expiresAt < new Date()) {
-    return "EXPIRED";
-  }
-  return record.status;
 }

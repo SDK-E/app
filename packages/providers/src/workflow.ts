@@ -1,11 +1,14 @@
-import { notFound, requireProviderPrincipal, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { createAuditEvent } from "@sdk-e/core/audit";
-import { getPrisma } from "@sdk-e/db";
+import type { Provider } from "@platform/db/client";
+import type { AppPrincipal } from "@platform/types";
+
+import { notFound, requireProviderPrincipal, requireSdkStaff } from "@platform/auth/authorization";
+import { createAuditEvent } from "@platform/core/audit";
+import { getPrisma } from "@platform/db";
+
+import type { ProviderDraftInput } from "./schemas";
+
 import { providerApplicationMachine } from "./machine";
 import { calculateCompletenessScore } from "./score";
-import type { Provider } from "@sdk-e/db/client";
-import type { AppPrincipal } from "@sdk-e/types";
-import type { ProviderDraftInput } from "./schemas";
 
 export async function createProviderProfile(principal: AppPrincipal): Promise<Provider> {
   requireProviderPrincipal(principal);
@@ -28,9 +31,28 @@ export async function createProviderProfile(principal: AppPrincipal): Promise<Pr
   });
 }
 
+export async function getProviderApplication(principal: AppPrincipal): Promise<null | Provider> {
+  requireProviderPrincipal(principal);
+  return getPrisma().provider.findFirst({
+    where: { userId: principal.id },
+  });
+}
+
+export async function getProviderApplicationsForReview(
+  principal: AppPrincipal,
+): Promise<Provider[]> {
+  requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
+  return getPrisma().provider.findMany({
+    where: {
+      status: { in: ["SUBMITTED", "UNDER_REVIEW"] },
+    },
+    orderBy: { createdAt: "asc" },
+  });
+}
+
 export async function saveProviderApplicationDraft(
   principal: AppPrincipal,
-  input: Partial<ProviderDraftInput>
+  input: Partial<ProviderDraftInput>,
 ): Promise<Provider> {
   requireProviderPrincipal(principal);
   const current = await getPrisma().provider.findFirst({
@@ -89,23 +111,4 @@ export async function submitProviderApplication(principal: AppPrincipal): Promis
   });
 
   return updated;
-}
-
-export async function getProviderApplication(principal: AppPrincipal): Promise<Provider | null> {
-  requireProviderPrincipal(principal);
-  return getPrisma().provider.findFirst({
-    where: { userId: principal.id },
-  });
-}
-
-export async function getProviderApplicationsForReview(
-  principal: AppPrincipal
-): Promise<Provider[]> {
-  requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
-  return getPrisma().provider.findMany({
-    where: {
-      status: { in: ["SUBMITTED", "UNDER_REVIEW"] },
-    },
-    orderBy: { createdAt: "asc" },
-  });
 }

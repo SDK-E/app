@@ -1,7 +1,6 @@
+import { principal } from "@platform/test-support/test-fixtures";
+import { approveCompanyAccessRequest, declineCompanyAccessRequest } from "@platform/users";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-
-import { approveCompanyAccessRequest, declineCompanyAccessRequest } from "@sdk-e/users";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const make = () => ({
@@ -21,11 +20,11 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({
+vi.mock("@platform/db", () => ({
   getPrisma: () => mocks.prisma,
 }));
 
-vi.mock("@sdk-e/auth/identity-management", () => ({
+vi.mock("@platform/auth/identity-management", () => ({
   assignCompanyMembership: mocks.assignCompanyMembership,
 }));
 
@@ -64,7 +63,7 @@ describe("approveCompanyAccessRequest", () => {
       expect.objectContaining({
         where: { id: "request-1" },
         data: expect.objectContaining({ status: "APPROVED", resolvedBy: "user-1" }),
-      })
+      }),
     );
     expect(result.membership).toEqual({ id: "membership-1" });
   });
@@ -78,7 +77,7 @@ describe("approveCompanyAccessRequest", () => {
     await approveCompanyAccessRequest(principal("owner"), "request-1", { role: "PROJECT_MEMBER" });
 
     expect(mocks.assignCompanyMembership).toHaveBeenCalledWith(
-      expect.objectContaining({ role: "PROJECT_MEMBER" })
+      expect.objectContaining({ role: "PROJECT_MEMBER" }),
     );
   });
 
@@ -91,13 +90,13 @@ describe("approveCompanyAccessRequest", () => {
     await approveCompanyAccessRequest(principal("owner"), "request-1", { role: "ADMINISTRATOR" });
 
     expect(mocks.assignCompanyMembership).toHaveBeenCalledWith(
-      expect.objectContaining({ role: "ADMINISTRATOR" })
+      expect.objectContaining({ role: "ADMINISTRATOR" }),
     );
   });
 
   it("rejects granting ownership from user management", async () => {
     await expect(
-      approveCompanyAccessRequest(principal("owner"), "request-1", { role: "OWNER" })
+      approveCompanyAccessRequest(principal("owner"), "request-1", { role: "OWNER" }),
     ).rejects.toThrow("Ownership cannot be granted");
     expect(mocks.companyAccessRequest.findUnique).not.toHaveBeenCalled();
   });
@@ -107,7 +106,7 @@ describe("approveCompanyAccessRequest", () => {
     await expect(
       approveCompanyAccessRequest(principal("administrator"), "request-1", {
         role: "ADMINISTRATOR",
-      })
+      }),
     ).rejects.toThrow("Only a company owner can grant administrator access.");
   });
 
@@ -118,7 +117,7 @@ describe("approveCompanyAccessRequest", () => {
     });
 
     await expect(approveCompanyAccessRequest(principal("owner"), "request-1", {})).rejects.toThrow(
-      "already been resolved"
+      "already been resolved",
     );
     expect(mocks.assignCompanyMembership).not.toHaveBeenCalled();
   });
@@ -130,7 +129,7 @@ describe("approveCompanyAccessRequest", () => {
     });
 
     await expect(approveCompanyAccessRequest(principal("owner"), "request-1", {})).rejects.toThrow(
-      "SDK staff"
+      "SDK staff",
     );
     expect(mocks.assignCompanyMembership).not.toHaveBeenCalled();
   });
@@ -140,7 +139,7 @@ describe("approveCompanyAccessRequest", () => {
     mocks.membership.findFirst.mockResolvedValue({ id: "membership-9" });
 
     await expect(approveCompanyAccessRequest(principal("owner"), "request-1", {})).rejects.toThrow(
-      "This user is already a member of this company."
+      "This user is already a member of this company.",
     );
     expect(mocks.assignCompanyMembership).not.toHaveBeenCalled();
   });
@@ -152,14 +151,14 @@ describe("approveCompanyAccessRequest", () => {
     });
 
     await expect(approveCompanyAccessRequest(principal("owner"), "request-1", {})).rejects.toThrow(
-      "Cross-company access is denied."
+      "Cross-company access is denied.",
     );
   });
 
   it("rejects delivery staff without membership management", async () => {
     mocks.companyAccessRequest.findUnique.mockResolvedValue(pendingRequest);
     await expect(
-      approveCompanyAccessRequest(principal("delivery"), "request-1", {})
+      approveCompanyAccessRequest(principal("delivery"), "request-1", {}),
     ).rejects.toThrow("Missing permission: membership:update");
   });
 
@@ -167,7 +166,7 @@ describe("approveCompanyAccessRequest", () => {
     mocks.companyAccessRequest.findUnique.mockResolvedValue(null);
 
     await expect(
-      approveCompanyAccessRequest(principal("owner"), "request-missing", {})
+      approveCompanyAccessRequest(principal("owner"), "request-missing", {}),
     ).rejects.toThrow("Access request not found.");
   });
 });
@@ -183,7 +182,7 @@ describe("declineCompanyAccessRequest", () => {
       expect.objectContaining({
         where: { id: "request-1" },
         data: expect.objectContaining({ status: "DECLINED", resolvedBy: "user-1" }),
-      })
+      }),
     );
     expect(mocks.assignCompanyMembership).not.toHaveBeenCalled();
   });
@@ -195,7 +194,7 @@ describe("declineCompanyAccessRequest", () => {
     });
 
     await expect(declineCompanyAccessRequest(principal("owner"), "request-1")).rejects.toThrow(
-      "already been resolved"
+      "already been resolved",
     );
     expect(mocks.companyAccessRequest.update).not.toHaveBeenCalled();
   });

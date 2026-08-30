@@ -5,7 +5,7 @@ export const weeklyCapacityInputSchema = z
     z.object({
       weekday: z.number().int().min(0).max(6),
       hoursPerDay: z.coerce.number().min(0).max(24),
-    })
+    }),
   )
   .min(1)
   .max(7);
@@ -36,7 +36,7 @@ export const capacityQuerySchema = z.object({
   weeks: z.number().int().min(1).max(12).default(4),
 });
 
-export type WeeklyCapacityInput = z.infer<typeof weeklyCapacityInputSchema>;
 export type AbsenceInput = z.infer<typeof absenceInputSchema>;
-export type ReservationInput = z.infer<typeof reservationInputSchema>;
 export type CapacityQuery = z.infer<typeof capacityQuerySchema>;
+export type ReservationInput = z.infer<typeof reservationInputSchema>;
+export type WeeklyCapacityInput = z.infer<typeof weeklyCapacityInputSchema>;

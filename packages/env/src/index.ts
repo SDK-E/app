@@ -3,7 +3,7 @@ import { z } from "zod";
 export function normalizePostgresSslMode(connectionString: string): string {
   return connectionString.replace(
     /([?&])sslmode=(?:prefer|require|verify-ca)(?=&|$)/,
-    "$1sslmode=verify-full"
+    "$1sslmode=verify-full",
   );
 }
 
@@ -60,7 +60,7 @@ function validateServerEnv(): ServerEnv {
   return env;
 }
 
-let cachedEnv: ServerEnv | null = null;
+let cachedEnv: null | ServerEnv = null;
 
 export function getServerEnv(): ServerEnv {
   if (!cachedEnv) {

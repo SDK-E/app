@@ -1,86 +1,21 @@
+import type { CompanyAccessRequestStatus } from "@platform/db/client";
+import type { AppPrincipal, ClientRole } from "@platform/types";
+
 import {
   notFound,
-  requireCompanyContext,
   requireCompanyAccess,
+  requireCompanyContext,
   requirePermission,
-} from "@sdk-e/auth/authorization";
-import { assignCompanyMembership } from "@sdk-e/auth/identity-management";
-import { getPrisma } from "@sdk-e/db";
-import { recordUserManagementEvent } from "@sdk-e/users/audit";
-import { assertClientRoleGrant, canManageUsers, forbidden } from "@sdk-e/users/shared";
-import type { CompanyAccessRequestStatus } from "@sdk-e/db/client";
-import type { AppPrincipal, ClientRole } from "@sdk-e/types";
-
-export async function getUserAccessRequests(principal: AppPrincipal) {
-  return getPrisma().companyAccessRequest.findMany({
-    where: { userId: principal.id },
-    include: { company: { select: { name: true } } },
-    orderBy: { createdAt: "desc" },
-  });
-}
-
-export async function requestCompanyAccess(
-  principal: AppPrincipal,
-  input: { code: string; requestedRole?: ClientRole }
-) {
-  if (principal.kind !== "unassigned")
-    forbidden("Only unassigned users may request company access.");
-  const requestedRole = input.requestedRole ?? "VIEWER";
-  if (requestedRole === "OWNER" || requestedRole === "ADMINISTRATOR")
-    forbidden("Ownership and administrator access cannot be requested.");
-  const code = input.code.trim().toUpperCase();
-  if (!code) forbidden("Enter a company access code.");
-  const company = await getPrisma().company.findFirst({
-    where: { accessCode: code, isActive: true },
-  });
-  if (!company) forbidden("That access code was not found. Check the code and try again.");
-  const existing = await getPrisma().membership.findFirst({
-    where: { userId: principal.id, companyId: company.id },
-    select: { id: true },
-  });
-  if (existing) forbidden("You are already a member of that company.");
-  const pending = await getPrisma().companyAccessRequest.findFirst({
-    where: { userId: principal.id, companyId: company.id, status: "PENDING" },
-  });
-  if (pending) forbidden("You already have a pending access request for this company.");
-  return getPrisma().companyAccessRequest.create({
-    data: { userId: principal.id, companyId: company.id, requestedRole },
-    include: { company: { select: { name: true } } },
-  });
-}
-
-export async function listCompanyAccessRequests(
-  principal: AppPrincipal,
-  input?: { companyId?: string; status?: CompanyAccessRequestStatus }
-) {
-  const companyId = input?.companyId;
-  requirePermission(principal, "membership:update", companyId);
-  if (!canManageUsers(principal, companyId))
-    forbidden("User management is not available for this role.");
-  const status = input?.status ?? "PENDING";
-  const include = {
-    user: { select: { id: true, name: true, email: true, avatarUrl: true } },
-    company: { select: { name: true } },
-  };
-  if (principal.kind === "client") {
-    const scopedCompanyId = requireCompanyAccess(principal, companyId);
-    return getPrisma().companyAccessRequest.findMany({
-      where: { companyId: scopedCompanyId, status },
-      include,
-      orderBy: { createdAt: "desc" },
-    });
-  }
-  return getPrisma().companyAccessRequest.findMany({
-    where: { companyId: companyId, status },
-    include,
-    orderBy: { createdAt: "desc" },
-  });
-}
+} from "@platform/auth/authorization";
+import { assignCompanyMembership } from "@platform/auth/identity-management";
+import { getPrisma } from "@platform/db";
+import { recordUserManagementEvent } from "@platform/users/audit";
+import { assertClientRoleGrant, canManageUsers, forbidden } from "@platform/users/shared";
 
 export async function approveCompanyAccessRequest(
   principal: AppPrincipal,
   requestId: string,
-  input: { role?: ClientRole }
+  input: { role?: ClientRole },
 ) {
   const role = input.role ?? "VIEWER";
   if (role === "OWNER") forbidden("Ownership cannot be granted from user management.");
@@ -150,4 +85,70 @@ export async function declineCompanyAccessRequest(principal: AppPrincipal, reque
     toState: "DECLINED",
   });
   return updated;
+}
+
+export async function getUserAccessRequests(principal: AppPrincipal) {
+  return getPrisma().companyAccessRequest.findMany({
+    where: { userId: principal.id },
+    include: { company: { select: { name: true } } },
+    orderBy: { createdAt: "desc" },
+  });
+}
+
+export async function listCompanyAccessRequests(
+  principal: AppPrincipal,
+  input?: { companyId?: string; status?: CompanyAccessRequestStatus },
+) {
+  const companyId = input?.companyId;
+  requirePermission(principal, "membership:update", companyId);
+  if (!canManageUsers(principal, companyId))
+    forbidden("User management is not available for this role.");
+  const status = input?.status ?? "PENDING";
+  const include = {
+    user: { select: { id: true, name: true, email: true, avatarUrl: true } },
+    company: { select: { name: true } },
+  };
+  if (principal.kind === "client") {
+    const scopedCompanyId = requireCompanyAccess(principal, companyId);
+    return getPrisma().companyAccessRequest.findMany({
+      where: { companyId: scopedCompanyId, status },
+      include,
+      orderBy: { createdAt: "desc" },
+    });
+  }
+  return getPrisma().companyAccessRequest.findMany({
+    where: { companyId: companyId, status },
+    include,
+    orderBy: { createdAt: "desc" },
+  });
+}
+
+export async function requestCompanyAccess(
+  principal: AppPrincipal,
+  input: { code: string; requestedRole?: ClientRole },
+) {
+  if (principal.kind !== "unassigned")
+    forbidden("Only unassigned users may request company access.");
+  const requestedRole = input.requestedRole ?? "VIEWER";
+  if (requestedRole === "OWNER" || requestedRole === "ADMINISTRATOR")
+    forbidden("Ownership and administrator access cannot be requested.");
+  const code = input.code.trim().toUpperCase();
+  if (!code) forbidden("Enter a company access code.");
+  const company = await getPrisma().company.findFirst({
+    where: { accessCode: code, isActive: true },
+  });
+  if (!company) forbidden("That access code was not found. Check the code and try again.");
+  const existing = await getPrisma().membership.findFirst({
+    where: { userId: principal.id, companyId: company.id },
+    select: { id: true },
+  });
+  if (existing) forbidden("You are already a member of that company.");
+  const pending = await getPrisma().companyAccessRequest.findFirst({
+    where: { userId: principal.id, companyId: company.id, status: "PENDING" },
+  });
+  if (pending) forbidden("You already have a pending access request for this company.");
+  return getPrisma().companyAccessRequest.create({
+    data: { userId: principal.id, companyId: company.id, requestedRole },
+    include: { company: { select: { name: true } } },
+  });
 }

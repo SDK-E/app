@@ -1,6 +1,6 @@
-import { notFound, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { getPrisma } from "@sdk-e/db";
-import { listUserManagementActivity, type ActivityRow } from "@sdk-e/users/activity";
+import { notFound, requireSdkStaff } from "@platform/auth/authorization";
+import { getPrisma } from "@platform/db";
+import { type ActivityRow, listUserManagementActivity } from "@platform/users/activity";
 
 export interface UserDetailMembership {
   id: string;
@@ -15,16 +15,16 @@ export interface UserDetailView {
     id: string;
     name: string;
     email: string;
-    avatarUrl: string | null;
+    avatarUrl: null | string;
     isActive: boolean;
-    sdkStaffRole: string | null;
+    sdkStaffRole: null | string;
     createdAt: Date;
     lastLoginAt: Date | null;
   };
   memberships: UserDetailMembership[];
   pendingInvitations: {
     id: string;
-    clientRole: string | null;
+    clientRole: null | string;
     expiresAt: Date;
     deliveryStatus: string;
     company: { id: string; name: string } | null;
@@ -49,7 +49,7 @@ const assignableCompanies = () =>
 
 export async function getUserDetail(
   principal: Parameters<typeof requireSdkStaff>[0],
-  userId: string
+  userId: string,
 ): Promise<UserDetailView> {
   requireSdkStaff(principal, ["ADMIN"]);
   const db = getPrisma();

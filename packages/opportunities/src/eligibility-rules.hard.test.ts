@@ -1,12 +1,18 @@
+import type {
+  Opportunity,
+  Provider,
+  ProviderAbsence,
+  ProviderWeeklyCapacity,
+} from "@platform/db/client";
+
+import { Prisma } from "@platform/db/client";
 import { describe, expect, it } from "vitest";
-import type { Opportunity, Provider } from "@sdk-e/db/client";
-import type { ProviderAbsence, ProviderWeeklyCapacity } from "@sdk-e/db/client";
-import { Prisma } from "@sdk-e/db/client";
+
 import {
-  checkProviderStatus,
-  checkCommercialReadiness,
-  checkBudgetOverlap,
   checkAvailabilityWindow,
+  checkBudgetOverlap,
+  checkCommercialReadiness,
+  checkProviderStatus,
 } from "./eligibility-rules";
 
 const baseProvider = {
@@ -113,7 +119,7 @@ describe("checkAvailabilityWindow", () => {
       baseProvider,
       opportunity as unknown as Opportunity,
       [],
-      []
+      [],
     );
     expect(result.passed).toBe(true);
     expect(result.warnings.some((w) => w.includes("no start date"))).toBe(true);

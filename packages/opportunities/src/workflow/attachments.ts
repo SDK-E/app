@@ -1,16 +1,17 @@
-import { notFound, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { getPrisma } from "@sdk-e/db";
-import { requireActiveCompany } from "@sdk-e/requests/guards";
-import { createAuditEvent } from "@sdk-e/core/audit";
-import { canViewOpportunity } from "@sdk-e/opportunities/safe";
-import { type AddAttachmentInput } from "@sdk-e/opportunities/workflow/shared";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { AppPrincipal } from "@platform/types";
+
+import { notFound, requireSdkStaff } from "@platform/auth/authorization";
+import { createAuditEvent } from "@platform/core/audit";
+import { getPrisma } from "@platform/db";
+import { canViewOpportunity } from "@platform/opportunities/safe";
+import { type AddAttachmentInput } from "@platform/opportunities/workflow/shared";
+import { requireActiveCompany } from "@platform/requests/guards";
 
 export async function addAttachment(
   principal: AppPrincipal,
   companyId: string,
   opportunityId: string,
-  input: AddAttachmentInput
+  input: AddAttachmentInput,
 ) {
   const staff = requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
   await requireActiveCompany(staff, companyId);

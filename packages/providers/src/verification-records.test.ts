@@ -1,9 +1,9 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
-  initializeVerificationRecords,
   getProviderVerificationSummary,
-} from "@sdk-e/providers/verification-records";
-import { principal } from "@sdk-e/test-support/test-fixtures";
+  initializeVerificationRecords,
+} from "@platform/providers/verification-records";
+import { principal } from "@platform/test-support/test-fixtures";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => {
   const verificationRequirement = { findMany: vi.fn() };
@@ -30,7 +30,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 mocks.prisma.$transaction.mockImplementation(async (cb) => cb(mocks.prisma));
 
 const baseRecord = {
@@ -87,7 +87,7 @@ describe("initializeVerificationRecords", () => {
 
   it("throws for provider principal", async () => {
     await expect(
-      initializeVerificationRecords(principal("provider"), "provider-1")
+      initializeVerificationRecords(principal("provider"), "provider-1"),
     ).rejects.toThrow();
   });
 });
@@ -102,13 +102,13 @@ describe("getProviderVerificationSummary", () => {
 
   it("throws when provider accesses another's data", async () => {
     await expect(
-      getProviderVerificationSummary(principal("provider"), "provider-2")
+      getProviderVerificationSummary(principal("provider"), "provider-2"),
     ).rejects.toThrow();
   });
 
   it("throws for client principal", async () => {
     await expect(
-      getProviderVerificationSummary(principal("owner"), "provider-1")
+      getProviderVerificationSummary(principal("owner"), "provider-1"),
     ).rejects.toThrow();
   });
 });

@@ -1,6 +1,9 @@
 export const USER_PAGE_SIZE = 25;
 
-export type SortDir = "asc" | "desc";
+export interface Cursor {
+  v: null | string;
+  id: string;
+}
 
 export interface ListParams {
   query?: string;
@@ -11,15 +14,10 @@ export interface ListParams {
   back?: boolean;
 }
 
-export interface Cursor {
-  v: string | null;
-  id: string;
-}
-
 export interface PageResult<Row> {
   rows: Row[];
-  nextCursor: string | null;
-  prevCursor: string | null;
+  nextCursor: null | string;
+  prevCursor: null | string;
 }
 
 /** Describes how to compare rows against a cursor for one sort field. */
@@ -28,9 +26,28 @@ export interface SeekSpec {
   tiebreak(op: "gt" | "lt", id: string, value: string): Record<string, unknown>;
 }
 
-export function encodeCursor(value: string | Date | null, id: string): string {
-  const payload: Cursor = { v: value instanceof Date ? value.toISOString() : value, id };
-  return Buffer.from(JSON.stringify(payload), "utf8").toString("base64url");
+export type SortDir = "asc" | "desc";
+
+/**
+ * Keyset predicate: rows strictly after the cursor in sort order, with the
+ * row id as a stable tiebreaker. Returns an empty object when there is no
+ * usable cursor.
+ */
+export function buildSeekWhere(
+  cursor: Cursor | null,
+  dir: SortDir,
+  spec: SeekSpec,
+): Record<string, unknown> {
+  if (!cursor || !cursor.v) return {};
+  const op = dir === "asc" ? ("gt" as const) : ("lt" as const);
+  return { AND: [{ OR: [spec.compare(op, cursor.v), spec.tiebreak(op, cursor.id, cursor.v)] }] };
+}
+
+export function dateSeek(field: string): SeekSpec {
+  return {
+    compare: (op, v) => ({ [field]: { [op]: new Date(v) } }),
+    tiebreak: (op, id, v) => ({ [field]: new Date(v), id: { [op]: id } }),
+  };
 }
 
 export function decodeCursor(cursor: string | undefined): Cursor | null {
@@ -51,6 +68,16 @@ export function decodeCursor(cursor: string | undefined): Cursor | null {
   }
 }
 
+export function encodeCursor(value: Date | null | string, id: string): string {
+  const payload: Cursor = { v: value instanceof Date ? value.toISOString() : value, id };
+  return Buffer.from(JSON.stringify(payload), "utf8").toString("base64url");
+}
+
+/** Effective query direction when the request seeks backwards. */
+export function queryDir(dir: SortDir, back?: boolean): SortDir {
+  return back ? (dir === "asc" ? "desc" : "asc") : dir;
+}
+
 export function relationTextSeek(relation: string, field: string): SeekSpec {
   return {
     compare: (op, v) => ({ [relation]: { [field]: { [op]: v, mode: "insensitive" } } }),
@@ -68,38 +95,12 @@ export function textSeek(field: string): SeekSpec {
   };
 }
 
-export function dateSeek(field: string): SeekSpec {
-  return {
-    compare: (op, v) => ({ [field]: { [op]: new Date(v) } }),
-    tiebreak: (op, id, v) => ({ [field]: new Date(v), id: { [op]: id } }),
-  };
-}
-
-function insensitiveEquals(value: string) {
-  return { equals: value, mode: "insensitive" as const };
-}
-
-/**
- * Keyset predicate: rows strictly after the cursor in sort order, with the
- * row id as a stable tiebreaker. Returns an empty object when there is no
- * usable cursor.
- */
-export function buildSeekWhere(
-  cursor: Cursor | null,
-  dir: SortDir,
-  spec: SeekSpec
-): Record<string, unknown> {
-  if (!cursor || !cursor.v) return {};
-  const op = dir === "asc" ? ("gt" as const) : ("lt" as const);
-  return { AND: [{ OR: [spec.compare(op, cursor.v), spec.tiebreak(op, cursor.id, cursor.v)] }] };
-}
-
 /** Fetches pageSize+1 rows and turns them into a page with cursors. */
 export function toPageResult<Row>(
   fetched: Row[],
-  keyOf: (row: Row) => { v: string | Date | null; id: string },
+  keyOf: (row: Row) => { v: Date | null | string; id: string },
   pageSize: number = USER_PAGE_SIZE,
-  options?: { back?: boolean }
+  options?: { back?: boolean },
 ): PageResult<Row> {
   const hasMore = fetched.length > pageSize;
   let rows = hasMore ? fetched.slice(0, pageSize) : [...fetched];
@@ -113,7 +114,6 @@ export function toPageResult<Row>(
   };
 }
 
-/** Effective query direction when the request seeks backwards. */
-export function queryDir(dir: SortDir, back?: boolean): SortDir {
-  return back ? (dir === "asc" ? "desc" : "asc") : dir;
+function insensitiveEquals(value: string) {
+  return { equals: value, mode: "insensitive" as const };
 }

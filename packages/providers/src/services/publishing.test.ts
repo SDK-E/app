@@ -1,6 +1,6 @@
+import { publishService, unpublishService } from "@platform/providers/services/publishing";
+import { principal } from "@platform/test-support/test-fixtures";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { publishService, unpublishService } from "@sdk-e/providers/services/publishing";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const providerService = {
@@ -19,7 +19,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 mocks.prisma.$transaction.mockImplementation(async (callback) => callback(mocks.prisma));
 
 const baseService = {
@@ -73,14 +73,14 @@ describe("publishService", () => {
           fromState: "APPROVED",
           toState: "PUBLISHED",
         }),
-      })
+      }),
     );
   });
 
   it("blocks publish from DRAFT", async () => {
     mocks.providerService.findFirst.mockResolvedValue(baseService);
     await expect(publishService(principal("sdk-admin"), "svc-1")).rejects.toThrow(
-      "Invalid state transition from DRAFT to PUBLISHED"
+      "Invalid state transition from DRAFT to PUBLISHED",
     );
   });
 
@@ -90,7 +90,7 @@ describe("publishService", () => {
       status: "APPROVED",
     });
     await expect(publishService(principal("provider"), "svc-1")).rejects.toThrow(
-      "SDK staff access is required."
+      "SDK staff access is required.",
     );
   });
 });
@@ -113,7 +113,7 @@ describe("unpublishService", () => {
   it("blocks unpublish from DRAFT", async () => {
     mocks.providerService.findFirst.mockResolvedValue(baseService);
     await expect(unpublishService(principal("sdk-admin"), "svc-1")).rejects.toThrow(
-      "Invalid state transition from DRAFT to UNPUBLISHED"
+      "Invalid state transition from DRAFT to UNPUBLISHED",
     );
   });
 });

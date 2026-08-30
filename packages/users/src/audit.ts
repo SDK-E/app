@@ -1,27 +1,22 @@
-import { createAuditEvent } from "@sdk-e/core/audit";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { AppPrincipal } from "@platform/types";
 
-type ActorKind = "USER" | "PROVIDER" | "SDK_STAFF";
-
-function actorKind(principal: AppPrincipal): ActorKind {
-  if (principal.kind === "sdk-staff") return "SDK_STAFF";
-  if (principal.kind === "provider") return "PROVIDER";
-  return "USER";
-}
+import { createAuditEvent } from "@platform/core/audit";
 
 export interface UserManagementEventInput {
   action: string;
-  companyId?: string | null;
+  companyId?: null | string;
   targetType: string;
   targetId: string;
-  fromState?: string | null;
-  toState?: string | null;
+  fromState?: null | string;
+  toState?: null | string;
   metadata?: Record<string, unknown>;
 }
 
+type ActorKind = "PROVIDER" | "SDK_STAFF" | "USER";
+
 export async function recordUserManagementEvent(
   principal: AppPrincipal,
-  input: UserManagementEventInput
+  input: UserManagementEventInput,
 ) {
   return createAuditEvent({
     companyId: input.companyId ?? undefined,
@@ -34,4 +29,10 @@ export async function recordUserManagementEvent(
     toState: input.toState ?? undefined,
     metadata: input.metadata,
   });
+}
+
+function actorKind(principal: AppPrincipal): ActorKind {
+  if (principal.kind === "sdk-staff") return "SDK_STAFF";
+  if (principal.kind === "provider") return "PROVIDER";
+  return "USER";
 }

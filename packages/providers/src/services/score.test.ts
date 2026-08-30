@@ -1,7 +1,8 @@
-import { describe, expect, it } from "vitest";
-import { calculateServiceCompletenessScore } from "@sdk-e/providers/services/score";
-import type { ProviderService } from "@sdk-e/db/client";
+import type { ProviderService } from "@platform/db/client";
+
+import { calculateServiceCompletenessScore } from "@platform/providers/services/score";
 import { Decimal } from "@prisma/client/runtime/index-browser";
+import { describe, expect, it } from "vitest";
 
 function makeService(overrides: Partial<ProviderService> = {}): ProviderService {
   return {
@@ -40,7 +41,7 @@ describe("calculateServiceCompletenessScore", () => {
         description: "A".repeat(50),
         capability: "modernization",
         pricingModel: "HOURLY",
-      })
+      }),
     );
     expect(score).toBe(60);
   });
@@ -57,7 +58,7 @@ describe("calculateServiceCompletenessScore", () => {
         estimatedDuration: "2-4 weeks",
         deliverables: "Migration plan and execution",
         categoryTags: ["cloud", "aws"],
-      })
+      }),
     );
     expect(score).toBe(100);
   });
@@ -74,7 +75,7 @@ describe("calculateServiceCompletenessScore", () => {
         estimatedDuration: "1 month",
         deliverables: "Everything",
         categoryTags: ["tag1", "tag2"],
-      })
+      }),
     );
     expect(score).toBe(100);
   });
@@ -86,7 +87,7 @@ describe("calculateServiceCompletenessScore", () => {
         description: "Short",
         capability: "platforms",
         pricingModel: "HOURLY",
-      })
+      }),
     );
     expect(score).toBeLessThan(60);
   });
@@ -96,7 +97,7 @@ describe("calculateServiceCompletenessScore", () => {
       makeService({
         title: "Service",
         description: "A".repeat(50),
-      })
+      }),
     );
     expect(score).toBe(45);
   });

@@ -1,17 +1,18 @@
-import type { Prisma } from "@sdk-e/db/client";
-import { getPrisma } from "@sdk-e/db";
+import type { Prisma } from "@platform/db/client";
+
+import { getPrisma } from "@platform/db";
 
 export interface ActivityRow {
   id: string;
-  companyId: string | null;
-  actorId: string | null;
+  companyId: null | string;
+  actorId: null | string;
   actorKind: string;
-  actorName: string | null;
+  actorName: null | string;
   action: string;
   targetType: string;
   targetId: string;
-  fromState: string | null;
-  toState: string | null;
+  fromState: null | string;
+  toState: null | string;
   createdAt: Date;
 }
 
@@ -19,7 +20,7 @@ const managedTargetTypes = ["membership", "invitation", "company_access_request"
 
 export async function listUserManagementActivity(
   scope: { companyId?: string; userId?: string },
-  take = 15
+  take = 15,
 ): Promise<ActivityRow[]> {
   const where: Prisma.AuditEventWhereInput = {
     targetType: { in: managedTargetTypes },

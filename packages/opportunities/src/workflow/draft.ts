@@ -1,19 +1,20 @@
-import { notFound, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { getPrisma } from "@sdk-e/db";
-import { requireActiveCompany } from "@sdk-e/requests/guards";
-import { createAuditEvent } from "@sdk-e/core/audit";
+import type { AppPrincipal } from "@platform/types";
+
+import { notFound, requireSdkStaff } from "@platform/auth/authorization";
+import { createAuditEvent } from "@platform/core/audit";
+import { getPrisma } from "@platform/db";
 import {
   opportunityActivity,
   toDecimal,
   type UpdateOpportunityDraftInput,
-} from "@sdk-e/opportunities/workflow/shared";
-import type { AppPrincipal } from "@sdk-e/types";
+} from "@platform/opportunities/workflow/shared";
+import { requireActiveCompany } from "@platform/requests/guards";
 
 export async function updateOpportunityDraft(
   principal: AppPrincipal,
   companyId: string,
   id: string,
-  input: UpdateOpportunityDraftInput
+  input: UpdateOpportunityDraftInput,
 ) {
   const staff = requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
   await requireActiveCompany(staff, companyId);

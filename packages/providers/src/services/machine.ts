@@ -1,5 +1,6 @@
-import { defineStateMachine } from "@sdk-e/core/state-machine";
-import type { ServiceStatus } from "@sdk-e/db/client";
+import type { ServiceStatus } from "@platform/db/client";
+
+import { defineStateMachine } from "@platform/core/state-machine";
 
 export const providerServiceMachine = defineStateMachine<ServiceStatus>({
   initial: "DRAFT",

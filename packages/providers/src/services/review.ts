@@ -1,15 +1,18 @@
-import { notFound, requireSdkStaff } from "@sdk-e/auth/authorization";
-import { createAuditEvent } from "@sdk-e/core/audit";
-import { getPrisma } from "@sdk-e/db";
-import { providerServiceMachine } from "./machine";
-import type { ProviderService, ServiceReviewAction, ServiceStatus } from "@sdk-e/db/client";
-import type { AppPrincipal } from "@sdk-e/types";
+import type { ProviderService, ServiceReviewAction, ServiceStatus } from "@platform/db/client";
+import type { AppPrincipal } from "@platform/types";
+
+import { notFound, requireSdkStaff } from "@platform/auth/authorization";
+import { createAuditEvent } from "@platform/core/audit";
+import { getPrisma } from "@platform/db";
+
 import type { ServiceReviewDecision } from "./schemas";
+
+import { providerServiceMachine } from "./machine";
 
 export async function reviewProviderService(
   principal: AppPrincipal,
   serviceId: string,
-  decision: ServiceReviewDecision
+  decision: ServiceReviewDecision,
 ): Promise<ProviderService> {
   const staff = requireSdkStaff(principal, ["ADMIN", "DELIVERY"]);
   const service = await getPrisma().providerService.findFirst({

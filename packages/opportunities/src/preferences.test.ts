@@ -1,11 +1,10 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
-
 import {
   getProviderPreferences,
   hideOpportunity,
   saveOpportunity,
-} from "@sdk-e/opportunities/preferences";
-import { principal } from "@sdk-e/test-support/test-fixtures";
+} from "@platform/opportunities/preferences";
+import { principal } from "@platform/test-support/test-fixtures";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const prisma = vi.hoisted(() => ({
   provider: { findFirst: vi.fn() },
@@ -18,8 +17,8 @@ const prisma = vi.hoisted(() => ({
   notification: { create: vi.fn(async (args) => ({ id: "notif-1", ...args.data })) },
 }));
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => prisma }));
-vi.mock("@sdk-e/notifications/delivery", () => ({ deliver: vi.fn() }));
+vi.mock("@platform/db", () => ({ getPrisma: () => prisma }));
+vi.mock("@platform/notifications/delivery", () => ({ deliver: vi.fn() }));
 
 describe("saveOpportunity", () => {
   beforeEach(() => {

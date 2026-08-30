@@ -1,12 +1,12 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
-  getWeeklyCapacity,
-  upsertWeeklyCapacity,
-  getDefaultDailyHours,
-  setDefaultDailyHours,
   getCapacityRange,
-} from "@sdk-e/providers/availability/availability";
-import { principal } from "@sdk-e/test-support/test-fixtures";
+  getDefaultDailyHours,
+  getWeeklyCapacity,
+  setDefaultDailyHours,
+  upsertWeeklyCapacity,
+} from "@platform/providers/availability/availability";
+import { principal } from "@platform/test-support/test-fixtures";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => {
   const providerWeeklyCapacity = {
@@ -34,7 +34,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 
 beforeEach(() => {
   for (const mock of [
@@ -49,7 +49,7 @@ beforeEach(() => {
     mock.mockReset();
   }
   mocks.prisma.$transaction.mockImplementation(
-    async (callback: (tx: typeof mocks.prisma) => Promise<unknown>) => callback(mocks.prisma)
+    async (callback: (tx: typeof mocks.prisma) => Promise<unknown>) => callback(mocks.prisma),
   );
 });
 
@@ -96,7 +96,7 @@ describe("upsertWeeklyCapacity", () => {
     });
 
     await expect(
-      upsertWeeklyCapacity(principal("provider"), "provider-1", [{ weekday: 1, hoursPerDay: 8 }])
+      upsertWeeklyCapacity(principal("provider"), "provider-1", [{ weekday: 1, hoursPerDay: 8 }]),
     ).rejects.toThrow("timezone must be set");
   });
 
@@ -106,7 +106,7 @@ describe("upsertWeeklyCapacity", () => {
       defaultDailyHours: null,
     });
     mocks.providerWeeklyCapacity.findMany.mockResolvedValue(
-      [1, 2, 3, 4, 5].map((w) => ({ weekday: w, hoursPerDay: 4 }))
+      [1, 2, 3, 4, 5].map((w) => ({ weekday: w, hoursPerDay: 4 })),
     );
 
     const now = new Date();
@@ -131,7 +131,7 @@ describe("upsertWeeklyCapacity", () => {
     const result = await upsertWeeklyCapacity(
       principal("provider"),
       "provider-1",
-      [1, 2, 3, 4, 5].map((w) => ({ weekday: w, hoursPerDay: 4 }))
+      [1, 2, 3, 4, 5].map((w) => ({ weekday: w, hoursPerDay: 4 })),
     );
 
     expect(result.warnings.length).toBeGreaterThan(0);
@@ -157,10 +157,10 @@ describe("setDefaultDailyHours", () => {
 
   it("rejects hours outside 0-24 range", async () => {
     await expect(setDefaultDailyHours(principal("provider"), "provider-1", 25)).rejects.toThrow(
-      "between 0 and 24"
+      "between 0 and 24",
     );
     await expect(setDefaultDailyHours(principal("provider"), "provider-1", -1)).rejects.toThrow(
-      "between 0 and 24"
+      "between 0 and 24",
     );
   });
 });
@@ -185,7 +185,7 @@ describe("getCapacityRange", () => {
       principal("provider"),
       "provider-1",
       new Date("2025-02-03"),
-      4
+      4,
     );
 
     expect(result).toHaveLength(4);

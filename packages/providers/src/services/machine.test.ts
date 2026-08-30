@@ -1,5 +1,5 @@
+import { providerServiceMachine } from "@platform/providers/services/machine";
 import { describe, expect, it } from "vitest";
-import { providerServiceMachine } from "@sdk-e/providers/services/machine";
 
 describe("provider service state machine", () => {
   it("allows submit from DRAFT", () => {
@@ -104,7 +104,7 @@ describe("provider service state machine", () => {
 
   it("throws on invalid transition", () => {
     expect(() => providerServiceMachine.assertTransition("DRAFT", "PUBLISHED")).toThrow(
-      "Invalid state transition from DRAFT to PUBLISHED"
+      "Invalid state transition from DRAFT to PUBLISHED",
     );
   });
 });

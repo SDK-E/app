@@ -1,6 +1,6 @@
+import { reviewProviderService } from "@platform/providers/services/review";
+import { principal } from "@platform/test-support/test-fixtures";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { reviewProviderService } from "@sdk-e/providers/services/review";
-import { principal } from "@sdk-e/test-support/test-fixtures";
 
 const mocks = vi.hoisted(() => {
   const providerService = {
@@ -22,7 +22,7 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock("@sdk-e/db", () => ({ getPrisma: () => mocks.prisma }));
+vi.mock("@platform/db", () => ({ getPrisma: () => mocks.prisma }));
 mocks.prisma.$transaction.mockImplementation(async (callback) => callback(mocks.prisma));
 
 const baseService = {
@@ -55,7 +55,7 @@ describe("reviewProviderService", () => {
       data: { status: "APPROVED" },
     });
     expect(mocks.providerServiceReview.create).toHaveBeenCalledWith(
-      expect.objectContaining({ data: expect.objectContaining({ action: "APPROVED" }) })
+      expect.objectContaining({ data: expect.objectContaining({ action: "APPROVED" }) }),
     );
     expect(mocks.auditEvent.create).toHaveBeenCalledWith(
       expect.objectContaining({
@@ -64,7 +64,7 @@ describe("reviewProviderService", () => {
           fromState: "UNDER_REVIEW",
           toState: "APPROVED",
         }),
-      })
+      }),
     );
   });
 
@@ -84,7 +84,7 @@ describe("reviewProviderService", () => {
     expect(mocks.providerServiceReview.create).toHaveBeenCalledWith(
       expect.objectContaining({
         data: expect.objectContaining({ action: "REJECTED", reason: "Needs more detail." }),
-      })
+      }),
     );
   });
 
@@ -94,7 +94,7 @@ describe("reviewProviderService", () => {
       provider: { userId: "user-1" },
     });
     await expect(
-      reviewProviderService(principal("sdk-admin"), "svc-1", { decision: "approve" })
+      reviewProviderService(principal("sdk-admin"), "svc-1", { decision: "approve" }),
     ).rejects.toThrow("You cannot review your own service.");
   });
 
@@ -104,7 +104,7 @@ describe("reviewProviderService", () => {
       status: "PUBLISHED",
     });
     await expect(
-      reviewProviderService(principal("sdk-admin"), "svc-1", { decision: "approve" })
+      reviewProviderService(principal("sdk-admin"), "svc-1", { decision: "approve" }),
     ).rejects.toThrow("Invalid state transition from PUBLISHED to APPROVED");
   });
 });

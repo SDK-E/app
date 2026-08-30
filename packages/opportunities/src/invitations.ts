@@ -1,22 +1,19 @@
-import { requireProviderPrincipal } from "@sdk-e/auth/authorization";
-import { forbidden } from "@sdk-e/users/shared";
-import { getPrisma } from "@sdk-e/db";
-import { deliver } from "@sdk-e/notifications/delivery";
-import {
-  createNotificationIdempotent,
-  type CreateNotificationInput,
-} from "@sdk-e/notifications/notifications";
-import { defineStateMachine } from "@sdk-e/core/state-machine";
-import { selectOpportunitySafe, type OpportunityPublicRecord } from "@sdk-e/opportunities/safe";
-import type { AppPrincipal } from "@sdk-e/types";
-import type { OpportunityInvitation, OpportunityInvitationStatus } from "@sdk-e/db/client";
-import { loadOwnedInvitation } from "@sdk-e/opportunities/invitation-access";
+import type { OpportunityInvitation, OpportunityInvitationStatus } from "@platform/db/client";
+import type { AppPrincipal } from "@platform/types";
+
+import { requireProviderPrincipal } from "@platform/auth/authorization";
+import { defineStateMachine } from "@platform/core/state-machine";
+import { getPrisma } from "@platform/db";
+import { loadOwnedInvitation } from "@platform/opportunities/invitation-access";
+import { emitNotification } from "@platform/opportunities/invitation-create";
+import { type OpportunityPublicRecord, selectOpportunitySafe } from "@platform/opportunities/safe";
+import { forbidden } from "@platform/users/shared";
 
 export interface ProviderInvitationView extends OpportunityInvitation {
   opportunity: OpportunityPublicRecord;
 }
 
-export { createOpportunityInvitation } from "@sdk-e/opportunities/invitation-create";
+export { createOpportunityInvitation } from "@platform/opportunities/invitation-create";
 
 export const opportunityInvitationMachine = defineStateMachine<OpportunityInvitationStatus>({
   initial: "PENDING",
@@ -26,14 +23,6 @@ export const opportunityInvitationMachine = defineStateMachine<OpportunityInvita
     { from: "PENDING", to: "EXPIRED" },
   ],
 });
-
-export async function emitNotification(input: CreateNotificationInput) {
-  const notification = await createNotificationIdempotent(input);
-  if (notification) {
-    await deliver(notification);
-  }
-  return notification;
-}
 
 export async function acceptOpportunityInvitation(principal: AppPrincipal, invitationId: string) {
   const provider = requireProviderPrincipal(principal);
@@ -124,7 +113,7 @@ export async function expireOpportunityInvitations(): Promise<number> {
 }
 
 export async function listProviderInvitations(
-  principal: AppPrincipal
+  principal: AppPrincipal,
 ): Promise<ProviderInvitationView[]> {
   const provider = requireProviderPrincipal(principal);
   const rows = await getPrisma().opportunityInvitation.findMany({
