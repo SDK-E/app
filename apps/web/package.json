@@ -14,6 +14,7 @@
     "@platform/config": "workspace:*",
     "@platform/core": "workspace:*",
     "@platform/db": "workspace:*",
+    "@platform/design-system": "workspace:*",
     "@platform/email": "workspace:*",
     "@platform/env": "workspace:*",
     "@platform/i18n": "workspace:*",

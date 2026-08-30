@@ -17,5 +17,7 @@
     "react": "*",
     "react-dom": "*"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/nodemailer": "^8.0.1"
+  }
 }
